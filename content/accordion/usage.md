@@ -1,7 +1,5 @@
 The accordion can be used to pack a lot of content into a constraint space by allowing to collapse and expand the accordion item to show or hide its contents. It also allows the user to consume the contents at their own pace and preference by not immediately showing but relying on progressive disclosure instead.
 
-![image.png](images/image.png)
-
 Therefore when used right, accordions can help browse different pieces of related content in a more efficient way. Be wary that they can also hide content from users and are not suitable when a user is meant to read all of the page content.
 
 ### Heading
