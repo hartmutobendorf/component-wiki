@@ -7,6 +7,14 @@ set -e
 
 echo "=== Starting deployment at $(date) ==="
 
+# Check if we're in a git repository
+if [ ! -d ".git" ]; then
+    echo "ERROR: Not in a git repository. /repo should be mounted from the host."
+    echo "Current directory: $(pwd)"
+    ls -la
+    exit 1
+fi
+
 # Configure git to use GitHub PAT for authentication
 # Use repository-local config to avoid permission issues with global config
 if [ -n "$GITHUB_PAT" ]; then
