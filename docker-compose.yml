@@ -33,6 +33,7 @@ services:
             - WEBHOOK_SECRET=${WEBHOOK_SECRET}
             - GITHUB_PAT=${GITHUB_PAT}
             - GITHUB_REPO=${GITHUB_REPO:-https://github.com/dgtlntv/component-wiki.git}
+            - WEBHOOK_ARGS=-verbose -hotreload
         volumes:
             - ./webhook:/config
             - /var/run/docker.sock:/var/run/docker.sock
