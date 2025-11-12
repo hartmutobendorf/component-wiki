@@ -1,0 +1,61 @@
+// Main page styles - global styles for the HTML page (not in web components)
+// This includes Vanilla Framework plus custom layout styles
+@import "vanilla-framework";
+
+@include vanilla;
+
+// Custom layout styles for the main page
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100vh;
+    overflow: hidden;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.content-container {
+    flex: 1;
+    overflow: hidden;
+    padding-top: 2rem;
+}
+
+.scrollable-row {
+    height: 100%;
+}
+
+.scrollable-sidebar {
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.scrollable-content {
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+// Frontmatter styling
+.frontmatter {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background-color: #f7f7f7;
+    border-left: 4px solid #0066cc;
+
+    p {
+        margin: 0.5rem 0;
+
+        strong {
+            color: #333;
+        }
+    }
+}

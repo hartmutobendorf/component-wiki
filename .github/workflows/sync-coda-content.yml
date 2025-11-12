@@ -1,0 +1,54 @@
+name: Sync Coda Content
+
+on:
+    workflow_dispatch:
+        inputs:
+            reason:
+                description: "Reason for syncing content"
+                required: false
+                default: "Manual sync triggered"
+
+jobs:
+    sync-content:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v5
+              with:
+                  token: ${{ secrets.GITHUB_TOKEN }}
+
+            - name: Setup Bun
+              uses: oven-sh/setup-bun@v2
+              with:
+                  bun-version: latest
+
+            - name: Install dependencies
+              working-directory: ./coda-content-retrieve
+              run: bun install
+
+            - name: Run coda-content-retrieve
+              working-directory: ./coda-content-retrieve
+              env:
+                  CODA_API_TOKEN: ${{ secrets.CODA_API_TOKEN }}
+                  CODA_DOC_ID: ${{ secrets.CODA_DOC_ID }}
+                  CODA_TABLE_ID: ${{ secrets.CODA_TABLE_ID }}
+              run: bun run index.ts
+
+            - name: Check for changes
+              id: git-check
+              run: |
+                  git diff --exit-code || echo "changes=true" >> $GITHUB_OUTPUT
+
+            - name: Commit and push changes
+              if: steps.git-check.outputs.changes == 'true'
+              run: |
+                  git config --local user.email "github-actions[bot]@users.noreply.github.com"
+                  git config --local user.name "github-actions[bot]"
+                  git add content/
+                  git commit -m "chore: sync content from Coda - ${{ github.event.inputs.reason || 'Manual sync' }}"
+                  git push
+
+            - name: No changes detected
+              if: steps.git-check.outputs.changes != 'true'
+              run: echo "No changes detected in content"

@@ -1,0 +1,3 @@
+The accordion is a vertically stacked content area which can be collapsed and expanded to reveal or hide its contents. An accordion can be opened or closed independently of its surrounding counterparts (i.e: multiple accordions can be open at the same time).
+
+When used right, accordions can help browse different pieces of related content in a more efficient way. Be wary that they can also hide content from users and are not suitable when a user is meant to read all of the page content.
