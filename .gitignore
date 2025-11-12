@@ -176,3 +176,7 @@ dist
 
 # Output files
 output/
+
+# Python stuff
+__pycache__/
+.venv/
