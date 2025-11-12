@@ -2,7 +2,7 @@
     {
         "id": "redeploy-markdown-server",
         "execute-command": "/config/deploy.sh",
-        "command-working-directory": "/config",
+        "command-working-directory": "/repo",
         "response-message": "Analyzing changes and deploying...",
         "response-headers": [
             {

@@ -7,14 +7,13 @@ set -e
 
 echo "=== Starting deployment at $(date) ==="
 
-# Navigate to the repository directory
-cd /repo
-
 # Configure git to use GitHub PAT for authentication
+# Use repository-local config to avoid permission issues with global config
 if [ -n "$GITHUB_PAT" ]; then
     echo "Configuring git with GitHub PAT..."
-    git config --global credential.helper store
-    echo "https://${GITHUB_PAT}@github.com" > ~/.git-credentials
+    git config credential.helper "store --file=/config/.git-credentials"
+    echo "https://${GITHUB_PAT}@github.com" > /config/.git-credentials
+    chmod 600 /config/.git-credentials
 else
     echo "Warning: GITHUB_PAT not set, attempting unauthenticated pull..."
 fi
@@ -22,9 +21,6 @@ fi
 # Pull the latest changes
 echo "Pulling latest changes from GitHub..."
 git pull origin main
-
-# Navigate to markdown-server directory
-cd markdown-server
 
 echo "Stopping and removing old markdown-server container..."
 docker compose -f /repo/docker-compose.yml stop markdown-server
