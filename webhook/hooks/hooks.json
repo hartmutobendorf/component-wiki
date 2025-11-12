@@ -1,12 +1,13 @@
 [
     {
         "id": "redeploy-markdown-server",
-        "execute-command": "/config/deploy.sh",
-        "command-working-directory": "/config",
-        "pass-arguments-to-command": [
+        "execute-command": "/scripts/deploy.sh",
+        "command-working-directory": "/repo",
+        "response-message": "Analyzing changes and deploying...",
+        "response-headers": [
             {
-                "source": "payload",
-                "name": "ref"
+                "name": "Access-Control-Allow-Origin",
+                "value": "*"
             }
         ],
         "trigger-rule": {
@@ -32,6 +33,19 @@
                     }
                 }
             ]
-        }
+        },
+        "pass-arguments-to-command": [
+            {
+                "source": "payload",
+                "name": "head_commit.id"
+            },
+            {
+                "source": "payload",
+                "name": "pusher.name"
+            },
+            {
+                "source": "entire-payload"
+            }
+        ]
     }
 ]
