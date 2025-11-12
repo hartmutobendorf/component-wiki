@@ -19,40 +19,42 @@ services:
             - webhook
         restart: unless-stopped
         networks:
-            - app-network    webhook:
-              build:
-                  context: ./webhook
-                  dockerfile: Dockerfile
-              container_name: webhook
-              environment:
-                  - PUID=${PUID:-1000}
-                  - PGID=${PGID:-1000}
-                  - TZ=${TZ:-Etc/UTC}
-                  - WEBHOOK_SECRET=${WEBHOOK_SECRET}
-                  - GITHUB_PAT=${GITHUB_PAT}
-                  - GITHUB_REPO=${GITHUB_REPO:-https://github.com/dgtlntv/component-wiki.git}
-              volumes:
-                  - ./webhook:/config
-                  - /var/run/docker.sock:/var/run/docker.sock
-                  - ./:/repo
-              expose:
-                  - "${WEBHOOK_INTERNAL_PORT:-9000}"
-              restart: unless-stopped
-              networks:
-                  - app-network
+            - app-network
 
-        markdown-server:
-            build:
-                context: .
-                dockerfile: markdown-server/Dockerfile
-            container_name: markdown-server
-            environment:
-                - PORT=${MARKDOWN_SERVER_INTERNAL_PORT:-8000}
-            expose:
-                - "${MARKDOWN_SERVER_INTERNAL_PORT:-8000}"
-            restart: unless-stopped
-            networks:
-                - app-network
+    webhook:
+        build:
+            context: ./webhook
+            dockerfile: Dockerfile
+        container_name: webhook
+        environment:
+            - PUID=${PUID:-1000}
+            - PGID=${PGID:-1000}
+            - TZ=${TZ:-Etc/UTC}
+            - WEBHOOK_SECRET=${WEBHOOK_SECRET}
+            - GITHUB_PAT=${GITHUB_PAT}
+            - GITHUB_REPO=${GITHUB_REPO:-https://github.com/dgtlntv/component-wiki.git}
+        volumes:
+            - ./webhook:/config
+            - /var/run/docker.sock:/var/run/docker.sock
+            - ./:/repo
+        expose:
+            - "${WEBHOOK_INTERNAL_PORT:-9000}"
+        restart: unless-stopped
+        networks:
+            - app-network
+
+    markdown-server:
+        build:
+            context: .
+            dockerfile: markdown-server/Dockerfile
+        container_name: markdown-server
+        environment:
+            - PORT=${MARKDOWN_SERVER_INTERNAL_PORT:-8000}
+        expose:
+            - "${MARKDOWN_SERVER_INTERNAL_PORT:-8000}"
+        restart: unless-stopped
+        networks:
+            - app-network
 
 networks:
     app-network:

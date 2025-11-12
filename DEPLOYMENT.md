@@ -29,18 +29,7 @@ Edit `.env` and set:
     -   For fine-grained tokens: Grant read access to repository contents
 -   `GITHUB_REPO`: Your GitHub repository URL (default: https://github.com/dgtlntv/component-wiki.git)
 
-### 2. Configure GitHub Webhook
-
-1. Go to your GitHub repository settings
-2. Navigate to "Webhooks" → "Add webhook"
-3. Set the payload URL to: `http://webhook.example.com/hooks/redeploy-markdown-server`
-4. Set Content type to: `application/json`
-5. Set the secret to the same value as `WEBHOOK_SECRET` in your `.env` file
-6. Select "Just the push event"
-7. Ensure "Active" is checked
-8. Save the webhook
-
-### 3. Update DNS Records
+### 2. Update DNS Records
 
 Point your domain DNS records to your server:
 
@@ -49,7 +38,7 @@ Point your domain DNS records to your server:
 
 Update the domain names in `nginx/nginx.conf` to match your actual domains.
 
-### 4. Deploy the Stack
+### 3. Deploy the Stack
 
 ```bash
 docker compose up -d
@@ -61,7 +50,7 @@ This will start all three services:
 -   webhook on port 9000 (internal)
 -   markdown-server on port 8000 (internal)
 
-### 5. Initial Repository Clone
+### 4. Initial Repository Clone
 
 The webhook service needs access to the repository. For the first time, you may need to clone it:
 
