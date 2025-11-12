@@ -70,7 +70,7 @@ validate_inputs() {
             return 1
             ;;
         *)
-            echo "$pusher_name" | grep -q '^[a-zA-Z0-9._\[\]-]\+$' || {
+            echo "$pusher_name" | grep -qE '^[a-zA-Z0-9._\[\]-]+$' || {
                 log_error "Invalid pusher name format: $pusher_name"
                 return 1
             }
