@@ -1,0 +1,1 @@
+A tooltip is a small popup that displays helpful information or context when a user hovers over or focuses on an element, providing additional details without cluttering the interface.

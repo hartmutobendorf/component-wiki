@@ -1,0 +1,1 @@
+Notifications display brief, contextual messages to inform users about system status, user actions, or important updates. They typically appear temporarily and can convey success, error, warning, or informational states to provide immediate feedback without disrupting the user's workflow.

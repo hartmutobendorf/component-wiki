@@ -1,0 +1,1 @@
+The input component allows users to enter and edit text-based data. It provides a standardized interface for collecting user input such as names, email addresses, passwords and other textual information.
