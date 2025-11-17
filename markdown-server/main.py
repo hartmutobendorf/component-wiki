@@ -1,3 +1,5 @@
+# TODO: Frontmatter extraction needs to be done more properly
+
 import json
 from pathlib import Path
 from typing import Any, Dict, List
@@ -60,11 +62,21 @@ def extract_frontmatter(content: str) -> tuple[Dict[str, str], str]:
     frontmatter = {}
 
     if content.startswith("---"):
-        # Find the closing ---
-        end_marker = content.find("---", 3)
-        if end_marker != -1:
-            frontmatter_text = content[3:end_marker]
-            remaining = content[end_marker + 3 :].strip()
+        # Find the closing --- at the start of a line
+        lines = content.split("\n")
+        end_line_idx = -1
+
+        # Start searching from line 1 (skip the opening ---)
+        for i in range(1, len(lines)):
+            if lines[i].strip() == "---":
+                end_line_idx = i
+                break
+
+        if end_line_idx != -1:
+            # Extract frontmatter content (between the two ---)
+            frontmatter_text = "\n".join(lines[1:end_line_idx])
+            # Get remaining content after the closing ---
+            remaining = "\n".join(lines[end_line_idx + 1:]).strip()
 
             # Parse frontmatter
             for line in frontmatter_text.strip().split("\n"):
