@@ -83,8 +83,8 @@ def compile_component_markdown(
     # Define the sections we want to include in order
     sections = [
         ("description", "Description"),
-        ("usage", "Usage"),
         ("anatomy", "Anatomy"),
+        ("usage", "Usage"),
         ("examples", "Examples"),
     ]
 
