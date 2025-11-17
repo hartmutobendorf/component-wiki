@@ -94,6 +94,12 @@ def render_frontmatter_html(frontmatter: Dict[str, str]) -> str:
     if "last-edited" in frontmatter:
         html += f"  <p><strong>Last Edited:</strong> {frontmatter['last-edited']}</p>\n"
 
+    if "figma-link" in frontmatter and frontmatter['figma-link']:
+        html += f'  <p><strong>Figma:</strong> <a href="{frontmatter["figma-link"]}" target="_blank" rel="noopener noreferrer">View in Figma</a></p>\n'
+
+    if "code-link" in frontmatter and frontmatter['code-link']:
+        html += f'  <p><strong>Code:</strong> <a href="{frontmatter["code-link"]}" target="_blank" rel="noopener noreferrer">View on GitHub</a></p>\n'
+
     html += "</div>\n"
 
     return html
