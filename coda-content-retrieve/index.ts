@@ -12,6 +12,8 @@ interface RowData {
     description: string
     anatomy: string
     examples: string
+    "figma-link": string
+    "code-link": string
 }
 
 // Helper function to download an image and return the filename from headers
@@ -144,6 +146,8 @@ function extractTableData(pageHtml: string): RowData[] {
             description: "",
             anatomy: "",
             examples: "",
+            "figma-link": "",
+            "code-link": "",
         }
 
         // Extract documentation status (from link text)
@@ -163,6 +167,20 @@ function extractTableData(pageHtml: string): RowData[] {
         // Extract last edited date
         const lastEditedCell = cells.eq(columnMap["Last edited"])
         rowData["last-edited"] = lastEditedCell.text().trim()
+
+        // Extract Figma link (from href attribute)
+        const figmaCell = cells.eq(columnMap["Figma"])
+        const figmaLink = figmaCell.find("a").first()
+        rowData["figma-link"] = figmaLink.length
+            ? figmaLink.attr("href") || ""
+            : ""
+
+        // Extract Code link (from href attribute)
+        const codeCell = cells.eq(columnMap["Code"])
+        const codeLink = codeCell.find("a").first()
+        rowData["code-link"] = codeLink.length
+            ? codeLink.attr("href") || ""
+            : ""
 
         // Extract HTML for rich content fields - we'll convert these to markdown later
         const descriptionCell = cells.eq(columnMap["Description"])
@@ -322,6 +340,8 @@ async function main() {
             description: contentPaths.description,
             anatomy: contentPaths.anatomy,
             examples: contentPaths.examples,
+            "figma-link": row["figma-link"],
+            "code-link": row["code-link"],
         }
 
         structuredData.push(structuredRow)

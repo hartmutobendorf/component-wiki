@@ -7,7 +7,9 @@
     "usage": "accordion/usage.md",
     "description": "accordion/description.md",
     "anatomy": "accordion/anatomy.md",
-    "examples": "accordion/examples.md"
+    "examples": "accordion/examples.md",
+    "figma-link": "https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-3",
+    "code-link": "https://github.com/canonical/vanilla-framework/blob/b1d651365b0714586e6ea14349dea763819c256e/scss/_patterns_accordion.scss"
   },
   {
     "name": "Pagination",
@@ -17,7 +19,9 @@
     "usage": "pagination/usage.md",
     "description": "pagination/description.md",
     "anatomy": "pagination/anatomy.md",
-    "examples": "pagination/examples.md"
+    "examples": "pagination/examples.md",
+    "figma-link": "",
+    "code-link": ""
   },
   {
     "name": "Badge",
@@ -27,7 +31,9 @@
     "usage": "badge/usage.md",
     "description": "badge/description.md",
     "anatomy": "badge/anatomy.md",
-    "examples": "badge/examples.md"
+    "examples": "badge/examples.md",
+    "figma-link": "https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-5",
+    "code-link": "https://github.com/canonical/vanilla-framework/blob/b1d651365b0714586e6ea14349dea763819c256e/scss/_patterns_badge.scss"
   },
   {
     "name": "Breadcrumbs",
@@ -37,7 +43,9 @@
     "usage": "breadcrumbs/usage.md",
     "description": "breadcrumbs/description.md",
     "anatomy": "breadcrumbs/anatomy.md",
-    "examples": "breadcrumbs/examples.md"
+    "examples": "breadcrumbs/examples.md",
+    "figma-link": "",
+    "code-link": ""
   },
   {
     "name": "Button",
@@ -47,7 +55,9 @@
     "usage": "button/usage.md",
     "description": "button/description.md",
     "anatomy": "button/anatomy.md",
-    "examples": "button/examples.md"
+    "examples": "button/examples.md",
+    "figma-link": "https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-8",
+    "code-link": "https://github.com/canonical/vanilla-framework/blob/main/scss/_patterns_buttons.scss"
   },
   {
     "name": "Checkbox",
@@ -57,7 +67,9 @@
     "usage": "checkbox/usage.md",
     "description": "checkbox/description.md",
     "anatomy": "checkbox/anatomy.md",
-    "examples": "checkbox/examples.md"
+    "examples": "checkbox/examples.md",
+    "figma-link": "https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2006-123",
+    "code-link": "https://github.com/canonical/vanilla-framework/blob/d0197b27f5733789d6d23536eabe68356e045ae1/scss/_patterns_form-tick-elements.scss"
   },
   {
     "name": "Chip",
@@ -67,7 +79,9 @@
     "usage": "chip/usage.md",
     "description": "chip/description.md",
     "anatomy": "chip/anatomy.md",
-    "examples": "chip/examples.md"
+    "examples": "chip/examples.md",
+    "figma-link": "https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-19",
+    "code-link": "https://github.com/canonical/vanilla-framework/blob/d0197b27f5733789d6d23536eabe68356e045ae1/scss/_patterns_chip.scss"
   },
   {
     "name": "Contextual menu",
@@ -77,7 +91,9 @@
     "usage": "contextual-menu/usage.md",
     "description": "contextual-menu/description.md",
     "anatomy": "contextual-menu/anatomy.md",
-    "examples": "contextual-menu/examples.md"
+    "examples": "contextual-menu/examples.md",
+    "figma-link": "",
+    "code-link": ""
   },
   {
     "name": "Divider",
@@ -87,7 +103,9 @@
     "usage": "divider/usage.md",
     "description": "divider/description.md",
     "anatomy": "divider/anatomy.md",
-    "examples": "divider/examples.md"
+    "examples": "divider/examples.md",
+    "figma-link": "",
+    "code-link": ""
   },
   {
     "name": "Input",
@@ -97,7 +115,9 @@
     "usage": "input/usage.md",
     "description": "input/description.md",
     "anatomy": "input/anatomy.md",
-    "examples": "input/examples.md"
+    "examples": "input/examples.md",
+    "figma-link": "https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-28",
+    "code-link": "https://www.figma.com/exit?url=https%3A%2F%2Fgithub.com%2Fcanonical%2Fvanilla-framework%2Fblob%2Fb1d651365b0714586e6ea14349dea763819c256e%2Fscss%2F_base_forms.scss%23L14"
   },
   {
     "name": "Link",
@@ -107,7 +127,9 @@
     "usage": "link/usage.md",
     "description": "link/description.md",
     "anatomy": "link/anatomy.md",
-    "examples": "link/examples.md"
+    "examples": "link/examples.md",
+    "figma-link": "",
+    "code-link": ""
   },
   {
     "name": "Code",
@@ -117,7 +139,9 @@
     "usage": "code/usage.md",
     "description": "code/description.md",
     "anatomy": "code/anatomy.md",
-    "examples": "code/examples.md"
+    "examples": "code/examples.md",
+    "figma-link": "",
+    "code-link": ""
   },
   {
     "name": "Notification",
@@ -127,7 +151,9 @@
     "usage": "notification/usage.md",
     "description": "notification/description.md",
     "anatomy": "notification/anatomy.md",
-    "examples": "notification/examples.md"
+    "examples": "notification/examples.md",
+    "figma-link": "https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-35",
+    "code-link": "https://github.com/canonical/vanilla-framework/blob/b1d651365b0714586e6ea14349dea763819c256e/scss/_patterns_notifications.scss"
   },
   {
     "name": "Radio",
@@ -137,7 +163,9 @@
     "usage": "radio/usage.md",
     "description": "radio/description.md",
     "anatomy": "radio/anatomy.md",
-    "examples": "radio/examples.md"
+    "examples": "radio/examples.md",
+    "figma-link": "https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-38",
+    "code-link": "https://github.com/canonical/vanilla-framework/blob/b1d651365b0714586e6ea14349dea763819c256e/scss/_patterns_form-tick-elements.scss#L101"
   },
   {
     "name": "Search",
@@ -147,7 +175,9 @@
     "usage": "search/usage.md",
     "description": "search/description.md",
     "anatomy": "search/anatomy.md",
-    "examples": "search/examples.md"
+    "examples": "search/examples.md",
+    "figma-link": "",
+    "code-link": ""
   },
   {
     "name": "Segmented control",
@@ -157,7 +187,9 @@
     "usage": "segmented-control/usage.md",
     "description": "segmented-control/description.md",
     "anatomy": "segmented-control/anatomy.md",
-    "examples": "segmented-control/examples.md"
+    "examples": "segmented-control/examples.md",
+    "figma-link": "",
+    "code-link": ""
   },
   {
     "name": "Select",
@@ -167,7 +199,9 @@
     "usage": "select/usage.md",
     "description": "select/description.md",
     "anatomy": "select/anatomy.md",
-    "examples": "select/examples.md"
+    "examples": "select/examples.md",
+    "figma-link": "",
+    "code-link": ""
   },
   {
     "name": "Switch",
@@ -177,7 +211,9 @@
     "usage": "switch/usage.md",
     "description": "switch/description.md",
     "anatomy": "switch/anatomy.md",
-    "examples": "switch/examples.md"
+    "examples": "switch/examples.md",
+    "figma-link": "https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-48",
+    "code-link": "https://github.com/canonical/vanilla-framework/blob/b1d651365b0714586e6ea14349dea763819c256e/scss/_patterns_switch.scss"
   },
   {
     "name": "Table of contents",
@@ -187,7 +223,9 @@
     "usage": "table-of-contents/usage.md",
     "description": "table-of-contents/description.md",
     "anatomy": "table-of-contents/anatomy.md",
-    "examples": "table-of-contents/examples.md"
+    "examples": "table-of-contents/examples.md",
+    "figma-link": "",
+    "code-link": ""
   },
   {
     "name": "Tabs",
@@ -197,7 +235,9 @@
     "usage": "tabs/usage.md",
     "description": "tabs/description.md",
     "anatomy": "tabs/anatomy.md",
-    "examples": "tabs/examples.md"
+    "examples": "tabs/examples.md",
+    "figma-link": "https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-50",
+    "code-link": "https://github.com/canonical/vanilla-framework/blob/b1d651365b0714586e6ea14349dea763819c256e/scss/_patterns_tabs.scss"
   },
   {
     "name": "Text area",
@@ -207,7 +247,9 @@
     "usage": "text-area/usage.md",
     "description": "text-area/description.md",
     "anatomy": "text-area/anatomy.md",
-    "examples": "text-area/examples.md"
+    "examples": "text-area/examples.md",
+    "figma-link": "",
+    "code-link": ""
   },
   {
     "name": "Tooltip",
@@ -217,7 +259,9 @@
     "usage": "tooltip/usage.md",
     "description": "tooltip/description.md",
     "anatomy": "tooltip/anatomy.md",
-    "examples": "tooltip/examples.md"
+    "examples": "tooltip/examples.md",
+    "figma-link": "https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-52",
+    "code-link": "https://github.com/canonical/vanilla-framework/blob/b1d651365b0714586e6ea14349dea763819c256e/scss/_patterns_tooltips.scss"
   },
   {
     "name": "Code snippet",
@@ -227,7 +271,9 @@
     "usage": "code-snippet/usage.md",
     "description": "code-snippet/description.md",
     "anatomy": "code-snippet/anatomy.md",
-    "examples": "code-snippet/examples.md"
+    "examples": "code-snippet/examples.md",
+    "figma-link": "",
+    "code-link": ""
   },
   {
     "name": "Navigation",
@@ -237,7 +283,9 @@
     "usage": "navigation/usage.md",
     "description": "navigation/description.md",
     "anatomy": "navigation/anatomy.md",
-    "examples": "navigation/examples.md"
+    "examples": "navigation/examples.md",
+    "figma-link": "",
+    "code-link": ""
   },
   {
     "name": "Side navigation",
@@ -247,7 +295,9 @@
     "usage": "side-navigation/usage.md",
     "description": "side-navigation/description.md",
     "anatomy": "side-navigation/anatomy.md",
-    "examples": "side-navigation/examples.md"
+    "examples": "side-navigation/examples.md",
+    "figma-link": "",
+    "code-link": ""
   },
   {
     "name": "Search and filter",
@@ -257,7 +307,9 @@
     "usage": "search-and-filter/usage.md",
     "description": "search-and-filter/description.md",
     "anatomy": "search-and-filter/anatomy.md",
-    "examples": "search-and-filter/examples.md"
+    "examples": "search-and-filter/examples.md",
+    "figma-link": "",
+    "code-link": ""
   },
   {
     "name": "Table",
@@ -267,6 +319,8 @@
     "usage": "table/usage.md",
     "description": "table/description.md",
     "anatomy": "table/anatomy.md",
-    "examples": "table/examples.md"
+    "examples": "table/examples.md",
+    "figma-link": "",
+    "code-link": ""
   }
 ]

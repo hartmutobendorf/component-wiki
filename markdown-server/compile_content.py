@@ -75,6 +75,8 @@ def compile_component_markdown(
     )
     frontmatter += f"type: {component_data['type']}\n"
     frontmatter += f"last-edited: {component_data['last-edited']}\n"
+    frontmatter += f"figma-link: {component_data.get('figma-link', '')}\n"
+    frontmatter += f"code-link: {component_data.get('code-link', '')}\n"
     frontmatter += "---\n\n"
 
     # Start with h1 title
