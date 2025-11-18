@@ -287,15 +287,17 @@ async function main() {
     console.log("📊 Extracting structured data from HTML...")
     const rowsData = extractTableData(pageHtml)
 
+    // Create components metadata directory
+    await Bun.$`mkdir -p ../app/src/content/components`
+
     // Process rows and create markdown files
     console.log("\n📝 Processing rows and creating markdown files...")
-    const structuredData = []
 
     for (const row of rowsData) {
         const name = row.name
         const folderName = name.toLowerCase().replace(/[^a-z0-9]+/g, "-")
-        const folderPath = `../content/${folderName}`
-        const imagesFolderPath = `${folderPath}/images`
+        const mdFolderPath = `../app/src/content/md/${folderName}`
+        const imagesFolderPath = `${mdFolderPath}/images`
 
         // Create directories
         await Bun.$`mkdir -p ${imagesFolderPath}`
@@ -310,52 +312,42 @@ async function main() {
             { key: "examples", fileName: "examples.md" },
         ] as const
 
-        const contentPaths: Record<string, string> = {}
-
         for (const field of contentFields) {
             const html = row[field.key]
-            const markdownPath = `${folderPath}/${field.fileName}`
+            const markdownPath = `${mdFolderPath}/${field.fileName}`
 
             // Convert HTML to Markdown with image handling
             const markdown = await convertHtmlToMarkdown(
                 html,
-                folderPath,
+                mdFolderPath,
                 imagesFolderPath
             )
 
             // Save the markdown content
             await Bun.write(markdownPath, markdown)
-
-            // Store relative path
-            contentPaths[field.key] = `${folderName}/${field.fileName}`
         }
 
-        // Create structured object matching the current format
-        const structuredRow = {
+        // Create metadata JSON file for this component
+        const componentMetadata = {
             name: name,
-            "documentation-status": row["documentation-status"],
             type: row.type,
-            "last-edited": row["last-edited"],
-            usage: contentPaths.usage,
-            description: contentPaths.description,
-            anatomy: contentPaths.anatomy,
-            examples: contentPaths.examples,
-            "figma-link": row["figma-link"],
-            "code-link": row["code-link"],
+            documentationStatus: row["documentation-status"],
+            lastEdited: row["last-edited"],
+            figmaLink: row["figma-link"],
+            codeLink: row["code-link"],
         }
 
-        structuredData.push(structuredRow)
+        const metadataPath = `../app/src/content/components/${folderName}.json`
+        await Bun.write(
+            metadataPath,
+            JSON.stringify(componentMetadata, null, 2)
+        )
+
         console.log(`  ✓ Processed: ${name}`)
     }
 
-    // Save structured data to JSON
-    const structuredJsonPath = "../content/content-schema.json"
-    await Bun.write(
-        structuredJsonPath,
-        JSON.stringify(structuredData, null, 2)
-    )
-    console.log(`\n📁 Content schema saved to: ${structuredJsonPath}`)
-    console.log(`📁 Markdown files saved to: ../content/`)
+    console.log(`\n📁 Metadata saved to: ../app/src/content/components/`)
+    console.log(`📁 Markdown files saved to: ../app/src/content/md/`)
     console.log("\n✅ Done!")
 }
 

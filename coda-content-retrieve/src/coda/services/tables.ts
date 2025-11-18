@@ -81,3 +81,34 @@ export async function getTableColumns(
         `Failed to fetch columns for table ${tableIdOrName} from doc ${docId}`
     )
 }
+
+/**
+ * Get a specific row from a table
+ */
+export async function getRow(
+    client: CodaClient,
+    docId: string,
+    tableIdOrName: string,
+    rowIdOrName: string,
+    options?: {
+        useColumnNames?: boolean
+        valueFormat?: "simple" | "simpleWithArrays" | "rich"
+    }
+) {
+    const response = await client.GET(
+        "/docs/{docId}/tables/{tableIdOrName}/rows/{rowIdOrName}",
+        {
+            params: {
+                path: { docId, tableIdOrName, rowIdOrName },
+                query: {
+                    useColumnNames: options?.useColumnNames,
+                    valueFormat: options?.valueFormat,
+                },
+            },
+        }
+    )
+    return handleApiResponse(
+        response,
+        `Failed to fetch row ${rowIdOrName} from table ${tableIdOrName} in doc ${docId}`
+    )
+}

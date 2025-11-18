@@ -40,7 +40,7 @@ jobs:
             - name: Check for content changes
               id: git-check
               run: |
-                  git add content/
+                  git add app/src/content/
                   if git diff --cached --quiet; then
                     echo "changes=false" >> $GITHUB_OUTPUT
                   else

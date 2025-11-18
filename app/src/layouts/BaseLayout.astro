@@ -1,0 +1,52 @@
+---
+import '../styles/page.scss';
+import { getCollection } from 'astro:content';
+
+interface Props {
+  title?: string;
+  currentSlug?: string;
+}
+
+const { title = 'Component Wiki', currentSlug = '' } = Astro.props;
+
+// Get all components from the collection
+const components = await getCollection('components');
+
+// Create nav items
+const navItems = components.map(component => ({
+  name: component.data.name,
+  slug: component.id
+}));
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <section class="content-container">
+      <div class="row scrollable-row">
+        <aside class="col-3 scrollable-sidebar">
+          <side-navigation
+            nav-items={JSON.stringify(navItems)}
+            current-slug={currentSlug}
+          ></side-navigation>
+        </aside>
+
+        <main class="col-9 scrollable-content">
+          <div>
+            <slot />
+          </div>
+        </main>
+      </div>
+    </section>
+
+    <script>
+      // Import the side-navigation web component
+      import '../components/sideNavigation/side-navigation.js';
+    </script>
+  </body>
+</html>

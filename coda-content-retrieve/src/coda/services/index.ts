@@ -38,6 +38,15 @@ export function createServices(client: CodaClient) {
         ) => tableService.getTableRows(client, docId, tableIdOrName, options),
         getTableColumns: (docId: string, tableIdOrName: string) =>
             tableService.getTableColumns(client, docId, tableIdOrName),
+        getRow: (
+            docId: string,
+            tableIdOrName: string,
+            rowIdOrName: string,
+            options?: {
+                useColumnNames?: boolean
+                valueFormat?: "simple" | "simpleWithArrays" | "rich"
+            }
+        ) => tableService.getRow(client, docId, tableIdOrName, rowIdOrName, options),
     }
 }
 

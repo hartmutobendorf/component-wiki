@@ -1,0 +1,102 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection, getEntry } from 'astro:content';
+
+// Generate paths for all components
+export async function getStaticPaths() {
+  const components = await getCollection('components');
+
+  return components.map((component: any) => ({
+    params: { slug: component.id },
+    props: { componentId: component.id }
+  }));
+}
+
+const { componentId } = Astro.props;
+
+// Get component metadata
+const component = await getEntry('components', componentId);
+const metadata = component.data;
+
+// Import markdown files using glob
+const markdownModules = import.meta.glob('../content/md/*/*.md');
+
+// Helper to load and render markdown
+async function loadMarkdownSection(section: string) {
+  const path = `../content/md/${componentId}/${section}.md`;
+  const module = markdownModules[path];
+
+  if (!module) {
+    return { hasContent: false, Content: null };
+  }
+
+  try {
+    const loaded = await module();
+    return {
+      hasContent: true,
+      Content: (loaded as any).default || (loaded as any).Content
+    };
+  } catch (error) {
+    console.error(`Error loading ${section}:`, error);
+    return { hasContent: false, Content: null };
+  }
+}
+
+const description = await loadMarkdownSection('description');
+const usage = await loadMarkdownSection('usage');
+const anatomy = await loadMarkdownSection('anatomy');
+const examples = await loadMarkdownSection('examples');
+---
+
+<BaseLayout title={`${metadata.name} - Component Wiki`} currentSlug={componentId}>
+  <div class="frontmatter">
+    <p><strong>Component:</strong> {metadata.name}</p>
+    <p><strong>Type:</strong> {metadata.type}</p>
+    <p><strong>Documentation Status:</strong> {metadata.documentationStatus}</p>
+    <p><strong>Last Edited:</strong> {metadata.lastEdited}</p>
+    {metadata.figmaLink && (
+      <p>
+        <strong>Figma:</strong>{' '}
+        <a href={metadata.figmaLink} target="_blank" rel="noopener noreferrer">
+          View in Figma
+        </a>
+      </p>
+    )}
+    {metadata.codeLink && (
+      <p>
+        <strong>Code:</strong>{' '}
+        <a href={metadata.codeLink} target="_blank" rel="noopener noreferrer">
+          View Code
+        </a>
+      </p>
+    )}
+  </div>
+
+  {description.hasContent && description.Content && (
+    <section>
+      <h2>Description</h2>
+      <description.Content />
+    </section>
+  )}
+
+  {usage.hasContent && usage.Content && (
+    <section>
+      <h2>Usage</h2>
+      <usage.Content />
+    </section>
+  )}
+
+  {anatomy.hasContent && anatomy.Content && (
+    <section>
+      <h2>Anatomy</h2>
+      <anatomy.Content />
+    </section>
+  )}
+
+  {examples.hasContent && examples.Content && (
+    <section>
+      <h2>Examples</h2>
+      <examples.Content />
+    </section>
+  )}
+</BaseLayout>
