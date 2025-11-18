@@ -1,6 +1,6 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
 import { getCollection, getEntry } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
 
 // Generate paths for all components
 export async function getStaticPaths() {
@@ -93,8 +93,14 @@ const examples = await loadMarkdownSection('examples');
 
   {description.hasContent && description.Content && (
     <section>
-      <h2>Description</h2>
       <description.Content />
+    </section>
+  )}
+
+    {anatomy.hasContent && anatomy.Content && (
+    <section>
+      <h2>Anatomy</h2>
+      <anatomy.Content />
     </section>
   )}
 
@@ -105,12 +111,7 @@ const examples = await loadMarkdownSection('examples');
     </section>
   )}
 
-  {anatomy.hasContent && anatomy.Content && (
-    <section>
-      <h2>Anatomy</h2>
-      <anatomy.Content />
-    </section>
-  )}
+  
 
   {examples.hasContent && examples.Content && (
     <section>
