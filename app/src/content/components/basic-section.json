@@ -1,6 +1,7 @@
 {
   "name": "Basic section",
   "type": "Pattern",
+  "tiers": "Sites",
   "documentationStatus": "Needs work",
   "lastEdited": "Nov 18, 2025",
   "figmaLink": "",

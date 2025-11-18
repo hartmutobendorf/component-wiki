@@ -1,6 +1,7 @@
 {
   "name": "Tabs",
   "type": "Component",
+  "tiers": "Global",
   "documentationStatus": "Minimal",
   "lastEdited": "Nov 17, 2025",
   "figmaLink": "https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-50",

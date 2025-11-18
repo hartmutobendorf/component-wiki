@@ -1,6 +1,7 @@
 {
   "name": "Code snippet",
   "type": "Complex component",
+  "tiers": "Global",
   "documentationStatus": "Needs work",
   "lastEdited": "Nov 17, 2025",
   "figmaLink": "",
