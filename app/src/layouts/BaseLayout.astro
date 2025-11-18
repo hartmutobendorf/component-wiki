@@ -27,22 +27,36 @@ const navItems = components.map(component => ({
     <title>{title}</title>
   </head>
   <body>
-    <section class="content-container">
-      <div class="row scrollable-row">
-        <aside class="col-3 scrollable-sidebar">
-          <side-navigation
-            nav-items={JSON.stringify(navItems)}
-            current-slug={currentSlug}
-          ></side-navigation>
-        </aside>
-
-        <main class="col-9 scrollable-content">
-          <div>
-            <slot />
+    <header class="p-navigation is-sticky mobile-header">
+      <div class="p-navigation__row">
+        <div class="p-navigation__banner">
+          <div class="p-navigation__tagged-logo">
+            <a class="p-navigation__link" href="/">
+              Component Wiki
+            </a>
           </div>
-        </main>
+        </div>
       </div>
-    </section>
+    </header>
+
+    <div class="l-site">
+      <aside class="l-site-nav">
+        <side-navigation
+          nav-items={JSON.stringify(navItems)}
+          current-slug={currentSlug}
+        ></side-navigation>
+      </aside>
+
+      <main class="l-site-main">
+        <div class="p-strip is-shallow">
+          <div class="row">
+            <div class="col-12">
+              <slot />
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
 
     <script>
       // Import the side-navigation web component

@@ -49,28 +49,46 @@ const examples = await loadMarkdownSection('examples');
 ---
 
 <BaseLayout title={`${metadata.name} - Component Wiki`} currentSlug={componentId}>
-  <div class="frontmatter">
-    <p><strong>Component:</strong> {metadata.name}</p>
-    <p><strong>Type:</strong> {metadata.type}</p>
-    <p><strong>Tier:</strong> {metadata.tiers}</p>
-    <p><strong>Documentation Status:</strong> {metadata.documentationStatus}</p>
-    <p><strong>Last Edited:</strong> {metadata.lastEdited}</p>
-    {metadata.figmaLink && (
-      <p>
-        <strong>Figma:</strong>{' '}
-        <a href={metadata.figmaLink} target="_blank" rel="noopener noreferrer">
-          View in Figma
-        </a>
-      </p>
-    )}
-    {metadata.codeLink && (
-      <p>
-        <strong>Code:</strong>{' '}
-        <a href={metadata.codeLink} target="_blank" rel="noopener noreferrer">
-          View Code
-        </a>
-      </p>
-    )}
+  <h1>{metadata.name}</h1>
+
+  <div class="p-card metadata-card">
+    <div class="p-card__content">
+      <dl class="metadata-list">
+        <dt>Type</dt>
+        <dd>{metadata.type}</dd>
+
+        <dt>Tier</dt>
+        <dd>{metadata.tiers}</dd>
+
+        <dt>Documentation Status</dt>
+        <dd>{metadata.documentationStatus}</dd>
+
+        <dt>Last Edited</dt>
+        <dd>{metadata.lastEdited}</dd>
+
+        {metadata.figmaLink && (
+          <>
+            <dt>Figma</dt>
+            <dd>
+              <a href={metadata.figmaLink} target="_blank" rel="noopener noreferrer">
+                View in Figma
+              </a>
+            </dd>
+          </>
+        )}
+
+        {metadata.codeLink && (
+          <>
+            <dt>Code</dt>
+            <dd>
+              <a href={metadata.codeLink} target="_blank" rel="noopener noreferrer">
+                View Code
+              </a>
+            </dd>
+          </>
+        )}
+      </dl>
+    </div>
   </div>
 
   {description.hasContent && description.Content && (
@@ -101,3 +119,46 @@ const examples = await loadMarkdownSection('examples');
     </section>
   )}
 </BaseLayout>
+
+<style>
+  .metadata-card {
+    float: right;
+    width: 300px;
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+    clear: right;
+  }
+
+  .metadata-list {
+    margin: 0;
+  }
+
+  .metadata-list dt {
+    font-weight: 700;
+    margin-top: 0.5rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .metadata-list dt:first-child {
+    margin-top: 0;
+  }
+
+  .metadata-list dd {
+    margin-left: 0;
+    margin-bottom: 0;
+  }
+
+  .p-card__title {
+    margin-bottom: 0.5rem;
+  }
+
+  /* Ensure content clears the float on smaller screens */
+  @media (max-width: 768px) {
+    .metadata-card {
+      float: none;
+      width: 100%;
+      margin-left: 0;
+      margin-bottom: 1.5rem;
+    }
+  }
+</style>

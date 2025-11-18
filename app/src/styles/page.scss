@@ -7,50 +7,78 @@
     box-sizing: border-box;
 }
 
-html,
-body {
-    height: 100vh;
-    overflow: hidden;
+html {
+    margin: 0;
 }
 
 body {
+    margin: 0;
+}
+
+// Mobile header - only visible on small screens
+// Using Vanilla's navigation threshold (1036px) for consistency
+.mobile-header {
+    display: none;
+
+    @media (max-width: $breakpoint-navigation-threshold) {
+        display: block;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+    }
+}
+
+// Site layout
+.l-site {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    width: 100vw;
+}
+
+// Side navigation area
+.l-site-nav {
+    width: 250px;
+    height: 100%;
+    flex-shrink: 0;
     display: flex;
     flex-direction: column;
-}
+    border-right: 1px solid #cdcdcd;
+    background: #fff;
 
-.content-container {
-    flex: 1;
-    overflow: hidden;
-    padding-top: 2rem;
-}
+    side-navigation {
+        flex: 1;
+        overflow-y: auto;
+        display: block;
+        height: 100%;
+    }
 
-.scrollable-row {
-    height: 100%;
-}
+    @media (max-width: $breakpoint-navigation-threshold) {
+        // On mobile, make it full viewport for drawer pattern
+        // The component manages its own pointer-events internally
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: auto;
+        height: auto;
+        z-index: 200;
+        border-right: none;
+        pointer-events: none;
 
-.scrollable-sidebar {
-    height: 100%;
-    overflow-y: auto;
-    overflow-x: hidden;
-}
-
-.scrollable-content {
-    height: 100%;
-    overflow-y: auto;
-    overflow-x: hidden;
-}
-
-.frontmatter {
-    margin-bottom: 2rem;
-    padding: 1rem;
-    background-color: #f7f7f7;
-    border-left: 4px solid #0066cc;
-
-    p {
-        margin: 0.5rem 0;
-
-        strong {
-            color: #333;
+        side-navigation {
+            height: 100vh;
         }
+    }
+}
+
+// Main content area
+.l-site-main {
+    flex: 1;
+
+    min-width: 0;
+    overflow: auto;
+    .p-strip {
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
     }
 }
