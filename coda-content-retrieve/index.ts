@@ -7,6 +7,7 @@ interface RowData {
     name: string
     "documentation-status": string
     type: string
+    tiers: string
     "last-edited": string
     usage: string
     description: string
@@ -141,6 +142,7 @@ function extractTableData(pageHtml: string): RowData[] {
             name,
             "documentation-status": "",
             type: "",
+            tiers: "",
             "last-edited": "",
             usage: "",
             description: "",
@@ -163,6 +165,13 @@ function extractTableData(pageHtml: string): RowData[] {
         rowData.type = typeLink.length
             ? typeLink.text().trim()
             : typeCell.text().trim()
+
+        // Extract tiers (from link text)
+        const tiersCell = cells.eq(columnMap["Tiers"])
+        const tiersLink = tiersCell.find("a").first()
+        rowData.tiers = tiersLink.length
+            ? tiersLink.text().trim()
+            : tiersCell.text().trim()
 
         // Extract last edited date
         const lastEditedCell = cells.eq(columnMap["Last edited"])
@@ -331,6 +340,7 @@ async function main() {
         const componentMetadata = {
             name: name,
             type: row.type,
+            tiers: row.tiers,
             documentationStatus: row["documentation-status"],
             lastEdited: row["last-edited"],
             figmaLink: row["figma-link"],

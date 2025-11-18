@@ -7,6 +7,7 @@ const componentsCollection = defineCollection({
   schema: z.object({
     name: z.string(),
     type: z.enum(['Component', 'Complex component', 'Pattern', 'Mental model']),
+    tiers: z.enum(['Global', 'Sites', 'Apps']),
     documentationStatus: z.enum(['All good', 'Minimal', 'Unclear', 'Needs work']),
     lastEdited: z.string(),
     figmaLink: z.string().url().optional().or(z.literal('')),
