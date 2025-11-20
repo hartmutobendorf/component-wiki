@@ -73,12 +73,14 @@ export class SideNavigationComponent extends LitElement {
                 }
 
                 /* Only show and enable overlay when drawer is expanded */
-                .p-side-navigation.is-drawer-expanded .p-side-navigation__overlay {
+                .p-side-navigation.is-drawer-expanded
+                    .p-side-navigation__overlay {
                     pointer-events: auto;
                     visibility: visible;
                 }
 
-                .p-side-navigation.is-drawer-expanded .p-side-navigation__drawer {
+                .p-side-navigation.is-drawer-expanded
+                    .p-side-navigation__drawer {
                     pointer-events: auto;
                 }
             }
@@ -125,14 +127,11 @@ export class SideNavigationComponent extends LitElement {
     }
 
     trapFocus(event) {
-        if (this.ignoreFocusChanges || !this.expandedSidenavContainer)
-            return
-        const sidenavContainer =
-            this.shadowRoot.querySelector(".p-side-navigation")
-        if (
-            !sidenavContainer.classList.contains("is-drawer-expanded")
+        if (this.ignoreFocusChanges || !this.expandedSidenavContainer) return
+        const sidenavContainer = this.shadowRoot.querySelector(
+            ".p-side-navigation"
         )
-            return
+        if (!sidenavContainer.classList.contains("is-drawer-expanded")) return
         const sidenavDrawer = sidenavContainer.querySelector(
             ".p-side-navigation__drawer"
         )
@@ -161,10 +160,7 @@ export class SideNavigationComponent extends LitElement {
     focusFirstDescendant(element) {
         for (var i = 0; i < element.childNodes.length; i++) {
             var child = element.childNodes[i]
-            if (
-                this.attemptFocus(child) ||
-                this.focusFirstDescendant(child)
-            ) {
+            if (this.attemptFocus(child) || this.focusFirstDescendant(child)) {
                 return true
             }
         }
@@ -174,10 +170,7 @@ export class SideNavigationComponent extends LitElement {
     focusLastDescendant(element) {
         for (var i = element.childNodes.length - 1; i >= 0; i--) {
             var child = element.childNodes[i]
-            if (
-                this.attemptFocus(child) ||
-                this.focusLastDescendant(child)
-            ) {
+            if (this.attemptFocus(child) || this.focusLastDescendant(child)) {
                 return true
             }
         }
@@ -185,8 +178,9 @@ export class SideNavigationComponent extends LitElement {
     }
 
     toggleDrawer(show) {
-        const sideNavigation =
-            this.shadowRoot.querySelector(".p-side-navigation")
+        const sideNavigation = this.shadowRoot.querySelector(
+            ".p-side-navigation"
+        )
         const toggleButtonOutsideDrawer = sideNavigation.querySelector(
             ".p-side-navigation__toggle"
         )
@@ -202,10 +196,7 @@ export class SideNavigationComponent extends LitElement {
                 sideNavigation.classList.add("is-drawer-expanded")
                 sideNavigation.classList.remove("is-drawer-hidden")
 
-                toggleButtonOutsideDrawer.setAttribute(
-                    "aria-expanded",
-                    true
-                )
+                toggleButtonOutsideDrawer.setAttribute("aria-expanded", true)
                 toggleButtonInsideDrawer.setAttribute("aria-expanded", true)
                 this.focusAfterClose = toggleButtonOutsideDrawer
                 document.addEventListener(
@@ -217,14 +208,8 @@ export class SideNavigationComponent extends LitElement {
                 sideNavigation.classList.remove("is-drawer-expanded")
                 sideNavigation.classList.add("is-drawer-collapsed")
 
-                toggleButtonOutsideDrawer.setAttribute(
-                    "aria-expanded",
-                    false
-                )
-                toggleButtonInsideDrawer.setAttribute(
-                    "aria-expanded",
-                    false
-                )
+                toggleButtonOutsideDrawer.setAttribute("aria-expanded", false)
+                toggleButtonInsideDrawer.setAttribute("aria-expanded", false)
                 if (this.focusAfterClose && this.focusAfterClose.focus) {
                     this.focusAfterClose.focus()
                 }
@@ -238,20 +223,17 @@ export class SideNavigationComponent extends LitElement {
     }
 
     setupDrawerToggle() {
-        const sideNavigation =
-            this.shadowRoot.querySelector(".p-side-navigation")
-        const toggles = this.shadowRoot.querySelectorAll(
-            ".js-drawer-toggle"
+        const sideNavigation = this.shadowRoot.querySelector(
+            ".p-side-navigation"
         )
+        const toggles = this.shadowRoot.querySelectorAll(".js-drawer-toggle")
         const drawerEl = sideNavigation.querySelector(
             ".p-side-navigation__drawer"
         )
 
         // Handle animation end
         drawerEl.addEventListener("animationend", () => {
-            if (
-                !sideNavigation.classList.contains("is-drawer-expanded")
-            ) {
+            if (!sideNavigation.classList.contains("is-drawer-expanded")) {
                 sideNavigation.classList.add("is-drawer-hidden")
             }
         })
@@ -269,9 +251,7 @@ export class SideNavigationComponent extends LitElement {
                 event.preventDefault()
                 sideNavigation.classList.remove("is-drawer-hidden")
                 this.toggleDrawer(
-                    !sideNavigation.classList.contains(
-                        "is-drawer-expanded"
-                    )
+                    !sideNavigation.classList.contains("is-drawer-expanded")
                 )
             })
         })
@@ -304,13 +284,15 @@ export class SideNavigationComponent extends LitElement {
         if (!this.navItems || this.navItems.length === 0) {
             return html`
                 <div
-                    class="p-side-navigation is-drawer-hidden ${this.darkMode ? "is-dark" : ""}"
+                    class="p-side-navigation is-sticky is-drawer-hidden ${this
+                        .darkMode
+                        ? "is-dark"
+                        : ""}"
                     id="drawer"
                 >
                     <button
                         class="p-side-navigation__toggle js-drawer-toggle"
                         aria-controls="drawer"
-                        aria-expanded="false"
                     >
                         Toggle side navigation
                     </button>
@@ -324,16 +306,17 @@ export class SideNavigationComponent extends LitElement {
                         class="p-side-navigation__drawer"
                         aria-label="Side navigation"
                     >
-                        <div class="p-side-navigation__drawer-header">
-                            <button
-                                class="p-side-navigation__toggle--in-drawer js-drawer-toggle"
-                                aria-controls="drawer"
-                                aria-expanded="false"
-                            >
-                                Toggle side navigation
-                            </button>
+                        <div class="p-strip is-shallow">
+                            <div class="p-side-navigation__drawer-header">
+                                <button
+                                    class="p-side-navigation__toggle--in-drawer js-drawer-toggle"
+                                    aria-controls="drawer"
+                                >
+                                    Toggle side navigation
+                                </button>
+                            </div>
+                            <p>No navigation items available</p>
                         </div>
-                        <p>No navigation items available</p>
                     </nav>
                 </div>
             `
@@ -341,13 +324,12 @@ export class SideNavigationComponent extends LitElement {
 
         return html`
             <div
-                class="p-side-navigation is-drawer-hidden ${this.darkMode ? "is-dark" : ""}"
+                class="p-side-navigation is-sticky is-drawer-hidden"
                 id="drawer"
             >
                 <button
                     class="p-side-navigation__toggle js-drawer-toggle"
                     aria-controls="drawer"
-                    aria-expanded="false"
                 >
                     Toggle side navigation
                 </button>
@@ -361,22 +343,23 @@ export class SideNavigationComponent extends LitElement {
                     class="p-side-navigation__drawer"
                     aria-label="Side navigation"
                 >
-                    <div class="p-side-navigation__drawer-header">
-                        <button
-                            class="p-side-navigation__toggle--in-drawer js-drawer-toggle"
-                            aria-controls="drawer"
-                            aria-expanded="false"
-                        >
-                            Toggle side navigation
-                        </button>
-                    </div>
+                    <div class="p-strip is-shallow">
+                        <div class="p-side-navigation__drawer-header">
+                            <button
+                                class="p-side-navigation__toggle--in-drawer js-drawer-toggle"
+                                aria-controls="drawer"
+                            >
+                                Toggle side navigation
+                            </button>
+                        </div>
 
-                    <h3 class="p-side-navigation__heading">Components</h3>
-                    <ul class="p-side-navigation__list">
-                        ${this.navItems.map((item) =>
-                            this.renderNavigationItem(item)
-                        )}
-                    </ul>
+                        <h3 class="p-side-navigation__heading">Components</h3>
+                        <ul class="p-side-navigation__list">
+                            ${this.navItems.map((item) =>
+                                this.renderNavigationItem(item)
+                            )}
+                        </ul>
+                    </div>
                 </nav>
             </div>
         `

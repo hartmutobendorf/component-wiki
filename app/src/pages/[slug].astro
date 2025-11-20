@@ -49,9 +49,40 @@ const examples = await loadMarkdownSection('examples');
 ---
 
 <BaseLayout title={`${metadata.name} - Component Wiki`} currentSlug={componentId}>
-  <h1>{metadata.name}</h1>
+  <h1 slot="title">{metadata.name}</h1>
 
-  <div class="p-card metadata-card">
+  <div slot="meta" class="p-table-of-contents">
+    <div class="p-table-of-contents__section">
+      <h2 class="p-table-of-contents__header">On this page</h2>
+      <ul class="p-table-of-contents__list">
+        <li class="p-table-of-contents__item">
+          <a class="p-table-of-contents__link" href="#metadata">Metadata</a>
+        </li>
+        {description.hasContent && (
+          <li class="p-table-of-contents__item">
+            <a class="p-table-of-contents__link" href="#description">Description</a>
+          </li>
+        )}
+        {anatomy.hasContent && (
+          <li class="p-table-of-contents__item">
+            <a class="p-table-of-contents__link" href="#anatomy">Anatomy</a>
+          </li>
+        )}
+        {usage.hasContent && (
+          <li class="p-table-of-contents__item">
+            <a class="p-table-of-contents__link" href="#usage">Usage</a>
+          </li>
+        )}
+        {examples.hasContent && (
+          <li class="p-table-of-contents__item">
+            <a class="p-table-of-contents__link" href="#examples">Examples</a>
+          </li>
+        )}
+      </ul>
+    </div>
+  </div>
+
+  <div class="p-card metadata-card" id="metadata">
     <div class="p-card__content">
       <dl class="metadata-list">
         <dt>Type</dt>
@@ -92,74 +123,29 @@ const examples = await loadMarkdownSection('examples');
   </div>
 
   {description.hasContent && description.Content && (
-    <section>
+    <section id="description" class="u-text-max-width">
       <description.Content />
     </section>
   )}
 
-    {anatomy.hasContent && anatomy.Content && (
-    <section>
+  {anatomy.hasContent && anatomy.Content && (
+    <section id="anatomy" class="u-text-max-width">
       <h2>Anatomy</h2>
       <anatomy.Content />
     </section>
   )}
 
   {usage.hasContent && usage.Content && (
-    <section>
+    <section id="usage" class="u-text-max-width">
       <h2>Usage</h2>
       <usage.Content />
     </section>
   )}
 
-  
-
   {examples.hasContent && examples.Content && (
-    <section>
+    <section id="examples" class="u-text-max-width">
       <h2>Examples</h2>
       <examples.Content />
     </section>
   )}
 </BaseLayout>
-
-<style>
-  .metadata-card {
-    float: right;
-    width: 300px;
-    margin-left: 1.5rem;
-    margin-bottom: 1rem;
-    clear: right;
-  }
-
-  .metadata-list {
-    margin: 0;
-  }
-
-  .metadata-list dt {
-    font-weight: 700;
-    margin-top: 0.5rem;
-    margin-bottom: 0.25rem;
-  }
-
-  .metadata-list dt:first-child {
-    margin-top: 0;
-  }
-
-  .metadata-list dd {
-    margin-left: 0;
-    margin-bottom: 0;
-  }
-
-  .p-card__title {
-    margin-bottom: 0.5rem;
-  }
-
-  /* Ensure content clears the float on smaller screens */
-  @media (max-width: 768px) {
-    .metadata-card {
-      float: none;
-      width: 100%;
-      margin-left: 0;
-      margin-bottom: 1.5rem;
-    }
-  }
-</style>

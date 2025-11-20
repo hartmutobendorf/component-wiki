@@ -1,6 +1,7 @@
 ---
 import '../styles/page.scss';
 import { getCollection } from 'astro:content';
+import { ClientRouter } from 'astro:transitions';
 
 interface Props {
   title?: string;
@@ -25,34 +26,37 @@ const navItems = components.map(component => ({
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
+    <ClientRouter />
   </head>
   <body>
-    <header class="p-navigation is-sticky mobile-header">
-      <div class="p-navigation__row">
-        <div class="p-navigation__banner">
-          <div class="p-navigation__tagged-logo">
-            <a class="p-navigation__link" href="/">
-              Component Wiki
-            </a>
-          </div>
-        </div>
-      </div>
-    </header>
+    <div class="l-docs">
 
-    <div class="l-site">
-      <aside class="l-site-nav">
+      <aside class="l-docs__sidebar">
         <side-navigation
           nav-items={JSON.stringify(navItems)}
           current-slug={currentSlug}
+          transition:persist
         ></side-navigation>
       </aside>
 
-      <main class="l-site-main">
-        <div class="p-strip is-shallow">
-          <div class="row">
-            <div class="col-12">
-              <slot />
-            </div>
+      <div class="l-docs__title">
+        <div class="p-strip is-shallow u-no-padding--bottom" >
+          <div class="u-fixed-width" >
+            <slot name="title" />
+          </div>
+        </div>
+      </div>
+
+      <div class="l-docs__meta">
+        <div class="l-docs__sticky-container p-strip is-shallow ">
+          <slot name="meta" />
+        </div>
+      </div>
+
+      <main class="l-docs__main">
+        <div class="p-section">
+          <div class="u-fixed-width" >
+            <slot />
           </div>
         </div>
       </main>
@@ -61,6 +65,55 @@ const navItems = components.map(component => ({
     <script>
       // Import the side-navigation web component
       import '../components/sideNavigation/side-navigation.js';
+
+      // Update the side navigation current-slug on page navigation
+      document.addEventListener('astro:page-load', () => {
+        const sidebar = document.querySelector('side-navigation');
+        if (sidebar) {
+          // Get the current slug from the URL, removing leading slash
+          const currentSlug = window.location.pathname.substring(1) || '';
+          sidebar.setAttribute('current-slug', currentSlug);
+
+          // Restore scroll position
+          if (sidebar.shadowRoot) {
+            const drawerWrapper = sidebar.shadowRoot.getElementById('drawer');
+            const drawerNav = sidebar.shadowRoot.querySelector('.p-side-navigation__drawer');
+            
+            const savedPosition = sessionStorage.getItem('sideNavScrollPosition');
+            if (savedPosition) {
+              const scrollTop = parseInt(savedPosition, 10);
+              // Try restoring to wrapper first (desktop), then nav (mobile)
+              if (drawerWrapper && drawerWrapper.scrollHeight > drawerWrapper.clientHeight) {
+                drawerWrapper.scrollTop = scrollTop;
+              } else if (drawerNav) {
+                drawerNav.scrollTop = scrollTop;
+              }
+            }
+          }
+        }
+      });
+
+      // Save scroll position before navigation
+      document.addEventListener('astro:before-swap', () => {
+        const sidebar = document.querySelector('side-navigation');
+        if (sidebar && sidebar.shadowRoot) {
+          const drawerWrapper = sidebar.shadowRoot.getElementById('drawer');
+          const drawerNav = sidebar.shadowRoot.querySelector('.p-side-navigation__drawer');
+          
+          let scrollTop = 0;
+          if (drawerWrapper && drawerWrapper.scrollTop > 0) {
+            scrollTop = drawerWrapper.scrollTop;
+          } else if (drawerNav && drawerNav.scrollTop > 0) {
+            scrollTop = drawerNav.scrollTop;
+          }
+          
+          if (scrollTop > 0) {
+            sessionStorage.setItem('sideNavScrollPosition', scrollTop.toString());
+          } else {
+            sessionStorage.removeItem('sideNavScrollPosition');
+          }
+        }
+      });
     </script>
   </body>
 </html>
