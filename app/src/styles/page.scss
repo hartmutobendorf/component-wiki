@@ -1,3 +1,6 @@
+// Override assets path to use local fonts
+$assets-path: '/fonts/';
+
 @import "vanilla-framework";
 @include vanilla;
 
