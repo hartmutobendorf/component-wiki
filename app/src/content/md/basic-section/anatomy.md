@@ -1,4 +1,4 @@
-![image.png](images/c86efeda-a529-4e12-ac0f-0594cc215340.png)
+![image.png](images/8023c47a-3006-4875-bc92-62549283142b.png)
 
 1.  **Rule** p-rule : The rule component indicates the beginning of a new section.
 2.  **Heading** title : The title of the section is

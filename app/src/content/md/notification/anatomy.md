@@ -1,4 +1,4 @@
-![image.png](images/c81123e6-620c-4f81-84e1-2a2c12bdd942.png)
+![image.png](images/8adb91fe-67f9-4c9c-a6a0-d6dd76ccc5b0.png)
 
 1.  **Icon:** The icon gives additional visual information what type of notification this is.
 2.  **Title:** The title of the notification is a short description of the message that is being conveyed to the user. Shouldn’t be too long.
