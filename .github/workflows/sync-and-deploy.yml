@@ -38,6 +38,7 @@ jobs:
                   CODA_API_TOKEN: ${{ secrets.CODA_API_TOKEN }}
                   CODA_DOC_ID: ${{ secrets.CODA_DOC_ID }}
                   CODA_TABLE_ID: ${{ secrets.CODA_TABLE_ID }}
+                  CODA_CHANGE_LOG_TABLE_ID: ${{ secrets.CODA_CHANGE_LOG_TABLE_ID }}
               run: bun run index.ts
 
             - name: Check for content changes

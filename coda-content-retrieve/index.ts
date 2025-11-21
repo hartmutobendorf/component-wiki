@@ -399,6 +399,9 @@ async function main() {
         // Create directories
         await Bun.$`mkdir -p ${imagesFolderPath}`
 
+        // Clean up old images to avoid duplicates
+        await Bun.$`rm -f ${imagesFolderPath}/*.{png,jpg,jpeg,gif,webp,PNG,JPG,JPEG,GIF,WEBP}`
+
         console.log(`  Processing: ${name}`)
 
         // Convert HTML fields to Markdown and handle images
