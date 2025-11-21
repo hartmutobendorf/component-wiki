@@ -1,6 +1,5 @@
 ---
 import { getCollection, getEntry } from "astro:content";
-import CopyFigmaButton from "../components/CopyFigmaButton.astro";
 import FigmaLink from "../components/FigmaLink.astro";
 import GithubLink from "../components/GithubLink.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
@@ -168,9 +167,9 @@ const examples = await loadMarkdownSection("examples");
               </div>
 
               {metadata.figmaComponentDataPath && (
-                <CopyFigmaButton
-                  dataPath={`/${metadata.figmaComponentDataPath}`}
-                  textContent={metadata.name}
+                <copy-figma-button
+                  data-path={`/${metadata.figmaComponentDataPath}`}
+                  text-content={metadata.name}
                 />
               )}
             </div>
@@ -239,9 +238,9 @@ const examples = await loadMarkdownSection("examples");
       gap: 1.5rem;
       align-items: center;
     }
-
-    .metadata-list > button {
-      align-self: flex-start;
-    }
   </style>
+
+  <script>
+    import "../components/copyFigmaButton/copy-figma-button.js";
+  </script>
 </BaseLayout>
