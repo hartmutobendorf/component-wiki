@@ -1,5 +1,6 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
+import { viteStaticCopy } from 'vite-plugin-static-copy';
 
 // https://astro.build/config
 export default defineConfig({
@@ -10,6 +11,22 @@ export default defineConfig({
     }
   },
   vite: {
+    plugins: [
+      viteStaticCopy({
+        targets: [
+          {
+            // Copy Figma data and images, excluding markdown files
+            src: 'src/content/md/**/*.{html,png,jpg,jpeg,gif,svg,webp}',
+            dest: '.',
+            rename: (fileName, fileExtension, fullPath) => {
+              // Extract the path after 'src/content/' to preserve md/component/... structure
+              const match = fullPath.match(/src\/content\/(.+)/);
+              return match ? match[1] : fileName + fileExtension;
+            }
+          }
+        ]
+      })
+    ],
     css: {
       preprocessorOptions: {
         scss: {

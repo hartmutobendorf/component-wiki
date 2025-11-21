@@ -12,6 +12,8 @@ const componentsCollection = defineCollection({
     lastEdited: z.string(),
     figmaLink: z.string().url().optional().or(z.literal('')),
     codeLink: z.string().url().optional().or(z.literal('')),
+    figmaComponentDataPath: z.string().optional().or(z.literal('')),
+    componentExampleImage: z.string().optional().or(z.literal('')),
   }),
 });
 

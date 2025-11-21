@@ -1,2 +1,6 @@
+$assets-path: "/fonts/";
+
+@import "docs-typescale-overrides-settings";
+
 @import "vanilla-framework";
 @include vanilla;

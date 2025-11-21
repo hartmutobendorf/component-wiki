@@ -1,28 +1,30 @@
 // Override assets path to use local fonts
 $assets-path: "/fonts/";
 
+@import "docs-typescale-overrides-settings";
+
 @import "vanilla-framework";
 @include vanilla;
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 html {
-    margin: 0;
-    scrollbar-gutter: stable;
+  margin: 0;
+  scrollbar-gutter: stable;
 }
 
 body {
-    margin: 0;
+  margin: 0;
 }
 
 // Documentation layout styles
 .l-docs__sidebar {
-    side-navigation {
-        display: block;
-        height: 100%;
-    }
+  side-navigation {
+    display: block;
+    height: 100%;
+  }
 }

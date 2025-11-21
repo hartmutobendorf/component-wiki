@@ -1,12 +1,12 @@
 ---
 interface Props {
-  htmlContent: string;
+  dataPath: string;
   textContent?: string;
   buttonText?: string;
 }
 
 const {
-  htmlContent,
+  dataPath,
   textContent = "Button",
   buttonText = "Copy as Figma component",
 } = Astro.props;
@@ -17,15 +17,38 @@ const componentId = `copy-btn-${Math.random().toString(36).substring(2, 11)}`;
   {buttonText}
 </button>
 
-<script is:inline define:vars={{ componentId, htmlContent, textContent }}>
+<script is:inline define:vars={{ componentId, dataPath, textContent, buttonText }}>
   const button = document.getElementById(componentId);
+  let htmlContent = null;
 
   // Set fixed width on first load to prevent resize
   const originalWidth = button.offsetWidth;
   button.style.width = `${originalWidth}px`;
 
+  // Preload data after page loads
+  window.addEventListener('load', async () => {
+    try {
+      const response = await fetch(dataPath);
+      if (response.ok) {
+        htmlContent = await response.text();
+      } else {
+        console.error('Failed to load Figma component data:', response.statusText);
+      }
+    } catch (err) {
+      console.error('Failed to preload Figma component data:', err);
+    }
+  });
+
   async function copyToClipboard() {
     try {
+      if (!htmlContent) {
+        button.textContent = "No data available";
+        setTimeout(() => {
+          button.textContent = buttonText;
+        }, 2000);
+        return;
+      }
+
       const html = new Blob([htmlContent], { type: "text/html" });
       const text = new Blob([textContent], { type: "text/plain" });
       const data = new ClipboardItem({ "text/html": html, "text/plain": text });

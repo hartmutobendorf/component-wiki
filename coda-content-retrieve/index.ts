@@ -15,6 +15,8 @@ interface RowData {
     examples: string
     "figma-link": string
     "code-link": string
+    "figma-component-data": string
+    "component-example-image": string
 }
 
 // Helper function to download an image and return the filename from headers
@@ -150,6 +152,8 @@ function extractTableData(pageHtml: string): RowData[] {
             examples: "",
             "figma-link": "",
             "code-link": "",
+            "figma-component-data": "",
+            "component-example-image": "",
         }
 
         // Extract documentation status (from link text)
@@ -189,6 +193,17 @@ function extractTableData(pageHtml: string): RowData[] {
         const codeLink = codeCell.find("a").first()
         rowData["code-link"] = codeLink.length
             ? codeLink.attr("href") || ""
+            : ""
+
+        // Extract Figma component data (as text content)
+        const figmaDataCell = cells.eq(columnMap["Figma component data"])
+        rowData["figma-component-data"] = figmaDataCell.text().trim()
+
+        // Extract Component example image (from img src)
+        const exampleImageCell = cells.eq(columnMap["Component example image"])
+        const exampleImageImg = exampleImageCell.find("img").first()
+        rowData["component-example-image"] = exampleImageImg.length
+            ? exampleImageImg.attr("src") || ""
             : ""
 
         // Extract HTML for rich content fields - we'll convert these to markdown later
@@ -336,6 +351,35 @@ async function main() {
             await Bun.write(markdownPath, markdown)
         }
 
+        // Save Figma component data as HTML file if it exists
+        let figmaComponentDataPath = ""
+        if (row["figma-component-data"] && row["figma-component-data"].trim()) {
+            const htmlPath = `${mdFolderPath}/figma-component-data.html`
+            await Bun.write(htmlPath, row["figma-component-data"])
+            figmaComponentDataPath = `md/${folderName}/figma-component-data.html`
+            console.log(`    ✓ Saved Figma component data HTML`)
+        }
+
+        // Download component example image if it exists
+        let componentExampleImagePath = ""
+        if (
+            row["component-example-image"] &&
+            row["component-example-image"].trim()
+        ) {
+            try {
+                const filename = await downloadImage(
+                    row["component-example-image"],
+                    imagesFolderPath
+                )
+                componentExampleImagePath = `md/${folderName}/images/${filename}`
+                console.log(
+                    `    ✓ Downloaded component example image: ${filename}`
+                )
+            } catch (e) {
+                console.log(`    ⚠ Failed to download component example image: ${e}`)
+            }
+        }
+
         // Create metadata JSON file for this component
         const componentMetadata = {
             name: name,
@@ -345,6 +389,8 @@ async function main() {
             lastEdited: row["last-edited"],
             figmaLink: row["figma-link"],
             codeLink: row["code-link"],
+            figmaComponentDataPath: figmaComponentDataPath,
+            componentExampleImage: componentExampleImagePath,
         }
 
         const metadataPath = `../app/src/content/components/${folderName}.json`

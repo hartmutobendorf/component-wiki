@@ -1,16 +1,16 @@
 ![image.png](images/image.png)
 
 1.  **Rule** p-rule : The rule component indicates the beginning of a new section.
-2.  Title title : The title of the section is
-3.  Label label\_text (optional): Optional muted heading above the title.
+2.  **Heading** title : The title of the section is
+3.  **Eyebrow** label\_text (optional): Optional muted heading above the title.
 4.  Content blocks:
 
-  
+Content block
 
 ### Content blocks
 
-1.  Subtitle subtitle :
-2.  Description
+1.  Subheading subtitle :
+2.  Body description
 3.  Image
 4.  Video
 5.  List
