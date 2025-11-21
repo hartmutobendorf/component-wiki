@@ -1,4 +1,4 @@
-![image.png](images/image.png)
+![image.png](images/0e51150c-e928-49db-ba7a-54ef78b77b49.png)
 
 1.  **Icon:** The icon can be used to give more context to the chip. All icons from Vanilla are available. Note that semantic icons should only be used with the appropriate color (warning icon with yellow for example).
 2.  **Lead:** If the value is of a certain category then the key can be used to show that category to provide additional context to the user.

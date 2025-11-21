@@ -1,4 +1,4 @@
-![image.png](images/image.png)
+![image.png](images/06b4bda0-c85e-4845-9816-84b8fc509010.png)
 
 1.  **Icon left:** The icon to the left side of the button can be used to give additional visual context to the user what sort of action this button performs. For example an edit action can be additionally visually indicated by an edit icon.
 2.  **Text:** The text of the button is used to tell the user what sort of action this button performs. It should be set to something that gives the user a clear understanding which action is being performed when executing the button.
