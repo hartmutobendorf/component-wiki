@@ -28,7 +28,15 @@ async function downloadImage(
     const buffer = await response.arrayBuffer()
 
     // Get filename from x-amz-meta-filename header
-    const filename = response.headers.get("x-amz-meta-filename") || "image.jpg"
+    const originalFilename = response.headers.get("x-amz-meta-filename") || "image.jpg"
+
+    // Extract file extension from original filename
+    const lastDotIndex = originalFilename.lastIndexOf(".")
+    const extension = lastDotIndex !== -1 ? originalFilename.substring(lastDotIndex) : ".jpg"
+
+    // Generate unique filename with UUID
+    const uuid = crypto.randomUUID()
+    const filename = `${uuid}${extension}`
 
     const filePath = `${folderPath}/${filename}`
     await Bun.write(filePath, buffer)
