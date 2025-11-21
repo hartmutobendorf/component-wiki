@@ -400,7 +400,7 @@ async function main() {
         await Bun.$`mkdir -p ${imagesFolderPath}`
 
         // Clean up old images to avoid duplicates
-        await Bun.$`rm -f ${imagesFolderPath}/*.{png,jpg,jpeg,gif,webp,PNG,JPG,JPEG,GIF,WEBP}`
+        await Bun.$`rm -f ${imagesFolderPath}/*.{png,jpg,jpeg,gif,webp,PNG,JPG,JPEG,GIF,WEBP} || true`
 
         console.log(`  Processing: ${name}`)
 
