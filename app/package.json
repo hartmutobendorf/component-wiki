@@ -13,5 +13,9 @@
     "lit": "^3.3.1",
     "sass": "^1.94.0",
     "vanilla-framework": "^4.37.0"
+  },
+  "devDependencies": {
+    "prettier": "^3.6.2",
+    "prettier-plugin-astro": "^0.14.1"
   }
 }

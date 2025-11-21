@@ -1,5 +1,5 @@
 // Override assets path to use local fonts
-$assets-path: '/fonts/';
+$assets-path: "/fonts/";
 
 @import "vanilla-framework";
 @include vanilla;
@@ -24,46 +24,5 @@ body {
     side-navigation {
         display: block;
         height: 100%;
-    }
-}
-
-.metadata-card {
-    float: right;
-    width: 300px;
-    margin-left: 1.5rem;
-    margin-bottom: 1rem;
-    clear: right;
-}
-
-.metadata-list {
-    margin: 0;
-}
-
-.metadata-list dt {
-    font-weight: 700;
-    margin-top: 0.5rem;
-    margin-bottom: 0.25rem;
-}
-
-.metadata-list dt:first-child {
-    margin-top: 0;
-}
-
-.metadata-list dd {
-    margin-left: 0;
-    margin-bottom: 0;
-}
-
-.p-card__title {
-    margin-bottom: 0.5rem;
-}
-
-/* Ensure content clears the float on smaller screens */
-@media (max-width: 768px) {
-    .metadata-card {
-        float: none;
-        width: 100%;
-        margin-left: 0;
-        margin-bottom: 1.5rem;
     }
 }

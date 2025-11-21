@@ -1,0 +1,50 @@
+---
+interface Props {
+  htmlContent: string;
+  textContent?: string;
+  buttonText?: string;
+}
+
+const {
+  htmlContent,
+  textContent = "Button",
+  buttonText = "Copy as Figma component",
+} = Astro.props;
+const componentId = `copy-btn-${Math.random().toString(36).substring(2, 11)}`;
+---
+
+<button id={componentId} class="p-button--positive u-no-margin--bottom">
+  {buttonText}
+</button>
+
+<script is:inline define:vars={{ componentId, htmlContent, textContent }}>
+  const button = document.getElementById(componentId);
+
+  // Set fixed width on first load to prevent resize
+  const originalWidth = button.offsetWidth;
+  button.style.width = `${originalWidth}px`;
+
+  async function copyToClipboard() {
+    try {
+      const html = new Blob([htmlContent], { type: "text/html" });
+      const text = new Blob([textContent], { type: "text/plain" });
+      const data = new ClipboardItem({ "text/html": html, "text/plain": text });
+      await navigator.clipboard.write([data]);
+
+      // Optional: Visual feedback
+      const originalText = button.textContent;
+      button.textContent = "Copied!";
+      setTimeout(() => {
+        button.textContent = originalText;
+      }, 2000);
+    } catch (err) {
+      console.error("Failed to copy:", err);
+      button.textContent = "Failed to copy";
+      setTimeout(() => {
+        button.textContent = buttonText;
+      }, 2000);
+    }
+  }
+
+  button.addEventListener("click", copyToClipboard);
+</script>
