@@ -1,4 +1,4 @@
-![Visuals.jpg](images/ecb022cc-fbc4-450b-97a0-ecb1e75b8f80.jpg)
+![Visuals.jpg](images/2fecab07-e83c-43aa-82c0-3519d926ff45.jpg)
 
 1.  **Chevron:** Indicates wether the accordion item is open or closed. It points down when open and points right when closed.
 2.  **Heading:** The heading indicates what the subject of the contents is.
