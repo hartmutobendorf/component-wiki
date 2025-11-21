@@ -14,6 +14,11 @@ const componentsCollection = defineCollection({
     codeLink: z.string().url().optional().or(z.literal('')),
     figmaComponentDataPath: z.string().optional().or(z.literal('')),
     componentExampleImage: z.string().optional().or(z.literal('')),
+    changeLog: z.array(z.object({
+      who: z.string(),
+      when: z.string(),
+      what: z.string(),
+    })).optional().default([]),
   }),
 });
 

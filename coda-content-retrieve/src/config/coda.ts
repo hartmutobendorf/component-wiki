@@ -24,4 +24,10 @@ export const CODA_CONFIG = {
    * The ID of the table you want to retrieve data from
    */
   getTableId: () => process.env.CODA_TABLE_ID,
+
+  /**
+   * Change log table ID from environment variable
+   * The ID of the change log table
+   */
+  getChangeLogTableId: () => process.env.CODA_CHANGELOG_TABLE_ID,
 } as const;

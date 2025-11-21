@@ -3,6 +3,12 @@ import TurndownService from "turndown"
 import { coda } from "./src/coda"
 import { CODA_CONFIG } from "./src/config/coda"
 
+interface ChangeLogEntry {
+    who: string
+    when: string
+    what: string
+}
+
 interface RowData {
     name: string
     "documentation-status": string
@@ -17,6 +23,7 @@ interface RowData {
     "code-link": string
     "figma-component-data": string
     "component-example-image": string
+    "change-log": ChangeLogEntry[]
 }
 
 // Helper function to download an image and return the filename from headers
@@ -105,6 +112,35 @@ class ImageTrackingTurndownService extends TurndownService {
     }
 }
 
+// Fetch change log entries for a component from the Change log table
+async function fetchChangeLogEntriesForComponent(
+    componentName: string,
+    changeLogRows: any[]
+): Promise<ChangeLogEntry[]> {
+    const entries: ChangeLogEntry[] = []
+
+    // Filter rows for this component
+    for (const row of changeLogRows) {
+        const values = row.values || {}
+
+        // Check if this row is for the current component
+        if (values.Name === componentName) {
+            // Skip empty rows
+            if (!values.What && !values.Who && !values.When) {
+                continue
+            }
+
+            entries.push({
+                who: values.Who || "",
+                when: values.When || "",
+                what: values.What || "",
+            })
+        }
+    }
+
+    return entries
+}
+
 // Extract structured data from HTML table
 function extractTableData(pageHtml: string): RowData[] {
     const $ = cheerio.load(pageHtml)
@@ -162,6 +198,7 @@ function extractTableData(pageHtml: string): RowData[] {
             "code-link": "",
             "figma-component-data": "",
             "component-example-image": "",
+            "change-log": [],
         }
 
         // Extract documentation status (from link text)
@@ -227,6 +264,9 @@ function extractTableData(pageHtml: string): RowData[] {
         const usageCell = cells.eq(columnMap["Usage"])
         rowData.usage = usageCell.html() || ""
 
+        // Note: Change log will be fetched separately via API
+        // and populated in the main processing loop
+
         rows.push(rowData)
     })
 
@@ -284,6 +324,7 @@ async function convertHtmlToMarkdown(
 async function main() {
     const docId = CODA_CONFIG.getDocId()
     const tableId = CODA_CONFIG.getTableId()
+    const changeLogTableId = CODA_CONFIG.getChangeLogTableId()
 
     if (!docId) {
         console.error("Error: CODA_DOC_ID environment variable is not set")
@@ -294,6 +335,12 @@ async function main() {
     if (!tableId) {
         console.error("Error: CODA_TABLE_ID environment variable is not set")
         console.log("Please add CODA_TABLE_ID to your .env file")
+        return
+    }
+
+    if (!changeLogTableId) {
+        console.error("Error: CODA_CHANGELOG_TABLE_ID environment variable is not set")
+        console.log("Please add CODA_CHANGELOG_TABLE_ID to your .env file")
         return
     }
 
@@ -310,6 +357,10 @@ async function main() {
         console.log("Exporting parent page content as HTML...")
         pageHtml = await coda.exportPageContent(docId, table.parent.id, "html")
         console.log("✓ Page content exported\n")
+
+        // Save the HTML for debugging
+        await Bun.write("exported-page.html", pageHtml)
+        console.log("✓ Saved HTML to exported-page.html for debugging\n")
     } else {
         console.error("Error: Table has no parent page")
         return
@@ -318,6 +369,20 @@ async function main() {
     // Extract structured data from HTML
     console.log("📊 Extracting structured data from HTML...")
     const rowsData = extractTableData(pageHtml)
+
+    // Fetch all change log rows from the Change log table
+    console.log("\n📋 Fetching change log data from API...")
+    let changeLogRows: any[] = []
+    try {
+        const changeLogResponse = await coda.getTableRows(docId, changeLogTableId, {
+            useColumnNames: true,
+            valueFormat: "simple",
+        })
+        changeLogRows = (changeLogResponse as any).items || []
+        console.log(`✓ Fetched ${changeLogRows.length} change log rows`)
+    } catch (error) {
+        console.log(`⚠ Failed to fetch change log data: ${error}`)
+    }
 
     // Create components metadata directory
     await Bun.$`mkdir -p ../app/src/content/components`
@@ -388,6 +453,12 @@ async function main() {
             }
         }
 
+        // Fetch change log entries for this component
+        row["change-log"] = await fetchChangeLogEntriesForComponent(name, changeLogRows)
+        if (row["change-log"].length > 0) {
+            console.log(`    ✓ Found ${row["change-log"].length} change log entries`)
+        }
+
         // Create metadata JSON file for this component
         const componentMetadata = {
             name: name,
@@ -399,6 +470,7 @@ async function main() {
             codeLink: row["code-link"],
             figmaComponentDataPath: figmaComponentDataPath,
             componentExampleImage: componentExampleImagePath,
+            changeLog: row["change-log"],
         }
 
         const metadataPath = `../app/src/content/components/${folderName}.json`

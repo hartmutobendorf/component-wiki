@@ -97,6 +97,15 @@ const examples = await loadMarkdownSection("examples");
             </li>
           )
         }
+        {
+          metadata.changeLog && metadata.changeLog.length > 0 && (
+            <li class="p-table-of-contents__item">
+              <a class="p-table-of-contents__link" href="#changelog">
+                Change log
+              </a>
+            </li>
+          )
+        }
       </ul>
     </div>
   </div>
@@ -212,6 +221,40 @@ const examples = await loadMarkdownSection("examples");
     <div class="col"></div>
   </div>
 
+  <div class="p-section">
+    {
+      metadata.changeLog && metadata.changeLog.length > 0 && (
+        <section id="changelog" class="u-text-max-width">
+          <h2>Change log</h2>
+          <table aria-label="Change log" class="changelog-table">
+            <thead>
+              <tr>
+                <th class="changelog-who">Who</th>
+                <th class="changelog-when">When</th>
+                <th class="changelog-what">What</th>
+              </tr>
+            </thead>
+            <tbody>
+              {metadata.changeLog.map((entry) => (
+                <tr>
+                  <td class="changelog-who">{entry.who}</td>
+                  <td class="changelog-when">
+                    {new Date(entry.when).toLocaleDateString('de-AT', {
+                      year: 'numeric',
+                      month: '2-digit',
+                      day: '2-digit'
+                    })}
+                  </td>
+                  <td class="changelog-what">{entry.what}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </section>
+      )
+    }
+  </div>
+
   <style>
     .metadata-list {
       display: flex;
@@ -237,6 +280,23 @@ const examples = await loadMarkdownSection("examples");
       display: flex;
       gap: 1.5rem;
       align-items: center;
+    }
+
+    .changelog-table {
+      table-layout: fixed;
+      width: 100%;
+    }
+
+    .changelog-who {
+      width: 200px;
+    }
+
+    .changelog-when {
+      width: 150px;
+    }
+
+    .changelog-what {
+      width: auto;
     }
   </style>
 
