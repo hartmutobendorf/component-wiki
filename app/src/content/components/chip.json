@@ -3,9 +3,9 @@
   "type": "Component",
   "tiers": "Global",
   "documentationStatus": "Minimal",
-  "lastEdited": "Nov 17, 2025",
+  "lastEdited": "Nov 21, 2025",
   "figmaLink": "https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-19",
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/d0197b27f5733789d6d23536eabe68356e045ae1/scss/_patterns_chip.scss",
-  "figmaComponentDataPath": "",
-  "componentExampleImage": ""
+  "figmaComponentDataPath": "md/chip/figma-component-data.html",
+  "componentExampleImage": "md/chip/images/image.png"
 }
