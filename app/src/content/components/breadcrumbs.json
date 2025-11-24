@@ -3,7 +3,7 @@
   "type": "Component",
   "tiers": "Global",
   "documentationStatus": "Needs work",
-  "lastEdited": "Nov 21, 2025",
+  "lastEdited": "Nov 24, 2025",
   "figmaLink": "",
   "codeLink": "",
   "figmaComponentDataPath": "",
@@ -15,5 +15,9 @@
       "what": "Initial commit"
     }
   ],
-  "properties": []
+  "properties": [],
+  "anatomy": {
+    "image": "md/breadcrumbs/images/437e4b02-4d09-4780-a908-c2d4a65e6a58.png",
+    "table": []
+  }
 }

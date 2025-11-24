@@ -3,11 +3,11 @@
   "type": "Component",
   "tiers": "Global",
   "documentationStatus": "Minimal",
-  "lastEdited": "Nov 21, 2025",
+  "lastEdited": "Nov 24, 2025",
   "figmaLink": "https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-19",
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/d0197b27f5733789d6d23536eabe68356e045ae1/scss/_patterns_chip.scss",
   "figmaComponentDataPath": "md/chip/figma-component-data.html",
-  "componentExampleImage": "md/chip/images/0ea4ad9f-1b40-4719-83e5-9ffc8a7790de.png",
+  "componentExampleImage": "md/chip/images/9d494cf5-8514-45cd-b610-0e26e00a1019.png",
   "changeLog": [
     {
       "who": "Maximilian Blazek",
@@ -103,5 +103,35 @@
       ],
       "defaultOption": "default"
     }
-  ]
+  ],
+  "anatomy": {
+    "image": "md/chip/images/7c3fb0e5-808c-42e3-a72a-ab12d68888d9.png",
+    "table": [
+      {
+        "number": 3,
+        "name": "Dismiss button",
+        "description": "If present allows to dismiss the chip. For example if an applied filter needs to be removed."
+      },
+      {
+        "number": 5,
+        "name": "Badge",
+        "description": "The badge can be used to show numerical information. For example the amount of items which fall under a certain filter. See more in the badge documentation."
+      },
+      {
+        "number": 2,
+        "name": "Value",
+        "description": "The primary textual information that the chip represents. "
+      },
+      {
+        "number": 4,
+        "name": "Lead",
+        "description": "If the value is of a certain category then the key can be used to show that category to provide additional context to the user."
+      },
+      {
+        "number": 1,
+        "name": "Icon",
+        "description": "The icon can be used to give more context to the chip. All icons from Vanilla are available. Note that semantic icons should only be used with the appropriate color (warning icon with yellow for example)."
+      }
+    ]
+  }
 }

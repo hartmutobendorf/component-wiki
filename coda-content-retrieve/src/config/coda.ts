@@ -36,4 +36,10 @@ export const CODA_CONFIG = {
    * The ID of the properties table
    */
   getPropertiesTableId: () => process.env.CODA_PROPERTIES_TABLE_ID,
+
+  /**
+   * Anatomy table ID from environment variable
+   * The ID of the anatomy table
+   */
+  getAnatomyTableId: () => process.env.CODA_ANATOMY_TABLE_ID,
 } as const;

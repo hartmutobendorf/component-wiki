@@ -3,11 +3,11 @@
   "type": "Component",
   "tiers": "Global",
   "documentationStatus": "Minimal",
-  "lastEdited": "Nov 21, 2025",
+  "lastEdited": "Nov 24, 2025",
   "figmaLink": "https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-38",
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/b1d651365b0714586e6ea14349dea763819c256e/scss/_patterns_form-tick-elements.scss#L101",
   "figmaComponentDataPath": "md/radio/figma-component-data.html",
-  "componentExampleImage": "md/radio/images/63ed0107-3a77-4fa1-b191-7ddb955182a4.png",
+  "componentExampleImage": "md/radio/images/4195dc0b-2fc1-41f6-a5db-74e8108a569b.png",
   "changeLog": [
     {
       "who": "Maximilian Blazek",
@@ -39,5 +39,15 @@
       ],
       "defaultOption": "false"
     }
-  ]
+  ],
+  "anatomy": {
+    "image": "md/radio/images/1c7f5cac-726f-43b7-85db-65621847a1ed.png",
+    "table": [
+      {
+        "number": 1,
+        "name": "Checkmark",
+        "description": "The checkmark indicates wether the radio is checked or not."
+      }
+    ]
+  }
 }

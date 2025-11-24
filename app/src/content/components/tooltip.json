@@ -3,11 +3,11 @@
   "type": "Component",
   "tiers": "Global",
   "documentationStatus": "Minimal",
-  "lastEdited": "Nov 21, 2025",
+  "lastEdited": "Nov 24, 2025",
   "figmaLink": "https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-52",
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/b1d651365b0714586e6ea14349dea763819c256e/scss/_patterns_tooltips.scss",
   "figmaComponentDataPath": "md/tooltip/figma-component-data.html",
-  "componentExampleImage": "md/tooltip/images/2acf6d7e-685c-4ac2-aafa-4afb760a61cc.png",
+  "componentExampleImage": "md/tooltip/images/cbcb7e16-317e-4ad3-ab20-ebec57fa9ee6.png",
   "changeLog": [
     {
       "who": "Maximilian Blazek",
@@ -39,5 +39,9 @@
       ],
       "defaultOption": "left"
     }
-  ]
+  ],
+  "anatomy": {
+    "image": "md/tooltip/images/9f9735bc-34bb-443d-a64a-53dab2d7dd0f.png",
+    "table": []
+  }
 }

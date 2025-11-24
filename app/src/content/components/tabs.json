@@ -3,11 +3,11 @@
   "type": "Component",
   "tiers": "Global",
   "documentationStatus": "Minimal",
-  "lastEdited": "Nov 21, 2025",
+  "lastEdited": "Nov 24, 2025",
   "figmaLink": "https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-50",
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/b1d651365b0714586e6ea14349dea763819c256e/scss/_patterns_tabs.scss",
   "figmaComponentDataPath": "md/tabs/figma-component-data.html",
-  "componentExampleImage": "md/tabs/images/1cf519f2-b683-4848-898d-73fb3cfb4228.png",
+  "componentExampleImage": "md/tabs/images/1ad1c6c7-14b0-48fe-98bf-c5fa6a5ca3ae.png",
   "changeLog": [
     {
       "who": "Maximilian Blazek",
@@ -39,5 +39,30 @@
         "content"
       ]
     }
-  ]
+  ],
+  "anatomy": {
+    "image": "md/tabs/images/ffab059f-ae30-4c7e-aa5a-fab389008742.png",
+    "table": [
+      {
+        "number": 4,
+        "name": "Tab group",
+        "description": "The horizontal container that houses all individual tabs together. It organizes the tabs in a row and a line that runs along the bottom."
+      },
+      {
+        "number": 3,
+        "name": "Active tab indicator",
+        "description": "A visual element that appears beneath the currently selected tab. Only one tab can ever be active at a time."
+      },
+      {
+        "number": 2,
+        "name": "Tab text",
+        "description": "The label displayed within each tab that describes the content it represents. This text should be concise and clearly indicate what content will be shown when selected."
+      },
+      {
+        "number": 1,
+        "name": "Tab",
+        "description": "An individual clickable element that acts as a trigger to display its associated content panel. Each tab represents a distinct section of related content."
+      }
+    ]
+  }
 }

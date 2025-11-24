@@ -3,11 +3,11 @@
   "type": "Component",
   "tiers": "Global",
   "documentationStatus": "Minimal",
-  "lastEdited": "Nov 21, 2025",
+  "lastEdited": "Nov 24, 2025",
   "figmaLink": "https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-35",
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/b1d651365b0714586e6ea14349dea763819c256e/scss/_patterns_notifications.scss",
   "figmaComponentDataPath": "md/notification/figma-component-data.html",
-  "componentExampleImage": "md/notification/images/29e361e2-1a14-4cb8-bbd8-434f6416c5df.png",
+  "componentExampleImage": "md/notification/images/a154edb9-651a-4558-b188-4f185809d6c6.png",
   "changeLog": [
     {
       "who": "Maximilian Blazek",
@@ -87,5 +87,50 @@
         "caution"
       ]
     }
-  ]
+  ],
+  "anatomy": {
+    "image": "md/notification/images/1c72ea32-f1a7-41ab-b639-f6798d851c4c.png",
+    "table": [
+      {
+        "number": 8,
+        "name": "Actions",
+        "description": "Allows you to provide actions the user can take based on the notification."
+      },
+      {
+        "number": 7,
+        "name": "TImestamp",
+        "description": "The timestamp gives an indication when the event that triggered the creation of the notification happened."
+      },
+      {
+        "number": 6,
+        "name": "Timestamp & action section",
+        "description": "If a timestamp or actions need to be shown as part of the notification then this section is shown. It contains the timestamp and actions."
+      },
+      {
+        "number": 5,
+        "name": "Dismiss button",
+        "description": "The dismiss button allows the user to dismiss the notification."
+      },
+      {
+        "number": 4,
+        "name": "Content section",
+        "description": "This is the main content section of the notification. It contains the Icon, title, description and dismiss button."
+      },
+      {
+        "number": 3,
+        "name": "Description",
+        "description": "A more in detail description of the message that is being conveyed to the user. This is supposed to give the user full context of what you are trying to tell them."
+      },
+      {
+        "number": 2,
+        "name": "Title",
+        "description": "The title of the notification is a short description of the message that is being conveyed to the user. Shouldn’t be too long."
+      },
+      {
+        "number": 1,
+        "name": "Icon",
+        "description": "The icon gives additional visual information what type of notification this is."
+      }
+    ]
+  }
 }

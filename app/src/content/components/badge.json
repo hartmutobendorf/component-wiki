@@ -3,11 +3,11 @@
   "type": "Component",
   "tiers": "Global",
   "documentationStatus": "Minimal",
-  "lastEdited": "Nov 21, 2025",
+  "lastEdited": "Nov 24, 2025",
   "figmaLink": "https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-5",
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/b1d651365b0714586e6ea14349dea763819c256e/scss/_patterns_badge.scss",
   "figmaComponentDataPath": "md/badge/figma-component-data.html",
-  "componentExampleImage": "md/badge/images/5a821f02-8b66-48b8-8182-cc3b415ed88e.png",
+  "componentExampleImage": "md/badge/images/b256f102-eb98-4119-a4e5-e687dc60d0e7.png",
   "changeLog": [
     {
       "who": "Maximilian Blazek",
@@ -33,5 +33,15 @@
       ],
       "defaultOption": "default"
     }
-  ]
+  ],
+  "anatomy": {
+    "image": "md/badge/images/f494ee76-50a5-4fe3-a28b-82c2d2f58cef.png",
+    "table": [
+      {
+        "number": 1,
+        "name": "Numeric value",
+        "description": "The numeric value that is being shown as part of the badge."
+      }
+    ]
+  }
 }

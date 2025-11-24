@@ -15,5 +15,9 @@
       "what": "Initial commit"
     }
   ],
-  "properties": []
+  "properties": [],
+  "anatomy": {
+    "image": "",
+    "table": []
+  }
 }

@@ -3,11 +3,11 @@
   "type": "Component",
   "tiers": "Global",
   "documentationStatus": "Minimal",
-  "lastEdited": "Nov 21, 2025",
+  "lastEdited": "Nov 24, 2025",
   "figmaLink": "https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2006-123",
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/d0197b27f5733789d6d23536eabe68356e045ae1/scss/_patterns_form-tick-elements.scss",
   "figmaComponentDataPath": "md/checkbox/figma-component-data.html",
-  "componentExampleImage": "md/checkbox/images/91961aa1-a2fe-49f1-878c-48e55d687447.png",
+  "componentExampleImage": "md/checkbox/images/251bbdac-1bf8-42df-b2e8-1e00ff460ab0.png",
   "changeLog": [
     {
       "who": "Maximilian Blazek",
@@ -40,5 +40,15 @@
       ],
       "defaultOption": "unchecked"
     }
-  ]
+  ],
+  "anatomy": {
+    "image": "md/checkbox/images/bfa4e93d-5158-4386-a871-2d8e8a6a4243.png",
+    "table": [
+      {
+        "number": 1,
+        "name": "Checkmark",
+        "description": "If checked the checkbox shows a checkmark. This checkmark can either be a dash if only children in, for example, a table are selected or a common checkmark if the item itself is selected."
+      }
+    ]
+  }
 }

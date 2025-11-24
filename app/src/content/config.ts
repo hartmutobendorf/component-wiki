@@ -57,6 +57,21 @@ const componentsCollection = defineCollection({
       )
       .optional()
       .default([]),
+    anatomy: z
+      .object({
+        image: z.string().optional().or(z.literal("")),
+        table: z
+          .array(
+            z.object({
+              number: z.number(),
+              name: z.string(),
+              description: z.string(),
+            }),
+          )
+          .optional()
+          .default([]),
+      })
+      .optional(),
   }),
 });
 

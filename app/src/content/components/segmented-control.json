@@ -3,7 +3,7 @@
   "type": "Component",
   "tiers": "Global",
   "documentationStatus": "Needs work",
-  "lastEdited": "Nov 21, 2025",
+  "lastEdited": "Nov 24, 2025",
   "figmaLink": "",
   "codeLink": "",
   "figmaComponentDataPath": "",
@@ -15,5 +15,9 @@
       "what": "Initial commit"
     }
   ],
-  "properties": []
+  "properties": [],
+  "anatomy": {
+    "image": "md/segmented-control/images/aa15ffc3-00bb-4366-b5a0-85b02d3c3497.png",
+    "table": []
+  }
 }

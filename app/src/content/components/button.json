@@ -7,7 +7,7 @@
   "figmaLink": "https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-8",
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/main/scss/_patterns_buttons.scss",
   "figmaComponentDataPath": "md/button/figma-component-data.html",
-  "componentExampleImage": "md/button/images/a2a1aef1-542b-49ab-b8a8-996e16a9d6bb.png",
+  "componentExampleImage": "md/button/images/fa8a5c24-64c8-423c-9ab5-0f1fa9b01730.png",
   "changeLog": [
     {
       "who": "Maximilian Blazek",
@@ -80,5 +80,25 @@
       ],
       "defaultOption": "default"
     }
-  ]
+  ],
+  "anatomy": {
+    "image": "md/button/images/f1297639-9446-4c51-8458-e380071bcb8f.png",
+    "table": [
+      {
+        "number": 3,
+        "name": "Text",
+        "description": "The text of the button is used to tell the user what sort of action this button performs. It should be set to something that gives the user a clear understanding which action is being performed when executing the button."
+      },
+      {
+        "number": 2,
+        "name": "Icon right",
+        "description": "The right icon is used less frequently and typically serves a different purpose than the left icon. Rather than providing additional context about the primary action, it usually indicates secondary behavior or UI affordances. For example, a chevron icon might signal that the button opens a contextual menu, or expandable content. This positioning helps users understand that there's additional functionality beyond the main action described in the button text."
+      },
+      {
+        "number": 1,
+        "name": "Icon left",
+        "description": "The icon to the left side of the button can be used to give additional visual context to the user what sort of action this button performs. For example an edit action can be additionally visually indicated by an edit icon."
+      }
+    ]
+  }
 }

@@ -19,6 +19,12 @@ interface PropertyEntry {
     defaultOption?: string
 }
 
+interface AnatomyEntry {
+    number: number
+    name: string
+    description: string
+}
+
 interface RowData {
     name: string
     "documentation-status": string
@@ -27,12 +33,12 @@ interface RowData {
     "last-edited": string
     usage: string
     description: string
-    anatomy: string
     examples: string
     "figma-link": string
     "code-link": string
     "figma-component-data": string
     "component-example-image": string
+    "anatomy-image": string
     "change-log": ChangeLogEntry[]
 }
 
@@ -206,6 +212,35 @@ async function fetchPropertiesForComponent(
     return properties
 }
 
+// Fetch anatomy entries for a component from the Anatomy table
+async function fetchAnatomyEntriesForComponent(
+    componentName: string,
+    anatomyRows: any[]
+): Promise<AnatomyEntry[]> {
+    const entries: AnatomyEntry[] = []
+
+    // Filter rows for this component
+    for (const row of anatomyRows) {
+        const values = row.values || {}
+
+        // Check if this row is for the current component
+        if (values.Component === componentName) {
+            // Skip empty rows
+            if (!values.Name) {
+                continue
+            }
+
+            entries.push({
+                number: values.Number || 0,
+                name: values.Name || "",
+                description: values.Description || "",
+            })
+        }
+    }
+
+    return entries
+}
+
 // Extract structured data from HTML table
 function extractTableData(pageHtml: string): RowData[] {
     const $ = cheerio.load(pageHtml)
@@ -257,12 +292,12 @@ function extractTableData(pageHtml: string): RowData[] {
             "last-edited": "",
             usage: "",
             description: "",
-            anatomy: "",
             examples: "",
             "figma-link": "",
             "code-link": "",
             "figma-component-data": "",
             "component-example-image": "",
+            "anatomy-image": "",
             "change-log": [],
         }
 
@@ -316,12 +351,16 @@ function extractTableData(pageHtml: string): RowData[] {
             ? exampleImageImg.attr("src") || ""
             : ""
 
+        // Extract Anatomy image (from img src)
+        const anatomyImageCell = cells.eq(columnMap["Anatomy image"])
+        const anatomyImageImg = anatomyImageCell.find("img").first()
+        rowData["anatomy-image"] = anatomyImageImg.length
+            ? anatomyImageImg.attr("src") || ""
+            : ""
+
         // Extract HTML for rich content fields - we'll convert these to markdown later
         const descriptionCell = cells.eq(columnMap["Description"])
         rowData.description = descriptionCell.html() || ""
-
-        const anatomyCell = cells.eq(columnMap["Anatomy"])
-        rowData.anatomy = anatomyCell.html() || ""
 
         const examplesCell = cells.eq(columnMap["Examples"])
         rowData.examples = examplesCell.html() || ""
@@ -391,6 +430,7 @@ async function main() {
     const tableId = CODA_CONFIG.getTableId()
     const changeLogTableId = CODA_CONFIG.getChangeLogTableId()
     const propertiesTableId = CODA_CONFIG.getPropertiesTableId()
+    const anatomyTableId = CODA_CONFIG.getAnatomyTableId()
 
     if (!docId) {
         console.error("Error: CODA_DOC_ID environment variable is not set")
@@ -413,6 +453,12 @@ async function main() {
     if (!propertiesTableId) {
         console.error("Error: CODA_PROPERTIES_TABLE_ID environment variable is not set")
         console.log("Please add CODA_PROPERTIES_TABLE_ID to your .env file")
+        return
+    }
+
+    if (!anatomyTableId) {
+        console.error("Error: CODA_ANATOMY_TABLE_ID environment variable is not set")
+        console.log("Please add CODA_ANATOMY_TABLE_ID to your .env file")
         return
     }
 
@@ -470,6 +516,20 @@ async function main() {
         console.log(`⚠ Failed to fetch properties data: ${error}`)
     }
 
+    // Fetch all anatomy rows from the Anatomy table
+    console.log("\n📋 Fetching anatomy data from API...")
+    let anatomyRows: any[] = []
+    try {
+        const anatomyResponse = await coda.getTableRows(docId, anatomyTableId, {
+            useColumnNames: true,
+            valueFormat: "simple",
+        })
+        anatomyRows = (anatomyResponse as any).items || []
+        console.log(`✓ Fetched ${anatomyRows.length} anatomy rows`)
+    } catch (error) {
+        console.log(`⚠ Failed to fetch anatomy data: ${error}`)
+    }
+
     // Create components metadata directory
     await Bun.$`mkdir -p ../app/src/content/components`
 
@@ -494,7 +554,6 @@ async function main() {
         const contentFields = [
             { key: "usage", fileName: "usage.md" },
             { key: "description", fileName: "description.md" },
-            { key: "anatomy", fileName: "anatomy.md" },
             { key: "examples", fileName: "examples.md" },
         ] as const
 
@@ -542,6 +601,21 @@ async function main() {
             }
         }
 
+        // Download anatomy image if it exists
+        let anatomyImagePath = ""
+        if (row["anatomy-image"] && row["anatomy-image"].trim()) {
+            try {
+                const filename = await downloadImage(
+                    row["anatomy-image"],
+                    imagesFolderPath
+                )
+                anatomyImagePath = `md/${folderName}/images/${filename}`
+                console.log(`    ✓ Downloaded anatomy image: ${filename}`)
+            } catch (e) {
+                console.log(`    ⚠ Failed to download anatomy image: ${e}`)
+            }
+        }
+
         // Fetch change log entries for this component
         row["change-log"] = await fetchChangeLogEntriesForComponent(name, changeLogRows)
         if (row["change-log"].length > 0) {
@@ -552,6 +626,12 @@ async function main() {
         const properties = await fetchPropertiesForComponent(name, propertiesRows)
         if (properties.length > 0) {
             console.log(`    ✓ Found ${properties.length} properties`)
+        }
+
+        // Fetch anatomy entries for this component
+        const anatomyEntries = await fetchAnatomyEntriesForComponent(name, anatomyRows)
+        if (anatomyEntries.length > 0) {
+            console.log(`    ✓ Found ${anatomyEntries.length} anatomy entries`)
         }
 
         // Create metadata JSON file for this component
@@ -567,6 +647,10 @@ async function main() {
             componentExampleImage: componentExampleImagePath,
             changeLog: row["change-log"],
             properties: properties,
+            anatomy: {
+                image: anatomyImagePath,
+                table: anatomyEntries,
+            },
         }
 
         const metadataPath = `../app/src/content/components/${folderName}.json`

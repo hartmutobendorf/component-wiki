@@ -7,7 +7,7 @@
   "figmaLink": "https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-3",
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/b1d651365b0714586e6ea14349dea763819c256e/scss/_patterns_accordion.scss",
   "figmaComponentDataPath": "md/accordion/figma-component-data.html",
-  "componentExampleImage": "md/accordion/images/4ec216c0-f288-4132-8443-808626aaaf4f.png",
+  "componentExampleImage": "md/accordion/images/a84258f6-9190-4a9f-a5b0-20090abb7f8f.png",
   "changeLog": [
     {
       "who": "Maximilian Blazek",
@@ -71,5 +71,35 @@
         "false"
       ]
     }
-  ]
+  ],
+  "anatomy": {
+    "image": "md/accordion/images/fc996ed8-470c-46f1-b07a-a72cdf429cc4.png",
+    "table": [
+      {
+        "number": 5,
+        "name": "Divider",
+        "description": "The divider at the end of an accordion indicates the end of an accordion item."
+      },
+      {
+        "number": 4,
+        "name": "Panel",
+        "description": "The panel is the area in which the content of the accordion item can be placed."
+      },
+      {
+        "number": 3,
+        "name": "Tab",
+        "description": "The tab is the clickable area of the accordion with which the accordion can be opened and closed."
+      },
+      {
+        "number": 2,
+        "name": "Heading",
+        "description": "The heading indicates what the subject of the contents is."
+      },
+      {
+        "number": 1,
+        "name": "Chevron",
+        "description": "Indicates wether the accordion item is open or closed. It points down when open and points right when closed."
+      }
+    ]
+  }
 }

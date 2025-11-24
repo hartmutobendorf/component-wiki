@@ -7,7 +7,7 @@
   "figmaLink": "https://www.figma.com/design/1brHCsyeTE6FU7hfJd6ao2/%F0%9F%9A%A7---WIP--Sites---Core-component-library?node-id=41-9326",
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/WD-22552-feat-data-spotlight-pattern/templates/_macros/vf_basic-section.jinja",
   "figmaComponentDataPath": "",
-  "componentExampleImage": "md/basic-section/images/a0587558-b645-4dfc-a53d-62b3c74fcb83.png",
+  "componentExampleImage": "md/basic-section/images/543fcb13-a4af-466b-8d4d-2e9e697145ae.png",
   "changeLog": [
     {
       "who": "Isaac Kim",
@@ -15,5 +15,9 @@
       "what": "Initial commit"
     }
   ],
-  "properties": []
+  "properties": [],
+  "anatomy": {
+    "image": "md/basic-section/images/a2c7703e-fa99-4c00-b8d6-a24fa65c9eae.webp",
+    "table": []
+  }
 }
