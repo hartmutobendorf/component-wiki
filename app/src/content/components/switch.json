@@ -7,12 +7,36 @@
   "figmaLink": "https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-48",
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/b1d651365b0714586e6ea14349dea763819c256e/scss/_patterns_switch.scss",
   "figmaComponentDataPath": "md/switch/figma-component-data.html",
-  "componentExampleImage": "md/switch/images/aa288aa9-9496-4b54-b312-4e7c4e784163.png",
+  "componentExampleImage": "md/switch/images/ba67c180-a4d6-44d4-ae10-6a120bb4a05b.png",
   "changeLog": [
     {
       "who": "Maximilian Blazek",
       "when": "2025-11-21T17:00:00.000+00:00",
       "what": "Initial commit"
+    }
+  ],
+  "properties": [
+    {
+      "name": "State",
+      "type": "single select",
+      "required": false,
+      "description": "What state the switch is in.",
+      "options": [
+        "default",
+        "disabled"
+      ],
+      "defaultOption": "default"
+    },
+    {
+      "name": "Checked",
+      "type": "boolean",
+      "required": false,
+      "description": "Wether the switch is checked or not.",
+      "options": [
+        "true",
+        "false"
+      ],
+      "defaultOption": "false"
     }
   ]
 }

@@ -7,12 +7,85 @@
   "figmaLink": "https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-35",
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/b1d651365b0714586e6ea14349dea763819c256e/scss/_patterns_notifications.scss",
   "figmaComponentDataPath": "md/notification/figma-component-data.html",
-  "componentExampleImage": "md/notification/images/022f2481-db67-473b-a5c8-f78152177d29.png",
+  "componentExampleImage": "md/notification/images/29e361e2-1a14-4cb8-bbd8-434f6416c5df.png",
   "changeLog": [
     {
       "who": "Maximilian Blazek",
       "when": "2025-11-21T17:00:00.000+00:00",
       "what": "Initial commit"
+    }
+  ],
+  "properties": [
+    {
+      "name": "Time stamp",
+      "type": "string",
+      "required": false,
+      "description": "Can be set to the timestamp when the event when that triggered the notification took place.",
+      "constraint": "Date formatted string"
+    },
+    {
+      "name": "Actions",
+      "type": "slot",
+      "required": false,
+      "description": "Allows to give associated actions with the notification.",
+      "constraint": "Action link components"
+    },
+    {
+      "name": "Dismissible",
+      "type": "boolean",
+      "required": false,
+      "description": "Wether or not the notification can be dismissed. If it can be dismissed the dismiss button is being shown.",
+      "options": [
+        "true",
+        "false"
+      ],
+      "defaultOption": "true"
+    },
+    {
+      "name": "Description",
+      "type": "string",
+      "required": false,
+      "description": "Sets the content of the description."
+    },
+    {
+      "name": "Title",
+      "type": "string",
+      "required": false,
+      "description": "Sets the content of the title."
+    },
+    {
+      "name": "Inline",
+      "type": "boolean",
+      "required": false,
+      "description": "Wether the title and description of the notification are being shown in one line. reduces the overall height of the notification allowing it to be used where space is at a premium.",
+      "options": [
+        "true",
+        "false"
+      ],
+      "defaultOption": "false"
+    },
+    {
+      "name": "Border",
+      "type": "boolean",
+      "required": false,
+      "description": "Wether the notification has a border or not. Borderless notifications are used for example in tables.",
+      "options": [
+        "true",
+        "false"
+      ],
+      "defaultOption": "true"
+    },
+    {
+      "name": "Type",
+      "type": "single select",
+      "required": true,
+      "description": "What semantic type the notification is.",
+      "options": [
+        "information",
+        "negative",
+        "positive",
+        "caution"
+      ]
     }
   ]
 }

@@ -7,12 +7,38 @@
   "figmaLink": "https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2006-123",
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/d0197b27f5733789d6d23536eabe68356e045ae1/scss/_patterns_form-tick-elements.scss",
   "figmaComponentDataPath": "md/checkbox/figma-component-data.html",
-  "componentExampleImage": "md/checkbox/images/0bc98fc2-1370-408a-8dc5-78ecd0e0715d.png",
+  "componentExampleImage": "md/checkbox/images/91961aa1-a2fe-49f1-878c-48e55d687447.png",
   "changeLog": [
     {
       "who": "Maximilian Blazek",
       "when": "2025-11-21T17:00:00.000+00:00",
       "what": "Initial commit"
+    }
+  ],
+  "properties": [
+    {
+      "name": "State",
+      "type": "single select",
+      "required": false,
+      "description": "The state the checkbox is currently in. Note that in the checked and child checked state there is no hover effect.",
+      "options": [
+        "default",
+        "hover",
+        "disabled"
+      ],
+      "defaultOption": "default"
+    },
+    {
+      "name": "Checked",
+      "type": "single select",
+      "required": false,
+      "description": "In which checked state the checkbox currently is in.",
+      "options": [
+        "unchecked",
+        "checked",
+        "child checked"
+      ],
+      "defaultOption": "unchecked"
     }
   ]
 }

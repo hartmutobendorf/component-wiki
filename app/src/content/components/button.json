@@ -3,16 +3,82 @@
   "type": "Component",
   "tiers": "Global",
   "documentationStatus": "Minimal",
-  "lastEdited": "Nov 21, 2025",
+  "lastEdited": "Nov 24, 2025",
   "figmaLink": "https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-8",
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/main/scss/_patterns_buttons.scss",
   "figmaComponentDataPath": "md/button/figma-component-data.html",
-  "componentExampleImage": "md/button/images/b1f88b1e-c2aa-460a-bded-66a4224a5d91.png",
+  "componentExampleImage": "md/button/images/a2a1aef1-542b-49ab-b8a8-996e16a9d6bb.png",
   "changeLog": [
     {
       "who": "Maximilian Blazek",
       "when": "2025-11-21T17:00:00.000+00:00",
       "what": "Initial commit"
+    }
+  ],
+  "properties": [
+    {
+      "name": "Icon right",
+      "type": "single select",
+      "required": false,
+      "description": "Determines the type of icon that is shown in the button on the right side. While there is no restriction which icon can be shown here be aware that semantic icons should be shown on the left. For the most part only chevrons are used on this side.",
+      "options": [
+        "Available icons in Vanilla"
+      ]
+    },
+    {
+      "name": "Icon left",
+      "type": "single select",
+      "required": false,
+      "description": "Determines the type of icon that is shown in the button on the left side. Either the text or this icon needs to be provided. If only this icon is provided then it is an icon only button. If no icon is provided the icon is not shown",
+      "options": [
+        "Available icons in Vanilla"
+      ]
+    },
+    {
+      "name": "Text",
+      "type": "string",
+      "required": false,
+      "description": "Determines the text that is being displayed in the button. Either text or an icon needs to be provided. If no text is provided but an icon is it is an icon only button"
+    },
+    {
+      "name": "Size",
+      "type": "single select",
+      "required": false,
+      "description": "Controls the size of the button. Smaller sizes can be used in places where space is at a premium.",
+      "options": [
+        "default",
+        "small",
+        "dense"
+      ],
+      "defaultOption": "default"
+    },
+    {
+      "name": "State",
+      "type": "single select",
+      "required": false,
+      "description": "The state the button is currently in.",
+      "options": [
+        "default",
+        "hover",
+        "active",
+        "processing",
+        "disabled"
+      ],
+      "defaultOption": "default"
+    },
+    {
+      "name": "Type",
+      "type": "single select",
+      "required": false,
+      "description": "Type controls the semantic type of the button.",
+      "options": [
+        "default",
+        "base",
+        "brand",
+        "positive",
+        "negative"
+      ],
+      "defaultOption": "default"
     }
   ]
 }

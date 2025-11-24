@@ -30,4 +30,10 @@ export const CODA_CONFIG = {
    * The ID of the change log table
    */
   getChangeLogTableId: () => process.env.CODA_CHANGELOG_TABLE_ID,
+
+  /**
+   * Properties table ID from environment variable
+   * The ID of the properties table
+   */
+  getPropertiesTableId: () => process.env.CODA_PROPERTIES_TABLE_ID,
 } as const;

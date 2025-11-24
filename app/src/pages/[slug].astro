@@ -98,6 +98,15 @@ const examples = await loadMarkdownSection("examples");
           )
         }
         {
+          metadata.properties && metadata.properties.length > 0 && (
+            <li class="p-table-of-contents__item">
+              <a class="p-table-of-contents__link" href="#properties">
+                Properties
+              </a>
+            </li>
+          )
+        }
+        {
           metadata.changeLog && metadata.changeLog.length > 0 && (
             <li class="p-table-of-contents__item">
               <a class="p-table-of-contents__link" href="#changelog">
@@ -223,6 +232,54 @@ const examples = await loadMarkdownSection("examples");
 
   <div class="p-section">
     {
+      metadata.properties && metadata.properties.length > 0 && (
+        <section id="properties" class="u-text-max-width">
+          <h2>Properties</h2>
+          <table aria-label="Properties" class="properties-table">
+            <thead>
+              <tr>
+                <th class="properties-name">Name</th>
+                <th class="properties-type">Type</th>
+                <th class="properties-required">Required</th>
+                <th class="properties-description">Description</th>
+                <th class="properties-constraint">Constraint</th>
+                <th class="properties-options">Options</th>
+                <th class="properties-default-option">Default option</th>
+              </tr>
+            </thead>
+            <tbody>
+              {metadata.properties.map((property) => (
+                <tr>
+                  <td class="properties-name">{property.name}</td>
+                  <td class="properties-type">{property.type}</td>
+                  <td class="properties-required">
+                    {property.required ? "Yes" : "No"}
+                  </td>
+                  <td class="properties-description">
+                    {property.description || "-"}
+                  </td>
+                  <td class="properties-constraint">
+                    {property.constraint || "-"}
+                  </td>
+                  <td class="properties-options">
+                    {property.options && property.options.length > 0
+                      ? property.options.join(", ")
+                      : "-"}
+                  </td>
+                  <td class="properties-default-option">
+                    {property.defaultOption || "-"}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </section>
+      )
+    }
+  </div>
+
+  <div class="p-section">
+    {
       metadata.changeLog && metadata.changeLog.length > 0 && (
         <section id="changelog" class="u-text-max-width">
           <h2>Change log</h2>
@@ -297,6 +354,40 @@ const examples = await loadMarkdownSection("examples");
 
     .changelog-what {
       width: auto;
+    }
+
+    .properties-table {
+      table-layout: fixed;
+      width: 100%;
+    }
+
+    .properties-name {
+      width: 150px;
+    }
+
+    .properties-type {
+      width: 120px;
+    }
+
+    .properties-required {
+      width: 100px;
+    }
+
+    .properties-description {
+      width: auto;
+      min-width: 200px;
+    }
+
+    .properties-constraint {
+      width: 150px;
+    }
+
+    .properties-options {
+      width: 180px;
+    }
+
+    .properties-default-option {
+      width: 120px;
     }
   </style>
 

@@ -7,12 +7,69 @@
   "figmaLink": "https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-28",
   "codeLink": "https://www.figma.com/exit?url=https%3A%2F%2Fgithub.com%2Fcanonical%2Fvanilla-framework%2Fblob%2Fb1d651365b0714586e6ea14349dea763819c256e%2Fscss%2F_base_forms.scss%23L14",
   "figmaComponentDataPath": "md/input/figma-component-data.html",
-  "componentExampleImage": "md/input/images/bf908f55-3e02-4d34-976c-8e8f1511c094.png",
+  "componentExampleImage": "md/input/images/6e5436c8-53bc-47a2-ae5b-4ff13c4fd73e.png",
   "changeLog": [
     {
       "who": "Maximilian Blazek",
       "when": "2025-11-21T17:00:00.000+00:00",
       "what": "Initial commit"
+    }
+  ],
+  "properties": [
+    {
+      "name": "Placeholder",
+      "type": "string",
+      "required": false,
+      "description": "The placeholder text that is being shown if there has not been any text that has been entered yet."
+    },
+    {
+      "name": "Text",
+      "type": "string",
+      "required": false,
+      "description": "The text that is in the input field. "
+    },
+    {
+      "name": "Size",
+      "type": "single select",
+      "required": false,
+      "description": "The vertical density of the input element",
+      "options": [
+        "default",
+        "dense"
+      ],
+      "defaultOption": "default"
+    },
+    {
+      "name": "Input validation text",
+      "type": "string",
+      "required": false,
+      "description": "If the input is being validated the outcome / reason of the input validation"
+    },
+    {
+      "name": "Input validation type",
+      "type": "single select",
+      "required": false,
+      "description": "If the input is being validated what type of input validation it is.",
+      "options": [
+        "none",
+        "error",
+        "warning",
+        "positive"
+      ],
+      "defaultOption": "none"
+    },
+    {
+      "name": "State",
+      "type": "single select",
+      "required": false,
+      "description": "The state the input is currently in.",
+      "options": [
+        "default",
+        "hover",
+        "active",
+        "disabled"
+      ],
+      "defaultOption": "default"
     }
   ]
 }

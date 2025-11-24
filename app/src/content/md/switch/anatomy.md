@@ -1,4 +1,4 @@
-![image.png](images/c9e4e388-c592-4b7f-a5f9-dfd9eda0ab7c.png)
+![image.png](images/af2e93d2-571c-4191-a6d8-ce8a3ff39220.png)
 
 1.  **Track:** The track is the area in which the thumb can slide in.
 2.  **Thumb:** The thumb slides horizontally between positions to indicate state.

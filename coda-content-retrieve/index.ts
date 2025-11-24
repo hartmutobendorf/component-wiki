@@ -9,6 +9,16 @@ interface ChangeLogEntry {
     what: string
 }
 
+interface PropertyEntry {
+    name: string
+    required?: boolean
+    type: string
+    description?: string
+    constraint?: string
+    options?: string[]
+    defaultOption?: string
+}
+
 interface RowData {
     name: string
     "documentation-status": string
@@ -139,6 +149,61 @@ async function fetchChangeLogEntriesForComponent(
     }
 
     return entries
+}
+
+// Fetch properties for a component from the Properties table
+async function fetchPropertiesForComponent(
+    componentName: string,
+    propertiesRows: any[]
+): Promise<PropertyEntry[]> {
+    const properties: PropertyEntry[] = []
+
+    // Filter rows for this component
+    for (const row of propertiesRows) {
+        const values = row.values || {}
+
+        // Check if this row is for the current component
+        if (values.Component === componentName) {
+            // Skip empty rows
+            if (!values.Name) {
+                continue
+            }
+
+            const property: PropertyEntry = {
+                name: values.Name || "",
+                type: (values.Type || "").toLowerCase(),
+            }
+
+            // Add optional fields if they exist
+            if (values.Required !== undefined && values.Required !== null) {
+                property.required = values.Required
+            }
+            if (values.Description) {
+                property.description = values.Description
+            }
+            if (values.Constraint) {
+                property.constraint = values.Constraint
+            }
+            if (values.Options) {
+                // Options might be a comma-separated string or an array
+                if (typeof values.Options === "string") {
+                    property.options = values.Options
+                        .split(",")
+                        .map((opt: string) => opt.trim())
+                        .filter((opt: string) => opt.length > 0)
+                } else if (Array.isArray(values.Options)) {
+                    property.options = values.Options
+                }
+            }
+            if (values["Default option"]) {
+                property.defaultOption = values["Default option"]
+            }
+
+            properties.push(property)
+        }
+    }
+
+    return properties
 }
 
 // Extract structured data from HTML table
@@ -325,6 +390,7 @@ async function main() {
     const docId = CODA_CONFIG.getDocId()
     const tableId = CODA_CONFIG.getTableId()
     const changeLogTableId = CODA_CONFIG.getChangeLogTableId()
+    const propertiesTableId = CODA_CONFIG.getPropertiesTableId()
 
     if (!docId) {
         console.error("Error: CODA_DOC_ID environment variable is not set")
@@ -341,6 +407,12 @@ async function main() {
     if (!changeLogTableId) {
         console.error("Error: CODA_CHANGELOG_TABLE_ID environment variable is not set")
         console.log("Please add CODA_CHANGELOG_TABLE_ID to your .env file")
+        return
+    }
+
+    if (!propertiesTableId) {
+        console.error("Error: CODA_PROPERTIES_TABLE_ID environment variable is not set")
+        console.log("Please add CODA_PROPERTIES_TABLE_ID to your .env file")
         return
     }
 
@@ -382,6 +454,20 @@ async function main() {
         console.log(`✓ Fetched ${changeLogRows.length} change log rows`)
     } catch (error) {
         console.log(`⚠ Failed to fetch change log data: ${error}`)
+    }
+
+    // Fetch all properties rows from the Properties table
+    console.log("\n📋 Fetching properties data from API...")
+    let propertiesRows: any[] = []
+    try {
+        const propertiesResponse = await coda.getTableRows(docId, propertiesTableId, {
+            useColumnNames: true,
+            valueFormat: "simple",
+        })
+        propertiesRows = (propertiesResponse as any).items || []
+        console.log(`✓ Fetched ${propertiesRows.length} properties rows`)
+    } catch (error) {
+        console.log(`⚠ Failed to fetch properties data: ${error}`)
     }
 
     // Create components metadata directory
@@ -462,6 +548,12 @@ async function main() {
             console.log(`    ✓ Found ${row["change-log"].length} change log entries`)
         }
 
+        // Fetch properties for this component
+        const properties = await fetchPropertiesForComponent(name, propertiesRows)
+        if (properties.length > 0) {
+            console.log(`    ✓ Found ${properties.length} properties`)
+        }
+
         // Create metadata JSON file for this component
         const componentMetadata = {
             name: name,
@@ -474,6 +566,7 @@ async function main() {
             figmaComponentDataPath: figmaComponentDataPath,
             componentExampleImage: componentExampleImagePath,
             changeLog: row["change-log"],
+            properties: properties,
         }
 
         const metadataPath = `../app/src/content/components/${folderName}.json`
