@@ -3,11 +3,11 @@
   "type": "Pattern",
   "tiers": "Sites",
   "documentationStatus": "Needs work",
-  "lastEdited": "Nov 21, 2025",
+  "lastEdited": "Nov 24, 2025",
   "figmaLink": "https://www.figma.com/design/1brHCsyeTE6FU7hfJd6ao2/%F0%9F%9A%A7---WIP--Sites---Core-component-library?node-id=41-9326",
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/WD-22552-feat-data-spotlight-pattern/templates/_macros/vf_basic-section.jinja",
   "figmaComponentDataPath": "",
-  "componentExampleImage": "",
+  "componentExampleImage": "md/basic-section/images/b23f19c9-e4c9-482c-833c-f14960989448.png",
   "changeLog": [
     {
       "who": "Isaac Kim",

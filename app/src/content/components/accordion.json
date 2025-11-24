@@ -3,11 +3,11 @@
   "type": "Component",
   "tiers": "Global",
   "documentationStatus": "Minimal",
-  "lastEdited": "Nov 21, 2025",
+  "lastEdited": "Nov 24, 2025",
   "figmaLink": "https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-3",
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/b1d651365b0714586e6ea14349dea763819c256e/scss/_patterns_accordion.scss",
   "figmaComponentDataPath": "md/accordion/figma-component-data.html",
-  "componentExampleImage": "md/accordion/images/76f8014a-4953-419a-b2c2-ad66e91bea7e.png",
+  "componentExampleImage": "md/accordion/images/7a1520e0-3e0e-40cd-bda6-3267a76fa734.png",
   "changeLog": [
     {
       "who": "Maximilian Blazek",

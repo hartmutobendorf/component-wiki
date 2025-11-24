@@ -1,3 +1,3 @@
-![image.png](images/99d1973b-14b0-42b3-a2e1-6c1badddfc1e.png)
+![image.png](images/e3d00f0e-1129-4c11-b524-16c3a927cb7f.png)
 
 1.  **Checkmark:** The checkmark indicates wether the radio is checked or not.

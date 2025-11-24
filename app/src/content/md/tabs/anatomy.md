@@ -1,4 +1,4 @@
-![image.png](images/22e980f9-a755-42d0-9540-3fc650c6f67b.png)
+![image.png](images/612f0a0f-d92b-4d07-b9b8-6aa7a572be91.png)
 
 1.  **Tab:** An individual clickable element that acts as a trigger to display its associated content panel. Each tab represents a distinct section of related content.
 2.  **Tab text:** The label displayed within each tab that describes the content it represents. This text should be concise and clearly indicate what content will be shown when selected.

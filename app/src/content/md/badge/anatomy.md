@@ -1,3 +1,3 @@
-![image.png](images/8f6de99b-a458-4d23-a81f-a966f61bd865.png)
+![image.png](images/926ab17c-ca81-4a21-8998-3b7f8d9a46ce.png)
 
 1.  **Numeric value:** The numeric value that is being shown as part of the badge.
