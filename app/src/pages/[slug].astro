@@ -239,10 +239,10 @@ const examples = await loadMarkdownSection("examples");
                 <tr>
                   <td class="changelog-who">{entry.who}</td>
                   <td class="changelog-when">
-                    {new Date(entry.when).toLocaleDateString('de-AT', {
-                      year: 'numeric',
-                      month: '2-digit',
-                      day: '2-digit'
+                    {new Date(entry.when).toLocaleDateString("de-AT", {
+                      year: "numeric",
+                      month: "2-digit",
+                      day: "2-digit",
                     })}
                   </td>
                   <td class="changelog-what">{entry.what}</td>

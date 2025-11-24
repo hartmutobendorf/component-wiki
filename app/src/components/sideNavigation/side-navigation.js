@@ -1,5 +1,6 @@
 import { LitElement, css, html } from "lit";
 import { vanillaStyleSheet } from "../../styles/vanilla.js";
+import "../multiselect/multiselect.js";
 
 export class SideNavigationComponent extends LitElement {
   static styles = [
@@ -26,6 +27,8 @@ export class SideNavigationComponent extends LitElement {
 
         .p-side-navigation {
           /* Remove drawer classes on desktop */
+          min-height: 100vh;
+
           &.is-drawer-hidden,
           &.is-drawer-expanded,
           &.is-drawer-collapsed {
@@ -50,7 +53,7 @@ export class SideNavigationComponent extends LitElement {
           position: fixed;
           top: 0.75rem;
           left: 1rem;
-          z-index: 201;
+          z-index: 100;
         }
 
         .p-side-navigation__drawer {
@@ -60,6 +63,7 @@ export class SideNavigationComponent extends LitElement {
           height: 100vh;
           overflow-y: auto;
           pointer-events: auto;
+          z-index: 101;
         }
 
         .p-side-navigation__overlay {
@@ -107,6 +111,8 @@ export class SideNavigationComponent extends LitElement {
       type: Boolean,
       attribute: "dark-mode",
     },
+    _selectedTypes: { state: true },
+    _selectedTiers: { state: true },
   };
 
   constructor() {
@@ -118,6 +124,87 @@ export class SideNavigationComponent extends LitElement {
     this.lastFocus = null;
     this.ignoreFocusChanges = false;
     this.focusAfterClose = null;
+
+    // Initialize filters from localStorage or defaults
+    this._selectedTypes = this._loadSelectedTypes();
+    this._selectedTiers = this._loadSelectedTiers();
+  }
+
+  _loadSelectedTypes() {
+    try {
+      const stored = localStorage.getItem("component-filter-types");
+      if (stored) {
+        return JSON.parse(stored);
+      }
+    } catch (e) {
+      console.error("Error loading types from localStorage:", e);
+    }
+    // Default: all types selected
+    return [
+      "Foundation",
+      "Component",
+      "Complex component",
+      "Pattern",
+      "Page",
+      "Mental model",
+    ];
+  }
+
+  _loadSelectedTiers() {
+    try {
+      const stored = localStorage.getItem("component-filter-tiers");
+      if (stored) {
+        return JSON.parse(stored);
+      }
+    } catch (e) {
+      console.error("Error loading tiers from localStorage:", e);
+    }
+    // Default: only Global selected
+    return ["Global"];
+  }
+
+  _handleFilterChange(e) {
+    // Separate the selected values into types and tiers based on the item metadata
+    const allItems = e.detail.items.flatMap((group) => group.items);
+
+    this._selectedTypes = allItems
+      .filter((item) => item.type === "type" && item.selected)
+      .map((item) => item.value);
+
+    this._selectedTiers = allItems
+      .filter((item) => item.type === "tier" && item.selected)
+      .map((item) => item.value);
+
+    // Save to localStorage
+    try {
+      localStorage.setItem(
+        "component-filter-types",
+        JSON.stringify(this._selectedTypes),
+      );
+      localStorage.setItem(
+        "component-filter-tiers",
+        JSON.stringify(this._selectedTiers),
+      );
+    } catch (e) {
+      console.error("Error saving filters to localStorage:", e);
+    }
+  }
+
+  _filterNavItems() {
+    if (!this.navItems || this.navItems.length === 0) {
+      return [];
+    }
+
+    return this.navItems
+      .map((group) => ({
+        ...group,
+        items: group.items.filter(
+          (item) =>
+            this._selectedTypes.includes(item.type) &&
+            this._selectedTiers.includes(item.tier),
+        ),
+      }))
+      .filter((group) => group.items.length > 0);
   }
 
   firstUpdated() {
@@ -262,6 +349,75 @@ export class SideNavigationComponent extends LitElement {
   }
 
   render() {
+    const filteredNavItems = this._filterNavItems();
+
+    const filterGroups = [
+      {
+        heading: "Tier",
+        items: [
+          {
+            label: "Global",
+            value: "Global",
+            selected: this._selectedTiers.includes("Global"),
+            type: "tier",
+          },
+          {
+            label: "Sites",
+            value: "Sites",
+            selected: this._selectedTiers.includes("Sites"),
+            type: "tier",
+          },
+          {
+            label: "Apps",
+            value: "Apps",
+            selected: this._selectedTiers.includes("Apps"),
+            type: "tier",
+          },
+        ],
+      },
+      {
+        heading: "Component type",
+        items: [
+          {
+            label: "Foundation",
+            value: "Foundation",
+            selected: this._selectedTypes.includes("Foundation"),
+            type: "type",
+          },
+          {
+            label: "Component",
+            value: "Component",
+            selected: this._selectedTypes.includes("Component"),
+            type: "type",
+          },
+          {
+            label: "Complex component",
+            value: "Complex component",
+            selected: this._selectedTypes.includes("Complex component"),
+            type: "type",
+          },
+          {
+            label: "Pattern",
+            value: "Pattern",
+            selected: this._selectedTypes.includes("Pattern"),
+            type: "type",
+          },
+          {
+            label: "Page",
+            value: "Page",
+            selected: this._selectedTypes.includes("Page"),
+            type: "type",
+          },
+          {
+            label: "Mental model",
+            value: "Mental model",
+            selected: this._selectedTypes.includes("Mental model"),
+            type: "type",
+          },
+        ],
+      },
+    ];
+
     if (!this.navItems || this.navItems.length === 0) {
       return html`
         <div
@@ -324,14 +480,34 @@ export class SideNavigationComponent extends LitElement {
               </button>
             </div>
 
-            ${this.navItems.map(
-              (group) => html`
-                <h3 class="p-side-navigation__heading">${group.type}</h3>
-                <ul class="p-side-navigation__list">
-                  ${group.items.map((item) => this.renderNavigationItem(item))}
-                </ul>
-              `,
-            )}
+            <div style="margin-bottom: 1rem;">
+              <label class="p-side-navigation__heading" for="filter-components"
+                >Filter components</label
+              >
+              <div style="padding: 0 1rem;">
+                <multi-select
+                  id="filter-components"
+                  label="Filter components"
+                  .groups=${filterGroups}
+                  @selection-changed=${this._handleFilterChange}
+                ></multi-select>
+              </div>
+            </div>
+
+            ${filteredNavItems.length === 0
+              ? html`<p style="padding: 0 1rem;">
+                  No components match the selected filters.
+                </p>`
+              : filteredNavItems.map(
+                  (group) => html`
+                    <h3 class="p-side-navigation__heading">${group.type}</h3>
+                    <ul class="p-side-navigation__list">
+                      ${group.items.map((item) =>
+                        this.renderNavigationItem(item),
+                      )}
+                    </ul>
+                  `,
+                )}
           </div>
         </nav>
       </div>

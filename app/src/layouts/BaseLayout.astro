@@ -31,10 +31,15 @@ const groupedComponents = components.reduce(
     acc[type].push({
       name: component.data.name,
       slug: component.id,
+      tier: component.data.tiers,
+      type: component.data.type,
     });
     return acc;
   },
-  {} as Record<string, { name: string; slug: string }[]>,
+  {} as Record<
+    string,
+    { name: string; slug: string; tier: string; type: string }[]
+  >,
 );
 
 // Create nav items
