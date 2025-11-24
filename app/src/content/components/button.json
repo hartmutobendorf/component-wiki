@@ -7,5 +7,12 @@
   "figmaLink": "https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-8",
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/main/scss/_patterns_buttons.scss",
   "figmaComponentDataPath": "md/button/figma-component-data.html",
-  "componentExampleImage": "md/button/images/610c4e89-d22d-49e3-a881-94c168d737c0.png"
+  "componentExampleImage": "md/button/images/b1f88b1e-c2aa-460a-bded-66a4224a5d91.png",
+  "changeLog": [
+    {
+      "who": "Maximilian Blazek",
+      "when": "2025-11-21T17:00:00.000+00:00",
+      "what": "Initial commit"
+    }
+  ]
 }

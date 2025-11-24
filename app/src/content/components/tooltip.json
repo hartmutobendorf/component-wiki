@@ -7,5 +7,12 @@
   "figmaLink": "https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-52",
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/b1d651365b0714586e6ea14349dea763819c256e/scss/_patterns_tooltips.scss",
   "figmaComponentDataPath": "md/tooltip/figma-component-data.html",
-  "componentExampleImage": "md/tooltip/images/44b101bc-fdc9-45ac-a4b5-17c5cc015721.png"
+  "componentExampleImage": "md/tooltip/images/ee5a10d4-4cdd-4965-b4a7-01ff2f03412e.png",
+  "changeLog": [
+    {
+      "who": "Maximilian Blazek",
+      "when": "2025-11-21T17:00:00.000+00:00",
+      "what": "Initial commit"
+    }
+  ]
 }

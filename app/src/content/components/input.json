@@ -7,5 +7,12 @@
   "figmaLink": "https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-28",
   "codeLink": "https://www.figma.com/exit?url=https%3A%2F%2Fgithub.com%2Fcanonical%2Fvanilla-framework%2Fblob%2Fb1d651365b0714586e6ea14349dea763819c256e%2Fscss%2F_base_forms.scss%23L14",
   "figmaComponentDataPath": "md/input/figma-component-data.html",
-  "componentExampleImage": "md/input/images/007ae999-a97f-4492-b23e-f9884b34f6c8.png"
+  "componentExampleImage": "md/input/images/bf908f55-3e02-4d34-976c-8e8f1511c094.png",
+  "changeLog": [
+    {
+      "who": "Maximilian Blazek",
+      "when": "2025-11-21T17:00:00.000+00:00",
+      "what": "Initial commit"
+    }
+  ]
 }

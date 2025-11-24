@@ -1,4 +1,4 @@
-![image.png](images/cbf0c8e4-b7bf-4de3-9a78-1f350ad61323.png)
+![image.png](images/d3ba3b33-9bd7-47f7-86f2-b5af6f4724e7.png)
 
 1.  **Text:** Either the placeholder text or, after the user starts typing, the text that the user typed.
 2.  **Input validation icon:** A supplementary icon indicating the type of input validation.
