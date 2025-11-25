@@ -1,0 +1,103 @@
+---
+name: Notification
+type: Component
+tiers: Global
+documentationStatus: Minimal
+lastEdited: Nov 24, 2025
+figmaLink: https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-35
+codeLink: https://github.com/canonical/vanilla-framework/blob/b1d651365b0714586e6ea14349dea763819c256e/scss/_patterns_notifications.scss
+---
+
+# Notification
+
+## Description
+
+Notifications display brief, contextual messages to inform users about system status, user actions, or important updates. They typically appear temporarily and can convey success, error, warning, or informational states to provide immediate feedback without disrupting the user's workflow.
+
+## Metadata
+
+- **Type**: Component
+- **Tier**: Global
+- **Documentation Status**: Minimal
+- **Last Edited**: Nov 24, 2025
+- **Figma**: [View in Figma](https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-35)
+- **Code**: [View on GitHub](https://github.com/canonical/vanilla-framework/blob/b1d651365b0714586e6ea14349dea763819c256e/scss/_patterns_notifications.scss)
+
+## Anatomy
+
+### 1. Icon
+
+The icon gives additional visual information what type of notification this is.
+
+### 2. Title
+
+The title of the notification is a short description of the message that is being conveyed to the user. Shouldn’t be too long.
+
+### 3. Description
+
+A more in detail description of the message that is being conveyed to the user. This is supposed to give the user full context of what you are trying to tell them.
+
+### 4. Content section
+
+This is the main content section of the notification. It contains the Icon, title, description and dismiss button.
+
+### 5. Dismiss button
+
+The dismiss button allows the user to dismiss the notification.
+
+### 6. Timestamp & action section
+
+If a timestamp or actions need to be shown as part of the notification then this section is shown. It contains the timestamp and actions.
+
+### 7. TImestamp
+
+The timestamp gives an indication when the event that triggered the creation of the notification happened.
+
+### 8. Actions
+
+Allows you to provide actions the user can take based on the notification.
+
+## Usage
+
+Notifications should be used sparingly and strategically to communicate important information that requires immediate user attention. Use notifications carefully because they catch the user's attention and disrupt their workflow.
+
+Avoid using notifications for information that doesn't require interrupting the user or isn't relevant to their current task. When notifications with irrelevant information are sent too frequently, users become distracted and annoyed, causing notifications to lose their impact.
+
+Keep messages concise and actionable, ensure proper timing and placement, and provide clear next steps when user action is required.
+
+### Where to position a notification
+
+Historically a lot of our applications and sites have placed notifications in the same container as the main content. Often times this is not desirable as this causes unwanted layout shifts and pushes the content that the user is interested in (the main content of the page) outside of the viewport. Ideally the notification would be floating in the bottom right of an application where it does not disrupt the normal content flow.
+
+### When to use
+
+*   Provide immediate feedback after user actions that aren't immediately visible on the interface
+*   Communicate changes in system or application state that affect the user's workflow
+*   Alert users to information that requires their attention or response within a specific timeframe
+*   Confirm completion of background processes or long-running operations
+
+### When not to use
+
+*   Information is already clearly displayed and accessible elsewhere on the current page
+*   Content is promotional, marketing-focused, or not directly related to the user's current task
+*   The information can wait until the user's next natural interaction with the relevant feature
+
+## Properties
+
+| Name | Type | Required | Description | Constraint | Options | Default |
+|------|------|----------|-------------|------------|---------|----------|
+| Time stamp | string | No | Can be set to the timestamp when the event when that triggered the notification took place. | Date formatted string | - | - |
+| Actions | slot | No | Allows to give associated actions with the notification. | Action link components | - | - |
+| Dismissible | boolean | No | Wether or not the notification can be dismissed. If it can be dismissed the dismiss button is being shown. | - | true, false | true |
+| Description | string | No | Sets the content of the description. | - | - | - |
+| Title | string | No | Sets the content of the title. | - | - | - |
+| Inline | boolean | No | Wether the title and description of the notification are being shown in one line. reduces the overall height of the notification allowing it to be used where space is at a premium. | - | true, false | false |
+| Border | boolean | No | Wether the notification has a border or not. Borderless notifications are used for example in tables. | - | true, false | true |
+| Type | single select | Yes | What semantic type the notification is. | - | information, negative, positive, caution | - |
+
+## Change Log
+
+### Nov 21, 2025 - Maximilian Blazek
+
+Initial commit
+

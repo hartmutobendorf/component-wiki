@@ -1,0 +1,80 @@
+---
+name: Tabs
+type: Component
+tiers: Global
+documentationStatus: Minimal
+lastEdited: Nov 24, 2025
+figmaLink: https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-50
+codeLink: https://github.com/canonical/vanilla-framework/blob/b1d651365b0714586e6ea14349dea763819c256e/scss/_patterns_tabs.scss
+---
+
+# Tabs
+
+## Description
+
+A tabs component organizes related content into separate sections, allowing users to switch between different content panels within the same context by clicking on labeled tab headers. It helps reduce visual clutter by displaying only one content panel at a time while keeping all options easily accessible.
+
+## Metadata
+
+- **Type**: Component
+- **Tier**: Global
+- **Documentation Status**: Minimal
+- **Last Edited**: Nov 24, 2025
+- **Figma**: [View in Figma](https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-50)
+- **Code**: [View on GitHub](https://github.com/canonical/vanilla-framework/blob/b1d651365b0714586e6ea14349dea763819c256e/scss/_patterns_tabs.scss)
+
+## Anatomy
+
+### 1. Tab
+
+An individual clickable element that acts as a trigger to display its associated content panel. Each tab represents a distinct section of related content.
+
+### 2. Tab text
+
+The label displayed within each tab that describes the content it represents. This text should be concise and clearly indicate what content will be shown when selected.
+
+### 3. Active tab indicator
+
+A visual element that appears beneath the currently selected tab. Only one tab can ever be active at a time.
+
+### 4. Tab group
+
+The horizontal container that houses all individual tabs together. It organizes the tabs in a row and a line that runs along the bottom.
+
+## Usage
+
+Tabs are used to organize related content at the same level of hierarchy, allowing users to focus on one section at a time without leaving the current context. They work best when the content sections are closely related but mutually exclusive, when users typically need to see only one section to complete their task.
+
+Unlike navigation, which moves users between different pages or sections of an application, tabs keep users in the same place while switching between different aspects of the same topic or dataset. The tab labels should be predictable and parallel in nature, giving users a clear mental model of what content lives under each tab. Unlike accordions, which stack vertically and can display multiple sections simultaneously, tabs enforce a single-focus model where only one content panel is ever visible.
+
+### When to use
+
+*   To organize related content that doesn't need to be viewed simultaneously
+*   When you have 2-7 sections of content that are at the same level of hierarchy
+*   To reduce cognitive load by breaking up content into digestible chunks
+*   For switching between different aspects or properties of a single item (e.g., Overview, Specifications, Reviews for a product)
+*   When space is limited and you need to display multiple categories of information in the same area
+*   To group related settings or configuration options that are independent of each other
+
+### When not to use
+
+*   Don’t use it as a primary navigation. Tabs are for content organization, not for moving between pages
+*   Within forms where submission scope is unclear. Users won't know if all tabs or just the visible tab will be submitted
+*   For sequential or step-by-step processes. Use a stepper or wizard pattern instead
+*   When users need to compare content across sections. Consider using an accordion that allows multiple expanded sections.
+*   For a single section of content. Tabs require at least two sections to be meaningful
+*   When you have many sections (8+) of content. Consider separate pages and a navigation instead.
+
+## Properties
+
+| Name | Type | Required | Description | Constraint | Options | Default |
+|------|------|----------|-------------|------------|---------|----------|
+| Tab state | single select | No | The state of a tab. Only one tab can be active at a time. | - | default, hover, active | default |
+| Tabs | slot | Yes | The tab text and a reference to its associated content (content or link) | Only tab item components are allowed | tab text, content | - |
+
+## Change Log
+
+### Nov 21, 2025 - Maximilian Blazek
+
+Initial commit
+

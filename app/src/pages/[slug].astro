@@ -182,6 +182,10 @@ const examples = await loadMarkdownSection("examples");
                   text-content={metadata.name}
                 />
               )}
+
+              <github-copilot-button component-id={componentId} />
+
+              <copy-markdown-button component-id={componentId} />
             </div>
           </section>
         )
@@ -465,5 +469,7 @@ const examples = await loadMarkdownSection("examples");
 
   <script>
     import "../components/copyFigmaButton/copy-figma-button.js";
+    import "../components/githubCopilotButton/github-copilot-button.js";
+    import "../components/copyMarkdownButton/copy-markdown-button.js";
   </script>
 </BaseLayout>

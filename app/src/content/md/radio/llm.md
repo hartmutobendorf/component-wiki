@@ -1,0 +1,65 @@
+---
+name: Radio
+type: Component
+tiers: Global
+documentationStatus: Minimal
+lastEdited: Nov 24, 2025
+figmaLink: https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-38
+codeLink: https://github.com/canonical/vanilla-framework/blob/b1d651365b0714586e6ea14349dea763819c256e/scss/_patterns_form-tick-elements.scss#L101
+---
+
+# Radio
+
+## Description
+
+Radio buttons are used to select a single option from a group of mutually exclusive choices, commonly found in forms, settings, and preference panels. Unlike checkboxes which allow multiple selections, radio buttons ensure only one option can be selected at a time within each group.
+
+## Metadata
+
+- **Type**: Component
+- **Tier**: Global
+- **Documentation Status**: Minimal
+- **Last Edited**: Nov 24, 2025
+- **Figma**: [View in Figma](https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-38)
+- **Code**: [View on GitHub](https://github.com/canonical/vanilla-framework/blob/b1d651365b0714586e6ea14349dea763819c256e/scss/_patterns_form-tick-elements.scss#L101)
+
+## Anatomy
+
+### 1. Checkmark
+
+The checkmark indicates wether the radio is checked or not.
+
+## Usage
+
+Radio buttons are ideal for presenting 2-7 mutually exclusive options where users need to see all choices simultaneously to make an informed decision. Always provide a logical ordering such as frequency of use, alphabetical arrangement, or importance, and ensure labels are clear and follow parallel structure. Avoid negative phrasing when possible, and never use a single radio button in isolation – they must always appear in groups. For required fields, include a sensible default selection, while optional radio groups can start with no selection.
+
+Remember that unlike checkboxes which allow multiple selections, radio buttons enforce a single choice within each group and typically require explicit confirmation through a save or submit action.
+
+### When to use
+
+*   Single selection from 2-7 mutually exclusive options
+*   When all available choices should be visible at once
+*   For decisions where users benefit from comparing options side-by-side
+*   In forms where explicit confirmation is required before changes take effect
+
+### When not to use
+
+*   For yes/no or binary on/off states (use checkbox or switch instead)
+*   When multiple selections are needed (use checkboxes)
+*   For large option lists with 8+ choices (consider dropdown menu)
+*   For settings that should apply changes immediately (use switch or toggle)
+*   For single standalone options (always group radio buttons)
+
+## Properties
+
+| Name | Type | Required | Description | Constraint | Options | Default |
+|------|------|----------|-------------|------------|---------|----------|
+| State | single select | No | What state the radio is in. Putting the checked radio in hover state has no effect. | - | default, hover, disabled | default |
+| Checked | boolean | No | Wether the radio is checked or not. | - | true, false | false |
+
+## Change Log
+
+### Nov 21, 2025 - Maximilian Blazek
+
+Initial commit
+

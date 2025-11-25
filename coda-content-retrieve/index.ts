@@ -425,6 +425,107 @@ async function convertHtmlToMarkdown(
     return finalMarkdown.trim()
 }
 
+// Generate a complete markdown file with frontmatter for LLM consumption
+function generateLLMMarkdown(
+    componentMetadata: any,
+    markdownContent: { description: string; usage: string; examples: string }
+): string {
+    const frontmatter = `---
+name: ${componentMetadata.name}
+type: ${componentMetadata.type}
+tiers: ${componentMetadata.tiers}
+documentationStatus: ${componentMetadata.documentationStatus}
+lastEdited: ${componentMetadata.lastEdited}
+figmaLink: ${componentMetadata.figmaLink}
+codeLink: ${componentMetadata.codeLink}
+---
+
+`
+
+    let markdown = frontmatter
+
+    // Add main heading
+    markdown += `# ${componentMetadata.name}\n\n`
+
+    // Add description section
+    if (markdownContent.description && markdownContent.description.trim()) {
+        markdown += `## Description\n\n${markdownContent.description}\n\n`
+    }
+
+    // Add metadata section
+    markdown += `## Metadata\n\n`
+    markdown += `- **Type**: ${componentMetadata.type}\n`
+    markdown += `- **Tier**: ${componentMetadata.tiers}\n`
+    markdown += `- **Documentation Status**: ${componentMetadata.documentationStatus}\n`
+    markdown += `- **Last Edited**: ${componentMetadata.lastEdited}\n`
+
+    if (componentMetadata.figmaLink) {
+        markdown += `- **Figma**: [View in Figma](${componentMetadata.figmaLink})\n`
+    }
+
+    if (componentMetadata.codeLink) {
+        markdown += `- **Code**: [View on GitHub](${componentMetadata.codeLink})\n`
+    }
+
+    markdown += `\n`
+
+    // Add anatomy section
+    if (componentMetadata.anatomy && componentMetadata.anatomy.table && componentMetadata.anatomy.table.length > 0) {
+        markdown += `## Anatomy\n\n`
+
+        const sortedAnatomy = [...componentMetadata.anatomy.table].sort((a, b) => a.number - b.number)
+
+        for (const item of sortedAnatomy) {
+            markdown += `### ${item.number}. ${item.name}\n\n`
+            markdown += `${item.description}\n\n`
+        }
+    }
+
+    // Add usage section
+    if (markdownContent.usage && markdownContent.usage.trim()) {
+        markdown += `## Usage\n\n${markdownContent.usage}\n\n`
+    }
+
+    // Add examples section
+    if (markdownContent.examples && markdownContent.examples.trim()) {
+        markdown += `## Examples\n\n${markdownContent.examples}\n\n`
+    }
+
+    // Add properties section
+    if (componentMetadata.properties && componentMetadata.properties.length > 0) {
+        markdown += `## Properties\n\n`
+        markdown += `| Name | Type | Required | Description | Constraint | Options | Default |\n`
+        markdown += `|------|------|----------|-------------|------------|---------|----------|\n`
+
+        for (const prop of componentMetadata.properties) {
+            const name = prop.name || '-'
+            const type = prop.type || '-'
+            const required = prop.required ? 'Yes' : 'No'
+            const description = (prop.description || '-').replace(/\|/g, '\\|').replace(/\n/g, ' ')
+            const constraint = (prop.constraint || '-').replace(/\|/g, '\\|').replace(/\n/g, ' ')
+            const options = prop.options && prop.options.length > 0 ? prop.options.join(', ') : '-'
+            const defaultOption = prop.defaultOption || '-'
+
+            markdown += `| ${name} | ${type} | ${required} | ${description} | ${constraint} | ${options} | ${defaultOption} |\n`
+        }
+
+        markdown += `\n`
+    }
+
+    // Add changelog section
+    if (componentMetadata.changeLog && componentMetadata.changeLog.length > 0) {
+        markdown += `## Change Log\n\n`
+
+        for (const entry of componentMetadata.changeLog) {
+            const date = entry.when ? new Date(entry.when).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' }) : 'Unknown date'
+            markdown += `### ${date} - ${entry.who}\n\n`
+            markdown += `${entry.what}\n\n`
+        }
+    }
+
+    return markdown
+}
+
 async function main() {
     const docId = CODA_CONFIG.getDocId()
     const tableId = CODA_CONFIG.getTableId()
@@ -658,6 +759,16 @@ async function main() {
             metadataPath,
             JSON.stringify(componentMetadata, null, 2)
         )
+
+        // Generate and save LLM markdown file
+        const llmMarkdownContent = generateLLMMarkdown(componentMetadata, {
+            description: await Bun.file(`${mdFolderPath}/description.md`).text(),
+            usage: await Bun.file(`${mdFolderPath}/usage.md`).text(),
+            examples: await Bun.file(`${mdFolderPath}/examples.md`).text(),
+        })
+        const llmMarkdownPath = `${mdFolderPath}/llm.md`
+        await Bun.write(llmMarkdownPath, llmMarkdownContent)
+        console.log(`    ✓ Generated LLM markdown`)
 
         console.log(`  ✓ Processed: ${name}`)
     }

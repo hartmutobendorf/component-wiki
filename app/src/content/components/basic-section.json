@@ -3,11 +3,11 @@
   "type": "Pattern",
   "tiers": "Sites",
   "documentationStatus": "Needs work",
-  "lastEdited": "Nov 24, 2025",
+  "lastEdited": "Nov 25, 2025",
   "figmaLink": "https://www.figma.com/design/1brHCsyeTE6FU7hfJd6ao2/%F0%9F%9A%A7---WIP--Sites---Core-component-library?node-id=41-9326",
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/WD-22552-feat-data-spotlight-pattern/templates/_macros/vf_basic-section.jinja",
   "figmaComponentDataPath": "",
-  "componentExampleImage": "md/basic-section/images/543fcb13-a4af-466b-8d4d-2e9e697145ae.png",
+  "componentExampleImage": "md/basic-section/images/a70cb5d6-1292-4017-8906-59c247049483.png",
   "changeLog": [
     {
       "who": "Isaac Kim",
@@ -17,7 +17,28 @@
   ],
   "properties": [],
   "anatomy": {
-    "image": "md/basic-section/images/a2c7703e-fa99-4c00-b8d6-a24fa65c9eae.webp",
-    "table": []
+    "image": "md/basic-section/images/012835f9-e651-4b63-9fc5-6919c42840a0.webp",
+    "table": [
+      {
+        "number": 4,
+        "name": "Content area",
+        "description": "The content area on the right side of the 50/50 layout where various block types can be placed. Supported blocks include text, images, lists, videos, code snippets, logos, CTAs, and other compatible patterns. The Basic Section layout provides flexible composition while maintaining structural consistency."
+      },
+      {
+        "number": 3,
+        "name": "Eyebrow",
+        "description": "The optional muted eyebrow placed above the section title. It provides additional contextual information or categorization for the section when needed."
+      },
+      {
+        "number": 2,
+        "name": "Heading",
+        "description": "The section heading communicates the primary subject or theme of the section."
+      },
+      {
+        "number": 1,
+        "name": "Rule",
+        "description": "The rule component indicates the beginning of a new section."
+      }
+    ]
   }
 }

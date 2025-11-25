@@ -15,8 +15,8 @@ export default defineConfig({
       viteStaticCopy({
         targets: [
           {
-            // Copy Figma data and images, excluding markdown files
-            src: 'src/content/md/**/*.{html,png,jpg,jpeg,gif,svg,webp}',
+            // Copy Figma data, images, and markdown files
+            src: 'src/content/md/**/*.{html,png,jpg,jpeg,gif,svg,webp,md}',
             dest: '.',
             rename: (fileName, fileExtension, fullPath) => {
               // Extract the path after 'src/content/' to preserve md/component/... structure

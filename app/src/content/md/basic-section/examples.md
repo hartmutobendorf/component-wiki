@@ -2,10 +2,10 @@
 
 Medium dimension
 
-![image.png](images/ac72b791-b634-43ff-9589-b7d1d54cab32.png)
+![image.png](images/a139bf44-6c7d-409b-a2ac-29533f1c4597.png)
 
 Small dimension
 
-![image.png](images/22032fe3-4cbc-4d8d-b543-cb541b8ffbfc.png)
+![image.png](images/4a5486fd-e4ed-4202-bf72-a28bce67cef3.png)
 
 ### Example usage

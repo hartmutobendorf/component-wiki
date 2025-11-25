@@ -1,0 +1,74 @@
+---
+name: Button
+type: Component
+tiers: Global
+documentationStatus: Minimal
+lastEdited: Nov 24, 2025
+figmaLink: https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-8
+codeLink: https://github.com/canonical/vanilla-framework/blob/main/scss/_patterns_buttons.scss
+---
+
+# Button
+
+## Description
+
+Buttons trigger actions within an interface, typically involving data transformation or manipulation. They provide clear visual indicators of the primary actions users can perform on a page or section.
+
+## Metadata
+
+- **Type**: Component
+- **Tier**: Global
+- **Documentation Status**: Minimal
+- **Last Edited**: Nov 24, 2025
+- **Figma**: [View in Figma](https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-8)
+- **Code**: [View on GitHub](https://github.com/canonical/vanilla-framework/blob/main/scss/_patterns_buttons.scss)
+
+## Anatomy
+
+### 1. Icon left
+
+The icon to the left side of the button can be used to give additional visual context to the user what sort of action this button performs. For example an edit action can be additionally visually indicated by an edit icon.
+
+### 2. Icon right
+
+The right icon is used less frequently and typically serves a different purpose than the left icon. Rather than providing additional context about the primary action, it usually indicates secondary behavior or UI affordances. For example, a chevron icon might signal that the button opens a contextual menu, or expandable content. This positioning helps users understand that there's additional functionality beyond the main action described in the button text.
+
+### 3. Text
+
+The text of the button is used to tell the user what sort of action this button performs. It should be set to something that gives the user a clear understanding which action is being performed when executing the button.
+
+## Usage
+
+Use buttons for meaningful interactions that transform, submit, or manipulate data – such as saving forms, deleting items, processing payments, or updating settings. Actions represent state changes in the application rather than simple navigation.
+
+Buttons help establish clear visual hierarchy by signaling the most important actions available to users at any given moment. Limit the number of primary buttons per page or section to avoid overwhelming users with too many competing calls-to-action.
+
+While buttons should primarily trigger actions, they can occasionally be used for navigation when the context demands it. This is most appropriate for high-priority conversion points, such as call-to-action buttons in hero sections that direct users to sign-up flows or landing pages. In these cases, the button represents a key user journey rather than standard navigation.
+
+### When to use
+
+*   For actions that transform, submit, or manipulate data
+*   To draw attention to the most important action on a page or section
+*   For high-priority conversion points or key user journeys
+
+### When not to use
+
+*   For simple navigation between pages (use links instead)
+
+## Properties
+
+| Name | Type | Required | Description | Constraint | Options | Default |
+|------|------|----------|-------------|------------|---------|----------|
+| Icon right | single select | No | Determines the type of icon that is shown in the button on the right side. While there is no restriction which icon can be shown here be aware that semantic icons should be shown on the left. For the most part only chevrons are used on this side. | - | Available icons in Vanilla | - |
+| Icon left | single select | No | Determines the type of icon that is shown in the button on the left side. Either the text or this icon needs to be provided. If only this icon is provided then it is an icon only button. If no icon is provided the icon is not shown | - | Available icons in Vanilla | - |
+| Text | string | No | Determines the text that is being displayed in the button. Either text or an icon needs to be provided. If no text is provided but an icon is it is an icon only button | - | - | - |
+| Size | single select | No | Controls the size of the button. Smaller sizes can be used in places where space is at a premium. | - | default, small, dense | default |
+| State | single select | No | The state the button is currently in. | - | default, hover, active, processing, disabled | default |
+| Type | single select | No | Type controls the semantic type of the button. | - | default, base, brand, positive, negative | default |
+
+## Change Log
+
+### Nov 21, 2025 - Maximilian Blazek
+
+Initial commit
+
