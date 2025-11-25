@@ -30,7 +30,7 @@ export class GithubCopilotButtonComponent extends LitElement {
   _handleClick() {
     // Build the GitHub Copilot URL with the prompt referencing the markdown file
     const githubFilePath = `@dgtlntv/component-wiki/app/src/content/md/${this.componentId}/llm.md`;
-    const prompt = `${githubFilePath} Tell me about this component`;
+    const prompt = `${githubFilePath}`;
     const copilotUrl = `https://github.com/copilot?prompt=${encodeURIComponent(prompt)}`;
 
     // Open in a new tab
@@ -40,7 +40,7 @@ export class GithubCopilotButtonComponent extends LitElement {
   render() {
     return html`
       <button class="p-button u-no-margin--bottom" @click=${this._handleClick}>
-        Ask GitHub Copilot
+        Ask GitHub Copilot about this page
       </button>
     `;
   }
