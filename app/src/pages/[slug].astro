@@ -112,15 +112,15 @@ const examples = await loadMarkdownSection("examples");
           )
         }
         {
-          (metadata.properties && metadata.properties.length > 0) ||
+          ((metadata.properties && metadata.properties.length > 0) ||
             (metadata.childProperties &&
-              metadata.childProperties.length > 0 && (
-                <li class="p-table-of-contents__item">
-                  <a class="p-table-of-contents__link" href="#properties">
-                    Properties
-                  </a>
-                </li>
-              ))
+              metadata.childProperties.length > 0)) && (
+            <li class="p-table-of-contents__item">
+              <a class="p-table-of-contents__link" href="#properties">
+                Properties
+              </a>
+            </li>
+          )
         }
         {
           metadata.changeLog && metadata.changeLog.length > 0 && (
