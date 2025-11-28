@@ -83,11 +83,11 @@ The pattern is most effective when the information fits naturally into a two-col
 
 Medium dimension
 
-![image.png](images/64b06694-b055-4ed8-9e36-9f56dad2e340.png)
+![image.png](images/03216696-9966-42e2-89e5-bb873e888d16.png)
 
 Small dimension
 
-![image.png](images/fe8a5b73-5c09-401f-ac2d-b16d3bed9ee0.png)
+![image.png](images/f7c0d946-8644-4d40-b58b-b092bd35403e.png)
 
 ### Example usage
 
@@ -95,10 +95,15 @@ Small dimension
 
 | Name | Type | Required | Description | Constraint | Options | Default |
 |------|------|----------|-------------|------------|---------|----------|
+| Medium layout | single select | No | Indicate layout for medium size | - | 50/50, 100 | 100 |
+| Heading | string | Yes | 4-column width heading using H2 | Up to 60 characters | - | default |
+| Linked heading | single select | No | The heading can be used as a link when paired with a chevron(›) and a clear indication. | - | default, link | default |
 | Eyebrow | string | No | The eyebrow placed above the heading using muted heading | - | - | - |
 | Subheading | string | No | The subheading provides additional hierarchy beneath the main title | - | - | - |
 | Subheading style | single select | No | This property changes the styling of the subheading | h4: up to 100 characters h5: up to 160 characters | h4, h5 | h4 |
 | Body | string | No | 4-column width body text | 600 | - | - |
+| Section rule | single select | Yes | The rule component indicates the beginning of a new pattern | Only use the default style for the section-level rule | default | default |
+| Padding | single select | Yes | Type of padding to apply to the pattern | - | default, deep, shallow, none | default |
 
 ## Change Log
 

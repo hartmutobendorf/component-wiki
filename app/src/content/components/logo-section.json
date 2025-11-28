@@ -9,7 +9,50 @@
   "figmaComponentDataPath": "",
   "componentExampleImage": "",
   "changeLog": [],
-  "properties": [],
+  "properties": [
+    {
+      "name": "Linked heading",
+      "type": "single select",
+      "required": false,
+      "description": "The heading can be used as a link when paired with a chevron(›) and a clear indication.",
+      "options": [
+        "default",
+        "link"
+      ],
+      "defaultOption": "default"
+    },
+    {
+      "name": "Section rule",
+      "type": "single select",
+      "required": true,
+      "description": "The rule component indicates the beginning of a new pattern",
+      "constraint": "Only use the default style for the section-level rule",
+      "options": [
+        "default"
+      ],
+      "defaultOption": "default"
+    },
+    {
+      "name": "Logo block",
+      "type": "slot",
+      "required": true,
+      "description": "The logo block showcases a group of related images, such as a group of customer or partner logos.",
+      "constraint": "Up to 10 logos\nLinking individual logos is not allowed"
+    },
+    {
+      "name": "Padding",
+      "type": "single select",
+      "required": true,
+      "description": "Type of padding to apply to the pattern",
+      "options": [
+        "default",
+        "deep",
+        "shallow",
+        "none"
+      ],
+      "defaultOption": "default"
+    }
+  ],
   "anatomy": {
     "image": "",
     "table": []

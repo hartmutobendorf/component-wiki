@@ -9,7 +9,51 @@
   "figmaComponentDataPath": "",
   "componentExampleImage": "",
   "changeLog": [],
-  "properties": [],
+  "properties": [
+    {
+      "name": "Heading",
+      "type": "string",
+      "required": true,
+      "description": "4-column width heading using H2",
+      "constraint": "Up to 60 characters",
+      "defaultOption": "default"
+    },
+    {
+      "name": "Linked heading",
+      "type": "single select",
+      "required": false,
+      "description": "The heading can be used as a link when paired with a chevron(›) and a clear indication.",
+      "options": [
+        "default",
+        "link"
+      ],
+      "defaultOption": "default"
+    },
+    {
+      "name": "Section rule",
+      "type": "single select",
+      "required": true,
+      "description": "The rule component indicates the beginning of a new pattern",
+      "constraint": "Only use the default style for the section-level rule",
+      "options": [
+        "default"
+      ],
+      "defaultOption": "default"
+    },
+    {
+      "name": "Padding",
+      "type": "single select",
+      "required": true,
+      "description": "Type of padding to apply to the pattern",
+      "options": [
+        "default",
+        "deep",
+        "shallow",
+        "none"
+      ],
+      "defaultOption": "default"
+    }
+  ],
   "anatomy": {
     "image": "",
     "table": []

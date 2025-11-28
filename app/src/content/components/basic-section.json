@@ -7,7 +7,7 @@
   "figmaLink": "https://www.figma.com/design/1brHCsyeTE6FU7hfJd6ao2/%F0%9F%9A%A7---WIP--Sites---Core-component-library?node-id=41-9326",
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/WD-22552-feat-data-spotlight-pattern/templates/_macros/vf_basic-section.jinja",
   "figmaComponentDataPath": "",
-  "componentExampleImage": "md/basic-section/images/eb21f1c1-eec4-49b6-8a7c-f7c891833d01.png",
+  "componentExampleImage": "md/basic-section/images/433b0671-b339-4bd5-bf83-46861207d011.png",
   "changeLog": [
     {
       "who": "Isaac Kim",
@@ -16,6 +16,36 @@
     }
   ],
   "properties": [
+    {
+      "name": "Medium layout",
+      "type": "single select",
+      "required": false,
+      "description": "Indicate layout for medium size",
+      "options": [
+        "50/50",
+        "100"
+      ],
+      "defaultOption": "100"
+    },
+    {
+      "name": "Heading",
+      "type": "string",
+      "required": true,
+      "description": "4-column width heading using H2",
+      "constraint": "Up to 60 characters",
+      "defaultOption": "default"
+    },
+    {
+      "name": "Linked heading",
+      "type": "single select",
+      "required": false,
+      "description": "The heading can be used as a link when paired with a chevron(›) and a clear indication.",
+      "options": [
+        "default",
+        "link"
+      ],
+      "defaultOption": "default"
+    },
     {
       "name": "Eyebrow",
       "type": "string",
@@ -46,10 +76,34 @@
       "required": false,
       "description": "4-column width body text",
       "constraint": "600"
+    },
+    {
+      "name": "Section rule",
+      "type": "single select",
+      "required": true,
+      "description": "The rule component indicates the beginning of a new pattern",
+      "constraint": "Only use the default style for the section-level rule",
+      "options": [
+        "default"
+      ],
+      "defaultOption": "default"
+    },
+    {
+      "name": "Padding",
+      "type": "single select",
+      "required": true,
+      "description": "Type of padding to apply to the pattern",
+      "options": [
+        "default",
+        "deep",
+        "shallow",
+        "none"
+      ],
+      "defaultOption": "default"
     }
   ],
   "anatomy": {
-    "image": "md/basic-section/images/c0b399f8-efdf-417d-8da5-8eabbeff391a.webp",
+    "image": "md/basic-section/images/2db92355-ac51-4bfb-9596-430ea06f3b13.webp",
     "table": [
       {
         "number": 4,
@@ -173,6 +227,36 @@
             "positive",
             "caution"
           ]
+        }
+      ]
+    },
+    {
+      "name": "Logo block",
+      "properties": [
+        {
+          "name": "Logo block",
+          "type": "slot",
+          "required": true,
+          "description": "The logo block showcases a group of related images, such as a group of customer or partner logos.",
+          "constraint": "Up to 10 logos\nLinking individual logos is not allowed"
+        }
+      ]
+    },
+    {
+      "name": "Linked logo block",
+      "properties": [
+        {
+          "name": "Linked logo image",
+          "type": "slot",
+          "required": true,
+          "description": "16:9 image container with the logo image inside "
+        },
+        {
+          "name": "Link text",
+          "type": "string",
+          "required": true,
+          "description": "The link text for the logo",
+          "constraint": "Up to 60 characters"
         }
       ]
     },

@@ -143,7 +143,25 @@ async function fetchChangeLogEntriesForComponent(
         const values = row.values || {}
 
         // Check if this row is for the current component
-        if (values.Name === componentName) {
+        // Name field might be a single value, an array, or a comma-separated string
+        let isMatch = false
+        const nameValue = values.Name
+        
+        if (typeof nameValue === "string") {
+            // Could be exact match or comma-separated list
+            if (nameValue === componentName) {
+                isMatch = true
+            } else if (nameValue.includes(",")) {
+                // Split by comma and check if component name is in the list
+                const components = nameValue.split(",").map((c: string) => c.trim())
+                isMatch = components.includes(componentName)
+            }
+        } else if (Array.isArray(nameValue)) {
+            // If it's an array, check if component name is in it
+            isMatch = nameValue.includes(componentName)
+        }
+
+        if (isMatch) {
             // Skip empty rows
             if (!values.What && !values.Who && !values.When) {
                 continue
@@ -172,7 +190,25 @@ async function fetchPropertiesForComponent(
         const values = row.values || {}
 
         // Check if this row is for the current component
-        if (values.Component === componentName) {
+        // Component field might be a single value, an array, or a comma-separated string
+        let isMatch = false
+        const componentValue = values.Component
+        
+        if (typeof componentValue === "string") {
+            // Could be exact match or comma-separated list
+            if (componentValue === componentName) {
+                isMatch = true
+            } else if (componentValue.includes(",")) {
+                // Split by comma and check if component name is in the list
+                const components = componentValue.split(",").map((c: string) => c.trim())
+                isMatch = components.includes(componentName)
+            }
+        } else if (Array.isArray(componentValue)) {
+            // If it's an array, check if component name is in it
+            isMatch = componentValue.includes(componentName)
+        }
+
+        if (isMatch) {
             // Skip empty rows
             if (!values.Name) {
                 continue
@@ -226,7 +262,25 @@ async function fetchAnatomyEntriesForComponent(
         const values = row.values || {}
 
         // Check if this row is for the current component
-        if (values.Component === componentName) {
+        // Component field might be a single value, an array, or a comma-separated string
+        let isMatch = false
+        const componentValue = values.Component
+        
+        if (typeof componentValue === "string") {
+            // Could be exact match or comma-separated list
+            if (componentValue === componentName) {
+                isMatch = true
+            } else if (componentValue.includes(",")) {
+                // Split by comma and check if component name is in the list
+                const components = componentValue.split(",").map((c: string) => c.trim())
+                isMatch = components.includes(componentName)
+            }
+        } else if (Array.isArray(componentValue)) {
+            // If it's an array, check if component name is in it
+            isMatch = componentValue.includes(componentName)
+        }
+
+        if (isMatch) {
             // Skip empty rows
             if (!values.Name) {
                 continue
@@ -642,16 +696,24 @@ async function main() {
     console.log("\n📋 Fetching change log data from API...")
     let changeLogRows: any[] = []
     try {
-        const changeLogResponse = await coda.getTableRows(
-            docId,
-            changeLogTableId,
-            {
-                useColumnNames: true,
-                valueFormat: "simple",
-            }
-        )
-        changeLogRows = (changeLogResponse as any).items || []
-        console.log(`✓ Fetched ${changeLogRows.length} change log rows`)
+        let pageToken: string | undefined = undefined
+        do {
+            const changeLogResponse = await coda.getTableRows(
+                docId,
+                changeLogTableId,
+                {
+                    useColumnNames: true,
+                    valueFormat: "simple",
+                    pageToken,
+                    limit: 100, // Fetch more per page to reduce API calls
+                }
+            )
+            const items = (changeLogResponse as any).items || []
+            changeLogRows.push(...items)
+            pageToken = (changeLogResponse as any).nextPageToken
+            console.log(`  Fetched ${items.length} change log rows (total: ${changeLogRows.length})`)
+        } while (pageToken)
+        console.log(`✓ Fetched ${changeLogRows.length} change log rows total`)
     } catch (error) {
         console.log(`⚠ Failed to fetch change log data: ${error}`)
     }
@@ -660,16 +722,24 @@ async function main() {
     console.log("\n📋 Fetching properties data from API...")
     let propertiesRows: any[] = []
     try {
-        const propertiesResponse = await coda.getTableRows(
-            docId,
-            propertiesTableId,
-            {
-                useColumnNames: true,
-                valueFormat: "simple",
-            }
-        )
-        propertiesRows = (propertiesResponse as any).items || []
-        console.log(`✓ Fetched ${propertiesRows.length} properties rows`)
+        let pageToken: string | undefined = undefined
+        do {
+            const propertiesResponse = await coda.getTableRows(
+                docId,
+                propertiesTableId,
+                {
+                    useColumnNames: true,
+                    valueFormat: "simple",
+                    pageToken,
+                    limit: 100, // Fetch more per page to reduce API calls
+                }
+            )
+            const items = (propertiesResponse as any).items || []
+            propertiesRows.push(...items)
+            pageToken = (propertiesResponse as any).nextPageToken
+            console.log(`  Fetched ${items.length} properties rows (total: ${propertiesRows.length})`)
+        } while (pageToken)
+        console.log(`✓ Fetched ${propertiesRows.length} properties rows total`)
     } catch (error) {
         console.log(`⚠ Failed to fetch properties data: ${error}`)
     }
@@ -678,16 +748,24 @@ async function main() {
     console.log("\n📋 Fetching anatomy data from API...")
     let anatomyRows: any[] = []
     try {
-        const anatomyResponse = await coda.getTableRows(
-            docId,
-            anatomyTableId,
-            {
-                useColumnNames: true,
-                valueFormat: "simple",
-            }
-        )
-        anatomyRows = (anatomyResponse as any).items || []
-        console.log(`✓ Fetched ${anatomyRows.length} anatomy rows`)
+        let pageToken: string | undefined = undefined
+        do {
+            const anatomyResponse = await coda.getTableRows(
+                docId,
+                anatomyTableId,
+                {
+                    useColumnNames: true,
+                    valueFormat: "simple",
+                    pageToken,
+                    limit: 100, // Fetch more per page to reduce API calls
+                }
+            )
+            const items = (anatomyResponse as any).items || []
+            anatomyRows.push(...items)
+            pageToken = (anatomyResponse as any).nextPageToken
+            console.log(`  Fetched ${items.length} anatomy rows (total: ${anatomyRows.length})`)
+        } while (pageToken)
+        console.log(`✓ Fetched ${anatomyRows.length} anatomy rows total`)
     } catch (error) {
         console.log(`⚠ Failed to fetch anatomy data: ${error}`)
     }

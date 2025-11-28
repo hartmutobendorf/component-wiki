@@ -9,7 +9,32 @@
   "figmaComponentDataPath": "",
   "componentExampleImage": "",
   "changeLog": [],
-  "properties": [],
+  "properties": [
+    {
+      "name": "Section rule",
+      "type": "single select",
+      "required": true,
+      "description": "The rule component indicates the beginning of a new pattern",
+      "constraint": "Only use the default style for the section-level rule",
+      "options": [
+        "default"
+      ],
+      "defaultOption": "default"
+    },
+    {
+      "name": "Padding",
+      "type": "single select",
+      "required": true,
+      "description": "Type of padding to apply to the pattern",
+      "options": [
+        "default",
+        "deep",
+        "shallow",
+        "none"
+      ],
+      "defaultOption": "default"
+    }
+  ],
   "anatomy": {
     "image": "",
     "table": []
