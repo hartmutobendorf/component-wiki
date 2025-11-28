@@ -3,6 +3,7 @@ import { getCollection, getEntry } from "astro:content";
 import FigmaLink from "../components/FigmaLink.astro";
 import GithubLink from "../components/GithubLink.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import MarkdownImage from "../components/MarkdownImage.astro";
 
 // Generate paths for all components
 export async function getStaticPaths() {
@@ -21,11 +22,16 @@ const component = await getEntry("components", componentId);
 const metadata = component.data;
 
 // Import markdown files using glob
-const markdownModules = import.meta.glob("../content/md/*/*.md");
+const markdownModules = import.meta.glob("../content/md/*/*.{md,mdx}");
+
+// Custom components for markdown rendering
+const components = {
+  img: MarkdownImage,
+};
 
 // Helper to load and render markdown
 async function loadMarkdownSection(section: string) {
-  const path = `../content/md/${componentId}/${section}.md`;
+  const path = `../content/md/${componentId}/${section}.mdx`;
   const module = markdownModules[path];
 
   if (!module) {
@@ -36,10 +42,9 @@ async function loadMarkdownSection(section: string) {
     const loaded = await module();
     const Content = (loaded as any).default || (loaded as any).Content;
 
-    // Check if the module has rawContent or compiledContent to determine if it's empty
-    const rawContent = (loaded as any).rawContent?.() || "";
-    const compiledContent = (loaded as any).compiledContent?.() || "";
-    const hasActualContent = rawContent.trim().length > 0 || compiledContent.trim().length > 0;
+    // For MDX files, if Content exists, assume it has content
+    // We can't easily check rawContent for MDX
+    const hasActualContent = Content != null;
 
     return {
       hasContent: hasActualContent,
@@ -77,13 +82,16 @@ const examples = await loadMarkdownSection("examples");
           )
         }
         {
-          metadata.anatomy && (metadata.anatomy.image || (metadata.anatomy.table && metadata.anatomy.table.length > 0)) && (
-            <li class="p-table-of-contents__item">
-              <a class="p-table-of-contents__link" href="#anatomy">
-                Anatomy
-              </a>
-            </li>
-          )
+          metadata.anatomy &&
+            (metadata.anatomy.image ||
+              (metadata.anatomy.table &&
+                metadata.anatomy.table.length > 0)) && (
+              <li class="p-table-of-contents__item">
+                <a class="p-table-of-contents__link" href="#anatomy">
+                  Anatomy
+                </a>
+              </li>
+            )
         }
         {
           usage.hasContent && (
@@ -104,13 +112,15 @@ const examples = await loadMarkdownSection("examples");
           )
         }
         {
-          metadata.properties && metadata.properties.length > 0 && (
-            <li class="p-table-of-contents__item">
-              <a class="p-table-of-contents__link" href="#properties">
-                Properties
-              </a>
-            </li>
-          )
+          (metadata.properties && metadata.properties.length > 0) ||
+            (metadata.childProperties &&
+              metadata.childProperties.length > 0 && (
+                <li class="p-table-of-contents__item">
+                  <a class="p-table-of-contents__link" href="#properties">
+                    Properties
+                  </a>
+                </li>
+              ))
         }
         {
           metadata.changeLog && metadata.changeLog.length > 0 && (
@@ -138,7 +148,7 @@ const examples = await loadMarkdownSection("examples");
       {
         description.hasContent && description.Content && (
           <section id="description" class="u-text-max-width">
-            <description.Content />
+            <description.Content components={components} />
 
             <div class="metadata-list">
               <div class="metadata-item">
@@ -195,11 +205,13 @@ const examples = await loadMarkdownSection("examples");
     <div class="col">
       {
         metadata.componentExampleImage ? (
-          <img
-            src={`/${metadata.componentExampleImage}`}
-            alt={`${metadata.name} example`}
-            style="width: 100%; height: 500px; object-fit: contain; background-color: #F7F7F7;"
-          />
+          <image-lightbox>
+            <img
+              src={`/${metadata.componentExampleImage}`}
+              alt={`${metadata.name} example`}
+              style="width: 100%; height: 500px; object-fit: contain; background-color: #F7F7F7;"
+            />
+          </image-lightbox>
         ) : (
           <div style="width: 100%; height: 500px; background-color: #F7F7F7;" />
         )
@@ -208,38 +220,46 @@ const examples = await loadMarkdownSection("examples");
   </div>
 
   {
-    metadata.anatomy && (metadata.anatomy.image || (metadata.anatomy.table && metadata.anatomy.table.length > 0)) && (
-      <section id="anatomy" class="p-section">
-        <h2>Anatomy</h2>
-        <div class="row--50-50">
-          <div class="col">
-            {metadata.anatomy.table && metadata.anatomy.table.length > 0 && (
-              <div class="anatomy-list">
-                {[...metadata.anatomy.table].sort((a, b) => a.number - b.number).map((item) => (
-                  <div class="anatomy-item">
-                    <div class="anatomy-item-header">
-                      <div class="anatomy-number">{item.number}</div>
-                      <div class="anatomy-name">{item.name}</div>
-                    </div>
-                    <div class="anatomy-description">{item.description}</div>
-                  </div>
-                ))}
-              </div>
-            )}
-          </div>
+    metadata.anatomy &&
+      (metadata.anatomy.image ||
+        (metadata.anatomy.table && metadata.anatomy.table.length > 0)) && (
+        <section id="anatomy" class="p-section">
+          <h2>Anatomy</h2>
+          <div class="row--50-50">
+            <div class="col">
+              {metadata.anatomy.table && metadata.anatomy.table.length > 0 && (
+                <div class="anatomy-list">
+                  {[...metadata.anatomy.table]
+                    .sort((a, b) => a.number - b.number)
+                    .map((item) => (
+                      <div class="anatomy-item">
+                        <div class="anatomy-item-header">
+                          <div class="anatomy-number">{item.number}</div>
+                          <div class="anatomy-name">{item.name}</div>
+                        </div>
+                        <div class="anatomy-description">
+                          {item.description}
+                        </div>
+                      </div>
+                    ))}
+                </div>
+              )}
+            </div>
 
-          <div class="col">
-            {metadata.anatomy.image && (
-              <img
-                src={`/${metadata.anatomy.image}`}
-                alt={`${metadata.name} anatomy`}
-                style="width: 100%; height: auto; object-fit: contain;"
-              />
-            )}
+            <div class="col">
+              {metadata.anatomy.image && (
+                <image-lightbox>
+                  <img
+                    src={`/${metadata.anatomy.image}`}
+                    alt={`${metadata.name} anatomy`}
+                    style="width: 100%; height: auto; object-fit: contain;"
+                  />
+                </image-lightbox>
+              )}
+            </div>
           </div>
-        </div>
-      </section>
-    )
+        </section>
+      )
   }
 
   <div class="row--50-50 p-section">
@@ -248,7 +268,7 @@ const examples = await loadMarkdownSection("examples");
         usage.hasContent && usage.Content && (
           <section id="usage" class="u-text-max-width">
             <h2>Usage</h2>
-            <usage.Content />
+            <usage.Content components={components} />
           </section>
         )
       }
@@ -257,7 +277,7 @@ const examples = await loadMarkdownSection("examples");
         examples.hasContent && examples.Content && (
           <section id="examples" class="u-text-max-width">
             <h2>Examples</h2>
-            <examples.Content />
+            <examples.Content components={components} />
           </section>
         )
       }
@@ -268,47 +288,105 @@ const examples = await loadMarkdownSection("examples");
 
   <div class="p-section">
     {
-      metadata.properties && metadata.properties.length > 0 && (
+      ((metadata.properties && metadata.properties.length > 0) ||
+        (metadata.childProperties && metadata.childProperties.length > 0)) && (
         <section id="properties" class="u-text-max-width">
           <h2>Properties</h2>
-          <table aria-label="Properties" class="properties-table">
-            <thead>
-              <tr>
-                <th class="properties-name">Name</th>
-                <th class="properties-type">Type</th>
-                <th class="properties-required">Required</th>
-                <th class="properties-description">Description</th>
-                <th class="properties-constraint">Constraint</th>
-                <th class="properties-options">Options</th>
-                <th class="properties-default-option">Default option</th>
-              </tr>
-            </thead>
-            <tbody>
-              {metadata.properties.map((property) => (
+
+          {metadata.properties && metadata.properties.length > 0 && (
+            <table aria-label="Properties" class="properties-table">
+              <thead>
                 <tr>
-                  <td class="properties-name">{property.name}</td>
-                  <td class="properties-type">{property.type}</td>
-                  <td class="properties-required">
-                    {property.required ? "Yes" : "No"}
-                  </td>
-                  <td class="properties-description">
-                    {property.description || "-"}
-                  </td>
-                  <td class="properties-constraint">
-                    {property.constraint || "-"}
-                  </td>
-                  <td class="properties-options">
-                    {property.options && property.options.length > 0
-                      ? property.options.join(", ")
-                      : "-"}
-                  </td>
-                  <td class="properties-default-option">
-                    {property.defaultOption || "-"}
-                  </td>
+                  <th class="properties-name">Name</th>
+                  <th class="properties-type">Type</th>
+                  <th class="properties-required">Required</th>
+                  <th class="properties-description">Description</th>
+                  <th class="properties-constraint">Constraint</th>
+                  <th class="properties-options">Options</th>
+                  <th class="properties-default-option">Default option</th>
                 </tr>
+              </thead>
+              <tbody>
+                {metadata.properties.map((property) => (
+                  <tr>
+                    <td class="properties-name">{property.name}</td>
+                    <td class="properties-type">{property.type}</td>
+                    <td class="properties-required">
+                      {property.required ? "Yes" : "No"}
+                    </td>
+                    <td class="properties-description">
+                      {property.description || "-"}
+                    </td>
+                    <td class="properties-constraint">
+                      {property.constraint || "-"}
+                    </td>
+                    <td class="properties-options">
+                      {property.options && property.options.length > 0
+                        ? property.options.join(", ")
+                        : "-"}
+                    </td>
+                    <td class="properties-default-option">
+                      {property.defaultOption || "-"}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          )}
+
+          {metadata.childProperties && metadata.childProperties.length > 0 && (
+            <div class="p-section--shallow">
+              <h3>Child properties</h3>
+              {metadata.childProperties.map((child) => (
+                <>
+                  <h4>{child.name}</h4>
+                  <table
+                    aria-label={`${child.name} properties`}
+                    class="properties-table"
+                  >
+                    <thead>
+                      <tr>
+                        <th class="properties-name">Name</th>
+                        <th class="properties-type">Type</th>
+                        <th class="properties-required">Required</th>
+                        <th class="properties-description">Description</th>
+                        <th class="properties-constraint">Constraint</th>
+                        <th class="properties-options">Options</th>
+                        <th class="properties-default-option">
+                          Default option
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {child.properties.map((property) => (
+                        <tr>
+                          <td class="properties-name">{property.name}</td>
+                          <td class="properties-type">{property.type}</td>
+                          <td class="properties-required">
+                            {property.required ? "Yes" : "No"}
+                          </td>
+                          <td class="properties-description">
+                            {property.description || "-"}
+                          </td>
+                          <td class="properties-constraint">
+                            {property.constraint || "-"}
+                          </td>
+                          <td class="properties-options">
+                            {property.options && property.options.length > 0
+                              ? property.options.join(", ")
+                              : "-"}
+                          </td>
+                          <td class="properties-default-option">
+                            {property.defaultOption || "-"}
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </>
               ))}
-            </tbody>
-          </table>
+            </div>
+          )}
         </section>
       )
     }
@@ -448,7 +526,7 @@ const examples = await loadMarkdownSection("examples");
       width: 24px;
       height: 24px;
       border-radius: 50%;
-      background-color: #CF0075;
+      background-color: #cf0075;
       color: white;
       display: flex;
       align-items: center;
@@ -469,7 +547,8 @@ const examples = await loadMarkdownSection("examples");
 
   <script>
     import "../components/copyFigmaButton/copy-figma-button.js";
-    import "../components/githubCopilotButton/github-copilot-button.js";
     import "../components/copyMarkdownButton/copy-markdown-button.js";
+    import "../components/githubCopilotButton/github-copilot-button.js";
+    import "../components/imageLightbox/image-lightbox.js";
   </script>
 </BaseLayout>

@@ -39,6 +39,7 @@ interface RowData {
     "figma-component-data": string
     "component-example-image": string
     "anatomy-image": string
+    "ui-blocks-used-in-pattern": string
     "change-log": ChangeLogEntry[]
 }
 
@@ -51,11 +52,13 @@ async function downloadImage(
     const buffer = await response.arrayBuffer()
 
     // Get filename from x-amz-meta-filename header
-    const originalFilename = response.headers.get("x-amz-meta-filename") || "image.jpg"
+    const originalFilename =
+        response.headers.get("x-amz-meta-filename") || "image.jpg"
 
     // Extract file extension from original filename
     const lastDotIndex = originalFilename.lastIndexOf(".")
-    const extension = lastDotIndex !== -1 ? originalFilename.substring(lastDotIndex) : ".jpg"
+    const extension =
+        lastDotIndex !== -1 ? originalFilename.substring(lastDotIndex) : ".jpg"
 
     // Generate unique filename with UUID
     const uuid = crypto.randomUUID()
@@ -193,8 +196,7 @@ async function fetchPropertiesForComponent(
             if (values.Options) {
                 // Options might be a comma-separated string or an array
                 if (typeof values.Options === "string") {
-                    property.options = values.Options
-                        .split(",")
+                    property.options = values.Options.split(",")
                         .map((opt: string) => opt.trim())
                         .filter((opt: string) => opt.length > 0)
                 } else if (Array.isArray(values.Options)) {
@@ -298,6 +300,7 @@ function extractTableData(pageHtml: string): RowData[] {
             "figma-component-data": "",
             "component-example-image": "",
             "anatomy-image": "",
+            "ui-blocks-used-in-pattern": "",
             "change-log": [],
         }
 
@@ -357,6 +360,10 @@ function extractTableData(pageHtml: string): RowData[] {
         rowData["anatomy-image"] = anatomyImageImg.length
             ? anatomyImageImg.attr("src") || ""
             : ""
+
+        // Extract UI blocks used in pattern (as text content, comma-separated)
+        const uiBlocksCell = cells.eq(columnMap["UI blocks used in pattern"])
+        rowData["ui-blocks-used-in-pattern"] = uiBlocksCell.text().trim()
 
         // Extract HTML for rich content fields - we'll convert these to markdown later
         const descriptionCell = cells.eq(columnMap["Description"])
@@ -470,10 +477,16 @@ codeLink: ${componentMetadata.codeLink}
     markdown += `\n`
 
     // Add anatomy section
-    if (componentMetadata.anatomy && componentMetadata.anatomy.table && componentMetadata.anatomy.table.length > 0) {
+    if (
+        componentMetadata.anatomy &&
+        componentMetadata.anatomy.table &&
+        componentMetadata.anatomy.table.length > 0
+    ) {
         markdown += `## Anatomy\n\n`
 
-        const sortedAnatomy = [...componentMetadata.anatomy.table].sort((a, b) => a.number - b.number)
+        const sortedAnatomy = [...componentMetadata.anatomy.table].sort(
+            (a, b) => a.number - b.number
+        )
 
         for (const item of sortedAnatomy) {
             markdown += `### ${item.number}. ${item.name}\n\n`
@@ -492,19 +505,29 @@ codeLink: ${componentMetadata.codeLink}
     }
 
     // Add properties section
-    if (componentMetadata.properties && componentMetadata.properties.length > 0) {
+    if (
+        componentMetadata.properties &&
+        componentMetadata.properties.length > 0
+    ) {
         markdown += `## Properties\n\n`
         markdown += `| Name | Type | Required | Description | Constraint | Options | Default |\n`
         markdown += `|------|------|----------|-------------|------------|---------|----------|\n`
 
         for (const prop of componentMetadata.properties) {
-            const name = prop.name || '-'
-            const type = prop.type || '-'
-            const required = prop.required ? 'Yes' : 'No'
-            const description = (prop.description || '-').replace(/\|/g, '\\|').replace(/\n/g, ' ')
-            const constraint = (prop.constraint || '-').replace(/\|/g, '\\|').replace(/\n/g, ' ')
-            const options = prop.options && prop.options.length > 0 ? prop.options.join(', ') : '-'
-            const defaultOption = prop.defaultOption || '-'
+            const name = prop.name || "-"
+            const type = prop.type || "-"
+            const required = prop.required ? "Yes" : "No"
+            const description = (prop.description || "-")
+                .replace(/\|/g, "\\|")
+                .replace(/\n/g, " ")
+            const constraint = (prop.constraint || "-")
+                .replace(/\|/g, "\\|")
+                .replace(/\n/g, " ")
+            const options =
+                prop.options && prop.options.length > 0
+                    ? prop.options.join(", ")
+                    : "-"
+            const defaultOption = prop.defaultOption || "-"
 
             markdown += `| ${name} | ${type} | ${required} | ${description} | ${constraint} | ${options} | ${defaultOption} |\n`
         }
@@ -513,11 +536,20 @@ codeLink: ${componentMetadata.codeLink}
     }
 
     // Add changelog section
-    if (componentMetadata.changeLog && componentMetadata.changeLog.length > 0) {
+    if (
+        componentMetadata.changeLog &&
+        componentMetadata.changeLog.length > 0
+    ) {
         markdown += `## Change Log\n\n`
 
         for (const entry of componentMetadata.changeLog) {
-            const date = entry.when ? new Date(entry.when).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' }) : 'Unknown date'
+            const date = entry.when
+                ? new Date(entry.when).toLocaleDateString("en-US", {
+                      year: "numeric",
+                      month: "short",
+                      day: "numeric",
+                  })
+                : "Unknown date"
             markdown += `### ${date} - ${entry.who}\n\n`
             markdown += `${entry.what}\n\n`
         }
@@ -546,19 +578,25 @@ async function main() {
     }
 
     if (!changeLogTableId) {
-        console.error("Error: CODA_CHANGELOG_TABLE_ID environment variable is not set")
+        console.error(
+            "Error: CODA_CHANGELOG_TABLE_ID environment variable is not set"
+        )
         console.log("Please add CODA_CHANGELOG_TABLE_ID to your .env file")
         return
     }
 
     if (!propertiesTableId) {
-        console.error("Error: CODA_PROPERTIES_TABLE_ID environment variable is not set")
+        console.error(
+            "Error: CODA_PROPERTIES_TABLE_ID environment variable is not set"
+        )
         console.log("Please add CODA_PROPERTIES_TABLE_ID to your .env file")
         return
     }
 
     if (!anatomyTableId) {
-        console.error("Error: CODA_ANATOMY_TABLE_ID environment variable is not set")
+        console.error(
+            "Error: CODA_ANATOMY_TABLE_ID environment variable is not set"
+        )
         console.log("Please add CODA_ANATOMY_TABLE_ID to your .env file")
         return
     }
@@ -587,16 +625,31 @@ async function main() {
 
     // Extract structured data from HTML
     console.log("📊 Extracting structured data from HTML...")
-    const rowsData = extractTableData(pageHtml)
+    const allRowsData = extractTableData(pageHtml)
+
+    // Filter out rows with type "Block"
+    const rowsData = allRowsData.filter(
+        (row) => row.type.toLowerCase() !== "block"
+    )
+    console.log(
+        `  Filtered out ${
+            allRowsData.length - rowsData.length
+        } row(s) with type "Block"`
+    )
+    console.log(`  Processing ${rowsData.length} remaining row(s)`)
 
     // Fetch all change log rows from the Change log table
     console.log("\n📋 Fetching change log data from API...")
     let changeLogRows: any[] = []
     try {
-        const changeLogResponse = await coda.getTableRows(docId, changeLogTableId, {
-            useColumnNames: true,
-            valueFormat: "simple",
-        })
+        const changeLogResponse = await coda.getTableRows(
+            docId,
+            changeLogTableId,
+            {
+                useColumnNames: true,
+                valueFormat: "simple",
+            }
+        )
         changeLogRows = (changeLogResponse as any).items || []
         console.log(`✓ Fetched ${changeLogRows.length} change log rows`)
     } catch (error) {
@@ -607,10 +660,14 @@ async function main() {
     console.log("\n📋 Fetching properties data from API...")
     let propertiesRows: any[] = []
     try {
-        const propertiesResponse = await coda.getTableRows(docId, propertiesTableId, {
-            useColumnNames: true,
-            valueFormat: "simple",
-        })
+        const propertiesResponse = await coda.getTableRows(
+            docId,
+            propertiesTableId,
+            {
+                useColumnNames: true,
+                valueFormat: "simple",
+            }
+        )
         propertiesRows = (propertiesResponse as any).items || []
         console.log(`✓ Fetched ${propertiesRows.length} properties rows`)
     } catch (error) {
@@ -621,10 +678,14 @@ async function main() {
     console.log("\n📋 Fetching anatomy data from API...")
     let anatomyRows: any[] = []
     try {
-        const anatomyResponse = await coda.getTableRows(docId, anatomyTableId, {
-            useColumnNames: true,
-            valueFormat: "simple",
-        })
+        const anatomyResponse = await coda.getTableRows(
+            docId,
+            anatomyTableId,
+            {
+                useColumnNames: true,
+                valueFormat: "simple",
+            }
+        )
         anatomyRows = (anatomyResponse as any).items || []
         console.log(`✓ Fetched ${anatomyRows.length} anatomy rows`)
     } catch (error) {
@@ -653,9 +714,9 @@ async function main() {
 
         // Convert HTML fields to Markdown and handle images
         const contentFields = [
-            { key: "usage", fileName: "usage.md" },
-            { key: "description", fileName: "description.md" },
-            { key: "examples", fileName: "examples.md" },
+            { key: "usage", fileName: "usage.mdx" },
+            { key: "description", fileName: "description.mdx" },
+            { key: "examples", fileName: "examples.mdx" },
         ] as const
 
         for (const field of contentFields) {
@@ -675,7 +736,10 @@ async function main() {
 
         // Save Figma component data as HTML file if it exists
         let figmaComponentDataPath = ""
-        if (row["figma-component-data"] && row["figma-component-data"].trim()) {
+        if (
+            row["figma-component-data"] &&
+            row["figma-component-data"].trim()
+        ) {
             const htmlPath = `${mdFolderPath}/figma-component-data.html`
             await Bun.write(htmlPath, row["figma-component-data"])
             figmaComponentDataPath = `md/${folderName}/figma-component-data.html`
@@ -698,7 +762,9 @@ async function main() {
                     `    ✓ Downloaded component example image: ${filename}`
                 )
             } catch (e) {
-                console.log(`    ⚠ Failed to download component example image: ${e}`)
+                console.log(
+                    `    ⚠ Failed to download component example image: ${e}`
+                )
             }
         }
 
@@ -718,21 +784,66 @@ async function main() {
         }
 
         // Fetch change log entries for this component
-        row["change-log"] = await fetchChangeLogEntriesForComponent(name, changeLogRows)
+        row["change-log"] = await fetchChangeLogEntriesForComponent(
+            name,
+            changeLogRows
+        )
         if (row["change-log"].length > 0) {
-            console.log(`    ✓ Found ${row["change-log"].length} change log entries`)
+            console.log(
+                `    ✓ Found ${row["change-log"].length} change log entries`
+            )
         }
 
         // Fetch properties for this component
-        const properties = await fetchPropertiesForComponent(name, propertiesRows)
+        const properties = await fetchPropertiesForComponent(
+            name,
+            propertiesRows
+        )
         if (properties.length > 0) {
             console.log(`    ✓ Found ${properties.length} properties`)
         }
 
         // Fetch anatomy entries for this component
-        const anatomyEntries = await fetchAnatomyEntriesForComponent(name, anatomyRows)
+        const anatomyEntries = await fetchAnatomyEntriesForComponent(
+            name,
+            anatomyRows
+        )
         if (anatomyEntries.length > 0) {
             console.log(`    ✓ Found ${anatomyEntries.length} anatomy entries`)
+        }
+
+        // Fetch child properties if this is a pattern with UI blocks
+        const childProperties: Array<{
+            name: string
+            properties: PropertyEntry[]
+        }> = []
+        if (
+            row.type.toLowerCase() === "pattern" &&
+            row["ui-blocks-used-in-pattern"]
+        ) {
+            const childComponentNames = row["ui-blocks-used-in-pattern"]
+                .split(",")
+                .map((name) => name.trim())
+                .filter((name) => name.length > 0)
+
+            for (const childName of childComponentNames) {
+                const childProps = await fetchPropertiesForComponent(
+                    childName,
+                    propertiesRows
+                )
+                if (childProps.length > 0) {
+                    childProperties.push({
+                        name: childName,
+                        properties: childProps,
+                    })
+                }
+            }
+
+            if (childProperties.length > 0) {
+                console.log(
+                    `    ✓ Found properties for ${childProperties.length} child component(s)`
+                )
+            }
         }
 
         // Create metadata JSON file for this component
@@ -752,6 +863,8 @@ async function main() {
                 image: anatomyImagePath,
                 table: anatomyEntries,
             },
+            childProperties:
+                childProperties.length > 0 ? childProperties : undefined,
         }
 
         const metadataPath = `../app/src/content/components/${folderName}.json`
@@ -762,11 +875,13 @@ async function main() {
 
         // Generate and save LLM markdown file
         const llmMarkdownContent = generateLLMMarkdown(componentMetadata, {
-            description: await Bun.file(`${mdFolderPath}/description.md`).text(),
-            usage: await Bun.file(`${mdFolderPath}/usage.md`).text(),
-            examples: await Bun.file(`${mdFolderPath}/examples.md`).text(),
+            description: await Bun.file(
+                `${mdFolderPath}/description.mdx`
+            ).text(),
+            usage: await Bun.file(`${mdFolderPath}/usage.mdx`).text(),
+            examples: await Bun.file(`${mdFolderPath}/examples.mdx`).text(),
         })
-        const llmMarkdownPath = `${mdFolderPath}/llm.md`
+        const llmMarkdownPath = `${mdFolderPath}/llm.mdx`
         await Bun.write(llmMarkdownPath, llmMarkdownContent)
         console.log(`    ✓ Generated LLM markdown`)
 

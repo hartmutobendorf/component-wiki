@@ -9,7 +9,21 @@
   "figmaComponentDataPath": "",
   "componentExampleImage": "",
   "changeLog": [],
-  "properties": [],
+  "properties": [
+    {
+      "name": "Padding",
+      "type": "single select",
+      "required": true,
+      "description": "Type of padding to apply to the pattern",
+      "options": [
+        "default",
+        "deep",
+        "shallow",
+        "none"
+      ],
+      "defaultOption": "deep"
+    }
+  ],
   "anatomy": {
     "image": "",
     "table": []

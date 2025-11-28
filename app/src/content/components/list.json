@@ -1,0 +1,67 @@
+{
+  "name": "List",
+  "type": "Component",
+  "tiers": "Global",
+  "documentationStatus": "Needs work",
+  "lastEdited": "Nov 28, 2025",
+  "figmaLink": "",
+  "codeLink": "",
+  "figmaComponentDataPath": "",
+  "componentExampleImage": "",
+  "changeLog": [],
+  "properties": [
+    {
+      "name": "List",
+      "type": "slot",
+      "required": true,
+      "description": "The divided list supporting up to 10 items",
+      "constraint": "Up to 10 items"
+    },
+    {
+      "name": "List item",
+      "type": "string",
+      "required": true,
+      "description": "Sets the content of the list",
+      "constraint": "Up to 250 characters"
+    },
+    {
+      "name": "List bullet type",
+      "type": "single select",
+      "required": false,
+      "description": "Bullet type options",
+      "options": [
+        "none",
+        "bullet",
+        "status",
+        "number"
+      ],
+      "defaultOption": "bullet"
+    },
+    {
+      "name": "List divided",
+      "type": "boolean",
+      "required": false,
+      "description": "Whether has muted rule between list items",
+      "options": [
+        "true",
+        "false"
+      ],
+      "defaultOption": "true"
+    },
+    {
+      "name": "List nested",
+      "type": "boolean",
+      "required": false,
+      "description": "Hierarchical list structures",
+      "options": [
+        "true",
+        "false"
+      ],
+      "defaultOption": "false"
+    }
+  ],
+  "anatomy": {
+    "image": "",
+    "table": []
+  }
+}

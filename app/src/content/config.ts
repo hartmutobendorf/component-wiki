@@ -72,6 +72,31 @@ const componentsCollection = defineCollection({
           .default([]),
       })
       .optional(),
+    childProperties: z
+      .array(
+        z.object({
+          name: z.string(),
+          properties: z.array(
+            z.object({
+              name: z.string(),
+              required: z.boolean().optional(),
+              type: z.enum([
+                "boolean",
+                "string",
+                "number",
+                "single select",
+                "multi select",
+                "slot",
+              ]),
+              description: z.string().optional(),
+              constraint: z.string().optional(),
+              options: z.array(z.string()).optional(),
+              defaultOption: z.string().optional(),
+            }),
+          ),
+        }),
+      )
+      .optional(),
   }),
 });
 

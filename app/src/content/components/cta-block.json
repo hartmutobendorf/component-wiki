@@ -9,7 +9,29 @@
   "figmaComponentDataPath": "",
   "componentExampleImage": "",
   "changeLog": [],
-  "properties": [],
+  "properties": [
+    {
+      "name": "Primary CTA",
+      "type": "string",
+      "required": false,
+      "description": "The CTA that uses the positive button, to indicate a primary, positive action. This variant is reserved for use in the hero or other key call-to-action areas.",
+      "constraint": "Up to 20 characters"
+    },
+    {
+      "name": "Secondary CTA",
+      "type": "string",
+      "required": false,
+      "description": "The CTA that uses the default button, used for most CTAs to indicate a positive action that isn’t necessarily the main one.",
+      "constraint": "Up to 20 characters"
+    },
+    {
+      "name": "Link CTA",
+      "type": "string",
+      "required": false,
+      "description": "The CTA that uses the link, to embed actions or pathways to more information, allowing users to click their way from page to page.",
+      "constraint": "Up to 60 characters"
+    }
+  ],
   "anatomy": {
     "image": "",
     "table": []

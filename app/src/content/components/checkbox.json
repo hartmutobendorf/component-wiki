@@ -7,7 +7,7 @@
   "figmaLink": "https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2006-123",
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/d0197b27f5733789d6d23536eabe68356e045ae1/scss/_patterns_form-tick-elements.scss",
   "figmaComponentDataPath": "md/checkbox/figma-component-data.html",
-  "componentExampleImage": "md/checkbox/images/1de2963e-e724-437c-9102-ca5b77d16d88.png",
+  "componentExampleImage": "md/checkbox/images/85902a53-46da-474b-97b4-dc05ebe5fe0a.png",
   "changeLog": [
     {
       "who": "Maximilian Blazek",
@@ -42,7 +42,7 @@
     }
   ],
   "anatomy": {
-    "image": "md/checkbox/images/acc36966-e285-46f6-8889-42eb086f1fb6.png",
+    "image": "md/checkbox/images/07190f91-9ad8-4336-87b8-1ca1d092712a.png",
     "table": [
       {
         "number": 1,
