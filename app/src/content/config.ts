@@ -58,6 +58,8 @@ const componentsCollection = defineCollection({
             "single select",
             "multi select",
             "slot",
+            "object",
+            "callback",
           ]),
           description: z.string().optional(),
           constraint: z.string().optional(),
