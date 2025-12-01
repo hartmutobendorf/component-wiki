@@ -36,6 +36,9 @@ jobs:
                   CODA_DOC_ID: ${{ secrets.CODA_DOC_ID }}
                   CODA_TABLE_ID: ${{ secrets.CODA_TABLE_ID }}
                   CODA_CHANGELOG_TABLE_ID: ${{ secrets.CODA_CHANGELOG_TABLE_ID }}
+                  CODA_PROPERTIES_TABLE_ID: ${{ secrets.CODA_PROPERTIES_TABLE_ID }}
+                  CODA_ANATOMY_TABLE_ID: ${{ secrets.CODA_ANATOMY_TABLE_ID }}
+                  CODA_DECISIONLOG_TABLE_ID: ${{ secrets.CODA_DECISIONLOG_TABLE_ID }}
               run: bun run index.ts
 
             - name: Check for content changes
