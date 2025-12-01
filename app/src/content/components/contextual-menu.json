@@ -7,7 +7,7 @@
   "figmaLink": "https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-22",
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/d0197b27f5733789d6d23536eabe68356e045ae1/scss/_patterns_contextual-menu.scss",
   "figmaComponentDataPath": "",
-  "componentExampleImage": "md/contextual-menu/images/e536f8a7-d6ca-4baf-9547-d6efad8e886c.png",
+  "componentExampleImage": "md/contextual-menu/images/a2425a52-acc2-408b-b7dc-a9a7fe49b658.png",
   "changeLog": [
     {
       "who": "Maximilian Blazek",
@@ -30,7 +30,7 @@
     }
   ],
   "anatomy": {
-    "image": "md/contextual-menu/images/2190569c-59e6-41fd-8117-9252795e2bd4.png",
+    "image": "md/contextual-menu/images/eb47f620-2eb4-432d-8ad2-0994787cfcee.png",
     "table": [
       {
         "number": 3,
