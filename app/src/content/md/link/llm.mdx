@@ -2,22 +2,117 @@
 name: Link
 type: Component
 tiers: Global
-documentationStatus: Needs work
-lastEdited: Nov 24, 2025
-figmaLink: 
-codeLink: 
+documentationStatus: Minimal
+lastEdited: Dec 1, 2025
+figmaLink: https://www.figma.com/design/PYyGJFg1uN9eK6mZMrsik2/%F0%9F%93%95-Vanilla---core-component-documentation-visuals?node-id=804-15948
+codeLink: https://github.com/canonical/vanilla-framework/blob/b1d651365b0714586e6ea14349dea763819c256e/scss/_patterns_links.scss
 ---
 
 # Link
+
+## Description
+
+Links are primarily used for navigation, forwarding users to different pages or sections within an interface. They are embedded in body text, listed in footers, or integrated into breadcrumbs and other wayfinding components. Links provide users with pathways through content while navigation bars and breadcrumbs offer more systematic orientation.
+
+In certain contexts, links can also serve as “command links” to trigger actions rather than navigation. You can consider using command links for secondary actions with minor consequences such as revealing (more) content. Command links should use action-oriented language, ideally starting with a verb, to distinguish them from navigational links.  Use buttons for primary actions or those with significant consequences; command links work best for auxiliary functions that support but don't define the main user flow.
 
 ## Metadata
 
 - **Type**: Component
 - **Tier**: Global
-- **Documentation Status**: Needs work
-- **Last Edited**: Nov 24, 2025
+- **Documentation Status**: Minimal
+- **Last Edited**: Dec 1, 2025
+- **Figma**: [View in Figma](https://www.figma.com/design/PYyGJFg1uN9eK6mZMrsik2/%F0%9F%93%95-Vanilla---core-component-documentation-visuals?node-id=804-15948)
+- **Code**: [View on GitHub](https://github.com/canonical/vanilla-framework/blob/b1d651365b0714586e6ea14349dea763819c256e/scss/_patterns_links.scss)
+
+## Anatomy
+
+### 1. Link text
+
+The text that is also the clickable are of the icon. On click it will forward the user to the target of the link (or perform the associated action).
+
+### 2. External link icon
+
+If the link is external relative to the the current website or application the designer can choose to display an external link icon next to the link text.
+
+## Usage
+
+Links are primarily used for navigation, guiding users to different pages or sections within an interface. They appear embedded in body text, listed in footers, integrated into breadcrumbs, or as part of other wayfinding components.  Links provide users with pathways through content, complementing navigation bars and breadcrumbs that offer more systematic orientation.
+
+Links can navigate within your application (internal navigation) or direct users to external websites and resources. They can also trigger system-level actions through protocols like mailto: for composing emails or tel: for initiating phone calls, or even open other applications as part of workflows such as authentication.
+
+### Command links
+
+In specific contexts, links can serve as "command links" to trigger actions rather than navigation. According to [Nielsen Norman Group research on command links](https://www.nngroup.com/articles/command-links/), these action-oriented links offer more room for descriptive text than buttons while maintaining a lighter visual weight.
+
+Command links work best for secondary actions with minor consequences, such as revealing additional content, toggling display options, or performing auxiliary functions. Use action-oriented language starting with a verb (e. g., "Show more details" or "Expand section") to clearly distinguish them from navigational links.
+
+Because links carry the visual expectation of navigation, users may click them assuming they'll simply move to a new page. For this reason, command links should only trigger low-impact actions where unexpected behavior won't frustrate users or cause errors.
+
+### Differentiating links from buttons
+
+While both links and buttons are interactive elements, they serve fundamentally different purposes:
+
+*   **Links** are for navigation between pages or sections, and for secondary actions with minimal consequences
+*   **Buttons** are for meaningful interactions that transform, submit, or manipulate data. Actions that represent state changes in the application
+
+Use buttons when the interaction has significant consequences, such as saving forms, deleting items, processing payments, or updating settings. Links work best for standard navigation and supporting interactions that don't alter application state.
+
+The exception to this guideline occurs at high-priority conversion points.  While buttons can be used for navigation in hero sections or key call-to-action moments, the inverse isn't true. Links should not be used for primary actions or those with significant consequences, regardless of context.
+
+### Link copy
+
+Keep link text concise, descriptive, and meaningful out of context. Users often scan pages specifically looking for links, so the text should clearly indicate the destination or action.
+
+*   **Avoid generic phrases** like "click here" or "read more" that provide no context
+*   **Don't use the word "link"** in the link text itself
+*   **Be specific** about the destination: "View our privacy policy" instead of "Learn more"
+*   **Use sentence-style capitalization** for standalone links with multiple words
+*   **Start with verbs** for command links to indicate action: "Show all comments" or "Expand details"
+
+### Where to use links
+
+Links can appear in various contexts throughout interfaces:
+
+*   **Within paragraphs and body text** for inline references and related content
+*   **In navigation components** such as headers, footers, and sidebars
+*   **As part of lists** providing multiple navigation options or related resources
+*   **In breadcrumb trails** showing hierarchical navigation paths
+*   **Within data tables** linking to detailed views or related records
+
+### Use with intention
+
+Like all interactive elements, links should be used deliberately.  Too many links in close proximity create cognitive overload and make it difficult for users to determine which action to take. Be selective about what you link to, prioritizing the most relevant and valuable destinations for your users' current context.
+
+### When to use
+
+*   Navigating between pages or sections within your application
+*   Directing users to external websites or resources
+*   Embedded within content to provide related information or sources
+*   For secondary, low-consequence actions that support the user flow
+*   Triggering system-level actions (email composition, phone calls, opening applications)
+
+### When not to use
+
+*   For primary actions or those with significant consequences (use buttons instead)
+*   For actions that transform, submit, or manipulate data (use buttons instead)
+*   When the interaction represents a meaningful state change in the application (use buttons instead)
+*   At high-priority conversion points where visual prominence is needed (use buttons instead)
+
+## Properties
+
+| Name | Type | Required | Description | Constraint | Options | Default |
+|------|------|----------|-------------|------------|---------|----------|
+| Show external link icon | boolean | No | Wether to show the external link icon (if it is an external link). | - | - | - |
+| Action | callback | No | The action that should be performed if this command link is used. | - | - | - |
+| Target | string | No | Where the user should be linked to (if it is a navigational link). | - | - | - |
+| Link text | string | Yes | The text that should be shown for this link. | - | - | - |
 
 ## Change Log
+
+### Dec 1, 2025 - Maximilian Blazek
+
+Add description, anatomy description, usage guidelines and properties.
 
 ### Nov 21, 2025 - Maximilian Blazek
 

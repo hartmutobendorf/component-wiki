@@ -2,26 +2,93 @@
 name: CTA block
 type: Complex component
 tiers: Sites
-documentationStatus: Needs work
-lastEdited: Nov 24, 2025
-figmaLink: 
-codeLink: 
+documentationStatus: Minimal
+lastEdited: Dec 1, 2025
+figmaLink: https://www.figma.com/design/1brHCsyeTE6FU7hfJd6ao2/%F0%9F%8C%90-Sites---Core-component-library?node-id=33-1471
+codeLink: https://github.com/canonical/vanilla-framework/blob/main/scss/_patterns_cta.scss
 ---
 
 # CTA block
+
+## Description
+
+The CTA (call to action) block presents one or more related actions that guide the user toward the next step within a section, such as learning more, making contact, or downloading a resource. It supports primary, secondary, and link-level CTA, all of which are optional and can be combined depending on the context. It provides a visually prominent way to highlight key next steps and should be used when you want to encourage decisive user engagement within a page or section.
 
 ## Metadata
 
 - **Type**: Complex component
 - **Tier**: Sites
-- **Documentation Status**: Needs work
-- **Last Edited**: Nov 24, 2025
+- **Documentation Status**: Minimal
+- **Last Edited**: Dec 1, 2025
+- **Figma**: [View in Figma](https://www.figma.com/design/1brHCsyeTE6FU7hfJd6ao2/%F0%9F%8C%90-Sites---Core-component-library?node-id=33-1471)
+- **Code**: [View on GitHub](https://github.com/canonical/vanilla-framework/blob/main/scss/_patterns_cta.scss)
+
+## Anatomy
+
+### 1. Primary CTA
+
+The primary CTA provides the highest level of emphasis within the CTA block and can be used when a section requires a clear, dominant next step. This action helps users understand the most encouraged path forward in moments where a key conversion or major interaction is expected. It may be used in hero or other sections that call for a strong prompt.
+
+### 2. Secondary CTA
+
+The secondary action offers a positive next step with reduced visual weight and is suitable for sections that do not require a high-emphasis option. Rather than competing with a primary action, it supports the overall flow by presenting a clear but moderate choice. This makes it appropriate for general sections, where it may serve as the main actionable element.
+
+### 3. Link CTA
+
+The link CTA provides a lightweight option for additional or contextual actions that sit outside the main task flow. Instead of guiding users toward a primary conversion, it typically routes them to more information or related pages. This longer, descriptive text format helps users explore details without drawing attention away from higher-priority actions.
+
+## Usage
+
+Use the CTA block to indicate a clear next step in the user journey. Copy should start with an accurate, inclusive verb and clearly state where the user will end up. The block supports primary, secondary, and link-level actions, all of which are optional and can be combined depending on the context. Choose the appropriate action type based on the priority of the task: use a primary CTA only in sections that require a clear, high-emphasis step; use secondary CTA for general navigation or supportive flows; and use link CTA for lightweight, contextual paths to additional information. Keep copy short, action-oriented, and descriptive of where the user will end up. For more detailed content best practices, refer to the [copy style guide](https://docs.google.com/document/d/1AX-kSNztuAmShEoohe8L3LNLRnSKF7I0qkZGNeoGOok/edit?tab=t.0#heading=h.435t7gykww).
+
+### When to use
+
+*   When a section needs to present one or more clear next steps related to its content.
+*   When guiding users toward a conversion, task, or content pathway that benefits from visual grouping.
+*   When the section requires a defined hierarchy of actions, such as highlighting one main option and supporting it with alternatives.
+
+### When not to use
+
+*   When more than three competing actions must be shown together.
+*   *   Use a list with link type or restructure content to limit actions to one clear choice.
+*   When the actions are not related or cannot be meaningfully grouped together in one block.
+*   *   Separate them across individual subsections or sections.
+*   When the primary purpose of a section is to present and emphasise a single CTA.
+*   *   Use the CTA section instead.
+*   Button type(Primary, secondary CTA): when the text cannot be expressed clearly within 20 characters.
+*   *   Use the link CTA instead.
+
+## Examples
+
+Single primary CTA
+
+![Example-1.png](images/e888988c-b75d-433d-9516-2fb34102ab6a.png)
+
+Primary CTA + Secondary CTA
+
+![Example.png](images/40332846-7a73-411e-95d2-e8ae972d383a.png)
+
+Primary CTA + Link CTA
+
+![Component example image.png](images/25e58d7a-e1cd-4b73-ac61-5dae64bb1770.png)
+
+Single secondary CTA
+
+![Example-2.png](images/ec2c4767-ff1c-4ea5-813e-6c4e7ed9fa84.png)
+
+Secondary CTA + link CTA
+
+![Example-4.png](images/1f302f30-b972-46f4-ba3b-005347802905.png)
+
+Single link CTA
+
+![Example-3.png](images/0bfa9773-e3f0-436b-b721-c7d9ab7160d4.png)
 
 ## Properties
 
 | Name | Type | Required | Description | Constraint | Options | Default |
 |------|------|----------|-------------|------------|---------|----------|
-| Primary CTA | string | No | The CTA that uses the positive button, to indicate a primary, positive action. This variant is reserved for use in the hero or other key call-to-action areas. | Up to 20 characters | - | - |
-| Secondary CTA | string | No | The CTA that uses the default button, used for most CTAs to indicate a positive action that isn’t necessarily the main one. | Up to 20 characters | - | - |
-| Link CTA | string | No | The CTA that uses the link, to embed actions or pathways to more information, allowing users to click their way from page to page. | Up to 60 characters | - | - |
+| Primary CTA | string | No | The CTA used with the positive button style. It indicates a high-priority, positive action and is reserved for hero areas or other key call-to-action sections. | Up to 20 characters | - | - |
+| Secondary CTA | string | No | The CTA using the default button style. It is used for most actions that are positive but not primary, and may serve as the main CTA in non-hero sections. | Up to 20 characters | - | - |
+| Link CTA | string | No | The text link used for contextual actions or pathways to more information. It uses a chevron (›) to indicate navigation to additional content or pages. | Up to 60 characters | - | - |
 

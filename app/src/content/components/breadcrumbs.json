@@ -2,22 +2,57 @@
   "name": "Breadcrumbs",
   "type": "Component",
   "tiers": "Global",
-  "documentationStatus": "Needs work",
-  "lastEdited": "Nov 24, 2025",
-  "figmaLink": "",
-  "codeLink": "",
-  "figmaComponentDataPath": "",
-  "componentExampleImage": "",
+  "documentationStatus": "Minimal",
+  "lastEdited": "Dec 1, 2025",
+  "figmaLink": "https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-7",
+  "codeLink": "https://github.com/canonical/vanilla-framework/blob/b1d651365b0714586e6ea14349dea763819c256e/scss/_patterns_breadcrumbs.scss",
+  "figmaComponentDataPath": "md/breadcrumbs/figma-component-data.html",
+  "componentExampleImage": "md/breadcrumbs/images/ed41e61e-de60-4200-be28-122379e45698.png",
   "changeLog": [
     {
       "who": "Maximilian Blazek",
-      "when": "2025-11-21T17:00:00.000+00:00",
+      "when": "2025-12-01T12:00:00.000+00:00",
+      "what": "Added description, anatomy descriptions, usage guidelines and properties."
+    },
+    {
+      "who": "Maximilian Blazek",
+      "when": "2025-11-21T12:00:00.000+00:00",
       "what": "Initial commit"
     }
   ],
-  "properties": [],
+  "decisionLog": [
+    {
+      "where": "App mafia",
+      "decisionMade": "We should use breadcrumbs to only show information hierarchy (and not to show a users flow i.e. their path navigating through the app).",
+      "link": "https://docs.google.com/document/d/1e96PtV1x-CiHkvrCn6_U0_1fHV6yTQg3UTXKvQyG9wc/edit?tab=t.5l0pasbf331b#bookmark=id.x6nf496o68f1"
+    }
+  ],
+  "properties": [
+    {
+      "name": "Path",
+      "type": "object",
+      "required": true,
+      "description": "The path in the Information architecture that leads to the current page."
+    }
+  ],
   "anatomy": {
-    "image": "md/breadcrumbs/images/a081874d-bf07-4e1b-bd5e-3d5a7ded5a8a.png",
-    "table": []
+    "image": "md/breadcrumbs/images/6a91131d-9f82-4afd-8c7f-c0ac285469e8.png",
+    "table": [
+      {
+        "number": 3,
+        "name": "Current page breadcrumb",
+        "description": "Indicates the current page the user is on and is not interactive."
+      },
+      {
+        "number": 2,
+        "name": "Separator",
+        "description": "Visually separates individual breadcrumbs from each other."
+      },
+      {
+        "number": 1,
+        "name": "Parent page breadcrumb",
+        "description": "Breadcrumbs can have one or more parent page breadcrumbs. They represent parent levels in the information. They are interactive and upon clicking on them the user is navigated to that level in the IA."
+      }
+    ]
   }
 }

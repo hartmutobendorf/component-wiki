@@ -2,38 +2,55 @@
   "name": "CTA block",
   "type": "Complex component",
   "tiers": "Sites",
-  "documentationStatus": "Needs work",
-  "lastEdited": "Nov 24, 2025",
-  "figmaLink": "",
-  "codeLink": "",
+  "documentationStatus": "Minimal",
+  "lastEdited": "Dec 1, 2025",
+  "figmaLink": "https://www.figma.com/design/1brHCsyeTE6FU7hfJd6ao2/%F0%9F%8C%90-Sites---Core-component-library?node-id=33-1471",
+  "codeLink": "https://github.com/canonical/vanilla-framework/blob/main/scss/_patterns_cta.scss",
   "figmaComponentDataPath": "",
-  "componentExampleImage": "",
+  "componentExampleImage": "md/cta-block/images/050959b5-0db5-4f2c-8adf-c43e4013408b.png",
   "changeLog": [],
+  "decisionLog": [],
   "properties": [
     {
       "name": "Primary CTA",
       "type": "string",
       "required": false,
-      "description": "The CTA that uses the positive button, to indicate a primary, positive action. This variant is reserved for use in the hero or other key call-to-action areas.",
+      "description": "The CTA used with the positive button style. It indicates a high-priority, positive action and is reserved for hero areas or other key call-to-action sections.",
       "constraint": "Up to 20 characters"
     },
     {
       "name": "Secondary CTA",
       "type": "string",
       "required": false,
-      "description": "The CTA that uses the default button, used for most CTAs to indicate a positive action that isn’t necessarily the main one.",
+      "description": "The CTA using the default button style. It is used for most actions that are positive but not primary, and may serve as the main CTA in non-hero sections.",
       "constraint": "Up to 20 characters"
     },
     {
       "name": "Link CTA",
       "type": "string",
       "required": false,
-      "description": "The CTA that uses the link, to embed actions or pathways to more information, allowing users to click their way from page to page.",
+      "description": "The text link used for contextual actions or pathways to more information. It uses a chevron (›) to indicate navigation to additional content or pages.",
       "constraint": "Up to 60 characters"
     }
   ],
   "anatomy": {
-    "image": "",
-    "table": []
+    "image": "md/cta-block/images/d5bb39e8-f388-4808-bac4-1a384ad822df.png",
+    "table": [
+      {
+        "number": 3,
+        "name": "Link CTA",
+        "description": "The link CTA provides a lightweight option for additional or contextual actions that sit outside the main task flow. Instead of guiding users toward a primary conversion, it typically routes them to more information or related pages. This longer, descriptive text format helps users explore details without drawing attention away from higher-priority actions."
+      },
+      {
+        "number": 2,
+        "name": "Secondary CTA",
+        "description": "The secondary action offers a positive next step with reduced visual weight and is suitable for sections that do not require a high-emphasis option. Rather than competing with a primary action, it supports the overall flow by presenting a clear but moderate choice. This makes it appropriate for general sections, where it may serve as the main actionable element."
+      },
+      {
+        "number": 1,
+        "name": "Primary CTA",
+        "description": "The primary CTA provides the highest level of emphasis within the CTA block and can be used when a section requires a clear, dominant next step. This action helps users understand the most encouraged path forward in moments where a key conversion or major interaction is expected. It may be used in hero or other sections that call for a strong prompt."
+      }
+    ]
   }
 }

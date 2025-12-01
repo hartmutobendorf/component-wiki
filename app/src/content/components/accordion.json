@@ -7,7 +7,7 @@
   "figmaLink": "https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-3",
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/b1d651365b0714586e6ea14349dea763819c256e/scss/_patterns_accordion.scss",
   "figmaComponentDataPath": "md/accordion/figma-component-data.html",
-  "componentExampleImage": "md/accordion/images/cb8fb287-0a02-4703-91e3-fb00cb9cf04d.png",
+  "componentExampleImage": "md/accordion/images/d3191188-8473-451c-a6fb-2dcbebc6aba8.png",
   "changeLog": [
     {
       "who": "Maximilian Blazek",
@@ -20,6 +20,7 @@
       "what": "Initial commit"
     }
   ],
+  "decisionLog": [],
   "properties": [
     {
       "name": "Content",
@@ -73,7 +74,7 @@
     }
   ],
   "anatomy": {
-    "image": "md/accordion/images/b060c7c5-137f-4877-89f8-44bbcd84dd58.png",
+    "image": "md/accordion/images/f903f3c4-b572-4e67-8b3a-c95d54529169.png",
     "table": [
       {
         "number": 5,

@@ -2,24 +2,84 @@
 name: Breadcrumbs
 type: Component
 tiers: Global
-documentationStatus: Needs work
-lastEdited: Nov 24, 2025
-figmaLink: 
-codeLink: 
+documentationStatus: Minimal
+lastEdited: Dec 1, 2025
+figmaLink: https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-7
+codeLink: https://github.com/canonical/vanilla-framework/blob/b1d651365b0714586e6ea14349dea763819c256e/scss/_patterns_breadcrumbs.scss
 ---
 
 # Breadcrumbs
+
+## Description
+
+Breadcrumbs are a navigational aid that shows users their current location within a site's information hierarchy. They provide a clear path from the root of the information hierarchy (IA) to the current page, allowing users to quickly understand where they are and easily navigate back to previous levels in the IA. Breadcrumbs should reflect the IA, not the user's path they took to arrive at the current page. They work best in websites or applications with multiple levels of hierarchy and are particularly useful when users might arrive at deep pages through search or external links.
 
 ## Metadata
 
 - **Type**: Component
 - **Tier**: Global
-- **Documentation Status**: Needs work
-- **Last Edited**: Nov 24, 2025
+- **Documentation Status**: Minimal
+- **Last Edited**: Dec 1, 2025
+- **Figma**: [View in Figma](https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-7)
+- **Code**: [View on GitHub](https://github.com/canonical/vanilla-framework/blob/b1d651365b0714586e6ea14349dea763819c256e/scss/_patterns_breadcrumbs.scss)
+
+## Anatomy
+
+### 1. Parent page breadcrumb
+
+Breadcrumbs can have one or more parent page breadcrumbs. They represent parent levels in the information. They are interactive and upon clicking on them the user is navigated to that level in the IA.
+
+### 2. Separator
+
+Visually separates individual breadcrumbs from each other.
+
+### 3. Current page breadcrumb
+
+Indicates the current page the user is on and is not interactive.
+
+## Usage
+
+Breadcrumbs are used to represent the hierarchical structure of content within an application or website, helping users understand where they are in the information architecture (IA). They provide a visual trail of the user's current location and offer quick navigation to other levels in the IA.
+
+Breadcrumbs reflect the site's structure, not the path a user took to arrive at the current page. They show where you are in the hierarchy, not how you got there.
+
+They are most effective in applications or websites with substantial content organized hierarchically across two or more levels.  The more complex your information architecture, the more valuable breadcrumbs become for helping users maintain context and navigate efficiently.
+
+### When to use
+
+*   In applications or websites with multiple levels of hierarchical content structure
+*   To help users understand their current location within a deep information architecture
+*   To provide quick navigation back to higher levels in the IA
+*   When the relationship between pages follows a clear parent-child hierarchy
+*   As a secondary navigation aid to complement your primary navigation
+
+### When not to use
+
+*   On websites or applications with only a single level of hierarchy
+*   On the root of your site or app (as there are no higher levels to navigate to)
+*   As a replacement for primary navigation.  Breadcrumbs are always secondary and should enrich, not replace, your main navigation
+*   To track a user's browsing history or the path they took through your application
+*   As a progress indicator for multi-step processes
+
+## Properties
+
+| Name | Type | Required | Description | Constraint | Options | Default |
+|------|------|----------|-------------|------------|---------|----------|
+| Path | object | Yes | The path in the Information architecture that leads to the current page. | - | - | - |
 
 ## Change Log
+
+### Dec 1, 2025 - Maximilian Blazek
+
+Added description, anatomy descriptions, usage guidelines and properties.
 
 ### Nov 21, 2025 - Maximilian Blazek
 
 Initial commit
+
+## Decision Log
+
+| Where | Decision Made | Link |
+|-------|---------------|------|
+| App mafia | We should use breadcrumbs to only show information hierarchy (and not to show a users flow i.e. their path navigating through the app). | [View](https://docs.google.com/document/d/1e96PtV1x-CiHkvrCn6_U0_1fHV6yTQg3UTXKvQyG9wc/edit?tab=t.5l0pasbf331b#bookmark=id.x6nf496o68f1) |
 

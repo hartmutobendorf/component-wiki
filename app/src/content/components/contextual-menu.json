@@ -2,22 +2,51 @@
   "name": "Contextual menu",
   "type": "Component",
   "tiers": "Global",
-  "documentationStatus": "Needs work",
-  "lastEdited": "Nov 24, 2025",
-  "figmaLink": "",
-  "codeLink": "",
+  "documentationStatus": "Minimal",
+  "lastEdited": "Dec 1, 2025",
+  "figmaLink": "https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-22",
+  "codeLink": "https://github.com/canonical/vanilla-framework/blob/d0197b27f5733789d6d23536eabe68356e045ae1/scss/_patterns_contextual-menu.scss",
   "figmaComponentDataPath": "",
-  "componentExampleImage": "",
+  "componentExampleImage": "md/contextual-menu/images/e536f8a7-d6ca-4baf-9547-d6efad8e886c.png",
   "changeLog": [
+    {
+      "who": "Maximilian Blazek",
+      "when": "2025-12-01T11:00:00.000+00:00",
+      "what": "Added description, anatomy descriptions, Usage guidelines and properties"
+    },
     {
       "who": "Maximilian Blazek",
       "when": "2025-11-21T17:00:00.000+00:00",
       "what": "Initial commit"
     }
   ],
-  "properties": [],
+  "decisionLog": [],
+  "properties": [
+    {
+      "name": "Actions",
+      "type": "object",
+      "required": true,
+      "description": "The actions that this contextual menu should have. Optionally also sets wether specific actions should be grouped in action groups."
+    }
+  ],
   "anatomy": {
-    "image": "md/contextual-menu/images/811fb786-7972-44ea-a2f0-d178613ef0f2.png",
-    "table": []
+    "image": "md/contextual-menu/images/2190569c-59e6-41fd-8117-9252795e2bd4.png",
+    "table": [
+      {
+        "number": 3,
+        "name": "Separator",
+        "description": "A separator that visually separates action groups from each other."
+      },
+      {
+        "number": 2,
+        "name": "Action group",
+        "description": "In menus with a lot of items certain actions can be grouped together in an action group."
+      },
+      {
+        "number": 1,
+        "name": "Action",
+        "description": "A single action. Clicking it will perform the action that is associated with it."
+      }
+    ]
   }
 }

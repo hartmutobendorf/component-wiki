@@ -3,18 +3,24 @@
   "type": "Component",
   "tiers": "Global",
   "documentationStatus": "Minimal",
-  "lastEdited": "Nov 24, 2025",
+  "lastEdited": "Dec 1, 2025",
   "figmaLink": "https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-8",
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/main/scss/_patterns_buttons.scss",
   "figmaComponentDataPath": "md/button/figma-component-data.html",
-  "componentExampleImage": "md/button/images/d870d1ea-8597-4934-9266-d21f225ede86.png",
+  "componentExampleImage": "md/button/images/89a9a31d-4b89-4c89-96ae-b77d09f36620.png",
   "changeLog": [
+    {
+      "who": "Maximilian Blazek",
+      "when": "2025-12-01T14:00:00.000+00:00",
+      "what": "Updated button usage guidelines around number of CTAs as discussed in the panel."
+    },
     {
       "who": "Maximilian Blazek",
       "when": "2025-11-21T17:00:00.000+00:00",
       "what": "Initial commit"
     }
   ],
+  "decisionLog": [],
   "properties": [
     {
       "name": "Icon right",
@@ -82,7 +88,7 @@
     }
   ],
   "anatomy": {
-    "image": "md/button/images/07654e60-bba0-4c7b-81ca-a4ad4861ec10.png",
+    "image": "md/button/images/4a03c8ff-543b-4862-88ad-e821eeccdda6.png",
     "table": [
       {
         "number": 3,

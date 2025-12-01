@@ -7,7 +7,7 @@
   "figmaLink": "https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-50",
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/b1d651365b0714586e6ea14349dea763819c256e/scss/_patterns_tabs.scss",
   "figmaComponentDataPath": "md/tabs/figma-component-data.html",
-  "componentExampleImage": "md/tabs/images/687b1eb6-46e7-4105-b6e7-620bd568dcc3.png",
+  "componentExampleImage": "md/tabs/images/91d53069-0cd4-4b28-a02e-6c07cb3da7fa.png",
   "changeLog": [
     {
       "who": "Maximilian Blazek",
@@ -15,6 +15,7 @@
       "what": "Initial commit"
     }
   ],
+  "decisionLog": [],
   "properties": [
     {
       "name": "Tab state",
@@ -41,7 +42,7 @@
     }
   ],
   "anatomy": {
-    "image": "md/tabs/images/4a7fc5ca-a6e4-4c7e-8bd3-2c516aab99d9.png",
+    "image": "md/tabs/images/904d644d-15fe-4e19-a516-392a822d3abd.png",
     "table": [
       {
         "number": 4,

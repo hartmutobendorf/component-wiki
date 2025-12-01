@@ -7,7 +7,7 @@
   "figmaLink": "https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-35",
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/b1d651365b0714586e6ea14349dea763819c256e/scss/_patterns_notifications.scss",
   "figmaComponentDataPath": "md/notification/figma-component-data.html",
-  "componentExampleImage": "md/notification/images/a84ab2ae-7c94-4ce8-85ca-73e842a808ab.png",
+  "componentExampleImage": "md/notification/images/0a33e180-9c76-490f-8afb-d2cdfe4b604e.png",
   "changeLog": [
     {
       "who": "Maximilian Blazek",
@@ -15,6 +15,7 @@
       "what": "Initial commit"
     }
   ],
+  "decisionLog": [],
   "properties": [
     {
       "name": "Time stamp",
@@ -89,7 +90,7 @@
     }
   ],
   "anatomy": {
-    "image": "md/notification/images/dc81c7c5-d673-4709-8d0b-3fd44805fb44.png",
+    "image": "md/notification/images/9f1a1a3f-2774-4a6a-8718-552a9945c249.png",
     "table": [
       {
         "number": 8,

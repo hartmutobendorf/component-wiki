@@ -7,7 +7,7 @@
   "figmaLink": "https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2006-123",
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/d0197b27f5733789d6d23536eabe68356e045ae1/scss/_patterns_form-tick-elements.scss",
   "figmaComponentDataPath": "md/checkbox/figma-component-data.html",
-  "componentExampleImage": "md/checkbox/images/0aeb8e8a-c1a6-4165-8167-ccaf56f8dcea.png",
+  "componentExampleImage": "md/checkbox/images/4e895f85-58a7-4cbf-a8de-a8d526fc0b08.png",
   "changeLog": [
     {
       "who": "Maximilian Blazek",
@@ -15,6 +15,7 @@
       "what": "Initial commit"
     }
   ],
+  "decisionLog": [],
   "properties": [
     {
       "name": "State",
@@ -42,7 +43,7 @@
     }
   ],
   "anatomy": {
-    "image": "md/checkbox/images/1097f0ed-d53e-432f-9a5c-530ec28f6135.png",
+    "image": "md/checkbox/images/dd12aa26-f6f2-4a27-b09f-5da794c7727c.png",
     "table": [
       {
         "number": 1,
