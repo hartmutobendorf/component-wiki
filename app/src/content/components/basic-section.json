@@ -2,12 +2,12 @@
   "name": "Basic section",
   "type": "Pattern",
   "tiers": "Sites",
-  "documentationStatus": "Needs work",
-  "lastEdited": "Nov 27, 2025",
+  "documentationStatus": "Minimal",
+  "lastEdited": "Dec 1, 2025",
   "figmaLink": "https://www.figma.com/design/1brHCsyeTE6FU7hfJd6ao2/%F0%9F%9A%A7---WIP--Sites---Core-component-library?node-id=41-9326",
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/WD-22552-feat-data-spotlight-pattern/templates/_macros/vf_basic-section.jinja",
   "figmaComponentDataPath": "",
-  "componentExampleImage": "md/basic-section/images/433b0671-b339-4bd5-bf83-46861207d011.png",
+  "componentExampleImage": "md/basic-section/images/452863eb-eaa1-4654-a4f1-4ff131b72826.png",
   "changeLog": [
     {
       "who": "Isaac Kim",
@@ -15,7 +15,13 @@
       "what": "Initial commit"
     }
   ],
+  "decisionLog": [],
   "properties": [
+    {
+      "name": "Block bottom padding",
+      "type": "single select",
+      "required": true
+    },
     {
       "name": "Medium layout",
       "type": "single select",
@@ -103,7 +109,7 @@
     }
   ],
   "anatomy": {
-    "image": "md/basic-section/images/2db92355-ac51-4bfb-9596-430ea06f3b13.webp",
+    "image": "md/basic-section/images/5aeb1efa-ecd0-4832-a203-cddb2821f7e1.webp",
     "table": [
       {
         "number": 4,
@@ -135,21 +141,21 @@
           "name": "Primary CTA",
           "type": "string",
           "required": false,
-          "description": "The CTA that uses the positive button, to indicate a primary, positive action. This variant is reserved for use in the hero or other key call-to-action areas.",
+          "description": "The CTA used with the positive button style. It indicates a high-priority, positive action and is reserved for hero areas or other key call-to-action sections.",
           "constraint": "Up to 20 characters"
         },
         {
           "name": "Secondary CTA",
           "type": "string",
           "required": false,
-          "description": "The CTA that uses the default button, used for most CTAs to indicate a positive action that isn’t necessarily the main one.",
+          "description": "The CTA using the default button style. It is used for most actions that are positive but not primary, and may serve as the main CTA in non-hero sections.",
           "constraint": "Up to 20 characters"
         },
         {
           "name": "Link CTA",
           "type": "string",
           "required": false,
-          "description": "The CTA that uses the link, to embed actions or pathways to more information, allowing users to click their way from page to page.",
+          "description": "The text link used for contextual actions or pathways to more information. It uses a chevron (›) to indicate navigation to additional content or pages.",
           "constraint": "Up to 60 characters"
         }
       ]

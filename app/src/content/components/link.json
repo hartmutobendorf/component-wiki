@@ -2,22 +2,64 @@
   "name": "Link",
   "type": "Component",
   "tiers": "Global",
-  "documentationStatus": "Needs work",
-  "lastEdited": "Nov 24, 2025",
-  "figmaLink": "",
-  "codeLink": "",
+  "documentationStatus": "Minimal",
+  "lastEdited": "Dec 1, 2025",
+  "figmaLink": "https://www.figma.com/design/PYyGJFg1uN9eK6mZMrsik2/%F0%9F%93%95-Vanilla---core-component-documentation-visuals?node-id=804-15948",
+  "codeLink": "https://github.com/canonical/vanilla-framework/blob/b1d651365b0714586e6ea14349dea763819c256e/scss/_patterns_links.scss",
   "figmaComponentDataPath": "",
-  "componentExampleImage": "",
+  "componentExampleImage": "md/link/images/9e7830de-80be-4512-b976-5177f50df8a5.png",
   "changeLog": [
+    {
+      "who": "Maximilian Blazek",
+      "when": "2025-12-01T12:00:00.000+00:00",
+      "what": "Add description, anatomy description, usage guidelines and properties."
+    },
     {
       "who": "Maximilian Blazek",
       "when": "2025-11-21T17:00:00.000+00:00",
       "what": "Initial commit"
     }
   ],
-  "properties": [],
+  "decisionLog": [],
+  "properties": [
+    {
+      "name": "Show external link icon",
+      "type": "boolean",
+      "required": false,
+      "description": "Wether to show the external link icon (if it is an external link)."
+    },
+    {
+      "name": "Action",
+      "type": "callback",
+      "required": false,
+      "description": "The action that should be performed if this command link is used."
+    },
+    {
+      "name": "Target",
+      "type": "string",
+      "required": false,
+      "description": "Where the user should be linked to (if it is a navigational link)."
+    },
+    {
+      "name": "Link text",
+      "type": "string",
+      "required": true,
+      "description": "The text that should be shown for this link."
+    }
+  ],
   "anatomy": {
-    "image": "md/link/images/85c52925-e5f7-4fdb-9954-d56ac7b2af1c.png",
-    "table": []
+    "image": "md/link/images/04fbe3b1-20df-410c-a085-2e7266e57eb6.png",
+    "table": [
+      {
+        "number": 2,
+        "name": "External link icon",
+        "description": "If the link is external relative to the the current website or application the designer can choose to display an external link icon next to the link text."
+      },
+      {
+        "number": 1,
+        "name": "Link text",
+        "description": "The text that is also the clickable are of the icon. On click it will forward the user to the target of the link (or perform the associated action)."
+      }
+    ]
   }
 }

@@ -7,7 +7,7 @@
   "figmaLink": "https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-5",
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/b1d651365b0714586e6ea14349dea763819c256e/scss/_patterns_badge.scss",
   "figmaComponentDataPath": "md/badge/figma-component-data.html",
-  "componentExampleImage": "md/badge/images/16150744-b542-43c5-ac7c-fb9b6360cceb.png",
+  "componentExampleImage": "md/badge/images/94bfa2ba-50c8-47e7-8112-4d3bc7bf4c99.png",
   "changeLog": [
     {
       "who": "Maximilian Blazek",
@@ -15,6 +15,7 @@
       "what": "Initial commit"
     }
   ],
+  "decisionLog": [],
   "properties": [
     {
       "name": "Numeric value",
@@ -35,7 +36,7 @@
     }
   ],
   "anatomy": {
-    "image": "md/badge/images/2cb0136b-291c-4a4d-98fb-0b112cae5938.png",
+    "image": "md/badge/images/cff1e958-43ad-4fa0-bd0e-8a73660e98b4.png",
     "table": [
       {
         "number": 1,

@@ -3,21 +3,83 @@ name: Select
 type: Component
 tiers: Global
 documentationStatus: Needs work
-lastEdited: Nov 24, 2025
-figmaLink: 
-codeLink: 
+lastEdited: Dec 1, 2025
+figmaLink: https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-43
+codeLink: http://figma.com/exit?url=https%3A%2F%2Fgithub.com%2Fcanonical%2Fvanilla-framework%2Fblob%2Fb1d651365b0714586e6ea14349dea763819c256e%2Fscss%2F_base_forms.scss%23L180
 ---
 
 # Select
+
+## Description
+
+Select components allow users to choose a single option from a list of choices, mostly in forms. Selects are ideal when users need to pick from a predefined set of options where displaying all choices at once would consume too much screen space.
 
 ## Metadata
 
 - **Type**: Component
 - **Tier**: Global
 - **Documentation Status**: Needs work
-- **Last Edited**: Nov 24, 2025
+- **Last Edited**: Dec 1, 2025
+- **Figma**: [View in Figma](https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-43)
+- **Code**: [View on GitHub](http://figma.com/exit?url=https%3A%2F%2Fgithub.com%2Fcanonical%2Fvanilla-framework%2Fblob%2Fb1d651365b0714586e6ea14349dea763819c256e%2Fscss%2F_base_forms.scss%23L180)
+
+## Anatomy
+
+### 1. Text
+
+The text that is shown in the select component.
+
+### 2. Chevron
+
+A chevron that hints to the user that something with more choices will open up upon clicking. Differentiator to the text input element.
+
+### 3. Validation icon
+
+A semantic icon that is shown if the select component is in a validation state.
+
+### 4. Validation text
+
+Semantically colored text that describes the reason of the validation state.
+
+## Usage
+
+Select allows users to choose a single option from a list of mutually exclusive choices. They're particularly effective for saving screen space when presenting 4 or more options, as they collapse choices behind a single control until activated.
+
+The selected value should always be visible in the collapsed state, providing clear feedback about the current selection. When no selection has been made, use descriptive placeholder text that guides users on what to choose (e.g., "Select a country" or "Choose payment method").
+
+Selects work best for selections that require deliberate choice, such as form inputs where changes are confirmed through a submit action.  They should not be used for actions that filter or manipulate the current view. In those cases, use a button with a dropdown menu instead.
+
+### Organizing options
+
+For longer lists, reduce cognitive load by grouping related items using <optgroup> elements. This helps users scan and find options more efficiently. You can also add visual separators between groups by including disabled items with separator characters. When in doubt ask a developer friend how this can be achieved.
+
+### When to use
+
+*   Selecting from 4 or more mutually exclusive options
+*   Form inputs requiring a single choice from a predefined list
+*   When screen space is limited and options don't need to be visible at all times
+*   For selections that require deliberate commitment and confirmation
+
+### When not to use
+
+*   For filtering content or manipulating the current view (use button with dropdown instead)
+*   When presenting 3 or fewer options (use radio buttons instead)
+*   For settings that should apply changes immediately (use switches)
+*   When users need to select multiple options (use checkboxes or combobox)
+
+## Properties
+
+| Name | Type | Required | Description | Constraint | Options | Default |
+|------|------|----------|-------------|------------|---------|----------|
+| Validation text | string | No | The text that is shown if the select is in a validation describing the reason for the validation state. | - | - | - |
+| Validation state | single select | No | Wether the component is in a validation state and if provided in which validation state the component is. | - | warning, error, success | - |
+| Select options | object | Yes | The list of options a user can select from. | - | - | - |
 
 ## Change Log
+
+### Dec 1, 2025 - Maximilian Blazek
+
+Added description, anatomy description, usage guidelines and properties
 
 ### Nov 21, 2025 - Maximilian Blazek
 

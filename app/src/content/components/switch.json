@@ -7,7 +7,7 @@
   "figmaLink": "https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-48",
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/b1d651365b0714586e6ea14349dea763819c256e/scss/_patterns_switch.scss",
   "figmaComponentDataPath": "md/switch/figma-component-data.html",
-  "componentExampleImage": "md/switch/images/07a0ee4a-2fbe-4402-a594-92683763cbc0.png",
+  "componentExampleImage": "md/switch/images/59b01535-0261-4d3f-a580-95c35a48b485.png",
   "changeLog": [
     {
       "who": "Maximilian Blazek",
@@ -15,6 +15,7 @@
       "what": "Initial commit"
     }
   ],
+  "decisionLog": [],
   "properties": [
     {
       "name": "State",
@@ -40,7 +41,7 @@
     }
   ],
   "anatomy": {
-    "image": "md/switch/images/886afbf8-d067-4944-9c76-33a250755b72.png",
+    "image": "md/switch/images/a556c99e-685d-4a63-86c6-573b12aa6d11.png",
     "table": [
       {
         "number": 2,

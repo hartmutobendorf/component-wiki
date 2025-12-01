@@ -3,7 +3,7 @@ name: Button
 type: Component
 tiers: Global
 documentationStatus: Minimal
-lastEdited: Nov 24, 2025
+lastEdited: Dec 1, 2025
 figmaLink: https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-8
 codeLink: https://github.com/canonical/vanilla-framework/blob/main/scss/_patterns_buttons.scss
 ---
@@ -19,7 +19,7 @@ Buttons trigger actions within an interface, typically involving data transforma
 - **Type**: Component
 - **Tier**: Global
 - **Documentation Status**: Minimal
-- **Last Edited**: Nov 24, 2025
+- **Last Edited**: Dec 1, 2025
 - **Figma**: [View in Figma](https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-8)
 - **Code**: [View on GitHub](https://github.com/canonical/vanilla-framework/blob/main/scss/_patterns_buttons.scss)
 
@@ -39,21 +39,37 @@ The text of the button is used to tell the user what sort of action this button 
 
 ## Usage
 
-Use buttons for meaningful interactions that transform, submit, or manipulate data – such as saving forms, deleting items, processing payments, or updating settings. Actions represent state changes in the application rather than simple navigation.
+Use buttons for meaningful interactions that transform, submit, or manipulate data, such as:
 
-Buttons help establish clear visual hierarchy by signaling the most important actions available to users at any given moment. Limit the number of primary buttons per page or section to avoid overwhelming users with too many competing calls-to-action.
+*   Saving forms
+*   Deleting items
+*   Processing payments
+*   Updating settings.
 
-While buttons should primarily trigger actions, they can occasionally be used for navigation when the context demands it. This is most appropriate for high-priority conversion points, such as call-to-action buttons in hero sections that direct users to sign-up flows or landing pages. In these cases, the button represents a key user journey rather than standard navigation.
+Actions represent state changes in the application rather than simple navigation.
+
+Buttons help establish clear visual hierarchy by signaling the most important actions available to users at any given moment. This hierarchy is critical to effective interface design. Users should immediately understand what action they're expected to take.
+
+While buttons should primarily trigger actions, they can occasionally be used for navigation when the context demands it. This is most appropriate for high-priority conversion points, such as call-to-action buttons in hero sections that direct users to, for example, sign-up flows or landing pages. In these cases, the button represents a key user journey rather than standard navigation.
+
+### Use buttons deliberately
+
+Be deliberate about the number of calls-to-action you present, especially primary buttons.  Each additional CTA dilutes the user's focus and makes it harder for them to decide what to do.  Ideally, limit pages to as few CTAs as possible so users clearly understand their intended path forward.
+
+As a rule of thumb, there should almost never be more than one primary button visible in the user's viewport at a time. When multiple primary buttons compete for attention simultaneously, the hierarchy collapses and users face decision paralysis. If you find yourself needing multiple primary actions in view, reconsider whether they're all needed and truly primary.
 
 ### When to use
 
 *   For actions that transform, submit, or manipulate data
 *   To draw attention to the most important action on a page or section
 *   For high-priority conversion points or key user journeys
+*   When the interaction represents a meaningful state change in the application
 
 ### When not to use
 
 *   For simple navigation between pages (use links instead)
+*   When you already have a primary button visible in the current viewport (consider using secondary or tertiary button styles instead)
+*   For multiple competing actions of equal importance (reconsider your information architecture and prioritize one clear primary action)
 
 ## Properties
 
@@ -67,6 +83,10 @@ While buttons should primarily trigger actions, they can occasionally be used fo
 | Type | single select | No | Type controls the semantic type of the button. | - | default, base, brand, positive, negative | default |
 
 ## Change Log
+
+### Dec 1, 2025 - Maximilian Blazek
+
+Updated button usage guidelines around number of CTAs as discussed in the panel.
 
 ### Nov 21, 2025 - Maximilian Blazek
 
