@@ -9,6 +9,12 @@ interface ChangeLogEntry {
     what: string
 }
 
+interface DecisionLogEntry {
+    where: string
+    decisionMade: string
+    link: string
+}
+
 interface PropertyEntry {
     name: string
     required?: boolean
@@ -41,6 +47,7 @@ interface RowData {
     "anatomy-image": string
     "ui-blocks-used-in-pattern": string
     "change-log": ChangeLogEntry[]
+    "decision-log": DecisionLogEntry[]
 }
 
 // Helper function to download an image and return the filename from headers
@@ -146,14 +153,16 @@ async function fetchChangeLogEntriesForComponent(
         // Name field might be a single value, an array, or a comma-separated string
         let isMatch = false
         const nameValue = values.Name
-        
+
         if (typeof nameValue === "string") {
             // Could be exact match or comma-separated list
             if (nameValue === componentName) {
                 isMatch = true
             } else if (nameValue.includes(",")) {
                 // Split by comma and check if component name is in the list
-                const components = nameValue.split(",").map((c: string) => c.trim())
+                const components = nameValue
+                    .split(",")
+                    .map((c: string) => c.trim())
                 isMatch = components.includes(componentName)
             }
         } else if (Array.isArray(nameValue)) {
@@ -178,6 +187,55 @@ async function fetchChangeLogEntriesForComponent(
     return entries
 }
 
+// Fetch decision log entries for a component from the Decision log table
+async function fetchDecisionLogEntriesForComponent(
+    componentName: string,
+    decisionLogRows: any[]
+): Promise<DecisionLogEntry[]> {
+    const entries: DecisionLogEntry[] = []
+
+    // Filter rows for this component
+    for (const row of decisionLogRows) {
+        const values = row.values || {}
+
+        // Check if this row is for the current component
+        // Component field might be a single value, an array, or a comma-separated string
+        let isMatch = false
+        const componentValue = values.Component
+
+        if (typeof componentValue === "string") {
+            // Could be exact match or comma-separated list
+            if (componentValue === componentName) {
+                isMatch = true
+            } else if (componentValue.includes(",")) {
+                // Split by comma and check if component name is in the list
+                const components = componentValue
+                    .split(",")
+                    .map((c: string) => c.trim())
+                isMatch = components.includes(componentName)
+            }
+        } else if (Array.isArray(componentValue)) {
+            // If it's an array, check if component name is in it
+            isMatch = componentValue.includes(componentName)
+        }
+
+        if (isMatch) {
+            // Skip empty rows
+            if (!values.Where && !values["Decision made"] && !values.Link) {
+                continue
+            }
+
+            entries.push({
+                where: values.Where || "",
+                decisionMade: values["Decision made"] || "",
+                link: values.Link || "",
+            })
+        }
+    }
+
+    return entries
+}
+
 // Fetch properties for a component from the Properties table
 async function fetchPropertiesForComponent(
     componentName: string,
@@ -193,14 +251,16 @@ async function fetchPropertiesForComponent(
         // Component field might be a single value, an array, or a comma-separated string
         let isMatch = false
         const componentValue = values.Component
-        
+
         if (typeof componentValue === "string") {
             // Could be exact match or comma-separated list
             if (componentValue === componentName) {
                 isMatch = true
             } else if (componentValue.includes(",")) {
                 // Split by comma and check if component name is in the list
-                const components = componentValue.split(",").map((c: string) => c.trim())
+                const components = componentValue
+                    .split(",")
+                    .map((c: string) => c.trim())
                 isMatch = components.includes(componentName)
             }
         } else if (Array.isArray(componentValue)) {
@@ -265,14 +325,16 @@ async function fetchAnatomyEntriesForComponent(
         // Component field might be a single value, an array, or a comma-separated string
         let isMatch = false
         const componentValue = values.Component
-        
+
         if (typeof componentValue === "string") {
             // Could be exact match or comma-separated list
             if (componentValue === componentName) {
                 isMatch = true
             } else if (componentValue.includes(",")) {
                 // Split by comma and check if component name is in the list
-                const components = componentValue.split(",").map((c: string) => c.trim())
+                const components = componentValue
+                    .split(",")
+                    .map((c: string) => c.trim())
                 isMatch = components.includes(componentName)
             }
         } else if (Array.isArray(componentValue)) {
@@ -356,6 +418,7 @@ function extractTableData(pageHtml: string): RowData[] {
             "anatomy-image": "",
             "ui-blocks-used-in-pattern": "",
             "change-log": [],
+            "decision-log": [],
         }
 
         // Extract documentation status (from link text)
@@ -609,6 +672,30 @@ codeLink: ${componentMetadata.codeLink}
         }
     }
 
+    // Add decision log section
+    if (
+        componentMetadata.decisionLog &&
+        componentMetadata.decisionLog.length > 0
+    ) {
+        markdown += `## Decision Log\n\n`
+        markdown += `| Where | Decision Made | Link |\n`
+        markdown += `|-------|---------------|------|\n`
+
+        for (const entry of componentMetadata.decisionLog) {
+            const where = (entry.where || "-")
+                .replace(/\|/g, "\\|")
+                .replace(/\n/g, " ")
+            const decision = (entry.decisionMade || "-")
+                .replace(/\|/g, "\\|")
+                .replace(/\n/g, " ")
+            const link = entry.link ? `[View](${entry.link})` : "-"
+
+            markdown += `| ${where} | ${decision} | ${link} |\n`
+        }
+
+        markdown += `\n`
+    }
+
     return markdown
 }
 
@@ -618,6 +705,7 @@ async function main() {
     const changeLogTableId = CODA_CONFIG.getChangeLogTableId()
     const propertiesTableId = CODA_CONFIG.getPropertiesTableId()
     const anatomyTableId = CODA_CONFIG.getAnatomyTableId()
+    const decisionLogTableId = CODA_CONFIG.getDecisionLogTableId()
 
     if (!docId) {
         console.error("Error: CODA_DOC_ID environment variable is not set")
@@ -655,6 +743,14 @@ async function main() {
         return
     }
 
+    if (!decisionLogTableId) {
+        console.error(
+            "Error: CODA_DECISIONLOG_TABLE_ID environment variable is not set"
+        )
+        console.log("Please add CODA_DECISIONLOG_TABLE_ID to your .env file")
+        return
+    }
+
     console.log(`Fetching table: ${tableId} from doc: ${docId}\n`)
 
     // Get table info to find parent page
@@ -668,10 +764,6 @@ async function main() {
         console.log("Exporting parent page content as HTML...")
         pageHtml = await coda.exportPageContent(docId, table.parent.id, "html")
         console.log("✓ Page content exported\n")
-
-        // Save the HTML for debugging
-        await Bun.write("exported-page.html", pageHtml)
-        console.log("✓ Saved HTML to exported-page.html for debugging\n")
     } else {
         console.error("Error: Table has no parent page")
         return
@@ -711,7 +803,9 @@ async function main() {
             const items = (changeLogResponse as any).items || []
             changeLogRows.push(...items)
             pageToken = (changeLogResponse as any).nextPageToken
-            console.log(`  Fetched ${items.length} change log rows (total: ${changeLogRows.length})`)
+            console.log(
+                `  Fetched ${items.length} change log rows (total: ${changeLogRows.length})`
+            )
         } while (pageToken)
         console.log(`✓ Fetched ${changeLogRows.length} change log rows total`)
     } catch (error) {
@@ -737,7 +831,9 @@ async function main() {
             const items = (propertiesResponse as any).items || []
             propertiesRows.push(...items)
             pageToken = (propertiesResponse as any).nextPageToken
-            console.log(`  Fetched ${items.length} properties rows (total: ${propertiesRows.length})`)
+            console.log(
+                `  Fetched ${items.length} properties rows (total: ${propertiesRows.length})`
+            )
         } while (pageToken)
         console.log(`✓ Fetched ${propertiesRows.length} properties rows total`)
     } catch (error) {
@@ -763,11 +859,43 @@ async function main() {
             const items = (anatomyResponse as any).items || []
             anatomyRows.push(...items)
             pageToken = (anatomyResponse as any).nextPageToken
-            console.log(`  Fetched ${items.length} anatomy rows (total: ${anatomyRows.length})`)
+            console.log(
+                `  Fetched ${items.length} anatomy rows (total: ${anatomyRows.length})`
+            )
         } while (pageToken)
         console.log(`✓ Fetched ${anatomyRows.length} anatomy rows total`)
     } catch (error) {
         console.log(`⚠ Failed to fetch anatomy data: ${error}`)
+    }
+
+    // Fetch all decision log rows from the Decision log table
+    console.log("\n📋 Fetching decision log data from API...")
+    let decisionLogRows: any[] = []
+    try {
+        let pageToken: string | undefined = undefined
+        do {
+            const decisionLogResponse = await coda.getTableRows(
+                docId,
+                decisionLogTableId,
+                {
+                    useColumnNames: true,
+                    valueFormat: "simple",
+                    pageToken,
+                    limit: 100, // Fetch more per page to reduce API calls
+                }
+            )
+            const items = (decisionLogResponse as any).items || []
+            decisionLogRows.push(...items)
+            pageToken = (decisionLogResponse as any).nextPageToken
+            console.log(
+                `  Fetched ${items.length} decision log rows (total: ${decisionLogRows.length})`
+            )
+        } while (pageToken)
+        console.log(
+            `✓ Fetched ${decisionLogRows.length} decision log rows total`
+        )
+    } catch (error) {
+        console.log(`⚠ Failed to fetch decision log data: ${error}`)
     }
 
     // Create components metadata directory
@@ -872,6 +1000,17 @@ async function main() {
             )
         }
 
+        // Fetch decision log entries for this component
+        row["decision-log"] = await fetchDecisionLogEntriesForComponent(
+            name,
+            decisionLogRows
+        )
+        if (row["decision-log"].length > 0) {
+            console.log(
+                `    ✓ Found ${row["decision-log"].length} decision log entries`
+            )
+        }
+
         // Fetch properties for this component
         const properties = await fetchPropertiesForComponent(
             name,
@@ -936,6 +1075,7 @@ async function main() {
             figmaComponentDataPath: figmaComponentDataPath,
             componentExampleImage: componentExampleImagePath,
             changeLog: row["change-log"],
+            decisionLog: row["decision-log"],
             properties: properties,
             anatomy: {
                 image: anatomyImagePath,

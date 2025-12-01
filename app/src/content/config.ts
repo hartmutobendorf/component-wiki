@@ -36,6 +36,16 @@ const componentsCollection = defineCollection({
       )
       .optional()
       .default([]),
+    decisionLog: z
+      .array(
+        z.object({
+          where: z.string(),
+          decisionMade: z.string(),
+          link: z.string(),
+        }),
+      )
+      .optional()
+      .default([]),
     properties: z
       .array(
         z.object({

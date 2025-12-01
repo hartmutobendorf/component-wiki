@@ -131,6 +131,15 @@ const examples = await loadMarkdownSection("examples");
             </li>
           )
         }
+        {
+          metadata.decisionLog && metadata.decisionLog.length > 0 && (
+            <li class="p-table-of-contents__item">
+              <a class="p-table-of-contents__link" href="#decisionlog">
+                Decision log
+              </a>
+            </li>
+          )
+        }
       </ul>
     </div>
   </div>
@@ -426,6 +435,46 @@ const examples = await loadMarkdownSection("examples");
     }
   </div>
 
+  <div class="p-section">
+    {
+      metadata.decisionLog && metadata.decisionLog.length > 0 && (
+        <section id="decisionlog" class="u-text-max-width">
+          <h2>Decision log</h2>
+          <table aria-label="Decision log" class="decisionlog-table">
+            <thead>
+              <tr>
+                <th class="decisionlog-where">Where</th>
+                <th class="decisionlog-decision">Decision made</th>
+                <th class="decisionlog-link">Link</th>
+              </tr>
+            </thead>
+            <tbody>
+              {metadata.decisionLog.map((entry) => (
+                <tr>
+                  <td class="decisionlog-where">{entry.where}</td>
+                  <td class="decisionlog-decision">{entry.decisionMade}</td>
+                  <td class="decisionlog-link">
+                    {entry.link ? (
+                      <a
+                        href={entry.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        View
+                      </a>
+                    ) : (
+                      "-"
+                    )}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </section>
+      )
+    }
+  </div>
+
   <style>
     .metadata-list {
       display: flex;
@@ -468,6 +517,23 @@ const examples = await loadMarkdownSection("examples");
 
     .changelog-what {
       width: auto;
+    }
+
+    .decisionlog-table {
+      table-layout: fixed;
+      width: 100%;
+    }
+
+    .decisionlog-where {
+      width: 200px;
+    }
+
+    .decisionlog-decision {
+      width: auto;
+    }
+
+    .decisionlog-link {
+      width: 100px;
     }
 
     .properties-table {
