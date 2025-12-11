@@ -1,61 +1,55 @@
-Links are primarily used for navigation, guiding users to different pages or sections within an interface. They appear embedded in body text, listed in footers, integrated into breadcrumbs, or as part of other wayfinding components.  Links provide users with pathways through content, complementing navigation bars and breadcrumbs that offer more systematic orientation.
-
-Links can navigate within your application (internal navigation) or direct users to external websites and resources. They can also trigger system-level actions through protocols like mailto: for composing emails or tel: for initiating phone calls, or even open other applications as part of workflows such as authentication.
-
-### Command links
-
-In specific contexts, links can serve as "command links" to trigger actions rather than navigation. According to [Nielsen Norman Group research on command links](https://www.nngroup.com/articles/command-links/), these action-oriented links offer more room for descriptive text than buttons while maintaining a lighter visual weight.
-
-Command links work best for secondary actions with minor consequences, such as revealing additional content, toggling display options, or performing auxiliary functions. Use action-oriented language starting with a verb (e. g., "Show more details" or "Expand section") to clearly distinguish them from navigational links.
-
-Because links carry the visual expectation of navigation, users may click them assuming they'll simply move to a new page. For this reason, command links should only trigger low-impact actions where unexpected behavior won't frustrate users or cause errors.
-
-### Differentiating links from buttons
-
-While both links and buttons are interactive elements, they serve fundamentally different purposes:
-
-*   **Links** are for navigation between pages or sections, and for secondary actions with minimal consequences
-*   **Buttons** are for meaningful interactions that transform, submit, or manipulate data. Actions that represent state changes in the application
-
-Use buttons when the interaction has significant consequences, such as saving forms, deleting items, processing payments, or updating settings. Links work best for standard navigation and supporting interactions that don't alter application state.
-
-The exception to this guideline occurs at high-priority conversion points.  While buttons can be used for navigation in hero sections or key call-to-action moments, the inverse isn't true. Links should not be used for primary actions or those with significant consequences, regardless of context.
-
-### Link copy
-
-Keep link text concise, descriptive, and meaningful out of context. Users often scan pages specifically looking for links, so the text should clearly indicate the destination or action.
-
-*   **Avoid generic phrases** like "click here" or "read more" that provide no context
-*   **Don't use the word "link"** in the link text itself
-*   **Be specific** about the destination: "View our privacy policy" instead of "Learn more"
-*   **Use sentence-style capitalization** for standalone links with multiple words
-*   **Start with verbs** for command links to indicate action: "Show all comments" or "Expand details"
-
-### Where to use links
-
-Links can appear in various contexts throughout interfaces:
-
-*   **Within paragraphs and body text** for inline references and related content
-*   **In navigation components** such as headers, footers, and sidebars
-*   **As part of lists** providing multiple navigation options or related resources
-*   **In breadcrumb trails** showing hierarchical navigation paths
-*   **Within data tables** linking to detailed views or related records
-
-### Use with intention
-
-Like all interactive elements, links should be used deliberately.  Too many links in close proximity create cognitive overload and make it difficult for users to determine which action to take. Be selective about what you link to, prioritizing the most relevant and valuable destinations for your users' current context.
+Links can navigate within your application (internal navigation) or direct users to external websites and resources (external navigation). They can also prompt system-level actions through protocols, such as mailto: for composing emails, tel: for initiating phone calls, or even open other applications as part of workflows such as authentication.
 
 ### When to use
 
-*   Navigating between pages or sections within your application
-*   Directing users to external websites or resources
+*   To navigate between pages or sections within your application
+*   To direct users to external websites or resources
 *   Embedded within content to provide related information or sources
 *   For secondary, low-consequence actions that support the user flow
-*   Triggering system-level actions (email composition, phone calls, opening applications)
+*   To prompt system-level actions (starting an email or phone call, opening applications)
 
 ### When not to use
 
 *   For primary actions or those with significant consequences (use buttons instead)
 *   For actions that transform, submit, or manipulate data (use buttons instead)
 *   When the interaction represents a meaningful state change in the application (use buttons instead)
-*   At high-priority conversion points where visual prominence is needed (use buttons instead)
+*   At high-priority conversion points where visual prominence is needed (use buttons instea(
+
+### Command links
+
+[Nielsen Norman Group research on command links](https://www.nngroup.com/articles/command-links/) shows they have more room for descriptive text than buttons. Use action-oriented language and start with a verb. For example, ‘expand for more options’ or ‘show more details’.
+
+Use command links for secondary actions with minor consequences, such as revealing content. Use action-oriented language and try to start with a verb to distinguish command links from navigational links. You can use buttons for primary actions with significant consequences.
+
+Users often expect links to act as navigational links, so command links should only prompt actions with minor consequences, where unexpected behavior won't frustrate users or cause errors.
+
+### Differentiating links from buttons
+
+Links and buttons are both interactive components, but they have different purposes:
+
+*   **Links** navigate between pages or sections and should be used for secondary actions with minimal consequences. They do not alter the application state.
+*   **Buttons** are for actions that represent state changes in the applications. They have significant consequences such as to transform, submit, or manipulate data.
+
+Use buttons when the interaction has significant consequences, such as saving forms, deleting items, processing payments, or updating settings. While you may use buttons for some navigation tasks, such as in a hero section, never use links for primary actions with significant consequences.
+
+### Link text
+
+Keep link text concise, descriptive, and meaningful out of context. Users often scan pages specifically looking for links, so the text should clearly indicate the destination or action.
+
+*   Avoid generic phrases with no context, such as "click here" or "read more"
+*   Do not use the word "link" in the link text itself
+*   Be specific about the destination, for example "View our privacy policy" instead of "Learn more"
+*   Use sentence-style capitalization for standalone links with multiple words
+*   Start with verbs for command links
+
+### Use with intention
+
+Like all interactive elements, links should be used deliberately. Too many links in close proximity create cognitive overload and make it difficult for users to determine which action to take. Be selective about what you link to, prioritize the most relevant and valuable destinations for your users' context.
+
+### External link icon
+
+An optional external link icon can appear after the link text to indicate that the destination is outside the current application or site. The icon also reassures the user that opening the link will not interrupt their task, for example when they are completing a form, because the page will open in a new tab. Links that use the external link icon must always open in a new tab.
+
+### Soft links
+
+Soft links use default text styling instead of traditional link styling. The link styling only appears on hover, functioning otherwise like a normal link. Use soft links when it's not critical for users to immediately recognize  text as a link, or when the context already makes this clear. They're particularly useful when displaying multiple consecutive links, such as in download sections with lists of assets, where excessive link styling would be visually overwhelming.

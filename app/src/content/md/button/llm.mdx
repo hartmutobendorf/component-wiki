@@ -3,7 +3,7 @@ name: Button
 type: Component
 tiers: Global
 documentationStatus: Minimal
-lastEdited: Dec 1, 2025
+lastEdited: Dec 11, 2025
 figmaLink: https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-8
 codeLink: https://github.com/canonical/vanilla-framework/blob/main/scss/_patterns_buttons.scss
 ---
@@ -19,7 +19,7 @@ Buttons trigger actions within an interface, typically involving data transforma
 - **Type**: Component
 - **Tier**: Global
 - **Documentation Status**: Minimal
-- **Last Edited**: Dec 1, 2025
+- **Last Edited**: Dec 11, 2025
 - **Figma**: [View in Figma](https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-8)
 - **Code**: [View on GitHub](https://github.com/canonical/vanilla-framework/blob/main/scss/_patterns_buttons.scss)
 
@@ -52,12 +52,6 @@ Buttons help establish clear visual hierarchy by signaling the most important ac
 
 While buttons should primarily trigger actions, they can occasionally be used for navigation when the context demands it. This is most appropriate for high-priority conversion points, such as call-to-action buttons in hero sections that direct users to, for example, sign-up flows or landing pages. In these cases, the button represents a key user journey rather than standard navigation.
 
-### Use buttons deliberately
-
-Be deliberate about the number of calls-to-action you present, especially primary buttons.  Each additional CTA dilutes the user's focus and makes it harder for them to decide what to do.  Ideally, limit pages to as few CTAs as possible so users clearly understand their intended path forward.
-
-As a rule of thumb, there should almost never be more than one primary button visible in the user's viewport at a time. When multiple primary buttons compete for attention simultaneously, the hierarchy collapses and users face decision paralysis. If you find yourself needing multiple primary actions in view, reconsider whether they're all needed and truly primary.
-
 ### When to use
 
 *   For actions that transform, submit, or manipulate data
@@ -70,6 +64,47 @@ As a rule of thumb, there should almost never be more than one primary button vi
 *   For simple navigation between pages (use links instead)
 *   When you already have a primary button visible in the current viewport (consider using secondary or tertiary button styles instead)
 *   For multiple competing actions of equal importance (reconsider your information architecture and prioritize one clear primary action)
+
+### Call to actions
+
+Almost always, there is an action that the user needs to perform on a page. Guide users toward the main action within the user flow that you have designed. **This means being opinionated about what action the user should be performing and using that as the primary call to action.** Rather than presenting users with an overwhelming array of choices, you should clearly signal the intended path forward. As a result, the main action on any given page should, in most cases, be represented by a primary button.
+
+Be deliberate about the number of calls-to-action you present. Each additional CTA dilutes the user's focus and makes it harder for them to decide what to do. Ideally, limit pages to as few CTAs as possible so users clearly understand their intended path forward. **As a rule of thumb, there should almost never be more than one primary button visible in the user's viewport at a time.**
+
+When multiple primary buttons compete for attention simultaneously, the hierarchy collapses and users face decision paralysis. If you find yourself needing multiple primary actions in view, reconsider whether they're all truly primary and whether some could be deprioritized or removed entirely.
+
+### Button order and alignment
+
+**Right-aligned buttons when:**
+
+*   The action moves the user forward in a flow (forms, wizards, checkout)
+*   In modal dialogs and confirmation windows
+*   Settings or configuration panels
+*   The button completes or submits something
+*   Following the natural "end of task" position after scanning content left-to-right
+
+**Left-aligned buttons when:**
+
+*   The button is a direct continuation of left-aligned content (hero sections, cards, marketing blocks)
+*   The action relates to specific content above it
+*   "Back" or "Cancel" actions that return users to a previous state
+*   Article pages or content-heavy contexts where buttons are secondary to the text
+
+### Icon buttons
+
+In situations where space is limited and the actions have easily recognisable icons, buttons may use an icon without text. These should be reserved for very common actions such as delete, edit, or close. Icon-only buttons must always include a tooltip that clearly states the action the button performs. The tooltip should include a delay so that it does not interrupt the user unnecessarily.
+
+### When to disable buttons
+
+For form submissions, buttons should remain enabled even when mandatory fields are incomplete. Users often don't understand why a button is disabled, particularly in longer or more complex forms where they may have overlooked a required field. Allowing users to click the button and receive validation feedback makes it easier for them to discover and correct their mistakes.
+
+Disabling is more appropriate when the system knows an action is genuinely unavailable, not due to incomplete input, but due to external constraints like permissions, plan limits, or missing prerequisites. In these cases, clearly communicate why the action is unavailable with a tooltip.
+
+If possible, provide an alternative that unblocks the user. For example, if an empty state requires a prerequisite to be fulfilled first, display the action to complete that prerequisite rather than showing a disabled button with no clear path forward.
+
+### Dual buttons
+
+There are situations where opposing actions can be combined into a single button, for example play and pause in a video player. The icon or label should reflect the action that will occur when the user presses the button. If the media is playing, show the pause icon. If it is paused, show the play icon. This aligns with user intent because they select an action, not a status.
 
 ## Properties
 
@@ -91,4 +126,11 @@ Updated button usage guidelines around number of CTAs as discussed in the panel.
 ### Nov 21, 2025 - Maximilian Blazek
 
 Initial commit
+
+## Decision Log
+
+| Where | Decision Made | Link |
+|-------|---------------|------|
+| App Mafia | Question: Should we allow a user to fail to do an action?  Decisions: We should prevent the failure if the system knows the user won’t be able to perform the action. For example, if we know the user won’t be able to add a new item on a page, displaying a notification and disabling the button is preferable. However, when we have an alternative action that would unblock the user, we should provide that option. For example, in an empty state that has pre-requirements, we should display the action to fulfil the pre-requisite.  | [View](https://docs.google.com/document/d/1e96PtV1x-CiHkvrCn6_U0_1fHV6yTQg3UTXKvQyG9wc/edit?tab=t.5l0pasbf331b#bookmark=id.nn377pe8e8re) |
+| App Mafia | Question: Should buttons in the forms be disabled if not all mandatory fields have been filled? Decision: Buttons should be enabled even if mandatory fields are missing. Users might not know why a button is disabled (they might have missed that there is a mandatory field, especially in longer, complexer forms). Enabling the button and “allowing” the user to fail will make it easier for them to discover their mistake (as clicking the button should highlight to the user what is still missing).  | [View](https://docs.google.com/document/d/1e96PtV1x-CiHkvrCn6_U0_1fHV6yTQg3UTXKvQyG9wc/edit?tab=t.5l0pasbf331b#bookmark=kix.aupph04y3047) |
 

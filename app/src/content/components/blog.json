@@ -2,25 +2,42 @@
   "name": "Blog",
   "type": "Pattern",
   "tiers": "Sites",
-  "documentationStatus": "Needs work",
+  "documentationStatus": "Minimal",
   "lastEdited": "Dec 1, 2025",
-  "figmaLink": "",
-  "codeLink": "",
+  "figmaLink": "https://www.figma.com/design/1brHCsyeTE6FU7hfJd6ao2/%F0%9F%8C%90-Sites---Core-component-library?node-id=2940-19045",
+  "codeLink": "https://github.com/canonical/vanilla-framework/blob/main/templates/_macros/vf_blog.jinja",
   "figmaComponentDataPath": "",
-  "componentExampleImage": "",
+  "componentExampleImage": "md/blog/images/f4524253-1555-422c-9353-ddae31a30412.png",
   "changeLog": [],
   "decisionLog": [],
   "properties": [
     {
-      "name": "Linked heading",
+      "name": "Heading",
+      "type": "string",
+      "required": true,
+      "description": "4-column width heading using muted heading",
+      "constraint": "Up to 60 characters"
+    },
+    {
+      "name": "Number of articles",
       "type": "single select",
       "required": false,
-      "description": "The heading can be used as a link when paired with a chevron(›) and a clear indication.",
+      "description": "It determines the number of articles to display in the section.",
       "options": [
-        "default",
-        "link"
+        "3-block",
+        "4-block"
       ],
-      "defaultOption": "default"
+      "defaultOption": "4-block"
+    },
+    {
+      "name": "Content loading strategies",
+      "type": "object",
+      "required": true,
+      "description": "The blog pattern supports two content loading strategies:\nDynamic content:  Articles are loaded asynchronously using a template\nStatic content: Articles are passed directly to the pattern",
+      "options": [
+        "dinamic",
+        "static"
+      ]
     },
     {
       "name": "Section rule",
@@ -30,6 +47,23 @@
       "constraint": "Only use the default style for the section-level rule",
       "options": [
         "default"
+      ],
+      "defaultOption": "default"
+    },
+    {
+      "name": "Heading",
+      "type": "string",
+      "required": true,
+      "description": "4-column width heading using muted heading"
+    },
+    {
+      "name": "Linked heading",
+      "type": "single select",
+      "required": false,
+      "description": "The heading can be used as a link when paired with a chevron(›) and a clear indication.",
+      "options": [
+        "default",
+        "link"
       ],
       "defaultOption": "default"
     },
@@ -48,7 +82,84 @@
     }
   ],
   "anatomy": {
-    "image": "",
-    "table": []
-  }
+    "image": "md/blog/images/f640b584-118f-4a7e-93f0-eaa3e04f077a.png",
+    "table": [
+      {
+        "number": 6,
+        "name": "Citation",
+        "description": "The citation is an optional author/date field in small text and supports showing either or both."
+      },
+      {
+        "number": 5,
+        "name": "Description",
+        "description": "In dynamic content, the description displays the first 180 characters of the article. In static content, a custom description of up to 300 characters should be provided."
+      },
+      {
+        "number": 4,
+        "name": "Article title",
+        "description": "Displaying the full title of the article."
+      },
+      {
+        "number": 3,
+        "name": "Article image",
+        "description": "Each blog article displays a 16:9 cover image with shallow bottom padding. If a fetched article does not include an image, a fallback image is used automatically.\nIn dynamic content, the article image displays the cover image of the article. In static content, a custom image should be provided."
+      },
+      {
+        "number": 2,
+        "name": "Heading",
+        "description": "The section heading communicates the primary subject or theme of the section."
+      },
+      {
+        "number": 1,
+        "name": "Rule",
+        "description": "The rule component indicates the beginning of a new section."
+      }
+    ]
+  },
+  "childProperties": [
+    {
+      "name": "Article block",
+      "properties": [
+        {
+          "name": "Citation date",
+          "type": "string",
+          "required": false,
+          "description": "Publishing date in the citation format “DD Month YYYY”"
+        },
+        {
+          "name": "Citation author",
+          "type": "string",
+          "required": false,
+          "description": "Author name text in the citation",
+          "constraint": "Up to 20 characters"
+        },
+        {
+          "name": "Citation",
+          "type": "object",
+          "required": false,
+          "description": "Author/date field in small text and supports showing either or both."
+        },
+        {
+          "name": "Article description",
+          "type": "string",
+          "required": false,
+          "description": "Description text for the article\nDynamic: displays the first 180 characters of the article. \nStatic: a custom description should be provided.",
+          "constraint": "Dynamic: 180 characters (with the truncation)\nStatic: up to 300 characters"
+        },
+        {
+          "name": "Image",
+          "type": "object",
+          "required": false,
+          "description": "Cover image for the article. In the blog pattern, it is required and falls back to a default image when not provided. In the resources pattern, it supports 16:9 image, logo, or none as options."
+        },
+        {
+          "name": "Article title",
+          "type": "string",
+          "required": true,
+          "description": "Title configuration for the article",
+          "constraint": "Dynamic: -\nStatic: up to 100 characters"
+        }
+      ]
+    }
+  ]
 }

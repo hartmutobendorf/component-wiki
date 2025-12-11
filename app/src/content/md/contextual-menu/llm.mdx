@@ -3,7 +3,7 @@ name: Contextual menu
 type: Component
 tiers: Global
 documentationStatus: Minimal
-lastEdited: Dec 1, 2025
+lastEdited: Dec 10, 2025
 figmaLink: https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-22
 codeLink: https://github.com/canonical/vanilla-framework/blob/d0197b27f5733789d6d23536eabe68356e045ae1/scss/_patterns_contextual-menu.scss
 ---
@@ -19,23 +19,35 @@ A contextual menu provides secondary actions and options that can be attached to
 - **Type**: Component
 - **Tier**: Global
 - **Documentation Status**: Minimal
-- **Last Edited**: Dec 1, 2025
+- **Last Edited**: Dec 10, 2025
 - **Figma**: [View in Figma](https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-22)
 - **Code**: [View on GitHub](https://github.com/canonical/vanilla-framework/blob/d0197b27f5733789d6d23536eabe68356e045ae1/scss/_patterns_contextual-menu.scss)
 
 ## Anatomy
 
-### 1. Action
+### 1. Action text
+
+The text of the action item is used to tell the user what sort of action it performs. It should be set to something that gives the user a clear understanding which action is being performed when executing it.
+
+### 2. Action icon
+
+Optional icon that can be used to represent and enhance the meaning of the action text. 
+
+### 3. Action
 
 A single action. Clicking it will perform the action that is associated with it.
 
-### 2. Action group
-
-In menus with a lot of items certain actions can be grouped together in an action group.
-
-### 3. Separator
+### 4. Separator
 
 A separator that visually separates action groups from each other.
+
+### 5. Nested actions icon
+
+This icon is used to indicate that a group of actions have been nested inside of it
+
+### 6. Nested actions
+
+A group of actions which has been nested inside of a single item. 
 
 ## Usage
 
@@ -84,6 +96,10 @@ Avoid letting contextual menus grow too long, as this creates cognitive overload
 | Actions | object | Yes | The actions that this contextual menu should have. Optionally also sets wether specific actions should be grouped in action groups. | - | - | - |
 
 ## Change Log
+
+### Dec 3, 2025 - Daniel Mutis
+
+Reviewed
 
 ### Dec 1, 2025 - Maximilian Blazek
 

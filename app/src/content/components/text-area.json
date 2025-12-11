@@ -3,7 +3,7 @@
   "type": "Component",
   "tiers": "Global",
   "documentationStatus": "Needs work",
-  "lastEdited": "Nov 21, 2025",
+  "lastEdited": "Dec 8, 2025",
   "figmaLink": "",
   "codeLink": "",
   "figmaComponentDataPath": "",
@@ -18,7 +18,7 @@
   "decisionLog": [],
   "properties": [],
   "anatomy": {
-    "image": "",
+    "image": "md/text-area/images/3fca1b62-3b9d-4309-85e3-1f08ec42bb2d.png",
     "table": []
   }
 }

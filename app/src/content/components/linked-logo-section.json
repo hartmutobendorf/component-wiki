@@ -12,12 +12,22 @@
   "decisionLog": [],
   "properties": [
     {
+      "name": "Section rule",
+      "type": "single select",
+      "required": true,
+      "description": "The rule component indicates the beginning of a new pattern",
+      "constraint": "Only use the default style for the section-level rule",
+      "options": [
+        "default"
+      ],
+      "defaultOption": "default"
+    },
+    {
       "name": "Heading",
       "type": "string",
       "required": true,
       "description": "4-column width heading using H2",
-      "constraint": "Up to 60 characters",
-      "defaultOption": "default"
+      "constraint": "Up to 60 characters"
     },
     {
       "name": "Linked heading",
@@ -31,28 +41,17 @@
       "defaultOption": "default"
     },
     {
-      "name": "Section rule",
-      "type": "single select",
-      "required": true,
-      "description": "The rule component indicates the beginning of a new pattern",
-      "constraint": "Only use the default style for the section-level rule",
-      "options": [
-        "default"
-      ],
-      "defaultOption": "default"
-    },
-    {
-      "name": "Linked logo image",
-      "type": "slot",
-      "required": true,
-      "description": "16:9 image container with the logo image inside "
-    },
-    {
       "name": "Link text",
       "type": "string",
       "required": true,
       "description": "The link text for the logo",
       "constraint": "Up to 60 characters"
+    },
+    {
+      "name": "Linked logo image",
+      "type": "object",
+      "required": true,
+      "description": "16:9 image container with the logo image inside "
     },
     {
       "name": "Padding",

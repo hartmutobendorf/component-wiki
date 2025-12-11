@@ -3,11 +3,11 @@
   "type": "Component",
   "tiers": "Global",
   "documentationStatus": "Minimal",
-  "lastEdited": "Nov 24, 2025",
+  "lastEdited": "Dec 10, 2025",
   "figmaLink": "https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2006-123",
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/d0197b27f5733789d6d23536eabe68356e045ae1/scss/_patterns_form-tick-elements.scss",
   "figmaComponentDataPath": "md/checkbox/figma-component-data.html",
-  "componentExampleImage": "md/checkbox/images/e7409e5f-c6e0-4eaa-a675-340341348911.png",
+  "componentExampleImage": "md/checkbox/images/881aefcf-ea61-4927-b32f-df9c73f93050.png",
   "changeLog": [
     {
       "who": "Maximilian Blazek",
@@ -43,7 +43,7 @@
     }
   ],
   "anatomy": {
-    "image": "md/checkbox/images/c5e14d6b-85ce-452a-8a6a-a95a1b01ef79.png",
+    "image": "md/checkbox/images/f522bf85-fa58-4d07-9b49-fefa2c8d261d.png",
     "table": [
       {
         "number": 1,

@@ -2,30 +2,100 @@
 name: Blog
 type: Pattern
 tiers: Sites
-documentationStatus: Needs work
+documentationStatus: Minimal
 lastEdited: Dec 1, 2025
-figmaLink: 
-codeLink: 
+figmaLink: https://www.figma.com/design/1brHCsyeTE6FU7hfJd6ao2/%F0%9F%8C%90-Sites---Core-component-library?node-id=2940-19045
+codeLink: https://github.com/canonical/vanilla-framework/blob/main/templates/_macros/vf_blog.jinja
 ---
 
 # Blog
 
 ## Description
 
-The blog pattern presents a curated section of the latest blog articles, highlighting recent content or specific topics for easy discovery. It supports displaying three to four articles, each with a cover image, title, and optional description and metadata such as author and date. This pattern helps users quickly scan and access featured articles, making it suitable for showcasing updates and driving engagement with new content.
+The blog pattern displays 3 to 4 blog articles in a grid layout. Each article shows a cover image, title, description, author information, and publication date. Articles can be loaded dynamically or provided statically. Designed to highlight recent contents in specific topic, the pattern offers users quick access to featured blog posts.
 
 ## Metadata
 
 - **Type**: Pattern
 - **Tier**: Sites
-- **Documentation Status**: Needs work
+- **Documentation Status**: Minimal
 - **Last Edited**: Dec 1, 2025
+- **Figma**: [View in Figma](https://www.figma.com/design/1brHCsyeTE6FU7hfJd6ao2/%F0%9F%8C%90-Sites---Core-component-library?node-id=2940-19045)
+- **Code**: [View on GitHub](https://github.com/canonical/vanilla-framework/blob/main/templates/_macros/vf_blog.jinja)
+
+## Anatomy
+
+### 1. Rule
+
+The rule component indicates the beginning of a new section.
+
+### 2. Heading
+
+The section heading communicates the primary subject or theme of the section.
+
+### 3. Article image
+
+Each blog article displays a 16:9 cover image with shallow bottom padding. If a fetched article does not include an image, a fallback image is used automatically.
+In dynamic content, the article image displays the cover image of the article. In static content, a custom image should be provided.
+
+### 4. Article title
+
+Displaying the full title of the article.
+
+### 5. Description
+
+In dynamic content, the description displays the first 180 characters of the article. In static content, a custom description of up to 300 characters should be provided.
+
+### 6. Citation
+
+The citation is an optional author/date field in small text and supports showing either or both.
+
+## Usage
+
+The blog pattern displays 3 to 4 blog articles in a grid layout. By presenting posts in a structured, scannable grid, the pattern enables quick comparison and encourages exploration of topics that support the narrative of the page.
+
+The pattern supports both dynamic and static loading strategies. When connected to the latest news module, the blog pattern automatically pulls recent articles from a defined group, ensuring that the section remains fresh without requiring manual updates. This approach is ideal for pages that benefit from showcasing ongoing activity or frequently updated content. In contrast, static content allows to feature specific articles by providing custom descriptions, and imagery. This curated approach is useful when emphasizing certain messages or guiding users through a planned content journey.
+
+The grid layout helps users scan titles, descriptions, authors, and publication dates with ease. Cover images provide quick visual context and improve engagement, while fallback imagery maintains uniformity across articles that do not include a native image. Limiting the pattern to three or four items reinforces clarity and prevents cognitive overload, ensuring that each featured article receives adequate attention.
+
+### When to use
+
+*   To feature the latest or most relevant blog posts.
+*   To highlight related articles that support the main content of a page.
+*   To provide users quick access to blog content without navigating to the blog index.
+
+### When not to use
+
+*   When the content includes mixed resource types such as webinars, case studies, or white papers
+*   *   Use resources pattern instead
+
+## Examples
+
+4-block layout with linked heading
+
+![4block.png](images/ea10c259-af69-49d6-993c-c1214b3207e3.png)
+
+3-block layout
+
+![3block.png](images/c4c2e8f2-d2fb-4f89-a167-8fb89683d278.png)
+
+Medium dimension
+
+![Medium.png](images/d03a1461-5d54-4f28-8511-b2b2c17e5267.png)
+
+Small dimension
+
+![small.png](images/fe2d311d-0beb-47fd-a1e5-7fc524195a93.png)
 
 ## Properties
 
 | Name | Type | Required | Description | Constraint | Options | Default |
 |------|------|----------|-------------|------------|---------|----------|
-| Linked heading | single select | No | The heading can be used as a link when paired with a chevron(›) and a clear indication. | - | default, link | default |
+| Heading | string | Yes | 4-column width heading using muted heading | Up to 60 characters | - | - |
+| Number of articles | single select | No | It determines the number of articles to display in the section. | - | 3-block, 4-block | 4-block |
+| Content loading strategies | object | Yes | The blog pattern supports two content loading strategies: Dynamic content:  Articles are loaded asynchronously using a template Static content: Articles are passed directly to the pattern | - | dinamic, static | - |
 | Section rule | single select | Yes | The rule component indicates the beginning of a new pattern | Only use the default style for the section-level rule | default | default |
+| Heading | string | Yes | 4-column width heading using muted heading | - | - | - |
+| Linked heading | single select | No | The heading can be used as a link when paired with a chevron(›) and a clear indication. | - | default, link | default |
 | Padding | single select | Yes | Type of padding to apply to the pattern | - | default, deep, shallow, none | default |
 

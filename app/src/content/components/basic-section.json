@@ -3,11 +3,11 @@
   "type": "Pattern",
   "tiers": "Sites",
   "documentationStatus": "Minimal",
-  "lastEdited": "Dec 1, 2025",
+  "lastEdited": "Dec 8, 2025",
   "figmaLink": "https://www.figma.com/design/1brHCsyeTE6FU7hfJd6ao2/%F0%9F%9A%A7---WIP--Sites---Core-component-library?node-id=41-9326",
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/WD-22552-feat-data-spotlight-pattern/templates/_macros/vf_basic-section.jinja",
   "figmaComponentDataPath": "",
-  "componentExampleImage": "md/basic-section/images/8dc2119b-2d17-4a84-ae39-479a36201a5a.png",
+  "componentExampleImage": "md/basic-section/images/317a5089-7683-4e59-b8d2-aca18335ca41.png",
   "changeLog": [
     {
       "who": "Isaac Kim",
@@ -20,7 +20,24 @@
     {
       "name": "Block bottom padding",
       "type": "single select",
-      "required": true
+      "required": true,
+      "description": "Type of padding to apply to the block",
+      "options": [
+        "none",
+        "shallow"
+      ],
+      "defaultOption": "none"
+    },
+    {
+      "name": "Section rule",
+      "type": "single select",
+      "required": true,
+      "description": "The rule component indicates the beginning of a new pattern",
+      "constraint": "Only use the default style for the section-level rule",
+      "options": [
+        "default"
+      ],
+      "defaultOption": "default"
     },
     {
       "name": "Medium layout",
@@ -38,8 +55,7 @@
       "type": "string",
       "required": true,
       "description": "4-column width heading using H2",
-      "constraint": "Up to 60 characters",
-      "defaultOption": "default"
+      "constraint": "Up to 60 characters"
     },
     {
       "name": "Linked heading",
@@ -84,17 +100,6 @@
       "constraint": "600"
     },
     {
-      "name": "Section rule",
-      "type": "single select",
-      "required": true,
-      "description": "The rule component indicates the beginning of a new pattern",
-      "constraint": "Only use the default style for the section-level rule",
-      "options": [
-        "default"
-      ],
-      "defaultOption": "default"
-    },
-    {
       "name": "Padding",
       "type": "single select",
       "required": true,
@@ -109,7 +114,7 @@
     }
   ],
   "anatomy": {
-    "image": "md/basic-section/images/45f7542b-2de7-42f0-89e7-0c8d35384cab.webp",
+    "image": "md/basic-section/images/b55f8d8b-f9ae-4e7a-a2cb-fe2cc7a6a56d.webp",
     "table": [
       {
         "number": 4,
@@ -252,17 +257,17 @@
       "name": "Linked logo block",
       "properties": [
         {
-          "name": "Linked logo image",
-          "type": "slot",
-          "required": true,
-          "description": "16:9 image container with the logo image inside "
-        },
-        {
           "name": "Link text",
           "type": "string",
           "required": true,
           "description": "The link text for the logo",
           "constraint": "Up to 60 characters"
+        },
+        {
+          "name": "Linked logo image",
+          "type": "object",
+          "required": true,
+          "description": "16:9 image container with the logo image inside "
         }
       ]
     },
@@ -329,18 +334,18 @@
       "name": "List",
       "properties": [
         {
+          "name": "List item text",
+          "type": "string",
+          "required": true,
+          "description": "Sets the content of the list",
+          "constraint": "Up to 250 characters"
+        },
+        {
           "name": "List",
           "type": "slot",
           "required": true,
           "description": "The divided list supporting up to 10 items",
           "constraint": "Up to 10 items"
-        },
-        {
-          "name": "List item",
-          "type": "string",
-          "required": true,
-          "description": "Sets the content of the list",
-          "constraint": "Up to 250 characters"
         },
         {
           "name": "List bullet type",

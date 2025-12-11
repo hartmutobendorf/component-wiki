@@ -2,8 +2,8 @@
 name: Select
 type: Component
 tiers: Global
-documentationStatus: Needs work
-lastEdited: Dec 1, 2025
+documentationStatus: Minimal
+lastEdited: Dec 10, 2025
 figmaLink: https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-43
 codeLink: http://figma.com/exit?url=https%3A%2F%2Fgithub.com%2Fcanonical%2Fvanilla-framework%2Fblob%2Fb1d651365b0714586e6ea14349dea763819c256e%2Fscss%2F_base_forms.scss%23L180
 ---
@@ -18,8 +18,8 @@ Select components allow users to choose a single option from a list of choices, 
 
 - **Type**: Component
 - **Tier**: Global
-- **Documentation Status**: Needs work
-- **Last Edited**: Dec 1, 2025
+- **Documentation Status**: Minimal
+- **Last Edited**: Dec 10, 2025
 - **Figma**: [View in Figma](https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-43)
 - **Code**: [View on GitHub](http://figma.com/exit?url=https%3A%2F%2Fgithub.com%2Fcanonical%2Fvanilla-framework%2Fblob%2Fb1d651365b0714586e6ea14349dea763819c256e%2Fscss%2F_base_forms.scss%23L180)
 
@@ -47,11 +47,11 @@ Select allows users to choose a single option from a list of mutually exclusive 
 
 The selected value should always be visible in the collapsed state, providing clear feedback about the current selection. When no selection has been made, use descriptive placeholder text that guides users on what to choose (e.g., "Select a country" or "Choose payment method").
 
-Selects work best for selections that require deliberate choice, such as form inputs where changes are confirmed through a submit action.  They should not be used for actions that filter or manipulate the current view. In those cases, use a button with a dropdown menu instead.
+Selects work best for selections that require deliberate choice, such as form inputs where changes are confirmed through a submit action.  They should not be used for anything that will have an immediate effect. For example actions that filter or manipulate the current view. In those cases, use a button with a dropdown menu instead.
 
 ### Organizing options
 
-For longer lists, reduce cognitive load by grouping related items using optgroup elements. This helps users scan and find options more efficiently. You can also add visual separators between groups by including disabled items with separator characters. When in doubt ask a developer friend how this can be achieved.
+For longer lists, reduce cognitive load by grouping related items. This helps users scan and find options more efficiently. In HTML this could for example be achieved by using so called optgroup elements. This HTML element can be used by developers to group related items. You can also add visual separators between groups by including disabled items with separator characters. When in doubt ask a developer friend how this can be achieved.
 
 ### When to use
 
@@ -76,6 +76,10 @@ For longer lists, reduce cognitive load by grouping related items using optgroup
 | Select options | object | Yes | The list of options a user can select from. | - | - | - |
 
 ## Change Log
+
+### Dec 3, 2025 - Daniel Mutis
+
+Reviewed. Approved with comments. 
 
 ### Dec 1, 2025 - Maximilian Blazek
 

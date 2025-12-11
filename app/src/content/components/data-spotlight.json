@@ -12,15 +12,11 @@
   "decisionLog": [],
   "properties": [
     {
-      "name": "Linked heading",
-      "type": "single select",
-      "required": false,
-      "description": "The heading can be used as a link when paired with a chevron(›) and a clear indication.",
-      "options": [
-        "default",
-        "link"
-      ],
-      "defaultOption": "default"
+      "name": "Heading",
+      "type": "string",
+      "required": true,
+      "description": "4-column width heading using muted heading",
+      "constraint": "Up to 60 characters"
     },
     {
       "name": "Section rule",
@@ -30,6 +26,17 @@
       "constraint": "Only use the default style for the section-level rule",
       "options": [
         "default"
+      ],
+      "defaultOption": "default"
+    },
+    {
+      "name": "Linked heading",
+      "type": "single select",
+      "required": false,
+      "description": "The heading can be used as a link when paired with a chevron(›) and a clear indication.",
+      "options": [
+        "default",
+        "link"
       ],
       "defaultOption": "default"
     },

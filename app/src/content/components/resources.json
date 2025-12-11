@@ -12,17 +12,6 @@
   "decisionLog": [],
   "properties": [
     {
-      "name": "Linked heading",
-      "type": "single select",
-      "required": false,
-      "description": "The heading can be used as a link when paired with a chevron(›) and a clear indication.",
-      "options": [
-        "default",
-        "link"
-      ],
-      "defaultOption": "default"
-    },
-    {
       "name": "Section rule",
       "type": "single select",
       "required": true,
@@ -30,6 +19,17 @@
       "constraint": "Only use the default style for the section-level rule",
       "options": [
         "default"
+      ],
+      "defaultOption": "default"
+    },
+    {
+      "name": "Linked heading",
+      "type": "single select",
+      "required": false,
+      "description": "The heading can be used as a link when paired with a chevron(›) and a clear indication.",
+      "options": [
+        "default",
+        "link"
       ],
       "defaultOption": "default"
     },

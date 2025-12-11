@@ -12,6 +12,17 @@
   "decisionLog": [],
   "properties": [
     {
+      "name": "Section rule",
+      "type": "single select",
+      "required": true,
+      "description": "The rule component indicates the beginning of a new pattern",
+      "constraint": "Only use the default style for the section-level rule",
+      "options": [
+        "default"
+      ],
+      "defaultOption": "default"
+    },
+    {
       "name": "Medium layout",
       "type": "single select",
       "required": false,
@@ -27,8 +38,7 @@
       "type": "string",
       "required": true,
       "description": "4-column width heading using H2",
-      "constraint": "Up to 60 characters",
-      "defaultOption": "default"
+      "constraint": "Up to 60 characters"
     },
     {
       "name": "Linked heading",
@@ -38,17 +48,6 @@
       "options": [
         "default",
         "link"
-      ],
-      "defaultOption": "default"
-    },
-    {
-      "name": "Section rule",
-      "type": "single select",
-      "required": true,
-      "description": "The rule component indicates the beginning of a new pattern",
-      "constraint": "Only use the default style for the section-level rule",
-      "options": [
-        "default"
       ],
       "defaultOption": "default"
     },

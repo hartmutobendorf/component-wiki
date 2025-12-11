@@ -3,11 +3,11 @@
   "type": "Component",
   "tiers": "Global",
   "documentationStatus": "Minimal",
-  "lastEdited": "Dec 1, 2025",
+  "lastEdited": "Dec 11, 2025",
   "figmaLink": "https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-8",
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/main/scss/_patterns_buttons.scss",
   "figmaComponentDataPath": "md/button/figma-component-data.html",
-  "componentExampleImage": "md/button/images/0d331fff-f82e-40ba-a635-da2840486838.png",
+  "componentExampleImage": "md/button/images/c9ad782c-c377-498a-a022-94b8ae360191.png",
   "changeLog": [
     {
       "who": "Maximilian Blazek",
@@ -20,7 +20,18 @@
       "what": "Initial commit"
     }
   ],
-  "decisionLog": [],
+  "decisionLog": [
+    {
+      "where": "App Mafia",
+      "decisionMade": "Question: Should we allow a user to fail to do an action? \nDecisions: We should prevent the failure if the system knows the user won’t be able to perform the action. For example, if we know the user won’t be able to add a new item on a page, displaying a notification and disabling the button is preferable. However, when we have an alternative action that would unblock the user, we should provide that option. For example, in an empty state that has pre-requirements, we should display the action to fulfil the pre-requisite. ",
+      "link": "https://docs.google.com/document/d/1e96PtV1x-CiHkvrCn6_U0_1fHV6yTQg3UTXKvQyG9wc/edit?tab=t.5l0pasbf331b#bookmark=id.nn377pe8e8re"
+    },
+    {
+      "where": "App Mafia",
+      "decisionMade": "Question: Should buttons in the forms be disabled if not all mandatory fields have been filled?\nDecision: Buttons should be enabled even if mandatory fields are missing.\nUsers might not know why a button is disabled (they might have missed that there is a mandatory field, especially in longer, complexer forms). Enabling the button and “allowing” the user to fail will make it easier for them to discover their mistake (as clicking the button should highlight to the user what is still missing).\n",
+      "link": "https://docs.google.com/document/d/1e96PtV1x-CiHkvrCn6_U0_1fHV6yTQg3UTXKvQyG9wc/edit?tab=t.5l0pasbf331b#bookmark=kix.aupph04y3047"
+    }
+  ],
   "properties": [
     {
       "name": "Icon right",
@@ -88,7 +99,7 @@
     }
   ],
   "anatomy": {
-    "image": "md/button/images/579aee12-0384-4a75-ba52-3206bb1a2ca2.png",
+    "image": "md/button/images/280b7500-6813-4f38-8719-635eb54ba190.png",
     "table": [
       {
         "number": 3,

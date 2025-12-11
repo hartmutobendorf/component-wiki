@@ -3,12 +3,17 @@
   "type": "Component",
   "tiers": "Global",
   "documentationStatus": "Minimal",
-  "lastEdited": "Dec 1, 2025",
+  "lastEdited": "Dec 10, 2025",
   "figmaLink": "https://www.figma.com/design/PYyGJFg1uN9eK6mZMrsik2/%F0%9F%93%95-Vanilla---core-component-documentation-visuals?node-id=804-15948",
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/b1d651365b0714586e6ea14349dea763819c256e/scss/_patterns_links.scss",
   "figmaComponentDataPath": "",
-  "componentExampleImage": "md/link/images/e1cc123c-fdbd-4d3a-a221-0f6c783548eb.png",
+  "componentExampleImage": "md/link/images/f84478df-a88b-414c-9b2b-3da03987a8d3.png",
   "changeLog": [
+    {
+      "who": "Maximilian Blazek",
+      "when": "2025-12-10T11:00:00.000+00:00",
+      "what": "Added soft link property and usage guidelines. Added external link icon usage guidelines. Added leading icon to anatomy"
+    },
     {
       "who": "Maximilian Blazek",
       "when": "2025-12-01T12:00:00.000+00:00",
@@ -23,10 +28,18 @@
   "decisionLog": [],
   "properties": [
     {
+      "name": "Soft",
+      "type": "boolean",
+      "required": false,
+      "description": "Wether the icon is soft or not. The soft version makes the link be styled in the same way as default text. Only on hover does it have the default link styling.",
+      "defaultOption": "false"
+    },
+    {
       "name": "Show external link icon",
       "type": "boolean",
       "required": false,
-      "description": "Wether to show the external link icon (if it is an external link)."
+      "description": "Wether to show the external link icon (if it is an external link).",
+      "defaultOption": "false"
     },
     {
       "name": "Action",
@@ -48,15 +61,20 @@
     }
   ],
   "anatomy": {
-    "image": "md/link/images/6cd51b07-e252-49b0-a480-7ab444c6b9c4.png",
+    "image": "md/link/images/75d8c1ab-3220-4f68-87c4-fa3080ab74df.png",
     "table": [
       {
-        "number": 2,
+        "number": 1,
+        "name": "Leading icon",
+        "description": "Optional icon that can be used to represent the nature of the link"
+      },
+      {
+        "number": 3,
         "name": "External link icon",
         "description": "If the link is external relative to the the current website or application the designer can choose to display an external link icon next to the link text."
       },
       {
-        "number": 1,
+        "number": 2,
         "name": "Link text",
         "description": "The text that is also the clickable are of the icon. On click it will forward the user to the target of the link (or perform the associated action)."
       }

@@ -3,12 +3,17 @@
   "type": "Component",
   "tiers": "Global",
   "documentationStatus": "Minimal",
-  "lastEdited": "Dec 1, 2025",
+  "lastEdited": "Dec 10, 2025",
   "figmaLink": "https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-22",
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/d0197b27f5733789d6d23536eabe68356e045ae1/scss/_patterns_contextual-menu.scss",
   "figmaComponentDataPath": "",
-  "componentExampleImage": "md/contextual-menu/images/4096a7cb-04c3-41f3-b9c6-3f25a0f61e34.png",
+  "componentExampleImage": "md/contextual-menu/images/859c5fc2-b6b1-44cb-b4e3-5eae0d692d00.png",
   "changeLog": [
+    {
+      "who": "Daniel Mutis",
+      "when": "2025-12-03T11:00:00.000+00:00",
+      "what": "Reviewed"
+    },
     {
       "who": "Maximilian Blazek",
       "when": "2025-12-01T11:00:00.000+00:00",
@@ -30,20 +35,35 @@
     }
   ],
   "anatomy": {
-    "image": "md/contextual-menu/images/03f39298-4c71-4de7-8d7f-9a0985e18616.png",
+    "image": "md/contextual-menu/images/7bd2ef18-7660-4df8-8519-96e0fcb5d431.png",
     "table": [
       {
-        "number": 3,
+        "number": 5,
+        "name": "Nested actions icon",
+        "description": "This icon is used to indicate that a group of actions have been nested inside of it"
+      },
+      {
+        "number": 2,
+        "name": "Action icon",
+        "description": "Optional icon that can be used to represent and enhance the meaning of the action text. "
+      },
+      {
+        "number": 1,
+        "name": "Action text",
+        "description": "The text of the action item is used to tell the user what sort of action it performs. It should be set to something that gives the user a clear understanding which action is being performed when executing it."
+      },
+      {
+        "number": 4,
         "name": "Separator",
         "description": "A separator that visually separates action groups from each other."
       },
       {
-        "number": 2,
-        "name": "Action group",
-        "description": "In menus with a lot of items certain actions can be grouped together in an action group."
+        "number": 6,
+        "name": "Nested actions",
+        "description": "A group of actions which has been nested inside of a single item. "
       },
       {
-        "number": 1,
+        "number": 3,
         "name": "Action",
         "description": "A single action. Clicking it will perform the action that is associated with it."
       }

@@ -12,18 +12,18 @@
   "decisionLog": [],
   "properties": [
     {
+      "name": "List item text",
+      "type": "string",
+      "required": true,
+      "description": "Sets the content of the list",
+      "constraint": "Up to 250 characters"
+    },
+    {
       "name": "List",
       "type": "slot",
       "required": true,
       "description": "The divided list supporting up to 10 items",
       "constraint": "Up to 10 items"
-    },
-    {
-      "name": "List item",
-      "type": "string",
-      "required": true,
-      "description": "Sets the content of the list",
-      "constraint": "Up to 250 characters"
     },
     {
       "name": "List bullet type",
