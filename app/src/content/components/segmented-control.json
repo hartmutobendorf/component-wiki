@@ -3,11 +3,11 @@
   "type": "Component",
   "tiers": "Global",
   "documentationStatus": "Needs work",
-  "lastEdited": "Nov 24, 2025",
-  "figmaLink": "",
-  "codeLink": "",
-  "figmaComponentDataPath": "",
-  "componentExampleImage": "",
+  "lastEdited": "Dec 15, 2025",
+  "figmaLink": "https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-42",
+  "codeLink": "https://github.com/canonical/vanilla-framework/blob/b1d651365b0714586e6ea14349dea763819c256e/scss/_patterns_segmented-control.scss",
+  "figmaComponentDataPath": "md/segmented-control/figma-component-data.html",
+  "componentExampleImage": "md/segmented-control/images/d9e97616-a9be-42fb-ba30-4828811c194d.png",
   "changeLog": [
     {
       "who": "Maximilian Blazek",
@@ -18,7 +18,7 @@
   "decisionLog": [],
   "properties": [],
   "anatomy": {
-    "image": "md/segmented-control/images/7b1a3bb0-ff96-4952-a0d4-b3b5028f45b6.png",
+    "image": "md/segmented-control/images/62eef50d-99eb-45ca-a765-63b4da0c019c.png",
     "table": []
   }
 }

@@ -3,11 +3,11 @@
   "type": "Component",
   "tiers": "Global",
   "documentationStatus": "Needs work",
-  "lastEdited": "Nov 24, 2025",
-  "figmaLink": "",
-  "codeLink": "",
-  "figmaComponentDataPath": "",
-  "componentExampleImage": "",
+  "lastEdited": "Dec 15, 2025",
+  "figmaLink": "https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-25",
+  "codeLink": "https://github.com/canonical/vanilla-framework/blob/d0197b27f5733789d6d23536eabe68356e045ae1/scss/_patterns_divider.scss",
+  "figmaComponentDataPath": "md/divider/figma-component-data.html",
+  "componentExampleImage": "md/divider/images/f52c7b39-d166-4341-96c9-4a56ece5ccd0.png",
   "changeLog": [
     {
       "who": "Maximilian Blazek",
@@ -18,7 +18,7 @@
   "decisionLog": [],
   "properties": [],
   "anatomy": {
-    "image": "md/divider/images/7ead2f08-bb00-46d6-95b4-a3a26d1345bb.png",
+    "image": "md/divider/images/1a860afb-fa4a-461b-82c1-784384b4095c.png",
     "table": []
   }
 }
