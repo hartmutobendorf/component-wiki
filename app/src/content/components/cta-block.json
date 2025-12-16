@@ -3,11 +3,11 @@
   "type": "Complex component",
   "tiers": "Sites",
   "documentationStatus": "Minimal",
-  "lastEdited": "Dec 1, 2025",
+  "lastEdited": "Dec 15, 2025",
   "figmaLink": "https://www.figma.com/design/1brHCsyeTE6FU7hfJd6ao2/%F0%9F%8C%90-Sites---Core-component-library?node-id=33-1471",
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/main/scss/_patterns_cta.scss",
   "figmaComponentDataPath": "",
-  "componentExampleImage": "md/cta-block/images/7126f8a1-21eb-4bd9-8ce4-e5b79a8e16ca.png",
+  "componentExampleImage": "md/cta-block/images/cfe6bb61-f38c-4367-9526-c696dfde3367.png",
   "changeLog": [],
   "decisionLog": [],
   "properties": [
@@ -34,7 +34,7 @@
     }
   ],
   "anatomy": {
-    "image": "md/cta-block/images/36487c8a-6685-455b-805e-7035615909e4.png",
+    "image": "md/cta-block/images/eeadc6ad-a897-4366-ae25-ccfe2676c6d9.png",
     "table": [
       {
         "number": 3,

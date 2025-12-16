@@ -2,7 +2,7 @@
 name: Text area
 type: Component
 tiers: Global
-documentationStatus: Needs work
+documentationStatus: Minimal
 lastEdited: Dec 15, 2025
 figmaLink: https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-51
 codeLink: https://github.com/canonical/vanilla-framework/blob/b1d651365b0714586e6ea14349dea763819c256e/scss/_base_forms.scss#L215
@@ -10,16 +10,140 @@ codeLink: https://github.com/canonical/vanilla-framework/blob/b1d651365b0714586e
 
 # Text area
 
+## Description
+
+*   Allows user to input multiple lines of text
+*   Used in cases where user needs to be able to provide longer form text. such as when writing a comment or note.
+
 ## Metadata
 
 - **Type**: Component
 - **Tier**: Global
-- **Documentation Status**: Needs work
+- **Documentation Status**: Minimal
 - **Last Edited**: Dec 15, 2025
 - **Figma**: [View in Figma](https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-51)
 - **Code**: [View on GitHub](https://github.com/canonical/vanilla-framework/blob/b1d651365b0714586e6ea14349dea763819c256e/scss/_base_forms.scss#L215)
 
+## Anatomy
+
+### 1. Label
+
+Optional label that can be used to explain what content is expected from the user in the textarea
+
+### 2. Text
+
+The text the user inputs. Before the user starts typing there could optionally be placeholder text to indicate the expected content or format. 
+
+### 3. Resize area
+
+Target area for the user to resize the box
+
+### 4. Validation icon
+
+Informative icon on the nature of the validation result
+
+### 5. Validation text
+
+Text that informs the user of the results of validating the inputted text
+
+## Usage
+
+A text area is an input component that allows users to enter multiple lines of text. It is used in cases where users need to provide longer form content, such as writing a comment, note, or description. Text areas are commonly found in forms, comment threads, feedback sections, and anywhere users need space to input text beyond a single line.
+
+### When to Use
+
+*   Users need to input multiple lines of text
+*   Collecting longer form content such as comments, notes, descriptions, or feedback
+*   Forms requiring open-ended responses
+*   Comment threads or discussion interfaces
+
+### When Not to Use
+
+*   Single-line inputs are sufficient (use a text input instead)
+*   Collecting structured data with a known format (consider more specific input types)
+*   Rich text formatting is required (use a rich text editor instead)
+
+### Resizing Behavior
+
+Text areas should almost always be restricted to vertical resizing only. Horizontal resizing is rarely necessary and can easily break the surrounding layout. Text areas should grow automatically as the user types (for example using the CSS property field-sizing: content). This creates a more natural writing experience and prevents users from having to manually resize the component to see their full input.
+
+### Saving and user assurance
+
+Users should always be reassured that their content has been saved. In a traditional form context, a submit button provides this assurance. When users click submit, they understand their input has been captured. However, if the text area uses auto-saving, assurance must be provided through other means, such as a "Saved" indicator or timestamp.
+
+When implementing auto-save, the save action should occur on change while the user is typing, but with a debounce to avoid overloading the backend. Use a debounce wait time of 500ms, with a maximum wait of 10 seconds. The maximum wait ensures that even during continuous typing, the content is periodically saved.
+
+### Character Limits
+
+Text areas can display a character count indicator and enforce a maximum number of characters. If a maximum is reached, users should not be prevented from typing beyond the limit. Instead, display a validation error when the limit is exceeded. This approach avoids frustrating users who paste content that would otherwise be silently truncated, and allows users who are typing to finish their thought before editing down to meet the requirement.
+
+### Placeholder Text
+
+Never use placeholder text as a substitute for labels. If placeholder text is used, it should serve as an example or hint rather than instructions. For instance, if the expected input is a comma-separated list, showing an example list can be helpful. Avoid repeating the label in the placeholder, as this provides no additional value. Most importantly, never put crucial information in placeholder text. Users should be able to understand what is required without it, since placeholder text disappears once they begin typing.
+
+### Input validation
+
+Use validation states to provide real-time feedback about the quality and validity of user input. This helps users understand whether their input meets requirements before attempting to submit a form, reducing errors and improving the overall user experience.
+
+**Error input validation**
+
+![Negative.png](images/934340d7-d889-4361-b658-1939b97e2184.png)
+
+*   Input is invalid and would prevent successful form submission
+*   Required fields are left empty after the user has interacted with them
+*   Input format is incorrect (character amount exceeds limit)
+*   User input contains forbidden characters or content
+
+**Example scenarios:** Character amount exceeds limit, required field left blank
+
+  
+
+**Warning input validation**
+
+![Caution.png](images/4992a8ac-8a89-4963-b660-daf8670dc869.png)
+
+*   Input is technically valid but potentially problematic or unusual
+*   Suggesting improvements that aren't strictly required
+*   Alerting users to potential issues that won't block submission
+*   Input might cause complications or confusion later
+*   Recommending best practices or alternative approaches
+
+**Example scenarios:** Contains content which should not be shared publicly, contains offensive language
+
+  
+
+**Positive input validation**
+
+![Positive.png](images/cae9ca45-88dc-477c-b7ac-14922db4d376.png)
+
+*   Complex validation requirements are successfully met
+*   Confirming that corrected input now passes validation
+*   Input meets high-quality standards or best practices
+*   Providing reassurance for critical or complex fields
+*   Real-time confirmation helps reduce user anxiety
+
+**Example scenarios:** Minimum character amount reached
+
+**Note:** Use positive states sparingly - not every valid input needs positive confirmation, as this can create visual noise.
+
+## Properties
+
+| Name | Type | Required | Description | Constraint | Options | Default |
+|------|------|----------|-------------|------------|---------|----------|
+| Resizing direction | single select | No | Whether the box resizes horizontally, vertically or both | - | horizontal, vertical, both | vertical |
+| Placeholder | string | No | The placeholder text that is being shown if there has not been any text that has been entered yet. | - | - | - |
+| Text | string | No | The text that is in the input field.  | - | - | - |
+| Size | single select | No | The vertical density of the input element | - | default, dense | default |
+| Input validation text | string | No | If the input is being validated the outcome / reason of the input validation | - | - | - |
+| Input validation type | single select | No | If the input is being validated what type of input validation it is. | - | none, error, warning, positive | none |
+| State | single select | No | The state the input is currently in. | - | default, hover, active, disabled | default |
+| Resizable | boolean | No | Whether the box is resizable by the user or not | - | - | true |
+
 ## Change Log
+
+### Dec 15, 2025 - Daniel Mutis
+
+Added description, anatomy descriptions, usage guidelines, properties
 
 ### Nov 21, 2025 - Maximilian Blazek
 

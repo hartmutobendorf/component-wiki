@@ -3,11 +3,11 @@
   "type": "Pattern",
   "tiers": "Sites",
   "documentationStatus": "Minimal",
-  "lastEdited": "Dec 8, 2025",
+  "lastEdited": "Dec 15, 2025",
   "figmaLink": "https://www.figma.com/design/1brHCsyeTE6FU7hfJd6ao2/%F0%9F%9A%A7---WIP--Sites---Core-component-library?node-id=41-9326",
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/WD-22552-feat-data-spotlight-pattern/templates/_macros/vf_basic-section.jinja",
   "figmaComponentDataPath": "",
-  "componentExampleImage": "md/basic-section/images/1e1777e2-696f-40c2-a90e-cf2ad0008548.png",
+  "componentExampleImage": "md/basic-section/images/20e85206-0d62-4de3-8303-b67486796648.png",
   "changeLog": [
     {
       "who": "Isaac Kim",
@@ -21,7 +21,7 @@
       "name": "Block bottom padding",
       "type": "single select",
       "required": true,
-      "description": "Type of padding to apply to the block",
+      "description": "The type of padding applied to the block",
       "options": [
         "none",
         "shallow"
@@ -103,7 +103,7 @@
       "name": "Padding",
       "type": "single select",
       "required": true,
-      "description": "Type of padding to apply to the pattern",
+      "description": "The type of padding applied to the pattern",
       "options": [
         "default",
         "deep",
@@ -114,7 +114,7 @@
     }
   ],
   "anatomy": {
-    "image": "md/basic-section/images/de09e791-095d-4436-83cc-4e4d4b095f89.webp",
+    "image": "md/basic-section/images/0a445d08-a57d-4c11-941b-a6960150a9b9.webp",
     "table": [
       {
         "number": 4,

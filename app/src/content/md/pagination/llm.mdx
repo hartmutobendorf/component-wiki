@@ -10,6 +10,10 @@ codeLink: https://github.com/canonical/vanilla-framework/blob/b1d651365b0714586e
 
 # Pagination
 
+## Description
+
+Pagination is a navigational component that allows users to move between pages of content. It provides controls for navigating to the previous or next page, as well as jumping directly to a specific numbered page. This component is best suited for content-heavy sites where information is divided across multiple pages, such as blog posts, articles, tutorials, or search results. For paginating tabular data, use the Table pagination component instead.
+
 ## Metadata
 
 - **Type**: Component
@@ -18,6 +22,44 @@ codeLink: https://github.com/canonical/vanilla-framework/blob/b1d651365b0714586e
 - **Last Edited**: Dec 15, 2025
 - **Figma**: [View in Figma](https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-36)
 - **Code**: [View on GitHub](https://github.com/canonical/vanilla-framework/blob/b1d651365b0714586e6ea14349dea763819c256e/scss/_patterns_pagination.scss)
+
+## Anatomy
+
+### 1. Previous page
+
+Navigates to the page immediately before the current page. It’s disabled on the first page.
+
+### 2. First and last page
+
+The first and last pages of the list are always visible.
+
+### 3. Elipsis
+
+Indicates hidden pages when the total number of pages is large. It appears when there is a gap of more than one page between the active page and the first or last page.
+
+### 4. Page
+
+A page is a single view of a fixed subset of items within a larger dataset.
+
+### 5. Next page
+
+Navigates to the page immediately after the current page. It’s disabled on the last page.
+
+## Usage
+
+*   used to let the user go to a previous or next page, or a specific numbered page to the relative page.
+*   Navigational component
+*   mostly used in content sites for something like blog posts, or  tutorials etc.
+*   DONT use it for tables, we have a specific pagination just for tables.
+
+  
+
+*   if there is up to 5 pages then all page numbers are shown at the same time
+*   if there is more than 5 then page numbers are truncated.
+*   *   if truncated the first page and the last page are always shown. then there is elipsis and only the middle 3 are shown in the middle
+    *   the middle page is always the one that is currently active
+*   if there is only 2 pages only show the the forward and next button
+*
 
 ## Change Log
 
