@@ -7,8 +7,13 @@
   "figmaLink": "https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-49",
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/b1d651365b0714586e6ea14349dea763819c256e/scss/_patterns_table-of-contents.scss",
   "figmaComponentDataPath": "md/table-of-contents/figma-component-data.html",
-  "componentExampleImage": "md/table-of-contents/images/35d3254f-c371-480f-9be4-f5c851cfd25e.png",
+  "componentExampleImage": "md/table-of-contents/images/7bd4fc14-940f-4f27-9c45-a7b6897ed1c3.png",
   "changeLog": [
+    {
+      "who": "Daniel Mutis",
+      "when": "2025-12-15T13:00:00.000+00:00",
+      "what": "Add description, usage guidelines, properties and anatomy description"
+    },
     {
       "who": "Maximilian Blazek",
       "when": "2025-11-21T17:00:00.000+00:00",
@@ -16,9 +21,33 @@
     }
   ],
   "decisionLog": [],
-  "properties": [],
+  "properties": [
+    {
+      "name": "Levels",
+      "type": "single select",
+      "required": false,
+      "description": "How many levels of anchor links to show.",
+      "options": [
+        "1",
+        "2",
+        "3"
+      ],
+      "defaultOption": "1"
+    }
+  ],
   "anatomy": {
-    "image": "md/table-of-contents/images/aaf0a983-0bdd-47cd-93d3-82c10b3b8984.png",
-    "table": []
+    "image": "md/table-of-contents/images/1edf54ce-4c97-404c-9c3c-c5bdf3cf4fc0.png",
+    "table": [
+      {
+        "number": 2,
+        "name": "Anchor link",
+        "description": "Each section heading on the page has a corresponding anchor link, with the link text matching the copy of the heading itself."
+      },
+      {
+        "number": 1,
+        "name": "Heading",
+        "description": "A non-editable heading that indicates to the user the purpose of the anchor links displayed beneath it."
+      }
+    ]
   }
 }

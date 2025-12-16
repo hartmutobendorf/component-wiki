@@ -7,7 +7,7 @@
   "figmaLink": "https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-36",
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/b1d651365b0714586e6ea14349dea763819c256e/scss/_patterns_pagination.scss",
   "figmaComponentDataPath": "md/pagination/figma-component-data.html",
-  "componentExampleImage": "md/pagination/images/ab8cb0a7-7981-4566-9425-6b4fe9a3612b.png",
+  "componentExampleImage": "md/pagination/images/ce65bc5b-7777-4c93-8d6e-ae38f6e5cd12.png",
   "changeLog": [
     {
       "who": "Maximilian Blazek",
@@ -18,7 +18,33 @@
   "decisionLog": [],
   "properties": [],
   "anatomy": {
-    "image": "md/pagination/images/7546dafa-220c-4b66-ae0b-93e198a7a88a.png",
-    "table": []
+    "image": "md/pagination/images/a874f87f-a593-4a8f-873f-6b6d2fb53e5e.png",
+    "table": [
+      {
+        "number": 5,
+        "name": "Next page",
+        "description": "Navigates to the page immediately after the current page. It’s disabled on the last page."
+      },
+      {
+        "number": 4,
+        "name": "Page",
+        "description": "A page is a single view of a fixed subset of items within a larger dataset."
+      },
+      {
+        "number": 3,
+        "name": "Elipsis",
+        "description": "Indicates hidden pages when the total number of pages is large. It appears when there is a gap of more than one page between the active page and the first or last page."
+      },
+      {
+        "number": 2,
+        "name": "First and last page",
+        "description": "The first and last pages of the list are always visible."
+      },
+      {
+        "number": 1,
+        "name": "Previous page",
+        "description": "Navigates to the page immediately before the current page. It’s disabled on the first page."
+      }
+    ]
   }
 }

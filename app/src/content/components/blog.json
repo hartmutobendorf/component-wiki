@@ -3,11 +3,11 @@
   "type": "Pattern",
   "tiers": "Sites",
   "documentationStatus": "Minimal",
-  "lastEdited": "Dec 1, 2025",
+  "lastEdited": "Dec 15, 2025",
   "figmaLink": "https://www.figma.com/design/1brHCsyeTE6FU7hfJd6ao2/%F0%9F%8C%90-Sites---Core-component-library?node-id=2940-19045",
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/main/templates/_macros/vf_blog.jinja",
   "figmaComponentDataPath": "",
-  "componentExampleImage": "md/blog/images/839e5f18-f704-4921-b7b8-18887c036f3b.png",
+  "componentExampleImage": "md/blog/images/725777e4-1aa9-4f43-9139-92e642b1b40e.png",
   "changeLog": [],
   "decisionLog": [],
   "properties": [
@@ -71,7 +71,7 @@
       "name": "Padding",
       "type": "single select",
       "required": true,
-      "description": "Type of padding to apply to the pattern",
+      "description": "The type of padding applied to the pattern",
       "options": [
         "default",
         "deep",
@@ -82,7 +82,7 @@
     }
   ],
   "anatomy": {
-    "image": "md/blog/images/72a4e909-9cc3-4e61-b6bc-228f4952114d.png",
+    "image": "md/blog/images/4661ecfa-d4f2-4578-8c4b-b2a8ce188bb6.png",
     "table": [
       {
         "number": 6,
@@ -115,51 +115,5 @@
         "description": "The rule component indicates the beginning of a new section."
       }
     ]
-  },
-  "childProperties": [
-    {
-      "name": "Article block",
-      "properties": [
-        {
-          "name": "Citation date",
-          "type": "string",
-          "required": false,
-          "description": "Publishing date in the citation format “DD Month YYYY”"
-        },
-        {
-          "name": "Citation author",
-          "type": "string",
-          "required": false,
-          "description": "Author name text in the citation",
-          "constraint": "Up to 20 characters"
-        },
-        {
-          "name": "Citation",
-          "type": "object",
-          "required": false,
-          "description": "Author/date field in small text and supports showing either or both."
-        },
-        {
-          "name": "Article description",
-          "type": "string",
-          "required": false,
-          "description": "Description text for the article\nDynamic: displays the first 180 characters of the article. \nStatic: a custom description should be provided.",
-          "constraint": "Dynamic: 180 characters (with the truncation)\nStatic: up to 300 characters"
-        },
-        {
-          "name": "Image",
-          "type": "object",
-          "required": false,
-          "description": "Cover image for the article. In the blog pattern, it is required and falls back to a default image when not provided. In the resources pattern, it supports 16:9 image, logo, or none as options."
-        },
-        {
-          "name": "Article title",
-          "type": "string",
-          "required": true,
-          "description": "Title configuration for the article",
-          "constraint": "Dynamic: -\nStatic: up to 100 characters"
-        }
-      ]
-    }
-  ]
+  }
 }

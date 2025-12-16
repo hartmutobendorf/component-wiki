@@ -3,25 +3,34 @@
   "type": "Pattern",
   "tiers": "Sites",
   "documentationStatus": "Needs work",
-  "lastEdited": "Nov 24, 2025",
-  "figmaLink": "",
+  "lastEdited": "Dec 15, 2025",
+  "figmaLink": "https://www.figma.com/design/1brHCsyeTE6FU7hfJd6ao2/%F0%9F%8C%90-Sites---Core-component-library?node-id=211-14507",
   "codeLink": "",
   "figmaComponentDataPath": "",
-  "componentExampleImage": "",
+  "componentExampleImage": "md/cta-section/images/4e3c57cc-9f06-4914-8260-f8135b75a232.png",
   "changeLog": [],
   "decisionLog": [],
   "properties": [
     {
+      "name": "Body",
+      "type": "string",
+      "required": false,
+      "description": "4-column width body text",
+      "constraint": "300 (As part of a highlighted section, the content should be limited to a single sentence.)"
+    },
+    {
+      "name": "Heading",
+      "type": "string",
+      "required": false,
+      "description": "8-column width heading using H2",
+      "constraint": "Up to 60 characters"
+    },
+    {
       "name": "Padding",
       "type": "single select",
       "required": true,
-      "description": "Type of padding to apply to the pattern",
-      "options": [
-        "default",
-        "deep",
-        "shallow",
-        "none"
-      ],
+      "description": "The type of padding applied to the pattern",
+      "constraint": "he CTA section uses deep padding on both the top and bottom.",
       "defaultOption": "deep"
     },
     {
@@ -34,10 +43,66 @@
         "default"
       ],
       "defaultOption": "default"
+    },
+    {
+      "name": "Link CTA",
+      "type": "string",
+      "required": false,
+      "description": "The text link used for contextual actions or pathways to more information. It uses a chevron (›) to indicate navigation to additional content or pages.",
+      "constraint": "Up to 60 characters"
     }
   ],
   "anatomy": {
-    "image": "",
-    "table": []
-  }
+    "image": "md/cta-section/images/2ce86750-c7a5-4cee-9e28-394a41e2b06c.png",
+    "table": [
+      {
+        "number": 4,
+        "name": "Body",
+        "description": "Optional supplementary body text used to explain the reason for the action.\nThis element is available only in the block variant and appears directly beneath the heading."
+      },
+      {
+        "number": 3,
+        "name": "CTA",
+        "description": "The interactive element(s) that trigger the intended action. Depending on the variant, this may appear as:\nOne or more inline text links (link-style CTA), or\nA dedicated CTA block containing buttons or structured actions\nThis element is required and represents the functional core of the CTA section."
+      },
+      {
+        "number": 2,
+        "name": "Heading",
+        "description": "A concise, action-oriented heading that communicates the purpose of the call to action."
+      },
+      {
+        "number": 1,
+        "name": "Rule",
+        "description": "The rule component indicates the beginning of a new section."
+      }
+    ]
+  },
+  "childProperties": [
+    {
+      "name": "CTA block",
+      "properties": [
+        {
+          "name": "Primary CTA",
+          "type": "string",
+          "required": false,
+          "description": "The CTA used with the positive button style. It indicates a high-priority, positive action and is reserved for hero areas or other key call-to-action sections.",
+          "constraint": "Up to 20 characters"
+        },
+        {
+          "name": "Secondary CTA",
+          "type": "string",
+          "required": false,
+          "description": "The CTA using the default button style. It is used for most actions that are positive but not primary, and may serve as the main CTA in non-hero sections.",
+          "constraint": "Up to 20 characters"
+        },
+        {
+          "name": "Link CTA",
+          "type": "string",
+          "required": false,
+          "description": "The text link used for contextual actions or pathways to more information. It uses a chevron (›) to indicate navigation to additional content or pages.",
+          "constraint": "Up to 60 characters"
+        }
+      ]
+    }
+  ]
 }
