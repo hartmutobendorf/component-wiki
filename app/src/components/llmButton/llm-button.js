@@ -113,15 +113,11 @@ export class LlmButtonComponent extends LitElement {
   }
 
   _isValidProvider(provider) {
-    return ["gemini", "claude", "chatgpt", "copilot"].includes(provider);
+    return ["claude", "chatgpt", "copilot"].includes(provider);
   }
 
   _getProviderConfig(provider) {
     const configs = {
-      gemini: {
-        name: "Gemini",
-        urlTemplate: "http://gemini.google.com/?prompt_text=",
-      },
       claude: {
         name: "Claude",
         urlTemplate: "https://claude.ai/new?q=",
@@ -139,6 +135,15 @@ export class LlmButtonComponent extends LitElement {
   }
 
   _buildPrompt() {
+    // GitHub Copilot uses the file path, others use the website URL
+    if (this._selectedProvider === "copilot") {
+      const githubFilePath = `@dgtlntv/component-wiki/app/src/content/md/${this.componentId}/llm.mdx`;
+      const prompt = `${githubFilePath}
+
+Please analyze the component documentation in this file and help me understand this component and answer any questions I have about it.`;
+      return prompt;
+    }
+
     const baseUrl = window.location.origin || "https://component.wiki";
     const markdownUrl = `${baseUrl}/md/${this.componentId}/llm.mdx`;
 
@@ -183,17 +188,6 @@ After reading the documentation, please help me understand this component and an
 
   _renderProviderIcon(provider) {
     const icons = {
-      gemini: html`
-        <svg
-          class="llm-provider-icon"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M11.04 19.32Q12 21.51 12 24q0-2.49.93-4.68.96-2.19 2.58-3.81t3.81-2.55Q21.51 12 24 12q-2.49 0-4.68-.93a12.3 12.3 0 0 1-3.81-2.58 12.3 12.3 0 0 1-2.58-3.81Q12 2.49 12 0q0 2.49-.96 4.68-.93 2.19-2.55 3.81a12.3 12.3 0 0 1-3.81 2.58Q2.49 12 0 12q2.49 0 4.68.96 2.19.93 3.81 2.55t2.55 3.81"
-          />
-        </svg>
-      `,
       claude: html`
         <svg
           class="llm-provider-icon"
@@ -260,7 +254,7 @@ After reading the documentation, please help me understand this component and an
             aria-hidden="${!this._isOpen}"
             @click="${this._handleDropdownClick}"
           >
-            ${["gemini", "claude", "chatgpt", "copilot"].map(
+            ${["claude", "chatgpt", "copilot"].map(
               (provider) => html`
                 <a
                   href="#"
