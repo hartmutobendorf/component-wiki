@@ -29,7 +29,7 @@ export class GithubCopilotButtonComponent extends LitElement {
 
   _handleClick() {
     // Build the GitHub Copilot URL with the prompt referencing the markdown file
-    const githubFilePath = `@dgtlntv/component-wiki/app/src/content/md/${this.componentId}/llm.md`;
+    const githubFilePath = `@dgtlntv/component-wiki/app/src/content/md/${this.componentId}/llm.mdx`;
     const prompt = `${githubFilePath}`;
     const copilotUrl = `https://github.com/copilot?prompt=${encodeURIComponent(prompt)}`;
 
