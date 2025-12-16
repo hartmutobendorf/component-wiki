@@ -42,8 +42,8 @@ export class LlmButtonComponent extends LitElement {
       }
 
       .llm-provider-icon {
-        width: 20px;
-        height: 20px;
+        width: 16px;
+        height: 16px;
         display: inline-block;
       }
 
