@@ -7,7 +7,7 @@
   "figmaLink": "https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-8",
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/main/scss/_patterns_buttons.scss",
   "figmaComponentDataPath": "md/button/figma-component-data.html",
-  "componentExampleImage": "md/button/images/c9ad782c-c377-498a-a022-94b8ae360191.png",
+  "componentExampleImage": "md/button/images/3ecb11cc-2b3f-4673-b341-e8ed47c646be.png",
   "changeLog": [
     {
       "who": "Maximilian Blazek",
@@ -99,7 +99,7 @@
     }
   ],
   "anatomy": {
-    "image": "md/button/images/280b7500-6813-4f38-8719-635eb54ba190.png",
+    "image": "md/button/images/459be202-8979-4774-a37d-466d06962428.png",
     "table": [
       {
         "number": 3,
