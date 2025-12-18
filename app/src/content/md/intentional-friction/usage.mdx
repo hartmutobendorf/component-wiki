@@ -2,7 +2,7 @@ It is sometimes desirable to introduce some friction in flows so users are fully
 
 ​For instance, a user using a wizard may be tempted to click repeatedly on the “Next” button. This may be OK in many cases. For instance, the defaults for the Ubuntu installer may work well enough when setting up a virtual machine. However, you may decide to disable that “Next” button in critical steps to prevent the user from taking destructive actions (like wiping a drive or not saving their recovery key) without explicitly acknowledging the risks (losing their data).
 
-## Blocking friction
+### Blocking friction
 
 Adding friction that blocks the user from continuing the flow unless taking a very deliberate action is ideal for **destructive** actions.
 
@@ -12,7 +12,7 @@ For destructive actions, you may:
 
   
 
-![image.png](images/d26f3c5e-13d8-4ec3-a35f-dd43bf5c9b39.png)
+![image.png](images/f6b989c3-6b57-443f-88b7-01f2849dea20.png)
 
 ​
 
@@ -23,9 +23,9 @@ For _potentially_ destructive actions, you may:
 
   
 
-![image.png](images/f4cb4541-a250-4904-8a97-8d2876419507.png)
+![image.png](images/ca5d0e1a-aef8-4c3b-a6a2-11d7c66ce011.png)
 
-## Non-blocking friction
+### Non-blocking friction
 
 Non-blocking callouts are ideal for **mildly problematic or irreversible, non-destructive** actions. Example: FIPS is an advanced option in Ubuntu Pro that facilitates compliance with government standards, so it’s only useful for a minority of users. Once enabled, it cannot be disabled and Livepatch is permanently disabled.
 
@@ -37,7 +37,7 @@ In these cases, you may:
 
   
 
-![image.png](images/287027c6-cf00-4815-8667-4798bd179461.png)
+![image.png](images/410cc5d6-411b-46c9-ac18-ceee329e5792.png)
 
 ​
 
@@ -46,6 +46,6 @@ In these cases, you may:
 
   
 
-![image.png](images/5f457051-20f7-435b-b8e2-beaf6b78ceea.png)
+![image.png](images/848bf9fe-2540-427e-a999-f045f6cf23e4.png)
 
 ​You may also rely on **obscurity**. If an action is only supposed to be used by advanced users that know what they are doing, or in very specific circumstances, you may choose to make the option less visible, or to use technical language that will discourage users from playing with it. This will force users to be more deliberate, perhaps by relying on fully-fledged documentation that can provide full context.
