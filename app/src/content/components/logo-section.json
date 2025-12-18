@@ -41,7 +41,7 @@
       "constraint": "Up to 10 logos\nLinking individual logos is not allowed"
     },
     {
-      "name": "Padding",
+      "name": "Bottom padding",
       "type": "single select",
       "required": true,
       "description": "The type of padding applied to the pattern",

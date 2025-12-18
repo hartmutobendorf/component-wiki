@@ -12,7 +12,7 @@
   "decisionLog": [],
   "properties": [
     {
-      "name": "Padding",
+      "name": "Bottom padding",
       "type": "single select",
       "required": true,
       "description": "The type of padding applied to the pattern",

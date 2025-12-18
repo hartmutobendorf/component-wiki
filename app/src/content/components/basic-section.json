@@ -7,7 +7,7 @@
   "figmaLink": "https://www.figma.com/design/1brHCsyeTE6FU7hfJd6ao2/%F0%9F%9A%A7---WIP--Sites---Core-component-library?node-id=41-9326",
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/WD-22552-feat-data-spotlight-pattern/templates/_macros/vf_basic-section.jinja",
   "figmaComponentDataPath": "",
-  "componentExampleImage": "md/basic-section/images/150f98a6-de1d-4286-84ad-d9d48965b39d.png",
+  "componentExampleImage": "md/basic-section/images/33cbd706-e25e-4485-ba50-bcf5209c9d72.png",
   "changeLog": [
     {
       "who": "Isaac Kim",
@@ -100,7 +100,7 @@
       "constraint": "600"
     },
     {
-      "name": "Padding",
+      "name": "Bottom padding",
       "type": "single select",
       "required": true,
       "description": "The type of padding applied to the pattern",
@@ -114,7 +114,7 @@
     }
   ],
   "anatomy": {
-    "image": "md/basic-section/images/0f93f194-db0c-4be9-856b-c91280298cfc.webp",
+    "image": "md/basic-section/images/1f456c6a-1e6b-4184-98c8-00e249aa68a9.webp",
     "table": [
       {
         "number": 4,

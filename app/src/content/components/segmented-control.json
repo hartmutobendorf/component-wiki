@@ -7,7 +7,7 @@
   "figmaLink": "https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-42",
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/b1d651365b0714586e6ea14349dea763819c256e/scss/_patterns_segmented-control.scss",
   "figmaComponentDataPath": "md/segmented-control/figma-component-data.html",
-  "componentExampleImage": "md/segmented-control/images/0eac677d-5047-43bf-ae80-3ee284460079.png",
+  "componentExampleImage": "md/segmented-control/images/74a1f5f9-32bb-4092-85a3-b01929b3835f.png",
   "changeLog": [
     {
       "who": "Maximilian Blazek",
@@ -18,7 +18,7 @@
   "decisionLog": [],
   "properties": [],
   "anatomy": {
-    "image": "md/segmented-control/images/5f8faaba-f621-4aae-9845-fb445b5bc66c.png",
+    "image": "md/segmented-control/images/632543aa-d917-400d-8aa1-e10cb235d335.png",
     "table": []
   }
 }

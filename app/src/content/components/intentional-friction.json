@@ -1,0 +1,24 @@
+{
+  "name": "Intentional friction",
+  "type": "Mental model",
+  "tiers": "Global",
+  "documentationStatus": "Needs work",
+  "lastEdited": "Dec 18, 2025",
+  "figmaLink": "",
+  "codeLink": "",
+  "figmaComponentDataPath": "",
+  "componentExampleImage": "",
+  "changeLog": [
+    {
+      "who": "Juan Ruitiña",
+      "when": "2025-12-18T15:00:00.000+00:00",
+      "what": "Initial commit"
+    }
+  ],
+  "decisionLog": [],
+  "properties": [],
+  "anatomy": {
+    "image": "",
+    "table": []
+  }
+}

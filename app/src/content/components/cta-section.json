@@ -7,7 +7,7 @@
   "figmaLink": "https://www.figma.com/design/1brHCsyeTE6FU7hfJd6ao2/%F0%9F%8C%90-Sites---Core-component-library?node-id=211-14507",
   "codeLink": "",
   "figmaComponentDataPath": "",
-  "componentExampleImage": "md/cta-section/images/2b4ebd51-439c-4bdc-a1a8-05b95b1b71b3.png",
+  "componentExampleImage": "md/cta-section/images/9f0bcad6-42d2-4141-9caa-c10674098f47.png",
   "changeLog": [],
   "decisionLog": [],
   "properties": [
@@ -26,7 +26,7 @@
       "constraint": "Up to 60 characters"
     },
     {
-      "name": "Padding",
+      "name": "Bottom padding",
       "type": "single select",
       "required": true,
       "description": "The type of padding applied to the pattern",
@@ -53,7 +53,7 @@
     }
   ],
   "anatomy": {
-    "image": "md/cta-section/images/c11d065d-52cb-47da-8693-93482c234330.png",
+    "image": "md/cta-section/images/0b7d8cdd-df66-4465-81de-75f70da9b390.png",
     "table": [
       {
         "number": 4,
