@@ -3,12 +3,17 @@
   "type": "Component",
   "tiers": "Global",
   "documentationStatus": "Needs work",
-  "lastEdited": "Dec 15, 2025",
+  "lastEdited": "Jan 5, 2026",
   "figmaLink": "https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-41",
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/b1d651365b0714586e6ea14349dea763819c256e/scss/_patterns_search-box.scss",
   "figmaComponentDataPath": "md/search/figma-component-data.html",
-  "componentExampleImage": "md/search/images/cbd359ad-1c14-4e3e-9fe8-8f10c9e33f70.png",
+  "componentExampleImage": "md/search/images/b6e572b2-109c-415a-a870-d4644cadbf31.png",
   "changeLog": [
+    {
+      "who": "Maximilian Blazek",
+      "when": "2026-01-05T15:00:00.000+00:00",
+      "what": "Added description, anatomy, usage guidelines and properties"
+    },
     {
       "who": "Maximilian Blazek",
       "when": "2025-11-21T17:00:00.000+00:00",
@@ -16,9 +21,46 @@
     }
   ],
   "decisionLog": [],
-  "properties": [],
+  "properties": [
+    {
+      "name": "State",
+      "type": "single select",
+      "required": false,
+      "options": [
+        "default",
+        "hover",
+        "active",
+        "disabled"
+      ],
+      "defaultOption": "default"
+    },
+    {
+      "name": "Placeholder text",
+      "type": "string",
+      "required": false,
+      "description": "The placeholder text should specify what the scope of the search is. It should always include the word e.g. “Search machines”.",
+      "constraint": "Include “Search” at the beginning of the placeholder string.",
+      "defaultOption": "Search"
+    }
+  ],
   "anatomy": {
-    "image": "md/search/images/5660da23-39e4-4e34-a278-335205689aa2.png",
-    "table": []
+    "image": "md/search/images/3d882a50-0f5f-4cd3-b618-26ebf03ca904.png",
+    "table": [
+      {
+        "number": 3,
+        "name": "Search icon",
+        "description": "The search icon is a clickable area that activates the submit-based search."
+      },
+      {
+        "number": 2,
+        "name": "Clear icon",
+        "description": "The dismiss icon is a clickable area of the search, that deletes the query input and resets the search results on instance search."
+      },
+      {
+        "number": 1,
+        "name": "Query input",
+        "description": "Holds placeholder text and the search query."
+      }
+    ]
   }
 }

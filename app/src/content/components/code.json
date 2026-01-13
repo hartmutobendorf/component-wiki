@@ -3,12 +3,17 @@
   "type": "Component",
   "tiers": "Global",
   "documentationStatus": "Needs work",
-  "lastEdited": "Dec 15, 2025",
+  "lastEdited": "Jan 12, 2026",
   "figmaLink": "https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-20",
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/d0197b27f5733789d6d23536eabe68356e045ae1/scss/_base_code.scss",
   "figmaComponentDataPath": "md/code/figma-component-data.html",
-  "componentExampleImage": "md/code/images/87feb715-0755-44d7-ad7c-778e93de67c3.png",
+  "componentExampleImage": "md/code/images/d03ef8b4-12cb-4002-9e4a-accbfa619a91.png",
   "changeLog": [
+    {
+      "who": "Daniel Mutis",
+      "when": "2026-01-12T15:00:00.000+00:00",
+      "what": "Added description, anatomy and anatomy descriptions, usage guidelines and properties"
+    },
     {
       "who": "Maximilian Blazek",
       "when": "2025-11-21T17:00:00.000+00:00",
@@ -16,9 +21,22 @@
     }
   ],
   "decisionLog": [],
-  "properties": [],
+  "properties": [
+    {
+      "name": "Text",
+      "type": "string",
+      "required": true,
+      "description": "The code that is being shown inside of the code component."
+    }
+  ],
   "anatomy": {
-    "image": "md/code/images/fd6ad279-5fb7-4714-bbb7-5f9081f40a47.png",
-    "table": []
+    "image": "md/code/images/1a2e850e-4118-4f39-b609-d1b68d6c02f3.png",
+    "table": [
+      {
+        "number": 1,
+        "name": "Code",
+        "description": "The code being displayed either in-line or standalone"
+      }
+    ]
   }
 }

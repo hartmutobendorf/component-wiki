@@ -3,11 +3,11 @@
   "type": "Pattern",
   "tiers": "Sites",
   "documentationStatus": "Minimal",
-  "lastEdited": "Dec 15, 2025",
+  "lastEdited": "Jan 5, 2026",
   "figmaLink": "https://www.figma.com/design/1brHCsyeTE6FU7hfJd6ao2/%F0%9F%8C%90-Sites---Core-component-library?node-id=2940-19045",
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/main/templates/_macros/vf_blog.jinja",
   "figmaComponentDataPath": "",
-  "componentExampleImage": "md/blog/images/ac76a15a-83da-49bb-ae38-594ab63b4611.png",
+  "componentExampleImage": "md/blog/images/a10e07cc-96b6-4be0-a6cb-fa8b98bf3113.png",
   "changeLog": [],
   "decisionLog": [],
   "properties": [
@@ -54,7 +54,8 @@
       "name": "Heading",
       "type": "string",
       "required": true,
-      "description": "4-column width heading using muted heading"
+      "description": "4-column width heading using muted heading",
+      "constraint": "Up to 60 characters"
     },
     {
       "name": "Linked heading",
@@ -71,7 +72,7 @@
       "name": "Bottom padding",
       "type": "single select",
       "required": true,
-      "description": "The type of padding applied to the pattern",
+      "description": "The type of padding applied to the bottom of the pattern",
       "options": [
         "default",
         "deep",
@@ -82,7 +83,7 @@
     }
   ],
   "anatomy": {
-    "image": "md/blog/images/14506e17-ffa3-402f-9b28-312ceb8b6fcf.png",
+    "image": "md/blog/images/d9b18866-8478-4f13-a889-434bba5e213b.png",
     "table": [
       {
         "number": 6,

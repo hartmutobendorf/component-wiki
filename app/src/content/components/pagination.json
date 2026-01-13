@@ -3,12 +3,17 @@
   "type": "Component",
   "tiers": "Global",
   "documentationStatus": "Needs work",
-  "lastEdited": "Dec 15, 2025",
+  "lastEdited": "Jan 5, 2026",
   "figmaLink": "https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-36",
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/b1d651365b0714586e6ea14349dea763819c256e/scss/_patterns_pagination.scss",
   "figmaComponentDataPath": "md/pagination/figma-component-data.html",
-  "componentExampleImage": "md/pagination/images/0a49c01d-c1a5-4685-8ef2-abd5c29a763d.png",
+  "componentExampleImage": "md/pagination/images/724c77ff-6101-4c79-958a-9d54345302af.png",
   "changeLog": [
+    {
+      "who": "Daniel Mutis",
+      "when": "2026-01-05T12:00:00.000+00:00",
+      "what": "Write description, anatomy, usage guidelines and properties"
+    },
     {
       "who": "Maximilian Blazek",
       "when": "2025-11-21T17:00:00.000+00:00",
@@ -16,10 +21,33 @@
     }
   ],
   "decisionLog": [],
-  "properties": [],
+  "properties": [
+    {
+      "name": "Pages data",
+      "type": "object",
+      "required": true,
+      "description": "The data of the pages that should be paginated"
+    },
+    {
+      "name": "Show/hide numbered pages",
+      "type": "boolean",
+      "required": false,
+      "description": "To show or hide the numbered pages ",
+      "options": [
+        "Show",
+        "hide"
+      ],
+      "defaultOption": "Show"
+    }
+  ],
   "anatomy": {
-    "image": "md/pagination/images/741aedc8-740e-456c-bc06-51462ea2ea1e.png",
+    "image": "md/pagination/images/08d2747c-c102-4c3d-9754-5066b765fd56.png",
     "table": [
+      {
+        "number": 6,
+        "name": "Numbered pages",
+        "description": "The numbered pages can be hidden in situations where there isn’t the technical ability to jump to specific number pages, or when the the layout requires a simpler pagination"
+      },
       {
         "number": 5,
         "name": "Next page",

@@ -44,7 +44,7 @@
       "name": "Bottom padding",
       "type": "single select",
       "required": true,
-      "description": "The type of padding applied to the pattern",
+      "description": "The type of padding applied to the bottom of the pattern",
       "options": [
         "default",
         "deep",

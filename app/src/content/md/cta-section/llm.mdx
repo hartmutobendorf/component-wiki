@@ -3,7 +3,7 @@ name: CTA section
 type: Pattern
 tiers: Sites
 documentationStatus: Needs work
-lastEdited: Dec 15, 2025
+lastEdited: Jan 5, 2026
 figmaLink: https://www.figma.com/design/1brHCsyeTE6FU7hfJd6ao2/%F0%9F%8C%90-Sites---Core-component-library?node-id=211-14507
 codeLink: 
 ---
@@ -19,7 +19,7 @@ The CTA section is a prominent and visually engaging section designed to encoura
 - **Type**: Pattern
 - **Tier**: Sites
 - **Documentation Status**: Needs work
-- **Last Edited**: Dec 15, 2025
+- **Last Edited**: Jan 5, 2026
 - **Figma**: [View in Figma](https://www.figma.com/design/1brHCsyeTE6FU7hfJd6ao2/%F0%9F%8C%90-Sites---Core-component-library?node-id=211-14507)
 
 ## Anatomy
@@ -65,9 +65,10 @@ The CTA section should represent a single primary intent. Any supporting text or
 
 | Name | Type | Required | Description | Constraint | Options | Default |
 |------|------|----------|-------------|------------|---------|----------|
+| Top padding | single select | Yes | The type of padding applied to the top of the pattern after the section rule | - | - | deep |
 | Body | string | No | 4-column width body text | 300 (As part of a highlighted section, the content should be limited to a single sentence.) | - | - |
 | Heading | string | No | 8-column width heading using H2 | Up to 60 characters | - | - |
-| Bottom padding | single select | Yes | The type of padding applied to the pattern | he CTA section uses deep padding on both the top and bottom. | - | deep |
+| Bottom padding | single select | Yes | The type of padding applied to the bottom of the pattern | - | - | deep |
 | Section rule | single select | Yes | The rule component indicates the beginning of a new pattern | Only use the default style for the section-level rule | default | default |
 | Link CTA | string | No | The text link used for contextual actions or pathways to more information. It uses a chevron (›) to indicate navigation to additional content or pages. | Up to 60 characters | - | - |
 

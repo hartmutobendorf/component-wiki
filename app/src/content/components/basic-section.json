@@ -3,11 +3,11 @@
   "type": "Pattern",
   "tiers": "Sites",
   "documentationStatus": "Minimal",
-  "lastEdited": "Dec 15, 2025",
+  "lastEdited": "Jan 5, 2026",
   "figmaLink": "https://www.figma.com/design/1brHCsyeTE6FU7hfJd6ao2/%F0%9F%9A%A7---WIP--Sites---Core-component-library?node-id=41-9326",
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/WD-22552-feat-data-spotlight-pattern/templates/_macros/vf_basic-section.jinja",
   "figmaComponentDataPath": "",
-  "componentExampleImage": "md/basic-section/images/a49cf8ef-5249-43e0-baaf-f01774a1a8c2.png",
+  "componentExampleImage": "md/basic-section/images/ec5c52a5-689b-4210-bf2f-81ecf9b79fb4.png",
   "changeLog": [
     {
       "who": "Isaac Kim",
@@ -22,6 +22,7 @@
       "type": "single select",
       "required": true,
       "description": "The type of padding applied to the block",
+      "constraint": "The last block of the pattern must not have bottom padding.",
       "options": [
         "none",
         "shallow"
@@ -72,19 +73,14 @@
       "name": "Eyebrow",
       "type": "string",
       "required": false,
-      "description": "The eyebrow placed above the heading using muted heading"
+      "description": "The eyebrow placed above the heading using muted heading",
+      "constraint": "Up to 30 characters"
     },
     {
       "name": "Subheading",
       "type": "string",
       "required": false,
-      "description": "The subheading provides additional hierarchy beneath the main title"
-    },
-    {
-      "name": "Subheading style",
-      "type": "single select",
-      "required": false,
-      "description": "This property changes the styling of the subheading",
+      "description": "The subheading provides additional hierarchy beneath the main title",
       "constraint": "h4: up to 100 characters\nh5: up to 160 characters",
       "options": [
         "h4",
@@ -103,7 +99,7 @@
       "name": "Bottom padding",
       "type": "single select",
       "required": true,
-      "description": "The type of padding applied to the pattern",
+      "description": "The type of padding applied to the bottom of the pattern",
       "options": [
         "default",
         "deep",
@@ -114,7 +110,7 @@
     }
   ],
   "anatomy": {
-    "image": "md/basic-section/images/7521a9c9-8166-486d-b0ff-782378a94e09.webp",
+    "image": "md/basic-section/images/57942bc6-e5f2-4532-b338-cfc98d84471e.png",
     "table": [
       {
         "number": 4,
@@ -162,6 +158,17 @@
           "required": false,
           "description": "The text link used for contextual actions or pathways to more information. It uses a chevron (›) to indicate navigation to additional content or pages.",
           "constraint": "Up to 60 characters"
+        }
+      ]
+    },
+    {
+      "name": "Code",
+      "properties": [
+        {
+          "name": "Text",
+          "type": "string",
+          "required": true,
+          "description": "The code that is being shown inside of the code component."
         }
       ]
     },

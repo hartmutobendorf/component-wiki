@@ -7,7 +7,7 @@
   "figmaLink": "https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-51",
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/b1d651365b0714586e6ea14349dea763819c256e/scss/_base_forms.scss#L215",
   "figmaComponentDataPath": "md/text-area/figma-component-data.html",
-  "componentExampleImage": "md/text-area/images/603a0226-d6ea-43ca-a71f-35452f55aacb.png",
+  "componentExampleImage": "md/text-area/images/01fdca2c-5860-45ed-af8d-3a44f9fe3f54.png",
   "changeLog": [
     {
       "who": "Daniel Mutis",
@@ -98,7 +98,7 @@
     }
   ],
   "anatomy": {
-    "image": "md/text-area/images/fcf1347e-64b7-4067-8034-2ebaae5924d4.png",
+    "image": "md/text-area/images/0e9432c0-4441-4143-879d-a79a9d43b082.png",
     "table": [
       {
         "number": 5,
