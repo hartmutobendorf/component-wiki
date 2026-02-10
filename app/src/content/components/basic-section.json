@@ -7,7 +7,7 @@
   "figmaLink": "https://www.figma.com/design/1brHCsyeTE6FU7hfJd6ao2/%F0%9F%9A%A7---WIP--Sites---Core-component-library?node-id=41-9326",
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/WD-22552-feat-data-spotlight-pattern/templates/_macros/vf_basic-section.jinja",
   "figmaComponentDataPath": "",
-  "componentExampleImage": "md/basic-section/images/82e2ad47-eb4c-4678-a068-8feef7923063.png",
+  "componentExampleImage": "md/basic-section/images/45d0b29d-df93-42c2-90ce-c94afc3c58f2.png",
   "changeLog": [
     {
       "who": "Isaac Kim",
@@ -110,7 +110,7 @@
     }
   ],
   "anatomy": {
-    "image": "md/basic-section/images/0e6f713c-ef28-4691-a37d-ee955a41bbbb.png",
+    "image": "md/basic-section/images/9dc9dd6c-a0a1-4885-8ae5-fe91a2788b12.png",
     "table": [
       {
         "number": 4,

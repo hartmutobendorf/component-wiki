@@ -7,7 +7,7 @@
   "figmaLink": "https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-48",
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/b1d651365b0714586e6ea14349dea763819c256e/scss/_patterns_switch.scss",
   "figmaComponentDataPath": "md/switch/figma-component-data.html",
-  "componentExampleImage": "md/switch/images/876a2d17-cd2e-483f-bbbd-4a8452bcc89a.png",
+  "componentExampleImage": "md/switch/images/365c7dfe-9a55-4b63-8375-3170282e17f2.png",
   "changeLog": [
     {
       "who": "Maximilian Blazek",
@@ -41,7 +41,7 @@
     }
   ],
   "anatomy": {
-    "image": "md/switch/images/140c3f35-1668-4e64-b07e-fb3a8a8c5dc6.png",
+    "image": "md/switch/images/d5216e5c-6c7e-4bef-8842-565c44624f96.png",
     "table": [
       {
         "number": 2,
