@@ -7,7 +7,7 @@
   "figmaLink": "https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-42",
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/b1d651365b0714586e6ea14349dea763819c256e/scss/_patterns_segmented-control.scss",
   "figmaComponentDataPath": "md/segmented-control/figma-component-data.html",
-  "componentExampleImage": "md/segmented-control/images/4c1684db-ce6d-4e55-9994-5b59dc95f459.png",
+  "componentExampleImage": "md/segmented-control/images/29aa3b22-207b-4af0-8ec2-2ed5cf6be461.png",
   "changeLog": [
     {
       "who": "Daniel Mutis",
@@ -51,7 +51,7 @@
     }
   ],
   "anatomy": {
-    "image": "md/segmented-control/images/710e5c82-73a9-4b01-bece-c7b7ca6e758c.png",
+    "image": "md/segmented-control/images/3ae8078d-49f8-4ad4-8f1e-3b95aad11c8a.png",
     "table": [
       {
         "number": 3,

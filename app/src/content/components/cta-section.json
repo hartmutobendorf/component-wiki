@@ -7,7 +7,7 @@
   "figmaLink": "https://www.figma.com/design/1brHCsyeTE6FU7hfJd6ao2/%F0%9F%8C%90-Sites---Core-component-library?node-id=211-14507",
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/main/templates/_macros/vf_cta-section.jinja",
   "figmaComponentDataPath": "",
-  "componentExampleImage": "md/cta-section/images/124072d5-97db-4f91-9430-8821cc66f58b.png",
+  "componentExampleImage": "md/cta-section/images/daafa84e-5628-4ec9-abb1-f813638bb563.png",
   "changeLog": [],
   "decisionLog": [],
   "properties": [
@@ -59,7 +59,7 @@
     }
   ],
   "anatomy": {
-    "image": "md/cta-section/images/114ad6b5-f021-4f2e-b1f4-09ff5db9e8df.png",
+    "image": "md/cta-section/images/ddf19197-3c36-4952-a4d1-f62fc0eeed8f.png",
     "table": [
       {
         "number": 4,
