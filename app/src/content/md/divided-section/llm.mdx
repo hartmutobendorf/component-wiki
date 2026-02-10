@@ -2,28 +2,144 @@
 name: Divided section
 type: Pattern
 tiers: Sites
-documentationStatus: Needs work
-lastEdited: Nov 24, 2025
-figmaLink: 
-codeLink: 
+documentationStatus: Minimal
+lastEdited: Feb 10, 2026
+figmaLink: https://www.figma.com/design/1brHCsyeTE6FU7hfJd6ao2/%F0%9F%8C%90-Sites---Core-component-library?node-id=673-5104
+codeLink: https://github.com/canonical/vanilla-framework/blob/main/templates/_macros/vf_divided-section.jinja
 ---
 
 # Divided section
+
+## Description
+
+The divided section pattern is used to separate related content into distinct steps or items within a single section. Each item is visually divided using a muted rule and shallow padding, helping users distinguish between content blocks while maintaining a cohesive layout.
 
 ## Metadata
 
 - **Type**: Pattern
 - **Tier**: Sites
-- **Documentation Status**: Needs work
-- **Last Edited**: Nov 24, 2025
+- **Documentation Status**: Minimal
+- **Last Edited**: Feb 10, 2026
+- **Figma**: [View in Figma](https://www.figma.com/design/1brHCsyeTE6FU7hfJd6ao2/%F0%9F%8C%90-Sites---Core-component-library?node-id=673-5104)
+- **Code**: [View on GitHub](https://github.com/canonical/vanilla-framework/blob/main/templates/_macros/vf_divided-section.jinja)
+
+## Anatomy
+
+### 1. Rule
+
+The rule component indicates the beginning of a new section.
+
+### 2. Heading
+
+The section heading communicates the primary subject or theme of the section.
+
+### 3. Description block
+
+The description provides introductory context for the divided section. It appears at the top of the section and helps users understand the purpose or scope of the content before engaging with the divided blocks.
+
+### 4. Divided block
+
+The divided block represents a single step or content item within the section. Each block is visually separated by a muted rule and shallow padding, creating clear distinction between items while maintaining a cohesive flow.
+
+### 5. Block rule
+
+The rule component indicates the beginning of a new block item.
+
+### 6. Block heading
+
+The block heading identifies the focus of each divided block.
+
+### 7. Content area
+
+The content area contains the main content for each divided block. It supports the same content types and layout options as the Basic section pattern, including text, images, videos, lists, code blocks, logos, and CTA block.
+
+## Usage
+
+The divided section pattern provides a flexible layout for presenting grouped content that needs clear internal separation, such as steps, stages, or sequential elements. Each divided block is separated by a muted rule and shallow padding, creating visual structure without introducing strong section breaks.
+
+The pattern can accommodate a wide range of content types, including text, images, videos, lists, code blocks, logos, and call-to-action elements. Both the section description area and the divided blocks themselves support these content types.
+
+Internally, the divided section reuses content blocks from the Basic section pattern. As a result, most layout configurations and content options behave identically to those in Basic section, ensuring consistency and reducing the need for additional configuration or learning.
+
+### **Supported UI blocks for the content area**
+
+1.  **Body text** - Use for long-form descriptions or explanations, when full sentences and paragraphs work best.
+2.  **Image** - Include a 3:2 or 16:9 ratio image to illustrate or enhance the content including: photography, isometric illustrations, diagrams, and similar visuals. The image can include an optional caption.
+3.  **Video** - Embed and link video content in 16:9 ratio.
+4.  **List** - List up to 10 items, with bullet type options including: none, bullet, status, or number.
+5.  **Code block** - Display preformatted code.
+6.  **Logo block** - Display related logos such as customers or partners.
+7.  **Linked logo block** - Display logos that link to additional resources.
+8.  **CTA block** - Share one or more call-to-action elements, including a primary button, secondary button, and link.
+9.  **Notification** - Highlight alerts, updates, or contextual messages within the section.
+
+### **When to use**
+
+*   When content needs to be broken into clear steps or distinct items within a single section
+*   When a subtle visual separation is needed without creating fully independent sections
+
+### **When not to use**
+
+*   When images, lists, or other content need to stand alone without internal dividers, use Basic section instead
+*   When the content consists of text only, use a Tiered list instead
+*   When the content is made up of short text and a single representative image, consider using Equal heights instead
+
+## Examples
+
+### Responsive
+
+Medium dimension (100)
+
+![example-8.png](images/5d96d775-ab15-4c57-8981-318f98e110c1.png)
+
+Medium dimension (50/50)
+
+![example-7.png](images/578dd071-e204-4fd4-af60-e88023524b34.png)
+
+Small dimension
+
+![example-9.png](images/ce3cbb8b-fb92-407e-9e89-68ef15ba8196.png)
+
+### Heading type
+
+With icon
+
+![example-1.png](images/6cabbec3-1e98-4f20-8c64-c0586161256e.png)
+
+With bullet
+
+![example-2.png](images/5182b788-84ec-4f0a-8061-94f05f96fbff.png)
+
+With number
+
+![example-3.png](images/9edd3e5d-4ab9-4c03-b8f4-af7912250227.png)
+
+Without bullet
+
+![example-4.png](images/64772e69-edc1-4338-aa71-7c9161f690f0.png)
+
+Without heading
+
+![example-5.png](images/bf8ff8a6-0652-4f84-9a88-89866850ceba.png)
+
+### Contents type
+
+Mix of various content types
+
+![example-6.png](images/01dd4b62-8d95-4846-9ea7-f0a5e310b174.png)
 
 ## Properties
 
 | Name | Type | Required | Description | Constraint | Options | Default |
 |------|------|----------|-------------|------------|---------|----------|
+| Divided block heading | string | No | 4-column width H5 heading for each divided block item | Up to 160 characters | true, false | true |
+| Block rule | object | Yes | The rule component to separate each  block | - | mute | mute |
+| Block heading bullet style | single select | No | The block heading bullet style defines how the block heading is visually presented within each divided block. When the bullet option is used, an additional 32px indent is applied to the content area below the heading to align the content visually with the bullet marker. | - | number, bullet, status, none | number |
+| Block bottom padding | single select | No | The type of padding applied to the block | The last block of the pattern must not have bottom padding. | none, shallow | none |
 | Section rule | single select | Yes | The rule component indicates the beginning of a new pattern | Only use the default style for the section-level rule | default | default |
 | Medium layout | single select | No | Indicate layout for medium size | - | 50/50, 100 | 100 |
 | Heading | string | Yes | 4-column width heading using H2 | Up to 60 characters | - | - |
 | Linked heading | single select | No | The heading can be used as a link when paired with a chevron(›) and a clear indication. | - | default, link | default |
+| Body | string | No | 4-column width body text | Up to 600 characters | - | - |
 | Bottom padding | single select | Yes | The type of padding applied to the bottom of the pattern | - | default, deep, shallow, none | default |
 

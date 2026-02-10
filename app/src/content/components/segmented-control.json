@@ -3,11 +3,11 @@
   "type": "Component",
   "tiers": "Global",
   "documentationStatus": "Needs work",
-  "lastEdited": "Jan 12, 2026",
+  "lastEdited": "Feb 10, 2026",
   "figmaLink": "https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-42",
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/b1d651365b0714586e6ea14349dea763819c256e/scss/_patterns_segmented-control.scss",
   "figmaComponentDataPath": "md/segmented-control/figma-component-data.html",
-  "componentExampleImage": "md/segmented-control/images/ee494726-1318-4dd9-a824-358e5fc18f61.png",
+  "componentExampleImage": "md/segmented-control/images/3e8201e7-64a5-46db-9d02-3326359cb6d0.png",
   "changeLog": [
     {
       "who": "Daniel Mutis",
@@ -51,7 +51,7 @@
     }
   ],
   "anatomy": {
-    "image": "md/segmented-control/images/c74851a6-f90e-4f0a-9ba6-2a4a6ad7f070.png",
+    "image": "md/segmented-control/images/7f06a8d0-73ea-485c-818e-9d46c617296c.png",
     "table": [
       {
         "number": 3,

@@ -3,11 +3,11 @@
   "type": "Component",
   "tiers": "Global",
   "documentationStatus": "Needs work",
-  "lastEdited": "Jan 5, 2026",
+  "lastEdited": "Feb 10, 2026",
   "figmaLink": "https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-41",
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/b1d651365b0714586e6ea14349dea763819c256e/scss/_patterns_search-box.scss",
   "figmaComponentDataPath": "md/search/figma-component-data.html",
-  "componentExampleImage": "md/search/images/b6e572b2-109c-415a-a870-d4644cadbf31.png",
+  "componentExampleImage": "md/search/images/be708300-88e3-480c-8280-728016ccb035.png",
   "changeLog": [
     {
       "who": "Maximilian Blazek",
@@ -44,7 +44,7 @@
     }
   ],
   "anatomy": {
-    "image": "md/search/images/3d882a50-0f5f-4cd3-b618-26ebf03ca904.png",
+    "image": "md/search/images/22378f53-dd86-4bf1-b232-a0c381d17241.png",
     "table": [
       {
         "number": 3,

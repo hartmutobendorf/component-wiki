@@ -1,0 +1,104 @@
+---
+name: In-page navigation
+type: Complex component
+tiers: Sites
+documentationStatus: Needs work
+lastEdited: Feb 10, 2026
+figmaLink: https://www.figma.com/design/1brHCsyeTE6FU7hfJd6ao2/%F0%9F%8C%90-Sites---Core-component-library?node-id=5867-1245&p=f&t=H03drqhsN72gwk3n-11
+codeLink: 
+---
+
+# In-page navigation
+
+## Description
+
+In-page navigation is a navigational component for exploring content within a single page. Users can scan the page structure, jump directly to sections, and understand their current position as they scroll.
+
+## Metadata
+
+- **Type**: Complex component
+- **Tier**: Sites
+- **Documentation Status**: Needs work
+- **Last Edited**: Feb 10, 2026
+- **Figma**: [View in Figma](https://www.figma.com/design/1brHCsyeTE6FU7hfJd6ao2/%F0%9F%8C%90-Sites---Core-component-library?node-id=5867-1245&p=f&t=H03drqhsN72gwk3n-11)
+
+## Anatomy
+
+### 1. Heading
+
+An optional heading that indicates the scope and purpose of the items displayed beneath it. Only be used when it targets a specific content group, not the entire page.
+
+### 2. Anchor link item
+
+Anchor link items that navigate to corresponding sections, with default, hover, and active states, and an optional secondary level.
+
+### 3. Active item indicator
+
+A visual indicator that marks the currently visible section. Only one item can be active at a time.
+
+### 4. Primary item heading
+
+A primary level item heading that maps to H2 headings by default. If the component is manually scoped to a specific content area, the primary level can map to H3 headings instead
+
+### 5. Secondary item heading
+
+An optional secondary level can be added, which maps to the next heading hierarchy.
+
+### 6. Collapsed variant
+
+A collapsed navigation bar displaying the current section from the primary-level items on smaller screens, with a chevron button to reveal the expanded variant.
+
+### 7. Chevron button
+
+A chevron button used to expand and collapse the navigation list.
+
+### 8. Expanded variant
+
+A full navigation state exposing all anchor links on smaller screens, with a chevron button to collapse the list.
+
+## Usage
+
+In-page navigation is intended for pages with structured, section-based content where users benefit from an overview of the page and quick access to specific sections.
+
+The in-page navigation can either apply to a full page after the hero or be manually scoped to specific sections.
+
+When used at a full-page scope, only one instance is allowed per page. When manually scoped, multiple instances may be used as long as their scopes do not overlap. 
+
+Full-page and manually scoped instances cannot be used together.
+
+### Component structure
+
+*   The component is structured around section headings within the page.
+*   Headings in the hero section are excluded from the in-page navigation.
+
+### Usage scope
+
+*   The component can be used for an entire page or manually applied to specific sections or groups of content.
+*   When a full-page scope is used, only one component is allowed per page.
+*   When scoped to specific sections, multiple components may be used.
+*   *   There is an option to add a heading on top of the in-page navigation component, which can be helpful in cases where the in-page navigation targets specific sections
+    *   When multiple manually scoped components are used, their scopes must not overlap.
+
+### Component placement
+
+*   It is placed after the hero section and applies only to content that follows the hero.
+*   On initial load, the component position is fixed.
+*   As the user scrolls, the component transitions to sticky positioning once its container reaches the domain/bubble navigation boundary (24px below on desktop).
+*   When scoped to specific sections, it starts with the first section and remains sticky until the last section scrolls out of view.
+*   Large screens: The in-page navigation is positioned in the left two-column rail.
+*   Smaller screens: The component spans the full screen width.
+
+### Anchor scroll offset
+
+The scroll anchor offset ensures that the target section heading remains fully visible after in-page navigation interactions. It is determined by whether the domain/bubble navigation is sticky and by the screen size.
+
+**Sticky domain/bubble navigation**
+
+*   Desktop: 80px
+*   Mobile / Tablet: 120px
+
+**Fixed domain/bubble navigation**
+
+*   Desktop: 24px
+*   Mobile / Tablet: 72px
+

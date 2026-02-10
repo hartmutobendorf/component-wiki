@@ -1,0 +1,43 @@
+In-page navigation is intended for pages with structured, section-based content where users benefit from an overview of the page and quick access to specific sections.
+
+The in-page navigation can either apply to a full page after the hero or be manually scoped to specific sections.
+
+When used at a full-page scope, only one instance is allowed per page. When manually scoped, multiple instances may be used as long as their scopes do not overlap. 
+
+Full-page and manually scoped instances cannot be used together.
+
+### Component structure
+
+*   The component is structured around section headings within the page.
+*   Headings in the hero section are excluded from the in-page navigation.
+
+### Usage scope
+
+*   The component can be used for an entire page or manually applied to specific sections or groups of content.
+*   When a full-page scope is used, only one component is allowed per page.
+*   When scoped to specific sections, multiple components may be used.
+*   *   There is an option to add a heading on top of the in-page navigation component, which can be helpful in cases where the in-page navigation targets specific sections
+    *   When multiple manually scoped components are used, their scopes must not overlap.
+
+### Component placement
+
+*   It is placed after the hero section and applies only to content that follows the hero.
+*   On initial load, the component position is fixed.
+*   As the user scrolls, the component transitions to sticky positioning once its container reaches the domain/bubble navigation boundary (24px below on desktop).
+*   When scoped to specific sections, it starts with the first section and remains sticky until the last section scrolls out of view.
+*   Large screens: The in-page navigation is positioned in the left two-column rail.
+*   Smaller screens: The component spans the full screen width.
+
+### Anchor scroll offset
+
+The scroll anchor offset ensures that the target section heading remains fully visible after in-page navigation interactions. It is determined by whether the domain/bubble navigation is sticky and by the screen size.
+
+**Sticky domain/bubble navigation**
+
+*   Desktop: 80px
+*   Mobile / Tablet: 120px
+
+**Fixed domain/bubble navigation**
+
+*   Desktop: 24px
+*   Mobile / Tablet: 72px

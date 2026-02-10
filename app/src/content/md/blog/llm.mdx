@@ -3,7 +3,7 @@ name: Blog
 type: Pattern
 tiers: Sites
 documentationStatus: Minimal
-lastEdited: Jan 5, 2026
+lastEdited: Feb 10, 2026
 figmaLink: https://www.figma.com/design/1brHCsyeTE6FU7hfJd6ao2/%F0%9F%8C%90-Sites---Core-component-library?node-id=2940-19045
 codeLink: https://github.com/canonical/vanilla-framework/blob/main/templates/_macros/vf_blog.jinja
 ---
@@ -19,7 +19,7 @@ The blog pattern displays 3 to 4 blog articles in a grid layout. Each article sh
 - **Type**: Pattern
 - **Tier**: Sites
 - **Documentation Status**: Minimal
-- **Last Edited**: Jan 5, 2026
+- **Last Edited**: Feb 10, 2026
 - **Figma**: [View in Figma](https://www.figma.com/design/1brHCsyeTE6FU7hfJd6ao2/%F0%9F%8C%90-Sites---Core-component-library?node-id=2940-19045)
 - **Code**: [View on GitHub](https://github.com/canonical/vanilla-framework/blob/main/templates/_macros/vf_blog.jinja)
 
@@ -71,31 +71,34 @@ The grid layout helps users scan titles, descriptions, authors, and publication 
 
 ## Examples
 
+### Layout
+
 4-block layout with linked heading
 
-![Component example wrapper-1.png](images/c46b2aac-023e-4c94-bf5c-a3ebc124080a.png)
+![Component example wrapper-1.png](images/2d720bce-b89c-4a06-955b-d3305d57deb1.png)
 
 3-block layout
 
-![Component example wrapper-2.png](images/ea11ee87-ebce-4ca3-b4ff-4e45c60c3b21.png)
+![Component example wrapper-2.png](images/132680bd-1331-40f6-b636-488ed026b1c0.png)
+
+### Responsive
 
 Medium dimension
 
-![Component example wrapper-3.png](images/37579110-b18a-42f1-b9a2-1110ed99188f.png)
+![Component example wrapper-3.png](images/42092a15-3c56-4f69-bd8c-876b8715d565.png)
 
 Small dimension
 
-![Component example wrapper-4.png](images/be67d422-8824-4760-9355-d896de8336dd.png)
+![Component example wrapper-4.png](images/4285d84a-3b8b-42a9-aa73-10d10141fc14.png)
 
 ## Properties
 
 | Name | Type | Required | Description | Constraint | Options | Default |
 |------|------|----------|-------------|------------|---------|----------|
-| Heading | string | Yes | 4-column width heading using muted heading | Up to 60 characters | - | - |
+| Heading | string | Yes | 2-column width heading using muted heading | Up to 60 characters | - | - |
 | Number of articles | single select | No | It determines the number of articles to display in the section. | - | 3-block, 4-block | 4-block |
 | Content loading strategies | object | Yes | The blog pattern supports two content loading strategies: Dynamic content:  Articles are loaded asynchronously using a template Static content: Articles are passed directly to the pattern | - | dinamic, static | - |
 | Section rule | single select | Yes | The rule component indicates the beginning of a new pattern | Only use the default style for the section-level rule | default | default |
-| Heading | string | Yes | 4-column width heading using muted heading | Up to 60 characters | - | - |
 | Linked heading | single select | No | The heading can be used as a link when paired with a chevron(›) and a clear indication. | - | default, link | default |
 | Bottom padding | single select | Yes | The type of padding applied to the bottom of the pattern | - | default, deep, shallow, none | default |
 

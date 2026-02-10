@@ -3,14 +3,21 @@
   "type": "Complex component",
   "tiers": "Sites",
   "documentationStatus": "Minimal",
-  "lastEdited": "Jan 5, 2026",
+  "lastEdited": "Feb 10, 2026",
   "figmaLink": "https://www.figma.com/design/1brHCsyeTE6FU7hfJd6ao2/%F0%9F%8C%90-Sites---Core-component-library?node-id=33-1471",
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/main/scss/_patterns_cta.scss",
   "figmaComponentDataPath": "",
-  "componentExampleImage": "md/cta-block/images/8b993422-85f7-4da3-8f20-1a3cb2f32545.png",
+  "componentExampleImage": "md/cta-block/images/0cbc9bb7-5445-46e5-91f2-605d022b068f.png",
   "changeLog": [],
   "decisionLog": [],
   "properties": [
+    {
+      "name": "Link CTA",
+      "type": "string",
+      "required": false,
+      "description": "The text link used for contextual actions or pathways to more information. It uses a chevron (›) to indicate navigation to additional content or pages.",
+      "constraint": "Up to 60 characters"
+    },
     {
       "name": "Primary CTA",
       "type": "string",
@@ -24,17 +31,10 @@
       "required": false,
       "description": "The CTA using the default button style. It is used for most actions that are positive but not primary, and may serve as the main CTA in non-hero sections.",
       "constraint": "Up to 20 characters"
-    },
-    {
-      "name": "Link CTA",
-      "type": "string",
-      "required": false,
-      "description": "The text link used for contextual actions or pathways to more information. It uses a chevron (›) to indicate navigation to additional content or pages.",
-      "constraint": "Up to 60 characters"
     }
   ],
   "anatomy": {
-    "image": "md/cta-block/images/6aa35a94-5f91-48c8-90d6-2503677facb6.png",
+    "image": "md/cta-block/images/81f26e8f-6855-42f4-a453-de1c164a40d8.png",
     "table": [
       {
         "number": 3,

@@ -3,11 +3,11 @@
   "type": "Pattern",
   "tiers": "Sites",
   "documentationStatus": "Minimal",
-  "lastEdited": "Jan 5, 2026",
+  "lastEdited": "Feb 10, 2026",
   "figmaLink": "https://www.figma.com/design/1brHCsyeTE6FU7hfJd6ao2/%F0%9F%9A%A7---WIP--Sites---Core-component-library?node-id=41-9326",
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/WD-22552-feat-data-spotlight-pattern/templates/_macros/vf_basic-section.jinja",
   "figmaComponentDataPath": "",
-  "componentExampleImage": "md/basic-section/images/ec5c52a5-689b-4210-bf2f-81ecf9b79fb4.png",
+  "componentExampleImage": "md/basic-section/images/82e2ad47-eb4c-4678-a068-8feef7923063.png",
   "changeLog": [
     {
       "who": "Isaac Kim",
@@ -20,7 +20,7 @@
     {
       "name": "Block bottom padding",
       "type": "single select",
-      "required": true,
+      "required": false,
       "description": "The type of padding applied to the block",
       "constraint": "The last block of the pattern must not have bottom padding.",
       "options": [
@@ -70,6 +70,13 @@
       "defaultOption": "default"
     },
     {
+      "name": "Body",
+      "type": "string",
+      "required": false,
+      "description": "4-column width body text",
+      "constraint": "Up to 600 characters"
+    },
+    {
       "name": "Eyebrow",
       "type": "string",
       "required": false,
@@ -89,13 +96,6 @@
       "defaultOption": "h4"
     },
     {
-      "name": "Body",
-      "type": "string",
-      "required": false,
-      "description": "4-column width body text",
-      "constraint": "600"
-    },
-    {
       "name": "Bottom padding",
       "type": "single select",
       "required": true,
@@ -110,7 +110,7 @@
     }
   ],
   "anatomy": {
-    "image": "md/basic-section/images/57942bc6-e5f2-4532-b338-cfc98d84471e.png",
+    "image": "md/basic-section/images/0e6f713c-ef28-4691-a37d-ee955a41bbbb.png",
     "table": [
       {
         "number": 4,
@@ -139,6 +139,13 @@
       "name": "CTA block",
       "properties": [
         {
+          "name": "Link CTA",
+          "type": "string",
+          "required": false,
+          "description": "The text link used for contextual actions or pathways to more information. It uses a chevron (›) to indicate navigation to additional content or pages.",
+          "constraint": "Up to 60 characters"
+        },
+        {
           "name": "Primary CTA",
           "type": "string",
           "required": false,
@@ -151,13 +158,6 @@
           "required": false,
           "description": "The CTA using the default button style. It is used for most actions that are positive but not primary, and may serve as the main CTA in non-hero sections.",
           "constraint": "Up to 20 characters"
-        },
-        {
-          "name": "Link CTA",
-          "type": "string",
-          "required": false,
-          "description": "The text link used for contextual actions or pathways to more information. It uses a chevron (›) to indicate navigation to additional content or pages.",
-          "constraint": "Up to 60 characters"
         }
       ]
     },
@@ -263,6 +263,13 @@
     {
       "name": "Linked logo block",
       "properties": [
+        {
+          "name": "Link CTA",
+          "type": "string",
+          "required": false,
+          "description": "The text link used for contextual actions or pathways to more information. It uses a chevron (›) to indicate navigation to additional content or pages.",
+          "constraint": "Up to 60 characters"
+        },
         {
           "name": "Link text",
           "type": "string",

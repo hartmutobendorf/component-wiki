@@ -3,7 +3,7 @@ name: Basic section
 type: Pattern
 tiers: Sites
 documentationStatus: Minimal
-lastEdited: Jan 5, 2026
+lastEdited: Feb 10, 2026
 figmaLink: https://www.figma.com/design/1brHCsyeTE6FU7hfJd6ao2/%F0%9F%9A%A7---WIP--Sites---Core-component-library?node-id=41-9326
 codeLink: https://github.com/canonical/vanilla-framework/blob/WD-22552-feat-data-spotlight-pattern/templates/_macros/vf_basic-section.jinja
 ---
@@ -21,7 +21,7 @@ Choose this pattern to communicate a single topic that can be clearly conveyed i
 - **Type**: Pattern
 - **Tier**: Sites
 - **Documentation Status**: Minimal
-- **Last Edited**: Jan 5, 2026
+- **Last Edited**: Feb 10, 2026
 - **Figma**: [View in Figma](https://www.figma.com/design/1brHCsyeTE6FU7hfJd6ao2/%F0%9F%9A%A7---WIP--Sites---Core-component-library?node-id=41-9326)
 - **Code**: [View on GitHub](https://github.com/canonical/vanilla-framework/blob/WD-22552-feat-data-spotlight-pattern/templates/_macros/vf_basic-section.jinja)
 
@@ -81,28 +81,28 @@ The Basic section typically works best with a title on the left and supporting m
 
 Medium dimension (50/50 split)
 
-![Component example wrapper-1.png](images/05e4828f-322b-4935-bfd0-c063c5b1e2e1.png)
+![Component example wrapper-1.png](images/6d2435c3-4c9b-40ed-af00-8cb0f3e9b16a.png)
 
 Medium dimension (100)
 
-![Component example wrapper-3.png](images/9406dde1-7136-4411-8550-2c9a5511fecf.png)
+![Component example wrapper-3.png](images/1a342cd7-ad80-4846-ac11-440b4a828596.png)
 
 Small dimension
 
-![Component example wrapper-2.png](images/efaa7a4c-0e50-4e4f-b976-95724102b639.png)
+![Component example wrapper-2.png](images/0f9e5a5b-494d-49b6-9da3-6569bb7794e2.png)
 
 ## Properties
 
 | Name | Type | Required | Description | Constraint | Options | Default |
 |------|------|----------|-------------|------------|---------|----------|
-| Block bottom padding | single select | Yes | The type of padding applied to the block | The last block of the pattern must not have bottom padding. | none, shallow | none |
+| Block bottom padding | single select | No | The type of padding applied to the block | The last block of the pattern must not have bottom padding. | none, shallow | none |
 | Section rule | single select | Yes | The rule component indicates the beginning of a new pattern | Only use the default style for the section-level rule | default | default |
 | Medium layout | single select | No | Indicate layout for medium size | - | 50/50, 100 | 100 |
 | Heading | string | Yes | 4-column width heading using H2 | Up to 60 characters | - | - |
 | Linked heading | single select | No | The heading can be used as a link when paired with a chevron(›) and a clear indication. | - | default, link | default |
+| Body | string | No | 4-column width body text | Up to 600 characters | - | - |
 | Eyebrow | string | No | The eyebrow placed above the heading using muted heading | Up to 30 characters | - | - |
 | Subheading | string | No | The subheading provides additional hierarchy beneath the main title | h4: up to 100 characters h5: up to 160 characters | h4, h5 | h4 |
-| Body | string | No | 4-column width body text | 600 | - | - |
 | Bottom padding | single select | Yes | The type of padding applied to the bottom of the pattern | - | default, deep, shallow, none | default |
 
 ## Change Log

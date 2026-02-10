@@ -2,15 +2,62 @@
   "name": "Divided section",
   "type": "Pattern",
   "tiers": "Sites",
-  "documentationStatus": "Needs work",
-  "lastEdited": "Nov 24, 2025",
-  "figmaLink": "",
-  "codeLink": "",
+  "documentationStatus": "Minimal",
+  "lastEdited": "Feb 10, 2026",
+  "figmaLink": "https://www.figma.com/design/1brHCsyeTE6FU7hfJd6ao2/%F0%9F%8C%90-Sites---Core-component-library?node-id=673-5104",
+  "codeLink": "https://github.com/canonical/vanilla-framework/blob/main/templates/_macros/vf_divided-section.jinja",
   "figmaComponentDataPath": "",
-  "componentExampleImage": "",
+  "componentExampleImage": "md/divided-section/images/c949e1e6-eb0d-4e2a-b0c5-6243743c8361.png",
   "changeLog": [],
   "decisionLog": [],
   "properties": [
+    {
+      "name": "Divided block heading",
+      "type": "string",
+      "required": false,
+      "description": "4-column width H5 heading for each divided block item",
+      "constraint": "Up to 160 characters",
+      "options": [
+        "true",
+        "false"
+      ],
+      "defaultOption": "true"
+    },
+    {
+      "name": "Block rule",
+      "type": "object",
+      "required": true,
+      "description": "The rule component to separate each  block",
+      "options": [
+        "mute"
+      ],
+      "defaultOption": "mute"
+    },
+    {
+      "name": "Block heading bullet style",
+      "type": "single select",
+      "required": false,
+      "description": "The block heading bullet style defines how the block heading is visually presented within each divided block. When the bullet option is used, an additional 32px indent is applied to the content area below the heading to align the content visually with the bullet marker.",
+      "options": [
+        "number",
+        "bullet",
+        "status",
+        "none"
+      ],
+      "defaultOption": "number"
+    },
+    {
+      "name": "Block bottom padding",
+      "type": "single select",
+      "required": false,
+      "description": "The type of padding applied to the block",
+      "constraint": "The last block of the pattern must not have bottom padding.",
+      "options": [
+        "none",
+        "shallow"
+      ],
+      "defaultOption": "none"
+    },
     {
       "name": "Section rule",
       "type": "single select",
@@ -52,6 +99,13 @@
       "defaultOption": "default"
     },
     {
+      "name": "Body",
+      "type": "string",
+      "required": false,
+      "description": "4-column width body text",
+      "constraint": "Up to 600 characters"
+    },
+    {
       "name": "Bottom padding",
       "type": "single select",
       "required": true,
@@ -66,7 +120,308 @@
     }
   ],
   "anatomy": {
-    "image": "",
-    "table": []
-  }
+    "image": "md/divided-section/images/57318162-7f7d-4c85-bfb1-fdd23430b1d7.png",
+    "table": [
+      {
+        "number": 7,
+        "name": "Content area",
+        "description": "The content area contains the main content for each divided block. It supports the same content types and layout options as the Basic section pattern, including text, images, videos, lists, code blocks, logos, and CTA block."
+      },
+      {
+        "number": 6,
+        "name": "Block heading",
+        "description": "The block heading identifies the focus of each divided block."
+      },
+      {
+        "number": 5,
+        "name": "Block rule",
+        "description": "The rule component indicates the beginning of a new block item."
+      },
+      {
+        "number": 4,
+        "name": "Divided block",
+        "description": "The divided block represents a single step or content item within the section. Each block is visually separated by a muted rule and shallow padding, creating clear distinction between items while maintaining a cohesive flow."
+      },
+      {
+        "number": 3,
+        "name": "Description block",
+        "description": "The description provides introductory context for the divided section. It appears at the top of the section and helps users understand the purpose or scope of the content before engaging with the divided blocks."
+      },
+      {
+        "number": 2,
+        "name": "Heading",
+        "description": "The section heading communicates the primary subject or theme of the section."
+      },
+      {
+        "number": 1,
+        "name": "Rule",
+        "description": "The rule component indicates the beginning of a new section."
+      }
+    ]
+  },
+  "childProperties": [
+    {
+      "name": "Images",
+      "properties": [
+        {
+          "name": "Image",
+          "type": "slot",
+          "required": false,
+          "description": "The container for placing visual content such as images, illustrations, or diagrams."
+        },
+        {
+          "name": "Image aspect ratio ",
+          "type": "single select",
+          "required": false,
+          "description": "Indicate ratio of the image",
+          "options": [
+            "default",
+            "16:9",
+            "3:2"
+          ],
+          "defaultOption": "default"
+        },
+        {
+          "name": "Image aspect ratio ",
+          "type": "single select",
+          "required": false,
+          "description": "Indicate ratio of the image",
+          "options": [
+            "default",
+            "16:9",
+            "3:2",
+            "2:3",
+            "cinematic",
+            "square"
+          ],
+          "defaultOption": "default"
+        },
+        {
+          "name": "Image responsive aspect ratio",
+          "type": "multi select",
+          "required": false,
+          "description": "Change the aspect ratio of an image container, depending on the screen size",
+          "options": [
+            "16:9",
+            "3:2",
+            "2:3",
+            "cinematic",
+            "square\non large",
+            "on medium",
+            "on small"
+          ]
+        },
+        {
+          "name": "Image caption",
+          "type": "string",
+          "required": false,
+          "description": "Optional HTML caption below the image"
+        }
+      ]
+    },
+    {
+      "name": "CTA block",
+      "properties": [
+        {
+          "name": "Link CTA",
+          "type": "string",
+          "required": false,
+          "description": "The text link used for contextual actions or pathways to more information. It uses a chevron (›) to indicate navigation to additional content or pages.",
+          "constraint": "Up to 60 characters"
+        },
+        {
+          "name": "Primary CTA",
+          "type": "string",
+          "required": false,
+          "description": "The CTA used with the positive button style. It indicates a high-priority, positive action and is reserved for hero areas or other key call-to-action sections.",
+          "constraint": "Up to 20 characters"
+        },
+        {
+          "name": "Secondary CTA",
+          "type": "string",
+          "required": false,
+          "description": "The CTA using the default button style. It is used for most actions that are positive but not primary, and may serve as the main CTA in non-hero sections.",
+          "constraint": "Up to 20 characters"
+        }
+      ]
+    },
+    {
+      "name": "Code",
+      "properties": [
+        {
+          "name": "Text",
+          "type": "string",
+          "required": true,
+          "description": "The code that is being shown inside of the code component."
+        }
+      ]
+    },
+    {
+      "name": "Notification",
+      "properties": [
+        {
+          "name": "Time stamp",
+          "type": "string",
+          "required": false,
+          "description": "Can be set to the timestamp when the event when that triggered the notification took place.",
+          "constraint": "Date formatted string"
+        },
+        {
+          "name": "Actions",
+          "type": "slot",
+          "required": false,
+          "description": "Allows to give associated actions with the notification.",
+          "constraint": "Action link components"
+        },
+        {
+          "name": "Dismissible",
+          "type": "boolean",
+          "required": false,
+          "description": "Wether or not the notification can be dismissed. If it can be dismissed the dismiss button is being shown.",
+          "options": [
+            "true",
+            "false"
+          ],
+          "defaultOption": "true"
+        },
+        {
+          "name": "Description",
+          "type": "string",
+          "required": false,
+          "description": "Sets the content of the description."
+        },
+        {
+          "name": "Title",
+          "type": "string",
+          "required": false,
+          "description": "Sets the content of the title."
+        },
+        {
+          "name": "Inline",
+          "type": "boolean",
+          "required": false,
+          "description": "Wether the title and description of the notification are being shown in one line. reduces the overall height of the notification allowing it to be used where space is at a premium.",
+          "options": [
+            "true",
+            "false"
+          ],
+          "defaultOption": "false"
+        },
+        {
+          "name": "Border",
+          "type": "boolean",
+          "required": false,
+          "description": "Wether the notification has a border or not. Borderless notifications are used for example in tables.",
+          "options": [
+            "true",
+            "false"
+          ],
+          "defaultOption": "true"
+        },
+        {
+          "name": "Type",
+          "type": "single select",
+          "required": true,
+          "description": "What semantic type the notification is.",
+          "options": [
+            "information",
+            "negative",
+            "positive",
+            "caution"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Logo block",
+      "properties": [
+        {
+          "name": "Logo block",
+          "type": "slot",
+          "required": true,
+          "description": "The logo block showcases a group of related images, such as a group of customer or partner logos.",
+          "constraint": "Up to 10 logos\nLinking individual logos is not allowed"
+        }
+      ]
+    },
+    {
+      "name": "Linked logo block",
+      "properties": [
+        {
+          "name": "Link CTA",
+          "type": "string",
+          "required": false,
+          "description": "The text link used for contextual actions or pathways to more information. It uses a chevron (›) to indicate navigation to additional content or pages.",
+          "constraint": "Up to 60 characters"
+        },
+        {
+          "name": "Link text",
+          "type": "string",
+          "required": true,
+          "description": "The link text for the logo",
+          "constraint": "Up to 60 characters"
+        },
+        {
+          "name": "Linked logo image",
+          "type": "object",
+          "required": true,
+          "description": "16:9 image container with the logo image inside "
+        }
+      ]
+    },
+    {
+      "name": "List",
+      "properties": [
+        {
+          "name": "List item text",
+          "type": "string",
+          "required": true,
+          "description": "Sets the content of the list",
+          "constraint": "Up to 250 characters"
+        },
+        {
+          "name": "List",
+          "type": "slot",
+          "required": true,
+          "description": "The divided list supporting up to 10 items",
+          "constraint": "Up to 10 items"
+        },
+        {
+          "name": "List bullet type",
+          "type": "single select",
+          "required": false,
+          "description": "Bullet type options",
+          "options": [
+            "none",
+            "bullet",
+            "status",
+            "number"
+          ],
+          "defaultOption": "bullet"
+        },
+        {
+          "name": "List divided",
+          "type": "boolean",
+          "required": false,
+          "description": "Whether has muted rule between list items",
+          "options": [
+            "true",
+            "false"
+          ],
+          "defaultOption": "true"
+        },
+        {
+          "name": "List nested",
+          "type": "boolean",
+          "required": false,
+          "description": "Hierarchical list structures",
+          "options": [
+            "true",
+            "false"
+          ],
+          "defaultOption": "false"
+        }
+      ]
+    }
+  ]
 }

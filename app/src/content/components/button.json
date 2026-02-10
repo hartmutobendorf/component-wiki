@@ -3,11 +3,11 @@
   "type": "Component",
   "tiers": "Global",
   "documentationStatus": "Minimal",
-  "lastEdited": "Dec 19, 2025",
+  "lastEdited": "Feb 10, 2026",
   "figmaLink": "https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-8",
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/main/scss/_patterns_buttons.scss",
   "figmaComponentDataPath": "md/button/figma-component-data.html",
-  "componentExampleImage": "md/button/images/79f03e3f-cee3-402c-85dc-0c17a69545bd.png",
+  "componentExampleImage": "md/button/images/bd9fc4a3-c81b-4fce-88de-ea80d88a2793.png",
   "changeLog": [
     {
       "who": "Maximilian Blazek",
@@ -99,7 +99,7 @@
     }
   ],
   "anatomy": {
-    "image": "md/button/images/2cb7f830-a223-425e-b1b3-a7f413ec3234.png",
+    "image": "md/button/images/ee0d1cd7-88ae-4df8-9c86-c148be4a00e4.png",
     "table": [
       {
         "number": 3,

@@ -3,11 +3,11 @@
   "type": "Pattern",
   "tiers": "Sites",
   "documentationStatus": "Minimal",
-  "lastEdited": "Jan 5, 2026",
+  "lastEdited": "Feb 10, 2026",
   "figmaLink": "https://www.figma.com/design/1brHCsyeTE6FU7hfJd6ao2/%F0%9F%8C%90-Sites---Core-component-library?node-id=2940-19045",
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/main/templates/_macros/vf_blog.jinja",
   "figmaComponentDataPath": "",
-  "componentExampleImage": "md/blog/images/a10e07cc-96b6-4be0-a6cb-fa8b98bf3113.png",
+  "componentExampleImage": "md/blog/images/6baaae08-994c-495c-b995-5ca47076f9fb.png",
   "changeLog": [],
   "decisionLog": [],
   "properties": [
@@ -15,7 +15,7 @@
       "name": "Heading",
       "type": "string",
       "required": true,
-      "description": "4-column width heading using muted heading",
+      "description": "2-column width heading using muted heading",
       "constraint": "Up to 60 characters"
     },
     {
@@ -51,13 +51,6 @@
       "defaultOption": "default"
     },
     {
-      "name": "Heading",
-      "type": "string",
-      "required": true,
-      "description": "4-column width heading using muted heading",
-      "constraint": "Up to 60 characters"
-    },
-    {
       "name": "Linked heading",
       "type": "single select",
       "required": false,
@@ -83,7 +76,7 @@
     }
   ],
   "anatomy": {
-    "image": "md/blog/images/d9b18866-8478-4f13-a889-434bba5e213b.png",
+    "image": "md/blog/images/36ac12ef-348b-42a0-8f8e-62ef45230786.png",
     "table": [
       {
         "number": 6,

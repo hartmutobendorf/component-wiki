@@ -3,11 +3,11 @@
   "type": "Complex component",
   "tiers": "Global",
   "documentationStatus": "Needs work",
-  "lastEdited": "Dec 15, 2025",
+  "lastEdited": "Feb 10, 2026",
   "figmaLink": "https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2002-2",
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/b1d651365b0714586e6ea14349dea763819c256e/scss/_base_tables.scss",
   "figmaComponentDataPath": "md/table/figma-component-data.html",
-  "componentExampleImage": "md/table/images/1b54e595-08cc-44aa-8c25-17fa37297bbb.png",
+  "componentExampleImage": "md/table/images/d4e9c60a-2fd0-44bf-8a4f-96a91ff6fc2c.png",
   "changeLog": [
     {
       "who": "Maximilian Blazek",

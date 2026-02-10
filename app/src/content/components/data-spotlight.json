@@ -2,32 +2,63 @@
   "name": "Data spotlight",
   "type": "Pattern",
   "tiers": "Sites",
-  "documentationStatus": "Needs work",
-  "lastEdited": "Nov 24, 2025",
-  "figmaLink": "",
-  "codeLink": "",
+  "documentationStatus": "Minimal",
+  "lastEdited": "Feb 10, 2026",
+  "figmaLink": "https://www.figma.com/design/1brHCsyeTE6FU7hfJd6ao2/%F0%9F%8C%90-Sites---Core-component-library?node-id=332-14533",
+  "codeLink": "https://github.com/canonical/vanilla-framework/blob/main/templates/_macros/vf_data-spotlight.jinja",
   "figmaComponentDataPath": "",
-  "componentExampleImage": "",
+  "componentExampleImage": "md/data-spotlight/images/e599d787-c64e-4811-92b8-2ee4cfde269f.png",
   "changeLog": [],
   "decisionLog": [],
   "properties": [
     {
+      "name": "Body",
+      "type": "string",
+      "required": false,
+      "description": "2-column width body text",
+      "constraint": "300 (As part of a highlighted section, the content should be limited to a single sentence.)"
+    },
+    {
+      "name": "Data spotlight block",
+      "type": "object",
+      "required": true,
+      "description": "This block consists of the required highlight rule, stat, along with an optional headline, description and link.\n2, 3 or 4 blocks can be used within the pattern.\nThe height is determined by the item with the longest line in the same row.",
+      "options": [
+        "2 blocks",
+        "3 blocks",
+        "4 blocks"
+      ]
+    },
+    {
+      "name": "Headline",
+      "type": "string",
+      "required": false,
+      "description": "Optional 2-column width headline text with H3 style for each stat.",
+      "constraint": "Up to 20 characters"
+    },
+    {
+      "name": "Block rule",
+      "type": "object",
+      "required": true,
+      "description": "The rule component used to emphasize each data block and create separation.",
+      "options": [
+        "highlight"
+      ],
+      "defaultOption": "highlight"
+    },
+    {
+      "name": "Numeric stat",
+      "type": "string",
+      "required": true,
+      "description": "2-column width stat text with H1 style ",
+      "constraint": "Up to 10 characters"
+    },
+    {
       "name": "Heading",
       "type": "string",
       "required": true,
-      "description": "4-column width heading using muted heading",
+      "description": "2-column width heading using muted heading",
       "constraint": "Up to 60 characters"
-    },
-    {
-      "name": "Section rule",
-      "type": "single select",
-      "required": true,
-      "description": "The rule component indicates the beginning of a new pattern",
-      "constraint": "Only use the default style for the section-level rule",
-      "options": [
-        "default"
-      ],
-      "defaultOption": "default"
     },
     {
       "name": "Linked heading",
@@ -39,6 +70,13 @@
         "link"
       ],
       "defaultOption": "default"
+    },
+    {
+      "name": "Link CTA",
+      "type": "string",
+      "required": false,
+      "description": "The text link used for contextual actions or pathways to more information. It uses a chevron (›) to indicate navigation to additional content or pages.",
+      "constraint": "Up to 60 characters"
     },
     {
       "name": "Bottom padding",
@@ -55,7 +93,38 @@
     }
   ],
   "anatomy": {
-    "image": "",
-    "table": []
+    "image": "md/data-spotlight/images/8776f922-408b-44fc-a166-a9d526bb3a1f.png",
+    "table": [
+      {
+        "number": 6,
+        "name": "Link",
+        "description": "The link is an optional element that directs users to more detailed or related information."
+      },
+      {
+        "number": 5,
+        "name": "Description",
+        "description": "The description provides optional supporting context for the data point."
+      },
+      {
+        "number": 4,
+        "name": "Headline",
+        "description": "The headline labels and clarifies what the numeric stat represents."
+      },
+      {
+        "number": 3,
+        "name": "Numeric stat",
+        "description": "The numeric stat displays the primary data point for the block."
+      },
+      {
+        "number": 2,
+        "name": "Block rule",
+        "description": "The rule component indicates and visually highlights the start of each block."
+      },
+      {
+        "number": 1,
+        "name": "Heading",
+        "description": "The section heading communicates the primary subject or theme of the section."
+      }
+    ]
   }
 }

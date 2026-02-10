@@ -2,12 +2,12 @@
   "name": "CTA section",
   "type": "Pattern",
   "tiers": "Sites",
-  "documentationStatus": "Needs work",
-  "lastEdited": "Jan 5, 2026",
+  "documentationStatus": "Minimal",
+  "lastEdited": "Feb 10, 2026",
   "figmaLink": "https://www.figma.com/design/1brHCsyeTE6FU7hfJd6ao2/%F0%9F%8C%90-Sites---Core-component-library?node-id=211-14507",
-  "codeLink": "",
+  "codeLink": "https://github.com/canonical/vanilla-framework/blob/main/templates/_macros/vf_cta-section.jinja",
   "figmaComponentDataPath": "",
-  "componentExampleImage": "md/cta-section/images/5a1ebc2e-6d3c-43eb-9faf-852bea672a6b.png",
+  "componentExampleImage": "md/cta-section/images/de904734-65d0-4dd3-a26c-67e66a54ac2c.png",
   "changeLog": [],
   "decisionLog": [],
   "properties": [
@@ -59,7 +59,7 @@
     }
   ],
   "anatomy": {
-    "image": "md/cta-section/images/008fbd01-1354-4346-a40e-169f8e63c6ad.png",
+    "image": "md/cta-section/images/ef9e24f4-93da-4e48-afee-0b1286aaef80.png",
     "table": [
       {
         "number": 4,
@@ -88,6 +88,13 @@
       "name": "CTA block",
       "properties": [
         {
+          "name": "Link CTA",
+          "type": "string",
+          "required": false,
+          "description": "The text link used for contextual actions or pathways to more information. It uses a chevron (›) to indicate navigation to additional content or pages.",
+          "constraint": "Up to 60 characters"
+        },
+        {
           "name": "Primary CTA",
           "type": "string",
           "required": false,
@@ -100,13 +107,6 @@
           "required": false,
           "description": "The CTA using the default button style. It is used for most actions that are positive but not primary, and may serve as the main CTA in non-hero sections.",
           "constraint": "Up to 20 characters"
-        },
-        {
-          "name": "Link CTA",
-          "type": "string",
-          "required": false,
-          "description": "The text link used for contextual actions or pathways to more information. It uses a chevron (›) to indicate navigation to additional content or pages.",
-          "constraint": "Up to 60 characters"
         }
       ]
     }
