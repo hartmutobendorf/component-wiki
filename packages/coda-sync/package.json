@@ -2,16 +2,16 @@
   "name": "@wiki/coda-sync",
   "version": "0.0.1",
   "private": true,
-  "main": "index.ts",
   "type": "module",
   "scripts": {
-    "start": "tsx index.ts",
+    "start": "tsx src/index.ts",
     "fetch-spec": "curl -o specs/coda-openapi.json https://coda.io/apis/v1/openapi.json",
     "generate": "openapi-typescript specs/coda-openapi.json -o src/api/types.ts",
     "update-client": "pnpm run fetch-spec && pnpm run generate"
   },
   "devDependencies": {
     "@types/cheerio": "^1.0.0",
+    "@types/node": "^25.2.3",
     "@types/turndown": "^5.0.6",
     "openapi-typescript": "^7.10.1",
     "tsx": "^4.19.0",
@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "cheerio": "^1.1.2",
+    "dotenv": "^17.2.4",
     "openapi-fetch": "^0.15.0",
     "turndown": "^7.2.2"
   }

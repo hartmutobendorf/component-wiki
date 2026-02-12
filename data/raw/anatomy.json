@@ -1,0 +1,796 @@
+{
+  "fetchedAt": "2026-02-12T17:45:50.503Z",
+  "rows": {
+    "i-YZ8_13U79t": {
+      "rowId": "i-YZ8_13U79t",
+      "number": 8,
+      "name": "Expanded variant",
+      "description": "A full navigation state exposing all anchor links on smaller screens, with a chevron button to collapse the list.",
+      "component": "i-If3N15kC6H"
+    },
+    "i-08qT4buJMJ": {
+      "rowId": "i-08qT4buJMJ",
+      "number": 7,
+      "name": "Chevron button",
+      "description": "A chevron button used to expand and collapse the navigation list.",
+      "component": "i-If3N15kC6H"
+    },
+    "i-EfYIe-X4p-": {
+      "rowId": "i-EfYIe-X4p-",
+      "number": 6,
+      "name": "Collapsed variant",
+      "description": "A collapsed navigation bar displaying the current section from the primary-level items on smaller screens, with a chevron button to reveal the expanded variant.",
+      "component": "i-If3N15kC6H"
+    },
+    "i-aOwf2zjZbK": {
+      "rowId": "i-aOwf2zjZbK",
+      "number": 5,
+      "name": "Secondary item heading",
+      "description": "An optional secondary level can be added, which maps to the next heading hierarchy.",
+      "component": "i-If3N15kC6H"
+    },
+    "i-1ixkEYWAz6": {
+      "rowId": "i-1ixkEYWAz6",
+      "number": 4,
+      "name": "Primary item heading",
+      "description": "A primary level item heading that maps to H2 headings by default. If the component is manually scoped to a specific content area, the primary level can map to H3 headings instead",
+      "component": "i-If3N15kC6H"
+    },
+    "i-AZflYJSye7": {
+      "rowId": "i-AZflYJSye7",
+      "number": 3,
+      "name": "Active item indicator",
+      "description": "A visual indicator that marks the currently visible section. Only one item can be active at a time.",
+      "component": "i-If3N15kC6H"
+    },
+    "i-7s8hHAvQIc": {
+      "rowId": "i-7s8hHAvQIc",
+      "number": 2,
+      "name": "Anchor link item",
+      "description": "Anchor link items that navigate to corresponding sections, with default, hover, and active states, and an optional secondary level.",
+      "component": "i-If3N15kC6H"
+    },
+    "i-58EodSOyME": {
+      "rowId": "i-58EodSOyME",
+      "number": 1,
+      "name": "Heading",
+      "description": "An optional heading that indicates the scope and purpose of the items displayed beneath it. Only be used when it targets a specific content group, not the entire page.",
+      "component": "i-If3N15kC6H"
+    },
+    "i-UwVv51ub_P": {
+      "rowId": "i-UwVv51ub_P",
+      "number": 7,
+      "name": "Content area",
+      "description": "The content area contains the main content for each divided block. It supports the same content types and layout options as the Basic section pattern, including text, images, videos, lists, code blocks, logos, and CTA block.",
+      "component": "i-6vkVdZz0ii"
+    },
+    "i-uuG193-Pjo": {
+      "rowId": "i-uuG193-Pjo",
+      "number": 6,
+      "name": "Block heading",
+      "description": "The block heading identifies the focus of each divided block.",
+      "component": "i-6vkVdZz0ii"
+    },
+    "i-S0vF32uj2T": {
+      "rowId": "i-S0vF32uj2T",
+      "number": 5,
+      "name": "Block rule",
+      "description": "The rule component indicates the beginning of a new block item.",
+      "component": "i-6vkVdZz0ii"
+    },
+    "i-DUwUcIMqO2": {
+      "rowId": "i-DUwUcIMqO2",
+      "number": 4,
+      "name": "Divided block",
+      "description": "The divided block represents a single step or content item within the section. Each block is visually separated by a muted rule and shallow padding, creating clear distinction between items while maintaining a cohesive flow.",
+      "component": "i-6vkVdZz0ii"
+    },
+    "i-Sxrq4laAPo": {
+      "rowId": "i-Sxrq4laAPo",
+      "number": 3,
+      "name": "Description block",
+      "description": "The description provides introductory context for the divided section. It appears at the top of the section and helps users understand the purpose or scope of the content before engaging with the divided blocks.",
+      "component": "i-6vkVdZz0ii"
+    },
+    "i-qGyiay9b-f": {
+      "rowId": "i-qGyiay9b-f",
+      "number": 2,
+      "name": "Heading",
+      "description": "The section heading communicates the primary subject or theme of the section.",
+      "component": "i-6vkVdZz0ii"
+    },
+    "i-fsrznp6wi_": {
+      "rowId": "i-fsrznp6wi_",
+      "number": 1,
+      "name": "Rule",
+      "description": "The rule component indicates the beginning of a new section.",
+      "component": "i-6vkVdZz0ii"
+    },
+    "i-lLa5_k-Gnn": {
+      "rowId": "i-lLa5_k-Gnn",
+      "number": 6,
+      "name": "Link",
+      "description": "The link is an optional element that directs users to more detailed or related information.",
+      "component": "i-O69ixYm_Ee"
+    },
+    "i-6iJgeovA0w": {
+      "rowId": "i-6iJgeovA0w",
+      "number": 5,
+      "name": "Description",
+      "description": "The description provides optional supporting context for the data point.",
+      "component": "i-O69ixYm_Ee"
+    },
+    "i-XxkISpOyNq": {
+      "rowId": "i-XxkISpOyNq",
+      "number": 4,
+      "name": "Headline",
+      "description": "The headline labels and clarifies what the numeric stat represents.",
+      "component": "i-O69ixYm_Ee"
+    },
+    "i-HAliKJQj_y": {
+      "rowId": "i-HAliKJQj_y",
+      "number": 3,
+      "name": "Numeric stat",
+      "description": "The numeric stat displays the primary data point for the block.",
+      "component": "i-O69ixYm_Ee"
+    },
+    "i-Y2YMtLPsq4": {
+      "rowId": "i-Y2YMtLPsq4",
+      "number": 2,
+      "name": "Block rule",
+      "description": "The rule component indicates and visually highlights the start of each block.",
+      "component": "i-O69ixYm_Ee"
+    },
+    "i-vJJBlFoq5P": {
+      "rowId": "i-vJJBlFoq5P",
+      "number": 1,
+      "name": "Heading",
+      "description": "The section heading communicates the primary subject or theme of the section.",
+      "component": "i-O69ixYm_Ee"
+    },
+    "i-eseWu5dmMk": {
+      "rowId": "i-eseWu5dmMk",
+      "number": 1,
+      "name": "Code",
+      "description": "The code being displayed either in-line or standalone",
+      "component": "i-cgTm31OtA9"
+    },
+    "i-YtozLs7HNq": {
+      "rowId": "i-YtozLs7HNq",
+      "number": 3,
+      "name": "Text",
+      "description": "A word or a short phrase that describes the view the user should expect from this segment",
+      "component": "i-aa-F7fGOPL"
+    },
+    "i-6wwwkJkFFg": {
+      "rowId": "i-6wwwkJkFFg",
+      "number": 2,
+      "name": "Icon",
+      "description": "An optional icon which reinforces the meaning of each segment",
+      "component": "i-aa-F7fGOPL"
+    },
+    "i-IL5I01Tmw_": {
+      "rowId": "i-IL5I01Tmw_",
+      "number": 1,
+      "name": "Segment",
+      "description": "Each of the different views of the content displayed",
+      "component": "i-aa-F7fGOPL"
+    },
+    "i-G2_ffnAKkT": {
+      "rowId": "i-G2_ffnAKkT",
+      "number": 1,
+      "name": "Line",
+      "description": "The line that separates content.",
+      "component": "i-0HDSYo-iyI"
+    },
+    "i-Q30CKelbRb": {
+      "rowId": "i-Q30CKelbRb",
+      "number": 3,
+      "name": "Search icon",
+      "description": "The search icon is a clickable area that activates the submit-based search.",
+      "component": "i-qxrdEI_jxI"
+    },
+    "i-nUroOXl7GF": {
+      "rowId": "i-nUroOXl7GF",
+      "number": 2,
+      "name": "Clear icon",
+      "description": "The dismiss icon is a clickable area of the search, that deletes the query input and resets the search results on instance search.",
+      "component": "i-qxrdEI_jxI"
+    },
+    "i-9enK1nR6Ii": {
+      "rowId": "i-9enK1nR6Ii",
+      "number": 1,
+      "name": "Query input",
+      "description": "Holds placeholder text and the search query.",
+      "component": "i-qxrdEI_jxI"
+    },
+    "i-dUyt-yDguN": {
+      "rowId": "i-dUyt-yDguN",
+      "number": 6,
+      "name": "Numbered pages",
+      "description": "The numbered pages can be hidden in situations where there isn’t the technical ability to jump to specific number pages, or when the the layout requires a simpler pagination",
+      "component": "i-ur5nTty1E1"
+    },
+    "i--c23ZbDGQ2": {
+      "rowId": "i--c23ZbDGQ2",
+      "number": "",
+      "name": "",
+      "description": "",
+      "component": "i-If5dFjalAR"
+    },
+    "i-hieMwBvJ5u": {
+      "rowId": "i-hieMwBvJ5u",
+      "number": 5,
+      "name": "Next page",
+      "description": "Navigates to the page immediately after the current page. It’s disabled on the last page.",
+      "component": "i-ur5nTty1E1"
+    },
+    "i-yD4CDi0u14": {
+      "rowId": "i-yD4CDi0u14",
+      "number": 4,
+      "name": "Page",
+      "description": "A page is a single view of a fixed subset of items within a larger dataset.",
+      "component": "i-ur5nTty1E1"
+    },
+    "i-2eHFjd2Hy1": {
+      "rowId": "i-2eHFjd2Hy1",
+      "number": 3,
+      "name": "Elipsis",
+      "description": "Indicates hidden pages when the total number of pages is large. It appears when there is a gap of more than one page between the active page and the first or last page.",
+      "component": "i-ur5nTty1E1"
+    },
+    "i-GOSIuNPC4E": {
+      "rowId": "i-GOSIuNPC4E",
+      "number": 2,
+      "name": "First and last page",
+      "description": "The first and last pages of the list are always visible.",
+      "component": "i-ur5nTty1E1"
+    },
+    "i-9tRvNTknaM": {
+      "rowId": "i-9tRvNTknaM",
+      "number": 1,
+      "name": "Previous page",
+      "description": "Navigates to the page immediately before the current page. It’s disabled on the first page.",
+      "component": "i-ur5nTty1E1"
+    },
+    "i-MMZiI8j7h4": {
+      "rowId": "i-MMZiI8j7h4",
+      "number": 4,
+      "name": "Body",
+      "description": "Optional supplementary body text used to explain the reason for the action.  \nThis element is available only in the *block* variant and appears directly beneath the heading.",
+      "component": "i-oWJdMiuIb4"
+    },
+    "i-1PhP4CkR_R": {
+      "rowId": "i-1PhP4CkR_R",
+      "number": 3,
+      "name": "CTA",
+      "description": "The interactive element(s) that trigger the intended action. Depending on the variant, this may appear as:\n\n- One or more inline text links (link-style CTA), or\n- A dedicated CTA block containing buttons or structured actions\n\nThis element is required and represents the functional core of the CTA section.",
+      "component": "i-oWJdMiuIb4"
+    },
+    "i-onMtfDfjwX": {
+      "rowId": "i-onMtfDfjwX",
+      "number": 2,
+      "name": "Heading",
+      "description": "A concise, action-oriented heading that communicates the purpose of the call to action.",
+      "component": "i-oWJdMiuIb4"
+    },
+    "i-qt_9FdpQWS": {
+      "rowId": "i-qt_9FdpQWS",
+      "number": 1,
+      "name": "Rule",
+      "description": "The rule component indicates the beginning of a new section.",
+      "component": "i-oWJdMiuIb4"
+    },
+    "i-CFZ6BnG3Jd": {
+      "rowId": "i-CFZ6BnG3Jd",
+      "number": 5,
+      "name": "Validation text",
+      "description": "Text that informs the user of the results of validating the inputted text",
+      "component": "i-uIQULVt2eZ"
+    },
+    "i-ev99NqeMdR": {
+      "rowId": "i-ev99NqeMdR",
+      "number": 4,
+      "name": "Validation icon",
+      "description": "Informative icon on the nature of the validation result",
+      "component": "i-uIQULVt2eZ"
+    },
+    "i-t2tYkAELWW": {
+      "rowId": "i-t2tYkAELWW",
+      "number": 3,
+      "name": "Resize area",
+      "description": "Target area for the user to resize the box",
+      "component": "i-uIQULVt2eZ"
+    },
+    "i-X_xzR8GYi7": {
+      "rowId": "i-X_xzR8GYi7",
+      "number": 2,
+      "name": "Text",
+      "description": "The text the user inputs. Before the user starts typing there could optionally be placeholder text to indicate the expected content or format. ",
+      "component": "i-uIQULVt2eZ"
+    },
+    "i-mk4Zj-JtlV": {
+      "rowId": "i-mk4Zj-JtlV",
+      "number": 1,
+      "name": "Label",
+      "description": "Optional label that can be used to explain what content is expected from the user in the textarea",
+      "component": "i-uIQULVt2eZ"
+    },
+    "i-XWbOBpZ1aY": {
+      "rowId": "i-XWbOBpZ1aY",
+      "number": 2,
+      "name": "Anchor link",
+      "description": "Each section heading on the page has a corresponding anchor link, with the link text matching the copy of the heading itself.",
+      "component": "i-Yr-MKv1jbf"
+    },
+    "i-QbtWsYUahY": {
+      "rowId": "i-QbtWsYUahY",
+      "number": 1,
+      "name": "Heading",
+      "description": "A non-editable heading that indicates to the user the purpose of the anchor links displayed beneath it.",
+      "component": "i-Yr-MKv1jbf"
+    },
+    "i-KuAY7RAV1g": {
+      "rowId": "i-KuAY7RAV1g",
+      "number": 5,
+      "name": "Nested actions icon",
+      "description": "This icon is used to indicate that a group of actions have been nested inside of it",
+      "component": "i-9dtE-EGtSJ"
+    },
+    "i-CcjkNM5yWq": {
+      "rowId": "i-CcjkNM5yWq",
+      "number": 2,
+      "name": "Action icon",
+      "description": "Optional icon that can be used to represent and enhance the meaning of the action text. ",
+      "component": "i-9dtE-EGtSJ"
+    },
+    "i-dSWemdYz-B": {
+      "rowId": "i-dSWemdYz-B",
+      "number": 1,
+      "name": "Action text",
+      "description": "The text of the action item is used to tell the user what sort of action it performs. It should be set to something that gives the user a clear understanding which action is being performed when executing it.",
+      "component": "i-9dtE-EGtSJ"
+    },
+    "i-4lLU-q-Ymp": {
+      "rowId": "i-4lLU-q-Ymp",
+      "number": "",
+      "name": "",
+      "description": "",
+      "component": ""
+    },
+    "i-db5mlx4E33": {
+      "rowId": "i-db5mlx4E33",
+      "number": 6,
+      "name": "Citation",
+      "description": "The citation is an optional author/date field in small text and supports showing either or both.",
+      "component": "i-YbRxZruWIu"
+    },
+    "i-fPNqVUwEDh": {
+      "rowId": "i-fPNqVUwEDh",
+      "number": 5,
+      "name": "Description",
+      "description": "In dynamic content, the description displays the first 180 characters of the article. In static content, a custom description of up to 300 characters should be provided.",
+      "component": "i-YbRxZruWIu"
+    },
+    "i-I1VorVz0-i": {
+      "rowId": "i-I1VorVz0-i",
+      "number": 4,
+      "name": "Article title",
+      "description": "Displaying the full title of the article.",
+      "component": "i-YbRxZruWIu"
+    },
+    "i-R6EvgWseQi": {
+      "rowId": "i-R6EvgWseQi",
+      "number": 3,
+      "name": "Article image",
+      "description": "Each blog article displays a 16:9 cover image with shallow bottom padding. If a fetched article does not include an image, a [fallback image](https://assets.ubuntu.com/v1/94c82a15-blog_fallback_image.png) is used automatically.\n\nIn dynamic content, the article image displays the cover image of the article. In static content, a custom image should be provided.",
+      "component": "i-YbRxZruWIu"
+    },
+    "i-nTeh_-C7O0": {
+      "rowId": "i-nTeh_-C7O0",
+      "number": 2,
+      "name": "Heading",
+      "description": "The section heading communicates the primary subject or theme of the section.",
+      "component": "i-YbRxZruWIu"
+    },
+    "i-Ff3mf9Fh0b": {
+      "rowId": "i-Ff3mf9Fh0b",
+      "number": 1,
+      "name": "Rule",
+      "description": "The rule component indicates the beginning of a new section.",
+      "component": "i-YbRxZruWIu"
+    },
+    "i-asfOQjn1DJ": {
+      "rowId": "i-asfOQjn1DJ",
+      "number": 4,
+      "name": "Validation text",
+      "description": "Semantically colored text that describes the reason of the validation state.",
+      "component": "i-k4_PsQKTUt"
+    },
+    "i-u15o3fB2du": {
+      "rowId": "i-u15o3fB2du",
+      "number": 3,
+      "name": "Validation icon",
+      "description": "A semantic icon that is shown if the select component is in a validation state.",
+      "component": "i-k4_PsQKTUt"
+    },
+    "i-MBRz3hYevs": {
+      "rowId": "i-MBRz3hYevs",
+      "number": 2,
+      "name": "Chevron",
+      "description": "A chevron that hints to the user that something with more choices will open up upon clicking. Differentiator to the text input element.",
+      "component": "i-k4_PsQKTUt"
+    },
+    "i-zd-zxCsTXj": {
+      "rowId": "i-zd-zxCsTXj",
+      "number": 1,
+      "name": "Text",
+      "description": "The text that is shown in the select component.",
+      "component": "i-k4_PsQKTUt"
+    },
+    "i-lsgyOA-HsZ": {
+      "rowId": "i-lsgyOA-HsZ",
+      "number": 1,
+      "name": "Leading icon",
+      "description": "Optional icon that can be used to represent the nature of the link",
+      "component": "i-LVgLIPfo6Z"
+    },
+    "i-pOs_izm_hM": {
+      "rowId": "i-pOs_izm_hM",
+      "number": 3,
+      "name": "External link icon",
+      "description": "If the link is external relative to the the current website or application the designer can choose to display an external link icon next to the link text.",
+      "component": "i-LVgLIPfo6Z"
+    },
+    "i-gHKsEeIf8c": {
+      "rowId": "i-gHKsEeIf8c",
+      "number": 2,
+      "name": "Link text",
+      "description": "The text that is also the clickable are of the icon. On click it will forward the user to the target of the link (or perform the associated action).",
+      "component": "i-LVgLIPfo6Z"
+    },
+    "i-wf5jp-lA4t": {
+      "rowId": "i-wf5jp-lA4t",
+      "number": 4,
+      "name": "Separator",
+      "description": "A separator that visually separates action groups from each other.",
+      "component": "i-9dtE-EGtSJ"
+    },
+    "i-7isXrX7Zh6": {
+      "rowId": "i-7isXrX7Zh6",
+      "number": 6,
+      "name": "Nested actions",
+      "description": "A group of actions which has been nested inside of a single item. ",
+      "component": "i-9dtE-EGtSJ"
+    },
+    "i-I2TxAk0icy": {
+      "rowId": "i-I2TxAk0icy",
+      "number": 3,
+      "name": "Action",
+      "description": "A single action. Clicking it will perform the action that is associated with it.",
+      "component": "i-9dtE-EGtSJ"
+    },
+    "i-A2iYZ6AXZ0": {
+      "rowId": "i-A2iYZ6AXZ0",
+      "number": 3,
+      "name": "Current page breadcrumb",
+      "description": "Indicates the current page the user is on and is not interactive.",
+      "component": "i-nMXFKxR44N"
+    },
+    "i-w0qIUqFois": {
+      "rowId": "i-w0qIUqFois",
+      "number": 2,
+      "name": "Separator",
+      "description": "Visually separates individual breadcrumbs from each other.",
+      "component": "i-nMXFKxR44N"
+    },
+    "i-5luWvb8bvG": {
+      "rowId": "i-5luWvb8bvG",
+      "number": 1,
+      "name": "Parent page breadcrumb",
+      "description": "Breadcrumbs can have one or more parent page breadcrumbs. They represent parent levels in the information. They are interactive and upon clicking on them the user is navigated to that level in the IA.",
+      "component": "i-nMXFKxR44N"
+    },
+    "i-v8NnjLDYyf": {
+      "rowId": "i-v8NnjLDYyf",
+      "number": 3,
+      "name": "Link CTA",
+      "description": "The link CTA provides a lightweight option for additional or contextual actions that sit outside the main task flow. Instead of guiding users toward a primary conversion, it typically routes them to more information or related pages. This longer, descriptive text format helps users explore details without drawing attention away from higher-priority actions.",
+      "component": "i-0Z_OLuJDCc"
+    },
+    "i-HvLVLfOhPM": {
+      "rowId": "i-HvLVLfOhPM",
+      "number": 2,
+      "name": "Secondary CTA",
+      "description": "The secondary action offers a positive next step with reduced visual weight and is suitable for sections that do not require a high-emphasis option. Rather than competing with a primary action, it supports the overall flow by presenting a clear but moderate choice. This makes it appropriate for general sections, where it may serve as the main actionable element.",
+      "component": "i-0Z_OLuJDCc"
+    },
+    "i-N1hcXHUWjN": {
+      "rowId": "i-N1hcXHUWjN",
+      "number": 1,
+      "name": "Primary CTA",
+      "description": "The primary CTA provides the highest level of emphasis within the CTA block and can be used when a section requires a clear, dominant next step. This action helps users understand the most encouraged path forward in moments where a key conversion or major interaction is expected. It may be used in hero or other sections that call for a strong prompt.",
+      "component": "i-0Z_OLuJDCc"
+    },
+    "i-tb3ZochVkd": {
+      "rowId": "i-tb3ZochVkd",
+      "number": 4,
+      "name": "Content area",
+      "description": "The content area on the right side of the 50/50 layout where various block types can be placed. Supported blocks include text, images, lists, videos, code snippets, logos, CTAs, and other compatible patterns. The Basic Section layout provides flexible composition while maintaining structural consistency.",
+      "component": "i-vpN6ETB7hS"
+    },
+    "i-a92MyHD9UH": {
+      "rowId": "i-a92MyHD9UH",
+      "number": 3,
+      "name": "Eyebrow",
+      "description": "The optional muted eyebrow placed above the section title. It provides additional contextual information or categorization for the section when needed.",
+      "component": "i-vpN6ETB7hS"
+    },
+    "i-hiaOE3vCQI": {
+      "rowId": "i-hiaOE3vCQI",
+      "number": 2,
+      "name": "Heading",
+      "description": "The section heading communicates the primary subject or theme of the section.",
+      "component": "i-vpN6ETB7hS"
+    },
+    "i-hfXd9TrkJj": {
+      "rowId": "i-hfXd9TrkJj",
+      "number": 1,
+      "name": "Rule",
+      "description": "The rule component indicates the beginning of a new section.",
+      "component": "i-vpN6ETB7hS"
+    },
+    "i-O0-BobpCiR": {
+      "rowId": "i-O0-BobpCiR",
+      "number": 4,
+      "name": "Tab group",
+      "description": "The horizontal container that houses all individual tabs together. It organizes the tabs in a row and a line that runs along the bottom.",
+      "component": "i-YIkBkUT4ZS"
+    },
+    "i-7SZJ3DLwHh": {
+      "rowId": "i-7SZJ3DLwHh",
+      "number": 3,
+      "name": "Active tab indicator",
+      "description": "A visual element that appears beneath the currently selected tab. Only one tab can ever be active at a time.",
+      "component": "i-YIkBkUT4ZS"
+    },
+    "i-X00wTeQuEi": {
+      "rowId": "i-X00wTeQuEi",
+      "number": 2,
+      "name": "Tab text",
+      "description": "The label displayed within each tab that describes the content it represents. This text should be concise and clearly indicate what content will be shown when selected.",
+      "component": "i-YIkBkUT4ZS"
+    },
+    "i-6Xn9be8Mse": {
+      "rowId": "i-6Xn9be8Mse",
+      "number": 1,
+      "name": "Tab",
+      "description": "An individual clickable element that acts as a trigger to display its associated content panel. Each tab represents a distinct section of related content.",
+      "component": "i-YIkBkUT4ZS"
+    },
+    "i-aBXfUmTJbt": {
+      "rowId": "i-aBXfUmTJbt",
+      "number": 2,
+      "name": "Thumb",
+      "description": "The thumb slides horizontally between positions to indicate state.",
+      "component": "i-I09Xg2rXPg"
+    },
+    "i-6dRGGU-pMD": {
+      "rowId": "i-6dRGGU-pMD",
+      "number": 1,
+      "name": "Track",
+      "description": "The track is the area in which the thumb can slide in.",
+      "component": "i-I09Xg2rXPg"
+    },
+    "i-fdF_cM2sdn": {
+      "rowId": "i-fdF_cM2sdn",
+      "number": 1,
+      "name": "Checkmark",
+      "description": "The checkmark indicates wether the radio is checked or not.",
+      "component": "i-kzPA2kabPA"
+    },
+    "i-B9_1zHWPKi": {
+      "rowId": "i-B9_1zHWPKi",
+      "number": 8,
+      "name": "Actions",
+      "description": "Allows you to provide actions the user can take based on the notification.",
+      "component": "i-LYZ4XyOt-O"
+    },
+    "i-IIW-iziT3H": {
+      "rowId": "i-IIW-iziT3H",
+      "number": 7,
+      "name": "TImestamp",
+      "description": "The timestamp gives an indication when the event that triggered the creation of the notification happened.",
+      "component": "i-LYZ4XyOt-O"
+    },
+    "i-d97Re5HYUH": {
+      "rowId": "i-d97Re5HYUH",
+      "number": 6,
+      "name": "Timestamp & action section",
+      "description": "If a timestamp or actions need to be shown as part of the notification then this section is shown. It contains the timestamp and actions.",
+      "component": "i-LYZ4XyOt-O"
+    },
+    "i-q45Ul4rIMg": {
+      "rowId": "i-q45Ul4rIMg",
+      "number": 5,
+      "name": "Dismiss button",
+      "description": "The dismiss button allows the user to dismiss the notification.",
+      "component": "i-LYZ4XyOt-O"
+    },
+    "i-zGbHkB89Vx": {
+      "rowId": "i-zGbHkB89Vx",
+      "number": 4,
+      "name": "Content section",
+      "description": "This is the main content section of the notification. It contains the Icon, title, description and dismiss button.",
+      "component": "i-LYZ4XyOt-O"
+    },
+    "i-hEXt4N51pX": {
+      "rowId": "i-hEXt4N51pX",
+      "number": 3,
+      "name": "Description",
+      "description": "A more in detail description of the message that is being conveyed to the user. This is supposed to give the user full context of what you are trying to tell them.",
+      "component": "i-LYZ4XyOt-O"
+    },
+    "i-nmJyznznna": {
+      "rowId": "i-nmJyznznna",
+      "number": 2,
+      "name": "Title",
+      "description": "The title of the notification is a short description of the message that is being conveyed to the user. Shouldn’t be too long.",
+      "component": "i-LYZ4XyOt-O"
+    },
+    "i-vHL9u5PQmi": {
+      "rowId": "i-vHL9u5PQmi",
+      "number": 1,
+      "name": "Icon",
+      "description": "The icon gives additional visual information what type of notification this is.",
+      "component": "i-LYZ4XyOt-O"
+    },
+    "i-3mlFtTsFvu": {
+      "rowId": "i-3mlFtTsFvu",
+      "number": 3,
+      "name": "Input validation text",
+      "description": "The text that describes the input validation that has taken place.",
+      "component": "i-9t3OC1fOBH"
+    },
+    "i-LhMPGtdCNi": {
+      "rowId": "i-LhMPGtdCNi",
+      "number": 2,
+      "name": "Input validation icon",
+      "description": "A supplementary icon indicating the type of input validation.",
+      "component": "i-9t3OC1fOBH"
+    },
+    "i-7dI87lvW19": {
+      "rowId": "i-7dI87lvW19",
+      "number": 1,
+      "name": "Text",
+      "description": "Either the placeholder text or, after the user starts typing, the text that the user typed.",
+      "component": "i-9t3OC1fOBH"
+    },
+    "i-5PlZcc-j-r": {
+      "rowId": "i-5PlZcc-j-r",
+      "number": 3,
+      "name": "Dismiss button",
+      "description": "If present allows to dismiss the chip. For example if an applied filter needs to be removed.",
+      "component": "i-JVsLc8_nm0"
+    },
+    "i-cH4DR1qvck": {
+      "rowId": "i-cH4DR1qvck",
+      "number": 5,
+      "name": "Badge",
+      "description": "The badge can be used to show numerical information. For example the amount of items which fall under a certain filter. See more in the badge documentation.",
+      "component": "i-JVsLc8_nm0"
+    },
+    "i-kEJgyGtVGd": {
+      "rowId": "i-kEJgyGtVGd",
+      "number": 2,
+      "name": "Value",
+      "description": "The primary textual information that the chip represents. ",
+      "component": "i-JVsLc8_nm0"
+    },
+    "i-7XqWA7S-u0": {
+      "rowId": "i-7XqWA7S-u0",
+      "number": 4,
+      "name": "Lead",
+      "description": "If the value is of a certain category then the key can be used to show that category to provide additional context to the user.",
+      "component": "i-JVsLc8_nm0"
+    },
+    "i-ZAMZ7_hPEw": {
+      "rowId": "i-ZAMZ7_hPEw",
+      "number": 1,
+      "name": "Icon",
+      "description": "The icon can be used to give more context to the chip. All icons from Vanilla are available. Note that semantic icons should only be used with the appropriate color (warning icon with yellow for example).",
+      "component": "i-JVsLc8_nm0"
+    },
+    "i-gSj_yoOAM5": {
+      "rowId": "i-gSj_yoOAM5",
+      "number": 1,
+      "name": "Checkmark",
+      "description": "If checked the checkbox shows a checkmark. This checkmark can either be a dash if only children in, for example, a table are selected or a common checkmark if the item itself is selected.",
+      "component": "i-hES7I02ImG"
+    },
+    "i-O2YLH2Npwe": {
+      "rowId": "i-O2YLH2Npwe",
+      "number": 3,
+      "name": "Text",
+      "description": "The text of the button is used to tell the user what sort of action this button performs. It should be set to something that gives the user a clear understanding which action is being performed when executing the button.",
+      "component": "i-nsWL1xi6H5"
+    },
+    "i-Hq-rbE9Ad8": {
+      "rowId": "i-Hq-rbE9Ad8",
+      "number": 2,
+      "name": "Icon right",
+      "description": "The right icon is used less frequently and typically serves a different purpose than the left icon. Rather than providing additional context about the primary action, it usually indicates secondary behavior or UI affordances. For example, a chevron icon might signal that the button opens a contextual menu, or expandable content. This positioning helps users understand that there's additional functionality beyond the main action described in the button text.",
+      "component": "i-nsWL1xi6H5"
+    },
+    "i-43iPL8V_N9": {
+      "rowId": "i-43iPL8V_N9",
+      "number": 1,
+      "name": "Icon left",
+      "description": "The icon to the left side of the button can be used to give additional visual context to the user what sort of action this button performs. For example an edit action can be additionally visually indicated by an edit icon.",
+      "component": "i-nsWL1xi6H5"
+    },
+    "i-eXvP7gwsqg": {
+      "rowId": "i-eXvP7gwsqg",
+      "number": 1,
+      "name": "Numeric value",
+      "description": "The numeric value that is being shown as part of the badge.",
+      "component": "i-MOO2SBuaqS"
+    },
+    "i-SPAgX87TBR": {
+      "rowId": "i-SPAgX87TBR",
+      "number": 5,
+      "name": "Divider",
+      "description": "The divider at the end of an accordion indicates the end of an accordion item.",
+      "component": "i-oIOmJPwz-S"
+    },
+    "i-7hn6qVYmgZ": {
+      "rowId": "i-7hn6qVYmgZ",
+      "number": 4,
+      "name": "Panel",
+      "description": "The panel is the area in which the content of the accordion item can be placed.",
+      "component": "i-oIOmJPwz-S"
+    },
+    "i-xyugJnqIo-": {
+      "rowId": "i-xyugJnqIo-",
+      "number": 3,
+      "name": "Tab",
+      "description": "The tab is the clickable area of the accordion with which the accordion can be opened and closed.",
+      "component": "i-oIOmJPwz-S"
+    },
+    "i-iw8XMoQcbR": {
+      "rowId": "i-iw8XMoQcbR",
+      "number": 2,
+      "name": "Heading",
+      "description": "The heading indicates what the subject of the contents is.",
+      "component": "i-oIOmJPwz-S"
+    },
+    "i-Ad9optHiQi": {
+      "rowId": "i-Ad9optHiQi",
+      "number": 1,
+      "name": "Chevron",
+      "description": "Indicates wether the accordion item is open or closed. It points down when open and points right when closed.",
+      "component": "i-oIOmJPwz-S"
+    },
+    "i-gb63frj1C4": {
+      "rowId": "i-gb63frj1C4",
+      "number": "",
+      "name": "",
+      "description": "",
+      "component": ""
+    },
+    "i-nBUY1u87Bs": {
+      "rowId": "i-nBUY1u87Bs",
+      "number": "",
+      "name": "",
+      "description": "",
+      "component": ""
+    },
+    "i-sDR-j2NSwH": {
+      "rowId": "i-sDR-j2NSwH",
+      "number": "",
+      "name": "",
+      "description": "",
+      "component": ""
+    }
+  }
+}

@@ -2,35 +2,8 @@ import type { CodaClient } from "../client"
 import { handleApiResponse } from "../utils"
 
 /**
- * List all pages in a doc
- */
-export async function listPages(client: CodaClient, docId: string) {
-    const response = await client.GET("/docs/{docId}/pages", {
-        params: { path: { docId } },
-    })
-    return handleApiResponse(response, `Failed to fetch pages for doc ${docId}`)
-}
-
-/**
- * Get a specific page
- */
-export async function getPage(
-    client: CodaClient,
-    docId: string,
-    pageIdOrName: string
-) {
-    const response = await client.GET("/docs/{docId}/pages/{pageIdOrName}", {
-        params: { path: { docId, pageIdOrName } },
-    })
-    return handleApiResponse(
-        response,
-        `Failed to fetch page ${pageIdOrName} from doc ${docId}`
-    )
-}
-
-/**
- * Export page content as HTML or Markdown
- * This is an async operation that polls until complete
+ * Export page content as HTML or Markdown.
+ * This is an async operation that polls until complete.
  */
 export async function exportPageContent(
     client: CodaClient,
@@ -66,7 +39,6 @@ export async function exportPageContent(
 
     while (attempts < maxAttempts) {
         attempts++
-        // Wait a bit before polling again (shorter wait for first attempt)
         await new Promise((resolve) => setTimeout(resolve, attempts === 1 ? 500 : 1000))
 
         const statusResponse = await client.GET(
@@ -76,13 +48,10 @@ export async function exportPageContent(
             }
         )
 
-        // If status check fails (404), the export might have completed too quickly
-        // Try using the href from the initial response
         if (statusResponse.error) {
             lastError = statusResponse.error
-            console.log(`⚠ Status check returned error, trying href link...`)
+            console.log(`Status check returned error, trying href link...`)
 
-            // Try fetching from the href directly
             if (exportJob.href) {
                 try {
                     const hrefResponse = await fetch(exportJob.href, {
@@ -102,7 +71,6 @@ export async function exportPageContent(
                 }
             }
 
-            // If we've tried a few times, give up
             if (attempts > 3) {
                 break
             }
@@ -115,7 +83,6 @@ export async function exportPageContent(
         ) as any
 
         if ((statusData as any).downloadLink && statusData.status === "complete") {
-            // Fetch the actual content
             const contentResponse = await fetch((statusData as any).downloadLink)
             const content = await contentResponse.text()
             return content

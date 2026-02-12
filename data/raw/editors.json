@@ -1,0 +1,74 @@
+{
+  "fetchedAt": "2026-02-12T17:45:50.505Z",
+  "rows": {
+    "i-0IJit1shDk": {
+      "rowId": "i-0IJit1shDk",
+      "name": "Juan Ruitiña",
+      "changelog": [
+        "i-xllmY0Y_zi"
+      ]
+    },
+    "i-BIr9EO7Vzb": {
+      "rowId": "i-BIr9EO7Vzb",
+      "name": "Daniel Mutis",
+      "changelog": [
+        "i-zr6SbyJ3U0",
+        "i-ZIS16crOhu",
+        "i-CSI6kyZghM",
+        "i-_rvTLhqFyF",
+        "i-So4Iagv15I",
+        "i-GNWl6fnU4S",
+        "i-rngZ78fUFj",
+        "i-VsSXGy189U"
+      ]
+    },
+    "i-4iuNVivxQY": {
+      "rowId": "i-4iuNVivxQY",
+      "name": "Maximilian Blazek",
+      "changelog": [
+        "i-6MXU_NUcC7",
+        "i-lbRDtsKpbT",
+        "i-NhlySTEQP_",
+        "i-DdsRAZkcuQ",
+        "i-hVJjEuwruT",
+        "i-Ay-4LWOePM",
+        "i-dJtSIqi7iS",
+        "i-lZLHJsjxGL",
+        "i-bpYWXUJEN-",
+        "i-4qCSVPGdZL",
+        "i-9O638h85XR",
+        "i-8KRQcVNa3d",
+        "i-XdAPjh13-J",
+        "i-SB1P_Yc24S",
+        "i-ado2L5OiiZ",
+        "i-AzOYsM0NUQ",
+        "i-zisJBLAs50",
+        "i-TTlbut2TqG",
+        "i-0xAPRIVkfe",
+        "i-n_nBRK96yI",
+        "i-uTkFuCbY8r",
+        "i-2E3qVbUwiF",
+        "i-syDsHm59TI",
+        "i-5jKEy2q7cI",
+        "i-vVCFY3p_UI",
+        "i-tg0QaM94aq",
+        "i-EzIpwBn1zB",
+        "i-5fv5Tfi1tR",
+        "i-JfZnjvDiQG",
+        "i-blsQL3em0O",
+        "i-ZkoznoMe0J",
+        "i-8Jv7LMY047",
+        "i-ngcywYoDY8",
+        "i-HUf3fhYsSC",
+        "i-a2WcDfYeei"
+      ]
+    },
+    "i-ZI39U9EUUe": {
+      "rowId": "i-ZI39U9EUUe",
+      "name": "Isaac Kim",
+      "changelog": [
+        "i-hzphQ86mbJ"
+      ]
+    }
+  }
+}
