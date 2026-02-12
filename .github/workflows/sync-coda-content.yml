@@ -20,17 +20,19 @@ jobs:
               with:
                   token: ${{ secrets.GITHUB_TOKEN }}
 
-            - name: Setup Bun
-              uses: oven-sh/setup-bun@v2
+            - name: Setup pnpm
+              uses: pnpm/action-setup@v4
+
+            - name: Setup Node.js
+              uses: actions/setup-node@v4
               with:
-                  bun-version: latest
+                  node-version: "20"
+                  cache: "pnpm"
 
             - name: Install dependencies
-              working-directory: ./coda-content-retrieve
-              run: bun install
+              run: pnpm install
 
-            - name: Run coda-content-retrieve
-              working-directory: ./coda-content-retrieve
+            - name: Run coda-sync
               env:
                   CODA_API_TOKEN: ${{ secrets.CODA_API_TOKEN }}
                   CODA_DOC_ID: ${{ secrets.CODA_DOC_ID }}
@@ -39,12 +41,12 @@ jobs:
                   CODA_PROPERTIES_TABLE_ID: ${{ secrets.CODA_PROPERTIES_TABLE_ID }}
                   CODA_ANATOMY_TABLE_ID: ${{ secrets.CODA_ANATOMY_TABLE_ID }}
                   CODA_DECISIONLOG_TABLE_ID: ${{ secrets.CODA_DECISIONLOG_TABLE_ID }}
-              run: bun run index.ts
+              run: pnpm sync
 
             - name: Check for content changes
               id: git-check
               run: |
-                  git add app/src/content/
+                  git add packages/wiki/src/content/
                   if git diff --cached --quiet; then
                     echo "changes=false" >> $GITHUB_OUTPUT
                   else

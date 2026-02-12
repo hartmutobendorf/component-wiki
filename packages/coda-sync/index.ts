@@ -1,3 +1,4 @@
+import { writeFile, readFile, mkdir, rm } from 'node:fs/promises';
 import * as cheerio from "cheerio"
 import TurndownService from "turndown"
 import { coda } from "./src/coda"
@@ -72,7 +73,7 @@ async function downloadImage(
     const filename = `${uuid}${extension}`
 
     const filePath = `${folderPath}/${filename}`
-    await Bun.write(filePath, buffer)
+    await writeFile(filePath, Buffer.from(buffer))
 
     return filename
 }
@@ -899,7 +900,7 @@ async function main() {
     }
 
     // Create components metadata directory
-    await Bun.$`mkdir -p ../app/src/content/components`
+    await mkdir('../wiki/src/content/components', { recursive: true })
 
     // Process rows and create markdown files
     console.log("\n📝 Processing rows and creating markdown files...")
@@ -907,14 +908,15 @@ async function main() {
     for (const row of rowsData) {
         const name = row.name
         const folderName = name.toLowerCase().replace(/[^a-z0-9]+/g, "-")
-        const mdFolderPath = `../app/src/content/md/${folderName}`
+        const mdFolderPath = `../wiki/src/content/md/${folderName}`
         const imagesFolderPath = `${mdFolderPath}/images`
 
         // Create directories
-        await Bun.$`mkdir -p ${imagesFolderPath}`
+        await mkdir(imagesFolderPath, { recursive: true })
 
         // Clean up old images to avoid duplicates
-        await Bun.$`rm -f ${imagesFolderPath}/*.{png,jpg,jpeg,gif,webp,PNG,JPG,JPEG,GIF,WEBP} || true`
+        await rm(imagesFolderPath, { recursive: true, force: true })
+        await mkdir(imagesFolderPath, { recursive: true })
 
         console.log(`  Processing: ${name}`)
 
@@ -937,7 +939,7 @@ async function main() {
             )
 
             // Save the markdown content
-            await Bun.write(markdownPath, markdown)
+            await writeFile(markdownPath, markdown)
         }
 
         // Save Figma component data as HTML file if it exists
@@ -947,7 +949,7 @@ async function main() {
             row["figma-component-data"].trim()
         ) {
             const htmlPath = `${mdFolderPath}/figma-component-data.html`
-            await Bun.write(htmlPath, row["figma-component-data"])
+            await writeFile(htmlPath, row["figma-component-data"])
             figmaComponentDataPath = `md/${folderName}/figma-component-data.html`
             console.log(`    ✓ Saved Figma component data HTML`)
         }
@@ -1085,29 +1087,27 @@ async function main() {
                 childProperties.length > 0 ? childProperties : undefined,
         }
 
-        const metadataPath = `../app/src/content/components/${folderName}.json`
-        await Bun.write(
+        const metadataPath = `../wiki/src/content/components/${folderName}.json`
+        await writeFile(
             metadataPath,
             JSON.stringify(componentMetadata, null, 2)
         )
 
         // Generate and save LLM markdown file
         const llmMarkdownContent = generateLLMMarkdown(componentMetadata, {
-            description: await Bun.file(
-                `${mdFolderPath}/description.mdx`
-            ).text(),
-            usage: await Bun.file(`${mdFolderPath}/usage.mdx`).text(),
-            examples: await Bun.file(`${mdFolderPath}/examples.mdx`).text(),
+            description: await readFile(`${mdFolderPath}/description.mdx`, 'utf-8'),
+            usage: await readFile(`${mdFolderPath}/usage.mdx`, 'utf-8'),
+            examples: await readFile(`${mdFolderPath}/examples.mdx`, 'utf-8'),
         })
         const llmMarkdownPath = `${mdFolderPath}/llm.mdx`
-        await Bun.write(llmMarkdownPath, llmMarkdownContent)
+        await writeFile(llmMarkdownPath, llmMarkdownContent)
         console.log(`    ✓ Generated LLM markdown`)
 
         console.log(`  ✓ Processed: ${name}`)
     }
 
-    console.log(`\n📁 Metadata saved to: ../app/src/content/components/`)
-    console.log(`📁 Markdown files saved to: ../app/src/content/md/`)
+    console.log(`\n📁 Metadata saved to: ../wiki/src/content/components/`)
+    console.log(`📁 Markdown files saved to: ../wiki/src/content/md/`)
     console.log("\n✅ Done!")
 }
 

@@ -1,0 +1,16 @@
+{
+  "name": "component-wiki",
+  "private": true,
+  "scripts": {
+    "sync": "pnpm --filter @wiki/coda-sync start",
+    "transform": "pnpm --filter @wiki/transform start",
+    "pipeline": "pnpm sync && pnpm transform",
+    "dev": "pnpm --filter @wiki/app dev",
+    "build": "pnpm pipeline && pnpm --filter @wiki/app build",
+    "build:app": "pnpm --filter @wiki/app build",
+    "preview": "pnpm --filter @wiki/app preview"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
