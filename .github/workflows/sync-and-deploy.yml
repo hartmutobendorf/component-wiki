@@ -40,6 +40,9 @@ jobs:
                   CODA_API_TOKEN: ${{ secrets.CODA_API_TOKEN }}
               run: pnpm sync
 
+            - name: Run transform
+              run: pnpm transform
+
             - name: Check for content changes
               id: git-check
               run: |
