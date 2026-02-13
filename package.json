@@ -8,7 +8,12 @@
     "dev": "pnpm --filter @wiki/app dev",
     "build": "pnpm pipeline && pnpm --filter @wiki/app build",
     "build:app": "pnpm --filter @wiki/app build",
-    "preview": "pnpm --filter @wiki/app preview"
+    "preview": "pnpm --filter @wiki/app preview",
+    "test": "pnpm -r test",
+    "test:watch": "pnpm -r --parallel test:watch",
+    "test:coverage": "pnpm -r test:coverage",
+    "typecheck": "pnpm -r --parallel exec tsc --noEmit",
+    "clean": "rm -rf packages/*/dist packages/*/.astro packages/*/coverage"
   },
   "engines": {
     "node": ">=20"
