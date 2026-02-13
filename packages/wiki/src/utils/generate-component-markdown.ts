@@ -44,6 +44,11 @@ export function generateComponentMarkdown(data: Component): string {
     md += `## Examples\n\n${data.examples}\n\n`;
   }
 
+  // Interactions
+  if (data.interactions) {
+    md += `## Interactions\n\n${data.interactions}\n\n`;
+  }
+
   // Properties
   if (data.properties && data.properties.length > 0) {
     md += `## Properties\n\n`;

@@ -18,3 +18,12 @@ export function renderMarkdown(content: string): string {
   if (!content || !content.trim()) return "";
   return marked.parse(content) as string;
 }
+
+/**
+ * Render inline markdown only (no block-level elements like <p>, <h1>, etc.).
+ * Useful for table cells and other inline contexts.
+ */
+export function renderInlineMarkdown(content: string): string {
+  if (!content || !content.trim()) return "";
+  return marked.parseInline(content) as string;
+}

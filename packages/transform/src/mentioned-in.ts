@@ -29,6 +29,7 @@ export function extractMentionedSlugs(component: Component): Set<string> {
     component.description,
     component.usage,
     component.examples,
+    component.interactions,
   ];
 
   for (const field of fieldsToScan) {

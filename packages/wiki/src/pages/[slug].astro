@@ -3,7 +3,7 @@ import { getCollection, getEntry } from "astro:content";
 import FigmaLink from "../components/FigmaLink.astro";
 import GithubLink from "../components/GithubLink.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { renderMarkdown } from "../utils/render-markdown";
+import { renderMarkdown, renderInlineMarkdown } from "../utils/render-markdown";
 
 // Generate paths for all components
 export async function getStaticPaths() {
@@ -25,10 +25,12 @@ const metadata = component.data;
 const descriptionHtml = renderMarkdown(metadata.description);
 const usageHtml = renderMarkdown(metadata.usage);
 const examplesHtml = renderMarkdown(metadata.examples);
+const interactionsHtml = renderMarkdown(metadata.interactions);
 
 const hasDescription = descriptionHtml.length > 0;
 const hasUsage = usageHtml.length > 0;
 const hasExamples = examplesHtml.length > 0;
+const hasInteractions = interactionsHtml.length > 0;
 ---
 
 <BaseLayout
@@ -77,6 +79,15 @@ const hasExamples = examplesHtml.length > 0;
             <li class="p-table-of-contents__item">
               <a class="p-table-of-contents__link" href="#examples">
                 Examples
+              </a>
+            </li>
+          )
+        }
+        {
+          hasInteractions && (
+            <li class="p-table-of-contents__item">
+              <a class="p-table-of-contents__link" href="#interactions">
+                Interactions
               </a>
             </li>
           )
@@ -166,7 +177,7 @@ const hasExamples = examplesHtml.length > 0;
                 <span class="metadata-key p-text--small-caps u-text--muted">
                   Last Edited
                 </span>
-                <span class="metadata-value">{metadata.lastEdited}</span>
+                <span class="metadata-value">{new Date(metadata.lastEdited).toLocaleDateString("de-DE", { day: "2-digit", month: "2-digit", year: "numeric" })}</span>
               </div>
 
               <div class="metadata-chips">
@@ -226,7 +237,7 @@ const hasExamples = examplesHtml.length > 0;
                           <div class="anatomy-name">{item.name}</div>
                         </div>
                         <div class="anatomy-description">
-                          {item.description}
+                          <Fragment set:html={renderInlineMarkdown(item.description)} />
                         </div>
                       </div>
                     ))}
@@ -269,6 +280,15 @@ const hasExamples = examplesHtml.length > 0;
           </section>
         )
       }
+
+      {
+        hasInteractions && (
+          <section id="interactions" class="u-text-max-width">
+            <h2>Interactions</h2>
+            <Fragment set:html={interactionsHtml} />
+          </section>
+        )
+      }
     </div>
 
     <div class="col"></div>
@@ -303,10 +323,10 @@ const hasExamples = examplesHtml.length > 0;
                       {property.required ? "Yes" : "No"}
                     </td>
                     <td class="properties-description">
-                      {property.description || "-"}
+                      <Fragment set:html={renderInlineMarkdown(property.description) || "-"} />
                     </td>
                     <td class="properties-constraint">
-                      {property.constraint || "-"}
+                      <Fragment set:html={renderInlineMarkdown(property.constraint) || "-"} />
                     </td>
                     <td class="properties-options">
                       {property.options && property.options.length > 0
@@ -354,10 +374,10 @@ const hasExamples = examplesHtml.length > 0;
                             {property.required ? "Yes" : "No"}
                           </td>
                           <td class="properties-description">
-                            {property.description || "-"}
+                            <Fragment set:html={renderInlineMarkdown(property.description) || "-"} />
                           </td>
                           <td class="properties-constraint">
-                            {property.constraint || "-"}
+                            <Fragment set:html={renderInlineMarkdown(property.constraint) || "-"} />
                           </td>
                           <td class="properties-options">
                             {property.options && property.options.length > 0
@@ -404,7 +424,7 @@ const hasExamples = examplesHtml.length > 0;
                       day: "2-digit",
                     })}
                   </td>
-                  <td class="changelog-what">{entry.what}</td>
+                  <td class="changelog-what"><Fragment set:html={renderInlineMarkdown(entry.what)} /></td>
                 </tr>
               ))}
             </tbody>
@@ -430,8 +450,8 @@ const hasExamples = examplesHtml.length > 0;
             <tbody>
               {metadata.decisionLog.map((entry) => (
                 <tr>
-                  <td class="decisionlog-where">{entry.where}</td>
-                  <td class="decisionlog-decision">{entry.decisionMade}</td>
+                  <td class="decisionlog-where"><Fragment set:html={renderInlineMarkdown(entry.where)} /></td>
+                  <td class="decisionlog-decision"><Fragment set:html={renderInlineMarkdown(entry.decisionMade)} /></td>
                   <td class="decisionlog-link">
                     {entry.link ? (
                       <a

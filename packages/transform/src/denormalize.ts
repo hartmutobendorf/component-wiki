@@ -283,6 +283,7 @@ export function denormalize(raw: RawData, syncConfig?: SyncConfig): Component[] 
       description: comp.description ?? "",
       usage: comp.usage ?? "",
       examples: comp.examples ?? "",
+      interactions: comp.interactions ?? "",
     };
 
     const allRawTables: Record<string, { rows: Record<string, Record<string, unknown>> }> = {
@@ -315,6 +316,7 @@ export function denormalize(raw: RawData, syncConfig?: SyncConfig): Component[] 
       description: resolvedFields.description,
       usage: resolvedFields.usage,
       examples: resolvedFields.examples,
+      interactions: resolvedFields.interactions,
       figmaComponentData: comp.figmaComponentData ?? "",
       componentExampleImage: resolveImage(comp.componentExampleImage),
       anatomy: anatomyObj,

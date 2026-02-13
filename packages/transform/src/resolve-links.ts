@@ -195,10 +195,10 @@ function resolveWikiRefsInMarkdown(
  * and examples fields.
  */
 export function resolveAllWikiRefs(
-  fields: { description: string; usage: string; examples: string },
+  fields: { description: string; usage: string; examples: string; interactions: string },
   config: SyncConfig,
   allRawTables: Record<string, RawTableData>
-): { description: string; usage: string; examples: string } {
+): { description: string; usage: string; examples: string; interactions: string } {
   const tableIndex = buildTableIndex(config, allRawTables);
   const componentsTableId = config.tables.components?.id ?? "";
   const componentRows = allRawTables.components?.rows ?? {};
@@ -218,6 +218,12 @@ export function resolveAllWikiRefs(
     ),
     examples: resolveWikiRefsInMarkdown(
       fields.examples,
+      tableIndex,
+      componentsTableId,
+      componentRows
+    ),
+    interactions: resolveWikiRefsInMarkdown(
+      fields.interactions,
       tableIndex,
       componentsTableId,
       componentRows
