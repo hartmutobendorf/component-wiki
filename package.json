@@ -12,7 +12,7 @@
     "test": "pnpm -r test",
     "test:watch": "pnpm -r --parallel test:watch",
     "test:coverage": "pnpm -r test:coverage",
-    "typecheck": "pnpm -r --parallel exec tsc --noEmit",
+    "typecheck": "pnpm --filter @wiki/app typecheck && pnpm --filter '!@wiki/app' -r --parallel exec tsc --noEmit",
     "clean": "rm -rf packages/*/dist packages/*/.astro packages/*/coverage"
   },
   "engines": {

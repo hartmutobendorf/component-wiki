@@ -324,6 +324,7 @@ export function denormalize(raw: RawData, syncConfig?: SyncConfig): Component[] 
       childProperties,
       changeLog: componentChangelog,
       decisionLog: componentDecisionLog,
+      mentionedIn: [],
     };
 
     results.push(component);

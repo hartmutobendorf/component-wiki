@@ -19,6 +19,9 @@ const { componentId } = Astro.props;
 
 // Get component metadata
 const component = await getEntry("components", componentId);
+if (!component) {
+  return Astro.redirect("/404");
+}
 const metadata = component.data;
 
 // Render markdown sections

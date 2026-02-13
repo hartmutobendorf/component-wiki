@@ -15,6 +15,7 @@ export const minimalComponent: Component = {
   description: "",
   usage: "",
   examples: "",
+  interactions: "",
   figmaComponentData: "",
   componentExampleImage: "",
   properties: [],
@@ -41,6 +42,7 @@ export const fullComponent: Component = {
     "Use toggle switches when the user needs to toggle a single setting.\n\n- Do use for binary choices\n- Don't use for multiple selections",
   examples:
     "### Basic Toggle\n\nA simple on/off toggle.\n\n### Disabled Toggle\n\nA toggle that cannot be interacted with.",
+  interactions: "",
   figmaComponentData: "<div>Figma component HTML</div>",
   componentExampleImage: "images/toggle-example.png",
   anatomy: {
