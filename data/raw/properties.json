@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-02-13T12:50:56.860Z",
+  "fetchedAt": "2026-02-13T16:09:21.863Z",
   "rows": {
     "i-MOYVJ4LSRp": {
       "rowId": "i-MOYVJ4LSRp",
@@ -123,7 +123,7 @@
       "name": "Segment state",
       "required": false,
       "type": "i-We9i4W9Klo",
-      "description": "The states a segment can be in",
+      "description": "The states a [Segment](wiki-ref://grid-YfHOdsWGM_/i-IL5I01Tmw_) can be in",
       "constraint": "",
       "options": "Default, hover, active",
       "defaultOption": "default",
@@ -1210,7 +1210,7 @@
       "name": "Border",
       "required": false,
       "type": "i-YtFbduYGgp",
-      "description": "Wether the notification has a border or not. Borderless notifications are used for example in tables.",
+      "description": "Wether the notification has a border or not. Borderless notifications are used for example in [Table](wiki-ref://grid-ymtdOF6n4R/i-aUPUyjNgjD).",
       "constraint": "",
       "options": "true, false",
       "defaultOption": "true",
@@ -1328,7 +1328,7 @@
       "required": false,
       "type": "i-H7NYDvgoEy",
       "description": "Can be used to attach a badge to the chip",
-      "constraint": "Can only contain badge component",
+      "constraint": "Can only contain [Badge](wiki-ref://grid-ymtdOF6n4R/i-MOO2SBuaqS)  component",
       "options": "",
       "defaultOption": "",
       "component": [
@@ -1483,7 +1483,7 @@
       "name": "Text",
       "required": false,
       "type": "i-E9ZaIqQXvg",
-      "description": "Determines the text that is being displayed in the button. Either text or an icon needs to be provided. If no text is provided but an icon is it is an icon only button",
+      "description": "Determines the [Text](wiki-ref://grid-YfHOdsWGM_/i-O2YLH2Npwe) that is being displayed in the button. Either text or an icon needs to be provided. If no text is provided but an icon is it is an icon only button",
       "constraint": "",
       "options": "",
       "defaultOption": "",

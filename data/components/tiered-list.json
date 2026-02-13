@@ -74,5 +74,14 @@
   ],
   "changeLog": [],
   "decisionLog": [],
-  "mentionedIn": []
+  "mentionedIn": [
+    {
+      "name": "Basic section",
+      "slug": "basic-section"
+    },
+    {
+      "name": "Divided section",
+      "slug": "divided-section"
+    }
+  ]
 }

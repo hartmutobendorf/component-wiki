@@ -62,5 +62,10 @@
   ],
   "changeLog": [],
   "decisionLog": [],
-  "mentionedIn": []
+  "mentionedIn": [
+    {
+      "name": "Basic section",
+      "slug": "basic-section"
+    }
+  ]
 }

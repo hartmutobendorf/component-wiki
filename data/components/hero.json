@@ -31,5 +31,18 @@
   ],
   "changeLog": [],
   "decisionLog": [],
-  "mentionedIn": []
+  "mentionedIn": [
+    {
+      "name": "Button",
+      "slug": "button"
+    },
+    {
+      "name": "In-page navigation",
+      "slug": "in-page-navigation"
+    },
+    {
+      "name": "Link",
+      "slug": "link"
+    }
+  ]
 }

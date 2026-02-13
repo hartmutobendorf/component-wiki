@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-02-13T12:50:56.861Z",
+  "fetchedAt": "2026-02-13T16:09:21.865Z",
   "rows": {
     "i-YZ8_13U79t": {
       "rowId": "i-YZ8_13U79t",
@@ -61,14 +61,14 @@
       "rowId": "i-UwVv51ub_P",
       "number": 7,
       "name": "Content area",
-      "description": "The content area contains the main content for each divided block. It supports the same content types and layout options as the Basic section pattern, including text, images, videos, lists, code blocks, logos, and CTA block.",
+      "description": "The content area contains the main content for each [Divided block](wiki-ref://grid-YfHOdsWGM_/i-DUwUcIMqO2). It supports the same content types and layout options as the [Basic section](wiki-ref://grid-ymtdOF6n4R/i-vpN6ETB7hS) pattern, including text, images, videos, lists, code blocks, logos, and CTA block.",
       "component": "i-6vkVdZz0ii"
     },
     "i-uuG193-Pjo": {
       "rowId": "i-uuG193-Pjo",
       "number": 6,
       "name": "Block heading",
-      "description": "The block heading identifies the focus of each divided block.",
+      "description": "The block heading identifies the focus of each [Divided block](wiki-ref://grid-YfHOdsWGM_/i-DUwUcIMqO2).",
       "component": "i-6vkVdZz0ii"
     },
     "i-S0vF32uj2T": {
@@ -159,14 +159,14 @@
       "rowId": "i-YtozLs7HNq",
       "number": 3,
       "name": "Text",
-      "description": "A word or a short phrase that describes the view the user should expect from this segment",
+      "description": "A word or a short phrase that describes the view the user should expect from this [Segment](wiki-ref://grid-YfHOdsWGM_/i-IL5I01Tmw_)",
       "component": "i-aa-F7fGOPL"
     },
     "i-6wwwkJkFFg": {
       "rowId": "i-6wwwkJkFFg",
       "number": 2,
       "name": "Icon",
-      "description": "An optional icon which reinforces the meaning of each segment",
+      "description": "An optional icon which reinforces the meaning of each [Segment](wiki-ref://grid-YfHOdsWGM_/i-IL5I01Tmw_)",
       "component": "i-aa-F7fGOPL"
     },
     "i-IL5I01Tmw_": {
@@ -418,7 +418,7 @@
       "rowId": "i-MBRz3hYevs",
       "number": 2,
       "name": "Chevron",
-      "description": "A chevron that hints to the user that something with more choices will open up upon clicking. Differentiator to the text input element.",
+      "description": "A chevron that hints to the user that something with more choices will open up upon clicking. Differentiator to the [Input](wiki-ref://grid-ymtdOF6n4R/i-9t3OC1fOBH) element.",
       "component": "i-k4_PsQKTUt"
     },
     "i-zd-zxCsTXj": {
@@ -677,7 +677,7 @@
       "rowId": "i-cH4DR1qvck",
       "number": 5,
       "name": "Badge",
-      "description": "The badge can be used to show numerical information. For example the amount of items which fall under a certain filter. See more in the badge documentation.",
+      "description": "The [Badge](wiki-ref://grid-ymtdOF6n4R/i-MOO2SBuaqS) can be used to show numerical information. For example the amount of items which fall under a certain filter. See more in the badge documentation.",
       "component": "i-JVsLc8_nm0"
     },
     "i-kEJgyGtVGd": {
@@ -705,7 +705,7 @@
       "rowId": "i-gSj_yoOAM5",
       "number": 1,
       "name": "Checkmark",
-      "description": "If checked the checkbox shows a checkmark. This checkmark can either be a dash if only children in, for example, a table are selected or a common checkmark if the item itself is selected.",
+      "description": "If checked the checkbox shows a checkmark. This checkmark can either be a dash if only children in, for example, a [Table](wiki-ref://grid-ymtdOF6n4R/i-aUPUyjNgjD) are selected or a common checkmark if the item itself is selected.",
       "component": "i-hES7I02ImG"
     },
     "i-O2YLH2Npwe": {
@@ -719,7 +719,7 @@
       "rowId": "i-Hq-rbE9Ad8",
       "number": 2,
       "name": "Icon right",
-      "description": "The right icon is used less frequently and typically serves a different purpose than the left icon. Rather than providing additional context about the primary action, it usually indicates secondary behavior or UI affordances. For example, a chevron icon might signal that the button opens a contextual menu, or expandable content. This positioning helps users understand that there's additional functionality beyond the main action described in the button text.",
+      "description": "The right icon is used less frequently and typically serves a different purpose than the left icon. Rather than providing additional context about the primary action, it usually indicates secondary behavior or UI affordances. For example, a chevron icon might signal that the button opens a [Contextual menu](wiki-ref://grid-ymtdOF6n4R/i-9dtE-EGtSJ), or expandable content. This positioning helps users understand that there's additional functionality beyond the main action described in the button text.",
       "component": "i-nsWL1xi6H5"
     },
     "i-43iPL8V_N9": {
