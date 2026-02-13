@@ -18,6 +18,8 @@ import type {
   RawDecisionLogTable,
   RawLookupTable,
 } from "@wiki/shared";
+import { resolveAllWikiRefs } from "./resolve-links.js";
+import type { SyncConfig } from "./types.js";
 
 // --- Input shape for denormalize ---
 
@@ -141,7 +143,7 @@ function transformAnatomyPart(row: RawAnatomyRow): AnatomyPart {
 
 // --- Main denormalization ---
 
-export function denormalize(raw: RawData): Component[] {
+export function denormalize(raw: RawData, syncConfig?: SyncConfig): Component[] {
   const {
     components,
     properties,
@@ -274,6 +276,32 @@ export function denormalize(raw: RawData): Component[] {
         ? { image: anatomyImage, table: anatomyParts }
         : undefined;
 
+    // Resolve wiki-ref:// links in markdown content fields to final wiki paths.
+    // This converts source-agnostic references (from coda-sync) into actual
+    // wiki URLs like [Checkbox](/checkbox) for component cross-links.
+    const rawMarkdownFields = {
+      description: comp.description ?? "",
+      usage: comp.usage ?? "",
+      examples: comp.examples ?? "",
+    };
+
+    const allRawTables: Record<string, { rows: Record<string, Record<string, unknown>> }> = {
+      components: components,
+      properties: properties,
+      changelog: changelog,
+      anatomy: anatomy,
+      decisionLog: decisionLog,
+      types: types,
+      tiers: tiers,
+      documentationStatuses: documentationStatuses,
+      propertyTypes: propertyTypes,
+      editors: editors,
+    };
+
+    const resolvedFields = syncConfig
+      ? resolveAllWikiRefs(rawMarkdownFields, syncConfig, allRawTables)
+      : rawMarkdownFields;
+
     // Build component
     const component: Component = {
       name: comp.name,
@@ -284,9 +312,9 @@ export function denormalize(raw: RawData): Component[] {
       lastEdited: comp.lastEdited ?? "",
       figmaLink: comp.figma ?? "",
       codeLink: comp.code ?? "",
-      description: comp.description ?? "",
-      usage: comp.usage ?? "",
-      examples: comp.examples ?? "",
+      description: resolvedFields.description,
+      usage: resolvedFields.usage,
+      examples: resolvedFields.examples,
       figmaComponentData: comp.figmaComponentData ?? "",
       componentExampleImage: resolveImage(comp.componentExampleImage),
       anatomy: anatomyObj,

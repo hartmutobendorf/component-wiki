@@ -1,6 +1,21 @@
 /**
  * HTML content extraction — exports a Coda page as HTML, parses the table,
  * and extracts only the columns listed in htmlColumns config.
+ *
+ * ## Why HTML export exists alongside the API
+ *
+ * The Coda API with `valueFormat: "rich"` is the primary data source — it
+ * returns typed values, proper relation objects with stable rowIds, and
+ * ImageObject references for standalone images.
+ *
+ * However, the API **drops inline images** from text content fields (e.g.,
+ * images embedded within the Usage or Examples text of a component). The
+ * HTML page export preserves these inline images, so we use it specifically
+ * for columns listed in `htmlColumns` config (currently: Usage, Examples).
+ *
+ * The trade-off: HTML links use fragile positional references (e.g., `/r8`)
+ * instead of stable row IDs. Internal link resolution (see `links/resolve.ts`)
+ * handles this by pairing HTML links with API links by text to recover IDs.
  */
 import * as cheerio from "cheerio";
 import type { CodaServices } from "../coda/services";

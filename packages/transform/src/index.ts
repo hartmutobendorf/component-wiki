@@ -11,6 +11,7 @@ import {
   rawLookupTableSchema,
 } from "@wiki/shared";
 import { denormalize, type RawData } from "./denormalize.js";
+import type { SyncConfig } from "./types.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const RAW_DIR = resolve(__dirname, "../../../data/raw");
@@ -57,8 +58,23 @@ async function main() {
       `${Object.keys(raw.decisionLog.rows).length} decision log entries`,
   );
 
+  // Load sync config for wiki-ref:// link resolution.
+  // The config contains table IDs needed to map wiki-ref://tableId/rowId
+  // links to the correct table (components, properties, etc.) and resolve
+  // them to final wiki paths (e.g., [Checkbox](/checkbox)).
+  let syncConfig: SyncConfig | undefined;
+  try {
+    const configPath = resolve(__dirname, "../../coda-sync/coda.config.json");
+    syncConfig = JSON.parse(readFileSync(configPath, "utf-8")) as SyncConfig;
+    console.log("  Loaded coda.config.json for wiki-ref link resolution");
+  } catch {
+    console.warn(
+      "  ⚠️  Could not load coda.config.json — wiki-ref:// links will not be resolved"
+    );
+  }
+
   // Denormalize
-  const components = denormalize(raw);
+  const components = denormalize(raw, syncConfig);
 
   // Validate output and write
   mkdirSync(OUTPUT_DIR, { recursive: true });

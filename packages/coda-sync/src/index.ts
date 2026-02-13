@@ -16,6 +16,10 @@ import {
 import { extractHtmlColumns } from "./html/export";
 import { htmlToMarkdown, replaceImagePlaceholders } from "./html/turndown";
 import { downloadAllImages } from "./html/images";
+import {
+  rewriteLinksToWikiRef,
+  rewriteLinksWithApiPairing,
+} from "./links/resolve";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DATA_RAW_DIR = resolve(__dirname, "../../../data/raw");
@@ -36,18 +40,52 @@ export async function sync() {
   console.log("");
 
   // ── Phase C: Normalize ────────────────────────────────────────
+  // After normalization, we rewrite Coda-internal URLs to wiki-ref:// format
+  // in all text fields. For API-only columns this is straightforward (the API
+  // markdown has stable table/row IDs). For htmlColumns, the API markdown is
+  // retained so it can be used for link pairing in Phase E (see below).
   console.log("Phase C: Normalizing values...");
   const imageCollector = new ImageCollector();
   const normalizedTables: Record<string, Record<string, NormalizedRow>> = {};
 
+  // Collect the set of camelCase keys for htmlColumns per table, so we know
+  // which fields will be overwritten by HTML content and should NOT have their
+  // API version rewritten yet (we need the raw API URLs for pairing).
+  const htmlColumnKeys: Record<string, Set<string>> = {};
+  for (const [tableName, tableConfig] of Object.entries(config.tables)) {
+    if (tableConfig.htmlColumns && tableConfig.htmlColumns.length > 0) {
+      htmlColumnKeys[tableName] = new Set(
+        tableConfig.htmlColumns.map((col) => toCamelCase(col))
+      );
+    }
+  }
+
   for (const [tableName, rows] of Object.entries(rawTables)) {
     const normalized: Record<string, NormalizedRow> = {};
+    const htmlKeys = htmlColumnKeys[tableName];
+
     for (const row of rows) {
       const normalizedRow = normalizeRow(
         row.id,
         row.values as Record<string, unknown>,
         imageCollector
       );
+
+      // Rewrite Coda-internal links to wiki-ref:// in API-only text fields.
+      // Skip htmlColumns fields — those will be handled in Phase E after
+      // HTML content is merged, using API markdown for link pairing.
+      for (const [key, value] of Object.entries(normalizedRow)) {
+        if (typeof value === "string" && key !== "rowId") {
+          if (htmlKeys && htmlKeys.has(key)) {
+            // This field will be overwritten by HTML content in Phase E.
+            // Store the API version for link pairing.
+            normalizedRow[`_apiMarkdown_${key}`] = value;
+          } else {
+            normalizedRow[key] = rewriteLinksToWikiRef(value);
+          }
+        }
+      }
+
       normalized[row.id] = normalizedRow;
     }
     normalizedTables[tableName] = normalized;
@@ -99,8 +137,19 @@ export async function sync() {
         const { markdown, imageUrls } = htmlToMarkdown(html);
         const camelKey = toCamelCase(columnName);
 
+        // Rewrite Coda-internal links in the HTML-derived markdown using
+        // the API version of this field for link pairing. The API markdown
+        // has stable table/row IDs that the HTML export lacks (HTML uses
+        // fragile positional references like /r8). We pair links by text
+        // to recover the IDs, then rewrite to wiki-ref:// format.
+        const apiMarkdownKey = `_apiMarkdown_${camelKey}`;
+        const apiMarkdown = row[apiMarkdownKey] as string | undefined;
+        const rewrittenMarkdown = apiMarkdown
+          ? rewriteLinksWithApiPairing(markdown, apiMarkdown)
+          : markdown;
+
         // Store temporarily for finalization after image download
-        row[`_html_${camelKey}`] = { markdown, imageUrls };
+        row[`_html_${camelKey}`] = { markdown: rewrittenMarkdown, imageUrls };
         allHtmlImageUrls.push(...imageUrls);
       }
     }
@@ -146,6 +195,13 @@ export async function sync() {
           imageUrls
         );
         delete row[key];
+      }
+
+      // Clean up temporary _apiMarkdown_ keys used for link pairing
+      for (const key of Object.keys(row)) {
+        if (key.startsWith("_apiMarkdown_")) {
+          delete row[key];
+        }
       }
 
       // Remap ImageCollector placeholder paths to final downloaded paths
