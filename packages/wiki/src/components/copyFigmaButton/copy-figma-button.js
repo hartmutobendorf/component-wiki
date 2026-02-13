@@ -16,9 +16,9 @@ export class CopyFigmaButtonComponent extends LitElement {
     ]
 
     static properties = {
-        dataPath: {
+        componentId: {
             type: String,
-            attribute: "data-path",
+            attribute: "data-component-id",
         },
         textContent: {
             type: String,
@@ -40,7 +40,7 @@ export class CopyFigmaButtonComponent extends LitElement {
 
     constructor() {
         super()
-        this.dataPath = ""
+        this.componentId = ""
         this.textContent = "Button"
         this.buttonText = "Copy as Figma component"
         this._htmlContent = null
@@ -71,8 +71,8 @@ export class CopyFigmaButtonComponent extends LitElement {
     }
 
     async _preloadData() {
-        if (!this.dataPath) {
-            console.warn("CopyFigmaButton: No data-path provided")
+        if (!this.componentId) {
+            console.warn("CopyFigmaButton: No component-id provided")
             return
         }
 
@@ -84,7 +84,7 @@ export class CopyFigmaButtonComponent extends LitElement {
         this._abortController = new AbortController()
 
         try {
-            const response = await fetch(this.dataPath, {
+            const response = await fetch(`/figma/${this.componentId}`, {
                 signal: this._abortController.signal,
             })
 

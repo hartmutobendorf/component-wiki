@@ -137,7 +137,7 @@ export class LlmButtonComponent extends LitElement {
   _buildPrompt() {
     // GitHub Copilot uses the file path, others use the website URL
     if (this._selectedProvider === "copilot") {
-      const githubFilePath = `@dgtlntv/component-wiki/app/src/content/md/${this.componentId}/llm.mdx`;
+      const githubFilePath = `@dgtlntv/component-wiki/data/components/${this.componentId}.json`;
       const prompt = `${githubFilePath}
 
 Please analyze the component documentation in this file and help me understand this component and answer any questions I have about it.`;
@@ -145,7 +145,7 @@ Please analyze the component documentation in this file and help me understand t
     }
 
     const baseUrl = window.location.origin || "https://component.wiki";
-    const markdownUrl = `${baseUrl}/md/${this.componentId}/llm.mdx`;
+    const markdownUrl = `${baseUrl}/${this.componentId}.md`;
 
     const prompt = `Please fetch and analyze the component documentation from the following URL: ${markdownUrl}
 

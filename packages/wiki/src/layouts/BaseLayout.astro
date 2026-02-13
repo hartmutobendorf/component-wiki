@@ -42,11 +42,13 @@ const groupedComponents = components.reduce(
   >,
 );
 
-// Create nav items
+// Create nav items, sorted alphabetically within each group
 const navItems = typeOrder
   .map((type) => ({
     type,
-    items: groupedComponents[type] || [],
+    items: (groupedComponents[type] || []).sort((a, b) =>
+      a.name.localeCompare(b.name),
+    ),
   }))
   .filter((group) => group.items.length > 0);
 ---

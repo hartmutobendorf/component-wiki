@@ -3,7 +3,7 @@ import { getCollection, getEntry } from "astro:content";
 import FigmaLink from "../components/FigmaLink.astro";
 import GithubLink from "../components/GithubLink.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
-import MarkdownImage from "../components/MarkdownImage.astro";
+import { renderMarkdown } from "../utils/render-markdown";
 
 // Generate paths for all components
 export async function getStaticPaths() {
@@ -21,44 +21,14 @@ const { componentId } = Astro.props;
 const component = await getEntry("components", componentId);
 const metadata = component.data;
 
-// Import markdown files using glob
-const markdownModules = import.meta.glob("../content/md/*/*.{md,mdx}");
+// Render markdown sections
+const descriptionHtml = renderMarkdown(metadata.description);
+const usageHtml = renderMarkdown(metadata.usage);
+const examplesHtml = renderMarkdown(metadata.examples);
 
-// Custom components for markdown rendering
-const components = {
-  img: MarkdownImage,
-};
-
-// Helper to load and render markdown
-async function loadMarkdownSection(section: string) {
-  const path = `../content/md/${componentId}/${section}.mdx`;
-  const module = markdownModules[path];
-
-  if (!module) {
-    return { hasContent: false, Content: null };
-  }
-
-  try {
-    const loaded = await module();
-    const Content = (loaded as any).default || (loaded as any).Content;
-
-    // For MDX files, if Content exists, assume it has content
-    // We can't easily check rawContent for MDX
-    const hasActualContent = Content != null;
-
-    return {
-      hasContent: hasActualContent,
-      Content: hasActualContent ? Content : null,
-    };
-  } catch (error) {
-    console.error(`Error loading ${section}:`, error);
-    return { hasContent: false, Content: null };
-  }
-}
-
-const description = await loadMarkdownSection("description");
-const usage = await loadMarkdownSection("usage");
-const examples = await loadMarkdownSection("examples");
+const hasDescription = descriptionHtml.length > 0;
+const hasUsage = usageHtml.length > 0;
+const hasExamples = examplesHtml.length > 0;
 ---
 
 <BaseLayout
@@ -73,7 +43,7 @@ const examples = await loadMarkdownSection("examples");
           <a class="p-table-of-contents__link" href="#metadata">Metadata</a>
         </li>
         {
-          description.hasContent && (
+          hasDescription && (
             <li class="p-table-of-contents__item">
               <a class="p-table-of-contents__link" href="#description">
                 Description
@@ -94,7 +64,7 @@ const examples = await loadMarkdownSection("examples");
             )
         }
         {
-          usage.hasContent && (
+          hasUsage && (
             <li class="p-table-of-contents__item">
               <a class="p-table-of-contents__link" href="#usage">
                 Usage
@@ -103,7 +73,7 @@ const examples = await loadMarkdownSection("examples");
           )
         }
         {
-          examples.hasContent && (
+          hasExamples && (
             <li class="p-table-of-contents__item">
               <a class="p-table-of-contents__link" href="#examples">
                 Examples
@@ -155,9 +125,9 @@ const examples = await loadMarkdownSection("examples");
   <div class="row--50-50 p-section">
     <div class="col">
       {
-        description.hasContent && description.Content && (
+        hasDescription && (
           <section id="description" class="u-text-max-width">
-            <description.Content components={components} />
+            <Fragment set:html={descriptionHtml} />
 
             <div class="metadata-list">
               <div class="metadata-item">
@@ -195,9 +165,9 @@ const examples = await loadMarkdownSection("examples");
                 {metadata.codeLink && <GithubLink href={metadata.codeLink} />}
               </div>
 
-              {metadata.figmaComponentDataPath && (
+              {metadata.figmaComponentData && (
                 <copy-figma-button
-                  data-path={`/${metadata.figmaComponentDataPath}`}
+                  data-component-id={componentId}
                   text-content={metadata.name}
                 />
               )}
@@ -274,19 +244,19 @@ const examples = await loadMarkdownSection("examples");
   <div class="row--50-50 p-section">
     <div class="col">
       {
-        usage.hasContent && usage.Content && (
+        hasUsage && (
           <section id="usage" class="u-text-max-width">
             <h2>Usage</h2>
-            <usage.Content components={components} />
+            <Fragment set:html={usageHtml} />
           </section>
         )
       }
 
       {
-        examples.hasContent && examples.Content && (
+        hasExamples && (
           <section id="examples" class="u-text-max-width">
             <h2>Examples</h2>
-            <examples.Content components={components} />
+            <Fragment set:html={examplesHtml} />
           </section>
         )
       }
