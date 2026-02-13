@@ -1,0 +1,127 @@
+{
+  "name": "CTA section",
+  "slug": "cta-section",
+  "type": "Pattern",
+  "tiers": "Sites",
+  "documentationStatus": "Minimal",
+  "lastEdited": "2026-02-10T08:16:28.588+00:00",
+  "figmaLink": "https://www.figma.com/design/1brHCsyeTE6FU7hfJd6ao2/%F0%9F%8C%90-Sites---Core-component-library?node-id=211-14507",
+  "codeLink": "https://github.com/canonical/vanilla-framework/blob/main/templates/_macros/vf_cta-section.jinja",
+  "description": "The CTA section is a prominent and visually engaging section designed to encourage users to take a clear next step. It combines a concise copy and one or more call-to-action elements into a focused layout that stands out from surrounding content. This pattern is typically used mid-page or near the end of a page to re-engage users and guide them toward a specific action such as downloading resources, contacting sales, or exploring key documentation. The CTA section helps reduce decision friction by clearly communicating what the action is and why it matters now.",
+  "usage": "Use the CTA section to highlight a clear, intentional next step within the page flow. This pattern is designed to create a moment of focus, helping users transition from consuming information to taking action.  \nCTA sections are typically placed mid-page or near the end of a page, where users have enough context to understand the value of the action being proposed.\n\nThe CTA section should represent a single primary intent. Any supporting text or additional elements should reinforce this intent rather than introduce new topics.\n\n  \n\n### When to use\n\n*   A specific user action is the primary purpose of the section, not a secondary affordance.\n*   You need to visually separate a call to action from surrounding content to increase emphasis.\n\n### When not to use\n\n*   If long-form explanatory content is needed, use a Basic section with the CTA block instead.\n*   The CTA appears too early in the page flow, before users have sufficient context to understand its value.",
+  "examples": "### Layout\n\n100(Default)\n\n![example-1.png](images/91dbd4d1-9127-4af6-a5f2-ecac0bb5e025.png)\n\n100(CTA block)\n\n![example-4.png](images/6b1f24e4-2c7d-41a4-9d26-e10ad5711ffb.png)\n\n25/75(Default)\n\n![example.png](images/5a8ada2a-e6b0-4da5-8b10-23f2eeded306.png)\n\n25/75(CTA block)\n\n![example-5.png](images/93611725-09b9-4abf-8bc9-1f22ad2f6d08.png)\n\n### Responsive\n\nMedium dimension (Default)\n\n![example-2.png](images/30f12b21-05f3-407a-b73e-08fa2e7dec65.png)\n\nMedium dimension (CTA block)\n\n![example-6.png](images/6aff2ccf-3886-4bb7-963b-934e3f00ad2b.png)\n\nSmall dimension (Default)\n\n![example-3.png](images/1d6588bd-3cac-4ca7-9882-61ef3fa00908.png)\n\nSmall dimension (CTA block)\n\n![example-7.png](images/a05fbf92-ac4e-4828-8ae9-7ac12edd7dfc.png)",
+  "interactions": "",
+  "figmaComponentData": "",
+  "componentExampleImage": "images/c67513bb-e293-4f5a-91e8-5dcfe37ee2b8.png",
+  "anatomy": {
+    "image": "images/4b0c7faf-ac31-47fa-bd73-023a04c663a2.png",
+    "table": [
+      {
+        "number": 1,
+        "name": "Rule",
+        "description": "The rule component indicates the beginning of a new section."
+      },
+      {
+        "number": 2,
+        "name": "Heading",
+        "description": "A concise, action-oriented heading that communicates the purpose of the call to action."
+      },
+      {
+        "number": 3,
+        "name": "CTA",
+        "description": "The interactive element(s) that trigger the intended action. Depending on the variant, this may appear as:\n\n- One or more inline text links (link-style CTA), or\n- A dedicated CTA block containing buttons or structured actions\n\nThis element is required and represents the functional core of the CTA section."
+      },
+      {
+        "number": 4,
+        "name": "Body",
+        "description": "Optional supplementary body text used to explain the reason for the action.  \nThis element is available only in the *block* variant and appears directly beneath the heading."
+      }
+    ]
+  },
+  "properties": [
+    {
+      "name": "Section rule",
+      "required": true,
+      "type": "single select",
+      "description": "The rule component indicates the beginning of a new pattern",
+      "constraint": "Only use the default style for the section-level rule",
+      "defaultOption": "default",
+      "options": [
+        "default"
+      ]
+    },
+    {
+      "name": "Link CTA",
+      "required": false,
+      "type": "string",
+      "description": "The text link used for contextual actions or pathways to more information. It uses a chevron (›) to indicate navigation to additional content or pages.",
+      "constraint": "Up to 60 characters",
+      "defaultOption": ""
+    },
+    {
+      "name": "Top padding",
+      "required": true,
+      "type": "single select",
+      "description": "The type of padding applied to the top of the pattern after the section rule",
+      "constraint": "",
+      "defaultOption": "deep"
+    },
+    {
+      "name": "Bottom padding",
+      "required": true,
+      "type": "single select",
+      "description": "The type of padding applied to the bottom of the pattern",
+      "constraint": "",
+      "defaultOption": "deep"
+    },
+    {
+      "name": "Heading",
+      "required": false,
+      "type": "string",
+      "description": "8-column width heading using H2",
+      "constraint": "Up to 60 characters",
+      "defaultOption": ""
+    },
+    {
+      "name": "Body",
+      "required": false,
+      "type": "string",
+      "description": "4-column width body text",
+      "constraint": "300 (As part of a highlighted section, the content should be limited to a single sentence.)",
+      "defaultOption": ""
+    }
+  ],
+  "childProperties": [
+    {
+      "name": "CTA block",
+      "properties": [
+        {
+          "name": "Link CTA",
+          "required": false,
+          "type": "string",
+          "description": "The text link used for contextual actions or pathways to more information. It uses a chevron (›) to indicate navigation to additional content or pages.",
+          "constraint": "Up to 60 characters",
+          "defaultOption": ""
+        },
+        {
+          "name": "Primary CTA",
+          "required": false,
+          "type": "string",
+          "description": "The CTA used with the positive button style. It indicates a high-priority, positive action and is reserved for hero areas or other key call-to-action sections.",
+          "constraint": "Up to 20 characters",
+          "defaultOption": ""
+        },
+        {
+          "name": "Secondary CTA",
+          "required": false,
+          "type": "string",
+          "description": "The CTA using the default button style. It is used for most actions that are positive but not primary, and may serve as the main CTA in non-hero sections.",
+          "constraint": "Up to 20 characters",
+          "defaultOption": ""
+        }
+      ]
+    }
+  ],
+  "changeLog": [],
+  "decisionLog": []
+}

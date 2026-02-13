@@ -1,0 +1,83 @@
+{
+  "fetchedAt": "2026-02-13T12:35:41.337Z",
+  "rows": {
+    "i-vAGSibtHRr": {
+      "rowId": "i-vAGSibtHRr",
+      "name": "Minimal ",
+      "components": [
+        "i-oIOmJPwz-S",
+        "i-MOO2SBuaqS",
+        "i-nMXFKxR44N",
+        "i-nsWL1xi6H5",
+        "i-hES7I02ImG",
+        "i-JVsLc8_nm0",
+        "i-9dtE-EGtSJ",
+        "i-9t3OC1fOBH",
+        "i-LVgLIPfo6Z",
+        "i-LYZ4XyOt-O",
+        "i-kzPA2kabPA",
+        "i-k4_PsQKTUt",
+        "i-I09Xg2rXPg",
+        "i-YIkBkUT4ZS",
+        "i-uIQULVt2eZ",
+        "i-FgQOUawQ2g",
+        "i-0Z_OLuJDCc",
+        "i-YbRxZruWIu",
+        "i-oWJdMiuIb4",
+        "i-O69ixYm_Ee",
+        "i-6vkVdZz0ii",
+        "i-vpN6ETB7hS",
+        "i-plkjzhg8m1"
+      ],
+      "description": "The documentation has the minimal needed sections:\n\n- Description\n- Anatomy\n- Usage\n- Properties\n- Metadata\n\n\n\nHas been reviewed by at least one other person and follows Canonical style guide."
+    },
+    "i-Ag-7TNXl9R": {
+      "rowId": "i-Ag-7TNXl9R",
+      "name": "All good",
+      "components": [],
+      "description": "The documentation has content for all possible sections, has been reviewed by multiple people and its writing follows the Canonical style guide."
+    },
+    "i-REdgNZSzOs": {
+      "rowId": "i-REdgNZSzOs",
+      "name": "Unclear",
+      "components": [],
+      "description": "It is not clear in which state the documentation for this component is currently in."
+    },
+    "i-F1Xw9Bqd8p": {
+      "rowId": "i-F1Xw9Bqd8p",
+      "name": "Needs work",
+      "components": [
+        "i-ur5nTty1E1",
+        "i-0HDSYo-iyI",
+        "i-cgTm31OtA9",
+        "i-qxrdEI_jxI",
+        "i-aa-F7fGOPL",
+        "i-Yr-MKv1jbf",
+        "i-PJTyZ77is5",
+        "i-K1FTmoSxdo",
+        "i-S0DpOp5ECr",
+        "i-tuS5YgvrGJ",
+        "i-yQrLWRZ945",
+        "i-nslqMCF7EQ",
+        "i-JZBi9ESLvH",
+        "i-s27nSmifM3",
+        "i-cn19jqZNBr",
+        "i-c3Pi4CEcZV",
+        "i-kIPkdAErqW",
+        "i-VDemBEWUNA",
+        "i-YArgfP7o_q",
+        "i-eoOMJgGK_d",
+        "i-KtIvN04WN9",
+        "i--w8-6ot1a8",
+        "i-xUFwNsfx30",
+        "i-If5dFjalAR",
+        "i-fhZD60Hwqn",
+        "i-aUPUyjNgjD",
+        "i-If3N15kC6H",
+        "i-LbP9pdhuJw",
+        "i-5BuOzbNcXV"
+      ],
+      "description": "Either no documentation for this component exists or its in a state that is not usable."
+    }
+  }
+}

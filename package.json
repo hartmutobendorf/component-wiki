@@ -1,0 +1,22 @@
+{
+  "name": "component-wiki",
+  "private": true,
+  "scripts": {
+    "sync": "pnpm --filter @wiki/coda-sync start",
+    "transform": "pnpm --filter @wiki/transform start",
+    "pipeline": "pnpm sync && pnpm transform",
+    "dev": "pnpm --filter @wiki/app dev",
+    "build": "pnpm pipeline && pnpm --filter @wiki/app build",
+    "build:app": "pnpm --filter @wiki/app build",
+    "preview": "pnpm --filter @wiki/app preview",
+    "test": "pnpm -r test",
+    "test:watch": "pnpm -r --parallel test:watch",
+    "test:coverage": "pnpm -r test:coverage",
+    "typecheck": "pnpm --filter @wiki/app typecheck && pnpm --filter '!@wiki/app' -r --parallel exec tsc --noEmit",
+    "clean": "rm -rf packages/*/dist packages/*/.astro packages/*/coverage"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "packageManager": "pnpm@10.28.0+sha512.05df71d1421f21399e053fde567cea34d446fa02c76571441bfc1c7956e98e363088982d940465fd34480d4d90a0668bc12362f8aa88000a64e83d0b0e47be48"
+}

@@ -180,3 +180,5 @@ output/
 # Python stuff
 __pycache__/
 .venv/
+
+.claude

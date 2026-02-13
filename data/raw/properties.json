@@ -1,0 +1,1625 @@
+{
+  "fetchedAt": "2026-02-13T12:35:41.334Z",
+  "rows": {
+    "i-MOYVJ4LSRp": {
+      "rowId": "i-MOYVJ4LSRp",
+      "name": "Divided block heading",
+      "required": false,
+      "type": "i-E9ZaIqQXvg",
+      "description": "4-column width H5 heading for each divided block item",
+      "constraint": "Up to 160 characters",
+      "options": "true, false",
+      "defaultOption": "true",
+      "component": [
+        "i-6vkVdZz0ii"
+      ]
+    },
+    "i-1I3PPX3MjA": {
+      "rowId": "i-1I3PPX3MjA",
+      "name": "Block rule",
+      "required": true,
+      "type": "i-cVu2UuOKT2",
+      "description": "The rule component to separate each  block",
+      "constraint": "",
+      "options": "mute",
+      "defaultOption": "mute",
+      "component": [
+        "i-6vkVdZz0ii"
+      ]
+    },
+    "i-FUhmj1pL0D": {
+      "rowId": "i-FUhmj1pL0D",
+      "name": "Block heading bullet style",
+      "required": false,
+      "type": "i-We9i4W9Klo",
+      "description": "The block heading bullet style defines how the block heading is visually presented within each divided block. When the bullet option is used, an additional 32px indent is applied to the content area below the heading to align the content visually with the bullet marker.",
+      "constraint": "",
+      "options": "number, bullet, status, none",
+      "defaultOption": "number",
+      "component": [
+        "i-6vkVdZz0ii"
+      ]
+    },
+    "i-09DPWOCRi-": {
+      "rowId": "i-09DPWOCRi-",
+      "name": "Body",
+      "required": false,
+      "type": "i-E9ZaIqQXvg",
+      "description": "2-column width body text",
+      "constraint": "300 (As part of a highlighted section, the content should be limited to a single sentence.)",
+      "options": "",
+      "defaultOption": "",
+      "component": [
+        "i-O69ixYm_Ee"
+      ]
+    },
+    "i-a0Bo-Iqzms": {
+      "rowId": "i-a0Bo-Iqzms",
+      "name": "Data spotlight block",
+      "required": true,
+      "type": "i-cVu2UuOKT2",
+      "description": "This block consists of the required highlight rule, stat, along with an optional headline, description and link.\n2, 3 or 4 blocks can be used within the pattern.\nThe height is determined by the item with the longest line in the same row.",
+      "constraint": "",
+      "options": "2 blocks, 3 blocks, 4 blocks",
+      "defaultOption": "",
+      "component": [
+        "i-O69ixYm_Ee"
+      ]
+    },
+    "i-Z264r0ZcE6": {
+      "rowId": "i-Z264r0ZcE6",
+      "name": "Headline",
+      "required": false,
+      "type": "i-E9ZaIqQXvg",
+      "description": "Optional 2-column width headline text with H3 style for each stat.",
+      "constraint": "Up to 20 characters",
+      "options": "",
+      "defaultOption": "",
+      "component": [
+        "i-O69ixYm_Ee"
+      ]
+    },
+    "i-czHXhyOes7": {
+      "rowId": "i-czHXhyOes7",
+      "name": "Block rule",
+      "required": true,
+      "type": "i-cVu2UuOKT2",
+      "description": "The rule component used to emphasize each data block and create separation.",
+      "constraint": "",
+      "options": "highlight",
+      "defaultOption": "highlight",
+      "component": [
+        "i-O69ixYm_Ee"
+      ]
+    },
+    "i-MwwTQj1_5S": {
+      "rowId": "i-MwwTQj1_5S",
+      "name": "Numeric stat",
+      "required": true,
+      "type": "i-E9ZaIqQXvg",
+      "description": "2-column width stat text with H1 style ",
+      "constraint": "Up to 10 characters",
+      "options": "",
+      "defaultOption": "",
+      "component": [
+        "i-O69ixYm_Ee"
+      ]
+    },
+    "i-3qB20NC0aH": {
+      "rowId": "i-3qB20NC0aH",
+      "name": "Text",
+      "required": true,
+      "type": "i-E9ZaIqQXvg",
+      "description": "The code that is being shown inside of the code component.",
+      "constraint": "",
+      "options": "",
+      "defaultOption": "",
+      "component": [
+        "i-cgTm31OtA9"
+      ]
+    },
+    "i-y0yMk1h_B6": {
+      "rowId": "i-y0yMk1h_B6",
+      "name": "Segment state",
+      "required": false,
+      "type": "i-We9i4W9Klo",
+      "description": "The states a segment can be in",
+      "constraint": "",
+      "options": "Default, hover, active",
+      "defaultOption": "default",
+      "component": [
+        "i-aa-F7fGOPL"
+      ]
+    },
+    "i-WCAFH96SBO": {
+      "rowId": "i-WCAFH96SBO",
+      "name": "Segment icon",
+      "required": false,
+      "type": "i-We9i4W9Klo",
+      "description": "The icon that is being shown as a part of a segment",
+      "constraint": "",
+      "options": "All icons in Vanilla",
+      "defaultOption": "",
+      "component": [
+        "i-aa-F7fGOPL"
+      ]
+    },
+    "i-WkO6dvh0Zd": {
+      "rowId": "i-WkO6dvh0Zd",
+      "name": "Segment text",
+      "required": false,
+      "type": "i-E9ZaIqQXvg",
+      "description": "The text that is displayed for a segment",
+      "constraint": "",
+      "options": "",
+      "defaultOption": "",
+      "component": [
+        "i-aa-F7fGOPL"
+      ]
+    },
+    "i-j9y-dxGOfC": {
+      "rowId": "i-j9y-dxGOfC",
+      "name": "State",
+      "required": false,
+      "type": "i-We9i4W9Klo",
+      "description": "",
+      "constraint": "",
+      "options": "default, hover, active, disabled",
+      "defaultOption": "default",
+      "component": [
+        "i-qxrdEI_jxI"
+      ]
+    },
+    "i-cGHKnAgexo": {
+      "rowId": "i-cGHKnAgexo",
+      "name": "Placeholder text",
+      "required": false,
+      "type": "i-E9ZaIqQXvg",
+      "description": "The placeholder text should specify what the scope of the search is. It should always include the word e.g. “Search machines”.",
+      "constraint": "Include “Search” at the beginning of the placeholder string.",
+      "options": "",
+      "defaultOption": "Search",
+      "component": [
+        "i-qxrdEI_jxI"
+      ]
+    },
+    "i-wVjIq_c2Dm": {
+      "rowId": "i-wVjIq_c2Dm",
+      "name": "Pages data",
+      "required": true,
+      "type": "i-cVu2UuOKT2",
+      "description": "The data of the pages that should be paginated",
+      "constraint": "",
+      "options": "",
+      "defaultOption": "",
+      "component": [
+        "i-ur5nTty1E1"
+      ]
+    },
+    "i-ybVDAZi666": {
+      "rowId": "i-ybVDAZi666",
+      "name": "",
+      "required": false,
+      "type": "",
+      "description": "",
+      "constraint": "",
+      "options": "",
+      "defaultOption": "",
+      "component": []
+    },
+    "i-5YLRgsaMwK": {
+      "rowId": "i-5YLRgsaMwK",
+      "name": "Show/hide numbered pages",
+      "required": false,
+      "type": "i-YtFbduYGgp",
+      "description": "To show or hide the numbered pages ",
+      "constraint": "",
+      "options": "Show, hide",
+      "defaultOption": "Show",
+      "component": [
+        "i-ur5nTty1E1"
+      ]
+    },
+    "i-WBF8Re5GF_": {
+      "rowId": "i-WBF8Re5GF_",
+      "name": "Top padding",
+      "required": true,
+      "type": "i-We9i4W9Klo",
+      "description": "The type of padding applied to the top of the pattern after the section rule",
+      "constraint": "",
+      "options": "",
+      "defaultOption": "deep",
+      "component": [
+        "i-oWJdMiuIb4"
+      ]
+    },
+    "i-Nu4t1mXwq0": {
+      "rowId": "i-Nu4t1mXwq0",
+      "name": "Body",
+      "required": false,
+      "type": "i-E9ZaIqQXvg",
+      "description": "4-column width body text",
+      "constraint": "300 (As part of a highlighted section, the content should be limited to a single sentence.)",
+      "options": "",
+      "defaultOption": "",
+      "component": [
+        "i-oWJdMiuIb4"
+      ]
+    },
+    "i-yw72a-Tyqn": {
+      "rowId": "i-yw72a-Tyqn",
+      "name": "Heading",
+      "required": false,
+      "type": "i-E9ZaIqQXvg",
+      "description": "8-column width heading using H2",
+      "constraint": "Up to 60 characters",
+      "options": "",
+      "defaultOption": "",
+      "component": [
+        "i-oWJdMiuIb4"
+      ]
+    },
+    "i-jmOqmVZKG8": {
+      "rowId": "i-jmOqmVZKG8",
+      "name": "Resizing direction",
+      "required": false,
+      "type": "i-We9i4W9Klo",
+      "description": "Whether the box resizes horizontally, vertically or both",
+      "constraint": "",
+      "options": "horizontal, vertical, both",
+      "defaultOption": "vertical",
+      "component": [
+        "i-uIQULVt2eZ"
+      ]
+    },
+    "i-wLQxq62qOy": {
+      "rowId": "i-wLQxq62qOy",
+      "name": "Placeholder",
+      "required": false,
+      "type": "i-E9ZaIqQXvg",
+      "description": "The placeholder text that is being shown if there has not been any text that has been entered yet.",
+      "constraint": "",
+      "options": "",
+      "defaultOption": "",
+      "component": [
+        "i-uIQULVt2eZ"
+      ]
+    },
+    "i-J-oUyLWh6G": {
+      "rowId": "i-J-oUyLWh6G",
+      "name": "Text",
+      "required": false,
+      "type": "i-E9ZaIqQXvg",
+      "description": "The text that is in the input field. ",
+      "constraint": "",
+      "options": "",
+      "defaultOption": "",
+      "component": [
+        "i-uIQULVt2eZ"
+      ]
+    },
+    "i-woYsBaZyJX": {
+      "rowId": "i-woYsBaZyJX",
+      "name": "Size",
+      "required": false,
+      "type": "i-We9i4W9Klo",
+      "description": "The vertical density of the input element",
+      "constraint": "",
+      "options": "default, dense",
+      "defaultOption": "default",
+      "component": [
+        "i-uIQULVt2eZ"
+      ]
+    },
+    "i-me5V9qs8zv": {
+      "rowId": "i-me5V9qs8zv",
+      "name": "Input validation text",
+      "required": false,
+      "type": "i-E9ZaIqQXvg",
+      "description": "If the input is being validated the outcome / reason of the input validation",
+      "constraint": "",
+      "options": "",
+      "defaultOption": "",
+      "component": [
+        "i-uIQULVt2eZ"
+      ]
+    },
+    "i-1RzFJ9XHPB": {
+      "rowId": "i-1RzFJ9XHPB",
+      "name": "Input validation type",
+      "required": false,
+      "type": "i-We9i4W9Klo",
+      "description": "If the input is being validated what type of input validation it is.",
+      "constraint": "",
+      "options": "none, error, warning, positive",
+      "defaultOption": "none",
+      "component": [
+        "i-uIQULVt2eZ"
+      ]
+    },
+    "i-1odFNLbGGE": {
+      "rowId": "i-1odFNLbGGE",
+      "name": "State",
+      "required": false,
+      "type": "i-We9i4W9Klo",
+      "description": "The state the input is currently in.",
+      "constraint": "",
+      "options": "default, hover, active, disabled",
+      "defaultOption": "default",
+      "component": [
+        "i-uIQULVt2eZ"
+      ]
+    },
+    "i-lO5GGD8ZEx": {
+      "rowId": "i-lO5GGD8ZEx",
+      "name": "Resizable",
+      "required": false,
+      "type": "i-YtFbduYGgp",
+      "description": "Whether the box is resizable by the user or not",
+      "constraint": "",
+      "options": "",
+      "defaultOption": "true",
+      "component": [
+        "i-uIQULVt2eZ"
+      ]
+    },
+    "i-266fCPybLu": {
+      "rowId": "i-266fCPybLu",
+      "name": "Levels",
+      "required": false,
+      "type": "i-We9i4W9Klo",
+      "description": "How many levels of anchor links to show.",
+      "constraint": "",
+      "options": "1, 2, 3",
+      "defaultOption": "1",
+      "component": [
+        "i-Yr-MKv1jbf"
+      ]
+    },
+    "i-w-wtCXptAi": {
+      "rowId": "i-w-wtCXptAi",
+      "name": "Soft",
+      "required": false,
+      "type": "i-YtFbduYGgp",
+      "description": "Wether the icon is soft or not. The soft version makes the link be styled in the same way as default text. Only on hover does it have the default link styling.",
+      "constraint": "",
+      "options": "",
+      "defaultOption": "false",
+      "component": [
+        "i-LVgLIPfo6Z"
+      ]
+    },
+    "i-CgqiwIgb75": {
+      "rowId": "i-CgqiwIgb75",
+      "name": "Heading",
+      "required": true,
+      "type": "i-E9ZaIqQXvg",
+      "description": "2-column width heading using muted heading",
+      "constraint": "Up to 60 characters",
+      "options": "",
+      "defaultOption": "",
+      "component": [
+        "i-YbRxZruWIu",
+        "i-kIPkdAErqW",
+        "i-O69ixYm_Ee"
+      ]
+    },
+    "i-azZwJgymiG": {
+      "rowId": "i-azZwJgymiG",
+      "name": "Citation date",
+      "required": false,
+      "type": "i-E9ZaIqQXvg",
+      "description": "Publishing date in the citation format “DD Month YYYY”",
+      "constraint": "",
+      "options": "",
+      "defaultOption": "",
+      "component": [
+        "i-5BuOzbNcXV"
+      ]
+    },
+    "i-jxLNRms9kn": {
+      "rowId": "i-jxLNRms9kn",
+      "name": "Citation author",
+      "required": false,
+      "type": "i-E9ZaIqQXvg",
+      "description": "Author name text in the citation",
+      "constraint": "Up to 20 characters",
+      "options": "",
+      "defaultOption": "",
+      "component": [
+        "i-5BuOzbNcXV"
+      ]
+    },
+    "i-XqJY1VJ9wz": {
+      "rowId": "i-XqJY1VJ9wz",
+      "name": "Citation",
+      "required": false,
+      "type": "i-cVu2UuOKT2",
+      "description": "Author/date field in small text and supports showing either or both.",
+      "constraint": "",
+      "options": "",
+      "defaultOption": "",
+      "component": [
+        "i-5BuOzbNcXV"
+      ]
+    },
+    "i-foiukkaDYH": {
+      "rowId": "i-foiukkaDYH",
+      "name": "Article description",
+      "required": false,
+      "type": "i-E9ZaIqQXvg",
+      "description": "Description text for the article\nDynamic: displays the first 180 characters of the article. \nStatic: a custom description should be provided.",
+      "constraint": "Dynamic: 180 characters (with the truncation)\nStatic: up to 300 characters",
+      "options": "",
+      "defaultOption": "",
+      "component": [
+        "i-5BuOzbNcXV"
+      ]
+    },
+    "i-SUctfercEw": {
+      "rowId": "i-SUctfercEw",
+      "name": "Image",
+      "required": false,
+      "type": "i-cVu2UuOKT2",
+      "description": "Cover image for the article. In the blog pattern, it is required and falls back to a default image when not provided. In the resources pattern, it supports 16:9 image, logo, or none as options.",
+      "constraint": "",
+      "options": "",
+      "defaultOption": "",
+      "component": [
+        "i-5BuOzbNcXV"
+      ]
+    },
+    "i-P_mLTVA5ln": {
+      "rowId": "i-P_mLTVA5ln",
+      "name": "Article title",
+      "required": true,
+      "type": "i-E9ZaIqQXvg",
+      "description": "Title configuration for the article",
+      "constraint": "Dynamic: -\nStatic: up to 100 characters",
+      "options": "",
+      "defaultOption": "",
+      "component": [
+        "i-5BuOzbNcXV"
+      ]
+    },
+    "i-Wu7j-wCYzi": {
+      "rowId": "i-Wu7j-wCYzi",
+      "name": "Number of articles",
+      "required": false,
+      "type": "i-We9i4W9Klo",
+      "description": "It determines the number of articles to display in the section.",
+      "constraint": "",
+      "options": "3-block, 4-block",
+      "defaultOption": "4-block",
+      "component": [
+        "i-YbRxZruWIu"
+      ]
+    },
+    "i-RUitcv2Zfv": {
+      "rowId": "i-RUitcv2Zfv",
+      "name": "Content loading strategies",
+      "required": true,
+      "type": "i-cVu2UuOKT2",
+      "description": "The blog pattern supports two content loading strategies:\n\n- Dynamic content:  Articles are loaded asynchronously using a template  \nStatic content: Articles are passed directly to the pattern",
+      "constraint": "",
+      "options": "dinamic, static",
+      "defaultOption": "",
+      "component": [
+        "i-YbRxZruWIu"
+      ]
+    },
+    "i-ezoGa1yHqn": {
+      "rowId": "i-ezoGa1yHqn",
+      "name": "Validation text",
+      "required": false,
+      "type": "i-E9ZaIqQXvg",
+      "description": "The text that is shown if the select is in a validation describing the reason for the validation state.",
+      "constraint": "",
+      "options": "",
+      "defaultOption": "",
+      "component": [
+        "i-k4_PsQKTUt"
+      ]
+    },
+    "i-nOFjdEzRa8": {
+      "rowId": "i-nOFjdEzRa8",
+      "name": "Validation state",
+      "required": false,
+      "type": "i-We9i4W9Klo",
+      "description": "Wether the component is in a validation state and if provided in which validation state the component is.",
+      "constraint": "",
+      "options": "warning, error, success",
+      "defaultOption": "",
+      "component": [
+        "i-k4_PsQKTUt"
+      ]
+    },
+    "i-9kRQqIGceN": {
+      "rowId": "i-9kRQqIGceN",
+      "name": "Select options",
+      "required": true,
+      "type": "i-cVu2UuOKT2",
+      "description": "The list of options a user can select from.",
+      "constraint": "",
+      "options": "",
+      "defaultOption": "",
+      "component": [
+        "i-k4_PsQKTUt"
+      ]
+    },
+    "i-OF3JZdQjJC": {
+      "rowId": "i-OF3JZdQjJC",
+      "name": "Block bottom padding",
+      "required": false,
+      "type": "i-We9i4W9Klo",
+      "description": "The type of padding applied to the block",
+      "constraint": "The last block of the pattern must not have bottom padding.",
+      "options": "none, shallow",
+      "defaultOption": "none",
+      "component": [
+        "i-vpN6ETB7hS",
+        "i-6vkVdZz0ii"
+      ]
+    },
+    "i-xkOu6bV2YX": {
+      "rowId": "i-xkOu6bV2YX",
+      "name": "Show external link icon",
+      "required": false,
+      "type": "i-YtFbduYGgp",
+      "description": "Wether to show the external link icon (if it is an external link).",
+      "constraint": "",
+      "options": "",
+      "defaultOption": "false",
+      "component": [
+        "i-LVgLIPfo6Z"
+      ]
+    },
+    "i-gwZqhG-atb": {
+      "rowId": "i-gwZqhG-atb",
+      "name": "Action",
+      "required": false,
+      "type": "i-pfnARENBci",
+      "description": "The action that should be performed if this command link is used.",
+      "constraint": "",
+      "options": "",
+      "defaultOption": "",
+      "component": [
+        "i-LVgLIPfo6Z"
+      ]
+    },
+    "i-_gumptI4S0": {
+      "rowId": "i-_gumptI4S0",
+      "name": "Target",
+      "required": false,
+      "type": "i-E9ZaIqQXvg",
+      "description": "Where the user should be linked to (if it is a navigational link).",
+      "constraint": "",
+      "options": "",
+      "defaultOption": "",
+      "component": [
+        "i-LVgLIPfo6Z"
+      ]
+    },
+    "i-DpyyN3KGpK": {
+      "rowId": "i-DpyyN3KGpK",
+      "name": "Link text",
+      "required": true,
+      "type": "i-E9ZaIqQXvg",
+      "description": "The text that should be shown for this link.",
+      "constraint": "",
+      "options": "",
+      "defaultOption": "",
+      "component": [
+        "i-LVgLIPfo6Z"
+      ]
+    },
+    "i-XjkoJ1H-Vs": {
+      "rowId": "i-XjkoJ1H-Vs",
+      "name": "Actions",
+      "required": true,
+      "type": "i-cVu2UuOKT2",
+      "description": "The actions that this contextual menu should have. Optionally also sets wether specific actions should be grouped in action groups.",
+      "constraint": "",
+      "options": "",
+      "defaultOption": "",
+      "component": [
+        "i-9dtE-EGtSJ"
+      ]
+    },
+    "i-6IqeZwUetX": {
+      "rowId": "i-6IqeZwUetX",
+      "name": "Path",
+      "required": true,
+      "type": "i-cVu2UuOKT2",
+      "description": "The path in the Information architecture that leads to the current page.",
+      "constraint": "",
+      "options": "",
+      "defaultOption": "",
+      "component": [
+        "i-nMXFKxR44N"
+      ]
+    },
+    "i-8H2CjniwbO": {
+      "rowId": "i-8H2CjniwbO",
+      "name": "Bottom padding",
+      "required": true,
+      "type": "i-We9i4W9Klo",
+      "description": "The type of padding applied to the bottom of the pattern",
+      "constraint": "",
+      "options": "",
+      "defaultOption": "deep",
+      "component": [
+        "i-oWJdMiuIb4"
+      ]
+    },
+    "i-vROo3LE64j": {
+      "rowId": "i-vROo3LE64j",
+      "name": "Section rule",
+      "required": true,
+      "type": "i-We9i4W9Klo",
+      "description": "The rule component indicates the beginning of a new pattern",
+      "constraint": "Only use the default style for the section-level rule",
+      "options": "default",
+      "defaultOption": "default",
+      "component": [
+        "i-YbRxZruWIu",
+        "i-6vkVdZz0ii",
+        "i-PJTyZ77is5",
+        "i-S0DpOp5ECr",
+        "i-tuS5YgvrGJ",
+        "i-yQrLWRZ945",
+        "i-nslqMCF7EQ",
+        "i-JZBi9ESLvH",
+        "i-s27nSmifM3",
+        "i-cn19jqZNBr",
+        "i-c3Pi4CEcZV",
+        "i-kIPkdAErqW",
+        "i-VDemBEWUNA",
+        "i-vpN6ETB7hS",
+        "i-oWJdMiuIb4"
+      ]
+    },
+    "i-vbxgstp828": {
+      "rowId": "i-vbxgstp828",
+      "name": "Medium layout",
+      "required": false,
+      "type": "i-We9i4W9Klo",
+      "description": "Indicate layout for medium size",
+      "constraint": "",
+      "options": "50/50, 100",
+      "defaultOption": "100",
+      "component": [
+        "i-vpN6ETB7hS",
+        "i-6vkVdZz0ii",
+        "i-VDemBEWUNA"
+      ]
+    },
+    "i-PltLDW_k_G": {
+      "rowId": "i-PltLDW_k_G",
+      "name": "Heading",
+      "required": true,
+      "type": "i-E9ZaIqQXvg",
+      "description": "4-column width heading using H2",
+      "constraint": "Up to 60 characters",
+      "options": "",
+      "defaultOption": "",
+      "component": [
+        "i-vpN6ETB7hS",
+        "i-6vkVdZz0ii",
+        "i-PJTyZ77is5",
+        "i-S0DpOp5ECr",
+        "i-nslqMCF7EQ",
+        "i-cn19jqZNBr",
+        "i-c3Pi4CEcZV",
+        "i-VDemBEWUNA"
+      ]
+    },
+    "i-Kdhisb0tlW": {
+      "rowId": "i-Kdhisb0tlW",
+      "name": "Linked heading",
+      "required": false,
+      "type": "i-We9i4W9Klo",
+      "description": "The heading can be used as a link when paired with a chevron(›) and a clear indication.",
+      "constraint": "",
+      "options": "default, link",
+      "defaultOption": "default",
+      "component": [
+        "i-YbRxZruWIu",
+        "i-O69ixYm_Ee",
+        "i-6vkVdZz0ii",
+        "i-PJTyZ77is5",
+        "i-S0DpOp5ECr",
+        "i-tuS5YgvrGJ",
+        "i-nslqMCF7EQ",
+        "i-JZBi9ESLvH",
+        "i-s27nSmifM3",
+        "i-cn19jqZNBr",
+        "i-c3Pi4CEcZV",
+        "i-kIPkdAErqW",
+        "i-VDemBEWUNA",
+        "i-vpN6ETB7hS"
+      ]
+    },
+    "i-bMyzwL5XUw": {
+      "rowId": "i-bMyzwL5XUw",
+      "name": "Body",
+      "required": false,
+      "type": "i-E9ZaIqQXvg",
+      "description": "4-column width body text",
+      "constraint": "Up to 600 characters",
+      "options": "",
+      "defaultOption": "",
+      "component": [
+        "i-vpN6ETB7hS",
+        "i-6vkVdZz0ii"
+      ]
+    },
+    "i-eWPQTvmrcD": {
+      "rowId": "i-eWPQTvmrcD",
+      "name": "Link CTA",
+      "required": false,
+      "type": "i-E9ZaIqQXvg",
+      "description": "The text link used for contextual actions or pathways to more information. It uses a chevron (›) to indicate navigation to additional content or pages.",
+      "constraint": "Up to 60 characters",
+      "options": "",
+      "defaultOption": "",
+      "component": [
+        "i-0Z_OLuJDCc",
+        "i-oWJdMiuIb4",
+        "i-S0DpOp5ECr",
+        "i-fhZD60Hwqn",
+        "i-O69ixYm_Ee"
+      ]
+    },
+    "i-_7Ix358itw": {
+      "rowId": "i-_7Ix358itw",
+      "name": "Eyebrow",
+      "required": false,
+      "type": "i-E9ZaIqQXvg",
+      "description": "The eyebrow placed above the heading using muted heading",
+      "constraint": "Up to 30 characters",
+      "options": "",
+      "defaultOption": "",
+      "component": [
+        "i-vpN6ETB7hS"
+      ]
+    },
+    "i-FN0wNGurti": {
+      "rowId": "i-FN0wNGurti",
+      "name": "Subheading",
+      "required": false,
+      "type": "i-E9ZaIqQXvg",
+      "description": "The subheading provides additional hierarchy beneath the main title",
+      "constraint": "h4: up to 100 characters\nh5: up to 160 characters",
+      "options": "h4, h5",
+      "defaultOption": "h4",
+      "component": [
+        "i-vpN6ETB7hS"
+      ]
+    },
+    "i-3GHe9XDIoY": {
+      "rowId": "i-3GHe9XDIoY",
+      "name": "List item text",
+      "required": true,
+      "type": "i-E9ZaIqQXvg",
+      "description": "Sets the content of the list",
+      "constraint": "Up to 250 characters",
+      "options": "",
+      "defaultOption": "",
+      "component": [
+        "i-xUFwNsfx30"
+      ]
+    },
+    "i-rwGAkG5mZq": {
+      "rowId": "i-rwGAkG5mZq",
+      "name": "Primary CTA",
+      "required": false,
+      "type": "i-E9ZaIqQXvg",
+      "description": "The CTA used with the positive button style. It indicates a high-priority, positive action and is reserved for hero areas or other key call-to-action sections.",
+      "constraint": "Up to 20 characters",
+      "options": "",
+      "defaultOption": "",
+      "component": [
+        "i-0Z_OLuJDCc"
+      ]
+    },
+    "i-8d8mh3gQ55": {
+      "rowId": "i-8d8mh3gQ55",
+      "name": "Secondary CTA",
+      "required": false,
+      "type": "i-E9ZaIqQXvg",
+      "description": "The CTA using the default button style. It is used for most actions that are positive but not primary, and may serve as the main CTA in non-hero sections.",
+      "constraint": "Up to 20 characters",
+      "options": "",
+      "defaultOption": "",
+      "component": [
+        "i-0Z_OLuJDCc"
+      ]
+    },
+    "i-gRVRn6jnEZ": {
+      "rowId": "i-gRVRn6jnEZ",
+      "name": "Link text",
+      "required": true,
+      "type": "i-E9ZaIqQXvg",
+      "description": "The link text for the logo",
+      "constraint": "Up to 60 characters",
+      "options": "",
+      "defaultOption": "",
+      "component": [
+        "i-S0DpOp5ECr",
+        "i-fhZD60Hwqn"
+      ]
+    },
+    "i-TtKGUKacgH": {
+      "rowId": "i-TtKGUKacgH",
+      "name": "Linked logo image",
+      "required": true,
+      "type": "i-cVu2UuOKT2",
+      "description": "16:9 image container with the logo image inside ",
+      "constraint": "",
+      "options": "",
+      "defaultOption": "",
+      "component": [
+        "i-S0DpOp5ECr",
+        "i-fhZD60Hwqn"
+      ]
+    },
+    "i-BypmqEqLW-": {
+      "rowId": "i-BypmqEqLW-",
+      "name": "List",
+      "required": true,
+      "type": "i-H7NYDvgoEy",
+      "description": "The divided list supporting up to 10 items",
+      "constraint": "Up to 10 items",
+      "options": "",
+      "defaultOption": "",
+      "component": [
+        "i-xUFwNsfx30"
+      ]
+    },
+    "i-poW06RavZD": {
+      "rowId": "i-poW06RavZD",
+      "name": "List bullet type",
+      "required": false,
+      "type": "i-We9i4W9Klo",
+      "description": "Bullet type options",
+      "constraint": "",
+      "options": "none, bullet, status, number",
+      "defaultOption": "bullet",
+      "component": [
+        "i-xUFwNsfx30"
+      ]
+    },
+    "i-bl_nFW987o": {
+      "rowId": "i-bl_nFW987o",
+      "name": "List divided",
+      "required": false,
+      "type": "i-YtFbduYGgp",
+      "description": "Whether has muted rule between list items",
+      "constraint": "",
+      "options": "true, false",
+      "defaultOption": "true",
+      "component": [
+        "i-xUFwNsfx30"
+      ]
+    },
+    "i-SwrC-n8iOO": {
+      "rowId": "i-SwrC-n8iOO",
+      "name": "List nested",
+      "required": false,
+      "type": "i-YtFbduYGgp",
+      "description": "Hierarchical list structures",
+      "constraint": "",
+      "options": "true, false",
+      "defaultOption": "false",
+      "component": [
+        "i-xUFwNsfx30"
+      ]
+    },
+    "i-tkrkp4exQn": {
+      "rowId": "i-tkrkp4exQn",
+      "name": "Logo block",
+      "required": true,
+      "type": "i-H7NYDvgoEy",
+      "description": "The logo block showcases a group of related images, such as a group of customer or partner logos.",
+      "constraint": "Up to 10 logos\nLinking individual logos is not allowed",
+      "options": "",
+      "defaultOption": "",
+      "component": [
+        "i-If5dFjalAR",
+        "i-tuS5YgvrGJ"
+      ]
+    },
+    "i-8bW_aZUyGa": {
+      "rowId": "i-8bW_aZUyGa",
+      "name": "Image",
+      "required": false,
+      "type": "i-H7NYDvgoEy",
+      "description": "The container for placing visual content such as images, illustrations, or diagrams.",
+      "constraint": "",
+      "options": "",
+      "defaultOption": "",
+      "component": [
+        "i--w8-6ot1a8"
+      ]
+    },
+    "i-282rfgNKLW": {
+      "rowId": "i-282rfgNKLW",
+      "name": "Image aspect ratio ",
+      "required": false,
+      "type": "i-We9i4W9Klo",
+      "description": "Indicate ratio of the image",
+      "constraint": "",
+      "options": "default, 16:9, 3:2",
+      "defaultOption": "default",
+      "component": [
+        "i--w8-6ot1a8"
+      ]
+    },
+    "i-kEhG8_ieU7": {
+      "rowId": "i-kEhG8_ieU7",
+      "name": "Image aspect ratio ",
+      "required": false,
+      "type": "i-We9i4W9Klo",
+      "description": "Indicate ratio of the image",
+      "constraint": "",
+      "options": "default, 16:9, 3:2, 2:3, cinematic, square",
+      "defaultOption": "default",
+      "component": [
+        "i--w8-6ot1a8"
+      ]
+    },
+    "i-X3IrI_Gpbp": {
+      "rowId": "i-X3IrI_Gpbp",
+      "name": "Image responsive aspect ratio",
+      "required": false,
+      "type": "i-_v9D7OsbSD",
+      "description": "Change the aspect ratio of an image container, depending on the screen size",
+      "constraint": "",
+      "options": "16:9, 3:2, 2:3, cinematic, square\non large, on medium, on small",
+      "defaultOption": "",
+      "component": [
+        "i--w8-6ot1a8"
+      ]
+    },
+    "i-FMidnWcEp2": {
+      "rowId": "i-FMidnWcEp2",
+      "name": "Image caption",
+      "required": false,
+      "type": "i-E9ZaIqQXvg",
+      "description": "Optional HTML caption below the image",
+      "constraint": "",
+      "options": "",
+      "defaultOption": "",
+      "component": [
+        "i--w8-6ot1a8"
+      ]
+    },
+    "i-Vy3CICkpZu": {
+      "rowId": "i-Vy3CICkpZu",
+      "name": "Bottom padding",
+      "required": true,
+      "type": "i-We9i4W9Klo",
+      "description": "The type of padding applied to the bottom of the pattern",
+      "constraint": "",
+      "options": "default, deep, shallow, none",
+      "defaultOption": "default",
+      "component": [
+        "i-YbRxZruWIu",
+        "i-O69ixYm_Ee",
+        "i-6vkVdZz0ii",
+        "i-PJTyZ77is5",
+        "i-S0DpOp5ECr",
+        "i-tuS5YgvrGJ",
+        "i-yQrLWRZ945",
+        "i-nslqMCF7EQ",
+        "i-JZBi9ESLvH",
+        "i-s27nSmifM3",
+        "i-cn19jqZNBr",
+        "i-c3Pi4CEcZV",
+        "i-kIPkdAErqW",
+        "i-VDemBEWUNA",
+        "i-vpN6ETB7hS",
+        "i-K1FTmoSxdo"
+      ]
+    },
+    "i-nXoI6nNGrh": {
+      "rowId": "i-nXoI6nNGrh",
+      "name": "Tooltip text",
+      "required": false,
+      "type": "i-E9ZaIqQXvg",
+      "description": "The text content of the tooltip.",
+      "constraint": "",
+      "options": "",
+      "defaultOption": "",
+      "component": [
+        "i-FgQOUawQ2g"
+      ]
+    },
+    "i-DJR40c_n6_": {
+      "rowId": "i-DJR40c_n6_",
+      "name": "Arrow location",
+      "required": false,
+      "type": "i-We9i4W9Klo",
+      "description": "Where the location of the arrow of the tooltip is.",
+      "constraint": "",
+      "options": "left, right, top left,  \ntop middle, top right, bottom left, bottom middle, bottom right",
+      "defaultOption": "left",
+      "component": [
+        "i-FgQOUawQ2g"
+      ]
+    },
+    "i-ycapMJdCCf": {
+      "rowId": "i-ycapMJdCCf",
+      "name": "Tab state",
+      "required": false,
+      "type": "i-We9i4W9Klo",
+      "description": "The state of a tab. Only one tab can be active at a time.",
+      "constraint": "",
+      "options": "default, hover, active",
+      "defaultOption": "default",
+      "component": [
+        "i-YIkBkUT4ZS"
+      ]
+    },
+    "i-mJTsI_MGLW": {
+      "rowId": "i-mJTsI_MGLW",
+      "name": "Tabs",
+      "required": true,
+      "type": "i-H7NYDvgoEy",
+      "description": "The tab text and a reference to its associated content (content or link)",
+      "constraint": "Only tab item components are allowed",
+      "options": "tab text, content",
+      "defaultOption": "",
+      "component": [
+        "i-YIkBkUT4ZS"
+      ]
+    },
+    "i-CuB0Q5tY49": {
+      "rowId": "i-CuB0Q5tY49",
+      "name": "State",
+      "required": false,
+      "type": "i-We9i4W9Klo",
+      "description": "What state the switch is in.",
+      "constraint": "",
+      "options": "default, disabled",
+      "defaultOption": "default",
+      "component": [
+        "i-I09Xg2rXPg"
+      ]
+    },
+    "i-YTcd0xXJUa": {
+      "rowId": "i-YTcd0xXJUa",
+      "name": "Checked",
+      "required": false,
+      "type": "i-YtFbduYGgp",
+      "description": "Wether the switch is checked or not.",
+      "constraint": "",
+      "options": "true, false",
+      "defaultOption": "false",
+      "component": [
+        "i-I09Xg2rXPg"
+      ]
+    },
+    "i-CLcp4Vt_Sm": {
+      "rowId": "i-CLcp4Vt_Sm",
+      "name": "State",
+      "required": false,
+      "type": "i-We9i4W9Klo",
+      "description": "What state the radio is in. Putting the checked radio in hover state has no effect.",
+      "constraint": "",
+      "options": "default, hover, disabled",
+      "defaultOption": "default",
+      "component": [
+        "i-kzPA2kabPA"
+      ]
+    },
+    "i-qUpCxTEk0L": {
+      "rowId": "i-qUpCxTEk0L",
+      "name": "Checked",
+      "required": false,
+      "type": "i-YtFbduYGgp",
+      "description": "Wether the radio is checked or not.",
+      "constraint": "",
+      "options": "true, false",
+      "defaultOption": "false",
+      "component": [
+        "i-kzPA2kabPA"
+      ]
+    },
+    "i-6iwNinLZlc": {
+      "rowId": "i-6iwNinLZlc",
+      "name": "Time stamp",
+      "required": false,
+      "type": "i-E9ZaIqQXvg",
+      "description": "Can be set to the timestamp when the event when that triggered the notification took place.",
+      "constraint": "Date formatted string",
+      "options": "",
+      "defaultOption": "",
+      "component": [
+        "i-LYZ4XyOt-O"
+      ]
+    },
+    "i-tHG2f9uRBL": {
+      "rowId": "i-tHG2f9uRBL",
+      "name": "Actions",
+      "required": false,
+      "type": "i-H7NYDvgoEy",
+      "description": "Allows to give associated actions with the notification.",
+      "constraint": "Action link components",
+      "options": "",
+      "defaultOption": "",
+      "component": [
+        "i-LYZ4XyOt-O"
+      ]
+    },
+    "i-vJ8W-yxJtT": {
+      "rowId": "i-vJ8W-yxJtT",
+      "name": "Dismissible",
+      "required": false,
+      "type": "i-YtFbduYGgp",
+      "description": "Wether or not the notification can be dismissed. If it can be dismissed the dismiss button is being shown.",
+      "constraint": "",
+      "options": "true, false",
+      "defaultOption": "true",
+      "component": [
+        "i-LYZ4XyOt-O"
+      ]
+    },
+    "i-1ZRs_jWb1g": {
+      "rowId": "i-1ZRs_jWb1g",
+      "name": "Description",
+      "required": false,
+      "type": "i-E9ZaIqQXvg",
+      "description": "Sets the content of the description.",
+      "constraint": "",
+      "options": "",
+      "defaultOption": "",
+      "component": [
+        "i-LYZ4XyOt-O"
+      ]
+    },
+    "i-uY6oVuoQOh": {
+      "rowId": "i-uY6oVuoQOh",
+      "name": "Title",
+      "required": false,
+      "type": "i-E9ZaIqQXvg",
+      "description": "Sets the content of the title.",
+      "constraint": "",
+      "options": "",
+      "defaultOption": "",
+      "component": [
+        "i-LYZ4XyOt-O"
+      ]
+    },
+    "i-LskHvTliHM": {
+      "rowId": "i-LskHvTliHM",
+      "name": "Inline",
+      "required": false,
+      "type": "i-YtFbduYGgp",
+      "description": "Wether the title and description of the notification are being shown in one line. reduces the overall height of the notification allowing it to be used where space is at a premium.",
+      "constraint": "",
+      "options": "true, false",
+      "defaultOption": "false",
+      "component": [
+        "i-LYZ4XyOt-O"
+      ]
+    },
+    "i-2mC2OAnNMD": {
+      "rowId": "i-2mC2OAnNMD",
+      "name": "Border",
+      "required": false,
+      "type": "i-YtFbduYGgp",
+      "description": "Wether the notification has a border or not. Borderless notifications are used for example in tables.",
+      "constraint": "",
+      "options": "true, false",
+      "defaultOption": "true",
+      "component": [
+        "i-LYZ4XyOt-O"
+      ]
+    },
+    "i-NNHqfMjHao": {
+      "rowId": "i-NNHqfMjHao",
+      "name": "Type",
+      "required": true,
+      "type": "i-We9i4W9Klo",
+      "description": "What semantic type the notification is.",
+      "constraint": "",
+      "options": "information, negative, positive, caution",
+      "defaultOption": "",
+      "component": [
+        "i-LYZ4XyOt-O"
+      ]
+    },
+    "i-lw3Peuhf3f": {
+      "rowId": "i-lw3Peuhf3f",
+      "name": "Placeholder",
+      "required": false,
+      "type": "i-E9ZaIqQXvg",
+      "description": "The placeholder text that is being shown if there has not been any text that has been entered yet.",
+      "constraint": "",
+      "options": "",
+      "defaultOption": "",
+      "component": [
+        "i-9t3OC1fOBH"
+      ]
+    },
+    "i-ymYez15DF2": {
+      "rowId": "i-ymYez15DF2",
+      "name": "Text",
+      "required": false,
+      "type": "i-E9ZaIqQXvg",
+      "description": "The text that is in the input field. ",
+      "constraint": "",
+      "options": "",
+      "defaultOption": "",
+      "component": [
+        "i-9t3OC1fOBH"
+      ]
+    },
+    "i-79PmQ6grfA": {
+      "rowId": "i-79PmQ6grfA",
+      "name": "Size",
+      "required": false,
+      "type": "i-We9i4W9Klo",
+      "description": "The vertical density of the input element",
+      "constraint": "",
+      "options": "default, dense",
+      "defaultOption": "default",
+      "component": [
+        "i-9t3OC1fOBH"
+      ]
+    },
+    "i-pYSOIJiZAg": {
+      "rowId": "i-pYSOIJiZAg",
+      "name": "Input validation text",
+      "required": false,
+      "type": "i-E9ZaIqQXvg",
+      "description": "If the input is being validated the outcome / reason of the input validation",
+      "constraint": "",
+      "options": "",
+      "defaultOption": "",
+      "component": [
+        "i-9t3OC1fOBH"
+      ]
+    },
+    "i-6tNFwGFFVM": {
+      "rowId": "i-6tNFwGFFVM",
+      "name": "Input validation type",
+      "required": false,
+      "type": "i-We9i4W9Klo",
+      "description": "If the input is being validated what type of input validation it is.",
+      "constraint": "",
+      "options": "none, error, warning, positive",
+      "defaultOption": "none",
+      "component": [
+        "i-9t3OC1fOBH"
+      ]
+    },
+    "i-lj8T67R356": {
+      "rowId": "i-lj8T67R356",
+      "name": "State",
+      "required": false,
+      "type": "i-We9i4W9Klo",
+      "description": "The state the input is currently in.",
+      "constraint": "",
+      "options": "default, hover, active, disabled",
+      "defaultOption": "default",
+      "component": [
+        "i-9t3OC1fOBH"
+      ]
+    },
+    "i-NmNxhRC9v7": {
+      "rowId": "i-NmNxhRC9v7",
+      "name": "Dismissible",
+      "required": false,
+      "type": "i-YtFbduYGgp",
+      "description": "Determines wether the chip can be dismissed or not. The read-only variant can not be dismissible.",
+      "constraint": "",
+      "options": "true, false",
+      "defaultOption": "false",
+      "component": [
+        "i-JVsLc8_nm0"
+      ]
+    },
+    "i-15MYUGVv5C": {
+      "rowId": "i-15MYUGVv5C",
+      "name": "Badge",
+      "required": false,
+      "type": "i-H7NYDvgoEy",
+      "description": "Can be used to attach a badge to the chip",
+      "constraint": "Can only contain badge component",
+      "options": "",
+      "defaultOption": "",
+      "component": [
+        "i-JVsLc8_nm0"
+      ]
+    },
+    "i-fKlcuTRvcZ": {
+      "rowId": "i-fKlcuTRvcZ",
+      "name": "Value",
+      "required": false,
+      "type": "i-E9ZaIqQXvg",
+      "description": "Controls what the value of the chips is",
+      "constraint": "",
+      "options": "",
+      "defaultOption": "",
+      "component": [
+        "i-JVsLc8_nm0"
+      ]
+    },
+    "i-XG0RCKelA8": {
+      "rowId": "i-XG0RCKelA8",
+      "name": "Lead",
+      "required": false,
+      "type": "i-E9ZaIqQXvg",
+      "description": "Controls what the lead of the chip is.",
+      "constraint": "",
+      "options": "",
+      "defaultOption": "",
+      "component": [
+        "i-JVsLc8_nm0"
+      ]
+    },
+    "i-QsEZErMoi7": {
+      "rowId": "i-QsEZErMoi7",
+      "name": "Icon",
+      "required": false,
+      "type": "i-We9i4W9Klo",
+      "description": "Controls the icon that is shown in the chip.",
+      "constraint": "",
+      "options": "All icons available in Vanilla",
+      "defaultOption": "",
+      "component": [
+        "i-JVsLc8_nm0"
+      ]
+    },
+    "i-MlXWYD_vrf": {
+      "rowId": "i-MlXWYD_vrf",
+      "name": "Size",
+      "required": false,
+      "type": "i-We9i4W9Klo",
+      "description": "Determines the vertical spacing of the chip. Dense can be used in situations where space is limited",
+      "constraint": "",
+      "options": "default, dense",
+      "defaultOption": "default",
+      "component": [
+        "i-JVsLc8_nm0"
+      ]
+    },
+    "i-Zt_wUUggxH": {
+      "rowId": "i-Zt_wUUggxH",
+      "name": "Color",
+      "required": false,
+      "type": "i-We9i4W9Klo",
+      "description": "The color the chip should have. Be aware that some of the colors might be interpreted in a semantic way by users.",
+      "constraint": "",
+      "options": "gray, green, blue, red, yellow",
+      "defaultOption": "gray",
+      "component": [
+        "i-JVsLc8_nm0"
+      ]
+    },
+    "i-qh4MgUEhHV": {
+      "rowId": "i-qh4MgUEhHV",
+      "name": "State",
+      "required": false,
+      "type": "i-We9i4W9Klo",
+      "description": "The state the button is currently in. The read-only variant does not have states.",
+      "constraint": "",
+      "options": "default, hover, active",
+      "defaultOption": "default",
+      "component": [
+        "i-JVsLc8_nm0"
+      ]
+    },
+    "i-f4wI3GjLik": {
+      "rowId": "i-f4wI3GjLik",
+      "name": "Variant",
+      "required": false,
+      "type": "i-We9i4W9Klo",
+      "description": "Wether the chip is interactive or not. Read-only should be used for chips where no secondary action is needed in the lifecycle of the chip. For example to show the status of an entity.",
+      "constraint": "",
+      "options": "default, read-only",
+      "defaultOption": "default",
+      "component": [
+        "i-JVsLc8_nm0"
+      ]
+    },
+    "i-RJcEx7nqDB": {
+      "rowId": "i-RJcEx7nqDB",
+      "name": "State",
+      "required": false,
+      "type": "i-We9i4W9Klo",
+      "description": "The state the checkbox is currently in. Note that in the checked and child checked state there is no hover effect.",
+      "constraint": "",
+      "options": "default, hover, disabled",
+      "defaultOption": "default",
+      "component": [
+        "i-hES7I02ImG"
+      ]
+    },
+    "i-YPQYlhrPCM": {
+      "rowId": "i-YPQYlhrPCM",
+      "name": "Checked",
+      "required": false,
+      "type": "i-We9i4W9Klo",
+      "description": "In which checked state the checkbox currently is in.",
+      "constraint": "",
+      "options": "unchecked, checked, child checked",
+      "defaultOption": "unchecked",
+      "component": [
+        "i-hES7I02ImG"
+      ]
+    },
+    "i-o3iHf6Zt0R": {
+      "rowId": "i-o3iHf6Zt0R",
+      "name": "Icon right",
+      "required": false,
+      "type": "i-We9i4W9Klo",
+      "description": "Determines the type of icon that is shown in the button on the right side. While there is no restriction which icon can be shown here be aware that semantic icons should be shown on the left. For the most part only chevrons are used on this side.",
+      "constraint": "",
+      "options": "Available icons in Vanilla",
+      "defaultOption": "",
+      "component": [
+        "i-nsWL1xi6H5"
+      ]
+    },
+    "i-GAh2h-_gTb": {
+      "rowId": "i-GAh2h-_gTb",
+      "name": "Icon left",
+      "required": false,
+      "type": "i-We9i4W9Klo",
+      "description": "Determines the type of icon that is shown in the button on the left side. Either the text or this icon needs to be provided. If only this icon is provided then it is an icon only button. If no icon is provided the icon is not shown",
+      "constraint": "",
+      "options": "Available icons in Vanilla",
+      "defaultOption": "",
+      "component": [
+        "i-nsWL1xi6H5"
+      ]
+    },
+    "i--4ufX7S0aN": {
+      "rowId": "i--4ufX7S0aN",
+      "name": "Text",
+      "required": false,
+      "type": "i-E9ZaIqQXvg",
+      "description": "Determines the text that is being displayed in the button. Either text or an icon needs to be provided. If no text is provided but an icon is it is an icon only button",
+      "constraint": "",
+      "options": "",
+      "defaultOption": "",
+      "component": [
+        "i-nsWL1xi6H5"
+      ]
+    },
+    "i-E8J7jFq_7D": {
+      "rowId": "i-E8J7jFq_7D",
+      "name": "Size",
+      "required": false,
+      "type": "i-We9i4W9Klo",
+      "description": "Controls the size of the button. Smaller sizes can be used in places where space is at a premium.",
+      "constraint": "",
+      "options": "default, small, dense",
+      "defaultOption": "default",
+      "component": [
+        "i-nsWL1xi6H5"
+      ]
+    },
+    "i-6YEcPVmV0u": {
+      "rowId": "i-6YEcPVmV0u",
+      "name": "State",
+      "required": false,
+      "type": "i-We9i4W9Klo",
+      "description": "The state the button is currently in.",
+      "constraint": "",
+      "options": "default, hover, active, processing, disabled",
+      "defaultOption": "default",
+      "component": [
+        "i-nsWL1xi6H5"
+      ]
+    },
+    "i-oQPXuZ-xRl": {
+      "rowId": "i-oQPXuZ-xRl",
+      "name": "Type",
+      "required": false,
+      "type": "i-We9i4W9Klo",
+      "description": "Type controls the semantic type of the button.",
+      "constraint": "",
+      "options": "default, base, brand, positive, negative",
+      "defaultOption": "default",
+      "component": [
+        "i-nsWL1xi6H5"
+      ]
+    },
+    "i-K0JMtgWRAb": {
+      "rowId": "i-K0JMtgWRAb",
+      "name": "Numeric value",
+      "required": true,
+      "type": "i-IHXuMDaESR",
+      "description": "The numeric value that should be shown in the badge. Also allows non numeric characters to allow for values such as “999+)",
+      "constraint": "",
+      "options": "",
+      "defaultOption": "",
+      "component": [
+        "i-MOO2SBuaqS"
+      ]
+    },
+    "i-xfX4B0AKmQ": {
+      "rowId": "i-xfX4B0AKmQ",
+      "name": "Type",
+      "required": false,
+      "type": "i-We9i4W9Klo",
+      "description": "The type property controls what type of badge to display.",
+      "constraint": "",
+      "options": "default, negative",
+      "defaultOption": "default",
+      "component": [
+        "i-MOO2SBuaqS"
+      ]
+    },
+    "i-zn6TiF3hZx": {
+      "rowId": "i-zn6TiF3hZx",
+      "name": "Content",
+      "required": true,
+      "type": "i-H7NYDvgoEy",
+      "description": "The content property sets the content that is being shown in the panel of the accordion. The content can be set to any content that the designer / developer wants to show. It is not allowed to nest accordions in the content section. By default the content section contains just a text element.",
+      "constraint": "",
+      "options": "",
+      "defaultOption": "",
+      "component": [
+        "i-oIOmJPwz-S"
+      ]
+    },
+    "i-UXud_5mXq9": {
+      "rowId": "i-UXud_5mXq9",
+      "name": "State",
+      "required": false,
+      "type": "i-We9i4W9Klo",
+      "description": "The state property controls the current user interaction state of an accordion item.",
+      "constraint": "",
+      "options": "default, hover, active",
+      "defaultOption": "default",
+      "component": [
+        "i-oIOmJPwz-S"
+      ]
+    },
+    "i-VTuD5yMmP-": {
+      "rowId": "i-VTuD5yMmP-",
+      "name": "Heading style",
+      "required": false,
+      "type": "i-We9i4W9Klo",
+      "description": "The heading style property changes the styling of the heading of an accordion item.",
+      "constraint": "",
+      "options": "default, h1, h2, h3, h4, h5, h6",
+      "defaultOption": "default",
+      "component": [
+        "i-oIOmJPwz-S"
+      ]
+    },
+    "i-zBkbVnFuvp": {
+      "rowId": "i-zBkbVnFuvp",
+      "name": "Heading",
+      "required": true,
+      "type": "i-E9ZaIqQXvg",
+      "description": "The heading property controls the text content of the accordion item heading and can be freely set by the designer / developer.",
+      "constraint": "",
+      "options": "",
+      "defaultOption": "",
+      "component": [
+        "i-oIOmJPwz-S"
+      ]
+    },
+    "i-yzwu_nhlmT": {
+      "rowId": "i-yzwu_nhlmT",
+      "name": "Expanded",
+      "required": false,
+      "type": "i-YtFbduYGgp",
+      "description": "The expanded property controls wether an accordion item is opened or closed. ",
+      "constraint": "",
+      "options": "true, false",
+      "defaultOption": false,
+      "component": [
+        "i-oIOmJPwz-S"
+      ]
+    }
+  }
+}

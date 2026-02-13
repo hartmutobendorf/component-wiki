@@ -1,0 +1,47 @@
+{
+  "baseUrl": "https://coda.io/apis/v1",
+  "docId": "_MEO4xiNKu",
+  "tables": {
+    "components": {
+      "id": "grid-ymtdOF6n4R",
+      "pageId": "canvas-u-VYu-W68M",
+      "htmlColumns": ["Usage", "Examples", "Interactions"]
+    },
+    "properties": {
+      "id": "grid-9IKJO03-mN",
+      "relatesTo": "components"
+    },
+    "changelog": {
+      "id": "grid-cafUcPTmbr",
+      "relatesTo": "components"
+    },
+    "anatomy": {
+      "id": "grid-YfHOdsWGM_",
+      "relatesTo": "components"
+    },
+    "decisionLog": {
+      "id": "grid-mEwLLn1qdr",
+      "relatesTo": "components"
+    },
+    "documentationStatuses": {
+      "id": "grid-INwV-b3gw8",
+      "relatesTo": "components"
+    },
+    "types": {
+      "id": "grid-gZWfbmFU31",
+      "relatesTo": "components"
+    },
+    "tiers": {
+      "id": "grid-L2wrVfBmTu",
+      "relatesTo": "components"
+    },
+    "editors": {
+      "id": "grid-Bb7vyg8RIb",
+      "relatesTo": "changelog"
+    },
+    "propertyTypes": {
+      "id": "grid-JUzhYTGRhp",
+      "relatesTo": "properties"
+    }
+  }
+}

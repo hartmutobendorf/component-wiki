@@ -1,0 +1,110 @@
+{
+  "fetchedAt": "2026-02-13T12:35:41.338Z",
+  "rows": {
+    "i-qokjJxQw1_": {
+      "rowId": "i-qokjJxQw1_",
+      "name": "Block",
+      "components": [
+        "i-If5dFjalAR",
+        "i-fhZD60Hwqn",
+        "i-5BuOzbNcXV"
+      ],
+      "description": "**Blocks** are grouping of related content or functionality within a pattern in sites, used to organize multiple components into a cohesive unit. While blocks are reusable across patterns, they always exist as part of a pattern rather than standing alone. (*This is not part of the Vanilla Framework, but included within the shared macro and the macro of the Basic section)"
+    },
+    "i-PRclKQ7nUT": {
+      "rowId": "i-PRclKQ7nUT",
+      "name": "Layout",
+      "components": [],
+      "description": "**Layout** refers to the general arrangement and structure of elements within a space, such as a component, section, or entire page. For example, footers, equal height layouts, and overall grid structures."
+    },
+    "i-2nxbLnpTYf": {
+      "rowId": "i-2nxbLnpTYf",
+      "name": "Page",
+      "components": [],
+      "description": "**Pages** combine patterns and components into a template that can be reused for different cases. For example a login page."
+    },
+    "i-oqNiCm1oJ2": {
+      "rowId": "i-oqNiCm1oJ2",
+      "name": "Foundation",
+      "components": [],
+      "description": "**Foundations** are the basic elements of styling. For example,  colours, fonts, spacing and borders. They codify our brand guidelines so that our UIs look and feel like they belong to Canonical. They are usually represented as Design tokens."
+    },
+    "i-AnTozSzw_R": {
+      "rowId": "i-AnTozSzw_R",
+      "name": "Mental model",
+      "components": [
+        "i-plkjzhg8m1",
+        "i-LbP9pdhuJw"
+      ],
+      "description": "**Mental models** are policies, practices, and rules for solving generic UX problems in a consistent way. For example, data visualisation, forms, and error handling."
+    },
+    "i-B7wAtn3Kkh": {
+      "rowId": "i-B7wAtn3Kkh",
+      "name": "Component",
+      "components": [
+        "i-oIOmJPwz-S",
+        "i-ur5nTty1E1",
+        "i-MOO2SBuaqS",
+        "i-nMXFKxR44N",
+        "i-nsWL1xi6H5",
+        "i-hES7I02ImG",
+        "i-JVsLc8_nm0",
+        "i-9dtE-EGtSJ",
+        "i-0HDSYo-iyI",
+        "i-9t3OC1fOBH",
+        "i-LVgLIPfo6Z",
+        "i-cgTm31OtA9",
+        "i-LYZ4XyOt-O",
+        "i-kzPA2kabPA",
+        "i-qxrdEI_jxI",
+        "i-aa-F7fGOPL",
+        "i-k4_PsQKTUt",
+        "i-I09Xg2rXPg",
+        "i-Yr-MKv1jbf",
+        "i-YIkBkUT4ZS",
+        "i-uIQULVt2eZ",
+        "i-FgQOUawQ2g",
+        "i--w8-6ot1a8",
+        "i-xUFwNsfx30"
+      ],
+      "description": "**Components** ​​are interactive building blocks for creating a user interface. They are our smallest functional unit, and are composed by using more than one foundation and usually interaction definitions. For example, button, dropdown, notification, basic table."
+    },
+    "i-H9_z7rnWAH": {
+      "rowId": "i-H9_z7rnWAH",
+      "name": "Complex component",
+      "components": [
+        "i-0Z_OLuJDCc",
+        "i-YArgfP7o_q",
+        "i-eoOMJgGK_d",
+        "i-KtIvN04WN9",
+        "i-aUPUyjNgjD",
+        "i-If3N15kC6H"
+      ],
+      "description": "The use cases **Complex components** solve are usually so complex that they can not be solved by one simple component. They have to be made up of one or several sub-components to solve their use case. sub-components cannot function on their own, they only make sense in the context of their parent complex component. For example a Navigation is a complex component and navigation items would be sub-components. A navigation item would not work on its own."
+    },
+    "i-daIC2OgxsX": {
+      "rowId": "i-daIC2OgxsX",
+      "name": "Pattern",
+      "components": [
+        "i-YbRxZruWIu",
+        "i-oWJdMiuIb4",
+        "i-O69ixYm_Ee",
+        "i-6vkVdZz0ii",
+        "i-PJTyZ77is5",
+        "i-K1FTmoSxdo",
+        "i-S0DpOp5ECr",
+        "i-tuS5YgvrGJ",
+        "i-yQrLWRZ945",
+        "i-nslqMCF7EQ",
+        "i-JZBi9ESLvH",
+        "i-s27nSmifM3",
+        "i-cn19jqZNBr",
+        "i-c3Pi4CEcZV",
+        "i-kIPkdAErqW",
+        "i-VDemBEWUNA",
+        "i-vpN6ETB7hS"
+      ],
+      "description": "**Patterns** compose components, complex components and other patterns into a design that can be reused on different screens. For example, login and checkout forms."
+    }
+  }
+}
