@@ -1,6 +1,7 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
 import { denormalize } from "../../src/denormalize.js";
 import { componentSchema } from "@wiki/shared";
+import type { SyncConfig } from "../../src/types.js";
 import {
   buildRawData,
   componentsTable,
@@ -609,5 +610,111 @@ describe("denormalize — edge cases", () => {
     const result = denormalize(raw);
     const button = result.find((c) => c.name === "Button")!;
     expect(button.decisionLog).toEqual([]);
+  });
+});
+
+// ── wiki-ref:// link resolution ─────────────────────────────
+
+describe("denormalize — wiki-ref link resolution", () => {
+  const syncConfig: SyncConfig = {
+    baseUrl: "https://coda.io/apis/v1",
+    docId: "test-doc",
+    tables: {
+      components: { id: "grid-comp" },
+      properties: { id: "grid-prop" },
+      changelog: { id: "grid-cl" },
+      anatomy: { id: "grid-anat" },
+      decisionLog: { id: "grid-dl" },
+      types: { id: "grid-types" },
+      tiers: { id: "grid-tiers" },
+      documentationStatuses: { id: "grid-ds" },
+      propertyTypes: { id: "grid-pt" },
+      editors: { id: "grid-ed" },
+    },
+  };
+
+  // Build a config where the table IDs match the fixture row IDs
+  function buildConfigForFixtures(): SyncConfig {
+    return structuredClone(syncConfig);
+  }
+
+  it("resolves wiki-ref component links to /slug in description", () => {
+    const raw = buildRawData();
+    const cfg = buildConfigForFixtures();
+    (raw.components.rows as any)["comp-button"].description =
+      "See [Toggle switch](wiki-ref://grid-comp/comp-toggle) for details.";
+    const result = denormalize(raw, cfg);
+    const button = result.find((c) => c.name === "Button")!;
+    expect(button.description).toBe(
+      "See [Toggle switch](/toggle-switch) for details."
+    );
+  });
+
+  it("resolves wiki-ref component links in usage", () => {
+    const raw = buildRawData();
+    const cfg = buildConfigForFixtures();
+    (raw.components.rows as any)["comp-toggle"].usage =
+      "Combine with [Button](wiki-ref://grid-comp/comp-button).";
+    const result = denormalize(raw, cfg);
+    const toggle = result.find((c) => c.name === "Toggle switch")!;
+    expect(toggle.usage).toBe("Combine with [Button](/button).");
+  });
+
+  it("resolves wiki-ref component links in examples", () => {
+    const raw = buildRawData();
+    const cfg = buildConfigForFixtures();
+    (raw.components.rows as any)["comp-button"].examples =
+      "Works with [Card pattern](wiki-ref://grid-comp/comp-card-pattern).";
+    const result = denormalize(raw, cfg);
+    const button = result.find((c) => c.name === "Button")!;
+    expect(button.examples).toBe(
+      "Works with [Card pattern](/card-pattern)."
+    );
+  });
+
+  it("renders non-component wiki-ref links as plain text", () => {
+    const raw = buildRawData();
+    const cfg = buildConfigForFixtures();
+    (raw.components.rows as any)["comp-button"].description =
+      "The [disabled](wiki-ref://grid-prop/prop-disabled) property...";
+    const result = denormalize(raw, cfg);
+    const button = result.find((c) => c.name === "Button")!;
+    expect(button.description).toBe("The disabled property...");
+  });
+
+  it("does not resolve wiki-refs when no syncConfig is provided", () => {
+    const raw = buildRawData();
+    (raw.components.rows as any)["comp-button"].description =
+      "See [Toggle](wiki-ref://grid-comp/comp-toggle) here.";
+    const result = denormalize(raw); // no config
+    const button = result.find((c) => c.name === "Button")!;
+    expect(button.description).toContain("wiki-ref://");
+  });
+
+  it("leaves external URLs untouched when resolving", () => {
+    const raw = buildRawData();
+    const cfg = buildConfigForFixtures();
+    (raw.components.rows as any)["comp-button"].usage =
+      "[Vanilla](https://vanillaframework.io) and [Toggle switch](wiki-ref://grid-comp/comp-toggle)";
+    const result = denormalize(raw, cfg);
+    const button = result.find((c) => c.name === "Button")!;
+    expect(button.usage).toContain("https://vanillaframework.io");
+    expect(button.usage).toContain("[Toggle switch](/toggle-switch)");
+  });
+
+  it("all output still passes schema validation with resolved links", () => {
+    const raw = buildRawData();
+    const cfg = buildConfigForFixtures();
+    (raw.components.rows as any)["comp-button"].description =
+      "See [Toggle switch](wiki-ref://grid-comp/comp-toggle).";
+    const result = denormalize(raw, cfg);
+    for (const component of result) {
+      const parsed = componentSchema.safeParse(component);
+      if (!parsed.success) {
+        throw new Error(
+          `Component "${component.name}" failed validation: ${parsed.error.message}`
+        );
+      }
+    }
   });
 });
