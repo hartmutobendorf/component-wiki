@@ -7,6 +7,7 @@ export {
   changeLogEntrySchema,
   decisionLogEntrySchema,
   childPropertyGroupSchema,
+  mentionedInEntrySchema,
 } from "./schema.js";
 
 // Raw schemas
@@ -34,6 +35,7 @@ export type {
   ChangeLogEntry,
   DecisionLogEntry,
   ChildPropertyGroup,
+  MentionedInEntry,
 } from "./types.js";
 
 // Raw types

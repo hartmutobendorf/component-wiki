@@ -51,6 +51,49 @@ function generateSlug(name: string): string {
 type RawTableData = { rows: Record<string, Record<string, unknown>> };
 
 /**
+ * Maps table names to the HTML section anchor on a component page.
+ * Used when resolving non-component wiki-ref links — we link to the
+ * relevant section on the parent component's page.
+ */
+const TABLE_TO_SECTION: Record<string, string> = {
+  properties: "properties",
+  anatomy: "anatomy",
+  changelog: "changelog",
+  decisionLog: "decisionlog",
+};
+
+/**
+ * Get the parent component rowId from a non-component row.
+ *
+ * Different tables store the parent reference in different fields:
+ * - properties.component → array of component rowIds (take first)
+ * - anatomy.component → single component rowId
+ * - changelog.name → component rowId
+ * - decisionLog.component → single component rowId
+ */
+function getParentComponentRowId(
+  tableName: string,
+  row: Record<string, unknown>
+): string | null {
+  let ref: unknown;
+
+  if (tableName === "changelog") {
+    // Changelog stores the component ref in the "name" field
+    ref = row.name;
+  } else {
+    ref = row.component;
+  }
+
+  if (Array.isArray(ref)) {
+    return (ref[0] as string) ?? null;
+  }
+  if (typeof ref === "string" && ref.trim()) {
+    return ref;
+  }
+  return null;
+}
+
+/**
  * Build a mapping from table ID → { tableName, rows } for quick lookup.
  */
 function buildTableIndex(
@@ -86,7 +129,8 @@ function resolveWikiRefsInMarkdown(
     string,
     { tableName: string; rows: Record<string, Record<string, unknown>> }
   >,
-  componentsTableId: string
+  componentsTableId: string,
+  componentRows: Record<string, Record<string, unknown>>
 ): string {
   if (!markdown) return markdown;
 
@@ -120,7 +164,26 @@ function resolveWikiRefsInMarkdown(
       return `[${text}](/${slug})`;
     }
 
-    // Other tables: render as plain text (no meaningful page to link to)
+    // Non-component tables (properties, anatomy, changelog, decisionLog):
+    // Link to the relevant section on the parent component's page.
+    // e.g., a property "Size" on Button → [Size](/button#properties)
+    const section = TABLE_TO_SECTION[tableEntry.tableName];
+    if (section) {
+      const parentRowId = getParentComponentRowId(tableEntry.tableName, row);
+      if (parentRowId) {
+        const parentRow = componentRows[parentRowId];
+        if (parentRow) {
+          const parentSlug = generateSlug((parentRow.name as string) ?? "");
+          return `[${text}](/${parentSlug}#${section})`;
+        }
+      }
+      // Couldn't resolve parent component — fall through to plain text
+      console.warn(
+        `  ⚠️  wiki-ref: could not resolve parent component for ${tableEntry.tableName} row "${parsed.rowId}" in link [${text}]`
+      );
+    }
+
+    // Unknown table type with no section mapping — render as plain text
     return text;
   });
 }
@@ -138,22 +201,26 @@ export function resolveAllWikiRefs(
 ): { description: string; usage: string; examples: string } {
   const tableIndex = buildTableIndex(config, allRawTables);
   const componentsTableId = config.tables.components?.id ?? "";
+  const componentRows = allRawTables.components?.rows ?? {};
 
   return {
     description: resolveWikiRefsInMarkdown(
       fields.description,
       tableIndex,
-      componentsTableId
+      componentsTableId,
+      componentRows
     ),
     usage: resolveWikiRefsInMarkdown(
       fields.usage,
       tableIndex,
-      componentsTableId
+      componentsTableId,
+      componentRows
     ),
     examples: resolveWikiRefsInMarkdown(
       fields.examples,
       tableIndex,
-      componentsTableId
+      componentsTableId,
+      componentRows
     ),
   };
 }

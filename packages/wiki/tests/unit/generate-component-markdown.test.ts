@@ -377,6 +377,28 @@ describe("generateComponentMarkdown — minimal component", () => {
 // Full component (ordering test)
 // ══════════════════════════════════════════════════════════════
 
+// ══════════════════════════════════════════════════════════════
+// Mentioned In
+// ══════════════════════════════════════════════════════════════
+
+describe("generateComponentMarkdown — mentioned in", () => {
+  it("includes mentioned in section when present", () => {
+    const md = generateComponentMarkdown(fullComponent);
+    expect(md).toContain("## Mentioned In\n\n");
+  });
+
+  it("renders each mention as a markdown link", () => {
+    const md = generateComponentMarkdown(fullComponent);
+    expect(md).toContain("- [Form placement](/form-placement)");
+    expect(md).toContain("- [Settings page](/settings-page)");
+  });
+
+  it("omits mentioned in section when empty", () => {
+    const md = generateComponentMarkdown(minimalComponent);
+    expect(md).not.toContain("## Mentioned In");
+  });
+});
+
 describe("generateComponentMarkdown — section ordering", () => {
   it("outputs sections in correct order", () => {
     const md = generateComponentMarkdown(fullComponent);
@@ -390,6 +412,7 @@ describe("generateComponentMarkdown — section ordering", () => {
     const childPropsPos = md.indexOf("### Child Properties");
     const changeLogPos = md.indexOf("## Change Log");
     const decisionLogPos = md.indexOf("## Decision Log");
+    const mentionedInPos = md.indexOf("## Mentioned In");
 
     expect(titlePos).toBeLessThan(descPos);
     expect(descPos).toBeLessThan(anatomyPos);
@@ -399,5 +422,6 @@ describe("generateComponentMarkdown — section ordering", () => {
     expect(propsPos).toBeLessThan(childPropsPos);
     expect(childPropsPos).toBeLessThan(changeLogPos);
     expect(changeLogPos).toBeLessThan(decisionLogPos);
+    expect(decisionLogPos).toBeLessThan(mentionedInPos);
   });
 });

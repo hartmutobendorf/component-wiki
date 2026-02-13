@@ -672,14 +672,16 @@ describe("denormalize — wiki-ref link resolution", () => {
     );
   });
 
-  it("renders non-component wiki-ref links as plain text", () => {
+  it("resolves non-component wiki-ref links to parent component section", () => {
     const raw = buildRawData();
     const cfg = buildConfigForFixtures();
     (raw.components.rows as any)["comp-button"].description =
       "The [disabled](wiki-ref://grid-prop/prop-disabled) property...";
     const result = denormalize(raw, cfg);
     const button = result.find((c) => c.name === "Button")!;
-    expect(button.description).toBe("The disabled property...");
+    expect(button.description).toBe(
+      "The [disabled](/button#properties) property..."
+    );
   });
 
   it("does not resolve wiki-refs when no syncConfig is provided", () => {

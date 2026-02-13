@@ -11,6 +11,7 @@ import {
   rawLookupTableSchema,
 } from "@wiki/shared";
 import { denormalize, type RawData } from "./denormalize.js";
+import { buildMentionedIn } from "./mentioned-in.js";
 import type { SyncConfig } from "./types.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -75,6 +76,14 @@ async function main() {
 
   // Denormalize
   const components = denormalize(raw, syncConfig);
+
+  // Build "mentioned in" reverse index.
+  // Scans all resolved markdown content for internal links (e.g., [Checkbox](/checkbox))
+  // and builds a map of slug → list of components that mention it.
+  const mentionedInCount = buildMentionedIn(components);
+  if (mentionedInCount > 0) {
+    console.log(`  ${mentionedInCount} components have "mentioned in" references`);
+  }
 
   // Validate output and write
   mkdirSync(OUTPUT_DIR, { recursive: true });

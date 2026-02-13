@@ -110,6 +110,15 @@ const hasExamples = examplesHtml.length > 0;
             </li>
           )
         }
+        {
+          metadata.mentionedIn && metadata.mentionedIn.length > 0 && (
+            <li class="p-table-of-contents__item">
+              <a class="p-table-of-contents__link" href="#mentionedin">
+                Mentioned in
+              </a>
+            </li>
+          )
+        }
       </ul>
     </div>
   </div>
@@ -444,6 +453,23 @@ const hasExamples = examplesHtml.length > 0;
       )
     }
   </div>
+
+  {
+    metadata.mentionedIn && metadata.mentionedIn.length > 0 && (
+      <div class="p-section">
+        <section id="mentionedin" class="u-text-max-width">
+          <h2>Mentioned in</h2>
+          <ul class="p-list">
+            {metadata.mentionedIn.map((entry) => (
+              <li class="p-list__item">
+                <a href={`/${entry.slug}`}>{entry.name}</a>
+              </li>
+            ))}
+          </ul>
+        </section>
+      </div>
+    )
+  }
 
   <style>
     .metadata-list {

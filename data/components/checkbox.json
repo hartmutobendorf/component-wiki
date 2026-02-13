@@ -57,5 +57,11 @@
       "what": "Initial commit"
     }
   ],
-  "decisionLog": []
+  "decisionLog": [],
+  "mentionedIn": [
+    {
+      "name": "Accordion",
+      "slug": "accordion"
+    }
+  ]
 }

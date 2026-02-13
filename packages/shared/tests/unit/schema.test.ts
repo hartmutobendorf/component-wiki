@@ -21,6 +21,7 @@ import {
   changeLogEntrySchema,
   decisionLogEntrySchema,
   childPropertyGroupSchema,
+  mentionedInEntrySchema,
 } from "../../src/schema.js";
 
 // ══════════════════════════════════════════════════════════════
@@ -477,6 +478,25 @@ describe("childPropertyGroupSchema", () => {
   });
 });
 
+// ── mentionedInEntrySchema ───────────────────────────────────
+
+describe("mentionedInEntrySchema", () => {
+  it("accepts a valid mentioned-in entry", () => {
+    const entry = { name: "Accordion", slug: "accordion" };
+    const result = mentionedInEntrySchema.parse(entry);
+    expect(result.name).toBe("Accordion");
+    expect(result.slug).toBe("accordion");
+  });
+
+  it("rejects missing name", () => {
+    expect(() => mentionedInEntrySchema.parse({ slug: "accordion" })).toThrow();
+  });
+
+  it("rejects missing slug", () => {
+    expect(() => mentionedInEntrySchema.parse({ name: "Accordion" })).toThrow();
+  });
+});
+
 // ── componentSchema ─────────────────────────────────────────
 
 describe("componentSchema", () => {
@@ -507,6 +527,7 @@ describe("componentSchema", () => {
     expect(result.properties).toEqual([]);
     expect(result.changeLog).toEqual([]);
     expect(result.decisionLog).toEqual([]);
+    expect(result.mentionedIn).toEqual([]);
   });
 
   it("accepts all valid type enum values", () => {
@@ -603,5 +624,19 @@ describe("componentSchema", () => {
   it("rejects component missing required slug", () => {
     const { slug, ...incomplete } = validComponent;
     expect(() => componentSchema.parse(incomplete)).toThrow();
+  });
+
+  it("accepts component with mentionedIn", () => {
+    const comp = {
+      ...validComponent,
+      mentionedIn: [
+        { name: "Accordion", slug: "accordion" },
+        { name: "Form placement", slug: "form-placement" },
+      ],
+    };
+    const result = componentSchema.parse(comp);
+    expect(result.mentionedIn).toHaveLength(2);
+    expect(result.mentionedIn[0].name).toBe("Accordion");
+    expect(result.mentionedIn[1].slug).toBe("form-placement");
   });
 });

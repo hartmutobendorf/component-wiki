@@ -20,6 +20,7 @@ export const minimalComponent: Component = {
   properties: [],
   changeLog: [],
   decisionLog: [],
+  mentionedIn: [],
 };
 
 /**
@@ -139,6 +140,10 @@ export const fullComponent: Component = {
       decisionMade: "Add ARIA attributes",
       link: "",
     },
+  ],
+  mentionedIn: [
+    { name: "Form placement", slug: "form-placement" },
+    { name: "Settings page", slug: "settings-page" },
   ],
 };
 

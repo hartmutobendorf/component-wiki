@@ -105,5 +105,14 @@ export function generateComponentMarkdown(data: Component): string {
     md += `\n`;
   }
 
+  // Mentioned in
+  if (data.mentionedIn && data.mentionedIn.length > 0) {
+    md += `## Mentioned In\n\n`;
+    for (const entry of data.mentionedIn) {
+      md += `- [${entry.name}](/${entry.slug})\n`;
+    }
+    md += `\n`;
+  }
+
   return md;
 }

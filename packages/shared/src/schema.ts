@@ -135,6 +135,11 @@ export const childPropertyGroupSchema = z.object({
   properties: z.array(propertySchema),
 });
 
+export const mentionedInEntrySchema = z.object({
+  name: z.string(),
+  slug: z.string(),
+});
+
 export const componentSchema = z.object({
   name: z.string(),
   slug: z.string(),
@@ -167,4 +172,5 @@ export const componentSchema = z.object({
   childProperties: z.array(childPropertyGroupSchema).optional(),
   changeLog: z.array(changeLogEntrySchema).optional().default([]),
   decisionLog: z.array(decisionLogEntrySchema).optional().default([]),
+  mentionedIn: z.array(mentionedInEntrySchema).optional().default([]),
 });

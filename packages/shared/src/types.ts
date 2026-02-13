@@ -8,6 +8,7 @@ import type {
   changeLogEntrySchema,
   decisionLogEntrySchema,
   childPropertyGroupSchema,
+  mentionedInEntrySchema,
   // Raw row schemas
   rawComponentRowSchema,
   rawPropertyRowSchema,
@@ -32,6 +33,7 @@ export type Anatomy = z.infer<typeof anatomySchema>;
 export type ChangeLogEntry = z.infer<typeof changeLogEntrySchema>;
 export type DecisionLogEntry = z.infer<typeof decisionLogEntrySchema>;
 export type ChildPropertyGroup = z.infer<typeof childPropertyGroupSchema>;
+export type MentionedInEntry = z.infer<typeof mentionedInEntrySchema>;
 
 // Raw row types (coda-sync output)
 export type RawComponentRow = z.infer<typeof rawComponentRowSchema>;

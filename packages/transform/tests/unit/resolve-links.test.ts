@@ -38,12 +38,25 @@ const allRawTables: Record<
   },
   properties: {
     rows: {
-      "i-size": { rowId: "i-size", name: "Size" },
+      "i-size": { rowId: "i-size", name: "Size", component: ["i-button"] },
+      "i-checked": { rowId: "i-checked", name: "checked", component: ["i-checkbox"] },
     },
   },
-  anatomy: { rows: {} },
-  changelog: { rows: {} },
-  decisionLog: { rows: {} },
+  anatomy: {
+    rows: {
+      "i-anat1": { rowId: "i-anat1", name: "Container", component: "i-button" },
+    },
+  },
+  changelog: {
+    rows: {
+      "i-cl1": { rowId: "i-cl1", name: "i-button", what: "Initial docs" },
+    },
+  },
+  decisionLog: {
+    rows: {
+      "i-dl1": { rowId: "i-dl1", component: "i-checkbox", where: "Review" },
+    },
+  },
 };
 
 // ── Component links ─────────────────────────────────────────
@@ -113,7 +126,7 @@ describe("resolveAllWikiRefs — component links", () => {
 // ── Non-component links ─────────────────────────────────────
 
 describe("resolveAllWikiRefs — non-component links", () => {
-  it("renders property links as plain text", () => {
+  it("links property to parent component's #properties section", () => {
     const result = resolveAllWikiRefs(
       {
         description:
@@ -124,7 +137,97 @@ describe("resolveAllWikiRefs — non-component links", () => {
       config,
       allRawTables
     );
-    expect(result.description).toBe("The Size property controls...");
+    expect(result.description).toBe(
+      "The [Size](/button#properties) property controls..."
+    );
+  });
+
+  it("links property to correct parent when component differs", () => {
+    const result = resolveAllWikiRefs(
+      {
+        description:
+          "See [checked](wiki-ref://grid-prop/i-checked) for details.",
+        usage: "",
+        examples: "",
+      },
+      config,
+      allRawTables
+    );
+    expect(result.description).toBe(
+      "See [checked](/checkbox#properties) for details."
+    );
+  });
+
+  it("links anatomy part to parent component's #anatomy section", () => {
+    const result = resolveAllWikiRefs(
+      {
+        description:
+          "The [Container](wiki-ref://grid-anat/i-anat1) wraps everything.",
+        usage: "",
+        examples: "",
+      },
+      config,
+      allRawTables
+    );
+    expect(result.description).toBe(
+      "The [Container](/button#anatomy) wraps everything."
+    );
+  });
+
+  it("links changelog entry to parent component's #changelog section", () => {
+    const result = resolveAllWikiRefs(
+      {
+        description:
+          "See [Initial docs](wiki-ref://grid-cl/i-cl1) for history.",
+        usage: "",
+        examples: "",
+      },
+      config,
+      allRawTables
+    );
+    expect(result.description).toBe(
+      "See [Initial docs](/button#changelog) for history."
+    );
+  });
+
+  it("links decision log entry to parent component's #decisionlog section", () => {
+    const result = resolveAllWikiRefs(
+      {
+        description:
+          "See [Review](wiki-ref://grid-dl/i-dl1) for context.",
+        usage: "",
+        examples: "",
+      },
+      config,
+      allRawTables
+    );
+    expect(result.description).toBe(
+      "See [Review](/checkbox#decisionlog) for context."
+    );
+  });
+
+  it("falls back to plain text when parent component cannot be resolved", () => {
+    const tables = structuredClone(allRawTables);
+    // Property with a component ref that doesn't exist in the components table
+    tables.properties.rows["i-orphan"] = {
+      rowId: "i-orphan",
+      name: "orphanProp",
+      component: ["i-nonexistent"],
+    };
+    const result = resolveAllWikiRefs(
+      {
+        description:
+          "The [orphanProp](wiki-ref://grid-prop/i-orphan) is lost.",
+        usage: "",
+        examples: "",
+      },
+      config,
+      tables
+    );
+    expect(result.description).toBe("The orphanProp is lost.");
+    expect(warnSpy).toHaveBeenCalledWith(
+      expect.stringContaining("could not resolve parent component")
+    );
   });
 });
 
