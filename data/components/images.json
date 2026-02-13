@@ -14,7 +14,7 @@
   "figmaComponentData": "",
   "componentExampleImage": "",
   "anatomy": {
-    "image": "images/a4dbe2f6-897a-4b6e-82b2-23d81236127c.png",
+    "image": "images/d9ec2ebb-274e-45a1-bec4-8735022c08e5.png",
     "table": []
   },
   "properties": [
@@ -82,5 +82,6 @@
     }
   ],
   "changeLog": [],
-  "decisionLog": []
+  "decisionLog": [],
+  "mentionedIn": []
 }

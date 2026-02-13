@@ -9,12 +9,12 @@
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/main/templates/_macros/vf_cta-section.jinja",
   "description": "The CTA section is a prominent and visually engaging section designed to encourage users to take a clear next step. It combines a concise copy and one or more call-to-action elements into a focused layout that stands out from surrounding content. This pattern is typically used mid-page or near the end of a page to re-engage users and guide them toward a specific action such as downloading resources, contacting sales, or exploring key documentation. The CTA section helps reduce decision friction by clearly communicating what the action is and why it matters now.",
   "usage": "Use the CTA section to highlight a clear, intentional next step within the page flow. This pattern is designed to create a moment of focus, helping users transition from consuming information to taking action.  \nCTA sections are typically placed mid-page or near the end of a page, where users have enough context to understand the value of the action being proposed.\n\nThe CTA section should represent a single primary intent. Any supporting text or additional elements should reinforce this intent rather than introduce new topics.\n\n  \n\n### When to use\n\n*   A specific user action is the primary purpose of the section, not a secondary affordance.\n*   You need to visually separate a call to action from surrounding content to increase emphasis.\n\n### When not to use\n\n*   If long-form explanatory content is needed, use a Basic section with the CTA block instead.\n*   The CTA appears too early in the page flow, before users have sufficient context to understand its value.",
-  "examples": "### Layout\n\n100(Default)\n\n![example-1.png](images/91dbd4d1-9127-4af6-a5f2-ecac0bb5e025.png)\n\n100(CTA block)\n\n![example-4.png](images/6b1f24e4-2c7d-41a4-9d26-e10ad5711ffb.png)\n\n25/75(Default)\n\n![example.png](images/5a8ada2a-e6b0-4da5-8b10-23f2eeded306.png)\n\n25/75(CTA block)\n\n![example-5.png](images/93611725-09b9-4abf-8bc9-1f22ad2f6d08.png)\n\n### Responsive\n\nMedium dimension (Default)\n\n![example-2.png](images/30f12b21-05f3-407a-b73e-08fa2e7dec65.png)\n\nMedium dimension (CTA block)\n\n![example-6.png](images/6aff2ccf-3886-4bb7-963b-934e3f00ad2b.png)\n\nSmall dimension (Default)\n\n![example-3.png](images/1d6588bd-3cac-4ca7-9882-61ef3fa00908.png)\n\nSmall dimension (CTA block)\n\n![example-7.png](images/a05fbf92-ac4e-4828-8ae9-7ac12edd7dfc.png)",
+  "examples": "### Layout\n\n100(Default)\n\n![example-1.png](images/5e6c6549-6007-464e-b564-e278fb961a8b.png)\n\n100(CTA block)\n\n![example-4.png](images/e124e0c7-fd16-4550-9c3d-cbd92100f6a9.png)\n\n25/75(Default)\n\n![example.png](images/fdd30b8a-651c-4bf2-9ef9-b6acb062fa62.png)\n\n25/75(CTA block)\n\n![example-5.png](images/e204a51a-ed80-4c98-a89d-3f5f33c1f9c6.png)\n\n### Responsive\n\nMedium dimension (Default)\n\n![example-2.png](images/e3501554-87eb-4c4f-a3b4-3a70ae8f5f2d.png)\n\nMedium dimension (CTA block)\n\n![example-6.png](images/201fbfe0-6629-43b1-97b5-1ed1524fc7c2.png)\n\nSmall dimension (Default)\n\n![example-3.png](images/0b9b57cf-9bf1-47a7-badf-c55fc5624d38.png)\n\nSmall dimension (CTA block)\n\n![example-7.png](images/746d5911-1378-4a0f-a501-890502849121.png)",
   "interactions": "",
   "figmaComponentData": "",
-  "componentExampleImage": "images/c67513bb-e293-4f5a-91e8-5dcfe37ee2b8.png",
+  "componentExampleImage": "images/a3236cbd-4eaf-4fe2-81b8-cddca884b709.png",
   "anatomy": {
-    "image": "images/4b0c7faf-ac31-47fa-bd73-023a04c663a2.png",
+    "image": "images/b785965c-1dad-4ad8-9c05-3b4c4878ce49.png",
     "table": [
       {
         "number": 1,
@@ -123,5 +123,6 @@
     }
   ],
   "changeLog": [],
-  "decisionLog": []
+  "decisionLog": [],
+  "mentionedIn": []
 }

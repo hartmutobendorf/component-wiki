@@ -12,9 +12,9 @@
   "examples": "",
   "interactions": "",
   "figmaComponentData": "",
-  "componentExampleImage": "images/0780394a-1f8f-4145-bd50-3dda602d45e0.png",
+  "componentExampleImage": "images/83f726e1-2ff2-486e-9554-36f6ee9712f2.png",
   "anatomy": {
-    "image": "images/8ee9cae8-3073-46c4-8268-87a744e72cc0.png",
+    "image": "images/74cae583-3059-45df-b516-98f194dfab18.png",
     "table": [
       {
         "number": 1,
@@ -60,5 +60,6 @@
   },
   "properties": [],
   "changeLog": [],
-  "decisionLog": []
+  "decisionLog": [],
+  "mentionedIn": []
 }

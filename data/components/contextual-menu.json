@@ -12,9 +12,9 @@
   "examples": "",
   "interactions": "",
   "figmaComponentData": "",
-  "componentExampleImage": "images/d1957923-3104-4619-8994-1de7e5ff89d8.png",
+  "componentExampleImage": "images/b80eb971-268c-40f2-8647-76bf723a4c7d.png",
   "anatomy": {
-    "image": "images/d0c85e87-7338-459d-ab82-51d8c20c93af.png",
+    "image": "images/903f6d81-6be8-4f4f-948e-0f0e2227a8ec.png",
     "table": [
       {
         "number": 1,
@@ -75,5 +75,6 @@
       "what": "Added description, anatomy descriptions, Usage guidelines and properties"
     }
   ],
-  "decisionLog": []
+  "decisionLog": [],
+  "mentionedIn": []
 }
