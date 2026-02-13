@@ -48,15 +48,40 @@ importers:
         specifier: ^4.0.18
         version: 4.0.18(@types/node@25.2.3)(sass@1.97.3)(tsx@4.21.0)
 
-  packages/shared: {}
+  packages/shared:
+    dependencies:
+      zod:
+        specifier: ^3.24.2
+        version: 3.25.76
+    devDependencies:
+      typescript:
+        specifier: ^5.7.3
+        version: 5.9.3
 
-  packages/transform: {}
+  packages/transform:
+    dependencies:
+      '@wiki/shared':
+        specifier: workspace:*
+        version: link:../shared
+    devDependencies:
+      '@types/node':
+        specifier: ^25.2.3
+        version: 25.2.3
+      tsx:
+        specifier: ^4.19.2
+        version: 4.21.0
+      typescript:
+        specifier: ^5.7.3
+        version: 5.9.3
 
   packages/wiki:
     dependencies:
       '@astrojs/mdx':
         specifier: ^4.3.12
         version: 4.3.13(astro@5.17.2(@types/node@25.2.3)(rollup@4.57.1)(sass@1.97.3)(tsx@4.21.0)(typescript@5.9.3))
+      '@wiki/shared':
+        specifier: workspace:*
+        version: link:../shared
       astro:
         specifier: ^5.15.8
         version: 5.17.2(@types/node@25.2.3)(rollup@4.57.1)(sass@1.97.3)(tsx@4.21.0)(typescript@5.9.3)
