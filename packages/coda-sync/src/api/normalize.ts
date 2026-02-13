@@ -2,13 +2,16 @@
  * Value normalizer — strips Coda rich-format metadata, extracts clean values.
  *
  * Handles:
- *  - StructuredValue with rowId inside an array → rowId string (relation column)
- *  - StructuredValue with rowId as single value → name string (lookup column)
- *  - StructuredValue without rowId → name string
+ *  - StructuredValue with rowId → rowId string (relation/lookup column)
+ *  - StructuredValue without rowId → name string (display value)
  *  - ImageObject → collect URL, return local path placeholder
  *  - WebPage → url string
  *  - Scalars → pass through (strip triple-backtick wrapping)
- *  - Arrays → normalize each element (array context enables rowId extraction)
+ *  - Arrays → normalize each element
+ *
+ * Note: Both single-value and array relation columns produce rowId strings.
+ * The transform step resolves these to display values where needed (e.g. type,
+ * documentationStatus, tiers are single rowIds referencing lookup tables).
  */
 
 export interface CollectedImage {

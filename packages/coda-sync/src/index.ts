@@ -25,8 +25,10 @@ export async function sync() {
   console.log("Phase A: Loading config...");
   const config = loadConfig();
   const apiToken = getApiToken();
-  const services = createServices(createCodaClient(config.baseUrl, apiToken));
-  console.log(`Doc: ${config.docId}, Tables: ${Object.keys(config.tables).join(", ")}\n`);
+  const services = createServices(createCodaClient(config.baseUrl, apiToken), apiToken);
+  console.log(
+    `  Doc: ${config.docId}, Tables: ${Object.keys(config.tables).join(", ")}\n`
+  );
 
   // ── Phase B: API Fetch ────────────────────────────────────────
   console.log("Phase B: Fetching all tables (rich format)...");
@@ -49,52 +51,55 @@ export async function sync() {
       normalized[row.id] = normalizedRow;
     }
     normalizedTables[tableName] = normalized;
-    console.log(`  ${tableName}: ${Object.keys(normalized).length} rows normalized`);
+    console.log(
+      `  ${tableName}: ${Object.keys(normalized).length} rows normalized`
+    );
   }
   console.log("");
 
-  // ── Phase D: HTML Content ─────────────────────────────────────
+  // ── Phase D + E: HTML Content Extraction + Conversion ─────────
   console.log("Phase D: Extracting HTML content...");
   const allHtmlImageUrls: string[] = [];
 
-  // Find tables with htmlColumns config
   for (const [tableName, tableConfig] of Object.entries(config.tables)) {
     if (!tableConfig.htmlColumns || tableConfig.htmlColumns.length === 0) {
       continue;
     }
 
-    console.log(`  Exporting HTML for ${tableName} columns: ${tableConfig.htmlColumns.join(", ")}`);
+    console.log(
+      `  Exporting HTML for ${tableName} columns: ${tableConfig.htmlColumns.join(", ")}`
+    );
     const htmlContent = await extractHtmlColumns(
       services,
       config.docId,
       tableConfig
     );
 
-    // ── Phase E: Convert + Merge ──────────────────────────────
     console.log("Phase E: Converting HTML to markdown and merging...");
     const normalizedRows = normalizedTables[tableName];
 
+    // Build a name → row lookup for O(1) matching
+    const nameToRow = new Map<string, NormalizedRow>();
+    for (const row of Object.values(normalizedRows)) {
+      if (typeof row.name === "string") {
+        nameToRow.set(row.name, row);
+      }
+    }
+
     for (const [componentName, columns] of htmlContent) {
-      // Find the matching normalized row by name
-      const row = Object.values(normalizedRows).find(
-        (r) => r.name === componentName
-      );
+      const row = nameToRow.get(componentName);
       if (!row) {
-        console.log(`  No matching row for HTML content: "${componentName}"`);
+        console.log(
+          `  No matching row for HTML content: "${componentName}"`
+        );
         continue;
       }
 
-      // Convert each HTML column to markdown
       for (const [columnName, html] of Object.entries(columns)) {
         const { markdown, imageUrls } = htmlToMarkdown(html);
-        const camelKey = columnName
-          .split(/\s+/)
-          .map((w, i) =>
-            i === 0 ? w.toLowerCase() : w.charAt(0).toUpperCase() + w.slice(1).toLowerCase()
-          )
-          .join("");
+        const camelKey = toCamelCase(columnName);
 
-        // Store the markdown (will be finalized after image download)
+        // Store temporarily for finalization after image download
         row[`_html_${camelKey}`] = { markdown, imageUrls };
         allHtmlImageUrls.push(...imageUrls);
       }
@@ -113,48 +118,46 @@ export async function sync() {
     imagesDir
   );
 
-  // Finalize HTML columns — replace placeholders with real paths
+  // Build a reverse lookup: collector localPath → downloaded localPath
+  // This handles the case where ImageCollector pre-assigned paths
+  // that may differ from the final downloaded paths
+  const collectorPathToFinal = new Map<string, string>();
+  for (const img of imageCollector.getAll()) {
+    const finalPath = urlToPath.get(img.url);
+    if (finalPath) {
+      collectorPathToFinal.set(img.localPath, finalPath);
+    }
+  }
+
+  // Finalize all rows: replace HTML placeholders and remap collector paths
   for (const rows of Object.values(normalizedTables)) {
     for (const row of Object.values(rows)) {
-      for (const [key, value] of Object.entries(row)) {
-        if (key.startsWith("_html_") && value && typeof value === "object") {
-          const { markdown, imageUrls } = value as {
-            markdown: string;
-            imageUrls: string[];
-          };
-          const camelKey = key.slice("_html_".length);
-          row[camelKey] = replaceImagePlaceholders(
-            markdown,
-            urlToPath,
-            imageUrls
-          );
-          delete row[key];
-        }
+      // Replace HTML column placeholders with downloaded paths
+      for (const key of Object.keys(row)) {
+        if (!key.startsWith("_html_")) continue;
+        const { markdown, imageUrls } = row[key] as {
+          markdown: string;
+          imageUrls: string[];
+        };
+        const camelKey = key.slice("_html_".length);
+        row[camelKey] = replaceImagePlaceholders(
+          markdown,
+          urlToPath,
+          imageUrls
+        );
+        delete row[key];
       }
 
-      // Also rewrite ImageCollector paths to downloaded paths
+      // Remap ImageCollector placeholder paths to final downloaded paths
       for (const [key, value] of Object.entries(row)) {
-        if (typeof value === "string" && value.startsWith("images/")) {
-          // Check if this was a collector path that got remapped
-          for (const img of imageCollector.getAll()) {
-            if (img.localPath === value && urlToPath.has(img.url)) {
-              row[key] = urlToPath.get(img.url)!;
-              break;
-            }
-          }
-        }
-        // Also handle arrays of image paths
-        if (Array.isArray(value)) {
-          row[key] = value.map((item) => {
-            if (typeof item === "string" && item.startsWith("images/")) {
-              for (const img of imageCollector.getAll()) {
-                if (img.localPath === item && urlToPath.has(img.url)) {
-                  return urlToPath.get(img.url)!;
-                }
-              }
-            }
-            return item;
-          });
+        if (typeof value === "string" && collectorPathToFinal.has(value)) {
+          row[key] = collectorPathToFinal.get(value)!;
+        } else if (Array.isArray(value)) {
+          row[key] = value.map((item) =>
+            typeof item === "string" && collectorPathToFinal.has(item)
+              ? collectorPathToFinal.get(item)!
+              : item
+          );
         }
       }
     }
@@ -176,6 +179,20 @@ export async function sync() {
   }
 
   console.log("\nDone!");
+}
+
+/**
+ * Convert a column name to camelCase.
+ */
+function toCamelCase(name: string): string {
+  return name
+    .split(/\s+/)
+    .map((w, i) =>
+      i === 0
+        ? w.toLowerCase()
+        : w.charAt(0).toUpperCase() + w.slice(1).toLowerCase()
+    )
+    .join("");
 }
 
 sync().catch((err) => {
