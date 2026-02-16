@@ -27,6 +27,7 @@ export const rawComponentRowSchema = z.object({
   changeLog: z.array(z.string()),
   decisionLog: z.array(z.string()),
   uiBlocksUsedInPattern: stringOrStringArray,
+  "sites-ArchitectureLevels": z.string(),
 }).passthrough();
 
 export const rawPropertyRowSchema = z.object({
@@ -51,18 +52,21 @@ export const rawAnatomyRowSchema = z.object({
 
 export const rawChangeLogRowSchema = z.object({
   rowId: z.string(),
-  name: z.string(),
+  construct: z.string(),
   when: z.string(),
   what: z.string(),
   who: z.string(),
+  concept: z.string(),
 }).passthrough();
 
 export const rawDecisionLogRowSchema = z.object({
   rowId: z.string(),
-  component: z.string(),
+  construct: z.string(),
   where: z.string(),
-  decisionMade: z.string(),
+  what: z.string(),
   link: z.string(),
+  concept: z.string(),
+  when: z.string(),
 }).passthrough();
 
 export const rawLookupRowSchema = z.object({
@@ -127,8 +131,9 @@ export const changeLogEntrySchema = z.object({
 
 export const decisionLogEntrySchema = z.object({
   where: z.string(),
-  decisionMade: z.string(),
+  what: z.string(),
   link: z.string(),
+  when: z.string(),
 });
 
 export const childPropertyGroupSchema = z.object({
@@ -169,6 +174,7 @@ export const componentSchema = z.object({
   interactions: z.string().optional().default(""),
   figmaComponentData: z.string().optional().default(""),
   componentExampleImage: z.string().optional().default(""),
+  sitesArchitectureLevels: z.string().optional().default(""),
   anatomy: anatomySchema.optional(),
   properties: z.array(propertySchema).optional().default([]),
   childProperties: z.array(childPropertyGroupSchema).optional(),

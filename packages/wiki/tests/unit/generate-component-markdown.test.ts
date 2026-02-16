@@ -315,7 +315,7 @@ describe("generateComponentMarkdown — decision log", () => {
   it("includes decision log section when present", () => {
     const md = generateComponentMarkdown(fullComponent);
     expect(md).toContain("## Decision Log\n\n");
-    expect(md).toContain("| Where | Decision Made | Link |");
+    expect(md).toContain("| Where | What | Link | When |");
   });
 
   it("renders link as markdown link when present", () => {

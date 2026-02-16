@@ -134,13 +134,15 @@ export const fullComponent: Component = {
   decisionLog: [
     {
       where: "Design review",
-      decisionMade: "Use rounded thumb style",
+      what: "Use rounded thumb style",
       link: "https://example.com/meeting/123",
+      when: "2025-02-01",
     },
     {
       where: "Accessibility audit",
-      decisionMade: "Add ARIA attributes",
+      what: "Add ARIA attributes",
       link: "",
+      when: "",
     },
   ],
   mentionedIn: [

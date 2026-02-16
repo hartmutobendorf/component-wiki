@@ -178,7 +178,7 @@ export const propertyRow = {
   },
 };
 
-/** A changelog row — StructuredValue Name (relation), date, StructuredValue Who */
+/** A changelog row — StructuredValue Construct (relation), date, StructuredValue Who */
 export const changelogRow = {
   id: "i-cl-entry07",
   type: "row",
@@ -190,7 +190,7 @@ export const changelogRow = {
   browserLink:
     "https://coda.io/d/_dFakeDoc99#_tugrid-changelog/_rui-cl-entry07",
   values: {
-    Name: {
+    Construct: {
       "@context": "http://schema.org/",
       "@type": "StructuredValue",
       additionalType: "row",
@@ -212,6 +212,7 @@ export const changelogRow = {
       rowId: "i-ed02",
       tableUrl: "https://coda.io/d/_dFakeDoc99#_tugrid-editors",
     },
+    Concept: "",
   },
 };
 

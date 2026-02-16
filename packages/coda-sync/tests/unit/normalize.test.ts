@@ -311,7 +311,7 @@ describe("normalizeRow", () => {
     expect(result.component).toEqual(["i-abc123def4"]);
   });
 
-  it("normalizes a changelog row with StructuredValue Name and Who", () => {
+  it("normalizes a changelog row with StructuredValue Construct and Who", () => {
     const result = normalizeRow(
       changelogRow.id,
       changelogRow.values as Record<string, unknown>,
@@ -319,14 +319,15 @@ describe("normalizeRow", () => {
     );
 
     expect(result.rowId).toBe("i-cl-entry07");
-    // Name is a StructuredValue (relation to component) → rowId
-    expect(result.name).toBe("i-abc123def4");
+    // Construct is a StructuredValue (relation to component) → rowId
+    expect(result.construct).toBe("i-abc123def4");
     expect(result.when).toBe("2025-08-01T11:00:00.000+00:00");
     expect(result.what).toBe(
       "Added accessibility notes and keyboard navigation details"
     );
     // Who is a StructuredValue (relation to editor) → rowId
     expect(result.who).toBe("i-ed02");
+    expect(result.concept).toBe("");
   });
 
   it("normalizes an editor row with Person type", () => {

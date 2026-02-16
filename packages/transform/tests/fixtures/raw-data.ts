@@ -69,6 +69,7 @@ export const componentsTable = {
       changeLog: ["cl-01"],
       decisionLog: ["dl-01"],
       uiBlocksUsedInPattern: "",
+      "sites-ArchitectureLevels": "",
     },
     "comp-toggle": {
       rowId: "comp-toggle",
@@ -90,6 +91,7 @@ export const componentsTable = {
       changeLog: [],
       decisionLog: [],
       uiBlocksUsedInPattern: "",
+      "sites-ArchitectureLevels": "UI component",
     },
     "comp-card-pattern": {
       rowId: "comp-card-pattern",
@@ -111,6 +113,7 @@ export const componentsTable = {
       changeLog: [],
       decisionLog: [],
       uiBlocksUsedInPattern: ["comp-button", "comp-toggle"],
+      "sites-ArchitectureLevels": "",
     },
     "comp-block-internal": {
       rowId: "comp-block-internal",
@@ -132,6 +135,7 @@ export const componentsTable = {
       changeLog: [],
       decisionLog: [],
       uiBlocksUsedInPattern: "",
+      "sites-ArchitectureLevels": "",
     },
     "comp-no-anatomy": {
       rowId: "comp-no-anatomy",
@@ -153,6 +157,7 @@ export const componentsTable = {
       changeLog: [],
       decisionLog: [],
       uiBlocksUsedInPattern: "",
+      "sites-ArchitectureLevels": "",
     },
   } as Record<string, any>,
 };
@@ -238,10 +243,11 @@ export const changelogTable = {
   rows: {
     "cl-01": {
       rowId: "cl-01",
-      name: "comp-button",
+      construct: "comp-button",
       when: "2025-06-15T10:00:00.000Z",
       what: "Initial documentation created",
       who: "ed-01",
+      concept: "",
     },
   } as Record<string, any>,
 };
@@ -253,10 +259,12 @@ export const decisionLogTable = {
   rows: {
     "dl-01": {
       rowId: "dl-01",
-      component: "comp-button",
+      construct: "comp-button",
       where: "Design review meeting",
-      decisionMade: "Use filled style as default variant",
+      what: "Use filled style as default variant",
       link: "https://docs.example.com/decisions/001",
+      concept: "",
+      when: "",
     },
   } as Record<string, any>,
 };

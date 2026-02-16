@@ -101,11 +101,12 @@ export function generateComponentMarkdown(data: Component): string {
   // Decision log
   if (data.decisionLog && data.decisionLog.length > 0) {
     md += `## Decision Log\n\n`;
-    md += `| Where | Decision Made | Link |\n`;
-    md += `|-------|---------------|------|\n`;
+    md += `| Where | What | Link | When |\n`;
+    md += `|-------|------|------|------|\n`;
     for (const entry of data.decisionLog) {
       const link = entry.link ? `[View](${entry.link})` : "-";
-      md += `| ${entry.where} | ${entry.decisionMade} | ${link} |\n`;
+      const when = entry.when || "-";
+      md += `| ${entry.where} | ${entry.what} | ${link} | ${when} |\n`;
     }
     md += `\n`;
   }

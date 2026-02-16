@@ -11,6 +11,7 @@
   "usage": "Chips are visual elements that display information about a specific entity on the page. This information can be status, categories, tags, etc. They make this information more visually prominent and therefore elevate it in the information hierarchy.\n\nIn addition to displaying information, chips can also facilitate secondary actions such as content filtering, selection and highlighting. When interactive, chips maintain their primary function of displaying information - filter chips display applied filters while allowing dismissal, selection chips highlight selected options while allowing changes. Chips should not replace the primary call-to-action [Button](/button) - they should be used for supporting actions that complement the main user flow rather than driving it.",
   "examples": "",
   "interactions": "",
+  "sitesArchitectureLevels": "i-UvVNCYZ44t",
   "anatomy": {
     "table": [
       {

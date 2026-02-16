@@ -100,6 +100,7 @@ describe("denormalize — slug generation", () => {
       changeLog: [],
       decisionLog: [],
       uiBlocksUsedInPattern: "",
+      "sites-ArchitectureLevels": "",
     };
     const result = denormalize(raw);
     const edge = result.find((c) => c.name === "  --Edge case-- ")!;
@@ -389,7 +390,7 @@ describe("denormalize — changelog", () => {
     (raw.changelog.rows as any)["cl-01"].who = "unknown-editor";
     const result = denormalize(raw);
     const button = result.find((c) => c.name === "Button")!;
-    // lookupName returns "" for missing, then fallback is raw who
+    // lookupName returns "" for missing, then fallback is raw who value
     expect(button.changeLog[0].who).toBe("unknown-editor");
   });
 });
@@ -402,7 +403,7 @@ describe("denormalize — decision log", () => {
     const button = result.find((c) => c.name === "Button")!;
     expect(button.decisionLog).toHaveLength(1);
     expect(button.decisionLog[0].where).toBe("Design review meeting");
-    expect(button.decisionLog[0].decisionMade).toBe(
+    expect(button.decisionLog[0].what).toBe(
       "Use filled style as default variant",
     );
     expect(button.decisionLog[0].link).toBe(
@@ -472,6 +473,7 @@ describe("denormalize — child properties", () => {
       changeLog: [],
       decisionLog: [],
       uiBlocksUsedInPattern: "",
+      "sites-ArchitectureLevels": "",
     };
     (raw.components.rows as any)["comp-card-pattern"].uiBlocksUsedInPattern =
       ["comp-button", "comp-empty-block"];

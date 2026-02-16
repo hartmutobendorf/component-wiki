@@ -52,6 +52,7 @@ describe("rawComponentRowSchema", () => {
     changeLog: ["cl1"],
     decisionLog: ["dl1"],
     uiBlocksUsedInPattern: "",
+    "sites-ArchitectureLevels": "",
   };
 
   it("accepts a valid component row", () => {
@@ -178,10 +179,11 @@ describe("rawChangeLogRowSchema", () => {
   it("accepts a valid changelog row", () => {
     const row = {
       rowId: "cl-01",
-      name: "comp-01",
+      construct: "comp-01",
       when: "2025-01-01",
       what: "Initial draft",
       who: "ed-01",
+      concept: "",
     };
     expect(() => rawChangeLogRowSchema.parse(row)).not.toThrow();
   });
@@ -193,10 +195,12 @@ describe("rawDecisionLogRowSchema", () => {
   it("accepts a valid decision log row", () => {
     const row = {
       rowId: "dl-01",
-      component: "comp-01",
+      construct: "comp-01",
       where: "Design review",
-      decisionMade: "Use variant A",
+      what: "Use variant A",
       link: "https://example.com",
+      concept: "",
+      when: "",
     };
     expect(() => rawDecisionLogRowSchema.parse(row)).not.toThrow();
   });
@@ -246,6 +250,7 @@ describe("raw table schemas", () => {
           changeLog: [],
           decisionLog: [],
           uiBlocksUsedInPattern: "",
+          "sites-ArchitectureLevels": "",
         },
       },
     };
@@ -294,10 +299,11 @@ describe("raw table schemas", () => {
       rows: {
         "cl-01": {
           rowId: "cl-01",
-          name: "comp-01",
+          construct: "comp-01",
           when: "",
           what: "",
           who: "",
+          concept: "",
         },
       },
     };
@@ -310,10 +316,12 @@ describe("raw table schemas", () => {
       rows: {
         "dl-01": {
           rowId: "dl-01",
-          component: "comp-01",
+          construct: "comp-01",
           where: "",
-          decisionMade: "",
+          what: "",
           link: "",
+          concept: "",
+          when: "",
         },
       },
     };
@@ -453,8 +461,9 @@ describe("decisionLogEntrySchema", () => {
   it("accepts a valid decision log entry", () => {
     const entry = {
       where: "Meeting",
-      decisionMade: "Use variant A",
+      what: "Use variant A",
       link: "https://example.com",
+      when: "2025-01-01",
     };
     expect(() => decisionLogEntrySchema.parse(entry)).not.toThrow();
   });

@@ -128,8 +128,9 @@ function transformChangelog(
 function transformDecisionLog(row: RawDecisionLogRow): DecisionLogEntry {
   return {
     where: row.where ?? "",
-    decisionMade: row.decisionMade ?? "",
+    what: row.what ?? "",
     link: row.link ?? "",
+    when: row.when ?? "",
   };
 }
 
@@ -319,6 +320,7 @@ export function denormalize(raw: RawData, syncConfig?: SyncConfig): Component[] 
       interactions: resolvedFields.interactions,
       figmaComponentData: comp.figmaComponentData ?? "",
       componentExampleImage: resolveImage(comp.componentExampleImage),
+      sitesArchitectureLevels: comp["sites-ArchitectureLevels"] ?? "",
       anatomy: anatomyObj,
       properties: componentProperties,
       childProperties,

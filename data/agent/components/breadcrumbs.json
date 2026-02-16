@@ -11,6 +11,7 @@
   "usage": "Breadcrumbs are used to represent the hierarchical structure of content within an application or website, helping users understand where they are in the information architecture (IA). They provide a visual trail of the user's current location and offer quick navigation to other levels in the IA.\n\nBreadcrumbs reflect the site's structure, not the path a user took to arrive at the current page. They show where you are in the hierarchy, not how you got there.\n\nThey are most effective in applications or websites with substantial content organized hierarchically across two or more levels.  The more complex your information architecture, the more valuable breadcrumbs become for helping users maintain context and navigate efficiently.\n\n### When to use\n\n*   In applications or websites with multiple levels of hierarchical content structure\n*   To help users understand their current location within a deep information architecture\n*   To provide quick navigation back to higher levels in the IA\n*   When the relationship between pages follows a clear parent-child hierarchy\n*   As a secondary navigation aid to complement your primary [Navigation](/navigation)\n\n### When not to use\n\n*   On websites or applications with only a single level of hierarchy\n*   On the root of your site or app (as there are no higher levels to navigate to)\n*   As a replacement for primary [Navigation](/navigation).  Breadcrumbs are always secondary and should enrich, not replace, your main [Navigation](/navigation)\n*   To track a user's browsing history or the path they took through your application\n*   As a progress indicator for multi-step processes",
   "examples": "",
   "interactions": "",
+  "sitesArchitectureLevels": "i-UvVNCYZ44t",
   "anatomy": {
     "table": [
       {
@@ -60,8 +61,9 @@
   "decisionLog": [
     {
       "where": "App mafia",
-      "decisionMade": "We should use breadcrumbs to only show information hierarchy (and not to show a users flow i.e. their path navigating through the app).",
-      "link": "https://docs.google.com/document/d/1e96PtV1x-CiHkvrCn6_U0_1fHV6yTQg3UTXKvQyG9wc/edit?tab=t.5l0pasbf331b#bookmark=id.x6nf496o68f1"
+      "what": "We should use breadcrumbs to only show information hierarchy (and not to show a users flow i.e. their path navigating through the app).",
+      "link": "https://docs.google.com/document/d/1e96PtV1x-CiHkvrCn6_U0_1fHV6yTQg3UTXKvQyG9wc/edit?tab=t.5l0pasbf331b#bookmark=id.x6nf496o68f1",
+      "when": ""
     }
   ],
   "mentionedIn": [
