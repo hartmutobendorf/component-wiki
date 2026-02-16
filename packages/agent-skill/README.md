@@ -18,14 +18,14 @@ This skill follows the open [Agent Skills](https://agentskills.io) standard and 
 ### Claude Code
 
 ```shell
-/plugin marketplace add canonical/component-wiki
+/plugin marketplace add dgtlntv/component-wiki
 /plugin install vanilla-design-system@component-wiki
 ```
 
 ### Pi
 
 ```shell
-git clone https://github.com/canonical/component-wiki /tmp/component-wiki
+git clone https://github.com/dgtlntv/component-wiki /tmp/component-wiki
 cp -r /tmp/component-wiki/packages/agent-skill/dist/skills/vanilla-design-system ~/.pi/agent/skills/
 ```
 
@@ -39,13 +39,13 @@ cp -r /tmp/component-wiki/packages/agent-skill/dist/skills/vanilla-design-system
 
 ```shell
 # Enable experimental.skills in /settings first
-gemini skills install https://github.com/canonical/component-wiki.git --path packages/agent-skill/dist/skills/vanilla-design-system
+gemini skills install https://github.com/dgtlntv/component-wiki.git --path packages/agent-skill/dist/skills/vanilla-design-system
 ```
 
 ### GitHub Copilot (VS Code & CLI)
 
 ```shell
-git clone https://github.com/canonical/component-wiki /tmp/component-wiki
+git clone https://github.com/dgtlntv/component-wiki /tmp/component-wiki
 cp -r /tmp/component-wiki/packages/agent-skill/dist/skills/vanilla-design-system ~/.copilot/skills/
 
 # Or add to your repo
@@ -57,7 +57,7 @@ cp -r /tmp/component-wiki/packages/agent-skill/dist/skills/vanilla-design-system
 Use the `$skill-installer` skill and prompt it to install from this repository:
 
 ```
-$skill-installer install vanilla-design-system from https://github.com/canonical/component-wiki, path packages/agent-skill/dist/skills/vanilla-design-system
+$skill-installer install vanilla-design-system from https://github.com/dgtlntv/component-wiki, path packages/agent-skill/dist/skills/vanilla-design-system
 ```
 
 ### Manual / Other agents
