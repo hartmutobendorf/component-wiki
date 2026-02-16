@@ -86,7 +86,7 @@ export const rawDecisionLogTableSchema = rawTableOf(rawDecisionLogRowSchema);
 export const rawLookupTableSchema = rawTableOf(rawLookupRowSchema);
 
 // ============================================================
-// Output schemas — validate transform output (data/components/*.json)
+// Output schemas — validate transform output (data/wiki/*.json)
 // ============================================================
 
 export const propertySchema = z.object({

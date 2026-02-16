@@ -1,6 +1,6 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
-import { resolveAllWikiRefs } from "../../src/resolve-links.js";
-import type { SyncConfig } from "../../src/types.js";
+import { resolveAllWikiRefs } from "../../src/common/resolve-links.js";
+import type { SyncConfig } from "../../src/common/types.js";
 
 // Suppress console.warn in tests (resolve emits warnings for missing refs)
 let warnSpy: ReturnType<typeof vi.spyOn>;

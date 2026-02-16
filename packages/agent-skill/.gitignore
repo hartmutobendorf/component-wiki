@@ -1,0 +1,3 @@
+# Override root-level `dist` ignore — this package's dist/ is the
+# distributable skill artifact and must be committed to git.
+!dist/

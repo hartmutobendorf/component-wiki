@@ -5,7 +5,7 @@ import { componentSchema } from "@wiki/shared";
 const components = defineCollection({
   loader: glob({
     pattern: "*.json",
-    base: "../../data/components",
+    base: "../../data/wiki",
   }),
   schema: componentSchema,
 });

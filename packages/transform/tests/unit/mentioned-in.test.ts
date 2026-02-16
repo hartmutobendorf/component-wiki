@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { extractMentionedSlugs, buildMentionedIn } from "../../src/mentioned-in.js";
+import { extractMentionedSlugs, buildMentionedIn } from "../../src/common/mentioned-in.js";
 import type { Component } from "@wiki/shared";
 
 /** Helper to build a minimal component with specific markdown fields. */

@@ -1,7 +1,7 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
-import { denormalize } from "../../src/denormalize.js";
+import { denormalize } from "../../src/common/denormalize.js";
 import { componentSchema } from "@wiki/shared";
-import type { SyncConfig } from "../../src/types.js";
+import type { SyncConfig } from "../../src/common/types.js";
 import {
   buildRawData,
   componentsTable,

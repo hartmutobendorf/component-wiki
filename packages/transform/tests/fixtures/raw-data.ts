@@ -4,7 +4,7 @@
  * These represent the normalized data that coda-sync outputs (data/raw/*.json),
  * already parsed through the shared Zod schemas.
  */
-import type { RawData } from "../../src/denormalize.js";
+import type { RawData } from "../../src/common/denormalize.js";
 
 // --- Lookup tables ---
 

@@ -1,0 +1,16 @@
+{
+  "name": "component-wiki",
+  "owner": {
+    "name": "Canonical"
+  },
+  "metadata": {
+    "description": "Agent skills for the Vanilla Framework design system"
+  },
+  "plugins": [
+    {
+      "name": "vanilla-design-system",
+      "source": "./packages/agent-skill/dist",
+      "description": "Explore Canonical's Vanilla Framework design system documentation. Covers 49 UI components including their properties, anatomy, usage guidelines, and relationships."
+    }
+  ]
+}
