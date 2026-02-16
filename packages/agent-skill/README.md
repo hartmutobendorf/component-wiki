@@ -1,19 +1,8 @@
 # Vanilla Design System Agent Skill
 
-An agent skill for exploring Canonical's [Vanilla Framework](https://vanillaframework.io) design system documentation. Covers 49 UI components including their properties, anatomy, usage guidelines, and relationships.
-
-## What it does
-
-- Browse and filter all 49 components by type, tier, or keyword
-- Look up properties, anatomy, usage guidelines, and interaction specs
-- Explore component relationships (which components reference each other)
-- Access design decisions and changelog history
-
-The skill uses structured JSON data that agents query with `jq`, loading only what's needed per question — no large context dumps.
+An agent skill for exploring Canonical's [Vanilla Framework](https://vanillaframework.io) design system documentation.
 
 ## Installation
-
-This skill follows the open [Agent Skills](https://agentskills.io) standard and works with multiple AI coding tools.
 
 ### Claude Code
 
