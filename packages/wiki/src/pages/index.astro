@@ -1,9 +1,3 @@
 ---
-import { getCollection } from 'astro:content';
-
-const constructs = await getCollection('constructs');
-const firstConstruct = constructs[0];
-
-// Redirect to the first construct
-return Astro.redirect(`/${firstConstruct.id}`);
+return Astro.redirect("/global");
 ---

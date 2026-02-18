@@ -1,0 +1,12 @@
+---
+import { getCollection } from 'astro:content';
+
+const constructs = await getCollection('constructs');
+const globalConstructs = constructs
+  .filter((c) => c.data.tiers === 'Global')
+  .sort((a, b) => a.data.name.localeCompare(b.data.name));
+
+const first = globalConstructs[0];
+
+return Astro.redirect(`/global/${first.id}`);
+---

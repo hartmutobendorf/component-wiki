@@ -1,0 +1,29 @@
+---
+import { TIERS, tierToPrefix } from "../utils/tiers";
+
+interface Props {
+  activeTier: string;
+}
+
+const { activeTier } = Astro.props;
+
+const tiers = TIERS.map((tier) => ({
+  label: tier,
+  href: `/${tierToPrefix(tier)}`,
+}));
+---
+
+<nav aria-label="Top navigation">
+  <ul>
+    {tiers.map((tier) => (
+      <li>
+        <a
+          href={tier.href}
+          aria-current={activeTier === tier.label ? "page" : undefined}
+        >
+          {tier.label}
+        </a>
+      </li>
+    ))}
+  </ul>
+</nav>

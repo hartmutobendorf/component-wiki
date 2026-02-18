@@ -112,7 +112,6 @@ export class SideNavigationComponent extends LitElement {
       attribute: "dark-mode",
     },
     _selectedTypes: { state: true },
-    _selectedTiers: { state: true },
   };
 
   constructor() {
@@ -127,7 +126,6 @@ export class SideNavigationComponent extends LitElement {
 
     // Initialize filters from localStorage or defaults
     this._selectedTypes = this._loadSelectedTypes();
-    this._selectedTiers = this._loadSelectedTiers();
   }
 
   _loadSelectedTypes() {
@@ -150,29 +148,11 @@ export class SideNavigationComponent extends LitElement {
     ];
   }
 
-  _loadSelectedTiers() {
-    try {
-      const stored = localStorage.getItem("component-filter-tiers");
-      if (stored) {
-        return JSON.parse(stored);
-      }
-    } catch (e) {
-      console.error("Error loading tiers from localStorage:", e);
-    }
-    // Default: only Global selected
-    return ["Global"];
-  }
-
   _handleFilterChange(e) {
-    // Separate the selected values into types and tiers based on the item metadata
     const allItems = e.detail.items.flatMap((group) => group.items);
 
     this._selectedTypes = allItems
-      .filter((item) => item.type === "type" && item.selected)
-      .map((item) => item.value);
-
-    this._selectedTiers = allItems
-      .filter((item) => item.type === "tier" && item.selected)
+      .filter((item) => item.selected)
       .map((item) => item.value);
 
     // Save to localStorage
@@ -180,10 +160,6 @@ export class SideNavigationComponent extends LitElement {
       localStorage.setItem(
         "component-filter-types",
         JSON.stringify(this._selectedTypes),
-      );
-      localStorage.setItem(
-        "component-filter-tiers",
-        JSON.stringify(this._selectedTiers),
       );
     } catch (e) {
       console.error("Error saving filters to localStorage:", e);
@@ -198,10 +174,8 @@ export class SideNavigationComponent extends LitElement {
     return this.navItems
       .map((group) => ({
         ...group,
-        items: group.items.filter(
-          (item) =>
-            this._selectedTypes.includes(item.type) &&
-            this._selectedTiers.includes(item.tier),
+        items: group.items.filter((item) =>
+          this._selectedTypes.includes(item.type),
         ),
       }))
       .filter((group) => group.items.length > 0);
@@ -353,66 +327,37 @@ export class SideNavigationComponent extends LitElement {
 
     const filterGroups = [
       {
-        heading: "Tier",
-        items: [
-          {
-            label: "Global",
-            value: "Global",
-            selected: this._selectedTiers.includes("Global"),
-            type: "tier",
-          },
-          {
-            label: "Sites",
-            value: "Sites",
-            selected: this._selectedTiers.includes("Sites"),
-            type: "tier",
-          },
-          {
-            label: "Apps",
-            value: "Apps",
-            selected: this._selectedTiers.includes("Apps"),
-            type: "tier",
-          },
-        ],
-      },
-      {
         heading: "Component type",
         items: [
           {
             label: "Foundation",
             value: "Foundation",
             selected: this._selectedTypes.includes("Foundation"),
-            type: "type",
           },
           {
             label: "Component",
             value: "Component",
             selected: this._selectedTypes.includes("Component"),
-            type: "type",
           },
           {
             label: "Complex component",
             value: "Complex component",
             selected: this._selectedTypes.includes("Complex component"),
-            type: "type",
           },
           {
             label: "Pattern",
             value: "Pattern",
             selected: this._selectedTypes.includes("Pattern"),
-            type: "type",
           },
           {
             label: "Page",
             value: "Page",
             selected: this._selectedTypes.includes("Page"),
-            type: "type",
           },
           {
             label: "Mental model",
             value: "Mental model",
             selected: this._selectedTypes.includes("Mental model"),
-            type: "type",
           },
         ],
       },

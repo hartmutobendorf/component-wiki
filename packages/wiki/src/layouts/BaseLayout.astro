@@ -2,16 +2,22 @@
 import "../styles/page.scss";
 import { getCollection } from "astro:content";
 import { ClientRouter } from "astro:transitions";
+import TopNavigation from "../components/TopNavigation.astro";
+import { filterByTier, buildConstructPath } from "../utils/tiers";
 
 interface Props {
   title?: string;
   currentSlug?: string;
+  activeTier?: string;
 }
 
-const { title = "Component Wiki", currentSlug = "" } = Astro.props;
+const { title = "Component Wiki", currentSlug = "", activeTier = "Global" } = Astro.props;
 
-// Get all constructs from the collection
-const constructs = await getCollection("constructs");
+// Get all constructs from the collection, filtered by active tier
+const allConstructs = await getCollection("constructs");
+const constructs = allConstructs.filter(
+  (construct) => construct.data.tiers === activeTier,
+);
 
 const typeOrder = [
   "Foundation",
@@ -30,7 +36,7 @@ const groupedConstructs = constructs.reduce(
     }
     acc[type].push({
       name: construct.data.name,
-      slug: construct.id,
+      slug: buildConstructPath(activeTier, construct.id),
       tier: construct.data.tiers,
       type: construct.data.type,
     });
@@ -62,8 +68,14 @@ const navItems = typeOrder
     <ClientRouter />
   </head>
   <body>
+    <TopNavigation activeTier={activeTier} />
     <div class="l-docs">
       <aside class="l-docs__sidebar">
+        <script
+          id="nav-data"
+          type="application/json"
+          set:html={JSON.stringify(navItems)}
+        />
         <side-navigation
           nav-items={JSON.stringify(navItems)}
           current-slug={currentSlug}
@@ -89,13 +101,19 @@ const navItems = typeOrder
       // Import the side-navigation web component
       import "../components/sideNavigation/side-navigation.js";
 
-      // Update the side navigation current-slug on page navigation
+      // Update the side navigation on page navigation
       document.addEventListener("astro:page-load", () => {
         const sidebar = document.querySelector("side-navigation");
         if (sidebar) {
           // Get the current slug from the URL, removing leading slash
           const currentSlug = window.location.pathname.substring(1) || "";
           sidebar.setAttribute("current-slug", currentSlug);
+
+          // Update nav-items from the embedded data for the current tier
+          const navDataEl = document.getElementById("nav-data");
+          if (navDataEl) {
+            sidebar.setAttribute("nav-items", navDataEl.textContent || "[]");
+          }
 
           // Restore scroll position
           if (sidebar.shadowRoot) {

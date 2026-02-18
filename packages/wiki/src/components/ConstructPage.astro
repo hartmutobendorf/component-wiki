@@ -1,21 +1,19 @@
 ---
-import { getCollection, getEntry } from "astro:content";
-import FigmaLink from "../components/FigmaLink.astro";
-import GithubLink from "../components/GithubLink.astro";
+import { getEntry } from "astro:content";
+import FigmaLink from "./FigmaLink.astro";
+import GithubLink from "./GithubLink.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { renderMarkdown, renderInlineMarkdown } from "../utils/render-markdown";
+import { tierToPrefix, buildConstructPath } from "../utils/tiers";
 
-// Generate paths for all constructs
-export async function getStaticPaths() {
-  const constructs = await getCollection("constructs");
-
-  return constructs.map((construct: any) => ({
-    params: { slug: construct.id },
-    props: { constructId: construct.id },
-  }));
+interface Props {
+  constructId: string;
+  activeTier: string;
 }
 
-const { constructId } = Astro.props;
+const { constructId, activeTier } = Astro.props;
+
+const tierPrefix = tierToPrefix(activeTier);
 
 // Get construct metadata
 const construct = await getEntry("constructs", constructId);
@@ -38,7 +36,8 @@ const hasInteractions = interactionsHtml.length > 0;
 
 <BaseLayout
   title={`${metadata.name} - Component Wiki`}
-  currentSlug={constructId}
+  currentSlug={buildConstructPath(activeTier, constructId)}
+  activeTier={activeTier}
 >
   <div slot="meta" class="p-table-of-contents">
     <div class="p-table-of-contents__section">
@@ -485,7 +484,7 @@ const hasInteractions = interactionsHtml.length > 0;
           <ul class="p-list">
             {metadata.mentionedIn.map((entry) => (
               <li class="p-list__item">
-                <a href={`/${entry.slug}`}>{entry.name}</a>
+                <a href={`/${tierPrefix}/${entry.slug}`}>{entry.name}</a>
               </li>
             ))}
           </ul>

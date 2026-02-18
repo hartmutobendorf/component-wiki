@@ -1,0 +1,19 @@
+---
+import { getCollection } from "astro:content";
+import ConstructPage from "../../components/ConstructPage.astro";
+
+export async function getStaticPaths() {
+  const constructs = await getCollection("constructs");
+
+  return constructs
+    .filter((construct: any) => construct.data.tiers === "Apps")
+    .map((construct: any) => ({
+      params: { slug: construct.id },
+      props: { constructId: construct.id },
+    }));
+}
+
+const { constructId } = Astro.props;
+---
+
+<ConstructPage constructId={constructId} activeTier="Apps" />

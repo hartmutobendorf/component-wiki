@@ -1,0 +1,12 @@
+---
+import { getCollection } from 'astro:content';
+
+const constructs = await getCollection('constructs');
+const appsConstructs = constructs
+  .filter((c) => c.data.tiers === 'Apps')
+  .sort((a, b) => a.data.name.localeCompare(b.data.name));
+
+const first = appsConstructs[0];
+
+return Astro.redirect(`/apps/${first.id}`);
+---
