@@ -20,37 +20,66 @@ const tiers = TIERS.map((tier) => ({
         <div class="p-navigation__tagged-logo">
           <a class="p-navigation__link" href="/global">
             <div class="p-navigation__logo-tag">
-              <img class="p-navigation__logo-icon" src="https://assets.ubuntu.com/v1/82818827-CoF_white.svg" alt="" />
+              <img
+                class="p-navigation__logo-icon"
+                src="https://assets.ubuntu.com/v1/82818827-CoF_white.svg"
+                alt=""
+              />
             </div>
             <span class="p-navigation__logo-title">Component Wiki</span>
           </a>
         </div>
-        <a href="#top-navigation" class="p-navigation__toggle--open" title="menu">Menu</a>
-        <a href="#top-navigation-closed" class="p-navigation__toggle--close" title="close menu">Close menu</a>
+        <a
+          href="#top-navigation"
+          class="p-navigation__toggle--open"
+          title="menu">Menu</a
+        >
+        <a
+          href="#top-navigation-closed"
+          class="p-navigation__toggle--close"
+          title="close menu">Close menu</a
+        >
       </div>
     </div>
     <div class="l-docs__main">
       <div class="p-navigation__row u-fixed-width">
-        <nav class="p-navigation__nav" id="top-nav-menu" aria-label="Component Wiki navigation">
+        <nav
+          class="p-navigation__nav"
+          id="top-nav-menu"
+          aria-label="Component Wiki navigation"
+        >
           <ul class="p-navigation__items">
-            {tiers.map((tier) => (
-              <li class={`p-navigation__item ${activeTier === tier.label ? "is-selected" : ""}`}>
-                <a
-                  class="p-navigation__link"
-                  href={tier.href}
-                  aria-current={activeTier === tier.label ? "page" : undefined}
+            {
+              tiers.map((tier) => (
+                <li
+                  class={`p-navigation__item ${activeTier === tier.label ? "is-selected" : ""}`}
                 >
-                  {tier.label}
-                </a>
-              </li>
-            ))}
+                  <a
+                    class="p-navigation__link"
+                    href={tier.href}
+                    aria-current={
+                      activeTier === tier.label ? "page" : undefined
+                    }
+                  >
+                    {tier.label}
+                  </a>
+                </li>
+              ))
+            }
           </ul>
         </nav>
       </div>
     </div>
     <div class="l-docs__meta">
-      <p class="p-text--small u-text--muted u-no-margin--bottom" style="height: 100%; display: flex; align-items: center; white-space: nowrap; padding-left: 1.5rem;">
-        Docs for&nbsp;<a href="https://vanillaframework.io" target="_blank" rel="noopener noreferrer">Vanilla Framework</a>
+      <p
+        class="p-text--small u-text--muted u-no-margin--bottom"
+        style="height: 100%; display: flex; align-items: center; white-space: nowrap; padding-left: 1.5rem;"
+      >
+        Design docs for&nbsp;<a
+          href="https://vanillaframework.io"
+          target="_blank"
+          rel="noopener noreferrer">Vanilla Framework</a
+        >
       </p>
     </div>
   </div>
@@ -58,38 +87,40 @@ const tiers = TIERS.map((tier) => ({
 
 <script>
   function setupTopNavToggle() {
-    const navigation = document.getElementById('top-navigation');
+    const navigation = document.getElementById("top-navigation");
     if (!navigation) return;
 
-    const openButton = navigation.querySelector('.p-navigation__toggle--open');
-    const closeButton = navigation.querySelector('.p-navigation__toggle--close');
+    const openButton = navigation.querySelector(".p-navigation__toggle--open");
+    const closeButton = navigation.querySelector(
+      ".p-navigation__toggle--close",
+    );
 
     if (!openButton || !closeButton) return;
 
     function toggleMenu(show: boolean) {
       if (show) {
-        navigation!.classList.add('has-menu-open');
+        navigation!.classList.add("has-menu-open");
       } else {
-        navigation!.classList.remove('has-menu-open');
+        navigation!.classList.remove("has-menu-open");
       }
     }
 
-    openButton.addEventListener('click', (e) => {
+    openButton.addEventListener("click", (e) => {
       e.preventDefault();
       toggleMenu(true);
     });
-    closeButton.addEventListener('click', (e) => {
+    closeButton.addEventListener("click", (e) => {
       e.preventDefault();
       toggleMenu(false);
     });
   }
 
   function updateNavigationHeight() {
-    const navigation = document.getElementById('top-navigation');
+    const navigation = document.getElementById("top-navigation");
     if (navigation) {
       document.documentElement.style.setProperty(
-        '--navigation-height',
-        `${navigation.offsetHeight}px`
+        "--navigation-height",
+        `${navigation.offsetHeight}px`,
       );
     }
   }
@@ -97,8 +128,8 @@ const tiers = TIERS.map((tier) => ({
   // Run on initial load and after Astro page transitions
   setupTopNavToggle();
   updateNavigationHeight();
-  window.addEventListener('resize', updateNavigationHeight);
-  document.addEventListener('astro:page-load', () => {
+  window.addEventListener("resize", updateNavigationHeight);
+  document.addEventListener("astro:page-load", () => {
     setupTopNavToggle();
     updateNavigationHeight();
   });
