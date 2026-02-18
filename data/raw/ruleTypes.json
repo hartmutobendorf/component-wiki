@@ -1,10 +1,10 @@
 {
-  "fetchedAt": "2026-02-18T11:12:38.939Z",
+  "fetchedAt": "2026-02-18T17:21:05.888Z",
   "rows": {
     "i-7wuynCTRxU": {
       "rowId": "i-7wuynCTRxU",
       "ruleType": "Design principle",
-      "description": "",
+      "description": "High-level, normative statements that express Canonical’s design philosophy and direction.",
       "conceptRules": [
         "i-tJQQOsZiMo",
         "i-j-r1lZBhZp",
@@ -36,7 +36,7 @@
     "i-Gv9rTD4HHR": {
       "rowId": "i-Gv9rTD4HHR",
       "ruleType": "Specific rule",
-      "description": "",
+      "description": "Concrete constraints that define how the system must behave structurally and visually.",
       "conceptRules": [
         "i-G2gqVu6pWJ",
         "i-fzDIK_WZZU",
@@ -84,7 +84,7 @@
     "i-NyyeHOzgWh": {
       "rowId": "i-NyyeHOzgWh",
       "ruleType": "Content guidance",
-      "description": "",
+      "description": "Editorial and narrative recommendations that define how content should flow and guide users.",
       "conceptRules": ""
     }
   }

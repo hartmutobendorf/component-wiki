@@ -1,6 +1,15 @@
 {
-  "fetchedAt": "2026-02-18T11:12:38.933Z",
+  "fetchedAt": "2026-02-18T17:21:05.884Z",
   "rows": {
+    "i-SdQGSIXKYL": {
+      "rowId": "i-SdQGSIXKYL",
+      "construct": "",
+      "when": "",
+      "what": "",
+      "who": "",
+      "concept": "i-5CX0qx0-ix",
+      "rules": ""
+    },
     "i-_QwERknNP1": {
       "rowId": "i-_QwERknNP1",
       "construct": "i-uIQULVt2eZ",
