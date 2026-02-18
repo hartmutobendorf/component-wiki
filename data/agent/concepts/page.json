@@ -1,0 +1,364 @@
+{
+  "name": "Page",
+  "slug": "page",
+  "type": "Architecture",
+  "tier": "Sites",
+  "documentationStatus": "Unclear",
+  "lastEdited": "2026-02-18T09:29:54.400+00:00",
+  "description": "A single URL-defined document containing navigation, content layout footer.",
+  "content": "",
+  "changeLog": [],
+  "decisionLog": [],
+  "appliedRules": [
+    {
+      "rule": "Maintain calm, clarity, and visual cleanliness. The design should feel measured, stable, and spacious. Avoid clutter, noise, and unnecessary motion.",
+      "ruleStrength": "SHOULD",
+      "status": "Proposal",
+      "type": "Design principle",
+      "lastEdited": "2026-02-18T09:35:07.035+00:00",
+      "appliesToConcepts": [
+        "Content layout",
+        "Page",
+        "Web design principles"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    },
+    {
+      "rule": "Embrace whitespace. Spacing is a core part of the brand. Pages should be spacious.",
+      "ruleStrength": "SHOULD",
+      "status": "Proposal",
+      "type": "Design principle",
+      "lastEdited": "2026-02-18T09:35:07.035+00:00",
+      "appliesToConcepts": [
+        "Page",
+        "Web design principles"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    },
+    {
+      "rule": "Prioritise critical information at the top. All users see the top of the page; only a minority reach the bottom. Ensure that the most important message, value proposition, or action is communicated immediately.",
+      "ruleStrength": "SHOULD",
+      "status": "Approved",
+      "type": "Design principle",
+      "lastEdited": "2026-02-18T09:36:46.770+00:00",
+      "appliesToConcepts": [
+        "Page",
+        "Web design principles"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    },
+    {
+      "rule": "Follow the Copy style guide. For detailed rules of content execution, follow the official Canonical Copy style guide.",
+      "ruleStrength": "SHOULD",
+      "status": "Approved",
+      "type": "Design principle",
+      "lastEdited": "2026-02-18T09:37:21.759+00:00",
+      "appliesToConcepts": [
+        "Page",
+        "Web design principles",
+        "Content guide"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    },
+    {
+      "rule": "Prefer vertical depth over horizontal complexity. Scrolling preserves context. Clicking breaks it. Build long, structured pages rather than spreading content across many shallow destinations.",
+      "ruleStrength": "SHOULD",
+      "status": "Proposal",
+      "type": "Design principle",
+      "lastEdited": "2026-02-18T09:37:30.020+00:00",
+      "appliesToConcepts": [
+        "Navigation",
+        "Site",
+        "Bubble",
+        "Page",
+        "Web design principles"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    },
+    {
+      "rule": "Two levels of navigation maximum. Users should reach any key page with one click from the homepage. Keep the information architecture shallow and predictable.",
+      "ruleStrength": "SHOULD",
+      "status": "Proposal",
+      "type": "Design principle",
+      "lastEdited": "2026-02-18T09:37:41.337+00:00",
+      "appliesToConcepts": [
+        "Navigation",
+        "Site",
+        "Bubble",
+        "Page",
+        "Web design principles"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    },
+    {
+      "rule": "No unprompted movement. Nothing on the page should animate or move unless triggered by explicit user interaction.",
+      "ruleStrength": "SHOULD",
+      "status": "Proposal",
+      "type": "Design principle",
+      "lastEdited": "2026-02-18T09:37:45.959+00:00",
+      "appliesToConcepts": [
+        "Animation",
+        "Page",
+        "Web design principles"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    },
+    {
+      "rule": "One place per concept. Each topic should have a single authoritative page. Do not create new pages where updates to existing pages are appropriate.",
+      "ruleStrength": "SHOULD",
+      "status": "Approved",
+      "type": "Design principle",
+      "lastEdited": "2026-02-18T09:38:17.019+00:00",
+      "appliesToConcepts": [
+        "Page",
+        "Bubble",
+        "Web design principles",
+        "Content guide"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    },
+    {
+      "rule": "Constant refinement. Adding a new page should be exceptional. In most cases, introducing new content requires retiring or consolidating an existing page.",
+      "ruleStrength": "SHOULD",
+      "status": "Rejected",
+      "type": "Design principle",
+      "lastEdited": "2026-02-18T09:38:24.171+00:00",
+      "appliesToConcepts": [
+        "Site",
+        "Bubble",
+        "Page",
+        "Web design principles"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    },
+    {
+      "rule": "No orphan pages. All content must be reachable through the defined IA. Pages without a home will surface through search engines and degrade user trust.",
+      "ruleStrength": "SHOULD",
+      "status": "Approved",
+      "type": "Design principle",
+      "lastEdited": "2026-02-18T09:38:37.675+00:00",
+      "appliesToConcepts": [
+        "Navigation",
+        "Site",
+        "Page",
+        "Web design principles"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    },
+    {
+      "rule": "No “coming soon” placeholders. Pages must ship completely or not at all. Avoid publishing stubs or speculative destinations.",
+      "ruleStrength": "SHOULD",
+      "status": "Approved",
+      "type": "Design principle",
+      "lastEdited": "2026-02-18T09:38:42.295+00:00",
+      "appliesToConcepts": [
+        "Page",
+        "Web design principles"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    },
+    {
+      "rule": "Strengthen offers and calls to action. Ensure CTAs and lead-generation elements are compelling, clear, and optimised for conversion.",
+      "ruleStrength": "SHOULD",
+      "status": "Approved",
+      "type": "Design principle",
+      "lastEdited": "2026-02-18T09:38:55.193+00:00",
+      "appliesToConcepts": [
+        "Page",
+        "Content layout",
+        "Content guide",
+        "Web design principles"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    },
+    {
+      "rule": "Use takeovers strategically. When implementing homepage or section takeovers, prioritise craft, wit, and visual quality. They should always lead somewhere meaningful.",
+      "ruleStrength": "SHOULD",
+      "status": "Approved",
+      "type": "Design principle",
+      "lastEdited": "2026-02-18T09:39:02.509+00:00",
+      "appliesToConcepts": [
+        "Page",
+        "Content layout",
+        "Web design principles",
+        "Content guide"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    },
+    {
+      "rule": "Keep it lean. Design, copy, and IA should always move towards simplicity, reduction, and clarity.",
+      "ruleStrength": "SHOULD",
+      "status": "Approved",
+      "type": "Design principle",
+      "lastEdited": "2026-02-18T09:39:31.958+00:00",
+      "appliesToConcepts": [
+        "Navigation",
+        "Page",
+        "Content layout",
+        "Bubble",
+        "Site",
+        "Web design principles",
+        "Content guide"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    },
+    {
+      "rule": "Sites’ system uses predefined spacing applied to the page as a whole as well as to particular sections.",
+      "ruleStrength": "MUST",
+      "status": "Existing",
+      "type": "Specific rule",
+      "lastEdited": "2026-02-18T09:39:35.355+00:00",
+      "appliesToConcepts": [
+        "Spacing",
+        "Page"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    },
+    {
+      "rule": "Content layout should consist of minimum 3 and maximum 15 sections.",
+      "ruleStrength": "SHOULD",
+      "status": "Proposal",
+      "type": "Specific rule",
+      "lastEdited": "2026-02-18T09:39:43.839+00:00",
+      "appliesToConcepts": [
+        "Page",
+        "Content layout",
+        "Section",
+        "Content guide"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    },
+    {
+      "rule": "Only one primary CTA can be visible on the screen (with 100% zoom).",
+      "ruleStrength": "MUST",
+      "status": "Proposal",
+      "type": "Specific rule",
+      "lastEdited": "2026-02-18T09:40:20.000+00:00",
+      "appliesToConcepts": [
+        "Page",
+        "Content layout",
+        "Content guide"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    },
+    {
+      "rule": "Number of CTAs in the layout should be as limited as possible.",
+      "ruleStrength": "SHOULD",
+      "status": "Approved",
+      "type": "Specific rule",
+      "lastEdited": "2026-02-18T09:40:31.535+00:00",
+      "appliesToConcepts": [
+        "Page",
+        "Content layout",
+        "Content guide"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    },
+    {
+      "rule": "Each page is defined by a unique H1 title (max 60 characters) and a meta description (max 160 characters) that establishes its context within the site.",
+      "ruleStrength": "MUST",
+      "status": "Approved",
+      "type": "Specific rule",
+      "lastEdited": "2026-02-18T09:41:05.077+00:00",
+      "appliesToConcepts": [
+        "Page"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    },
+    {
+      "rule": "Each page should have and OpenGraph image thumbnail, otherwise fallback default image is used.",
+      "ruleStrength": "SHOULD",
+      "status": "Approved",
+      "type": "Specific rule",
+      "lastEdited": "2026-02-18T09:41:07.478+00:00",
+      "appliesToConcepts": [
+        "Page"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    }
+  ],
+  "exceptedFromRules": [],
+  "mentionedIn": [],
+  "mentionsComponents": [],
+  "url": "https://component.wiki/page"
+}

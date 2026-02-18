@@ -1,0 +1,95 @@
+{
+  "name": "Search",
+  "slug": "search",
+  "type": "Component",
+  "tiers": "Global",
+  "documentationStatus": "Needs work",
+  "lastEdited": "2026-02-13T15:55:00.185+00:00",
+  "figmaLink": "https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-41",
+  "codeLink": "https://github.com/canonical/vanilla-framework/blob/b1d651365b0714586e6ea14349dea763819c256e/scss/_patterns_search-box.scss",
+  "description": "The search component serves as the entry point to a search experience, allowing users to quickly find and access content by specifying a word or phrase rather than manually navigating through an interface. It is almost always used in conjunction with other components that enrich the search experience and display results. Search is well-suited for documentation sites, dashboards, and marketing websites where users need to locate specific items efficiently. Use this component when users would benefit from a faster alternative to manually browsing and scrolling through content.",
+  "usage": "The Search component provides users with a text input field to query and locate content within an application. It consists of an input field, a [Search icon](/search#anatomy) for visual affordance, and a [Clear icon](/search#anatomy) to reset the query. This component is well-suited for applications with substantial content where users benefit from quickly finding specific items, such as documentation sites, marketing sites and data-heavy dashboards.\n\n### Instant search vs submit-based search\n\nThe choice between instant search and submit-based search should be driven primarily by performance considerations. If the expected time for a search to execute exceeds one second, submit-based search is the appropriate choice. When search results can be returned in under one second, instant search may be considered.\n\nInstant search provides an improved user experience by making the application feel more responsive and real-time. This approach works best when searching small, well-defined domains such as settings menus, available actions, or filtered lists. Implementing a debounce on the input is optional but can help reduce unnecessary requests during rapid typing.\n\nSubmit-based search is appropriate when search performance cannot meet the responsiveness threshold required for instant search, or when the search domain is large and not well-defined. Examples include searching across an entire website, application, or external database where query execution inherently requires more time.\n\n### Suggested searches drawer\n\nSuggested search queries are presented in a drawer. They are only compatible with submit-based search. This feature displays possible queries to help users compose their search terms and understand available syntax. As the user types, the component can prefetch results based on the current partial query and display a summary of potential matches. This approach bridges the gap between the immediacy of instant search and the intentionality of submit-based search by providing feedback without committing to a full search execution.\n\n### Results display\n\nSearch results can be presented in several locations depending on context:\n\n*   **Current page:** Displaying results on the current page is appropriate when searching within content that is already visible, such as filtering rows in a [Table](/table) or narrowing items on a listing page. This approach is also the standard for instant search implementations where results update in place.\n*   **New page:** Results should be displayed on a new page when the content being searched is not currently visible in the interface, such as a global site search that spans multiple sections or content types.\n*   **Drawer:** Presenting results in a drawer is suitable for instant search scenarios where an overlay provides quick access to matches without navigating away from the current context. In all display modes, highlighting matched strings within results helps users quickly identify why each result was returned.\n\n### [Clear icon](/search#anatomy) behavior\n\nThe [Clear icon](/search#anatomy) resets the search query, but its broader effect depends on the search type in use. With instant search, clicking the [Clear icon](/search#anatomy) also clears the displayed results, returning the interface to its pre-search state. With submit-based search, the clear button removes the query text but does not affect previously submitted results, as those results represent a completed action. When submit-based search is combined with a suggested searches drawer, the [Clear icon](/search#anatomy) dismisses the suggestions and returns the drawer to its default state.\n\n### Keyboard navigation\n\nA well-designed search experience must be centered around keyboard interaction. Users should be able to complete their entire search workflow, including composing queries, reviewing suggestions, and selecting results, without reaching for a mouse. Click-dependent search interfaces introduce unnecessary friction and slow users down.\n\n### Placement\n\nThe placement of a search component should reflect the scope of content it searches:\n\n*   **Global:** When search spans an entire application or website, the component belongs in the global navigation where it remains persistently accessible regardless of the current page.\n*   **Page:** For search that applies to the content of a single page, position the component at the top of that page above the searchable content.\n*   **Subsection:** When search targets a specific subsection, such as a panel or module within a larger page, place the search input directly above that subsection to clearly communicate its scope.\n\n### When to Use\n\n*   The application contains substantial content that users need to locate quickly\n*   Users have a specific item or piece of information in mind and need to find it efficiently\n*   Content is distributed across multiple pages, sections, or categories\n*   The interface includes filterable lists, [Table](/table)s, or collections that benefit from query-based narrowing\n*   Users are likely to repeat searches or refine queries during a session\n\n### When Not to Use\n\n*   The content set is small enough that users can scan it without assistance\n*   If filters better serves the use case\n*   The application lacks sufficient content to warrant a dedicated search function\n*   Users are engaged in a guided flow where search would interrupt the intended progression\n*   The data structure does not support meaningful text-based querying",
+  "examples": "",
+  "interactions": "",
+  "sitesArchitectureLevels": "i-UvVNCYZ44t",
+  "anatomy": {
+    "table": [
+      {
+        "number": 1,
+        "name": "Query input",
+        "description": "Holds placeholder text and the search query."
+      },
+      {
+        "number": 2,
+        "name": "Clear icon",
+        "description": "The dismiss icon is a clickable area of the search, that deletes the query input and resets the search results on instance search."
+      },
+      {
+        "number": 3,
+        "name": "Search icon",
+        "description": "The search icon is a clickable area that activates the submit-based search."
+      }
+    ]
+  },
+  "properties": [
+    {
+      "name": "Placeholder text",
+      "required": false,
+      "type": "string",
+      "description": "The placeholder text should specify what the scope of the search is. It should always include the word e.g. “Search machines”.",
+      "constraint": "Include “Search” at the beginning of the placeholder string.",
+      "defaultOption": "Search"
+    },
+    {
+      "name": "State",
+      "required": false,
+      "type": "single select",
+      "description": "",
+      "constraint": "",
+      "defaultOption": "default",
+      "options": [
+        "default",
+        "hover",
+        "active",
+        "disabled"
+      ]
+    }
+  ],
+  "changeLog": [
+    {
+      "who": "Maximilian Blazek",
+      "when": "2025-11-21T17:00:00.000+00:00",
+      "what": "Initial commit"
+    },
+    {
+      "who": "Maximilian Blazek",
+      "when": "2026-02-13T15:00:00.000+00:00",
+      "what": "Added links"
+    },
+    {
+      "who": "Maximilian Blazek",
+      "when": "2026-01-05T15:00:00.000+00:00",
+      "what": "Added description, anatomy, usage guidelines and properties"
+    }
+  ],
+  "decisionLog": [],
+  "appliedRules": [],
+  "exceptionFromRules": [],
+  "mentionedIn": [
+    {
+      "name": "Breadcrumbs",
+      "slug": "breadcrumbs"
+    },
+    {
+      "name": "Pagination",
+      "slug": "pagination"
+    }
+  ],
+  "mentionsComponents": [
+    {
+      "name": "Table",
+      "slug": "table"
+    }
+  ],
+  "url": "https://component.wiki/search"
+}

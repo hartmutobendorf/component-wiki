@@ -1,0 +1,62 @@
+{
+  "name": "Code",
+  "slug": "code",
+  "type": "Component",
+  "tiers": "Global",
+  "documentationStatus": "Needs work",
+  "lastEdited": "2026-02-13T15:19:59.713+00:00",
+  "figmaLink": "https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-20",
+  "codeLink": "https://github.com/canonical/vanilla-framework/blob/d0197b27f5733789d6d23536eabe68356e045ae1/scss/_base_code.scss",
+  "description": "The code component displays code, commands, and technical language that requires distinct visual treatment. This includes programming languages, domain-specific languages such as search syntax, terminal commands, file paths, and configuration values.",
+  "usage": "The code component displays code, commands, and technical language that requires distinct visual treatment. This includes programming languages, domain-specific languages such as search syntax, terminal commands, file paths, and configuration values. Code uses a monospace font to distinguish it from human language, which uses the default text style.\n\nThe component appears most often within paragraph text but can also be used in lists, [Table](/table)s, and other structured content.\n\n## Inline code\n\nUse inline code for short, simple references within the normal text flow, such as commands, function names, or configuration keys. Keep inline code concise. Long expressions or multi-part statements should use a code block instead.\n\n## Code blocks\n\nUse code blocks for code spanning more than one line or when single-line code benefits from separation from surrounding text.\n\n### Wrapping and overflow\n\nCode blocks can either wrap long lines or allow horizontal overflow with scrolling.\n\nPrefer horizontal overflow when:\n\n*   Code is meant to be copied and executed exactly as shown\n*   Indentation carries syntactic meaning, such as in Python or YAML\n*   Content is diagnostic, such as log output with column-based formatting\n\nPrefer wrapping when readability matters more than preserving exact formatting, such as illustrative pseudocode or conceptual examples.\n\n## Presenting code effectively\n\nIntroduce what the code does before showing it. After presenting code, explain what the user should notice or learn. Maintain proper indentation within code blocks.\n\n## When to use\n\n*   To display programming code, terminal commands, or domain-specific languages\n*   For technical values that should be interpreted literally\n*   To present executable snippets users may copy\n\n## When not to use\n\n*   For regular prose or human-readable text\n*   For emphasis or stress (use bold or italics instead)",
+  "examples": "",
+  "interactions": "",
+  "sitesArchitectureLevels": "i-UvVNCYZ44t",
+  "anatomy": {
+    "table": [
+      {
+        "number": 1,
+        "name": "Code",
+        "description": "The code being displayed either in-line or standalone"
+      }
+    ]
+  },
+  "properties": [
+    {
+      "name": "Text",
+      "required": true,
+      "type": "string",
+      "description": "The code that is being shown inside of the code component.",
+      "constraint": "",
+      "defaultOption": ""
+    }
+  ],
+  "changeLog": [
+    {
+      "who": "Maximilian Blazek",
+      "when": "2025-11-21T17:00:00.000+00:00",
+      "what": "Initial commit"
+    },
+    {
+      "who": "Maximilian Blazek",
+      "when": "2026-02-13T15:00:00.000+00:00",
+      "what": "Add links"
+    },
+    {
+      "who": "Daniel Mutis",
+      "when": "2026-01-12T15:00:00.000+00:00",
+      "what": "Added description, anatomy and anatomy descriptions, usage guidelines and properties"
+    }
+  ],
+  "decisionLog": [],
+  "appliedRules": [],
+  "exceptionFromRules": [],
+  "mentionedIn": [],
+  "mentionsComponents": [
+    {
+      "name": "Table",
+      "slug": "table"
+    }
+  ],
+  "url": "https://component.wiki/code"
+}

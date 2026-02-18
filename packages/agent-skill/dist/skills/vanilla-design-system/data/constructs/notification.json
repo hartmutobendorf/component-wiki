@@ -1,0 +1,182 @@
+{
+  "name": "Notification",
+  "slug": "notification",
+  "type": "Component",
+  "tiers": "Global",
+  "documentationStatus": "Minimal",
+  "lastEdited": "2026-02-10T08:14:32.382+00:00",
+  "figmaLink": "https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-35",
+  "codeLink": "https://github.com/canonical/vanilla-framework/blob/b1d651365b0714586e6ea14349dea763819c256e/scss/_patterns_notifications.scss",
+  "description": "Notifications display brief, contextual messages to inform users about system status, user actions, or important updates. They typically appear temporarily and can convey success, error, warning, or informational states to provide immediate feedback without disrupting the user's workflow.",
+  "usage": "Notifications should be used sparingly and strategically to communicate important information that requires immediate user attention. Use notifications carefully because they catch the user's attention and disrupt their workflow.\n\nAvoid using notifications for information that doesn't require interrupting the user or isn't relevant to their current task. When notifications with irrelevant information are sent too frequently, users become distracted and annoyed, causing notifications to lose their impact.\n\nKeep messages concise and actionable, ensure proper timing and placement, and provide clear next steps when user action is required.\n\n### Where to position a notification\n\nHistorically a lot of our applications and sites have placed notifications in the same container as the main content. Often times this is not desirable as this causes unwanted layout shifts and pushes the content that the user is interested in (the main content of the page) outside of the viewport. Ideally the notification would be floating in the bottom right of an application where it does not disrupt the normal content flow.\n\n### When to use\n\n*   Provide immediate feedback after user actions that aren't immediately visible on the interface\n*   Communicate changes in system or application state that affect the user's workflow\n*   Alert users to information that requires their attention or response within a specific timeframe\n*   Confirm completion of background processes or long-running operations\n\n### When not to use\n\n*   Information is already clearly displayed and accessible elsewhere on the current page\n*   Content is promotional, marketing-focused, or not directly related to the user's current task\n*   The information can wait until the user's next natural interaction with the relevant feature",
+  "examples": "",
+  "interactions": "",
+  "sitesArchitectureLevels": "i-UvVNCYZ44t",
+  "anatomy": {
+    "table": [
+      {
+        "number": 1,
+        "name": "Icon",
+        "description": "The icon gives additional visual information what type of notification this is."
+      },
+      {
+        "number": 2,
+        "name": "Title",
+        "description": "The title of the notification is a short description of the message that is being conveyed to the user. Shouldn’t be too long."
+      },
+      {
+        "number": 3,
+        "name": "Description",
+        "description": "A more in detail description of the message that is being conveyed to the user. This is supposed to give the user full context of what you are trying to tell them."
+      },
+      {
+        "number": 4,
+        "name": "Content section",
+        "description": "This is the main content section of the notification. It contains the Icon, title, description and dismiss button."
+      },
+      {
+        "number": 5,
+        "name": "Dismiss button",
+        "description": "The dismiss button allows the user to dismiss the notification."
+      },
+      {
+        "number": 6,
+        "name": "Timestamp & action section",
+        "description": "If a timestamp or actions need to be shown as part of the notification then this section is shown. It contains the timestamp and actions."
+      },
+      {
+        "number": 7,
+        "name": "TImestamp",
+        "description": "The timestamp gives an indication when the event that triggered the creation of the notification happened."
+      },
+      {
+        "number": 8,
+        "name": "Actions",
+        "description": "Allows you to provide actions the user can take based on the notification."
+      }
+    ]
+  },
+  "properties": [
+    {
+      "name": "Type",
+      "required": true,
+      "type": "single select",
+      "description": "What semantic type the notification is.",
+      "constraint": "",
+      "defaultOption": "",
+      "options": [
+        "information",
+        "negative",
+        "positive",
+        "caution"
+      ]
+    },
+    {
+      "name": "Border",
+      "required": false,
+      "type": "boolean",
+      "description": "Wether the notification has a border or not. Borderless notifications are used for example in [Table](wiki-ref://grid-ymtdOF6n4R/i-aUPUyjNgjD).",
+      "constraint": "",
+      "defaultOption": "true",
+      "options": [
+        "true",
+        "false"
+      ]
+    },
+    {
+      "name": "Inline",
+      "required": false,
+      "type": "boolean",
+      "description": "Wether the title and description of the notification are being shown in one line. reduces the overall height of the notification allowing it to be used where space is at a premium.",
+      "constraint": "",
+      "defaultOption": "false",
+      "options": [
+        "true",
+        "false"
+      ]
+    },
+    {
+      "name": "Title",
+      "required": false,
+      "type": "string",
+      "description": "Sets the content of the title.",
+      "constraint": "",
+      "defaultOption": ""
+    },
+    {
+      "name": "Description",
+      "required": false,
+      "type": "string",
+      "description": "Sets the content of the description.",
+      "constraint": "",
+      "defaultOption": ""
+    },
+    {
+      "name": "Dismissible",
+      "required": false,
+      "type": "boolean",
+      "description": "Wether or not the notification can be dismissed. If it can be dismissed the dismiss button is being shown.",
+      "constraint": "",
+      "defaultOption": "true",
+      "options": [
+        "true",
+        "false"
+      ]
+    },
+    {
+      "name": "Actions",
+      "required": false,
+      "type": "slot",
+      "description": "Allows to give associated actions with the notification.",
+      "constraint": "Action link components",
+      "defaultOption": ""
+    },
+    {
+      "name": "Time stamp",
+      "required": false,
+      "type": "string",
+      "description": "Can be set to the timestamp when the event when that triggered the notification took place.",
+      "constraint": "Date formatted string",
+      "defaultOption": ""
+    }
+  ],
+  "changeLog": [
+    {
+      "who": "Maximilian Blazek",
+      "when": "2025-11-21T17:00:00.000+00:00",
+      "what": "Initial commit"
+    },
+    {
+      "who": "Maximilian Blazek",
+      "when": "2026-02-13T15:00:00.000+00:00",
+      "what": "Added links"
+    }
+  ],
+  "decisionLog": [],
+  "appliedRules": [],
+  "exceptionFromRules": [],
+  "mentionedIn": [
+    {
+      "name": "Badge",
+      "slug": "badge"
+    },
+    {
+      "name": "Basic section",
+      "slug": "basic-section"
+    },
+    {
+      "name": "Divided section",
+      "slug": "divided-section"
+    },
+    {
+      "name": "Intentional friction",
+      "slug": "intentional-friction"
+    },
+    {
+      "name": "Intentional friction",
+      "slug": "intentional-friction"
+    }
+  ],
+  "mentionsComponents": [],
+  "url": "https://component.wiki/notification"
+}

@@ -1,0 +1,134 @@
+{
+  "name": "Link",
+  "slug": "link",
+  "type": "Component",
+  "tiers": "Global",
+  "documentationStatus": "Minimal",
+  "lastEdited": "2026-02-13T15:48:59.189+00:00",
+  "figmaLink": "https://www.figma.com/design/PYyGJFg1uN9eK6mZMrsik2/%F0%9F%93%95-Vanilla---core-component-documentation-visuals?node-id=804-15948",
+  "codeLink": "https://github.com/canonical/vanilla-framework/blob/b1d651365b0714586e6ea14349dea763819c256e/scss/_patterns_links.scss",
+  "description": "Links are usually used for navigation. They connect users to different pages or sections in an interface. Navigational links can be embedded in body text, listed in footers, or integrated into [Breadcrumbs](/breadcrumbs) and other wayfinding components. \n\nLinks can also prompt actions. They work best for actions that support but do not define the main user flow. Command links should clearly state that they lead to an action.",
+  "usage": "Links can navigate within your application (internal navigation) or direct users to external websites and resources (external navigation). They can also prompt system-level actions through protocols, such as mailto: for composing emails, tel: for initiating phone calls, or even open other applications as part of workflows such as authentication.\n\n### When to use\n\n*   To navigate between pages or sections within your application\n*   To direct users to external websites or resources\n*   Embedded within content to provide related information or sources\n*   For secondary, low-consequence actions that support the user flow\n*   To prompt system-level actions (starting an email or phone call, opening applications)\n\n### When not to use\n\n*   For primary actions or those with significant consequences (use [Button](/button) instead)\n*   For actions that transform, submit, or manipulate data (use [Button](/button) instead)\n*   When the interaction represents a meaningful state change in the application (use [Button](/button) instead)\n*   At high-priority conversion points where visual prominence is needed (use [Button](/button) instead)\n\n### Command links\n\n[Nielsen Norman Group research on command links](https://www.nngroup.com/articles/command-links/) shows they have more room for descriptive text than [Button](/button)s. Use action-oriented language and start with a verb. For example, ‘expand for more options’ or ‘show more details’.\n\nUse command links for secondary actions with minor consequences, such as revealing content. Use action-oriented language and try to start with a verb to distinguish command links from navigational links. You can use [Button](/button)s for primary actions with significant consequences.\n\nUsers often expect links to act as navigational links, so command links should only prompt actions with minor consequences, where unexpected behavior won't frustrate users or cause errors.\n\n### Differentiating links from [Button](/button)s\n\nLinks and [Button](/button)s are both interactive components, but they have different purposes:\n\n*   **Links** navigate between pages or sections and should be used for secondary actions with minimal consequences. They do not alter the application state.\n*   **[Button](/button)****s** are for actions that represent state changes in the applications. They have significant consequences such as to transform, submit, or manipulate data.\n\nUse [Button](/button)s when the interaction has significant consequences, such as saving forms, deleting items, processing payments, or updating settings. While you may use [Button](/button)s for some navigation tasks, such as in a [Hero](/hero) section, never use links for primary actions with significant consequences.\n\n### [Link text](/link#anatomy)\n\nKeep [Link text](/link#anatomy) concise, descriptive, and meaningful out of context. Users often scan pages specifically looking for links, so the text should clearly indicate the destination or action.\n\n*   Avoid generic phrases with no context, such as \"click here\" or \"read more\"\n*   Do not use the word \"link\" in the [Link text](/link#anatomy) itself\n*   Be specific about the destination, for example \"View our privacy policy\" instead of \"Learn more\"\n*   Use sentence-style capitalization for standalone links with multiple words\n*   Start with verbs for command links\n\n### Use with intention\n\nLike all interactive elements, links should be used deliberately. Too many links in close proximity create cognitive overload and make it difficult for users to determine which action to take. Be selective about what you link to, prioritize the most relevant and valuable destinations for your users' context.\n\n### [External link icon](/link#anatomy)\n\nAn optional [External link icon](/link#anatomy) can appear after the [Link text](/link#anatomy) to indicate that the destination is outside the current application or site. The icon also reassures the user that opening the link will not interrupt their task, for example when they are completing a form, because the page will open in a new tab. Links that use the [External link icon](/link#anatomy) must always open in a new tab.\n\n### Soft links\n\nSoft links use default text styling instead of traditional link styling. The link styling only appears on hover, functioning otherwise like a normal link. Use soft links when it's not critical for users to immediately recognize  text as a link, or when the context already makes this clear. They're particularly useful when displaying multiple consecutive links, such as in download sections with lists of assets, where excessive link styling would be visually overwhelming.",
+  "examples": "",
+  "interactions": "",
+  "sitesArchitectureLevels": "i-UvVNCYZ44t",
+  "anatomy": {
+    "table": [
+      {
+        "number": 1,
+        "name": "Leading icon",
+        "description": "Optional icon that can be used to represent the nature of the link"
+      },
+      {
+        "number": 2,
+        "name": "Link text",
+        "description": "The text that is also the clickable are of the icon. On click it will forward the user to the target of the link (or perform the associated action)."
+      },
+      {
+        "number": 3,
+        "name": "External link icon",
+        "description": "If the link is external relative to the the current website or application the designer can choose to display an external link icon next to the link text."
+      }
+    ]
+  },
+  "properties": [
+    {
+      "name": "Link text",
+      "required": true,
+      "type": "string",
+      "description": "The text that should be shown for this link.",
+      "constraint": "",
+      "defaultOption": ""
+    },
+    {
+      "name": "Target",
+      "required": false,
+      "type": "string",
+      "description": "Where the user should be linked to (if it is a navigational link).",
+      "constraint": "",
+      "defaultOption": ""
+    },
+    {
+      "name": "Action",
+      "required": false,
+      "type": "callback",
+      "description": "The action that should be performed if this command link is used.",
+      "constraint": "",
+      "defaultOption": ""
+    },
+    {
+      "name": "Show external link icon",
+      "required": false,
+      "type": "boolean",
+      "description": "Wether to show the external link icon (if it is an external link).",
+      "constraint": "",
+      "defaultOption": "false"
+    },
+    {
+      "name": "Soft",
+      "required": false,
+      "type": "boolean",
+      "description": "Wether the icon is soft or not. The soft version makes the link be styled in the same way as default text. Only on hover does it have the default link styling.",
+      "constraint": "",
+      "defaultOption": "false"
+    }
+  ],
+  "changeLog": [
+    {
+      "who": "Maximilian Blazek",
+      "when": "2025-11-21T17:00:00.000+00:00",
+      "what": "Initial commit"
+    },
+    {
+      "who": "Maximilian Blazek",
+      "when": "2026-02-13T15:00:00.000+00:00",
+      "what": "Added links"
+    },
+    {
+      "who": "Maximilian Blazek",
+      "when": "2025-12-10T11:00:00.000+00:00",
+      "what": "Added soft link property and usage guidelines. Added external link icon usage guidelines. Added leading icon to anatomy"
+    },
+    {
+      "who": "Maximilian Blazek",
+      "when": "2025-12-01T12:00:00.000+00:00",
+      "what": "Add description, anatomy description, usage guidelines and properties."
+    }
+  ],
+  "decisionLog": [],
+  "appliedRules": [],
+  "exceptionFromRules": [],
+  "mentionedIn": [
+    {
+      "name": "Breadcrumbs",
+      "slug": "breadcrumbs"
+    },
+    {
+      "name": "Button",
+      "slug": "button"
+    },
+    {
+      "name": "Contextual menu",
+      "slug": "contextual-menu"
+    },
+    {
+      "name": "Tooltip",
+      "slug": "tooltip"
+    }
+  ],
+  "mentionsComponents": [
+    {
+      "name": "Breadcrumbs",
+      "slug": "breadcrumbs"
+    },
+    {
+      "name": "Button",
+      "slug": "button"
+    },
+    {
+      "name": "Hero",
+      "slug": "hero"
+    }
+  ],
+  "url": "https://component.wiki/link"
+}

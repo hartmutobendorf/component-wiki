@@ -1,0 +1,33 @@
+{
+  "name": "Illustrations",
+  "slug": "illustrations",
+  "type": "Principle",
+  "tier": "Sites",
+  "documentationStatus": "Unclear",
+  "lastEdited": "2026-02-18T09:29:54.400+00:00",
+  "description": "",
+  "content": "",
+  "changeLog": [],
+  "decisionLog": [],
+  "appliedRules": [
+    {
+      "rule": "Only illustrations from Canonical assets can be used for web pages (if illustration is missing, it can be requested from the brand team). ",
+      "ruleStrength": "MUST",
+      "status": "Proposal",
+      "type": "Specific rule",
+      "lastEdited": "2026-02-18T09:40:46.105+00:00",
+      "appliesToConcepts": [
+        "Content guide",
+        "Illustrations"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    }
+  ],
+  "exceptedFromRules": [],
+  "mentionedIn": [],
+  "mentionsComponents": []
+}

@@ -1,0 +1,34 @@
+{
+  "name": "Animation",
+  "slug": "animation",
+  "type": "Principle",
+  "tier": "Sites",
+  "documentationStatus": "Unclear",
+  "lastEdited": "2026-02-18T09:29:54.400+00:00",
+  "description": "",
+  "content": "",
+  "changeLog": [],
+  "decisionLog": [],
+  "appliedRules": [
+    {
+      "rule": "No unprompted movement. Nothing on the page should animate or move unless triggered by explicit user interaction.",
+      "ruleStrength": "SHOULD",
+      "status": "Proposal",
+      "type": "Design principle",
+      "lastEdited": "2026-02-18T09:37:45.959+00:00",
+      "appliesToConcepts": [
+        "Animation",
+        "Page",
+        "Web design principles"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    }
+  ],
+  "exceptedFromRules": [],
+  "mentionedIn": [],
+  "mentionsComponents": []
+}

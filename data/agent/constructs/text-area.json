@@ -1,0 +1,164 @@
+{
+  "name": "Text area",
+  "slug": "text-area",
+  "type": "Component",
+  "tiers": "Global",
+  "documentationStatus": "Minimal",
+  "lastEdited": "2026-02-13T16:07:05.216+00:00",
+  "figmaLink": "https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-51",
+  "codeLink": "https://github.com/canonical/vanilla-framework/blob/b1d651365b0714586e6ea14349dea763819c256e/scss/_base_forms.scss#L215",
+  "description": "- Allows user to input multiple lines of text\n- Used in cases where user needs to be able to provide longer form text. such as when writing a comment or note.",
+  "usage": "A text area is an input component that allows users to enter multiple lines of text. It is used in cases where users need to provide longer form content, such as writing a comment, note, or description. Text areas are commonly found in forms, comment threads, feedback sections, and anywhere users need space to input text beyond a single line.\n\n### When to Use\n\n*   Users need to input multiple lines of text\n*   Collecting longer form content such as comments, notes, descriptions, or feedback\n*   Forms requiring open-ended responses\n*   Comment threads or discussion interfaces\n\n### When Not to Use\n\n*   Single-line inputs are sufficient (use a [Input](/input) instead)\n*   Collecting structured data with a known format (consider more specific input types)\n*   Rich text formatting is required (use a rich text editor instead)\n\n### Resizing Behavior\n\nText areas should almost always be restricted to vertical resizing only. Horizontal resizing is rarely necessary and can easily break the surrounding layout. Text areas should grow automatically as the user types (for example using the CSS property field-sizing: content). This creates a more natural writing experience and prevents users from having to manually resize the component to see their full input.\n\n### Saving and user assurance\n\nUsers should always be reassured that their content has been saved. In a traditional form context, a submit button provides this assurance. When users click submit, they understand their input has been captured. However, if the text area uses auto-saving, assurance must be provided through other means, such as a \"Saved\" indicator or timestamp.\n\nWhen implementing auto-save, the save action should occur on change while the user is typing, but with a debounce to avoid overloading the backend. Use a debounce wait time of 500ms, with a maximum wait of 10 seconds. The maximum wait ensures that even during continuous typing, the content is periodically saved.\n\n### Character Limits\n\nText areas can display a character count indicator and enforce a maximum number of characters. If a maximum is reached, users should not be prevented from typing beyond the limit. Instead, display a validation error when the limit is exceeded. This approach avoids frustrating users who paste content that would otherwise be silently truncated, and allows users who are typing to finish their thought before editing down to meet the requirement.\n\n### Placeholder Text\n\nNever use placeholder text as a substitute for [Label](/text-area#anatomy)s. If placeholder text is used, it should serve as an example or hint rather than instructions. For instance, if the expected input is a comma-separated list, showing an example list can be helpful. Avoid repeating the [Label](/text-area#anatomy) in the placeholder, as this provides no additional value. Most importantly, never put crucial information in placeholder text. Users should be able to understand what is required without it, since placeholder text disappears once they begin typing.\n\n### Input validation\n\nUse validation states to provide real-time feedback about the quality and validity of user input. This helps users understand whether their input meets requirements before attempting to submit a form, reducing errors and improving the overall user experience.\n\n**Error input validation**\n\n![Negative.png](images/791b73d1-2c08-4ac7-a423-c1fe3ae21e64.png)\n\n*   Input is invalid and would prevent successful form submission\n*   Required fields are left empty after the user has interacted with them\n*   Input format is incorrect (character amount exceeds limit)\n*   User input contains forbidden characters or content\n\n**Example scenarios:** Character amount exceeds limit, required field left blank\n\n  \n\n**Warning input validation**\n\n![Caution.png](images/b0bef800-8935-448c-9bdb-4de5c43bdf2e.png)\n\n*   Input is technically valid but potentially problematic or unusual\n*   Suggesting improvements that aren't strictly required\n*   Alerting users to potential issues that won't block submission\n*   Input might cause complications or confusion later\n*   Recommending best practices or alternative approaches\n\n**Example scenarios:** Contains content which should not be shared publicly, contains offensive language\n\n  \n\n**Positive input validation**\n\n![Positive.png](images/fd1551d0-ed93-4318-8f0e-6d4f70a59def.png)\n\n*   Complex validation requirements are successfully met\n*   Confirming that corrected input now passes validation\n*   Input meets high-quality standards or best practices\n*   Providing reassurance for critical or complex fields\n*   Real-time confirmation helps reduce user anxiety\n\n**Example scenarios:** Minimum character amount reached\n\n**Note:** Use positive states sparingly - not every valid input needs positive confirmation, as this can create visual noise.",
+  "examples": "",
+  "interactions": "",
+  "sitesArchitectureLevels": "i-UvVNCYZ44t",
+  "anatomy": {
+    "table": [
+      {
+        "number": 1,
+        "name": "Label",
+        "description": "Optional label that can be used to explain what content is expected from the user in the textarea"
+      },
+      {
+        "number": 2,
+        "name": "Text",
+        "description": "The text the user inputs. Before the user starts typing there could optionally be placeholder text to indicate the expected content or format. "
+      },
+      {
+        "number": 3,
+        "name": "Resize area",
+        "description": "Target area for the user to resize the box"
+      },
+      {
+        "number": 4,
+        "name": "Validation icon",
+        "description": "Informative icon on the nature of the validation result"
+      },
+      {
+        "number": 5,
+        "name": "Validation text",
+        "description": "Text that informs the user of the results of validating the inputted text"
+      }
+    ]
+  },
+  "properties": [
+    {
+      "name": "Resizable",
+      "required": false,
+      "type": "boolean",
+      "description": "Whether the box is resizable by the user or not",
+      "constraint": "",
+      "defaultOption": "true"
+    },
+    {
+      "name": "Resizing direction",
+      "required": false,
+      "type": "single select",
+      "description": "Whether the box resizes horizontally, vertically or both",
+      "constraint": "",
+      "defaultOption": "vertical",
+      "options": [
+        "horizontal",
+        "vertical",
+        "both"
+      ]
+    },
+    {
+      "name": "State",
+      "required": false,
+      "type": "single select",
+      "description": "The state the input is currently in.",
+      "constraint": "",
+      "defaultOption": "default",
+      "options": [
+        "default",
+        "hover",
+        "active",
+        "disabled"
+      ]
+    },
+    {
+      "name": "Input validation type",
+      "required": false,
+      "type": "single select",
+      "description": "If the input is being validated what type of input validation it is.",
+      "constraint": "",
+      "defaultOption": "none",
+      "options": [
+        "none",
+        "error",
+        "warning",
+        "positive"
+      ]
+    },
+    {
+      "name": "Input validation text",
+      "required": false,
+      "type": "string",
+      "description": "If the input is being validated the outcome / reason of the input validation",
+      "constraint": "",
+      "defaultOption": ""
+    },
+    {
+      "name": "Size",
+      "required": false,
+      "type": "single select",
+      "description": "The vertical density of the input element",
+      "constraint": "",
+      "defaultOption": "default",
+      "options": [
+        "default",
+        "dense"
+      ]
+    },
+    {
+      "name": "Text",
+      "required": false,
+      "type": "string",
+      "description": "The text that is in the input field. ",
+      "constraint": "",
+      "defaultOption": ""
+    },
+    {
+      "name": "Placeholder",
+      "required": false,
+      "type": "string",
+      "description": "The placeholder text that is being shown if there has not been any text that has been entered yet.",
+      "constraint": "",
+      "defaultOption": ""
+    }
+  ],
+  "changeLog": [
+    {
+      "who": "Maximilian Blazek",
+      "when": "2025-11-21T17:00:00.000+00:00",
+      "what": "Initial commit"
+    },
+    {
+      "who": "Maximilian Blazek",
+      "when": "2026-02-13T16:00:00.000+00:00",
+      "what": "Added links"
+    },
+    {
+      "who": "Daniel Mutis",
+      "when": "2025-12-15T15:00:00.000+00:00",
+      "what": "Added description, anatomy descriptions, usage guidelines, properties"
+    }
+  ],
+  "decisionLog": [],
+  "appliedRules": [],
+  "exceptionFromRules": [],
+  "mentionedIn": [
+    {
+      "name": "Input",
+      "slug": "input"
+    }
+  ],
+  "mentionsComponents": [
+    {
+      "name": "Input",
+      "slug": "input"
+    }
+  ],
+  "url": "https://component.wiki/text-area"
+}

@@ -1,0 +1,148 @@
+{
+  "name": "Bubble",
+  "slug": "bubble",
+  "type": "Architecture",
+  "tier": "Sites",
+  "documentationStatus": "Unclear",
+  "lastEdited": "2026-02-18T09:29:54.400+00:00",
+  "description": "A thematic cluster of related pages.",
+  "content": "",
+  "changeLog": [],
+  "decisionLog": [],
+  "appliedRules": [
+    {
+      "rule": "Prefer vertical depth over horizontal complexity. Scrolling preserves context. Clicking breaks it. Build long, structured pages rather than spreading content across many shallow destinations.",
+      "ruleStrength": "SHOULD",
+      "status": "Proposal",
+      "type": "Design principle",
+      "lastEdited": "2026-02-18T09:37:30.020+00:00",
+      "appliesToConcepts": [
+        "Navigation",
+        "Site",
+        "Bubble",
+        "Page",
+        "Web design principles"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    },
+    {
+      "rule": "Two levels of navigation maximum. Users should reach any key page with one click from the homepage. Keep the information architecture shallow and predictable.",
+      "ruleStrength": "SHOULD",
+      "status": "Proposal",
+      "type": "Design principle",
+      "lastEdited": "2026-02-18T09:37:41.337+00:00",
+      "appliesToConcepts": [
+        "Navigation",
+        "Site",
+        "Bubble",
+        "Page",
+        "Web design principles"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    },
+    {
+      "rule": "Maintain a tight, intentional core site. Aim for a concise set of evergreen pages (approximately 30–50). Prioritise depth of content quality over breadth.",
+      "ruleStrength": "SHOULD",
+      "status": "Approved",
+      "type": "Design principle",
+      "lastEdited": "2026-02-18T09:37:51.034+00:00",
+      "appliesToConcepts": [
+        "Site",
+        "Bubble",
+        "Web design principles"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    },
+    {
+      "rule": "Enable a self-cleaning site. Monitor aged or outdated content and archive it proactively. Pages should expire and move out of the main IA automatically through process, metadata, or review cycles.",
+      "ruleStrength": "SHOULD",
+      "status": "Rejected",
+      "type": "Design principle",
+      "lastEdited": "2026-02-18T09:38:05.666+00:00",
+      "appliesToConcepts": [
+        "Site",
+        "Bubble",
+        "Web design principles",
+        "Content guide"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    },
+    {
+      "rule": "One place per concept. Each topic should have a single authoritative page. Do not create new pages where updates to existing pages are appropriate.",
+      "ruleStrength": "SHOULD",
+      "status": "Approved",
+      "type": "Design principle",
+      "lastEdited": "2026-02-18T09:38:17.019+00:00",
+      "appliesToConcepts": [
+        "Page",
+        "Bubble",
+        "Web design principles",
+        "Content guide"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    },
+    {
+      "rule": "Constant refinement. Adding a new page should be exceptional. In most cases, introducing new content requires retiring or consolidating an existing page.",
+      "ruleStrength": "SHOULD",
+      "status": "Rejected",
+      "type": "Design principle",
+      "lastEdited": "2026-02-18T09:38:24.171+00:00",
+      "appliesToConcepts": [
+        "Site",
+        "Bubble",
+        "Page",
+        "Web design principles"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    },
+    {
+      "rule": "Keep it lean. Design, copy, and IA should always move towards simplicity, reduction, and clarity.",
+      "ruleStrength": "SHOULD",
+      "status": "Approved",
+      "type": "Design principle",
+      "lastEdited": "2026-02-18T09:39:31.958+00:00",
+      "appliesToConcepts": [
+        "Navigation",
+        "Page",
+        "Content layout",
+        "Bubble",
+        "Site",
+        "Web design principles",
+        "Content guide"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    }
+  ],
+  "exceptedFromRules": [],
+  "mentionedIn": [],
+  "mentionsComponents": [],
+  "url": "https://component.wiki/bubble"
+}

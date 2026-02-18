@@ -22,6 +22,18 @@ body {
 }
 
 // Documentation layout styles
+.l-docs__header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+// Offset sticky meta container for the sticky header height
+.l-docs__sticky-container {
+  max-height: calc(100dvh - var(--navigation-height, 3rem)) !important;
+  top: var(--navigation-height, 3rem) !important;
+}
+
 .l-docs__sidebar {
   side-navigation {
     display: block;

@@ -1,18 +1,24 @@
 {
-  "generatedAt": "2026-02-16T14:58:55.912Z",
-  "componentCount": 49,
-  "types": [
+  "generatedAt": "2026-02-18T16:54:46.186Z",
+  "constructCount": 49,
+  "conceptCount": 26,
+  "constructTypes": [
     "Complex component",
     "Component",
     "Mental model",
     "Pattern"
   ],
-  "tiers": [
+  "constructTiers": [
     "Apps",
     "Global",
     "Sites"
   ],
-  "components": [
+  "conceptTypes": [
+    "Architecture",
+    "Decision guide",
+    "Principle"
+  ],
+  "constructs": [
     {
       "name": "Form placement",
       "slug": "form-placement",
@@ -355,6 +361,190 @@
       "type": "Component",
       "tiers": "Global",
       "description": "Pagination is a navigational component that allows users to move between pages of content. It provides controls for navigating to the previous or next page, as well as optionally jumping directly to a specific numbered page. This component is best suited for content-heavy sites where information is divided across multiple pages, such as blog posts, articles, tutorials, or [Search](/search) results. For paginating tabular data, use the Table pagination component instead.\n\n"
+    }
+  ],
+  "concepts": [
+    {
+      "name": "Site",
+      "slug": "site",
+      "type": "Architecture",
+      "tier": "Sites",
+      "description": "The complete web property or domain."
+    },
+    {
+      "name": "Bubble",
+      "slug": "bubble",
+      "type": "Architecture",
+      "tier": "Sites",
+      "description": "A thematic cluster of related pages."
+    },
+    {
+      "name": "Page",
+      "slug": "page",
+      "type": "Architecture",
+      "tier": "Sites",
+      "description": "A single URL-defined document containing navigation, content layout footer."
+    },
+    {
+      "name": "Content layout",
+      "slug": "content-layout",
+      "type": "Architecture",
+      "tier": "Sites",
+      "description": "Narrative structure, the structural pattern used to arrange sections."
+    },
+    {
+      "name": "Section",
+      "slug": "section",
+      "type": "Architecture",
+      "tier": "Sites",
+      "description": "A cohesive content unit expressing one idea or purpose."
+    },
+    {
+      "name": "Block",
+      "slug": "block",
+      "type": "Architecture",
+      "tier": "Sites",
+      "description": "A repeatable micro-structure with parallel content units."
+    },
+    {
+      "name": "UI component",
+      "slug": "ui-component",
+      "type": "Architecture",
+      "tier": "Sites",
+      "description": "A functional UI component from the design system."
+    },
+    {
+      "name": "Content primitive",
+      "slug": "content-primitive",
+      "type": "Architecture",
+      "tier": "Sites",
+      "description": "The smallest meaningful authored content value."
+    },
+    {
+      "name": "Navigation",
+      "slug": "navigation",
+      "type": "Architecture",
+      "tier": "Sites",
+      "description": ""
+    },
+    {
+      "name": "Footer",
+      "slug": "footer",
+      "type": "Architecture",
+      "tier": "Sites",
+      "description": ""
+    },
+    {
+      "name": "Web design principles",
+      "slug": "web-design-principles",
+      "type": "Principle",
+      "tier": "Sites",
+      "description": "These principles guide decision-making across marketing, web, and brand experiences. They provide a shared framework for clarity, coherence, and long-term maintainability of Canonical sites."
+    },
+    {
+      "name": "Content guide",
+      "slug": "content-guide",
+      "type": "Principle",
+      "tier": "Sites",
+      "description": "Codification of our brand guidelines ensuring proper Canonical branding on Sites."
+    },
+    {
+      "name": "Color",
+      "slug": "color",
+      "type": "Principle",
+      "tier": "Sites",
+      "description": "Sites are using a predefined set of colors from the Design System palette. Color layering is also following a set of functional rules to ensure we apply the same visual choices across all our pages. "
+    },
+    {
+      "name": "Themes",
+      "slug": "themes",
+      "type": "Principle",
+      "tier": "Sites",
+      "description": ""
+    },
+    {
+      "name": "Typography",
+      "slug": "typography",
+      "type": "Principle",
+      "tier": "Sites",
+      "description": ""
+    },
+    {
+      "name": "Grid",
+      "slug": "grid",
+      "type": "Principle",
+      "tier": "Sites",
+      "description": ""
+    },
+    {
+      "name": "Spacing",
+      "slug": "spacing",
+      "type": "Principle",
+      "tier": "Sites",
+      "description": "Sites are using predefined vertical spacing tokens ensuring content is properly positioned and maintains vertical consistency."
+    },
+    {
+      "name": "Logos",
+      "slug": "logos",
+      "type": "Principle",
+      "tier": "Sites",
+      "description": ""
+    },
+    {
+      "name": "Illustrations",
+      "slug": "illustrations",
+      "type": "Principle",
+      "tier": "Sites",
+      "description": ""
+    },
+    {
+      "name": "Icons",
+      "slug": "icons",
+      "type": "Principle",
+      "tier": "Sites",
+      "description": ""
+    },
+    {
+      "name": "Diagrams and data visualization",
+      "slug": "diagrams-and-data-visualization",
+      "type": "Principle",
+      "tier": "Sites",
+      "description": ""
+    },
+    {
+      "name": "Photography",
+      "slug": "photography",
+      "type": "Principle",
+      "tier": "Sites",
+      "description": ""
+    },
+    {
+      "name": "Animation",
+      "slug": "animation",
+      "type": "Principle",
+      "tier": "Sites",
+      "description": ""
+    },
+    {
+      "name": "Sites architecture",
+      "slug": "sites-architecture",
+      "type": "Architecture",
+      "tier": "Sites",
+      "description": ""
+    },
+    {
+      "name": "Intentional friction",
+      "slug": "intentional-friction",
+      "type": "Decision guide",
+      "tier": "Global",
+      "description": "Design friction is the intentional use of obstacles in a user interface to prevent accidental or destructive mistakes. It should be used when a user is about to perform an action that is irreversible, such as deleting data or changing permanent system settings.\n\nFor high-risk tasks, use blocking friction like requiring the user to type a confirmation word or check a box acknowledging specific risks. For medium-risk or advanced settings, use non-blocking friction like warning dialogs or technical language to ensure the user is acting deliberately rather than clicking through mindlessly."
+    },
+    {
+      "name": "Form placement",
+      "slug": "form-placement",
+      "type": "Decision guide",
+      "tier": "Apps",
+      "description": "Form placement refers to the deliberate choice of surface: page, side panel, or modal, for presenting forms and multi-input tasks. The right surface depends on the complexity of the task, the amount of context the user needs from the current screen, and the level of disruption that is acceptable."
     }
   ]
 }

@@ -3,19 +3,19 @@ import { getCollection, getEntry } from "astro:content";
 import { generateComponentMarkdown } from "../utils/generate-component-markdown";
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const components = await getCollection("components");
-  return components.map((component) => ({
-    params: { slug: component.id },
+  const constructs = await getCollection("constructs");
+  return constructs.map((construct) => ({
+    params: { slug: construct.id },
   }));
 };
 
 export const GET: APIRoute = async ({ params }) => {
-  const component = await getEntry("components", params.slug!);
-  if (!component) {
+  const construct = await getEntry("constructs", params.slug!);
+  if (!construct) {
     return new Response("Not found", { status: 404 });
   }
 
-  const md = generateComponentMarkdown(component.data);
+  const md = generateComponentMarkdown(construct.data);
 
   return new Response(md, {
     headers: { "Content-Type": "text/markdown; charset=utf-8" },

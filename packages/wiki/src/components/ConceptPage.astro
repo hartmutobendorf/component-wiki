@@ -1,0 +1,364 @@
+---
+import { getEntry } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import RulesTable from "./RulesTable.astro";
+import { renderMarkdown, renderInlineMarkdown } from "../utils/render-markdown";
+import { tierToPrefix, buildConceptPath } from "../utils/tiers";
+
+interface Props {
+  conceptId: string;
+  activeTier: string;
+}
+
+const { conceptId, activeTier } = Astro.props;
+
+const tierPrefix = tierToPrefix(activeTier);
+
+// Get concept metadata
+const concept = await getEntry("concepts", conceptId);
+if (!concept) {
+  return Astro.redirect("/404");
+}
+const metadata = concept.data;
+
+// Render markdown sections
+const descriptionHtml = renderMarkdown(metadata.description);
+const contentHtml = renderMarkdown(metadata.content);
+
+const hasDescription = descriptionHtml.length > 0;
+const hasContent = contentHtml.length > 0;
+
+// Group applied rules by type
+const rulesByType = new Map<string, typeof metadata.appliedRules>();
+for (const rule of metadata.appliedRules ?? []) {
+  const type = rule.type || "Other";
+  if (!rulesByType.has(type)) {
+    rulesByType.set(type, []);
+  }
+  rulesByType.get(type)!.push(rule);
+}
+const sortedRuleTypes = [...rulesByType.keys()].sort();
+---
+
+<BaseLayout
+  title={`${metadata.name} - Component Wiki`}
+  currentSlug={buildConceptPath(activeTier, conceptId)}
+  activeTier={activeTier}
+>
+  <div slot="meta" class="p-table-of-contents">
+    <div class="p-table-of-contents__section">
+      <h2 class="p-table-of-contents__header">On this page</h2>
+      <ul class="p-table-of-contents__list">
+        <li class="p-table-of-contents__item">
+          <a class="p-table-of-contents__link" href="#metadata">Metadata</a>
+        </li>
+        {
+          hasDescription && (
+            <li class="p-table-of-contents__item">
+              <a class="p-table-of-contents__link" href="#description">Description</a>
+            </li>
+          )
+        }
+        {
+          hasContent && (
+            <li class="p-table-of-contents__item">
+              <a class="p-table-of-contents__link" href="#content">
+                Content
+              </a>
+            </li>
+          )
+        }
+        {
+          metadata.appliedRules && metadata.appliedRules.length > 0 && (
+            <li class="p-table-of-contents__item">
+              <a class="p-table-of-contents__link" href="#rules">
+                Applied rules
+              </a>
+            </li>
+          )
+        }
+        {
+          metadata.changeLog && metadata.changeLog.length > 0 && (
+            <li class="p-table-of-contents__item">
+              <a class="p-table-of-contents__link" href="#changelog">
+                Change log
+              </a>
+            </li>
+          )
+        }
+        {
+          metadata.decisionLog && metadata.decisionLog.length > 0 && (
+            <li class="p-table-of-contents__item">
+              <a class="p-table-of-contents__link" href="#decisionlog">
+                Decision log
+              </a>
+            </li>
+          )
+        }
+        {
+          metadata.mentionedIn && metadata.mentionedIn.length > 0 && (
+            <li class="p-table-of-contents__item">
+              <a class="p-table-of-contents__link" href="#mentionedin">
+                Mentioned in
+              </a>
+            </li>
+          )
+        }
+        {
+          metadata.mentionsComponents && metadata.mentionsComponents.length > 0 && (
+            <li class="p-table-of-contents__item">
+              <a class="p-table-of-contents__link" href="#mentionscomponents">
+                References
+              </a>
+            </li>
+          )
+        }
+      </ul>
+    </div>
+  </div>
+
+  <div class="l-docs__title">
+    <div class="p-strip is-shallow u-no-padding--bottom">
+      <div class="u-fixed-width">
+        <h1>{metadata.name}</h1>
+      </div>
+    </div>
+  </div>
+
+  {
+    hasDescription && (
+      <section id="description" class="p-section u-text-max-width">
+        <Fragment set:html={descriptionHtml} />
+      </section>
+    )
+  }
+
+  <section id="metadata" class="p-section">
+    <div class="metadata-list">
+      <div class="metadata-item">
+        <span class="metadata-key p-text--small-caps u-text--muted">Type</span>
+        <span class="metadata-value">{metadata.type}</span>
+      </div>
+
+      <div class="metadata-item">
+        <span class="metadata-key p-text--small-caps u-text--muted">Tier</span>
+        <span class="metadata-value">{metadata.tier}</span>
+      </div>
+
+      <div class="metadata-item">
+        <span class="metadata-key p-text--small-caps u-text--muted">
+          Documentation Status
+        </span>
+        <span class="metadata-value">{metadata.documentationStatus}</span>
+      </div>
+
+      <div class="metadata-item">
+        <span class="metadata-key p-text--small-caps u-text--muted">
+          Last Edited
+        </span>
+        <span class="metadata-value">
+          {new Date(metadata.lastEdited).toLocaleDateString("de-DE", {
+            day: "2-digit",
+            month: "2-digit",
+            year: "numeric",
+          })}
+        </span>
+      </div>
+    </div>
+  </section>
+
+  {
+    hasContent && (
+      <section id="content" class="p-section u-text-max-width">
+        <h2>Content</h2>
+        <Fragment set:html={contentHtml} />
+      </section>
+    )
+  }
+
+  {
+    metadata.appliedRules && metadata.appliedRules.length > 0 && (
+      <section id="rules" class="p-section">
+        <h2>Applied rules</h2>
+        {sortedRuleTypes.map((ruleType) => (
+          <RulesTable ruleType={ruleType} rules={rulesByType.get(ruleType)!} />
+        ))}
+      </section>
+    )
+  }
+
+  {
+    metadata.changeLog && metadata.changeLog.length > 0 && (
+      <div class="p-section">
+        <section id="changelog" class="u-text-max-width">
+          <h2>Change log</h2>
+          <table aria-label="Change log" class="changelog-table">
+            <thead>
+              <tr>
+                <th class="changelog-who">Who</th>
+                <th class="changelog-when">When</th>
+                <th class="changelog-what">What</th>
+              </tr>
+            </thead>
+            <tbody>
+              {metadata.changeLog.map((entry) => (
+                <tr>
+                  <td class="changelog-who">{entry.who}</td>
+                  <td class="changelog-when">
+                    {new Date(entry.when).toLocaleDateString("de-AT", {
+                      year: "numeric",
+                      month: "2-digit",
+                      day: "2-digit",
+                    })}
+                  </td>
+                  <td class="changelog-what">
+                    <Fragment set:html={renderInlineMarkdown(entry.what)} />
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </section>
+      </div>
+    )
+  }
+
+  {
+    metadata.decisionLog && metadata.decisionLog.length > 0 && (
+      <div class="p-section">
+        <section id="decisionlog" class="u-text-max-width">
+          <h2>Decision log</h2>
+          <table aria-label="Decision log" class="decisionlog-table">
+            <thead>
+              <tr>
+                <th class="decisionlog-where">Where</th>
+                <th class="decisionlog-decision">Decision made</th>
+                <th class="decisionlog-link">Link</th>
+              </tr>
+            </thead>
+            <tbody>
+              {metadata.decisionLog.map((entry) => (
+                <tr>
+                  <td class="decisionlog-where">
+                    <Fragment set:html={renderInlineMarkdown(entry.where)} />
+                  </td>
+                  <td class="decisionlog-decision">
+                    <Fragment set:html={renderInlineMarkdown(entry.what)} />
+                  </td>
+                  <td class="decisionlog-link">
+                    {entry.link ? (
+                      <a
+                        href={entry.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        View
+                      </a>
+                    ) : (
+                      "-"
+                    )}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </section>
+      </div>
+    )
+  }
+
+  {
+    metadata.mentionedIn && metadata.mentionedIn.length > 0 && (
+      <div class="p-section">
+        <section id="mentionedin" class="u-text-max-width">
+          <h2>Mentioned in</h2>
+          <ul class="p-list">
+            {metadata.mentionedIn.map((entry) => (
+              <li class="p-list__item">
+                <a href={`/${tierPrefix}/${entry.slug}`}>{entry.name}</a>
+              </li>
+            ))}
+          </ul>
+        </section>
+      </div>
+    )
+  }
+
+  {
+    metadata.mentionsComponents && metadata.mentionsComponents.length > 0 && (
+      <div class="p-section">
+        <section id="mentionscomponents" class="u-text-max-width">
+          <h2>References</h2>
+          <p>This concept references the following constructs:</p>
+          <ul class="p-list">
+            {[...new Map(metadata.mentionsComponents.map((entry) => [entry.slug, entry])).values()].map((entry) => (
+              <li class="p-list__item">
+                <a href={`/${tierPrefix}/${entry.slug}`}>{entry.name}</a>
+              </li>
+            ))}
+          </ul>
+        </section>
+      </div>
+    )
+  }
+
+  <style>
+    .metadata-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem 2rem;
+      align-items: center;
+    }
+
+    .metadata-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .metadata-key {
+      margin: 0;
+    }
+
+    .metadata-value {
+      margin: 0;
+    }
+
+    .changelog-table {
+      table-layout: fixed;
+      width: 100%;
+    }
+
+    .changelog-who {
+      width: 200px;
+    }
+
+    .changelog-when {
+      width: 150px;
+    }
+
+    .changelog-what {
+      width: auto;
+    }
+
+    .decisionlog-table {
+      table-layout: fixed;
+      width: 100%;
+    }
+
+    .decisionlog-where {
+      width: 200px;
+    }
+
+    .decisionlog-decision {
+      width: auto;
+    }
+
+    .decisionlog-link {
+      width: 100px;
+    }
+  </style>
+
+  <script>
+    import "../components/imageLightbox/image-lightbox.js";
+  </script>
+</BaseLayout>

@@ -6,7 +6,7 @@ export interface TableConfig {
   id: string;
   pageId?: string;
   htmlColumns?: string[];
-  relatesTo?: string;
+  relatesTo?: string | string[];
 }
 
 export interface SyncConfig {

@@ -1,0 +1,187 @@
+{
+  "name": "Button",
+  "slug": "button",
+  "type": "Component",
+  "tiers": "Global",
+  "documentationStatus": "Minimal",
+  "lastEdited": "2026-02-13T15:13:01.096+00:00",
+  "figmaLink": "https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-8",
+  "codeLink": "https://github.com/canonical/vanilla-framework/blob/main/scss/_patterns_buttons.scss",
+  "description": "Buttons trigger actions within an interface, typically involving data transformation or manipulation. They provide clear visual indicators of the primary actions users can perform on a page or section.\n\n",
+  "usage": "Use buttons for meaningful interactions that transform, submit, or manipulate data, such as:\n\n*   Saving forms\n*   Deleting items\n*   Processing payments\n*   Updating settings.\n\nActions represent state changes in the application rather than simple navigation.\n\nButtons help establish clear visual hierarchy by signaling the most important actions available to users at any given moment. This hierarchy is critical to effective interface design. Users should immediately understand what action they're expected to take.\n\nWhile buttons should primarily trigger actions, they can occasionally be used for navigation when the context demands it. This is most appropriate for high-priority conversion points, such as call-to-action buttons in hero sections that direct users to, for example, sign-up flows or landing pages. In these cases, the button represents a key user journey rather than standard navigation.\n\n### When to use\n\n*   For actions that transform, submit, or manipulate data\n*   To draw attention to the most important action on a page or section\n*   For high-priority conversion points or key user journeys\n*   When the interaction represents a meaningful state change in the application\n\n### When not to use\n\n*   For simple navigation between pages (use [Link](/link) instead)\n*   When you already have a primary button visible in the current viewport (consider using secondary or tertiary button styles instead)\n*   For multiple competing actions of equal importance (reconsider your information architecture and prioritize one clear primary action)\n\n### Call to actions\n\nAlmost always, there is an action that the user needs to perform on a page. Guide users toward the main action within the user flow that you have designed. **This means being opinionated about what action the user should be performing and using that as the primary call to action.** Rather than presenting users with an overwhelming array of choices, you should clearly signal the intended path forward. As a result, the main action on any given page should, in most cases, be represented by a primary button.\n\nBe deliberate about the number of calls-to-action you present. Each additional CTA dilutes the user's focus and makes it harder for them to decide what to do. Ideally, limit pages to as few CTAs as possible so users clearly understand their intended path forward. **As a rule of thumb, there should almost never be more than one primary button visible in the user's viewport at a time.**\n\nWhen multiple primary buttons compete for attention simultaneously, the hierarchy collapses and users face decision paralysis. If you find yourself needing multiple primary actions in view, reconsider whether they're all truly primary and whether some could be deprioritized or removed entirely.\n\n### Button order and alignment\n\n**Right-aligned buttons when:**\n\n*   The action moves the user forward in a flow (forms, wizards, checkout)\n*   In modal dialogs and confirmation windows\n*   Settings or configuration panels\n*   The button completes or submits something\n*   Following the natural \"end of task\" position after scanning content left-to-right\n\n**Left-aligned buttons when:**\n\n*   The button is a direct continuation of left-aligned content ([Hero](/hero), cards, marketing blocks)\n*   The action relates to specific content above it\n*   \"Back\" or \"Cancel\" actions that return users to a previous state\n*   Article pages or content-heavy contexts where buttons are secondary to the text\n\n### Icon buttons\n\nIn situations where space is limited and the actions have easily recognizable icons, buttons may use an icon without [Text](/button#anatomy). These should be reserved for very common actions such as delete, edit, or close. Icon-only buttons must always include a [Tooltip](/tooltip) that clearly states the action the button performs. The [Tooltip](/tooltip) should include a delay so that it does not interrupt the user unnecessarily.\n\n### When to disable buttons\n\nFor form submissions, buttons should remain enabled even when mandatory fields are incomplete. Users often don't understand why a button is disabled, particularly in longer or more complex forms where they may have overlooked a required field. Allowing users to click the button and receive validation feedback makes it easier for them to discover and correct their mistakes.\n\nDisabling is more appropriate when the system knows an action is genuinely unavailable, not due to incomplete input, but due to external constraints like permissions, plan limits, or missing prerequisites. In these cases, clearly communicate why the action is unavailable with a [Tooltip](/tooltip).\n\nIf possible, provide an alternative that unblocks the user. For example, if an empty state requires a prerequisite to be fulfilled first, display the action to complete that prerequisite rather than showing a disabled button with no clear path forward.\n\n### Dual buttons\n\nThere are situations where opposing actions can be combined into a single button, for example play and pause in a video player. The icon or label should reflect the action that will occur when the user presses the button. If the media is playing, show the pause icon. If it is paused, show the play icon. This aligns with user intent because they select an action, not a status.",
+  "examples": "",
+  "interactions": "",
+  "sitesArchitectureLevels": "i-UvVNCYZ44t",
+  "anatomy": {
+    "table": [
+      {
+        "number": 1,
+        "name": "Icon left",
+        "description": "The icon to the left side of the button can be used to give additional visual context to the user what sort of action this button performs. For example an edit action can be additionally visually indicated by an edit icon."
+      },
+      {
+        "number": 2,
+        "name": "Icon right",
+        "description": "The right icon is used less frequently and typically serves a different purpose than the left icon. Rather than providing additional context about the primary action, it usually indicates secondary behavior or UI affordances. For example, a chevron icon might signal that the button opens a [Contextual menu](wiki-ref://grid-ymtdOF6n4R/i-9dtE-EGtSJ), or expandable content. This positioning helps users understand that there's additional functionality beyond the main action described in the button text."
+      },
+      {
+        "number": 3,
+        "name": "Text",
+        "description": "The text of the button is used to tell the user what sort of action this button performs. It should be set to something that gives the user a clear understanding which action is being performed when executing the button."
+      }
+    ]
+  },
+  "properties": [
+    {
+      "name": "Type",
+      "required": false,
+      "type": "single select",
+      "description": "Type controls the semantic type of the button.",
+      "constraint": "",
+      "defaultOption": "default",
+      "options": [
+        "default",
+        "base",
+        "brand",
+        "positive",
+        "negative"
+      ]
+    },
+    {
+      "name": "State",
+      "required": false,
+      "type": "single select",
+      "description": "The state the button is currently in.",
+      "constraint": "",
+      "defaultOption": "default",
+      "options": [
+        "default",
+        "hover",
+        "active",
+        "processing",
+        "disabled"
+      ]
+    },
+    {
+      "name": "Size",
+      "required": false,
+      "type": "single select",
+      "description": "Controls the size of the button. Smaller sizes can be used in places where space is at a premium.",
+      "constraint": "",
+      "defaultOption": "default",
+      "options": [
+        "default",
+        "small",
+        "dense"
+      ]
+    },
+    {
+      "name": "Text",
+      "required": false,
+      "type": "string",
+      "description": "Determines the [Text](wiki-ref://grid-YfHOdsWGM_/i-O2YLH2Npwe) that is being displayed in the button. Either text or an icon needs to be provided. If no text is provided but an icon is it is an icon only button",
+      "constraint": "",
+      "defaultOption": ""
+    },
+    {
+      "name": "Icon left",
+      "required": false,
+      "type": "single select",
+      "description": "Determines the type of icon that is shown in the button on the left side. Either the text or this icon needs to be provided. If only this icon is provided then it is an icon only button. If no icon is provided the icon is not shown",
+      "constraint": "",
+      "defaultOption": "",
+      "options": [
+        "Available icons in Vanilla"
+      ]
+    },
+    {
+      "name": "Icon right",
+      "required": false,
+      "type": "single select",
+      "description": "Determines the type of icon that is shown in the button on the right side. While there is no restriction which icon can be shown here be aware that semantic icons should be shown on the left. For the most part only chevrons are used on this side.",
+      "constraint": "",
+      "defaultOption": "",
+      "options": [
+        "Available icons in Vanilla"
+      ]
+    }
+  ],
+  "changeLog": [
+    {
+      "who": "Maximilian Blazek",
+      "when": "2025-11-21T17:00:00.000+00:00",
+      "what": "Initial commit"
+    },
+    {
+      "who": "Maximilian Blazek",
+      "when": "2026-02-13T15:00:00.000+00:00",
+      "what": "Add links"
+    },
+    {
+      "who": "Maximilian Blazek",
+      "when": "2025-12-01T14:00:00.000+00:00",
+      "what": "Updated button usage guidelines around number of CTAs as discussed in the [panel](https://docs.google.com/spreadsheets/d/1331tNhQQRPsq2KeJlDeHj2qYQREnpsn6h56_x3hnfrk/edit?gid=0#gid=0)."
+    }
+  ],
+  "decisionLog": [
+    {
+      "where": "App Mafia",
+      "what": "Question: Should buttons in the forms be disabled if not all mandatory fields have been filled?\n\nDecision: Buttons should be enabled even if mandatory fields are missing.\n\nUsers might not know why a button is disabled (they might have missed that there is a mandatory field, especially in longer, complexer forms). Enabling the button and “allowing” the user to fail will make it easier for them to discover their mistake (as clicking the button should highlight to the user what is still missing).  \n",
+      "link": "https://docs.google.com/document/d/1e96PtV1x-CiHkvrCn6_U0_1fHV6yTQg3UTXKvQyG9wc/edit?tab=t.5l0pasbf331b#bookmark=kix.aupph04y3047",
+      "when": ""
+    },
+    {
+      "where": "App Mafia",
+      "what": "Question: Should we allow a user to fail to do an action? \nDecisions: We should prevent the failure if the system knows the user won’t be able to perform the action. For example, if we know the user won’t be able to add a new item on a page, displaying a notification and disabling the button is preferable. However, when we have an alternative action that would unblock the user, we should provide that option. For example, in an empty state that has pre-requirements, we should display the action to fulfil the pre-requisite. ",
+      "link": "https://docs.google.com/document/d/1e96PtV1x-CiHkvrCn6_U0_1fHV6yTQg3UTXKvQyG9wc/edit?tab=t.5l0pasbf331b#bookmark=id.nn377pe8e8re",
+      "when": ""
+    }
+  ],
+  "appliedRules": [],
+  "exceptionFromRules": [],
+  "mentionedIn": [
+    {
+      "name": "Checkbox",
+      "slug": "checkbox"
+    },
+    {
+      "name": "Chip",
+      "slug": "chip"
+    },
+    {
+      "name": "Contextual menu",
+      "slug": "contextual-menu"
+    },
+    {
+      "name": "Link",
+      "slug": "link"
+    },
+    {
+      "name": "Segmented control",
+      "slug": "segmented-control"
+    },
+    {
+      "name": "Select",
+      "slug": "select"
+    },
+    {
+      "name": "Tooltip",
+      "slug": "tooltip"
+    }
+  ],
+  "mentionsComponents": [
+    {
+      "name": "Hero",
+      "slug": "hero"
+    },
+    {
+      "name": "Link",
+      "slug": "link"
+    },
+    {
+      "name": "Tooltip",
+      "slug": "tooltip"
+    }
+  ],
+  "url": "https://component.wiki/button"
+}

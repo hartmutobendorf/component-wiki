@@ -1,6 +1,5 @@
 import { LitElement, css, html } from "lit";
 import { vanillaStyleSheet } from "../../styles/vanilla.js";
-import "../multiselect/multiselect.js";
 
 export class SideNavigationComponent extends LitElement {
   static styles = [
@@ -12,8 +11,6 @@ export class SideNavigationComponent extends LitElement {
         height: 100%;
       }
 
-      /* Desktop: Show side nav normally, hide toggle and drawer features */
-      /* Using Vanilla's navigation threshold (1036px) for consistency */
       @media (min-width: 1037px) {
         .p-side-navigation__toggle,
         .p-side-navigation__toggle--in-drawer,
@@ -25,15 +22,18 @@ export class SideNavigationComponent extends LitElement {
           display: none;
         }
 
-        .p-side-navigation {
-          /* Remove drawer classes on desktop */
-          min-height: 100vh;
+        .p-side-navigation--accordion {
+          min-height: calc(100vh - var(--navigation-height, 0px));
 
           &.is-drawer-hidden,
           &.is-drawer-expanded,
           &.is-drawer-collapsed {
-            /* Reset to normal state */
           }
+        }
+
+        .p-side-navigation--accordion.is-sticky {
+          max-height: calc(100dvh - var(--navigation-height, 0px));
+          top: var(--navigation-height, 0px);
         }
 
         .p-side-navigation__drawer {
@@ -42,7 +42,6 @@ export class SideNavigationComponent extends LitElement {
         }
       }
 
-      /* Mobile: Use drawer pattern */
       @media (max-width: 1036px) {
         :host {
           pointer-events: none;
@@ -76,29 +75,58 @@ export class SideNavigationComponent extends LitElement {
           visibility: hidden;
         }
 
-        /* Only show and enable overlay when drawer is expanded */
-        .p-side-navigation.is-drawer-expanded .p-side-navigation__overlay {
+        .p-side-navigation--accordion.is-drawer-expanded
+          .p-side-navigation__overlay {
           pointer-events: auto;
           visibility: visible;
         }
 
-        .p-side-navigation.is-drawer-expanded .p-side-navigation__drawer {
+        .p-side-navigation--accordion.is-drawer-expanded
+          .p-side-navigation__drawer {
           pointer-events: auto;
+        }
+      }
+
+      /* Align section headings (Concept/Construct) with the chevron */
+      .p-side-navigation--accordion .p-side-navigation__heading {
+        padding-left: 1rem;
+      }
+
+      /* Extend list border to align with the chevron */
+      .p-side-navigation--accordion .p-side-navigation__list::after {
+        left: 1rem;
+      }
+
+      .p-side-navigation__accordion-button {
+        font-weight: bold;
+        color: #000;
+      }
+
+      /* Align child links with accordion button text by removing the extra
+         nesting indent. Vanilla sets nested accordion links to 4rem / 4.5rem.
+         The accordion button itself uses 3rem / 3rem (accordion-offset only).
+         Override with matching specificity to align child text with button text. */
+      .p-side-navigation--accordion .p-side-navigation__item .p-side-navigation__item .p-side-navigation__link {
+        padding-left: 3rem;
+      }
+      @media (min-width: 620px) {
+        .p-side-navigation--accordion .p-side-navigation__item .p-side-navigation__item .p-side-navigation__link {
+          padding-left: 3rem;
         }
       }
     `,
   ];
 
   static properties = {
-    navItems: {
-      type: Array,
-      attribute: "nav-items",
+    navData: {
+      type: Object,
+      attribute: "nav-data",
       converter: {
         fromAttribute: (value) => {
           try {
             return JSON.parse(value);
           } catch {
-            return [];
+            return { sections: [] };
           }
         },
       },
@@ -111,100 +139,54 @@ export class SideNavigationComponent extends LitElement {
       type: Boolean,
       attribute: "dark-mode",
     },
-    _selectedTypes: { state: true },
-    _selectedTiers: { state: true },
+    _collapsedGroups: { state: true },
   };
 
   constructor() {
     super();
-    this.navItems = [];
+    this.navData = { sections: [] };
     this.currentSlug = "";
     this.darkMode = false;
     this.expandedSidenavContainer = null;
     this.lastFocus = null;
     this.ignoreFocusChanges = false;
     this.focusAfterClose = null;
-
-    // Initialize filters from localStorage or defaults
-    this._selectedTypes = this._loadSelectedTypes();
-    this._selectedTiers = this._loadSelectedTiers();
+    // All groups are expanded by default; collapsed ones are tracked here
+    this._collapsedGroups = this._loadCollapsedGroups();
   }
 
-  _loadSelectedTypes() {
+  _loadCollapsedGroups() {
     try {
-      const stored = localStorage.getItem("component-filter-types");
+      const stored = sessionStorage.getItem("side-nav-collapsed-groups");
       if (stored) {
-        return JSON.parse(stored);
+        return new Set(JSON.parse(stored));
       }
     } catch (e) {
-      console.error("Error loading types from localStorage:", e);
+      // ignore
     }
-    // Default: all types selected
-    return [
-      "Foundation",
-      "Component",
-      "Complex component",
-      "Pattern",
-      "Page",
-      "Mental model",
-    ];
+    return new Set();
   }
 
-  _loadSelectedTiers() {
+  _saveCollapsedGroups() {
     try {
-      const stored = localStorage.getItem("component-filter-tiers");
-      if (stored) {
-        return JSON.parse(stored);
-      }
-    } catch (e) {
-      console.error("Error loading tiers from localStorage:", e);
-    }
-    // Default: only Global selected
-    return ["Global"];
-  }
-
-  _handleFilterChange(e) {
-    // Separate the selected values into types and tiers based on the item metadata
-    const allItems = e.detail.items.flatMap((group) => group.items);
-
-    this._selectedTypes = allItems
-      .filter((item) => item.type === "type" && item.selected)
-      .map((item) => item.value);
-
-    this._selectedTiers = allItems
-      .filter((item) => item.type === "tier" && item.selected)
-      .map((item) => item.value);
-
-    // Save to localStorage
-    try {
-      localStorage.setItem(
-        "component-filter-types",
-        JSON.stringify(this._selectedTypes),
-      );
-      localStorage.setItem(
-        "component-filter-tiers",
-        JSON.stringify(this._selectedTiers),
+      sessionStorage.setItem(
+        "side-nav-collapsed-groups",
+        JSON.stringify([...this._collapsedGroups]),
       );
     } catch (e) {
-      console.error("Error saving filters to localStorage:", e);
+      // ignore
     }
   }
 
-  _filterNavItems() {
-    if (!this.navItems || this.navItems.length === 0) {
-      return [];
+  _toggleGroup(groupKey) {
+    const next = new Set(this._collapsedGroups);
+    if (next.has(groupKey)) {
+      next.delete(groupKey);
+    } else {
+      next.add(groupKey);
     }
-
-    return this.navItems
-      .map((group) => ({
-        ...group,
-        items: group.items.filter(
-          (item) =>
-            this._selectedTypes.includes(item.type) &&
-            this._selectedTiers.includes(item.tier),
-        ),
-      }))
-      .filter((group) => group.items.length > 0);
+    this._collapsedGroups = next;
+    this._saveCollapsedGroups();
   }
 
   firstUpdated() {
@@ -213,8 +195,9 @@ export class SideNavigationComponent extends LitElement {
 
   trapFocus(event) {
     if (this.ignoreFocusChanges || !this.expandedSidenavContainer) return;
-    const sidenavContainer =
-      this.shadowRoot.querySelector(".p-side-navigation");
+    const sidenavContainer = this.shadowRoot.querySelector(
+      ".p-side-navigation--accordion",
+    );
     if (!sidenavContainer.classList.contains("is-drawer-expanded")) return;
     const sidenavDrawer = sidenavContainer.querySelector(
       ".p-side-navigation__drawer",
@@ -262,7 +245,9 @@ export class SideNavigationComponent extends LitElement {
   }
 
   toggleDrawer(show) {
-    const sideNavigation = this.shadowRoot.querySelector(".p-side-navigation");
+    const sideNavigation = this.shadowRoot.querySelector(
+      ".p-side-navigation--accordion",
+    );
     const toggleButtonOutsideDrawer = sideNavigation.querySelector(
       ".p-side-navigation__toggle",
     );
@@ -297,25 +282,26 @@ export class SideNavigationComponent extends LitElement {
   }
 
   setupDrawerToggle() {
-    const sideNavigation = this.shadowRoot.querySelector(".p-side-navigation");
+    const sideNavigation = this.shadowRoot.querySelector(
+      ".p-side-navigation--accordion",
+    );
     const toggles = this.shadowRoot.querySelectorAll(".js-drawer-toggle");
-    const drawerEl = sideNavigation.querySelector(".p-side-navigation__drawer");
+    const drawerEl = sideNavigation.querySelector(
+      ".p-side-navigation__drawer",
+    );
 
-    // Handle animation end
     drawerEl.addEventListener("animationend", () => {
       if (!sideNavigation.classList.contains("is-drawer-expanded")) {
         sideNavigation.classList.add("is-drawer-hidden");
       }
     });
 
-    // Handle Escape key
     window.addEventListener("keydown", (e) => {
       if (e.key === "Escape") {
         this.toggleDrawer(false);
       }
     });
 
-    // Setup toggle buttons
     toggles.forEach((toggle) => {
       toggle.addEventListener("click", (event) => {
         event.preventDefault();
@@ -348,80 +334,41 @@ export class SideNavigationComponent extends LitElement {
     `;
   }
 
+  renderAccordionGroup(group, sectionHeading) {
+    const groupKey = `${sectionHeading}/${group.type}`;
+    const isExpanded = !this._collapsedGroups.has(groupKey);
+
+    return html`
+      <li class="p-side-navigation__item">
+        <button
+          class="p-side-navigation__accordion-button"
+          aria-expanded="${isExpanded ? "true" : "false"}"
+          @click=${() => this._toggleGroup(groupKey)}
+        >
+          ${group.type}
+        </button>
+        <ul
+          class="p-side-navigation__list"
+          aria-expanded="${isExpanded ? "true" : "false"}"
+        >
+          ${group.items.map((item) => this.renderNavigationItem(item))}
+        </ul>
+      </li>
+    `;
+  }
+
   render() {
-    const filteredNavItems = this._filterNavItems();
+    const sections =
+      this.navData && this.navData.sections ? this.navData.sections : [];
+    const visibleSections = sections.filter(
+      (s) => s.items && s.items.length > 0,
+    );
 
-    const filterGroups = [
-      {
-        heading: "Tier",
-        items: [
-          {
-            label: "Global",
-            value: "Global",
-            selected: this._selectedTiers.includes("Global"),
-            type: "tier",
-          },
-          {
-            label: "Sites",
-            value: "Sites",
-            selected: this._selectedTiers.includes("Sites"),
-            type: "tier",
-          },
-          {
-            label: "Apps",
-            value: "Apps",
-            selected: this._selectedTiers.includes("Apps"),
-            type: "tier",
-          },
-        ],
-      },
-      {
-        heading: "Component type",
-        items: [
-          {
-            label: "Foundation",
-            value: "Foundation",
-            selected: this._selectedTypes.includes("Foundation"),
-            type: "type",
-          },
-          {
-            label: "Component",
-            value: "Component",
-            selected: this._selectedTypes.includes("Component"),
-            type: "type",
-          },
-          {
-            label: "Complex component",
-            value: "Complex component",
-            selected: this._selectedTypes.includes("Complex component"),
-            type: "type",
-          },
-          {
-            label: "Pattern",
-            value: "Pattern",
-            selected: this._selectedTypes.includes("Pattern"),
-            type: "type",
-          },
-          {
-            label: "Page",
-            value: "Page",
-            selected: this._selectedTypes.includes("Page"),
-            type: "type",
-          },
-          {
-            label: "Mental model",
-            value: "Mental model",
-            selected: this._selectedTypes.includes("Mental model"),
-            type: "type",
-          },
-        ],
-      },
-    ];
-
-    if (!this.navItems || this.navItems.length === 0) {
+    if (visibleSections.length === 0) {
       return html`
         <div
-          class="p-side-navigation is-sticky is-drawer-hidden ${this.darkMode
+          class="p-side-navigation--accordion is-sticky is-drawer-hidden ${this
+            .darkMode
             ? "is-dark"
             : ""}"
           id="drawer"
@@ -439,24 +386,25 @@ export class SideNavigationComponent extends LitElement {
           ></div>
 
           <nav class="p-side-navigation__drawer" aria-label="Side navigation">
-            <div class="p-strip is-shallow">
-              <div class="p-side-navigation__drawer-header">
-                <button
-                  class="p-side-navigation__toggle--in-drawer js-drawer-toggle"
-                  aria-controls="drawer"
-                >
-                  Toggle side navigation
-                </button>
-              </div>
-              <p>No navigation items available</p>
+            <div class="p-side-navigation__drawer-header">
+              <button
+                class="p-side-navigation__toggle--in-drawer js-drawer-toggle"
+                aria-controls="drawer"
+              >
+                Toggle side navigation
+              </button>
             </div>
+            <p style="padding: 0 1rem;">No navigation items available</p>
           </nav>
         </div>
       `;
     }
 
     return html`
-      <div class="p-side-navigation is-sticky is-drawer-hidden" id="drawer">
+      <div
+        class="p-side-navigation--accordion is-sticky is-drawer-hidden"
+        id="drawer"
+      >
         <button
           class="p-side-navigation__toggle js-drawer-toggle"
           aria-controls="drawer"
@@ -470,57 +418,27 @@ export class SideNavigationComponent extends LitElement {
         ></div>
 
         <nav class="p-side-navigation__drawer" aria-label="Side navigation">
-          <div class="p-strip is-shallow">
-            <div class="p-side-navigation__drawer-header">
-              <button
-                class="p-side-navigation__toggle--in-drawer js-drawer-toggle"
-                aria-controls="drawer"
-              >
-                Toggle side navigation
-              </button>
-            </div>
-
-            <p
-              style="font-size: 0.75rem; margin-bottom: 0.5rem; margin-top: -0.5rem; padding: 0 1.5rem; opacity: 0.7;"
+          <div class="p-side-navigation__drawer-header">
+            <button
+              class="p-side-navigation__toggle--in-drawer js-drawer-toggle"
+              aria-controls="drawer"
             >
-              Docs for
-              <a
-                href="https://vanillaframework.io"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Vanilla Framework</a
-              >
-            </p>
-
-            <div style="margin-bottom: 1rem;">
-              <label class="p-side-navigation__heading" for="filter-components"
-                >Filter components</label
-              >
-              <div style="padding: 0 1rem;">
-                <multi-select
-                  id="filter-components"
-                  label="Filter components"
-                  .groups=${filterGroups}
-                  @selection-changed=${this._handleFilterChange}
-                ></multi-select>
-              </div>
-            </div>
-
-            ${filteredNavItems.length === 0
-              ? html`<p style="padding: 0 1rem;">
-                  No components match the selected filters.
-                </p>`
-              : filteredNavItems.map(
-                  (group) => html`
-                    <h3 class="p-side-navigation__heading">${group.type}</h3>
-                    <ul class="p-side-navigation__list">
-                      ${group.items.map((item) =>
-                        this.renderNavigationItem(item),
-                      )}
-                    </ul>
-                  `,
-                )}
+              Toggle side navigation
+            </button>
           </div>
+
+          <div style="padding-top: 1.5rem;"></div>
+
+          ${visibleSections.map(
+            (section) => html`
+              <h3 class="p-side-navigation__heading p-text--small-caps">${section.heading}</h3>
+              <ul class="p-side-navigation__list">
+                ${section.items.map((group) =>
+                  this.renderAccordionGroup(group, section.heading),
+                )}
+              </ul>
+            `,
+          )}
         </nav>
       </div>
     `;

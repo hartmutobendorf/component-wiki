@@ -1,0 +1,19 @@
+---
+import { getCollection } from "astro:content";
+import ConceptPage from "../../../components/ConceptPage.astro";
+
+export async function getStaticPaths() {
+  const concepts = await getCollection("concepts");
+
+  return concepts
+    .filter((concept: any) => concept.data.tier === "Global")
+    .map((concept: any) => ({
+      params: { slug: concept.id },
+      props: { conceptId: concept.id },
+    }));
+}
+
+const { conceptId } = Astro.props;
+---
+
+<ConceptPage conceptId={conceptId} activeTier="Global" />

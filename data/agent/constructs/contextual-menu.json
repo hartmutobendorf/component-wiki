@@ -1,0 +1,100 @@
+{
+  "name": "Contextual menu",
+  "slug": "contextual-menu",
+  "type": "Component",
+  "tiers": "Global",
+  "documentationStatus": "Minimal",
+  "lastEdited": "2026-02-13T15:21:54.845+00:00",
+  "figmaLink": "https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-22",
+  "codeLink": "https://github.com/canonical/vanilla-framework/blob/d0197b27f5733789d6d23536eabe68356e045ae1/scss/_patterns_contextual-menu.scss",
+  "description": "A contextual menu provides secondary actions and options that can be attached to various interface controls, including [Button](/button)s, command [Link](/link)s, and right-click interactions. It displays relevant actions based on the context of the element or area it's associated with, helping to keep the interface clean while making additional functionality easily accessible when needed. \n\n",
+  "usage": "A contextual menu provides secondary actions and options that can be attached to various interface controls, including [Button](/button)s, command [Link](/link)s, and right-click interactions. It displays relevant actions based on the context of the element or area it's associated with, helping to keep the interface clean while making additional functionality easily accessible when needed.\n\nContextual menus are designed to initiate and perform actions, not to collect input from users. They work best for presenting action-oriented options that transform, manipulate or delete based on the user's selection.\n\n### Grouping actions\n\nWhen a contextual menu contains many actions, consider organizing them into logical action groups to improve scannability and reduce cognitive load.  Group related actions together based on their function or purpose.\n\nCommon grouping categories include:\n\n*   **Edit actions**: Copy, cut, paste, duplicate\n*   **Organization actions**: Move to folder, rename, sort\n*   **Sharing and permissions**: Share, change permissions, export\n*   **Destructive actions**: Delete, archive, remove (typically separated at the bottom)\n*   **View options**: Open in new tab, preview, download\n\n### Managing menu length\n\nAvoid letting contextual menus grow too long, as this creates cognitive overload and makes scanning difficult. If you have many actions available:\n\n*   First, group related actions using the categories mentioned above to improve organization\n*   For longer lists, consider nesting actions into submenus to reduce the initial visual complexity\n*   Evaluate whether all actions are truly necessary in the contextual menu, or if some could be moved to a dedicated settings area or toolbar\n\n### When to use\n\n*   Providing secondary actions for specific elements or content items\n*   Offering context-specific operations that relate to a selected item or area\n*   Keeping the primary interface clean by hiding less frequently used actions\n*   Right-click functionality where desktop conventions apply\n\n### When not to use\n\n*   As an input method for forms or filters (use [Select](/select) instead)\n*   For collecting user preferences or settings that require input selection\n*   When the actions are primary and should be immediately visible\n*   For navigation that serves as the main way to move through your application",
+  "examples": "",
+  "interactions": "",
+  "sitesArchitectureLevels": "i-UvVNCYZ44t",
+  "anatomy": {
+    "table": [
+      {
+        "number": 1,
+        "name": "Action text",
+        "description": "The text of the action item is used to tell the user what sort of action it performs. It should be set to something that gives the user a clear understanding which action is being performed when executing it."
+      },
+      {
+        "number": 2,
+        "name": "Action icon",
+        "description": "Optional icon that can be used to represent and enhance the meaning of the action text. "
+      },
+      {
+        "number": 3,
+        "name": "Action",
+        "description": "A single action. Clicking it will perform the action that is associated with it."
+      },
+      {
+        "number": 4,
+        "name": "Separator",
+        "description": "A separator that visually separates action groups from each other."
+      },
+      {
+        "number": 5,
+        "name": "Nested actions icon",
+        "description": "This icon is used to indicate that a group of actions have been nested inside of it"
+      },
+      {
+        "number": 6,
+        "name": "Nested actions",
+        "description": "A group of actions which has been nested inside of a single item. "
+      }
+    ]
+  },
+  "properties": [
+    {
+      "name": "Actions",
+      "required": true,
+      "type": "object",
+      "description": "The actions that this contextual menu should have. Optionally also sets wether specific actions should be grouped in action groups.",
+      "constraint": "",
+      "defaultOption": ""
+    }
+  ],
+  "changeLog": [
+    {
+      "who": "Maximilian Blazek",
+      "when": "2025-11-21T17:00:00.000+00:00",
+      "what": "Initial commit"
+    },
+    {
+      "who": "Maximilian Blazek",
+      "when": "2026-02-13T15:00:00.000+00:00",
+      "what": "Add links"
+    },
+    {
+      "who": "Daniel Mutis",
+      "when": "2025-12-03T11:00:00.000+00:00",
+      "what": "Reviewed"
+    },
+    {
+      "who": "Maximilian Blazek",
+      "when": "2025-12-01T11:00:00.000+00:00",
+      "what": "Added description, anatomy descriptions, Usage guidelines and properties"
+    }
+  ],
+  "decisionLog": [],
+  "appliedRules": [],
+  "exceptionFromRules": [],
+  "mentionedIn": [],
+  "mentionsComponents": [
+    {
+      "name": "Button",
+      "slug": "button"
+    },
+    {
+      "name": "Link",
+      "slug": "link"
+    },
+    {
+      "name": "Select",
+      "slug": "select"
+    }
+  ],
+  "url": "https://component.wiki/contextual-menu"
+}

@@ -1,0 +1,58 @@
+{
+  "fetchedAt": "2026-02-18T11:12:38.938Z",
+  "rows": {
+    "i-NOmpSaOnuZ": {
+      "rowId": "i-NOmpSaOnuZ",
+      "name": "Decision guide",
+      "concepts": [
+        "i-T9g6Adkwpp",
+        "i-N9wKI9QSCL"
+      ],
+      "description": "When to choose X over Y (e.g. modal vs. page vs. side panel, when to introduce friction)"
+    },
+    "i-TBtcPAYJfk": {
+      "rowId": "i-TBtcPAYJfk",
+      "name": "Architecture",
+      "concepts": [
+        "i-zcRnO2gbe_",
+        "i-sxV2-vvwEh",
+        "i-77amDzVdN2",
+        "i-ziaRlWZKzo",
+        "i-yoJyVydxF2",
+        "i-RO0xf8rGKJ",
+        "i-UbqAYcn-kL",
+        "i-J6KXahUgv8",
+        "i-pXsRJolrey",
+        "i-vT8fuOZWKp",
+        "i-EOdlr3f3B2"
+      ],
+      "description": "How to structure and compose things at a higher level (e.g. app structure, page hierarchy)"
+    },
+    "i-6MG18gCKr1": {
+      "rowId": "i-6MG18gCKr1",
+      "name": "Principle",
+      "concepts": [
+        "i-5CX0qx0-ix",
+        "i-DlY4iCeiNo",
+        "i-MughqPHCHW",
+        "i-aVl7tNyWPZ",
+        "i-f9CHH3BInv",
+        "i-N61an6hFc8",
+        "i-KFif7gGk3u",
+        "i-y72GvvD9Q2",
+        "i-2Y_zFSicja",
+        "i-g0pEWIdnoV",
+        "i-FWuxPOUZFc",
+        "i-xLNaieGTOY",
+        "i-H6X0PaYoji"
+      ],
+      "description": "The overarching beliefs and values (e.g. our approach to color, our approach to networking, our philosophy on precision in UI)"
+    },
+    "i-47_aG6SgEN": {
+      "rowId": "i-47_aG6SgEN",
+      "name": "Definition",
+      "concepts": [],
+      "description": "What things are and what they represent (e.g. what is a component?)"
+    }
+  }
+}

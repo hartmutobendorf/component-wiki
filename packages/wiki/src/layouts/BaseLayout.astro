@@ -2,18 +2,24 @@
 import "../styles/page.scss";
 import { getCollection } from "astro:content";
 import { ClientRouter } from "astro:transitions";
+import TopNavigation from "../components/TopNavigation.astro";
+import { buildConstructPath, buildConceptPath } from "../utils/tiers";
 
 interface Props {
   title?: string;
   currentSlug?: string;
+  activeTier?: string;
 }
 
-const { title = "Component Wiki", currentSlug = "" } = Astro.props;
+const { title = "Component Wiki", currentSlug = "", activeTier = "Global" } = Astro.props;
 
-// Get all components from the collection
-const components = await getCollection("components");
+// Get all constructs from the collection, filtered by active tier
+const allConstructs = await getCollection("constructs");
+const constructs = allConstructs.filter(
+  (construct) => construct.data.tiers === activeTier,
+);
 
-const typeOrder = [
+const constructTypeOrder = [
   "Foundation",
   "Component",
   "Complex component",
@@ -22,17 +28,17 @@ const typeOrder = [
   "Mental model",
 ];
 
-const groupedComponents = components.reduce(
-  (acc, component) => {
-    const type = component.data.type;
+const groupedConstructs = constructs.reduce(
+  (acc, construct) => {
+    const type = construct.data.type;
     if (!acc[type]) {
       acc[type] = [];
     }
     acc[type].push({
-      name: component.data.name,
-      slug: component.id,
-      tier: component.data.tiers,
-      type: component.data.type,
+      name: construct.data.name,
+      slug: buildConstructPath(activeTier, construct.id),
+      tier: construct.data.tiers,
+      type: construct.data.type,
     });
     return acc;
   },
@@ -42,15 +48,65 @@ const groupedComponents = components.reduce(
   >,
 );
 
-// Create nav items, sorted alphabetically within each group
-const navItems = typeOrder
+// Create construct nav items, sorted alphabetically within each group
+const constructNavItems = constructTypeOrder
   .map((type) => ({
     type,
-    items: (groupedComponents[type] || []).sort((a, b) =>
+    items: (groupedConstructs[type] || []).sort((a, b) =>
       a.name.localeCompare(b.name),
     ),
   }))
   .filter((group) => group.items.length > 0);
+
+// Get all concepts from the collection, filtered by active tier
+const allConcepts = await getCollection("concepts");
+const concepts = allConcepts.filter(
+  (concept) => concept.data.tier === activeTier,
+);
+
+const conceptTypeOrder = [
+  "Architecture",
+  "Principle",
+  "Decision guide",
+];
+
+const groupedConcepts = concepts.reduce(
+  (acc, concept) => {
+    const type = concept.data.type;
+    if (!acc[type]) {
+      acc[type] = [];
+    }
+    acc[type].push({
+      name: concept.data.name,
+      slug: buildConceptPath(activeTier, concept.id),
+      tier: concept.data.tier,
+      type: concept.data.type,
+    });
+    return acc;
+  },
+  {} as Record<
+    string,
+    { name: string; slug: string; tier: string; type: string }[]
+  >,
+);
+
+// Create concept nav items, sorted alphabetically within each group
+const conceptNavItems = conceptTypeOrder
+  .map((type) => ({
+    type,
+    items: (groupedConcepts[type] || []).sort((a, b) =>
+      a.name.localeCompare(b.name),
+    ),
+  }))
+  .filter((group) => group.items.length > 0);
+
+// Combined nav data with section info
+const navData = {
+  sections: [
+    { heading: "Concept", items: conceptNavItems },
+    { heading: "Construct", items: constructNavItems },
+  ],
+};
 ---
 
 <!doctype html>
@@ -63,9 +119,18 @@ const navItems = typeOrder
   </head>
   <body>
     <div class="l-docs">
+      <div class="l-docs__header">
+        <TopNavigation activeTier={activeTier} />
+      </div>
+
       <aside class="l-docs__sidebar">
+        <script
+          id="nav-data"
+          type="application/json"
+          set:html={JSON.stringify(navData)}
+        />
         <side-navigation
-          nav-items={JSON.stringify(navItems)}
+          nav-data={JSON.stringify(navData)}
           current-slug={currentSlug}
           transition:persist></side-navigation>
       </aside>
@@ -89,13 +154,19 @@ const navItems = typeOrder
       // Import the side-navigation web component
       import "../components/sideNavigation/side-navigation.js";
 
-      // Update the side navigation current-slug on page navigation
+      // Update the side navigation on page navigation
       document.addEventListener("astro:page-load", () => {
         const sidebar = document.querySelector("side-navigation");
         if (sidebar) {
           // Get the current slug from the URL, removing leading slash
           const currentSlug = window.location.pathname.substring(1) || "";
           sidebar.setAttribute("current-slug", currentSlug);
+
+          // Update nav-data from the embedded data for the current tier
+          const navDataEl = document.getElementById("nav-data");
+          if (navDataEl) {
+            sidebar.setAttribute("nav-data", navDataEl.textContent || "{}");
+          }
 
           // Restore scroll position
           if (sidebar.shadowRoot) {

@@ -1,0 +1,29 @@
+{
+  "name": "Side navigation",
+  "slug": "side-navigation",
+  "type": "Complex component",
+  "tiers": "Apps",
+  "documentationStatus": "Needs work",
+  "lastEdited": "2026-02-10T08:11:50.930+00:00",
+  "figmaLink": "https://www.figma.com/design/KHJBlNJnoTEoLXzwjWSI9l/%F0%9F%92%A0-Apps---Core-component-library?node-id=0-1",
+  "codeLink": "",
+  "description": "",
+  "usage": "",
+  "examples": "",
+  "interactions": "",
+  "sitesArchitectureLevels": "i-f0NxAPcXhj",
+  "properties": [],
+  "changeLog": [
+    {
+      "who": "Maximilian Blazek",
+      "when": "2025-11-21T17:00:00.000+00:00",
+      "what": "Initial commit"
+    }
+  ],
+  "decisionLog": [],
+  "appliedRules": [],
+  "exceptionFromRules": [],
+  "mentionedIn": [],
+  "mentionsComponents": [],
+  "url": "https://component.wiki/side-navigation"
+}

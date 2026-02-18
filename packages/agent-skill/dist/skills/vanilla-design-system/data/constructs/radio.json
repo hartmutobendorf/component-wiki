@@ -1,0 +1,99 @@
+{
+  "name": "Radio",
+  "slug": "radio",
+  "type": "Component",
+  "tiers": "Global",
+  "documentationStatus": "Minimal",
+  "lastEdited": "2026-02-13T15:53:07.080+00:00",
+  "figmaLink": "https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-38",
+  "codeLink": "https://github.com/canonical/vanilla-framework/blob/b1d651365b0714586e6ea14349dea763819c256e/scss/_patterns_form-tick-elements.scss#L101",
+  "description": "Radios are used to select a single option from a group of mutually exclusive choices, commonly found in forms, settings, and preference panels. Unlike [Checkbox](/checkbox)es which allow multiple selections, radios ensure only one option can be selected at a time within each group.\n\n",
+  "usage": "Radio buttons are ideal for presenting 2-7 mutually exclusive options where users need to see all choices simultaneously to make an informed decision. Always provide a logical ordering such as frequency of use, alphabetical arrangement, or importance, and ensure labels are clear and follow parallel structure. Avoid negative phrasing when possible, and never use a single radio button in isolation – they must always appear in groups. For required fields, include a sensible default selection, while optional radio groups can start with no selection.\n\nRemember that unlike [Checkbox](/checkbox)es which allow multiple selections, radio buttons enforce a single choice within each group and typically require explicit confirmation through a save or submit action.\n\n### When to use\n\n*   Single selection from 2-7 mutually exclusive options\n*   When all available choices should be visible at once\n*   For decisions where users benefit from comparing options side-by-side\n*   In forms where explicit confirmation is required before changes take effect\n\n### When not to use\n\n*   For yes/no or binary on/off states (use [Checkbox](/checkbox) or [Switch](/switch) instead)\n*   When multiple selections are needed (use [Checkbox](/checkbox)es)\n*   For large option lists with 8+ choices (consider [Select](/select))\n*   For settings that should apply changes immediately (use [Switch](/switch))\n*   For single standalone options (always group radio buttons)",
+  "examples": "",
+  "interactions": "",
+  "sitesArchitectureLevels": "i-UvVNCYZ44t",
+  "anatomy": {
+    "table": [
+      {
+        "number": 1,
+        "name": "Checkmark",
+        "description": "The checkmark indicates wether the radio is checked or not."
+      }
+    ]
+  },
+  "properties": [
+    {
+      "name": "Checked",
+      "required": false,
+      "type": "boolean",
+      "description": "Wether the radio is checked or not.",
+      "constraint": "",
+      "defaultOption": "false",
+      "options": [
+        "true",
+        "false"
+      ]
+    },
+    {
+      "name": "State",
+      "required": false,
+      "type": "single select",
+      "description": "What state the radio is in. Putting the checked radio in hover state has no effect.",
+      "constraint": "",
+      "defaultOption": "default",
+      "options": [
+        "default",
+        "hover",
+        "disabled"
+      ]
+    }
+  ],
+  "changeLog": [
+    {
+      "who": "Maximilian Blazek",
+      "when": "2025-11-21T17:00:00.000+00:00",
+      "what": "Initial commit"
+    },
+    {
+      "who": "Maximilian Blazek",
+      "when": "2026-02-13T15:00:00.000+00:00",
+      "what": "Added links"
+    }
+  ],
+  "decisionLog": [],
+  "appliedRules": [],
+  "exceptionFromRules": [],
+  "mentionedIn": [
+    {
+      "name": "Checkbox",
+      "slug": "checkbox"
+    },
+    {
+      "name": "Input",
+      "slug": "input"
+    },
+    {
+      "name": "Segmented control",
+      "slug": "segmented-control"
+    },
+    {
+      "name": "Select",
+      "slug": "select"
+    }
+  ],
+  "mentionsComponents": [
+    {
+      "name": "Checkbox",
+      "slug": "checkbox"
+    },
+    {
+      "name": "Select",
+      "slug": "select"
+    },
+    {
+      "name": "Switch",
+      "slug": "switch"
+    }
+  ],
+  "url": "https://component.wiki/radio"
+}

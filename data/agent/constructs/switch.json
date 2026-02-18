@@ -1,0 +1,99 @@
+{
+  "name": "Switch",
+  "slug": "switch",
+  "type": "Component",
+  "tiers": "Global",
+  "documentationStatus": "Minimal",
+  "lastEdited": "2026-02-13T16:02:51.103+00:00",
+  "figmaLink": "https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-48",
+  "codeLink": "https://github.com/canonical/vanilla-framework/blob/b1d651365b0714586e6ea14349dea763819c256e/scss/_patterns_switch.scss",
+  "description": "A switch allows users to instantly change between two states (on/off, enabled/disabled). It provides immediate visual feedback and is commonly used for settings, preferences, or features that can be activated or deactivated with a single interaction.",
+  "usage": "Switches are used for immediate, binary actions that take effect instantly without requiring a save or submit action. When a user toggles a switch, the change is applied immediately and the system responds in real-time. This instant feedback makes switches ideal for turning features on or off, enabling or disabling functionality, or changing modes where users expect to see immediate results. Unlike [Checkbox](/checkbox)es, which typically accumulate changes to be submitted as part of a form, switches represent independent actions that stand alone and update the system state immediately upon interaction.\n\n### Determining Checked vs Unchecked States\n\nWhen deciding which option should correspond to the checked (right/blue) or unchecked (left/gray) state, follow these principles:\n\n### Checked state (right/blue) should represent:\n\n*   The active, enabled, or \"on\" state\n*   The more permissive or open option (e.g., \"Public\" over \"Private\")\n*   The enhanced or additional functionality (e.g., \"Automatic\" over \"Manual\")\n*   The state that adds features or capabilities\n*   The option that increases visibility, access, or activity\n\n### Unchecked state (left/gray) should represent:\n\n*   The inactive, disabled, or \"off\" state\n*   The more restrictive or closed option (e.g., \"Private\")\n*   The default or basic functionality (e.g., \"Manual\")\n*   The state that removes or limits features\n*   The option that decreases visibility, access, or activity\n\nWhen in doubt, frame the switch label as an action or feature that can be enabled, making it clear that checked = activated. For example, instead of \"Private/Public\", use \"Make profile public\" where checked means public.\n\n### When to use\n\n*   For binary settings that take effect immediately (e.g., \"Enable notifications\", \"Dark mode\")\n*   When changes are independent of other form fields and don't require submission\n*   When the action is easily reversible with the same control\n\n### When not to use\n\n*   In forms that require a submit button to save changes\n*   For selecting multiple options from a list (use [Checkbox](/checkbox) instead)\n*   When the action requires additional confirmation or has significant consequences\n*   When the state change depends on other form validation\n*   If the change cannot be applied immediately due to system constraints\n*   For binary choices that are part of a larger form submission workflow",
+  "examples": "",
+  "interactions": "",
+  "sitesArchitectureLevels": "i-UvVNCYZ44t",
+  "anatomy": {
+    "table": [
+      {
+        "number": 1,
+        "name": "Track",
+        "description": "The track is the area in which the thumb can slide in."
+      },
+      {
+        "number": 2,
+        "name": "Thumb",
+        "description": "The thumb slides horizontally between positions to indicate state."
+      }
+    ]
+  },
+  "properties": [
+    {
+      "name": "Checked",
+      "required": false,
+      "type": "boolean",
+      "description": "Wether the switch is checked or not.",
+      "constraint": "",
+      "defaultOption": "false",
+      "options": [
+        "true",
+        "false"
+      ]
+    },
+    {
+      "name": "State",
+      "required": false,
+      "type": "single select",
+      "description": "What state the switch is in.",
+      "constraint": "",
+      "defaultOption": "default",
+      "options": [
+        "default",
+        "disabled"
+      ]
+    }
+  ],
+  "changeLog": [
+    {
+      "who": "Maximilian Blazek",
+      "when": "2025-11-21T17:00:00.000+00:00",
+      "what": "Initial commit"
+    },
+    {
+      "who": "Maximilian Blazek",
+      "when": "2026-02-13T16:00:00.000+00:00",
+      "what": "Added links"
+    }
+  ],
+  "decisionLog": [],
+  "appliedRules": [],
+  "exceptionFromRules": [],
+  "mentionedIn": [
+    {
+      "name": "Checkbox",
+      "slug": "checkbox"
+    },
+    {
+      "name": "Input",
+      "slug": "input"
+    },
+    {
+      "name": "Radio",
+      "slug": "radio"
+    },
+    {
+      "name": "Segmented control",
+      "slug": "segmented-control"
+    },
+    {
+      "name": "Select",
+      "slug": "select"
+    }
+  ],
+  "mentionsComponents": [
+    {
+      "name": "Checkbox",
+      "slug": "checkbox"
+    }
+  ],
+  "url": "https://component.wiki/switch"
+}

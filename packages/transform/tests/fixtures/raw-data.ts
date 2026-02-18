@@ -1,8 +1,6 @@
 /**
- * Test fixtures for the denormalize function.
- *
- * These represent the normalized data that coda-sync outputs (data/raw/*.json),
- * already parsed through the shared Zod schemas.
+ * Test fixtures for denormalize functions.
+ * Represent normalized coda-sync output (data/raw/*.json).
  */
 import type { RawData } from "../../src/common/denormalize.js";
 
@@ -13,24 +11,24 @@ const lookupTable = (rows: Record<string, { rowId: string; name: string }>) => (
   rows,
 });
 
-export const typesTable = lookupTable({
+export const constructTypesTable = lookupTable({
   "type-component": { rowId: "type-component", name: "Component" },
   "type-pattern": { rowId: "type-pattern", name: "Pattern" },
   "type-foundation": { rowId: "type-foundation", name: "Foundation" },
   "type-block": { rowId: "type-block", name: "Block" },
 });
 
-export const tiersTable = lookupTable({
+export const documentationTiersTable = lookupTable({
   "tier-global": { rowId: "tier-global", name: "Global" },
   "tier-sites": { rowId: "tier-sites", name: "Sites" },
 });
 
-export const docStatusTable = lookupTable({
+export const documentationStatusTable = lookupTable({
   "status-good": { rowId: "status-good", name: "All good" },
   "status-minimal": { rowId: "status-minimal", name: "Minimal" },
 });
 
-export const propertyTypesTable = lookupTable({
+export const constructPropertyTypesTable = lookupTable({
   "pt-boolean": { rowId: "pt-boolean", name: "Boolean" },
   "pt-string": { rowId: "pt-string", name: "String" },
   "pt-single-select": { rowId: "pt-single-select", name: "Single select" },
@@ -39,14 +37,19 @@ export const propertyTypesTable = lookupTable({
   "pt-unknown": { rowId: "pt-unknown", name: "Fancy type" },
 });
 
-export const editorsTable = lookupTable({
+export const documentationEditorsTable = lookupTable({
   "ed-01": { rowId: "ed-01", name: "Alice Smith" },
   "ed-02": { rowId: "ed-02", name: "Bob Jones" },
 });
 
-// --- Component rows ---
+export const conceptTypesTable = lookupTable({
+  "ct-guide": { rowId: "ct-guide", name: "Decision guide" },
+  "ct-principle": { rowId: "ct-principle", name: "Design principle" },
+});
 
-export const componentsTable = {
+// --- Construct rows ---
+
+export const constructTable = {
   fetchedAt: "2025-01-01T00:00:00.000Z",
   rows: {
     "comp-button": {
@@ -59,6 +62,7 @@ export const componentsTable = {
       description: "A clickable button for triggering actions.",
       usage: "Use buttons for primary and secondary actions.",
       examples: "See the design system for usage examples.",
+      interactions: "",
       figma: "https://www.figma.com/design/abc123/Library",
       code: "https://github.com/org/repo/tree/main/button",
       figmaComponentData: "",
@@ -70,6 +74,8 @@ export const componentsTable = {
       decisionLog: ["dl-01"],
       uiBlocksUsedInPattern: "",
       "sites-ArchitectureLevels": "",
+      appliedRule: [],
+      exceptionFromRule: [],
     },
     "comp-toggle": {
       rowId: "comp-toggle",
@@ -81,6 +87,7 @@ export const componentsTable = {
       description: "A binary on/off control.",
       usage: "Use toggle for instant on/off switching.",
       examples: "",
+      interactions: "",
       figma: "",
       code: "",
       figmaComponentData: "",
@@ -92,6 +99,8 @@ export const componentsTable = {
       decisionLog: [],
       uiBlocksUsedInPattern: "",
       "sites-ArchitectureLevels": "UI component",
+      appliedRule: ["rule-01"],
+      exceptionFromRule: [],
     },
     "comp-card-pattern": {
       rowId: "comp-card-pattern",
@@ -103,6 +112,7 @@ export const componentsTable = {
       description: "A card layout pattern.",
       usage: "Use for content grouping.",
       examples: "",
+      interactions: "",
       figma: "",
       code: "",
       figmaComponentData: "",
@@ -114,6 +124,8 @@ export const componentsTable = {
       decisionLog: [],
       uiBlocksUsedInPattern: ["comp-button", "comp-toggle"],
       "sites-ArchitectureLevels": "",
+      appliedRule: [],
+      exceptionFromRule: [],
     },
     "comp-block-internal": {
       rowId: "comp-block-internal",
@@ -125,6 +137,7 @@ export const componentsTable = {
       description: "An internal building block.",
       usage: "",
       examples: "",
+      interactions: "",
       figma: "",
       code: "",
       figmaComponentData: "",
@@ -136,6 +149,8 @@ export const componentsTable = {
       decisionLog: [],
       uiBlocksUsedInPattern: "",
       "sites-ArchitectureLevels": "",
+      appliedRule: [],
+      exceptionFromRule: [],
     },
     "comp-no-anatomy": {
       rowId: "comp-no-anatomy",
@@ -147,6 +162,7 @@ export const componentsTable = {
       description: "",
       usage: "",
       examples: "",
+      interactions: "",
       figma: "",
       code: "",
       figmaComponentData: "",
@@ -158,13 +174,15 @@ export const componentsTable = {
       decisionLog: [],
       uiBlocksUsedInPattern: "",
       "sites-ArchitectureLevels": "",
+      appliedRule: [],
+      exceptionFromRule: [],
     },
   } as Record<string, any>,
 };
 
-// --- Property rows ---
+// --- Construct Property rows ---
 
-export const propertiesTable = {
+export const constructPropertiesTable = {
   fetchedAt: "2025-01-01T00:00:00.000Z",
   rows: {
     "prop-disabled": {
@@ -214,9 +232,9 @@ export const propertiesTable = {
   } as Record<string, any>,
 };
 
-// --- Anatomy rows ---
+// --- Construct Anatomy rows ---
 
-export const anatomyTable = {
+export const constructAnatomyTable = {
   fetchedAt: "2025-01-01T00:00:00.000Z",
   rows: {
     "anat-01": {
@@ -236,9 +254,9 @@ export const anatomyTable = {
   } as Record<string, any>,
 };
 
-// --- Changelog rows ---
+// --- Documentation Changelog rows ---
 
-export const changelogTable = {
+export const documentationChangelogTable = {
   fetchedAt: "2025-01-01T00:00:00.000Z",
   rows: {
     "cl-01": {
@@ -248,13 +266,23 @@ export const changelogTable = {
       what: "Initial documentation created",
       who: "ed-01",
       concept: "",
+      rules: "",
+    },
+    "cl-02": {
+      rowId: "cl-02",
+      construct: "",
+      when: "2026-01-15T10:00:00.000Z",
+      what: "Added concept content",
+      who: "ed-02",
+      concept: "conc-site",
+      rules: "",
     },
   } as Record<string, any>,
 };
 
-// --- Decision log rows ---
+// --- Documentation Decisionlog rows ---
 
-export const decisionLogTable = {
+export const documentationDecisionlogTable = {
   fetchedAt: "2025-01-01T00:00:00.000Z",
   rows: {
     "dl-01": {
@@ -265,6 +293,103 @@ export const decisionLogTable = {
       link: "https://docs.example.com/decisions/001",
       concept: "",
       when: "",
+      rules: "",
+    },
+  } as Record<string, any>,
+};
+
+// --- Concepts rows ---
+
+export const conceptsTable = {
+  fetchedAt: "2025-01-01T00:00:00.000Z",
+  rows: {
+    "conc-site": {
+      rowId: "conc-site",
+      name: "Site",
+      type: "ct-guide",
+      documentationStatus: "status-good",
+      tier: "tier-global",
+      description: "The complete web property.",
+      content: "Detailed content about sites.",
+      lastEdited: "2026-02-18T09:29:54.400+00:00",
+      decisionlog: [],
+      changelog: ["cl-02"],
+      appliedRule: ["rule-01"],
+      exceptedFromRule: [],
+    },
+    "conc-page": {
+      rowId: "conc-page",
+      name: "Page",
+      type: "ct-principle",
+      documentationStatus: "status-minimal",
+      tier: "tier-sites",
+      description: "A single web page within a site.",
+      content: "",
+      lastEdited: "2026-02-18T10:00:00.000+00:00",
+      decisionlog: [],
+      changelog: [],
+      appliedRule: [],
+      exceptedFromRule: ["rule-01"],
+    },
+  } as Record<string, any>,
+};
+
+// --- Rules rows ---
+
+export const rulesTable = {
+  fetchedAt: "2025-01-01T00:00:00.000Z",
+  rows: {
+    "rule-01": {
+      rowId: "rule-01",
+      rule: "Dividers must separate sections.",
+      knownExceptionForThisConstruct: "",
+      appliesToTheseConcepts: ["conc-site"],
+      ruleStrength: ["rl-must"],
+      status: ["rs-approved"],
+      type: ["rt-specific"],
+      lastEdited: "2026-02-18T09:35:07.035+00:00",
+      changelog: [],
+      decisionlog: [],
+      appliesToTheseConstructs: ["comp-toggle"],
+      knownExceptionForThisConcept: "",
+    },
+  } as Record<string, any>,
+};
+
+// --- Lookup tables for rules ---
+
+export const documentationRequirementLevelsTable = {
+  fetchedAt: "2025-01-01T00:00:00.000Z",
+  rows: {
+    "rl-must": {
+      rowId: "rl-must",
+      keyWord: "MUST",
+      description: "Absolute requirement.",
+      conceptRules: "",
+    },
+  } as Record<string, any>,
+};
+
+export const ruleStatusTable = {
+  fetchedAt: "2025-01-01T00:00:00.000Z",
+  rows: {
+    "rs-approved": {
+      rowId: "rs-approved",
+      name: "Approved",
+      description: "Rule is approved.",
+      conceptRules: "",
+    },
+  } as Record<string, any>,
+};
+
+export const ruleTypesTable = {
+  fetchedAt: "2025-01-01T00:00:00.000Z",
+  rows: {
+    "rt-specific": {
+      rowId: "rt-specific",
+      ruleType: "Specific rule",
+      description: "A specific rule.",
+      conceptRules: "",
     },
   } as Record<string, any>,
 };
@@ -273,16 +398,22 @@ export const decisionLogTable = {
 
 export function buildRawData(overrides?: Partial<RawData>): RawData {
   const base = {
-    components: structuredClone(componentsTable) as any,
-    properties: structuredClone(propertiesTable) as any,
-    changelog: structuredClone(changelogTable) as any,
-    anatomy: structuredClone(anatomyTable) as any,
-    decisionLog: structuredClone(decisionLogTable) as any,
-    types: structuredClone(typesTable) as any,
-    tiers: structuredClone(tiersTable) as any,
-    documentationStatuses: structuredClone(docStatusTable) as any,
-    propertyTypes: structuredClone(propertyTypesTable) as any,
-    editors: structuredClone(editorsTable) as any,
+    construct: structuredClone(constructTable) as any,
+    constructProperties: structuredClone(constructPropertiesTable) as any,
+    constructAnatomy: structuredClone(constructAnatomyTable) as any,
+    constructTypes: structuredClone(constructTypesTable) as any,
+    constructPropertyTypes: structuredClone(constructPropertyTypesTable) as any,
+    documentationChangelog: structuredClone(documentationChangelogTable) as any,
+    documentationDecisionlog: structuredClone(documentationDecisionlogTable) as any,
+    documentationStatus: structuredClone(documentationStatusTable) as any,
+    documentationTiers: structuredClone(documentationTiersTable) as any,
+    documentationEditors: structuredClone(documentationEditorsTable) as any,
+    concepts: structuredClone(conceptsTable) as any,
+    rules: structuredClone(rulesTable) as any,
+    conceptTypes: structuredClone(conceptTypesTable) as any,
+    documentationRequirementLevels: structuredClone(documentationRequirementLevelsTable) as any,
+    ruleStatus: structuredClone(ruleStatusTable) as any,
+    ruleTypes: structuredClone(ruleTypesTable) as any,
   };
   return { ...base, ...overrides };
 }

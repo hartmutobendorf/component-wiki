@@ -1,0 +1,34 @@
+{
+  "name": "Typography",
+  "slug": "typography",
+  "type": "Principle",
+  "tier": "Sites",
+  "documentationStatus": "Unclear",
+  "lastEdited": "2026-02-18T09:29:54.400+00:00",
+  "description": "",
+  "content": "",
+  "changeLog": [],
+  "decisionLog": [],
+  "appliedRules": [
+    {
+      "rule": "Section titles can only have one of two styles: H2 or Heading muted",
+      "ruleStrength": "MUST",
+      "status": "Approved",
+      "type": "Specific rule",
+      "lastEdited": "2026-02-18T09:35:07.035+00:00",
+      "appliesToConcepts": [
+        "Typography",
+        "Section"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "CTA section, Newsletter signup",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    }
+  ],
+  "exceptedFromRules": [],
+  "mentionedIn": [],
+  "mentionsComponents": [],
+  "url": "https://component.wiki/typography"
+}

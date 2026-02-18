@@ -1,35 +1,43 @@
 /**
- * Build a "mentioned in" reverse index for components.
+ * Build a "mentioned in" reverse index for constructs and concepts.
  *
- * Scans all resolved markdown content fields (description, usage, examples)
- * for internal links (e.g., [Checkbox](/checkbox)) and builds a map of
- * which components are mentioned by which other components.
- *
- * This enables a "Mentioned in" section on each component page, showing
- * other components that reference it in their documentation.
+ * Scans all resolved markdown content fields for internal links
+ * (e.g., [Checkbox](/checkbox)) and builds a map of which items
+ * are mentioned by which other items.
  */
 
-import type { Component, MentionedInEntry } from "@wiki/shared";
+import type { Construct, Concept, MentionedInEntry } from "@wiki/shared";
+
+/** Item with a slug and markdown fields that can be scanned for mentions. */
+interface Mentionable {
+  name: string;
+  slug: string;
+  description?: string;
+  usage?: string;
+  examples?: string;
+  interactions?: string;
+  content?: string;
+  mentionedIn: MentionedInEntry[];
+}
 
 /**
  * Regex matching internal wiki links: [text](/slug) or [text](/slug#section)
- * Captures: [1] = link text, [2] = slug (possibly with #anchor)
  */
 const INTERNAL_LINK_REGEX =
   /\[([^\]]*)\]\(\/([a-z0-9-]+(?:#[a-z0-9-]+)?)\)/g;
 
 /**
- * Extract all unique internal slugs linked from a component's markdown fields.
- * Self-references (links to the component's own slug) are excluded.
- * Section anchors (e.g., #properties) are stripped to get the base slug.
+ * Extract all unique internal slugs linked from an item's markdown fields.
+ * Self-references are excluded. Section anchors are stripped.
  */
-export function extractMentionedSlugs(component: Component): Set<string> {
+export function extractMentionedSlugs(item: Mentionable): Set<string> {
   const slugs = new Set<string>();
   const fieldsToScan = [
-    component.description,
-    component.usage,
-    component.examples,
-    component.interactions,
+    item.description,
+    item.usage,
+    item.examples,
+    item.interactions,
+    item.content,
   ];
 
   for (const field of fieldsToScan) {
@@ -38,7 +46,7 @@ export function extractMentionedSlugs(component: Component): Set<string> {
     let match: RegExpExecArray | null;
     while ((match = INTERNAL_LINK_REGEX.exec(field)) !== null) {
       const slug = match[2].split("#")[0];
-      if (slug && slug !== component.slug) {
+      if (slug && slug !== item.slug) {
         slugs.add(slug);
       }
     }
@@ -48,36 +56,32 @@ export function extractMentionedSlugs(component: Component): Set<string> {
 }
 
 /**
- * Build and attach `mentionedIn` arrays to all components.
+ * Build and attach `mentionedIn` arrays to all items.
  *
- * For each component, scans its markdown fields for internal links to other
- * components. Builds a reverse index (target slug → list of source components)
- * and attaches it as the `mentionedIn` field, sorted alphabetically by name.
- *
- * @returns The number of components that have at least one mention.
+ * @returns The number of items that have at least one mention.
  */
-export function buildMentionedIn(components: Component[]): number {
+export function buildMentionedIn(items: Mentionable[]): number {
   const mentionedInMap = new Map<string, MentionedInEntry[]>();
 
-  for (const component of components) {
-    const mentionedSlugs = extractMentionedSlugs(component);
+  for (const item of items) {
+    const mentionedSlugs = extractMentionedSlugs(item);
 
     for (const slug of mentionedSlugs) {
       if (!mentionedInMap.has(slug)) {
         mentionedInMap.set(slug, []);
       }
       mentionedInMap.get(slug)!.push({
-        name: component.name,
-        slug: component.slug,
+        name: item.name,
+        slug: item.slug,
       });
     }
   }
 
   let count = 0;
-  for (const component of components) {
-    const mentions = mentionedInMap.get(component.slug);
+  for (const item of items) {
+    const mentions = mentionedInMap.get(item.slug);
     if (mentions && mentions.length > 0) {
-      component.mentionedIn = mentions.sort((a, b) =>
+      item.mentionedIn = mentions.sort((a, b) =>
         a.name.localeCompare(b.name)
       );
       count++;

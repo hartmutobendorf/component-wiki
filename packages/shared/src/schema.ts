@@ -6,7 +6,9 @@ import { z } from "zod";
 
 const stringOrStringArray = z.union([z.string(), z.array(z.string())]);
 
-export const rawComponentRowSchema = z.object({
+// ── Construct ───────────────────────────────────────────────
+
+export const rawConstructRowSchema = z.object({
   rowId: z.string(),
   name: z.string(),
   type: z.string(),
@@ -28,9 +30,13 @@ export const rawComponentRowSchema = z.object({
   decisionLog: z.array(z.string()),
   uiBlocksUsedInPattern: stringOrStringArray,
   "sites-ArchitectureLevels": z.string(),
+  appliedRule: z.array(z.string()),
+  exceptionFromRule: z.array(z.string()),
 }).passthrough();
 
-export const rawPropertyRowSchema = z.object({
+// ── Construct Properties ────────────────────────────────────
+
+export const rawConstructPropertyRowSchema = z.object({
   rowId: z.string(),
   name: z.string(),
   required: z.boolean(),
@@ -42,7 +48,9 @@ export const rawPropertyRowSchema = z.object({
   component: z.array(z.string()),
 }).passthrough();
 
-export const rawAnatomyRowSchema = z.object({
+// ── Construct Anatomy ───────────────────────────────────────
+
+export const rawConstructAnatomyRowSchema = z.object({
   rowId: z.string(),
   number: z.coerce.number(),
   name: z.string(),
@@ -50,16 +58,21 @@ export const rawAnatomyRowSchema = z.object({
   component: z.string(),
 }).passthrough();
 
-export const rawChangeLogRowSchema = z.object({
+// ── Documentation Changelog ─────────────────────────────────
+
+export const rawDocumentationChangelogRowSchema = z.object({
   rowId: z.string(),
   construct: z.string(),
   when: z.string(),
   what: z.string(),
   who: z.string(),
   concept: z.string(),
+  rules: z.string(),
 }).passthrough();
 
-export const rawDecisionLogRowSchema = z.object({
+// ── Documentation Decisionlog ───────────────────────────────
+
+export const rawDocumentationDecisionlogRowSchema = z.object({
   rowId: z.string(),
   construct: z.string(),
   where: z.string(),
@@ -67,12 +80,133 @@ export const rawDecisionLogRowSchema = z.object({
   link: z.string(),
   concept: z.string(),
   when: z.string(),
+  rules: z.string(),
 }).passthrough();
+
+// ── Documentation Status ────────────────────────────────────
+
+export const rawDocumentationStatusRowSchema = z.object({
+  rowId: z.string(),
+  name: z.string(),
+  components: z.array(z.string()),
+  description: z.string(),
+  concepts: z.array(z.string()),
+}).passthrough();
+
+// ── Construct Types ─────────────────────────────────────────
+
+export const rawConstructTypeRowSchema = z.object({
+  rowId: z.string(),
+  name: z.string(),
+  components: z.array(z.string()),
+  description: z.string(),
+}).passthrough();
+
+// ── Documentation Tiers ─────────────────────────────────────
+
+export const rawDocumentationTierRowSchema = z.object({
+  rowId: z.string(),
+  name: z.string(),
+  components: z.array(z.string()),
+  text: z.string(),
+  concepts: z.array(z.string()),
+}).passthrough();
+
+// ── Documentation Editors ───────────────────────────────────
+
+export const rawDocumentationEditorRowSchema = z.object({
+  rowId: z.string(),
+  name: z.string(),
+  changelog: z.array(z.string()),
+}).passthrough();
+
+// ── Construct Property Types ────────────────────────────────
+
+export const rawConstructPropertyTypeRowSchema = z.object({
+  rowId: z.string(),
+  name: z.string(),
+  properties: z.array(z.string()),
+  sitesPatternProperties: z.string(),
+}).passthrough();
+
+// ── Concepts ────────────────────────────────────────────────
+
+export const rawConceptRowSchema = z.object({
+  rowId: z.string(),
+  name: z.string(),
+  type: z.string(),
+  documentationStatus: z.string(),
+  tier: z.string(),
+  description: z.string(),
+  content: z.string(),
+  lastEdited: z.string(),
+  decisionlog: z.array(z.string()),
+  changelog: z.array(z.string()),
+  appliedRule: z.array(z.string()),
+  exceptedFromRule: z.array(z.string()),
+}).passthrough();
+
+// ── Rules ───────────────────────────────────────────────────
+
+export const rawRuleRowSchema = z.object({
+  rowId: z.string(),
+  rule: z.string(),
+  knownExceptionForThisConstruct: z.union([z.string(), z.array(z.string())]),
+  appliesToTheseConcepts: z.union([z.string(), z.array(z.string())]),
+  ruleStrength: z.union([z.string(), z.array(z.string())]),
+  status: z.union([z.string(), z.array(z.string())]),
+  type: z.union([z.string(), z.array(z.string())]),
+  lastEdited: z.string(),
+  changelog: z.union([z.string(), z.array(z.string())]),
+  decisionlog: z.union([z.string(), z.array(z.string())]),
+  appliesToTheseConstructs: z.union([z.string(), z.array(z.string())]),
+  knownExceptionForThisConcept: z.union([z.string(), z.array(z.string())]),
+}).passthrough();
+
+// ── Concept Types ───────────────────────────────────────────
+
+export const rawConceptTypeRowSchema = z.object({
+  rowId: z.string(),
+  name: z.string(),
+  concepts: z.array(z.string()),
+  description: z.string(),
+}).passthrough();
+
+// ── Documentation Requirement Levels ────────────────────────
+
+export const rawDocumentationRequirementLevelRowSchema = z.object({
+  rowId: z.string(),
+  keyWord: z.string(),
+  description: z.string(),
+  conceptRules: stringOrStringArray,
+}).passthrough();
+
+// ── Rule Status ─────────────────────────────────────────────
+
+export const rawRuleStatusRowSchema = z.object({
+  rowId: z.string(),
+  name: z.string(),
+  description: z.string(),
+  conceptRules: z.union([z.string(), z.array(z.string())]),
+}).passthrough();
+
+// ── Rule Types ──────────────────────────────────────────────
+
+export const rawRuleTypeRowSchema = z.object({
+  rowId: z.string(),
+  ruleType: z.string(),
+  description: z.string(),
+  conceptRules: z.union([z.string(), z.array(z.string())]),
+}).passthrough();
+
+// ── Generic lookup (for simple name-only tables) ────────────
 
 export const rawLookupRowSchema = z.object({
   rowId: z.string(),
   name: z.string(),
 }).passthrough();
+
+// ── Raw table wrapper ───────────────────────────────────────
 
 /** Schema for a raw table file (data/raw/*.json) with typed rows */
 function rawTableOf<T extends z.ZodTypeAny>(rowSchema: T) {
@@ -82,11 +216,22 @@ function rawTableOf<T extends z.ZodTypeAny>(rowSchema: T) {
   });
 }
 
-export const rawComponentsTableSchema = rawTableOf(rawComponentRowSchema);
-export const rawPropertiesTableSchema = rawTableOf(rawPropertyRowSchema);
-export const rawAnatomyTableSchema = rawTableOf(rawAnatomyRowSchema);
-export const rawChangeLogTableSchema = rawTableOf(rawChangeLogRowSchema);
-export const rawDecisionLogTableSchema = rawTableOf(rawDecisionLogRowSchema);
+export const rawConstructTableSchema = rawTableOf(rawConstructRowSchema);
+export const rawConstructPropertiesTableSchema = rawTableOf(rawConstructPropertyRowSchema);
+export const rawConstructAnatomyTableSchema = rawTableOf(rawConstructAnatomyRowSchema);
+export const rawDocumentationChangelogTableSchema = rawTableOf(rawDocumentationChangelogRowSchema);
+export const rawDocumentationDecisionlogTableSchema = rawTableOf(rawDocumentationDecisionlogRowSchema);
+export const rawDocumentationStatusTableSchema = rawTableOf(rawDocumentationStatusRowSchema);
+export const rawConstructTypesTableSchema = rawTableOf(rawConstructTypeRowSchema);
+export const rawDocumentationTiersTableSchema = rawTableOf(rawDocumentationTierRowSchema);
+export const rawDocumentationEditorsTableSchema = rawTableOf(rawDocumentationEditorRowSchema);
+export const rawConstructPropertyTypesTableSchema = rawTableOf(rawConstructPropertyTypeRowSchema);
+export const rawConceptsTableSchema = rawTableOf(rawConceptRowSchema);
+export const rawRulesTableSchema = rawTableOf(rawRuleRowSchema);
+export const rawConceptTypesTableSchema = rawTableOf(rawConceptTypeRowSchema);
+export const rawDocumentationRequirementLevelsTableSchema = rawTableOf(rawDocumentationRequirementLevelRowSchema);
+export const rawRuleStatusTableSchema = rawTableOf(rawRuleStatusRowSchema);
+export const rawRuleTypesTableSchema = rawTableOf(rawRuleTypeRowSchema);
 export const rawLookupTableSchema = rawTableOf(rawLookupRowSchema);
 
 // ============================================================
@@ -146,7 +291,7 @@ export const mentionedInEntrySchema = z.object({
   slug: z.string(),
 });
 
-export const componentSchema = z.object({
+export const constructSchema = z.object({
   name: z.string(),
   slug: z.string(),
   type: z.enum([
@@ -180,5 +325,38 @@ export const componentSchema = z.object({
   childProperties: z.array(childPropertyGroupSchema).optional(),
   changeLog: z.array(changeLogEntrySchema).optional().default([]),
   decisionLog: z.array(decisionLogEntrySchema).optional().default([]),
+  appliedRules: z.array(z.lazy(() => ruleSchema)).optional().default([]),
+  exceptionFromRules: z.array(z.lazy(() => ruleSchema)).optional().default([]),
   mentionedIn: z.array(mentionedInEntrySchema).optional().default([]),
+});
+
+export const conceptSchema = z.object({
+  name: z.string(),
+  slug: z.string(),
+  type: z.string(),
+  tier: z.string(),
+  documentationStatus: z.string(),
+  lastEdited: z.string(),
+  description: z.string().optional().default(""),
+  content: z.string().optional().default(""),
+  changeLog: z.array(changeLogEntrySchema).optional().default([]),
+  decisionLog: z.array(decisionLogEntrySchema).optional().default([]),
+  appliedRules: z.array(z.lazy(() => ruleSchema)).optional().default([]),
+  exceptedFromRules: z.array(z.lazy(() => ruleSchema)).optional().default([]),
+  mentionedIn: z.array(mentionedInEntrySchema).optional().default([]),
+  mentionsComponents: z.array(mentionedInEntrySchema).optional().default([]),
+});
+
+export const ruleSchema = z.object({
+  rule: z.string(),
+  ruleStrength: z.string().optional().default(""),
+  status: z.string().optional().default(""),
+  type: z.string().optional().default(""),
+  lastEdited: z.string(),
+  appliesToConcepts: z.array(z.string()).optional().default([]),
+  appliesToConstructs: z.array(z.string()).optional().default([]),
+  knownExceptionForConstructs: z.string().optional().default(""),
+  knownExceptionForConcepts: z.string().optional().default(""),
+  changeLog: z.array(changeLogEntrySchema).optional().default([]),
+  decisionLog: z.array(decisionLogEntrySchema).optional().default([]),
 });

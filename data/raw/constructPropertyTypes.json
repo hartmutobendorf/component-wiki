@@ -1,0 +1,180 @@
+{
+  "fetchedAt": "2026-02-18T11:12:38.936Z",
+  "rows": {
+    "i-pfnARENBci": {
+      "rowId": "i-pfnARENBci",
+      "name": "Callback",
+      "properties": [
+        "i-gwZqhG-atb"
+      ],
+      "sitesPatternProperties": ""
+    },
+    "i-cVu2UuOKT2": {
+      "rowId": "i-cVu2UuOKT2",
+      "name": "Object",
+      "properties": [
+        "i-a0Bo-Iqzms",
+        "i-czHXhyOes7",
+        "i-1I3PPX3MjA",
+        "i-RUitcv2Zfv",
+        "i-TtKGUKacgH",
+        "i-6IqeZwUetX",
+        "i-XjkoJ1H-Vs",
+        "i-9kRQqIGceN",
+        "i-SUctfercEw",
+        "i-XqJY1VJ9wz",
+        "i-wVjIq_c2Dm"
+      ],
+      "sitesPatternProperties": ""
+    },
+    "i-H7NYDvgoEy": {
+      "rowId": "i-H7NYDvgoEy",
+      "name": "Slot",
+      "properties": [
+        "i-zn6TiF3hZx",
+        "i-15MYUGVv5C",
+        "i-tHG2f9uRBL",
+        "i-mJTsI_MGLW",
+        "i-BypmqEqLW-",
+        "i-tkrkp4exQn",
+        "i-8bW_aZUyGa"
+      ],
+      "sitesPatternProperties": ""
+    },
+    "i-_v9D7OsbSD": {
+      "rowId": "i-_v9D7OsbSD",
+      "name": "Multi select",
+      "properties": [
+        "i-X3IrI_Gpbp"
+      ],
+      "sitesPatternProperties": ""
+    },
+    "i-We9i4W9Klo": {
+      "rowId": "i-We9i4W9Klo",
+      "name": "Single select",
+      "properties": [
+        "i-VTuD5yMmP-",
+        "i-UXud_5mXq9",
+        "i-xfX4B0AKmQ",
+        "i-oQPXuZ-xRl",
+        "i-6YEcPVmV0u",
+        "i-E8J7jFq_7D",
+        "i-GAh2h-_gTb",
+        "i-o3iHf6Zt0R",
+        "i-YPQYlhrPCM",
+        "i-RJcEx7nqDB",
+        "i-f4wI3GjLik",
+        "i-qh4MgUEhHV",
+        "i-Zt_wUUggxH",
+        "i-MlXWYD_vrf",
+        "i-QsEZErMoi7",
+        "i-lj8T67R356",
+        "i-6tNFwGFFVM",
+        "i-79PmQ6grfA",
+        "i-NNHqfMjHao",
+        "i-CLcp4Vt_Sm",
+        "i-CuB0Q5tY49",
+        "i-ycapMJdCCf",
+        "i-DJR40c_n6_",
+        "i-vROo3LE64j",
+        "i-vbxgstp828",
+        "i-Kdhisb0tlW",
+        "i-FUhmj1pL0D",
+        "i-WBF8Re5GF_",
+        "i-8H2CjniwbO",
+        "i-OF3JZdQjJC",
+        "i-Vy3CICkpZu",
+        "i-Wu7j-wCYzi",
+        "i-poW06RavZD",
+        "i-282rfgNKLW",
+        "i-kEhG8_ieU7",
+        "i-nOFjdEzRa8",
+        "i-266fCPybLu",
+        "i-jmOqmVZKG8",
+        "i-1odFNLbGGE",
+        "i-1RzFJ9XHPB",
+        "i-woYsBaZyJX",
+        "i-j9y-dxGOfC",
+        "i-WCAFH96SBO",
+        "i-y0yMk1h_B6"
+      ],
+      "sitesPatternProperties": ""
+    },
+    "i-YtFbduYGgp": {
+      "rowId": "i-YtFbduYGgp",
+      "name": "Boolean",
+      "properties": [
+        "i-yzwu_nhlmT",
+        "i-NmNxhRC9v7",
+        "i-2mC2OAnNMD",
+        "i-LskHvTliHM",
+        "i-vJ8W-yxJtT",
+        "i-qUpCxTEk0L",
+        "i-YTcd0xXJUa",
+        "i-bl_nFW987o",
+        "i-SwrC-n8iOO",
+        "i-xkOu6bV2YX",
+        "i-w-wtCXptAi",
+        "i-lO5GGD8ZEx",
+        "i-5YLRgsaMwK"
+      ],
+      "sitesPatternProperties": ""
+    },
+    "i-E9ZaIqQXvg": {
+      "rowId": "i-E9ZaIqQXvg",
+      "name": "String",
+      "properties": [
+        "i-zBkbVnFuvp",
+        "i--4ufX7S0aN",
+        "i-XG0RCKelA8",
+        "i-fKlcuTRvcZ",
+        "i-pYSOIJiZAg",
+        "i-ymYez15DF2",
+        "i-lw3Peuhf3f",
+        "i-uY6oVuoQOh",
+        "i-1ZRs_jWb1g",
+        "i-6iwNinLZlc",
+        "i-nXoI6nNGrh",
+        "i-PltLDW_k_G",
+        "i-bMyzwL5XUw",
+        "i-MOYVJ4LSRp",
+        "i-CgqiwIgb75",
+        "i-MwwTQj1_5S",
+        "i-Z264r0ZcE6",
+        "i-09DPWOCRi-",
+        "i-eWPQTvmrcD",
+        "i-yw72a-Tyqn",
+        "i-_7Ix358itw",
+        "i-FN0wNGurti",
+        "i-Nu4t1mXwq0",
+        "i-P_mLTVA5ln",
+        "i-foiukkaDYH",
+        "i-3GHe9XDIoY",
+        "i-jxLNRms9kn",
+        "i-azZwJgymiG",
+        "i-rwGAkG5mZq",
+        "i-8d8mh3gQ55",
+        "i-gRVRn6jnEZ",
+        "i-FMidnWcEp2",
+        "i-DpyyN3KGpK",
+        "i-_gumptI4S0",
+        "i-ezoGa1yHqn",
+        "i-me5V9qs8zv",
+        "i-J-oUyLWh6G",
+        "i-wLQxq62qOy",
+        "i-cGHKnAgexo",
+        "i-WkO6dvh0Zd",
+        "i-3qB20NC0aH"
+      ],
+      "sitesPatternProperties": ""
+    },
+    "i-IHXuMDaESR": {
+      "rowId": "i-IHXuMDaESR",
+      "name": "Number",
+      "properties": [
+        "i-K0JMtgWRAb"
+      ],
+      "sitesPatternProperties": ""
+    }
+  }
+}

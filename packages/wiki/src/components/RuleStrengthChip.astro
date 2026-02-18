@@ -1,0 +1,29 @@
+---
+interface Props {
+  strength: string;
+}
+
+const { strength } = Astro.props;
+
+const chipVariantMap: Record<string, string> = {
+  MUST: "p-chip--negative",
+  "MUST NOT": "p-chip--negative",
+  SHALL: "p-chip--negative",
+  "SHALL NOT": "p-chip--negative",
+  REQUIRED: "p-chip--negative",
+  SHOULD: "p-chip--caution",
+  "SHOULD NOT": "p-chip--caution",
+  RECOMMENDED: "p-chip--caution",
+  "NOT RECOMMENDED": "p-chip--caution",
+  MAY: "p-chip--positive",
+};
+
+const chipClass = chipVariantMap[strength] ?? "p-chip";
+const label = strength ? strength.charAt(0).toUpperCase() + strength.slice(1).toLowerCase() : "";
+---
+
+{label ? (
+  <span class={`${chipClass} is-readonly is-inline is-dense`}>{label}</span>
+) : (
+  <span class="u-text--muted">—</span>
+)}

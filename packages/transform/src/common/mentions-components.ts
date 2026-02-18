@@ -1,57 +1,50 @@
 /**
- * Build a "mentions components" reverse map from `mentionedIn` data.
+ * Build a "mentions" forward map from `mentionedIn` data.
  *
- * For each component, computes which other components reference it
- * in their docs. This is the reverse of `mentionedIn`: if component A
- * appears in component B's `mentionedIn`, then B appears in A's
- * `mentionsComponents`.
- *
- * This is computed once in the orchestrator and attached to each component
- * so any target can use it.
+ * For each item, computes which other items reference it
+ * in their docs. This is the reverse of `mentionedIn`.
  */
 
-import type { Component, MentionedInEntry } from "@wiki/shared";
+import type { MentionedInEntry } from "@wiki/shared";
+
+interface Mentionable {
+  name: string;
+  slug: string;
+  mentionedIn: MentionedInEntry[];
+}
 
 /**
- * Build and attach `mentionsComponents` to all components.
+ * Build and attach `mentionsComponents` to all items.
  *
- * For each component, looks at all the slugs it links to (by scanning
- * which components list it in their `mentionedIn`) and builds the forward
- * map: this component mentions these other components.
- *
- * @returns The number of components that mention at least one other component.
+ * @returns The number of items that mention at least one other item.
  */
-export function buildMentionsComponents(components: Component[]): number {
-  // Build a map: for each component, which other components does it mention?
-  // We derive this from mentionedIn: if B.mentionedIn includes A,
-  // then A.mentionsComponents includes B.
+export function buildMentionsComponents(items: Mentionable[]): number {
   const mentionsMap = new Map<string, MentionedInEntry[]>();
 
-  for (const component of components) {
-    if (component.mentionedIn && component.mentionedIn.length > 0) {
-      for (const entry of component.mentionedIn) {
-        // entry.slug mentions component.slug
+  for (const item of items) {
+    if (item.mentionedIn && item.mentionedIn.length > 0) {
+      for (const entry of item.mentionedIn) {
         if (!mentionsMap.has(entry.slug)) {
           mentionsMap.set(entry.slug, []);
         }
         mentionsMap.get(entry.slug)!.push({
-          name: component.name,
-          slug: component.slug,
+          name: item.name,
+          slug: item.slug,
         });
       }
     }
   }
 
   let count = 0;
-  for (const component of components) {
-    const mentions = mentionsMap.get(component.slug);
+  for (const item of items) {
+    const mentions = mentionsMap.get(item.slug);
     if (mentions && mentions.length > 0) {
-      (component as any).mentionsComponents = mentions.sort((a, b) =>
+      (item as any).mentionsComponents = mentions.sort((a, b) =>
         a.name.localeCompare(b.name)
       );
       count++;
     } else {
-      (component as any).mentionsComponents = [];
+      (item as any).mentionsComponents = [];
     }
   }
 

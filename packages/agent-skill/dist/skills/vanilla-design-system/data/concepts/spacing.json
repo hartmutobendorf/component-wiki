@@ -1,0 +1,26 @@
+{
+  "name": "Spacing",
+  "slug": "spacing",
+  "type": "Principle",
+  "tier": "Sites",
+  "documentationStatus": "Unclear",
+  "lastEdited": "2026-02-18T09:29:54.400+00:00",
+  "description": "Sites are using predefined vertical spacing tokens ensuring content is properly positioned and maintains vertical consistency.",
+  "content": "",
+  "changeLog": [],
+  "decisionLog": [],
+  "appliedRules": [
+    "i-2Bh98UVeCN",
+    "i-B0iImJb_X1",
+    "i-XaN4xKvGD7",
+    "i-jZgXWq_7bQ",
+    "i-lAauaXXEXi",
+    "i-oFPi2Wm4Cu",
+    "i-trysCiJisz",
+    "i-RMzGlwDepa"
+  ],
+  "exceptedFromRules": [],
+  "mentionedIn": [],
+  "mentionsComponents": [],
+  "url": "https://component.wiki/spacing"
+}

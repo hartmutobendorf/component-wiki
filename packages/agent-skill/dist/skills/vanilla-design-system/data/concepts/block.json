@@ -1,0 +1,22 @@
+{
+  "name": "Block",
+  "slug": "block",
+  "type": "Architecture",
+  "tier": "Sites",
+  "documentationStatus": "Unclear",
+  "lastEdited": "2026-02-18T09:29:54.400+00:00",
+  "description": "A repeatable micro-structure with parallel content units.",
+  "content": "",
+  "changeLog": [],
+  "decisionLog": [],
+  "appliedRules": [
+    "i-0beC9X4XSV",
+    "i-c0fL3b9UM5",
+    "i-sko58g_anS",
+    "i-3bh5fUHXlx"
+  ],
+  "exceptedFromRules": [],
+  "mentionedIn": [],
+  "mentionsComponents": [],
+  "url": "https://component.wiki/block"
+}

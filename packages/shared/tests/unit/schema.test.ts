@@ -1,20 +1,44 @@
 import { describe, it, expect } from "vitest";
 import {
   // Raw schemas
-  rawComponentRowSchema,
-  rawPropertyRowSchema,
-  rawAnatomyRowSchema,
-  rawChangeLogRowSchema,
-  rawDecisionLogRowSchema,
+  rawConstructRowSchema,
+  rawConstructPropertyRowSchema,
+  rawConstructAnatomyRowSchema,
+  rawDocumentationChangelogRowSchema,
+  rawDocumentationDecisionlogRowSchema,
+  rawDocumentationStatusRowSchema,
+  rawConstructTypeRowSchema,
+  rawDocumentationTierRowSchema,
+  rawDocumentationEditorRowSchema,
+  rawConstructPropertyTypeRowSchema,
+  rawConceptRowSchema,
+  rawRuleRowSchema,
+  rawConceptTypeRowSchema,
+  rawDocumentationRequirementLevelRowSchema,
+  rawRuleStatusRowSchema,
+  rawRuleTypeRowSchema,
   rawLookupRowSchema,
-  rawComponentsTableSchema,
-  rawPropertiesTableSchema,
-  rawAnatomyTableSchema,
-  rawChangeLogTableSchema,
-  rawDecisionLogTableSchema,
+  rawConstructTableSchema,
+  rawConstructPropertiesTableSchema,
+  rawConstructAnatomyTableSchema,
+  rawDocumentationChangelogTableSchema,
+  rawDocumentationDecisionlogTableSchema,
+  rawDocumentationStatusTableSchema,
+  rawConstructTypesTableSchema,
+  rawDocumentationTiersTableSchema,
+  rawDocumentationEditorsTableSchema,
+  rawConstructPropertyTypesTableSchema,
+  rawConceptsTableSchema,
+  rawRulesTableSchema,
+  rawConceptTypesTableSchema,
+  rawDocumentationRequirementLevelsTableSchema,
+  rawRuleStatusTableSchema,
+  rawRuleTypesTableSchema,
   rawLookupTableSchema,
   // Output schemas
-  componentSchema,
+  constructSchema,
+  conceptSchema,
+  ruleSchema,
   propertySchema,
   anatomyPartSchema,
   anatomySchema,
@@ -28,9 +52,9 @@ import {
 // Raw schemas
 // ══════════════════════════════════════════════════════════════
 
-// ── rawComponentRowSchema ───────────────────────────────────
+// ── rawConstructRowSchema ───────────────────────────────────
 
-describe("rawComponentRowSchema", () => {
+describe("rawConstructRowSchema", () => {
   const validRow = {
     rowId: "comp-01",
     name: "Button",
@@ -53,60 +77,69 @@ describe("rawComponentRowSchema", () => {
     decisionLog: ["dl1"],
     uiBlocksUsedInPattern: "",
     "sites-ArchitectureLevels": "",
+    appliedRule: [],
+    exceptionFromRule: [],
   };
 
-  it("accepts a valid component row", () => {
-    expect(() => rawComponentRowSchema.parse(validRow)).not.toThrow();
+  it("accepts a valid construct row", () => {
+    expect(() => rawConstructRowSchema.parse(validRow)).not.toThrow();
   });
 
   it("accepts componentExampleImage as string", () => {
-    const result = rawComponentRowSchema.parse(validRow);
+    const result = rawConstructRowSchema.parse(validRow);
     expect(result.componentExampleImage).toBe("img.png");
   });
 
   it("accepts componentExampleImage as array of strings", () => {
     const row = { ...validRow, componentExampleImage: ["a.png", "b.png"] };
-    const result = rawComponentRowSchema.parse(row);
+    const result = rawConstructRowSchema.parse(row);
     expect(result.componentExampleImage).toEqual(["a.png", "b.png"]);
   });
 
   it("accepts anatomyImage as string", () => {
-    const result = rawComponentRowSchema.parse(validRow);
+    const result = rawConstructRowSchema.parse(validRow);
     expect(result.anatomyImage).toBe("anat.png");
   });
 
   it("accepts anatomyImage as array of strings", () => {
     const row = { ...validRow, anatomyImage: ["x.png"] };
-    const result = rawComponentRowSchema.parse(row);
+    const result = rawConstructRowSchema.parse(row);
     expect(result.anatomyImage).toEqual(["x.png"]);
   });
 
   it("accepts uiBlocksUsedInPattern as string", () => {
-    const result = rawComponentRowSchema.parse(validRow);
+    const result = rawConstructRowSchema.parse(validRow);
     expect(result.uiBlocksUsedInPattern).toBe("");
   });
 
   it("accepts uiBlocksUsedInPattern as array of strings", () => {
     const row = { ...validRow, uiBlocksUsedInPattern: ["block-1"] };
-    const result = rawComponentRowSchema.parse(row);
+    const result = rawConstructRowSchema.parse(row);
     expect(result.uiBlocksUsedInPattern).toEqual(["block-1"]);
+  });
+
+  it("accepts appliedRule and exceptionFromRule as arrays", () => {
+    const row = { ...validRow, appliedRule: ["r1", "r2"], exceptionFromRule: ["r3"] };
+    const result = rawConstructRowSchema.parse(row);
+    expect(result.appliedRule).toEqual(["r1", "r2"]);
+    expect(result.exceptionFromRule).toEqual(["r3"]);
   });
 
   it("allows extra fields via passthrough", () => {
     const row = { ...validRow, extraField: "hello" };
-    const result = rawComponentRowSchema.parse(row);
+    const result = rawConstructRowSchema.parse(row);
     expect((result as any).extraField).toBe("hello");
   });
 
   it("rejects missing required fields", () => {
     const { name, ...incomplete } = validRow;
-    expect(() => rawComponentRowSchema.parse(incomplete)).toThrow();
+    expect(() => rawConstructRowSchema.parse(incomplete)).toThrow();
   });
 });
 
-// ── rawPropertyRowSchema ────────────────────────────────────
+// ── rawConstructPropertyRowSchema ───────────────────────────
 
-describe("rawPropertyRowSchema", () => {
+describe("rawConstructPropertyRowSchema", () => {
   const validRow = {
     rowId: "prop-01",
     name: "disabled",
@@ -120,34 +153,34 @@ describe("rawPropertyRowSchema", () => {
   };
 
   it("accepts a valid property row", () => {
-    expect(() => rawPropertyRowSchema.parse(validRow)).not.toThrow();
+    expect(() => rawConstructPropertyRowSchema.parse(validRow)).not.toThrow();
   });
 
   it("accepts defaultOption as string", () => {
-    const result = rawPropertyRowSchema.parse(validRow);
+    const result = rawConstructPropertyRowSchema.parse(validRow);
     expect(result.defaultOption).toBe("false");
   });
 
   it("accepts defaultOption as boolean", () => {
     const row = { ...validRow, defaultOption: true };
-    const result = rawPropertyRowSchema.parse(row);
+    const result = rawConstructPropertyRowSchema.parse(row);
     expect(result.defaultOption).toBe(true);
   });
 
   it("rejects defaultOption as number", () => {
     const row = { ...validRow, defaultOption: 42 };
-    expect(() => rawPropertyRowSchema.parse(row)).toThrow();
+    expect(() => rawConstructPropertyRowSchema.parse(row)).toThrow();
   });
 
   it("rejects when required is not boolean", () => {
     const row = { ...validRow, required: "yes" };
-    expect(() => rawPropertyRowSchema.parse(row)).toThrow();
+    expect(() => rawConstructPropertyRowSchema.parse(row)).toThrow();
   });
 });
 
-// ── rawAnatomyRowSchema ─────────────────────────────────────
+// ── rawConstructAnatomyRowSchema ────────────────────────────
 
-describe("rawAnatomyRowSchema", () => {
+describe("rawConstructAnatomyRowSchema", () => {
   const validRow = {
     rowId: "anat-01",
     number: 1,
@@ -157,25 +190,25 @@ describe("rawAnatomyRowSchema", () => {
   };
 
   it("accepts a valid anatomy row", () => {
-    expect(() => rawAnatomyRowSchema.parse(validRow)).not.toThrow();
+    expect(() => rawConstructAnatomyRowSchema.parse(validRow)).not.toThrow();
   });
 
   it("coerces string number to number", () => {
     const row = { ...validRow, number: "3" };
-    const result = rawAnatomyRowSchema.parse(row);
+    const result = rawConstructAnatomyRowSchema.parse(row);
     expect(result.number).toBe(3);
   });
 
   it("coerces numeric string '0' to 0", () => {
     const row = { ...validRow, number: "0" };
-    const result = rawAnatomyRowSchema.parse(row);
+    const result = rawConstructAnatomyRowSchema.parse(row);
     expect(result.number).toBe(0);
   });
 });
 
-// ── rawChangeLogRowSchema ───────────────────────────────────
+// ── rawDocumentationChangelogRowSchema ──────────────────────
 
-describe("rawChangeLogRowSchema", () => {
+describe("rawDocumentationChangelogRowSchema", () => {
   it("accepts a valid changelog row", () => {
     const row = {
       rowId: "cl-01",
@@ -184,14 +217,29 @@ describe("rawChangeLogRowSchema", () => {
       what: "Initial draft",
       who: "ed-01",
       concept: "",
+      rules: "",
     };
-    expect(() => rawChangeLogRowSchema.parse(row)).not.toThrow();
+    expect(() => rawDocumentationChangelogRowSchema.parse(row)).not.toThrow();
+  });
+
+  it("includes the rules field", () => {
+    const row = {
+      rowId: "cl-01",
+      construct: "comp-01",
+      when: "2025-01-01",
+      what: "Added rules",
+      who: "ed-01",
+      concept: "",
+      rules: "rule-01",
+    };
+    const result = rawDocumentationChangelogRowSchema.parse(row);
+    expect(result.rules).toBe("rule-01");
   });
 });
 
-// ── rawDecisionLogRowSchema ─────────────────────────────────
+// ── rawDocumentationDecisionlogRowSchema ────────────────────
 
-describe("rawDecisionLogRowSchema", () => {
+describe("rawDocumentationDecisionlogRowSchema", () => {
   it("accepts a valid decision log row", () => {
     const row = {
       rowId: "dl-01",
@@ -201,8 +249,276 @@ describe("rawDecisionLogRowSchema", () => {
       link: "https://example.com",
       concept: "",
       when: "",
+      rules: "",
     };
-    expect(() => rawDecisionLogRowSchema.parse(row)).not.toThrow();
+    expect(() => rawDocumentationDecisionlogRowSchema.parse(row)).not.toThrow();
+  });
+
+  it("includes the rules field", () => {
+    const row = {
+      rowId: "dl-01",
+      construct: "comp-01",
+      where: "Design review",
+      what: "Use variant A",
+      link: "https://example.com",
+      concept: "",
+      when: "",
+      rules: "rule-01",
+    };
+    const result = rawDocumentationDecisionlogRowSchema.parse(row);
+    expect(result.rules).toBe("rule-01");
+  });
+});
+
+// ── rawDocumentationStatusRowSchema ─────────────────────────
+
+describe("rawDocumentationStatusRowSchema", () => {
+  it("accepts a valid documentation status row", () => {
+    const row = {
+      rowId: "stat-01",
+      name: "Draft",
+      components: ["comp-01"],
+      description: "Needs more work",
+      concepts: ["conc-01"],
+    };
+    expect(() => rawDocumentationStatusRowSchema.parse(row)).not.toThrow();
+  });
+
+  it("includes concepts array", () => {
+    const row = {
+      rowId: "stat-01",
+      name: "Draft",
+      components: [],
+      description: "",
+      concepts: ["conc-01", "conc-02"],
+    };
+    const result = rawDocumentationStatusRowSchema.parse(row);
+    expect(result.concepts).toEqual(["conc-01", "conc-02"]);
+  });
+});
+
+// ── rawConstructTypeRowSchema ───────────────────────────────
+
+describe("rawConstructTypeRowSchema", () => {
+  it("accepts a valid construct type row", () => {
+    const row = {
+      rowId: "type-01",
+      name: "Component",
+      components: ["comp-01"],
+      description: "A UI component",
+    };
+    expect(() => rawConstructTypeRowSchema.parse(row)).not.toThrow();
+  });
+});
+
+// ── rawDocumentationTierRowSchema ───────────────────────────
+
+describe("rawDocumentationTierRowSchema", () => {
+  it("accepts a valid tier row", () => {
+    const row = {
+      rowId: "tier-01",
+      name: "Global",
+      components: ["comp-01"],
+      text: "Used everywhere",
+      concepts: ["conc-01"],
+    };
+    expect(() => rawDocumentationTierRowSchema.parse(row)).not.toThrow();
+  });
+
+  it("includes concepts array", () => {
+    const row = {
+      rowId: "tier-01",
+      name: "Global",
+      components: [],
+      text: "",
+      concepts: ["conc-01"],
+    };
+    const result = rawDocumentationTierRowSchema.parse(row);
+    expect(result.concepts).toEqual(["conc-01"]);
+  });
+});
+
+// ── rawDocumentationEditorRowSchema ─────────────────────────
+
+describe("rawDocumentationEditorRowSchema", () => {
+  it("accepts a valid editor row", () => {
+    const row = {
+      rowId: "ed-01",
+      name: "Alice",
+      changelog: ["cl-01"],
+    };
+    expect(() => rawDocumentationEditorRowSchema.parse(row)).not.toThrow();
+  });
+});
+
+// ── rawConstructPropertyTypeRowSchema ───────────────────────
+
+describe("rawConstructPropertyTypeRowSchema", () => {
+  it("accepts a valid property type row", () => {
+    const row = {
+      rowId: "pt-01",
+      name: "boolean",
+      properties: ["prop-01"],
+      sitesPatternProperties: "",
+    };
+    expect(() => rawConstructPropertyTypeRowSchema.parse(row)).not.toThrow();
+  });
+});
+
+// ── rawConceptRowSchema ─────────────────────────────────────
+
+describe("rawConceptRowSchema", () => {
+  const validRow = {
+    rowId: "conc-01",
+    name: "Site",
+    type: "ct-01",
+    documentationStatus: "stat-01",
+    tier: "tier-01",
+    description: "The complete web property.",
+    content: "Some markdown content",
+    lastEdited: "2026-02-18T09:29:54.400+00:00",
+    decisionlog: [],
+    changelog: [],
+    appliedRule: ["r1"],
+    exceptedFromRule: [],
+  };
+
+  it("accepts a valid concept row", () => {
+    expect(() => rawConceptRowSchema.parse(validRow)).not.toThrow();
+  });
+
+  it("accepts concept with applied rules", () => {
+    const result = rawConceptRowSchema.parse(validRow);
+    expect(result.appliedRule).toEqual(["r1"]);
+  });
+
+  it("allows extra fields via passthrough", () => {
+    const row = { ...validRow, extra: true };
+    const result = rawConceptRowSchema.parse(row);
+    expect((result as any).extra).toBe(true);
+  });
+
+  it("rejects missing required fields", () => {
+    const { name, ...incomplete } = validRow;
+    expect(() => rawConceptRowSchema.parse(incomplete)).toThrow();
+  });
+});
+
+// ── rawRuleRowSchema ────────────────────────────────────────
+
+describe("rawRuleRowSchema", () => {
+  const validRow = {
+    rowId: "rule-01",
+    rule: "Dividers must separate sections.",
+    knownExceptionForThisConstruct: "",
+    appliesToTheseConcepts: ["conc-01"],
+    ruleStrength: ["rl-01"],
+    status: ["rs-01"],
+    type: ["rt-01"],
+    lastEdited: "2026-02-18T09:35:07.035+00:00",
+    changelog: [],
+    decisionlog: [],
+    appliesToTheseConstructs: "",
+    knownExceptionForThisConcept: "",
+  };
+
+  it("accepts a valid rule row", () => {
+    expect(() => rawRuleRowSchema.parse(validRow)).not.toThrow();
+  });
+
+  it("accepts rule with multiple lookup arrays", () => {
+    const row = {
+      ...validRow,
+      ruleStrength: ["rl-01", "rl-02"],
+      status: ["rs-01"],
+      type: ["rt-01", "rt-02"],
+    };
+    const result = rawRuleRowSchema.parse(row);
+    expect(result.ruleStrength).toEqual(["rl-01", "rl-02"]);
+    expect(result.type).toEqual(["rt-01", "rt-02"]);
+  });
+
+  it("rejects missing required fields", () => {
+    const { rule, ...incomplete } = validRow;
+    expect(() => rawRuleRowSchema.parse(incomplete)).toThrow();
+  });
+});
+
+// ── rawConceptTypeRowSchema ─────────────────────────────────
+
+describe("rawConceptTypeRowSchema", () => {
+  it("accepts a valid concept type row", () => {
+    const row = {
+      rowId: "ct-01",
+      name: "Decision guide",
+      concepts: ["conc-01"],
+      description: "When to choose X over Y",
+    };
+    expect(() => rawConceptTypeRowSchema.parse(row)).not.toThrow();
+  });
+});
+
+// ── rawDocumentationRequirementLevelRowSchema ────────────────
+
+describe("rawDocumentationRequirementLevelRowSchema", () => {
+  it("accepts a valid requirement level row", () => {
+    const row = {
+      rowId: "rl-01",
+      keyWord: "MUST",
+      description: "Absolute requirement",
+      conceptRules: "",
+    };
+    expect(() => rawDocumentationRequirementLevelRowSchema.parse(row)).not.toThrow();
+  });
+
+  it("accepts conceptRules as string", () => {
+    const row = {
+      rowId: "rl-01",
+      keyWord: "MUST",
+      description: "",
+      conceptRules: "",
+    };
+    const result = rawDocumentationRequirementLevelRowSchema.parse(row);
+    expect(result.conceptRules).toBe("");
+  });
+
+  it("accepts conceptRules as array of strings", () => {
+    const row = {
+      rowId: "rl-01",
+      keyWord: "MUST",
+      description: "",
+      conceptRules: ["rule-01", "rule-02"],
+    };
+    const result = rawDocumentationRequirementLevelRowSchema.parse(row);
+    expect(result.conceptRules).toEqual(["rule-01", "rule-02"]);
+  });
+});
+
+// ── rawRuleStatusRowSchema ──────────────────────────────────
+
+describe("rawRuleStatusRowSchema", () => {
+  it("accepts a valid rule status row", () => {
+    const row = {
+      rowId: "rs-01",
+      name: "Accepted",
+      description: "Rule is accepted",
+      conceptRules: ["rule-01"],
+    };
+    expect(() => rawRuleStatusRowSchema.parse(row)).not.toThrow();
+  });
+});
+
+// ── rawRuleTypeRowSchema ────────────────────────────────────
+
+describe("rawRuleTypeRowSchema", () => {
+  it("accepts a valid rule type row", () => {
+    const row = {
+      rowId: "rt-01",
+      ruleType: "Design principle",
+      description: "",
+      conceptRules: ["rule-01"],
+    };
+    expect(() => rawRuleTypeRowSchema.parse(row)).not.toThrow();
   });
 });
 
@@ -225,7 +541,7 @@ describe("rawLookupRowSchema", () => {
 // ── Raw table schemas ───────────────────────────────────────
 
 describe("raw table schemas", () => {
-  it("rawComponentsTableSchema validates table structure", () => {
+  it("rawConstructTableSchema validates table structure", () => {
     const table = {
       fetchedAt: "2025-01-01T00:00:00.000Z",
       rows: {
@@ -251,13 +567,15 @@ describe("raw table schemas", () => {
           decisionLog: [],
           uiBlocksUsedInPattern: "",
           "sites-ArchitectureLevels": "",
+          appliedRule: [],
+          exceptionFromRule: [],
         },
       },
     };
-    expect(() => rawComponentsTableSchema.parse(table)).not.toThrow();
+    expect(() => rawConstructTableSchema.parse(table)).not.toThrow();
   });
 
-  it("rawPropertiesTableSchema validates table structure", () => {
+  it("rawConstructPropertiesTableSchema validates table structure", () => {
     const table = {
       fetchedAt: "2025-01-01T00:00:00.000Z",
       rows: {
@@ -274,10 +592,10 @@ describe("raw table schemas", () => {
         },
       },
     };
-    expect(() => rawPropertiesTableSchema.parse(table)).not.toThrow();
+    expect(() => rawConstructPropertiesTableSchema.parse(table)).not.toThrow();
   });
 
-  it("rawAnatomyTableSchema validates table structure", () => {
+  it("rawConstructAnatomyTableSchema validates table structure", () => {
     const table = {
       fetchedAt: "2025-01-01T00:00:00.000Z",
       rows: {
@@ -290,10 +608,10 @@ describe("raw table schemas", () => {
         },
       },
     };
-    expect(() => rawAnatomyTableSchema.parse(table)).not.toThrow();
+    expect(() => rawConstructAnatomyTableSchema.parse(table)).not.toThrow();
   });
 
-  it("rawChangeLogTableSchema validates table structure", () => {
+  it("rawDocumentationChangelogTableSchema validates table structure", () => {
     const table = {
       fetchedAt: "2025-01-01T00:00:00.000Z",
       rows: {
@@ -304,13 +622,14 @@ describe("raw table schemas", () => {
           what: "",
           who: "",
           concept: "",
+          rules: "",
         },
       },
     };
-    expect(() => rawChangeLogTableSchema.parse(table)).not.toThrow();
+    expect(() => rawDocumentationChangelogTableSchema.parse(table)).not.toThrow();
   });
 
-  it("rawDecisionLogTableSchema validates table structure", () => {
+  it("rawDocumentationDecisionlogTableSchema validates table structure", () => {
     const table = {
       fetchedAt: "2025-01-01T00:00:00.000Z",
       rows: {
@@ -322,10 +641,189 @@ describe("raw table schemas", () => {
           link: "",
           concept: "",
           when: "",
+          rules: "",
         },
       },
     };
-    expect(() => rawDecisionLogTableSchema.parse(table)).not.toThrow();
+    expect(() => rawDocumentationDecisionlogTableSchema.parse(table)).not.toThrow();
+  });
+
+  it("rawDocumentationStatusTableSchema validates table structure", () => {
+    const table = {
+      fetchedAt: "2025-01-01T00:00:00.000Z",
+      rows: {
+        "stat-01": {
+          rowId: "stat-01",
+          name: "Draft",
+          components: [],
+          description: "",
+          concepts: [],
+        },
+      },
+    };
+    expect(() => rawDocumentationStatusTableSchema.parse(table)).not.toThrow();
+  });
+
+  it("rawConstructTypesTableSchema validates table structure", () => {
+    const table = {
+      fetchedAt: "2025-01-01T00:00:00.000Z",
+      rows: {
+        "type-01": {
+          rowId: "type-01",
+          name: "Component",
+          components: [],
+          description: "",
+        },
+      },
+    };
+    expect(() => rawConstructTypesTableSchema.parse(table)).not.toThrow();
+  });
+
+  it("rawDocumentationTiersTableSchema validates table structure", () => {
+    const table = {
+      fetchedAt: "2025-01-01T00:00:00.000Z",
+      rows: {
+        "tier-01": {
+          rowId: "tier-01",
+          name: "Global",
+          components: [],
+          text: "",
+          concepts: [],
+        },
+      },
+    };
+    expect(() => rawDocumentationTiersTableSchema.parse(table)).not.toThrow();
+  });
+
+  it("rawDocumentationEditorsTableSchema validates table structure", () => {
+    const table = {
+      fetchedAt: "2025-01-01T00:00:00.000Z",
+      rows: {
+        "ed-01": { rowId: "ed-01", name: "Alice", changelog: [] },
+      },
+    };
+    expect(() => rawDocumentationEditorsTableSchema.parse(table)).not.toThrow();
+  });
+
+  it("rawConstructPropertyTypesTableSchema validates table structure", () => {
+    const table = {
+      fetchedAt: "2025-01-01T00:00:00.000Z",
+      rows: {
+        "pt-01": {
+          rowId: "pt-01",
+          name: "boolean",
+          properties: [],
+          sitesPatternProperties: "",
+        },
+      },
+    };
+    expect(() => rawConstructPropertyTypesTableSchema.parse(table)).not.toThrow();
+  });
+
+  it("rawConceptsTableSchema validates table structure", () => {
+    const table = {
+      fetchedAt: "2025-01-01T00:00:00.000Z",
+      rows: {
+        "conc-01": {
+          rowId: "conc-01",
+          name: "Site",
+          type: "ct-01",
+          documentationStatus: "stat-01",
+          tier: "tier-01",
+          description: "",
+          content: "",
+          lastEdited: "",
+          decisionlog: [],
+          changelog: [],
+          appliedRule: [],
+          exceptedFromRule: [],
+        },
+      },
+    };
+    expect(() => rawConceptsTableSchema.parse(table)).not.toThrow();
+  });
+
+  it("rawRulesTableSchema validates table structure", () => {
+    const table = {
+      fetchedAt: "2025-01-01T00:00:00.000Z",
+      rows: {
+        "rule-01": {
+          rowId: "rule-01",
+          rule: "Sections must be separated.",
+          knownExceptionForThisConstruct: "",
+          appliesToTheseConcepts: [],
+          ruleStrength: [],
+          status: [],
+          type: [],
+          lastEdited: "",
+          changelog: [],
+          decisionlog: [],
+          appliesToTheseConstructs: "",
+          knownExceptionForThisConcept: "",
+        },
+      },
+    };
+    expect(() => rawRulesTableSchema.parse(table)).not.toThrow();
+  });
+
+  it("rawConceptTypesTableSchema validates table structure", () => {
+    const table = {
+      fetchedAt: "2025-01-01T00:00:00.000Z",
+      rows: {
+        "ct-01": {
+          rowId: "ct-01",
+          name: "Decision guide",
+          concepts: [],
+          description: "",
+        },
+      },
+    };
+    expect(() => rawConceptTypesTableSchema.parse(table)).not.toThrow();
+  });
+
+  it("rawDocumentationRequirementLevelsTableSchema validates table structure", () => {
+    const table = {
+      fetchedAt: "2025-01-01T00:00:00.000Z",
+      rows: {
+        "rl-01": {
+          rowId: "rl-01",
+          keyWord: "MUST",
+          description: "",
+          conceptRules: "",
+        },
+      },
+    };
+    expect(() => rawDocumentationRequirementLevelsTableSchema.parse(table)).not.toThrow();
+  });
+
+  it("rawRuleStatusTableSchema validates table structure", () => {
+    const table = {
+      fetchedAt: "2025-01-01T00:00:00.000Z",
+      rows: {
+        "rs-01": {
+          rowId: "rs-01",
+          name: "Accepted",
+          description: "",
+          conceptRules: [],
+        },
+      },
+    };
+    expect(() => rawRuleStatusTableSchema.parse(table)).not.toThrow();
+  });
+
+  it("rawRuleTypesTableSchema validates table structure", () => {
+    const table = {
+      fetchedAt: "2025-01-01T00:00:00.000Z",
+      rows: {
+        "rt-01": {
+          rowId: "rt-01",
+          ruleType: "Design principle",
+          description: "",
+          conceptRules: [],
+        },
+      },
+    };
+    expect(() => rawRuleTypesTableSchema.parse(table)).not.toThrow();
   });
 
   it("rawLookupTableSchema validates table structure", () => {
@@ -508,10 +1006,10 @@ describe("mentionedInEntrySchema", () => {
   });
 });
 
-// ── componentSchema ─────────────────────────────────────────
+// ── constructSchema ─────────────────────────────────────────
 
-describe("componentSchema", () => {
-  const validComponent = {
+describe("constructSchema", () => {
+  const validConstruct = {
     name: "Button",
     slug: "button",
     type: "Component",
@@ -520,14 +1018,14 @@ describe("componentSchema", () => {
     lastEdited: "2025-01-01",
   };
 
-  it("accepts a minimal valid component", () => {
-    const result = componentSchema.parse(validComponent);
+  it("accepts a minimal valid construct", () => {
+    const result = constructSchema.parse(validConstruct);
     expect(result.name).toBe("Button");
     expect(result.slug).toBe("button");
   });
 
   it("applies default values for optional fields", () => {
-    const result = componentSchema.parse(validComponent);
+    const result = constructSchema.parse(validConstruct);
     expect(result.figmaLink).toBe("");
     expect(result.codeLink).toBe("");
     expect(result.description).toBe("");
@@ -538,6 +1036,8 @@ describe("componentSchema", () => {
     expect(result.properties).toEqual([]);
     expect(result.changeLog).toEqual([]);
     expect(result.decisionLog).toEqual([]);
+    expect(result.appliedRules).toEqual([]);
+    expect(result.exceptionFromRules).toEqual([]);
     expect(result.mentionedIn).toEqual([]);
   });
 
@@ -553,14 +1053,14 @@ describe("componentSchema", () => {
     ];
     for (const type of types) {
       expect(() =>
-        componentSchema.parse({ ...validComponent, type }),
+        constructSchema.parse({ ...validConstruct, type }),
       ).not.toThrow();
     }
   });
 
   it("rejects invalid type value", () => {
     expect(() =>
-      componentSchema.parse({ ...validComponent, type: "Widget" }),
+      constructSchema.parse({ ...validConstruct, type: "Widget" }),
     ).toThrow();
   });
 
@@ -568,14 +1068,14 @@ describe("componentSchema", () => {
     const tiers = ["Global", "Sites", "Apps"];
     for (const tier of tiers) {
       expect(() =>
-        componentSchema.parse({ ...validComponent, tiers: tier }),
+        constructSchema.parse({ ...validConstruct, tiers: tier }),
       ).not.toThrow();
     }
   });
 
   it("rejects invalid tiers value", () => {
     expect(() =>
-      componentSchema.parse({ ...validComponent, tiers: "Local" }),
+      constructSchema.parse({ ...validConstruct, tiers: "Local" }),
     ).toThrow();
   });
 
@@ -583,8 +1083,8 @@ describe("componentSchema", () => {
     const statuses = ["All good", "Minimal", "Unclear", "Needs work"];
     for (const status of statuses) {
       expect(() =>
-        componentSchema.parse({
-          ...validComponent,
+        constructSchema.parse({
+          ...validConstruct,
           documentationStatus: status,
         }),
       ).not.toThrow();
@@ -593,29 +1093,29 @@ describe("componentSchema", () => {
 
   it("rejects invalid documentationStatus value", () => {
     expect(() =>
-      componentSchema.parse({
-        ...validComponent,
+      constructSchema.parse({
+        ...validConstruct,
         documentationStatus: "Perfect",
       }),
     ).toThrow();
   });
 
-  it("accepts component with full anatomy", () => {
+  it("accepts construct with full anatomy", () => {
     const comp = {
-      ...validComponent,
+      ...validConstruct,
       anatomy: {
         image: "img.png",
         table: [{ number: 1, name: "Part", description: "Desc" }],
       },
     };
-    const result = componentSchema.parse(comp);
+    const result = constructSchema.parse(comp);
     expect(result.anatomy).toBeDefined();
     expect(result.anatomy!.table).toHaveLength(1);
   });
 
-  it("accepts component with childProperties", () => {
+  it("accepts construct with childProperties", () => {
     const comp = {
-      ...validComponent,
+      ...validConstruct,
       childProperties: [
         {
           name: "Toggle",
@@ -623,31 +1123,168 @@ describe("componentSchema", () => {
         },
       ],
     };
-    const result = componentSchema.parse(comp);
+    const result = constructSchema.parse(comp);
     expect(result.childProperties).toHaveLength(1);
   });
 
-  it("rejects component missing required name", () => {
-    const { name, ...incomplete } = validComponent;
-    expect(() => componentSchema.parse(incomplete)).toThrow();
-  });
-
-  it("rejects component missing required slug", () => {
-    const { slug, ...incomplete } = validComponent;
-    expect(() => componentSchema.parse(incomplete)).toThrow();
-  });
-
-  it("accepts component with mentionedIn", () => {
+  it("accepts construct with appliedRules and exceptionFromRules", () => {
+    const rule1 = { rule: "Rule one", lastEdited: "2026-01-01" };
+    const rule2 = { rule: "Rule two", lastEdited: "2026-01-02" };
+    const rule3 = { rule: "Rule three", lastEdited: "2026-01-03" };
     const comp = {
-      ...validComponent,
+      ...validConstruct,
+      appliedRules: [rule1, rule2],
+      exceptionFromRules: [rule3],
+    };
+    const result = constructSchema.parse(comp);
+    expect(result.appliedRules).toHaveLength(2);
+    expect(result.appliedRules[0].rule).toBe("Rule one");
+    expect(result.exceptionFromRules).toHaveLength(1);
+    expect(result.exceptionFromRules[0].rule).toBe("Rule three");
+  });
+
+  it("rejects construct missing required name", () => {
+    const { name, ...incomplete } = validConstruct;
+    expect(() => constructSchema.parse(incomplete)).toThrow();
+  });
+
+  it("rejects construct missing required slug", () => {
+    const { slug, ...incomplete } = validConstruct;
+    expect(() => constructSchema.parse(incomplete)).toThrow();
+  });
+
+  it("accepts construct with mentionedIn", () => {
+    const comp = {
+      ...validConstruct,
       mentionedIn: [
         { name: "Accordion", slug: "accordion" },
         { name: "Form placement", slug: "form-placement" },
       ],
     };
-    const result = componentSchema.parse(comp);
+    const result = constructSchema.parse(comp);
     expect(result.mentionedIn).toHaveLength(2);
     expect(result.mentionedIn[0].name).toBe("Accordion");
     expect(result.mentionedIn[1].slug).toBe("form-placement");
+  });
+});
+
+// ── conceptSchema ───────────────────────────────────────────
+
+describe("conceptSchema", () => {
+  const validConcept = {
+    name: "Site",
+    slug: "site",
+    type: "Decision guide",
+    tier: "Global",
+    documentationStatus: "All good",
+    lastEdited: "2026-02-18",
+  };
+
+  it("accepts a minimal valid concept", () => {
+    const result = conceptSchema.parse(validConcept);
+    expect(result.name).toBe("Site");
+    expect(result.slug).toBe("site");
+  });
+
+  it("applies default values for optional fields", () => {
+    const result = conceptSchema.parse(validConcept);
+    expect(result.description).toBe("");
+    expect(result.content).toBe("");
+    expect(result.changeLog).toEqual([]);
+    expect(result.decisionLog).toEqual([]);
+    expect(result.appliedRules).toEqual([]);
+    expect(result.exceptedFromRules).toEqual([]);
+  });
+
+  it("accepts concept with content and rules", () => {
+    const rule1 = { rule: "Rule one", lastEdited: "2026-01-01" };
+    const rule2 = { rule: "Rule two", lastEdited: "2026-01-02" };
+    const concept = {
+      ...validConcept,
+      content: "Some markdown",
+      appliedRules: [rule1],
+      exceptedFromRules: [rule2],
+    };
+    const result = conceptSchema.parse(concept);
+    expect(result.content).toBe("Some markdown");
+    expect(result.appliedRules).toHaveLength(1);
+    expect(result.appliedRules[0].rule).toBe("Rule one");
+    expect(result.exceptedFromRules).toHaveLength(1);
+    expect(result.exceptedFromRules[0].rule).toBe("Rule two");
+  });
+
+  it("accepts concept with changelog and decisionlog", () => {
+    const concept = {
+      ...validConcept,
+      changeLog: [{ who: "Alice", when: "2026-01-01", what: "Created" }],
+      decisionLog: [{ where: "Meeting", what: "Decision", link: "", when: "" }],
+    };
+    const result = conceptSchema.parse(concept);
+    expect(result.changeLog).toHaveLength(1);
+    expect(result.decisionLog).toHaveLength(1);
+  });
+
+  it("rejects missing required name", () => {
+    const { name, ...incomplete } = validConcept;
+    expect(() => conceptSchema.parse(incomplete)).toThrow();
+  });
+
+  it("rejects missing required slug", () => {
+    const { slug, ...incomplete } = validConcept;
+    expect(() => conceptSchema.parse(incomplete)).toThrow();
+  });
+});
+
+// ── ruleSchema ──────────────────────────────────────────────
+
+describe("ruleSchema", () => {
+  const validRule = {
+    rule: "Dividers must separate sections.",
+    lastEdited: "2026-02-18",
+  };
+
+  it("accepts a minimal valid rule", () => {
+    const result = ruleSchema.parse(validRule);
+    expect(result.rule).toBe("Dividers must separate sections.");
+  });
+
+  it("applies default values for optional fields", () => {
+    const result = ruleSchema.parse(validRule);
+    expect(result.ruleStrength).toBe("");
+    expect(result.status).toBe("");
+    expect(result.type).toBe("");
+    expect(result.appliesToConcepts).toEqual([]);
+    expect(result.appliesToConstructs).toEqual([]);
+    expect(result.knownExceptionForConstructs).toBe("");
+    expect(result.knownExceptionForConcepts).toBe("");
+    expect(result.changeLog).toEqual([]);
+    expect(result.decisionLog).toEqual([]);
+  });
+
+  it("accepts rule with all fields populated", () => {
+    const rule = {
+      ...validRule,
+      ruleStrength: "MUST",
+      status: "Accepted",
+      type: "Design principle",
+      appliesToConcepts: ["Site", "Page"],
+      appliesToConstructs: ["Button"],
+      knownExceptionForConstructs: "Special case",
+      knownExceptionForConcepts: "Edge case",
+      changeLog: [{ who: "Alice", when: "2026-01-01", what: "Created" }],
+      decisionLog: [{ where: "Review", what: "Accepted", link: "", when: "" }],
+    };
+    const result = ruleSchema.parse(rule);
+    expect(result.appliesToConcepts).toEqual(["Site", "Page"]);
+    expect(result.appliesToConstructs).toEqual(["Button"]);
+    expect(result.changeLog).toHaveLength(1);
+  });
+
+  it("rejects missing required rule field", () => {
+    expect(() => ruleSchema.parse({ lastEdited: "2026-01-01" })).toThrow();
+  });
+
+  it("rejects missing required lastEdited field", () => {
+    expect(() => ruleSchema.parse({ rule: "Some rule" })).toThrow();
   });
 });

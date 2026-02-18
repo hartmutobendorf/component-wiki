@@ -1,0 +1,147 @@
+{
+  "name": "Spacing",
+  "slug": "spacing",
+  "type": "Principle",
+  "tier": "Sites",
+  "documentationStatus": "Unclear",
+  "lastEdited": "2026-02-18T09:29:54.400+00:00",
+  "description": "Sites are using predefined vertical spacing tokens ensuring content is properly positioned and maintains vertical consistency.",
+  "content": "",
+  "changeLog": [],
+  "decisionLog": [],
+  "appliedRules": [
+    {
+      "rule": "Vertical spacing is regulated exclusively by the bottom padding.",
+      "ruleStrength": "MUST",
+      "status": "Existing",
+      "type": "Specific rule",
+      "lastEdited": "2026-02-18T09:35:07.035+00:00",
+      "appliesToConcepts": [
+        "Spacing"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "Hero, CTA section",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    },
+    {
+      "rule": "Bottom padding of a section is 64 px (regular) - except the last section for which it is 128 px (deep).",
+      "ruleStrength": "MUST",
+      "status": "Approved",
+      "type": "Specific rule",
+      "lastEdited": "2026-02-18T09:35:07.035+00:00",
+      "appliesToConcepts": [
+        "Spacing",
+        "Section"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    },
+    {
+      "rule": "Layouts must preserve consistent vertical spacing between sections. Do not manually reduce spacing to fit more content \"above the fold\".",
+      "ruleStrength": "SHOULD",
+      "status": "Approved",
+      "type": "Specific rule",
+      "lastEdited": "2026-02-18T09:36:42.863+00:00",
+      "appliesToConcepts": [
+        "Spacing",
+        "Content layout"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    },
+    {
+      "rule": "Sites’ system uses predefined spacing applied to the page as a whole as well as to particular sections.",
+      "ruleStrength": "MUST",
+      "status": "Existing",
+      "type": "Specific rule",
+      "lastEdited": "2026-02-18T09:39:35.355+00:00",
+      "appliesToConcepts": [
+        "Spacing",
+        "Page"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    },
+    {
+      "rule": "In special use cases (ie. error page, thank you page) when there is only one section used - deep padding can be used on top and on the bottom to achieve visual balance.",
+      "ruleStrength": "SHOULD",
+      "status": "Proposal",
+      "type": "Specific rule",
+      "lastEdited": "2026-02-18T09:39:47.827+00:00",
+      "appliesToConcepts": [
+        "Spacing",
+        "Content layout"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    },
+    {
+      "rule": "Section padding has 4 possible values: deep (128px) / regular (64px) / shallow (24px) or none (0px).",
+      "ruleStrength": "MUST",
+      "status": "Existing",
+      "type": "Specific rule",
+      "lastEdited": "2026-02-18T09:39:51.188+00:00",
+      "appliesToConcepts": [
+        "Spacing",
+        "Section"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    },
+    {
+      "rule": "Distance between sections can be affected by the spacing baked in individual UI components.",
+      "ruleStrength": "MUST",
+      "status": "Rejected",
+      "type": "Specific rule",
+      "lastEdited": "2026-02-18T09:39:57.714+00:00",
+      "appliesToConcepts": [
+        "Spacing",
+        "Section",
+        "UI component"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    },
+    {
+      "rule": "Sections padding can be switched to shallow to form a visually unified block of content in the layout. ",
+      "ruleStrength": "MAY",
+      "status": "Proposal",
+      "type": "Specific rule",
+      "lastEdited": "2026-02-18T09:40:13.611+00:00",
+      "appliesToConcepts": [
+        "Spacing",
+        "Content layout",
+        "Section"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    }
+  ],
+  "exceptedFromRules": [],
+  "mentionedIn": [],
+  "mentionsComponents": [],
+  "url": "https://component.wiki/spacing"
+}

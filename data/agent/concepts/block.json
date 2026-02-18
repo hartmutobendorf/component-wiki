@@ -1,0 +1,86 @@
+{
+  "name": "Block",
+  "slug": "block",
+  "type": "Architecture",
+  "tier": "Sites",
+  "documentationStatus": "Unclear",
+  "lastEdited": "2026-02-18T09:29:54.400+00:00",
+  "description": "A repeatable micro-structure with parallel content units.",
+  "content": "",
+  "changeLog": [],
+  "decisionLog": [],
+  "appliedRules": [
+    {
+      "rule": "Content can occupy 25% of the available space or a multiple of that 25% (25/50/75/100)",
+      "ruleStrength": "SHOULD",
+      "status": "Approved",
+      "type": "Specific rule",
+      "lastEdited": "2026-02-18T09:36:36.610+00:00",
+      "appliesToConcepts": [
+        "Grid",
+        "Content layout",
+        "Section",
+        "Content primitive",
+        "Block",
+        "UI component"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    },
+    {
+      "rule": "Headings/titles of sections and blocks can be linked if they follow links rules.",
+      "ruleStrength": "SHOULD",
+      "status": "Proposal",
+      "type": "Specific rule",
+      "lastEdited": "2026-02-18T09:40:59.834+00:00",
+      "appliesToConcepts": [
+        "Section",
+        "Block",
+        "Content guide"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "Hero, Data spotlight, Linked logo section, Logo section, Newsletter signup, Pricing block, Quote wrapper, Rich vertical list, Tiered list",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    },
+    {
+      "rule": "All rules (visual dividers) use default style color",
+      "ruleStrength": "MUST",
+      "status": "Proposal",
+      "type": "Specific rule",
+      "lastEdited": "2026-02-18T09:41:18.424+00:00",
+      "appliesToConcepts": [
+        "Block",
+        "Section"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "Data spotlight",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    },
+    {
+      "rule": "Block titles serve as an introduction to the block content or as a category for elements listed within the block.",
+      "ruleStrength": "SHOULD",
+      "status": "Approved",
+      "type": "Specific rule",
+      "lastEdited": "2026-02-18T09:41:21.730+00:00",
+      "appliesToConcepts": [
+        "Block"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    }
+  ],
+  "exceptedFromRules": [],
+  "mentionedIn": [],
+  "mentionsComponents": [],
+  "url": "https://component.wiki/block"
+}

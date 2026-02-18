@@ -1,0 +1,78 @@
+{
+  "name": "In-page navigation",
+  "slug": "in-page-navigation",
+  "type": "Complex component",
+  "tiers": "Sites",
+  "documentationStatus": "Needs work",
+  "lastEdited": "2026-02-13T15:42:28.799+00:00",
+  "figmaLink": "https://www.figma.com/design/1brHCsyeTE6FU7hfJd6ao2/%F0%9F%8C%90-Sites---Core-component-library?node-id=5867-1245&p=f&t=H03drqhsN72gwk3n-11",
+  "codeLink": "",
+  "description": "In-page navigation is a navigational component for exploring content within a single page. Users can scan the page structure, jump directly to sections, and understand their current position as they scroll.",
+  "usage": "In-page navigation is intended for pages with structured, section-based content where users benefit from an overview of the page and quick access to specific sections.\n\nThe in-page navigation can either apply to a full page after the [Hero](/hero) or be manually scoped to specific sections.\n\nWhen used at a full-page scope, only one instance is allowed per page. When manually scoped, multiple instances may be used as long as their scopes do not overlap. \n\nFull-page and manually scoped instances cannot be used together.\n\n### Component structure\n\n*   The component is structured around section headings within the page.\n*   Headings in the [Hero](/hero) section are excluded from the in-page navigation.\n\n### Usage scope\n\n*   The component can be used for an entire page or manually applied to specific sections or groups of content.\n*   When a full-page scope is used, only one component is allowed per page.\n*   When scoped to specific sections, multiple components may be used.\n*   *   There is an option to add a [Heading](/in-page-navigation#anatomy) on top of the in-page navigation component, which can be helpful in cases where the in-page navigation targets specific sections\n    *   When multiple manually scoped components are used, their scopes must not overlap.\n\n### Component placement\n\n*   It is placed after the [Hero](/hero) section and applies only to content that follows the [Hero](/hero).\n*   On initial load, the component position is fixed.\n*   As the user scrolls, the component transitions to sticky positioning once its container reaches the domain/bubble navigation boundary (24px below on desktop).\n*   When scoped to specific sections, it starts with the first section and remains sticky until the last section scrolls out of view.\n*   Large screens: The in-page navigation is positioned in the left two-column rail.\n*   Smaller screens: The component spans the full screen width.\n\n### Anchor scroll offset\n\nThe scroll anchor offset ensures that the target section heading remains fully visible after in-page navigation interactions. It is determined by whether the domain/bubble navigation is sticky and by the screen size.\n\n**Sticky domain/bubble navigation**\n\n*   Desktop: 80px\n*   Mobile / Tablet: 120px\n\n**Fixed domain/bubble navigation**\n\n*   Desktop: 24px\n*   Mobile / Tablet: 72px",
+  "examples": "",
+  "interactions": "",
+  "sitesArchitectureLevels": "i-UvVNCYZ44t",
+  "anatomy": {
+    "table": [
+      {
+        "number": 1,
+        "name": "Heading",
+        "description": "An optional heading that indicates the scope and purpose of the items displayed beneath it. Only be used when it targets a specific content group, not the entire page."
+      },
+      {
+        "number": 2,
+        "name": "Anchor link item",
+        "description": "Anchor link items that navigate to corresponding sections, with default, hover, and active states, and an optional secondary level."
+      },
+      {
+        "number": 3,
+        "name": "Active item indicator",
+        "description": "A visual indicator that marks the currently visible section. Only one item can be active at a time."
+      },
+      {
+        "number": 4,
+        "name": "Primary item heading",
+        "description": "A primary level item heading that maps to H2 headings by default. If the component is manually scoped to a specific content area, the primary level can map to H3 headings instead"
+      },
+      {
+        "number": 5,
+        "name": "Secondary item heading",
+        "description": "An optional secondary level can be added, which maps to the next heading hierarchy."
+      },
+      {
+        "number": 6,
+        "name": "Collapsed variant",
+        "description": "A collapsed navigation bar displaying the current section from the primary-level items on smaller screens, with a chevron button to reveal the expanded variant."
+      },
+      {
+        "number": 7,
+        "name": "Chevron button",
+        "description": "A chevron button used to expand and collapse the navigation list."
+      },
+      {
+        "number": 8,
+        "name": "Expanded variant",
+        "description": "A full navigation state exposing all anchor links on smaller screens, with a chevron button to collapse the list."
+      }
+    ]
+  },
+  "properties": [],
+  "changeLog": [
+    {
+      "who": "Maximilian Blazek",
+      "when": "2026-02-13T15:00:00.000+00:00",
+      "what": "Added links"
+    }
+  ],
+  "decisionLog": [],
+  "appliedRules": [],
+  "exceptionFromRules": [],
+  "mentionedIn": [],
+  "mentionsComponents": [
+    {
+      "name": "Hero",
+      "slug": "hero"
+    }
+  ],
+  "url": "https://component.wiki/in-page-navigation"
+}

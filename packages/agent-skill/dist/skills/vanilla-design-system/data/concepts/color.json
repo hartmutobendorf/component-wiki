@@ -1,0 +1,17 @@
+{
+  "name": "Color",
+  "slug": "color",
+  "type": "Principle",
+  "tier": "Sites",
+  "documentationStatus": "Unclear",
+  "lastEdited": "2026-02-18T09:29:54.400+00:00",
+  "description": "Sites are using a predefined set of colors from the Design System palette. Color layering is also following a set of functional rules to ensure we apply the same visual choices across all our pages. ",
+  "content": "",
+  "changeLog": [],
+  "decisionLog": [],
+  "appliedRules": [],
+  "exceptedFromRules": [],
+  "mentionedIn": [],
+  "mentionsComponents": [],
+  "url": "https://component.wiki/color"
+}

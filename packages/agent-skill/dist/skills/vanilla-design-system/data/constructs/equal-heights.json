@@ -1,0 +1,78 @@
+{
+  "name": "Equal heights",
+  "slug": "equal-heights",
+  "type": "Pattern",
+  "tiers": "Sites",
+  "documentationStatus": "Needs work",
+  "lastEdited": "2026-02-10T08:16:30.010+00:00",
+  "figmaLink": "",
+  "codeLink": "",
+  "description": "",
+  "usage": "",
+  "examples": "",
+  "interactions": "",
+  "sitesArchitectureLevels": "i-ues18YVwia",
+  "properties": [
+    {
+      "name": "Section rule",
+      "required": true,
+      "type": "single select",
+      "description": "The rule component indicates the beginning of a new pattern",
+      "constraint": "Only use the default style for the section-level rule",
+      "defaultOption": "default",
+      "options": [
+        "default"
+      ]
+    },
+    {
+      "name": "Heading",
+      "required": true,
+      "type": "string",
+      "description": "4-column width heading using H2",
+      "constraint": "Up to 60 characters",
+      "defaultOption": ""
+    },
+    {
+      "name": "Linked heading",
+      "required": false,
+      "type": "single select",
+      "description": "The heading can be used as a link when paired with a chevron(›) and a clear indication.",
+      "constraint": "",
+      "defaultOption": "default",
+      "options": [
+        "default",
+        "link"
+      ]
+    },
+    {
+      "name": "Bottom padding",
+      "required": true,
+      "type": "single select",
+      "description": "The type of padding applied to the bottom of the pattern",
+      "constraint": "",
+      "defaultOption": "default",
+      "options": [
+        "default",
+        "deep",
+        "shallow",
+        "none"
+      ]
+    }
+  ],
+  "changeLog": [],
+  "decisionLog": [],
+  "appliedRules": [],
+  "exceptionFromRules": [],
+  "mentionedIn": [
+    {
+      "name": "Basic section",
+      "slug": "basic-section"
+    },
+    {
+      "name": "Divided section",
+      "slug": "divided-section"
+    }
+  ],
+  "mentionsComponents": [],
+  "url": "https://component.wiki/equal-heights"
+}

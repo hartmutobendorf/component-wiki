@@ -1,9 +1,3 @@
 ---
-import { getCollection } from 'astro:content';
-
-const components = await getCollection('components');
-const firstComponent = components[0];
-
-// Redirect to the first component
-return Astro.redirect(`/${firstComponent.id}`);
+return Astro.redirect("/global");
 ---
