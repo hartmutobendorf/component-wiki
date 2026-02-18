@@ -57,9 +57,54 @@
   "decisionLog": [],
   "appliedRules": [],
   "exceptionFromRules": [
-    "i-G2gqVu6pWJ",
-    "i-U3IwMn0dXk",
-    "i-c0fL3b9UM5"
+    {
+      "rule": "Every section consists of a horizontal rule (visual divider), a title* and a content body.",
+      "ruleStrength": "SHOULD",
+      "status": "Rejected",
+      "type": "Specific rule",
+      "lastEdited": "2026-02-18T09:35:07.035+00:00",
+      "appliesToConcepts": [
+        "Section"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "CTA section, Linked logo section, Quote wrapper",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    },
+    {
+      "rule": "Section title is styled as H2 or Heading muted",
+      "ruleStrength": "MUST",
+      "status": "Approved",
+      "type": "Specific rule",
+      "lastEdited": "2026-02-18T09:35:07.035+00:00",
+      "appliesToConcepts": [
+        "Section",
+        "Content primitive"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "Hero, Blog, Data spotlight, Logo section, Quote wrapper",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    },
+    {
+      "rule": "Headings/titles of sections and blocks can be linked if they follow links rules.",
+      "ruleStrength": "SHOULD",
+      "status": "Proposal",
+      "type": "Specific rule",
+      "lastEdited": "2026-02-18T09:40:59.834+00:00",
+      "appliesToConcepts": [
+        "Section",
+        "Block",
+        "Content guide"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "Hero, Data spotlight, Linked logo section, Logo section, Newsletter signup, Pricing block, Quote wrapper, Rich vertical list, Tiered list",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    }
   ],
   "mentionedIn": [],
   "mentionsComponents": []

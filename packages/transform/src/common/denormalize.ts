@@ -1,6 +1,7 @@
 import type {
   Construct,
   Concept,
+  Rule,
   Property,
   ChangeLogEntry,
   DecisionLogEntry,
@@ -182,6 +183,112 @@ function transformAnatomyPart(row: RawConstructAnatomyRow): AnatomyPart {
   };
 }
 
+function transformRule(
+  ruleRow: RawData["rules"]["rows"][string],
+  raw: RawData,
+  editorRows: Record<string, RawLookupRow>,
+): Rule {
+  // Resolve ruleStrength (documentationRequirementLevels lookup by keyWord)
+  const strengthIds = toStringArray(ruleRow.ruleStrength);
+  const ruleStrength = strengthIds
+    .map((id) => {
+      const row = raw.documentationRequirementLevels.rows[id];
+      return row?.keyWord?.trim() ?? "";
+    })
+    .filter(Boolean)
+    .join(", ");
+
+  // Resolve status (ruleStatus lookup by name)
+  const statusIds = toStringArray(ruleRow.status);
+  const status = statusIds
+    .map((id) => {
+      const row = raw.ruleStatus.rows[id];
+      return row?.name?.trim() ?? "";
+    })
+    .filter(Boolean)
+    .join(", ");
+
+  // Resolve type (ruleTypes lookup by ruleType)
+  const typeIds = toStringArray(ruleRow.type);
+  const type = typeIds
+    .map((id) => {
+      const row = raw.ruleTypes.rows[id];
+      return row?.ruleType?.trim() ?? "";
+    })
+    .filter(Boolean)
+    .join(", ");
+
+  // Resolve appliesToConcepts (concept names)
+  const conceptIds = toStringArray(ruleRow.appliesToTheseConcepts);
+  const appliesToConcepts = conceptIds
+    .map((id) => {
+      const row = raw.concepts.rows[id];
+      return row?.name?.trim() ?? "";
+    })
+    .filter(Boolean);
+
+  // Resolve appliesToConstructs (construct names)
+  const constructIds = toStringArray(ruleRow.appliesToTheseConstructs);
+  const appliesToConstructs = constructIds
+    .map((id) => {
+      const row = raw.construct.rows[id];
+      return row?.name?.trim() ?? "";
+    })
+    .filter(Boolean);
+
+  // Resolve changelog
+  const changeLogIds = toStringArray(ruleRow.changelog);
+  const changeLog: ChangeLogEntry[] = changeLogIds
+    .map((id) => {
+      const clRow = raw.documentationChangelog.rows[id];
+      if (!clRow) return null;
+      return transformChangelog(clRow, editorRows);
+    })
+    .filter((c): c is ChangeLogEntry => c !== null);
+
+  // Resolve decision log
+  const decisionLogIds = toStringArray(ruleRow.decisionlog);
+  const decisionLog: DecisionLogEntry[] = decisionLogIds
+    .map((id) => {
+      const dlRow = raw.documentationDecisionlog.rows[id];
+      if (!dlRow) return null;
+      return transformDecisionLog(dlRow);
+    })
+    .filter((d): d is DecisionLogEntry => d !== null);
+
+  // Resolve knownExceptionForConstructs (may be string or array of construct IDs)
+  const exceptionConstructIds = toStringArray(ruleRow.knownExceptionForThisConstruct);
+  const knownExceptionForConstructs = exceptionConstructIds
+    .map((id) => {
+      const row = raw.construct.rows[id];
+      return row?.name?.trim() ?? id;
+    })
+    .join(", ");
+
+  // Resolve knownExceptionForConcepts (may be string or array of concept IDs)
+  const exceptionConceptIds = toStringArray(ruleRow.knownExceptionForThisConcept);
+  const knownExceptionForConcepts = exceptionConceptIds
+    .map((id) => {
+      const row = raw.concepts.rows[id];
+      return row?.name?.trim() ?? id;
+    })
+    .join(", ");
+
+  return {
+    rule: ruleRow.rule ?? "",
+    ruleStrength,
+    status,
+    type,
+    lastEdited: ruleRow.lastEdited ?? "",
+    appliesToConcepts,
+    appliesToConstructs,
+    knownExceptionForConstructs,
+    knownExceptionForConcepts,
+    changeLog,
+    decisionLog,
+  };
+}
+
 // --- Construct denormalization ---
 
 export function denormalizeConstructs(raw: RawData, syncConfig?: SyncConfig): Construct[] {
@@ -331,6 +438,32 @@ export function denormalizeConstructs(raw: RawData, syncConfig?: SyncConfig): Co
       ? resolveAllWikiRefs(rawMarkdownFields, syncConfig, allRawTables)
       : rawMarkdownFields;
 
+    // Resolve applied rules: map row IDs to full rule objects
+    const appliedRuleIds = toStringArray(comp.appliedRule);
+    const resolvedAppliedRules: Rule[] = appliedRuleIds
+      .map((id) => {
+        const ruleRow = raw.rules.rows[id];
+        if (!ruleRow) {
+          warnings.push(`[${comp.name}] Missing appliedRule rowId: ${id}`);
+          return null;
+        }
+        return transformRule(ruleRow, raw, documentationEditors.rows as Record<string, RawLookupRow>);
+      })
+      .filter((r): r is Rule => r !== null);
+
+    // Resolve exception-from rules: map row IDs to full rule objects
+    const exceptionRuleIds = toStringArray(comp.exceptionFromRule);
+    const resolvedExceptionRules: Rule[] = exceptionRuleIds
+      .map((id) => {
+        const ruleRow = raw.rules.rows[id];
+        if (!ruleRow) {
+          warnings.push(`[${comp.name}] Missing exceptionFromRule rowId: ${id}`);
+          return null;
+        }
+        return transformRule(ruleRow, raw, documentationEditors.rows as Record<string, RawLookupRow>);
+      })
+      .filter((r): r is Rule => r !== null);
+
     // Build construct
     const result: Construct = {
       name: comp.name,
@@ -353,8 +486,8 @@ export function denormalizeConstructs(raw: RawData, syncConfig?: SyncConfig): Co
       childProperties,
       changeLog: constructChangelog,
       decisionLog: constructDecisionLog,
-      appliedRules: toStringArray(comp.appliedRule),
-      exceptionFromRules: toStringArray(comp.exceptionFromRule),
+      appliedRules: resolvedAppliedRules,
+      exceptionFromRules: resolvedExceptionRules,
       mentionedIn: [],
     };
 
@@ -439,6 +572,32 @@ export function denormalizeConcepts(raw: RawData, syncConfig?: SyncConfig): Conc
       ? resolveAllWikiRefs(rawMarkdownFields, syncConfig, allRawTables)
       : rawMarkdownFields;
 
+    // Resolve applied rules: map row IDs to full rule objects
+    const appliedRuleIds = toStringArray(conc.appliedRule);
+    const resolvedAppliedRules: Rule[] = appliedRuleIds
+      .map((id) => {
+        const ruleRow = raw.rules.rows[id];
+        if (!ruleRow) {
+          warnings.push(`[${conc.name}] Missing appliedRule rowId: ${id}`);
+          return null;
+        }
+        return transformRule(ruleRow, raw, documentationEditors.rows as Record<string, RawLookupRow>);
+      })
+      .filter((r): r is Rule => r !== null);
+
+    // Resolve excepted-from rules: map row IDs to full rule objects
+    const exceptedRuleIds = toStringArray(conc.exceptedFromRule);
+    const resolvedExceptedRules: Rule[] = exceptedRuleIds
+      .map((id) => {
+        const ruleRow = raw.rules.rows[id];
+        if (!ruleRow) {
+          warnings.push(`[${conc.name}] Missing exceptedFromRule rowId: ${id}`);
+          return null;
+        }
+        return transformRule(ruleRow, raw, documentationEditors.rows as Record<string, RawLookupRow>);
+      })
+      .filter((r): r is Rule => r !== null);
+
     const result: Concept = {
       name: conc.name,
       slug,
@@ -450,8 +609,8 @@ export function denormalizeConcepts(raw: RawData, syncConfig?: SyncConfig): Conc
       content: resolvedFields.content ?? conc.content ?? "",
       changeLog: conceptChangelog,
       decisionLog: conceptDecisionLog,
-      appliedRules: toStringArray(conc.appliedRule),
-      exceptedFromRules: toStringArray(conc.exceptedFromRule),
+      appliedRules: resolvedAppliedRules,
+      exceptedFromRules: resolvedExceptedRules,
       mentionedIn: [],
     };
 

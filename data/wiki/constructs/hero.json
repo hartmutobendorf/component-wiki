@@ -34,10 +34,69 @@
   "decisionLog": [],
   "appliedRules": [],
   "exceptionFromRules": [
-    "i-2Bh98UVeCN",
-    "i-lTkH1FYTZj",
-    "i-U3IwMn0dXk",
-    "i-c0fL3b9UM5"
+    {
+      "rule": "Vertical spacing is regulated exclusively by the bottom padding.",
+      "ruleStrength": "MUST",
+      "status": "Existing",
+      "type": "Specific rule",
+      "lastEdited": "2026-02-18T09:35:07.035+00:00",
+      "appliesToConcepts": [
+        "Spacing"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "Hero, CTA section",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    },
+    {
+      "rule": "Sections do not use top padding.",
+      "ruleStrength": "MUST",
+      "status": "Existing",
+      "type": "Specific rule",
+      "lastEdited": "2026-02-18T09:35:07.035+00:00",
+      "appliesToConcepts": [
+        "Section"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "Hero, CTA section",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    },
+    {
+      "rule": "Section title is styled as H2 or Heading muted",
+      "ruleStrength": "MUST",
+      "status": "Approved",
+      "type": "Specific rule",
+      "lastEdited": "2026-02-18T09:35:07.035+00:00",
+      "appliesToConcepts": [
+        "Section",
+        "Content primitive"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "Hero, Blog, Data spotlight, Logo section, Quote wrapper",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    },
+    {
+      "rule": "Headings/titles of sections and blocks can be linked if they follow links rules.",
+      "ruleStrength": "SHOULD",
+      "status": "Proposal",
+      "type": "Specific rule",
+      "lastEdited": "2026-02-18T09:40:59.834+00:00",
+      "appliesToConcepts": [
+        "Section",
+        "Block",
+        "Content guide"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "Hero, Data spotlight, Linked logo section, Logo section, Newsletter signup, Pricing block, Quote wrapper, Rich vertical list, Tiered list",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    }
   ],
   "mentionedIn": [
     {

@@ -325,8 +325,8 @@ export const constructSchema = z.object({
   childProperties: z.array(childPropertyGroupSchema).optional(),
   changeLog: z.array(changeLogEntrySchema).optional().default([]),
   decisionLog: z.array(decisionLogEntrySchema).optional().default([]),
-  appliedRules: z.array(z.string()).optional().default([]),
-  exceptionFromRules: z.array(z.string()).optional().default([]),
+  appliedRules: z.array(z.lazy(() => ruleSchema)).optional().default([]),
+  exceptionFromRules: z.array(z.lazy(() => ruleSchema)).optional().default([]),
   mentionedIn: z.array(mentionedInEntrySchema).optional().default([]),
 });
 
@@ -341,8 +341,8 @@ export const conceptSchema = z.object({
   content: z.string().optional().default(""),
   changeLog: z.array(changeLogEntrySchema).optional().default([]),
   decisionLog: z.array(decisionLogEntrySchema).optional().default([]),
-  appliedRules: z.array(z.string()).optional().default([]),
-  exceptedFromRules: z.array(z.string()).optional().default([]),
+  appliedRules: z.array(z.lazy(() => ruleSchema)).optional().default([]),
+  exceptedFromRules: z.array(z.lazy(() => ruleSchema)).optional().default([]),
   mentionedIn: z.array(mentionedInEntrySchema).optional().default([]),
   mentionsComponents: z.array(mentionedInEntrySchema).optional().default([]),
 });

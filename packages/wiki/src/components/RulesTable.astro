@@ -1,0 +1,40 @@
+---
+import RuleStrengthChip from "./RuleStrengthChip.astro";
+
+interface Rule {
+  rule: string;
+  ruleStrength: string;
+  status: string;
+  type: string;
+  knownExceptionForConstructs: string;
+}
+
+interface Props {
+  ruleType: string;
+  rules: Rule[];
+}
+
+const { ruleType, rules } = Astro.props;
+---
+
+<h3>{ruleType}</h3>
+<table aria-label={`${ruleType} rules`}>
+  <thead>
+    <tr>
+      <th style="width: 60%">Rule</th>
+      <th style="width: 15%">Strength</th>
+      <th style="width: 25%">Known exceptions</th>
+    </tr>
+  </thead>
+  <tbody>
+    {rules.map((rule) => (
+      <tr>
+        <td>{rule.rule}</td>
+        <td>
+          <RuleStrengthChip strength={rule.ruleStrength} />
+        </td>
+        <td>{rule.knownExceptionForConstructs || "—"}</td>
+      </tr>
+    ))}
+  </tbody>
+</table>

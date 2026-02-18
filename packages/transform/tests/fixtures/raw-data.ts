@@ -344,25 +344,55 @@ export const rulesTable = {
       rule: "Dividers must separate sections.",
       knownExceptionForThisConstruct: "",
       appliesToTheseConcepts: ["conc-site"],
-      ruleStrength: [],
-      status: [],
-      type: [],
+      ruleStrength: ["rl-must"],
+      status: ["rs-approved"],
+      type: ["rt-specific"],
       lastEdited: "2026-02-18T09:35:07.035+00:00",
       changelog: [],
       decisionlog: [],
-      appliesToTheseConstructs: "",
+      appliesToTheseConstructs: ["comp-toggle"],
       knownExceptionForThisConcept: "",
     },
   } as Record<string, any>,
 };
 
-// --- Empty tables for remaining types ---
+// --- Lookup tables for rules ---
 
-const emptyTable = { fetchedAt: "2025-01-01T00:00:00.000Z", rows: {} };
+export const documentationRequirementLevelsTable = {
+  fetchedAt: "2025-01-01T00:00:00.000Z",
+  rows: {
+    "rl-must": {
+      rowId: "rl-must",
+      keyWord: "MUST",
+      description: "Absolute requirement.",
+      conceptRules: "",
+    },
+  } as Record<string, any>,
+};
 
-export const documentationRequirementLevelsTable = emptyTable;
-export const ruleStatusTable = emptyTable;
-export const ruleTypesTable = emptyTable;
+export const ruleStatusTable = {
+  fetchedAt: "2025-01-01T00:00:00.000Z",
+  rows: {
+    "rs-approved": {
+      rowId: "rs-approved",
+      name: "Approved",
+      description: "Rule is approved.",
+      conceptRules: "",
+    },
+  } as Record<string, any>,
+};
+
+export const ruleTypesTable = {
+  fetchedAt: "2025-01-01T00:00:00.000Z",
+  rows: {
+    "rt-specific": {
+      rowId: "rt-specific",
+      ruleType: "Specific rule",
+      description: "A specific rule.",
+      conceptRules: "",
+    },
+  } as Record<string, any>,
+};
 
 // --- Helper to build a full RawData object ---
 

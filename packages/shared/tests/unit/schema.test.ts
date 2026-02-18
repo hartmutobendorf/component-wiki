@@ -1128,14 +1128,19 @@ describe("constructSchema", () => {
   });
 
   it("accepts construct with appliedRules and exceptionFromRules", () => {
+    const rule1 = { rule: "Rule one", lastEdited: "2026-01-01" };
+    const rule2 = { rule: "Rule two", lastEdited: "2026-01-02" };
+    const rule3 = { rule: "Rule three", lastEdited: "2026-01-03" };
     const comp = {
       ...validConstruct,
-      appliedRules: ["rule-01", "rule-02"],
-      exceptionFromRules: ["rule-03"],
+      appliedRules: [rule1, rule2],
+      exceptionFromRules: [rule3],
     };
     const result = constructSchema.parse(comp);
-    expect(result.appliedRules).toEqual(["rule-01", "rule-02"]);
-    expect(result.exceptionFromRules).toEqual(["rule-03"]);
+    expect(result.appliedRules).toHaveLength(2);
+    expect(result.appliedRules[0].rule).toBe("Rule one");
+    expect(result.exceptionFromRules).toHaveLength(1);
+    expect(result.exceptionFromRules[0].rule).toBe("Rule three");
   });
 
   it("rejects construct missing required name", () => {
@@ -1192,16 +1197,20 @@ describe("conceptSchema", () => {
   });
 
   it("accepts concept with content and rules", () => {
+    const rule1 = { rule: "Rule one", lastEdited: "2026-01-01" };
+    const rule2 = { rule: "Rule two", lastEdited: "2026-01-02" };
     const concept = {
       ...validConcept,
       content: "Some markdown",
-      appliedRules: ["rule-01"],
-      exceptedFromRules: ["rule-02"],
+      appliedRules: [rule1],
+      exceptedFromRules: [rule2],
     };
     const result = conceptSchema.parse(concept);
     expect(result.content).toBe("Some markdown");
-    expect(result.appliedRules).toEqual(["rule-01"]);
-    expect(result.exceptedFromRules).toEqual(["rule-02"]);
+    expect(result.appliedRules).toHaveLength(1);
+    expect(result.appliedRules[0].rule).toBe("Rule one");
+    expect(result.exceptedFromRules).toHaveLength(1);
+    expect(result.exceptedFromRules[0].rule).toBe("Rule two");
   });
 
   it("accepts concept with changelog and decisionlog", () => {

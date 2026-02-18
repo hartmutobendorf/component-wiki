@@ -116,10 +116,19 @@ describe("denormalizeConstructs — scalar fields", () => {
 });
 
 describe("denormalizeConstructs — new rule fields", () => {
-  it("maps appliedRules from raw data", () => {
+  it("resolves appliedRules from raw rule IDs to full rule objects", () => {
     const result = denormalizeConstructs(buildRawData());
     const toggle = result.find((c) => c.name === "Toggle switch")!;
-    expect(toggle.appliedRules).toEqual(["rule-01"]);
+    expect(toggle.appliedRules).toHaveLength(1);
+    expect(toggle.appliedRules[0]).toMatchObject({
+      rule: "Dividers must separate sections.",
+      ruleStrength: "MUST",
+      status: "Approved",
+      type: "Specific rule",
+      lastEdited: "2026-02-18T09:35:07.035+00:00",
+      appliesToConcepts: ["Site"],
+      appliesToConstructs: ["Toggle switch"],
+    });
   });
 
   it("maps exceptionFromRules from raw data", () => {
@@ -354,16 +363,31 @@ describe("denormalizeConcepts — content fields", () => {
 });
 
 describe("denormalizeConcepts — rule fields", () => {
-  it("maps appliedRules", () => {
+  it("resolves appliedRules from raw rule IDs to full rule objects", () => {
     const result = denormalizeConcepts(buildRawData());
     const site = result.find((c) => c.name === "Site")!;
-    expect(site.appliedRules).toEqual(["rule-01"]);
+    expect(site.appliedRules).toHaveLength(1);
+    expect(site.appliedRules[0]).toMatchObject({
+      rule: "Dividers must separate sections.",
+      ruleStrength: "MUST",
+      status: "Approved",
+      type: "Specific rule",
+      lastEdited: "2026-02-18T09:35:07.035+00:00",
+      appliesToConcepts: ["Site"],
+      appliesToConstructs: ["Toggle switch"],
+    });
   });
 
-  it("maps exceptedFromRules", () => {
+  it("resolves exceptedFromRules from raw rule IDs to full rule objects", () => {
     const result = denormalizeConcepts(buildRawData());
     const page = result.find((c) => c.name === "Page")!;
-    expect(page.exceptedFromRules).toEqual(["rule-01"]);
+    expect(page.exceptedFromRules).toHaveLength(1);
+    expect(page.exceptedFromRules[0]).toMatchObject({
+      rule: "Dividers must separate sections.",
+      ruleStrength: "MUST",
+      status: "Approved",
+      type: "Specific rule",
+    });
   });
 });
 

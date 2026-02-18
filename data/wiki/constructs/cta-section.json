@@ -133,11 +133,82 @@
   "decisionLog": [],
   "appliedRules": [],
   "exceptionFromRules": [
-    "i-G2gqVu6pWJ",
-    "i-2Bh98UVeCN",
-    "i-lTkH1FYTZj",
-    "i-ZlUxcVMTlJ",
-    "i-iyiHuhuOON"
+    {
+      "rule": "Every section consists of a horizontal rule (visual divider), a title* and a content body.",
+      "ruleStrength": "SHOULD",
+      "status": "Rejected",
+      "type": "Specific rule",
+      "lastEdited": "2026-02-18T09:35:07.035+00:00",
+      "appliesToConcepts": [
+        "Section"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "CTA section, Linked logo section, Quote wrapper",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    },
+    {
+      "rule": "Vertical spacing is regulated exclusively by the bottom padding.",
+      "ruleStrength": "MUST",
+      "status": "Existing",
+      "type": "Specific rule",
+      "lastEdited": "2026-02-18T09:35:07.035+00:00",
+      "appliesToConcepts": [
+        "Spacing"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "Hero, CTA section",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    },
+    {
+      "rule": "Sections do not use top padding.",
+      "ruleStrength": "MUST",
+      "status": "Existing",
+      "type": "Specific rule",
+      "lastEdited": "2026-02-18T09:35:07.035+00:00",
+      "appliesToConcepts": [
+        "Section"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "Hero, CTA section",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    },
+    {
+      "rule": "Section titles can only have one of two styles: H2 or Heading muted",
+      "ruleStrength": "MUST",
+      "status": "Approved",
+      "type": "Specific rule",
+      "lastEdited": "2026-02-18T09:35:07.035+00:00",
+      "appliesToConcepts": [
+        "Typography",
+        "Section"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "CTA section, Newsletter signup",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    },
+    {
+      "rule": "Section must be introduced by a concise title that clearly defines the topic.",
+      "ruleStrength": "SHOULD",
+      "status": "Approved",
+      "type": "Specific rule",
+      "lastEdited": "2026-02-18T09:40:53.413+00:00",
+      "appliesToConcepts": [
+        "Content guide"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "CTA section",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    }
   ],
   "mentionedIn": [
     {

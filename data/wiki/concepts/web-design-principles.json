@@ -10,31 +10,438 @@
   "changeLog": [],
   "decisionLog": [],
   "appliedRules": [
-    "i-A-73lXY-ax",
-    "i-npaG8YqZTv",
-    "i-tJQQOsZiMo",
-    "i-j-r1lZBhZp",
-    "i-1dcNQ8tIgU",
-    "i-JAVphNmWek",
-    "i-FmWFEIIPaJ",
-    "i-4rbJ4No2NZ",
-    "i-fccXU5un82",
-    "i-LjFEVoZ_Ij",
-    "i-UHzCJkGOgE",
-    "i-oTSGQdCEDB",
-    "i-PfTz-qcg99",
-    "i-TLC1vpYS-W",
-    "i-FZ-Km5eJ5b",
-    "i-MhOInQY0HT",
-    "i-XZuz5ismLA",
-    "i-SB1Dt8B9RR",
-    "i-X_mB5tolP9",
-    "i-3D-wTL_ZpX",
-    "i-8yNo6YoSKP",
-    "i--Z1CGclocL",
-    "i-KM2RmVLsIO",
-    "i-BiYYMGD9DJ",
-    "i-U1MJIkrB5P"
+    {
+      "rule": "Maintain calm, clarity, and visual cleanliness. The design should feel measured, stable, and spacious. Avoid clutter, noise, and unnecessary motion.",
+      "ruleStrength": "SHOULD",
+      "status": "Proposal",
+      "type": "Design principle",
+      "lastEdited": "2026-02-18T09:35:07.035+00:00",
+      "appliesToConcepts": [
+        "Content layout",
+        "Page",
+        "Web design principles"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    },
+    {
+      "rule": "Embrace whitespace. Spacing is a core part of the brand. Pages should be spacious.",
+      "ruleStrength": "SHOULD",
+      "status": "Proposal",
+      "type": "Design principle",
+      "lastEdited": "2026-02-18T09:35:07.035+00:00",
+      "appliesToConcepts": [
+        "Page",
+        "Web design principles"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    },
+    {
+      "rule": "Prioritise critical information at the top. All users see the top of the page; only a minority reach the bottom. Ensure that the most important message, value proposition, or action is communicated immediately.",
+      "ruleStrength": "SHOULD",
+      "status": "Approved",
+      "type": "Design principle",
+      "lastEdited": "2026-02-18T09:36:46.770+00:00",
+      "appliesToConcepts": [
+        "Page",
+        "Web design principles"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    },
+    {
+      "rule": "Keep text concise. Favour brevity. Remove non-essential copy and avoid long, dense paragraphs.",
+      "ruleStrength": "SHOULD",
+      "status": "Approved",
+      "type": "Design principle",
+      "lastEdited": "2026-02-18T09:36:51.796+00:00",
+      "appliesToConcepts": [
+        "Web design principles",
+        "Content guide"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    },
+    {
+      "rule": "Communicate with intent. Copy should either sell or explain. Avoid hybrid messaging that weakens both.",
+      "ruleStrength": "SHOULD",
+      "status": "Approved",
+      "type": "Design principle",
+      "lastEdited": "2026-02-18T09:36:56.069+00:00",
+      "appliesToConcepts": [
+        "Web design principles",
+        "Content guide"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    },
+    {
+      "rule": "Avoid generic or empty statements. Do not publish vague, clichéd, or low-value claims (e.g. “cutting-edge”, “powerful”, “we are cloud”). Every statement must convey meaningful, differentiated information.",
+      "ruleStrength": "SHOULD",
+      "status": "Proposal",
+      "type": "Design principle",
+      "lastEdited": "2026-02-18T09:37:00.616+00:00",
+      "appliesToConcepts": [
+        "Web design principles",
+        "Content guide"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    },
+    {
+      "rule": "Show character and humanity. Maintain a professional yet approachable tone. Use clear, confident language that reflects expertise without being sterile or overly formal.",
+      "ruleStrength": "SHOULD",
+      "status": "Approved",
+      "type": "Design principle",
+      "lastEdited": "2026-02-18T09:37:13.589+00:00",
+      "appliesToConcepts": [
+        "Content guide",
+        "Web design principles"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    },
+    {
+      "rule": "Follow the Copy style guide. For detailed rules of content execution, follow the official Canonical Copy style guide.",
+      "ruleStrength": "SHOULD",
+      "status": "Approved",
+      "type": "Design principle",
+      "lastEdited": "2026-02-18T09:37:21.759+00:00",
+      "appliesToConcepts": [
+        "Page",
+        "Web design principles",
+        "Content guide"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    },
+    {
+      "rule": "Prefer vertical depth over horizontal complexity. Scrolling preserves context. Clicking breaks it. Build long, structured pages rather than spreading content across many shallow destinations.",
+      "ruleStrength": "SHOULD",
+      "status": "Proposal",
+      "type": "Design principle",
+      "lastEdited": "2026-02-18T09:37:30.020+00:00",
+      "appliesToConcepts": [
+        "Navigation",
+        "Site",
+        "Bubble",
+        "Page",
+        "Web design principles"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    },
+    {
+      "rule": "Two levels of navigation maximum. Users should reach any key page with one click from the homepage. Keep the information architecture shallow and predictable.",
+      "ruleStrength": "SHOULD",
+      "status": "Proposal",
+      "type": "Design principle",
+      "lastEdited": "2026-02-18T09:37:41.337+00:00",
+      "appliesToConcepts": [
+        "Navigation",
+        "Site",
+        "Bubble",
+        "Page",
+        "Web design principles"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    },
+    {
+      "rule": "No unprompted movement. Nothing on the page should animate or move unless triggered by explicit user interaction.",
+      "ruleStrength": "SHOULD",
+      "status": "Proposal",
+      "type": "Design principle",
+      "lastEdited": "2026-02-18T09:37:45.959+00:00",
+      "appliesToConcepts": [
+        "Animation",
+        "Page",
+        "Web design principles"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    },
+    {
+      "rule": "Maintain a tight, intentional core site. Aim for a concise set of evergreen pages (approximately 30–50). Prioritise depth of content quality over breadth.",
+      "ruleStrength": "SHOULD",
+      "status": "Approved",
+      "type": "Design principle",
+      "lastEdited": "2026-02-18T09:37:51.034+00:00",
+      "appliesToConcepts": [
+        "Site",
+        "Bubble",
+        "Web design principles"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    },
+    {
+      "rule": "Separate evergreen content from dated content. Use URLs and page design to clearly distinguish core content from news, updates, or temporary material.",
+      "ruleStrength": "SHOULD",
+      "status": "Proposal",
+      "type": "Design principle",
+      "lastEdited": "2026-02-18T09:37:58.144+00:00",
+      "appliesToConcepts": [
+        "Navigation",
+        "Site",
+        "Web design principles"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    },
+    {
+      "rule": "Enable a self-cleaning site. Monitor aged or outdated content and archive it proactively. Pages should expire and move out of the main IA automatically through process, metadata, or review cycles.",
+      "ruleStrength": "SHOULD",
+      "status": "Rejected",
+      "type": "Design principle",
+      "lastEdited": "2026-02-18T09:38:05.666+00:00",
+      "appliesToConcepts": [
+        "Site",
+        "Bubble",
+        "Web design principles",
+        "Content guide"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    },
+    {
+      "rule": "Avoid duplication. Do not rewrite or replicate existing information. Link to the canonical source instead.",
+      "ruleStrength": "SHOULD",
+      "status": "Approved",
+      "type": "Design principle",
+      "lastEdited": "2026-02-18T09:38:10.344+00:00",
+      "appliesToConcepts": [
+        "Web design principles",
+        "Content guide"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    },
+    {
+      "rule": "One place per concept. Each topic should have a single authoritative page. Do not create new pages where updates to existing pages are appropriate.",
+      "ruleStrength": "SHOULD",
+      "status": "Approved",
+      "type": "Design principle",
+      "lastEdited": "2026-02-18T09:38:17.019+00:00",
+      "appliesToConcepts": [
+        "Page",
+        "Bubble",
+        "Web design principles",
+        "Content guide"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    },
+    {
+      "rule": "Constant refinement. Adding a new page should be exceptional. In most cases, introducing new content requires retiring or consolidating an existing page.",
+      "ruleStrength": "SHOULD",
+      "status": "Rejected",
+      "type": "Design principle",
+      "lastEdited": "2026-02-18T09:38:24.171+00:00",
+      "appliesToConcepts": [
+        "Site",
+        "Bubble",
+        "Page",
+        "Web design principles"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    },
+    {
+      "rule": "No orphan pages. All content must be reachable through the defined IA. Pages without a home will surface through search engines and degrade user trust.",
+      "ruleStrength": "SHOULD",
+      "status": "Approved",
+      "type": "Design principle",
+      "lastEdited": "2026-02-18T09:38:37.675+00:00",
+      "appliesToConcepts": [
+        "Navigation",
+        "Site",
+        "Page",
+        "Web design principles"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    },
+    {
+      "rule": "No “coming soon” placeholders. Pages must ship completely or not at all. Avoid publishing stubs or speculative destinations.",
+      "ruleStrength": "SHOULD",
+      "status": "Approved",
+      "type": "Design principle",
+      "lastEdited": "2026-02-18T09:38:42.295+00:00",
+      "appliesToConcepts": [
+        "Page",
+        "Web design principles"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    },
+    {
+      "rule": "Case studies are core sales assets. Present them with strong storytelling and design. They should feel aspirational, credible, and easy to explore.",
+      "ruleStrength": "SHOULD",
+      "status": "Rejected",
+      "type": "Design principle",
+      "lastEdited": "2026-02-18T09:38:48.317+00:00",
+      "appliesToConcepts": [
+        "Content layout",
+        "Web design principles",
+        "Content guide"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    },
+    {
+      "rule": "Strengthen offers and calls to action. Ensure CTAs and lead-generation elements are compelling, clear, and optimised for conversion.",
+      "ruleStrength": "SHOULD",
+      "status": "Approved",
+      "type": "Design principle",
+      "lastEdited": "2026-02-18T09:38:55.193+00:00",
+      "appliesToConcepts": [
+        "Page",
+        "Content layout",
+        "Content guide",
+        "Web design principles"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    },
+    {
+      "rule": "Use takeovers strategically. When implementing homepage or section takeovers, prioritise craft, wit, and visual quality. They should always lead somewhere meaningful.",
+      "ruleStrength": "SHOULD",
+      "status": "Approved",
+      "type": "Design principle",
+      "lastEdited": "2026-02-18T09:39:02.509+00:00",
+      "appliesToConcepts": [
+        "Page",
+        "Content layout",
+        "Web design principles",
+        "Content guide"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    },
+    {
+      "rule": "Cascade takeover content. Major homepage narratives should flow into section pages and later into deeper pages, decreasing in prominence as they age.",
+      "ruleStrength": "SHOULD",
+      "status": "Rejected",
+      "type": "Design principle",
+      "lastEdited": "2026-02-18T09:39:11.887+00:00",
+      "appliesToConcepts": [
+        "Navigation",
+        "Site",
+        "Content layout",
+        "Web design principles"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    },
+    {
+      "rule": "Respect the professional threshold. Different properties (marketing site, subdomains, docs, wiki, community) require different levels of design control. Maintain differentiation while ensuring they still feel part of a coherent brand system.",
+      "ruleStrength": "SHOULD",
+      "status": "Rejected",
+      "type": "Design principle",
+      "lastEdited": "2026-02-18T09:39:17.806+00:00",
+      "appliesToConcepts": [
+        "Site",
+        "Content layout",
+        "Web design principles"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    },
+    {
+      "rule": "Keep it lean. Design, copy, and IA should always move towards simplicity, reduction, and clarity.",
+      "ruleStrength": "SHOULD",
+      "status": "Approved",
+      "type": "Design principle",
+      "lastEdited": "2026-02-18T09:39:31.958+00:00",
+      "appliesToConcepts": [
+        "Navigation",
+        "Page",
+        "Content layout",
+        "Bubble",
+        "Site",
+        "Web design principles",
+        "Content guide"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    }
   ],
   "exceptedFromRules": [],
   "mentionedIn": [],

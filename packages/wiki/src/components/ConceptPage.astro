@@ -1,6 +1,7 @@
 ---
 import { getEntry } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import RulesTable from "./RulesTable.astro";
 import { renderMarkdown, renderInlineMarkdown } from "../utils/render-markdown";
 import { tierToPrefix, buildConceptPath } from "../utils/tiers";
 
@@ -26,6 +27,17 @@ const contentHtml = renderMarkdown(metadata.content);
 
 const hasDescription = descriptionHtml.length > 0;
 const hasContent = contentHtml.length > 0;
+
+// Group applied rules by type
+const rulesByType = new Map<string, typeof metadata.appliedRules>();
+for (const rule of metadata.appliedRules ?? []) {
+  const type = rule.type || "Other";
+  if (!rulesByType.has(type)) {
+    rulesByType.set(type, []);
+  }
+  rulesByType.get(type)!.push(rule);
+}
+const sortedRuleTypes = [...rulesByType.keys()].sort();
 ---
 
 <BaseLayout
@@ -43,9 +55,7 @@ const hasContent = contentHtml.length > 0;
         {
           hasDescription && (
             <li class="p-table-of-contents__item">
-              <a class="p-table-of-contents__link" href="#description">
-                Description
-              </a>
+              <a class="p-table-of-contents__link" href="#description">Description</a>
             </li>
           )
         }
@@ -115,6 +125,14 @@ const hasContent = contentHtml.length > 0;
     </div>
   </div>
 
+  {
+    hasDescription && (
+      <section id="description" class="p-section u-text-max-width">
+        <Fragment set:html={descriptionHtml} />
+      </section>
+    )
+  }
+
   <section id="metadata" class="p-section">
     <div class="metadata-list">
       <div class="metadata-item">
@@ -150,15 +168,6 @@ const hasContent = contentHtml.length > 0;
   </section>
 
   {
-    hasDescription && (
-      <section id="description" class="p-section u-text-max-width">
-        <h2>Description</h2>
-        <Fragment set:html={descriptionHtml} />
-      </section>
-    )
-  }
-
-  {
     hasContent && (
       <section id="content" class="p-section u-text-max-width">
         <h2>Content</h2>
@@ -169,11 +178,11 @@ const hasContent = contentHtml.length > 0;
 
   {
     metadata.appliedRules && metadata.appliedRules.length > 0 && (
-      <section id="rules" class="p-section u-text-max-width">
+      <section id="rules" class="p-section">
         <h2>Applied rules</h2>
-        <p class="u-text--muted">
-          This concept has {metadata.appliedRules.length} applied rule{metadata.appliedRules.length !== 1 ? "s" : ""}.
-        </p>
+        {sortedRuleTypes.map((ruleType) => (
+          <RulesTable ruleType={ruleType} rules={rulesByType.get(ruleType)!} />
+        ))}
       </section>
     )
   }

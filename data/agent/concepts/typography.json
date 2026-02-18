@@ -10,7 +10,22 @@
   "changeLog": [],
   "decisionLog": [],
   "appliedRules": [
-    "i-ZlUxcVMTlJ"
+    {
+      "rule": "Section titles can only have one of two styles: H2 or Heading muted",
+      "ruleStrength": "MUST",
+      "status": "Approved",
+      "type": "Specific rule",
+      "lastEdited": "2026-02-18T09:35:07.035+00:00",
+      "appliesToConcepts": [
+        "Typography",
+        "Section"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "CTA section, Newsletter signup",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    }
   ],
   "exceptedFromRules": [],
   "mentionedIn": [],

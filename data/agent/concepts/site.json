@@ -10,16 +10,188 @@
   "changeLog": [],
   "decisionLog": [],
   "appliedRules": [
-    "i-fccXU5un82",
-    "i-LjFEVoZ_Ij",
-    "i-oTSGQdCEDB",
-    "i-PfTz-qcg99",
-    "i-TLC1vpYS-W",
-    "i-XZuz5ismLA",
-    "i-SB1Dt8B9RR",
-    "i-KM2RmVLsIO",
-    "i-BiYYMGD9DJ",
-    "i-U1MJIkrB5P"
+    {
+      "rule": "Prefer vertical depth over horizontal complexity. Scrolling preserves context. Clicking breaks it. Build long, structured pages rather than spreading content across many shallow destinations.",
+      "ruleStrength": "SHOULD",
+      "status": "Proposal",
+      "type": "Design principle",
+      "lastEdited": "2026-02-18T09:37:30.020+00:00",
+      "appliesToConcepts": [
+        "Navigation",
+        "Site",
+        "Bubble",
+        "Page",
+        "Web design principles"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    },
+    {
+      "rule": "Two levels of navigation maximum. Users should reach any key page with one click from the homepage. Keep the information architecture shallow and predictable.",
+      "ruleStrength": "SHOULD",
+      "status": "Proposal",
+      "type": "Design principle",
+      "lastEdited": "2026-02-18T09:37:41.337+00:00",
+      "appliesToConcepts": [
+        "Navigation",
+        "Site",
+        "Bubble",
+        "Page",
+        "Web design principles"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    },
+    {
+      "rule": "Maintain a tight, intentional core site. Aim for a concise set of evergreen pages (approximately 30–50). Prioritise depth of content quality over breadth.",
+      "ruleStrength": "SHOULD",
+      "status": "Approved",
+      "type": "Design principle",
+      "lastEdited": "2026-02-18T09:37:51.034+00:00",
+      "appliesToConcepts": [
+        "Site",
+        "Bubble",
+        "Web design principles"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    },
+    {
+      "rule": "Separate evergreen content from dated content. Use URLs and page design to clearly distinguish core content from news, updates, or temporary material.",
+      "ruleStrength": "SHOULD",
+      "status": "Proposal",
+      "type": "Design principle",
+      "lastEdited": "2026-02-18T09:37:58.144+00:00",
+      "appliesToConcepts": [
+        "Navigation",
+        "Site",
+        "Web design principles"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    },
+    {
+      "rule": "Enable a self-cleaning site. Monitor aged or outdated content and archive it proactively. Pages should expire and move out of the main IA automatically through process, metadata, or review cycles.",
+      "ruleStrength": "SHOULD",
+      "status": "Rejected",
+      "type": "Design principle",
+      "lastEdited": "2026-02-18T09:38:05.666+00:00",
+      "appliesToConcepts": [
+        "Site",
+        "Bubble",
+        "Web design principles",
+        "Content guide"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    },
+    {
+      "rule": "Constant refinement. Adding a new page should be exceptional. In most cases, introducing new content requires retiring or consolidating an existing page.",
+      "ruleStrength": "SHOULD",
+      "status": "Rejected",
+      "type": "Design principle",
+      "lastEdited": "2026-02-18T09:38:24.171+00:00",
+      "appliesToConcepts": [
+        "Site",
+        "Bubble",
+        "Page",
+        "Web design principles"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    },
+    {
+      "rule": "No orphan pages. All content must be reachable through the defined IA. Pages without a home will surface through search engines and degrade user trust.",
+      "ruleStrength": "SHOULD",
+      "status": "Approved",
+      "type": "Design principle",
+      "lastEdited": "2026-02-18T09:38:37.675+00:00",
+      "appliesToConcepts": [
+        "Navigation",
+        "Site",
+        "Page",
+        "Web design principles"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    },
+    {
+      "rule": "Cascade takeover content. Major homepage narratives should flow into section pages and later into deeper pages, decreasing in prominence as they age.",
+      "ruleStrength": "SHOULD",
+      "status": "Rejected",
+      "type": "Design principle",
+      "lastEdited": "2026-02-18T09:39:11.887+00:00",
+      "appliesToConcepts": [
+        "Navigation",
+        "Site",
+        "Content layout",
+        "Web design principles"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    },
+    {
+      "rule": "Respect the professional threshold. Different properties (marketing site, subdomains, docs, wiki, community) require different levels of design control. Maintain differentiation while ensuring they still feel part of a coherent brand system.",
+      "ruleStrength": "SHOULD",
+      "status": "Rejected",
+      "type": "Design principle",
+      "lastEdited": "2026-02-18T09:39:17.806+00:00",
+      "appliesToConcepts": [
+        "Site",
+        "Content layout",
+        "Web design principles"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    },
+    {
+      "rule": "Keep it lean. Design, copy, and IA should always move towards simplicity, reduction, and clarity.",
+      "ruleStrength": "SHOULD",
+      "status": "Approved",
+      "type": "Design principle",
+      "lastEdited": "2026-02-18T09:39:31.958+00:00",
+      "appliesToConcepts": [
+        "Navigation",
+        "Page",
+        "Content layout",
+        "Bubble",
+        "Site",
+        "Web design principles",
+        "Content guide"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    }
   ],
   "exceptedFromRules": [],
   "mentionedIn": [],

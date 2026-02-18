@@ -1,12 +1,29 @@
 ---
 import { getCollection } from 'astro:content';
+import { buildConceptPath } from '../../utils/tiers';
 
+const conceptTypeOrder = ["Architecture", "Principle", "Decision guide"];
+
+const allConcepts = await getCollection('concepts');
+const globalConcepts = allConcepts
+  .filter((c) => c.data.tier === 'Global')
+  .sort((a, b) => a.data.name.localeCompare(b.data.name));
+
+// Find the first concept matching the type order (same order as side nav)
+const first = conceptTypeOrder.reduce<(typeof globalConcepts)[number] | null>(
+  (found, type) => found ?? globalConcepts.find((c) => c.data.type === type) ?? null,
+  null,
+) ?? globalConcepts[0];
+
+if (first) {
+  return Astro.redirect(buildConceptPath('Global', first.id));
+}
+
+// Fallback to first construct if no concepts exist
 const constructs = await getCollection('constructs');
 const globalConstructs = constructs
   .filter((c) => c.data.tiers === 'Global')
   .sort((a, b) => a.data.name.localeCompare(b.data.name));
 
-const first = globalConstructs[0];
-
-return Astro.redirect(`/global/${first.id}`);
+return Astro.redirect(`/global/${globalConstructs[0]?.id ?? ''}`);
 ---
