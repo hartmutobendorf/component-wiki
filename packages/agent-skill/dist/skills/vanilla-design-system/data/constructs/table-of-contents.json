@@ -1,0 +1,77 @@
+{
+  "name": "Table of contents",
+  "slug": "table-of-contents",
+  "type": "Component",
+  "tiers": "Global",
+  "documentationStatus": "Needs work",
+  "lastEdited": "2026-02-13T16:04:45.772+00:00",
+  "figmaLink": "https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-49",
+  "codeLink": "https://github.com/canonical/vanilla-framework/blob/b1d651365b0714586e6ea14349dea763819c256e/scss/_patterns_table-of-contents.scss",
+  "description": "The table of contents is a navigational component consisting of a series of anchor links that correspond to sections within a page. When clicked, each link scrolls the user to the relevant section of content. This component is typically used on pages with substantial content, such as documentation or long-form articles, where users benefit from being able to quickly locate and jump to specific information without manually scrolling through the entire page.",
+  "usage": "The table of contents is a navigational component consisting of [Anchor link](/table-of-contents#anatomy)s that allow users to navigate lengthy page content. When a link is selected, the page scrolls to the corresponding section. This component is intended to support users on content-heavy pages by enabling them to discover the page structure at a glance and quickly identify which sections are most relevant to their needs.\n\n  \n\nThe table of contents is predominantly suited to text-based pages such as marketing sites and documentation. It is designed to represent the contents of an entire page, not a subsection of it.\n\nThis component is not intended for use within applications. If you find yourself considering a table of contents within an app because the page contains numerous sections, this is typically an indication that the information architecture should be reconsidered.\n\n### Heading levels\n\nThe table of contents should represent only higher-level headings, not every heading present on the page. The component supports headings from h2 to h4, allowing for up to three levels of indentation.\n\nThe number of heading levels displayed must be configured at the site or documentation set level, not on a page-by-page basis. Be mindful of which [Anchor link](/table-of-contents#anatomy)s genuinely aid navigation. Excessive levels can introduce noise and diminish the component's usefulness rather than enhance it.\n\n### Scroll behaviour\n\nWhen an [Anchor link](/table-of-contents#anatomy) is activated, the scrolling action should be animated to provide visual feedback and a sense of transition. The target heading should have 2.5rem of space above it once scrolled into view, preventing the heading from appearing awkwardly flush against the top of the viewport.\n\n### When to use\n\n*   On pages with substantial content where users benefit from an overview of the page structure\n*   When users are likely searching for specific information and need to identify the relevant section quickly\n*   On documentation pages, long-form articles, or similar text-heavy content\n\n### When not to use\n\n*   On pages with minimal content where navigation is unnecessary\n*   Within applications. Consider revising the information architecture instead\n*   On pages primarily composed of non-textual content such as data [Table](/table) or media galleries\n*   To represent only a portion of a page's content",
+  "examples": "",
+  "interactions": "",
+  "sitesArchitectureLevels": "i-UvVNCYZ44t",
+  "anatomy": {
+    "table": [
+      {
+        "number": 1,
+        "name": "Heading",
+        "description": "A non-editable heading that indicates to the user the purpose of the anchor links displayed beneath it."
+      },
+      {
+        "number": 2,
+        "name": "Anchor link",
+        "description": "Each section heading on the page has a corresponding anchor link, with the link text matching the copy of the heading itself."
+      }
+    ]
+  },
+  "properties": [
+    {
+      "name": "Levels",
+      "required": false,
+      "type": "single select",
+      "description": "How many levels of anchor links to show.",
+      "constraint": "",
+      "defaultOption": "1",
+      "options": [
+        "1",
+        "2",
+        "3"
+      ]
+    }
+  ],
+  "changeLog": [
+    {
+      "who": "Maximilian Blazek",
+      "when": "2025-11-21T17:00:00.000+00:00",
+      "what": "Initial commit"
+    },
+    {
+      "who": "Maximilian Blazek",
+      "when": "2026-02-13T16:00:00.000+00:00",
+      "what": "Added links"
+    },
+    {
+      "who": "Daniel Mutis",
+      "when": "2025-12-15T13:00:00.000+00:00",
+      "what": "Add description, usage guidelines, properties and anatomy description"
+    }
+  ],
+  "decisionLog": [],
+  "appliedRules": [],
+  "exceptionFromRules": [],
+  "mentionedIn": [
+    {
+      "name": "Accordion",
+      "slug": "accordion"
+    }
+  ],
+  "mentionsComponents": [
+    {
+      "name": "Table",
+      "slug": "table"
+    }
+  ],
+  "url": "https://component.wiki/table-of-contents"
+}

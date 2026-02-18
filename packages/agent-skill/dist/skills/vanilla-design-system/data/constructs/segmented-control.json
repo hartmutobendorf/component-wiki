@@ -1,0 +1,113 @@
+{
+  "name": "Segmented control",
+  "slug": "segmented-control",
+  "type": "Component",
+  "tiers": "Global",
+  "documentationStatus": "Needs work",
+  "lastEdited": "2026-02-13T15:58:38.777+00:00",
+  "figmaLink": "https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-42",
+  "codeLink": "https://github.com/canonical/vanilla-framework/blob/b1d651365b0714586e6ea14349dea763819c256e/scss/_patterns_segmented-control.scss",
+  "description": "A segmented control allows users to toggle between alternate views of the same content, displaying only one view at a time. This component is commonly used to let users switch between different formats or representations of the same underlying data, such as viewing information as a table, a list, or a cards.",
+  "usage": "A segmented control allows users to toggle between alternate views of the same content, displaying only one view at a time. This component is commonly used to let users switch between different formats or representations of the same underlying data, such as viewing information as a table, a list, or a cards.\n\nThe key distinction of a segmented control is that it changes _how_ content is displayed rather than _what_ content is displayed. All [Segment](/segmented-control#anatomy)s should present the same data, just rendered differently. For example, a dataset might be viewable as a spreadsheet-style table or as a visual map. The information remains identical, but the presentation changes based on user preference or task requirements.\n\nSegmented controls are often used alongside [Tabs](/tabs) but operate at a lower level in the information hierarchy. While [Tabs](/tabs) separate distinct content areas, segmented controls sort or reformat related content within those areas. This hierarchical relationship means a segmented control might live inside a tab panel to offer view options for that specific section.\n\n## Segmented controls are not [Button](/button) groups\n\nA segmented control should never be used to group together different actions. Despite their visual similarity, segmented controls and [Button](/button) groups serve fundamentally different purposes. Segmented controls toggle views while [Button](/button) groups, on the other hand, trigger discrete actions that transform, submit, or manipulate data.\n\nIf your use case involves multiple related actions rather than view switching, use a group of [Button](/button)s instead.\n\n## Segmented controls are not [Tabs](/tabs)\n\nWhile both components involve switching between options, [Tabs](/tabs) and segmented controls serve different roles. [Tabs](/tabs) navigate between distinct content areas, like subpages or separate sections that contain fundamentally different information. Segmented controls, by contrast, show the same content in different ways. If users switching between options would see entirely different data or content panels, use [Tabs](/tabs) instead. Segmented controls are appropriate when the underlying information stays constant but its visual representation changes.\n\n## Labels and icons\n\nLabels should clearly describe the type of view each [Segment](/segmented-control#anatomy) represents. Use concise, descriptive terms that communicate the format or representation, such as \"Table,\" \"Map,\" \"List,\" or \"Grid.\" Users should immediately understand what they'll see when selecting each option.\n\nIcons can help reinforce the meaning of labels and improve scannability, particularly when the view types have strong visual associations. However, maintain consistency across all [Segment](/segmented-control#anatomy)s. Either all [Segment](/segmented-control#anatomy)s should include icons alongside their labels, or none should. Mixing icons with text-only labels creates visual imbalance and inconsistency.\n\n## Keep options minimal\n\nLimit segmented controls to a small number of views. As a general rule, more than five options is likely too many and risks overwhelming users rather than helping them.\n\nIf you find yourself needing many view options, reconsider whether all are truly necessary or whether some could be consolidated. A segmented control should offer a quick, simple choice between a handful of meaningful alternatives.\n\n## Placement and scope\n\nA segmented control affects all content below it in the visual hierarchy. Position the control directly above the content area it governs, making the relationship between the control and its associated content clear. Users should understand at a glance which portion of the interface will change when they select a different [Segment](/segmented-control#anatomy).\n\n### When to use\n\n*   To let users toggle between different visual formats of the same data (grid view, table view, list view)\n*   To filter or sort a content set into different views (all, read, unread)\n*   When all view options display the same underlying information, just presented differently\n*   As a secondary control within [Tabs](/tabs) to offer view options for that tab's content\n\n### When not to use\n\n*   For navigation between distinct content areas or subpages (use [Tabs](/tabs) instead)\n*   To group together different actions that transform or manipulate data (use a [Button](/button) group instead)\n*   For binary input controls or on/off choices (use a [Switch](/switch) or [Radio](/radio) instead)\n*   When you have more than five view options (reconsider your information architecture)\n*   When each option would display fundamentally different data or content",
+  "examples": "",
+  "interactions": "",
+  "sitesArchitectureLevels": "i-UvVNCYZ44t",
+  "anatomy": {
+    "table": [
+      {
+        "number": 1,
+        "name": "Segment",
+        "description": "Each of the different views of the content displayed"
+      },
+      {
+        "number": 2,
+        "name": "Icon",
+        "description": "An optional icon which reinforces the meaning of each [Segment](wiki-ref://grid-YfHOdsWGM_/i-IL5I01Tmw_)"
+      },
+      {
+        "number": 3,
+        "name": "Text",
+        "description": "A word or a short phrase that describes the view the user should expect from this [Segment](wiki-ref://grid-YfHOdsWGM_/i-IL5I01Tmw_)"
+      }
+    ]
+  },
+  "properties": [
+    {
+      "name": "Segment text",
+      "required": false,
+      "type": "string",
+      "description": "The text that is displayed for a segment",
+      "constraint": "",
+      "defaultOption": ""
+    },
+    {
+      "name": "Segment icon",
+      "required": false,
+      "type": "single select",
+      "description": "The icon that is being shown as a part of a segment",
+      "constraint": "",
+      "defaultOption": "",
+      "options": [
+        "All icons in Vanilla"
+      ]
+    },
+    {
+      "name": "Segment state",
+      "required": false,
+      "type": "single select",
+      "description": "The states a [Segment](wiki-ref://grid-YfHOdsWGM_/i-IL5I01Tmw_) can be in",
+      "constraint": "",
+      "defaultOption": "default",
+      "options": [
+        "Default",
+        "hover",
+        "active"
+      ]
+    }
+  ],
+  "changeLog": [
+    {
+      "who": "Maximilian Blazek",
+      "when": "2025-11-21T17:00:00.000+00:00",
+      "what": "Initial commit"
+    },
+    {
+      "who": "Maximilian Blazek",
+      "when": "2026-02-13T15:00:00.000+00:00",
+      "what": "Added links"
+    },
+    {
+      "who": "Daniel Mutis",
+      "when": "2026-01-12T15:00:00.000+00:00",
+      "what": "Added description, usage guidelines, properties table, anatomy and anatomy description"
+    }
+  ],
+  "decisionLog": [],
+  "appliedRules": [],
+  "exceptionFromRules": [],
+  "mentionedIn": [
+    {
+      "name": "Tabs",
+      "slug": "tabs"
+    }
+  ],
+  "mentionsComponents": [
+    {
+      "name": "Button",
+      "slug": "button"
+    },
+    {
+      "name": "Radio",
+      "slug": "radio"
+    },
+    {
+      "name": "Switch",
+      "slug": "switch"
+    },
+    {
+      "name": "Tabs",
+      "slug": "tabs"
+    }
+  ],
+  "url": "https://component.wiki/segmented-control"
+}

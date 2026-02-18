@@ -1,0 +1,105 @@
+{
+  "fetchedAt": "2026-02-18T11:12:38.939Z",
+  "rows": {
+    "i-AWrWmXzOTJ": {
+      "rowId": "i-AWrWmXzOTJ",
+      "name": "Rejected",
+      "description": "",
+      "conceptRules": [
+        "i-G2gqVu6pWJ",
+        "i-a2Gvf8PqqZ",
+        "i-R2qsN9a5_r",
+        "i-TLC1vpYS-W",
+        "i-XZuz5ismLA",
+        "i-KM2RmVLsIO",
+        "i-BiYYMGD9DJ",
+        "i-trysCiJisz",
+        "i-UAlyIFZ9mO",
+        "i-3D-wTL_ZpX"
+      ]
+    },
+    "i-binLajD-gJ": {
+      "rowId": "i-binLajD-gJ",
+      "name": "Deprecated",
+      "description": "",
+      "conceptRules": ""
+    },
+    "i-GWi5cya2mo": {
+      "rowId": "i-GWi5cya2mo",
+      "name": "Existing",
+      "description": "",
+      "conceptRules": [
+        "i-2Bh98UVeCN",
+        "i-lTkH1FYTZj",
+        "i-p8Fv0e9Vn7",
+        "i-WesQQ1XF0e",
+        "i-8yJpAyM3v7",
+        "i-oFPi2Wm4Cu",
+        "i-jZgXWq_7bQ"
+      ]
+    },
+    "i-hbSOUFH0I1": {
+      "rowId": "i-hbSOUFH0I1",
+      "name": "Proposal",
+      "description": "",
+      "conceptRules": [
+        "i-A-73lXY-ax",
+        "i-fzDIK_WZZU",
+        "i-npaG8YqZTv",
+        "i-DClns4jP5n",
+        "i-GQvPWhgG-j",
+        "i-JAVphNmWek",
+        "i-fccXU5un82",
+        "i-LjFEVoZ_Ij",
+        "i-UHzCJkGOgE",
+        "i-PfTz-qcg99",
+        "i-8Y-lOwXNl6",
+        "i-lAauaXXEXi",
+        "i-eofRS01iR3",
+        "i-gqd_IXOIuk",
+        "i-391Nxqc9A9",
+        "i-c0fL3b9UM5",
+        "i-8_U4S1DRcz",
+        "i-sko58g_anS",
+        "i-RMzGlwDepa"
+      ]
+    },
+    "i-HIQNJ9q8UC": {
+      "rowId": "i-HIQNJ9q8UC",
+      "name": "Approved",
+      "description": "",
+      "conceptRules": [
+        "i-B0iImJb_X1",
+        "i-vGmYX0fJ59",
+        "i-ZlUxcVMTlJ",
+        "i-U3IwMn0dXk",
+        "i-oDEFAbETSH",
+        "i-y3DBXPQ5wy",
+        "i-GzGBjzo9ua",
+        "i-0beC9X4XSV",
+        "i-ZgPIFRNEVD",
+        "i-XaN4xKvGD7",
+        "i-tJQQOsZiMo",
+        "i-j-r1lZBhZp",
+        "i-1dcNQ8tIgU",
+        "i-FmWFEIIPaJ",
+        "i-4rbJ4No2NZ",
+        "i-oTSGQdCEDB",
+        "i-FZ-Km5eJ5b",
+        "i-MhOInQY0HT",
+        "i-SB1Dt8B9RR",
+        "i-X_mB5tolP9",
+        "i-8yNo6YoSKP",
+        "i--Z1CGclocL",
+        "i-U1MJIkrB5P",
+        "i-Adsxx3Q45y",
+        "i-h-bSbOSXY-",
+        "i-iyiHuhuOON",
+        "i-ZfhWnS-frx",
+        "i-CUx9WMmolk",
+        "i-44rYxH-KL7",
+        "i-3bh5fUHXlx"
+      ]
+    }
+  }
+}

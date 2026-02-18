@@ -1,0 +1,128 @@
+{
+  "name": "Select",
+  "slug": "select",
+  "type": "Component",
+  "tiers": "Global",
+  "documentationStatus": "Minimal",
+  "lastEdited": "2026-02-13T16:00:44.645+00:00",
+  "figmaLink": "https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-43",
+  "codeLink": "figma.com/exit?url=https%3A%2F%2Fgithub.com%2Fcanonical%2Fvanilla-framework%2Fblob%2Fb1d651365b0714586e6ea14349dea763819c256e%2Fscss%2F_base_forms.scss%23L180",
+  "description": "Select components allow users to choose a single option from a list of choices, mostly in forms. Selects are ideal when users need to pick from a predefined set of options where displaying all choices at once would consume too much screen space. ",
+  "usage": "Select allows users to choose a single option from a list of mutually exclusive choices. They're particularly effective for saving screen space when presenting 4 or more options, as they collapse choices behind a single control until activated.\n\nThe selected value should always be visible in the collapsed state, providing clear feedback about the current selection. When no selection has been made, use descriptive placeholder text that guides users on what to choose (e.g., \"Select a country\" or \"Choose payment method\").\n\nSelects work best for selections that require deliberate choice, such as form inputs where changes are confirmed through a submit action.  They should not be used for anything that will have an immediate effect. For example actions that filter or manipulate the current view. In those cases, use a [Button](/button) with a dropdown menu instead.\n\n### Organizing options\n\nFor longer lists, reduce cognitive load by grouping related items. This helps users scan and find options more efficiently. In HTML this could for example be achieved by using so called optgroup elements. This HTML element can be used by developers to group related items. You can also add visual separators between groups by including disabled items with separator characters. When in doubt ask a developer friend how this can be achieved.\n\n### When to use\n\n*   Selecting from 4 or more mutually exclusive options\n*   Form inputs requiring a single choice from a predefined list\n*   When screen space is limited and options don't need to be visible at all times\n*   For selections that require deliberate commitment and confirmation\n\n### When not to use\n\n*   For filtering content or manipulating the current view (use [Button](/button) with dropdown instead)\n*   When presenting 3 or fewer options (use [Radio](/radio) instead)\n*   For settings that should apply changes immediately (use [Switch](/switch))\n*   When users need to select multiple options (use [Checkbox](/checkbox) or combobox)",
+  "examples": "",
+  "interactions": "",
+  "sitesArchitectureLevels": "i-UvVNCYZ44t",
+  "anatomy": {
+    "table": [
+      {
+        "number": 1,
+        "name": "Text",
+        "description": "The text that is shown in the select component."
+      },
+      {
+        "number": 2,
+        "name": "Chevron",
+        "description": "A chevron that hints to the user that something with more choices will open up upon clicking. Differentiator to the [Input](wiki-ref://grid-ymtdOF6n4R/i-9t3OC1fOBH) element."
+      },
+      {
+        "number": 3,
+        "name": "Validation icon",
+        "description": "A semantic icon that is shown if the select component is in a validation state."
+      },
+      {
+        "number": 4,
+        "name": "Validation text",
+        "description": "Semantically colored text that describes the reason of the validation state."
+      }
+    ]
+  },
+  "properties": [
+    {
+      "name": "Select options",
+      "required": true,
+      "type": "object",
+      "description": "The list of options a user can select from.",
+      "constraint": "",
+      "defaultOption": ""
+    },
+    {
+      "name": "Validation state",
+      "required": false,
+      "type": "single select",
+      "description": "Wether the component is in a validation state and if provided in which validation state the component is.",
+      "constraint": "",
+      "defaultOption": "",
+      "options": [
+        "warning",
+        "error",
+        "success"
+      ]
+    },
+    {
+      "name": "Validation text",
+      "required": false,
+      "type": "string",
+      "description": "The text that is shown if the select is in a validation describing the reason for the validation state.",
+      "constraint": "",
+      "defaultOption": ""
+    }
+  ],
+  "changeLog": [
+    {
+      "who": "Maximilian Blazek",
+      "when": "2025-11-21T17:00:00.000+00:00",
+      "what": "Initial commit"
+    },
+    {
+      "who": "Maximilian Blazek",
+      "when": "2026-02-13T16:00:00.000+00:00",
+      "what": "Added links"
+    },
+    {
+      "who": "Daniel Mutis",
+      "when": "2025-12-03T10:00:00.000+00:00",
+      "what": "Reviewed. Approved with comments. "
+    },
+    {
+      "who": "Maximilian Blazek",
+      "when": "2025-12-01T15:00:00.000+00:00",
+      "what": "Added description, anatomy description, usage guidelines and properties"
+    }
+  ],
+  "decisionLog": [],
+  "appliedRules": [],
+  "exceptionFromRules": [],
+  "mentionedIn": [
+    {
+      "name": "Contextual menu",
+      "slug": "contextual-menu"
+    },
+    {
+      "name": "Input",
+      "slug": "input"
+    },
+    {
+      "name": "Radio",
+      "slug": "radio"
+    }
+  ],
+  "mentionsComponents": [
+    {
+      "name": "Button",
+      "slug": "button"
+    },
+    {
+      "name": "Checkbox",
+      "slug": "checkbox"
+    },
+    {
+      "name": "Radio",
+      "slug": "radio"
+    },
+    {
+      "name": "Switch",
+      "slug": "switch"
+    }
+  ],
+  "url": "https://component.wiki/select"
+}

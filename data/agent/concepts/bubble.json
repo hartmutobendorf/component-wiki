@@ -1,0 +1,25 @@
+{
+  "name": "Bubble",
+  "slug": "bubble",
+  "type": "Architecture",
+  "tier": "Sites",
+  "documentationStatus": "Unclear",
+  "lastEdited": "2026-02-18T09:29:54.400+00:00",
+  "description": "A thematic cluster of related pages.",
+  "content": "",
+  "changeLog": [],
+  "decisionLog": [],
+  "appliedRules": [
+    "i-fccXU5un82",
+    "i-LjFEVoZ_Ij",
+    "i-oTSGQdCEDB",
+    "i-TLC1vpYS-W",
+    "i-MhOInQY0HT",
+    "i-XZuz5ismLA",
+    "i-U1MJIkrB5P"
+  ],
+  "exceptedFromRules": [],
+  "mentionedIn": [],
+  "mentionsComponents": [],
+  "url": "https://component.wiki/bubble"
+}

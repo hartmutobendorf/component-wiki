@@ -1,0 +1,22 @@
+{
+  "name": "Grid",
+  "slug": "grid",
+  "type": "Principle",
+  "tier": "Sites",
+  "documentationStatus": "Unclear",
+  "lastEdited": "2026-02-18T09:29:54.400+00:00",
+  "description": "",
+  "content": "",
+  "changeLog": [],
+  "decisionLog": [],
+  "appliedRules": [
+    "i-R2qsN9a5_r",
+    "i-y3DBXPQ5wy",
+    "i-GzGBjzo9ua",
+    "i-0beC9X4XSV"
+  ],
+  "exceptedFromRules": [],
+  "mentionedIn": [],
+  "mentionsComponents": [],
+  "url": "https://component.wiki/grid"
+}

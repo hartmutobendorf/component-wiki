@@ -1,0 +1,20 @@
+{
+  "name": "UI component",
+  "slug": "ui-component",
+  "type": "Architecture",
+  "tier": "Sites",
+  "documentationStatus": "Unclear",
+  "lastEdited": "2026-02-18T09:29:54.400+00:00",
+  "description": "A functional UI component from the design system.",
+  "content": "",
+  "changeLog": [],
+  "decisionLog": [],
+  "appliedRules": [
+    "i-0beC9X4XSV",
+    "i-trysCiJisz"
+  ],
+  "exceptedFromRules": [],
+  "mentionedIn": [],
+  "mentionsComponents": [],
+  "url": "https://component.wiki/ui-component"
+}

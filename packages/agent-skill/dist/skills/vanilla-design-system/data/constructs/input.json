@@ -1,0 +1,152 @@
+{
+  "name": "Input",
+  "slug": "input",
+  "type": "Component",
+  "tiers": "Global",
+  "documentationStatus": "Minimal",
+  "lastEdited": "2026-02-13T15:44:28.932+00:00",
+  "figmaLink": "https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-28",
+  "codeLink": "https://www.figma.com/exit?url=https%3A%2F%2Fgithub.com%2Fcanonical%2Fvanilla-framework%2Fblob%2Fb1d651365b0714586e6ea14349dea763819c256e%2Fscss%2F_base_forms.scss%23L14",
+  "description": "The input component allows users to enter and edit text-based data. It provides a standardized interface for collecting user input such as names, email addresses, passwords and other textual information.",
+  "usage": "The input component is used to collect short to medium-length free-form text from users. It serves as the primary method for gathering information when the exact data format or content isn't predetermined by the system. Input fields are essential for forms and data entry workflows where users need the flexibility to enter custom text rather than selecting from predefined options.\n\n### Input validation\n\nUse validation states to provide real-time feedback about the quality and validity of user input. This helps users understand whether their input meets requirements before attempting to submit a form, reducing errors and improving the overall user experience.\n\n**Error input validation**\n\n![image.png](images/2ddfbe3c-9463-41e0-80e2-1aed5c6dd053.png)\n\n*   Input is invalid and would prevent successful form submission\n*   Required fields are left empty after the user has interacted with them\n*   Input format is incorrect (invalid email address, phone number, etc.)\n*   Input violates business rules or constraints (password too short, username already taken)\n*   User input contains forbidden characters or content\n\n**Example scenarios:** Invalid email format, password doesn't meet requirements, required field left blank, numeric input contains letters.\n\n  \n\n**Warning input validation**\n\n![image.png](images/eda6cf0e-0512-4bf8-8f46-1c648d81fd93.png)\n\n*   Input is technically valid but potentially problematic or unusual\n*   Suggesting improvements that aren't strictly required\n*   Alerting users to potential issues that won't block submission\n*   Input might cause complications or confusion later\n*   Recommending best practices or alternative approaches\n\n**Example scenarios:** Weak but acceptable password, unusual email domain, input that might be misinterpreted, using non-standard formatting.\n\n  \n\n**Positive input validation**\n\n![image.png](images/dc81a103-4e30-48aa-927a-4feec9aa0597.png)\n\n*   Complex validation requirements are successfully met\n*   Confirming that corrected input now passes validation\n*   Input meets high-quality standards or best practices\n*   Providing reassurance for critical or complex fields\n*   Real-time confirmation helps reduce user anxiety\n\n**Example scenarios:** Strong password created, email format verified, unique username available, complex requirements satisfied.\n\n**Note:** Use positive states sparingly - not every valid input needs positive confirmation, as this can create visual noise.\n\n### When to use\n\n*   Collecting short to medium-length text from users (names, emails, addresses)\n*   Gathering numerical data like quantities, prices, or measurements\n*   Ideally the expected input format is predictable and can be validated\n*   Creating forms such as user registration, login, or profile management\n*   Building configuration panels where users set preferences or parameters\n\n### When not to use\n\n*   Users need to enter long-form text (use [Text area](/text-area) instead)\n*   Presenting users with a predefined set of options (use [Select](/select), [Radio](/radio), or [Checkbox](/checkbox))\n*   Input data has a complex format that's difficult to type (use specialized pickers for dates, times, colors)\n*   You are collecting binary yes/no information (use [Switch](/switch) or [Checkbox](/checkbox))\n*   Users need to upload files (use file upload components)\n*   The input requires rich formatting like bold, italics, or links (use rich text editors)",
+  "examples": "",
+  "interactions": "",
+  "sitesArchitectureLevels": "i-UvVNCYZ44t",
+  "anatomy": {
+    "table": [
+      {
+        "number": 1,
+        "name": "Text",
+        "description": "Either the placeholder text or, after the user starts typing, the text that the user typed."
+      },
+      {
+        "number": 2,
+        "name": "Input validation icon",
+        "description": "A supplementary icon indicating the type of input validation."
+      },
+      {
+        "number": 3,
+        "name": "Input validation text",
+        "description": "The text that describes the input validation that has taken place."
+      }
+    ]
+  },
+  "properties": [
+    {
+      "name": "State",
+      "required": false,
+      "type": "single select",
+      "description": "The state the input is currently in.",
+      "constraint": "",
+      "defaultOption": "default",
+      "options": [
+        "default",
+        "hover",
+        "active",
+        "disabled"
+      ]
+    },
+    {
+      "name": "Input validation type",
+      "required": false,
+      "type": "single select",
+      "description": "If the input is being validated what type of input validation it is.",
+      "constraint": "",
+      "defaultOption": "none",
+      "options": [
+        "none",
+        "error",
+        "warning",
+        "positive"
+      ]
+    },
+    {
+      "name": "Input validation text",
+      "required": false,
+      "type": "string",
+      "description": "If the input is being validated the outcome / reason of the input validation",
+      "constraint": "",
+      "defaultOption": ""
+    },
+    {
+      "name": "Size",
+      "required": false,
+      "type": "single select",
+      "description": "The vertical density of the input element",
+      "constraint": "",
+      "defaultOption": "default",
+      "options": [
+        "default",
+        "dense"
+      ]
+    },
+    {
+      "name": "Text",
+      "required": false,
+      "type": "string",
+      "description": "The text that is in the input field. ",
+      "constraint": "",
+      "defaultOption": ""
+    },
+    {
+      "name": "Placeholder",
+      "required": false,
+      "type": "string",
+      "description": "The placeholder text that is being shown if there has not been any text that has been entered yet.",
+      "constraint": "",
+      "defaultOption": ""
+    }
+  ],
+  "changeLog": [
+    {
+      "who": "Maximilian Blazek",
+      "when": "2025-11-21T17:00:00.000+00:00",
+      "what": "Initial commit"
+    },
+    {
+      "who": "Maximilian Blazek",
+      "when": "2026-02-13T15:00:00.000+00:00",
+      "what": "Added links"
+    }
+  ],
+  "decisionLog": [],
+  "appliedRules": [],
+  "exceptionFromRules": [],
+  "mentionedIn": [
+    {
+      "name": "Form placement",
+      "slug": "form-placement"
+    },
+    {
+      "name": "Form placement",
+      "slug": "form-placement"
+    },
+    {
+      "name": "Text area",
+      "slug": "text-area"
+    }
+  ],
+  "mentionsComponents": [
+    {
+      "name": "Checkbox",
+      "slug": "checkbox"
+    },
+    {
+      "name": "Radio",
+      "slug": "radio"
+    },
+    {
+      "name": "Select",
+      "slug": "select"
+    },
+    {
+      "name": "Switch",
+      "slug": "switch"
+    },
+    {
+      "name": "Text area",
+      "slug": "text-area"
+    }
+  ],
+  "url": "https://component.wiki/input"
+}

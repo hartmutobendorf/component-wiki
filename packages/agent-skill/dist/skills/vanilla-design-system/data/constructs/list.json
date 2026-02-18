@@ -1,0 +1,87 @@
+{
+  "name": "List",
+  "slug": "list",
+  "type": "Component",
+  "tiers": "Global",
+  "documentationStatus": "Needs work",
+  "lastEdited": "2026-02-10T08:16:13.923+00:00",
+  "figmaLink": "",
+  "codeLink": "",
+  "description": "",
+  "usage": "",
+  "examples": "",
+  "interactions": "",
+  "sitesArchitectureLevels": "i-UvVNCYZ44t",
+  "properties": [
+    {
+      "name": "List item text",
+      "required": true,
+      "type": "string",
+      "description": "Sets the content of the list",
+      "constraint": "Up to 250 characters",
+      "defaultOption": ""
+    },
+    {
+      "name": "List",
+      "required": true,
+      "type": "slot",
+      "description": "The divided list supporting up to 10 items",
+      "constraint": "Up to 10 items",
+      "defaultOption": ""
+    },
+    {
+      "name": "List bullet type",
+      "required": false,
+      "type": "single select",
+      "description": "Bullet type options",
+      "constraint": "",
+      "defaultOption": "bullet",
+      "options": [
+        "none",
+        "bullet",
+        "status",
+        "number"
+      ]
+    },
+    {
+      "name": "List divided",
+      "required": false,
+      "type": "boolean",
+      "description": "Whether has muted rule between list items",
+      "constraint": "",
+      "defaultOption": "true",
+      "options": [
+        "true",
+        "false"
+      ]
+    },
+    {
+      "name": "List nested",
+      "required": false,
+      "type": "boolean",
+      "description": "Hierarchical list structures",
+      "constraint": "",
+      "defaultOption": "false",
+      "options": [
+        "true",
+        "false"
+      ]
+    }
+  ],
+  "changeLog": [],
+  "decisionLog": [],
+  "appliedRules": [],
+  "exceptionFromRules": [],
+  "mentionedIn": [
+    {
+      "name": "Basic section",
+      "slug": "basic-section"
+    },
+    {
+      "name": "Divided section",
+      "slug": "divided-section"
+    }
+  ],
+  "mentionsComponents": [],
+  "url": "https://component.wiki/list"
+}

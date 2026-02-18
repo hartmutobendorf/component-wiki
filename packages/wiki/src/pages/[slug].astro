@@ -5,24 +5,24 @@ import GithubLink from "../components/GithubLink.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { renderMarkdown, renderInlineMarkdown } from "../utils/render-markdown";
 
-// Generate paths for all components
+// Generate paths for all constructs
 export async function getStaticPaths() {
-  const components = await getCollection("components");
+  const constructs = await getCollection("constructs");
 
-  return components.map((component: any) => ({
-    params: { slug: component.id },
-    props: { componentId: component.id },
+  return constructs.map((construct: any) => ({
+    params: { slug: construct.id },
+    props: { constructId: construct.id },
   }));
 }
 
-const { componentId } = Astro.props;
+const { constructId } = Astro.props;
 
-// Get component metadata
-const component = await getEntry("components", componentId);
-if (!component) {
+// Get construct metadata
+const construct = await getEntry("constructs", constructId);
+if (!construct) {
   return Astro.redirect("/404");
 }
-const metadata = component.data;
+const metadata = construct.data;
 
 // Render markdown sections
 const descriptionHtml = renderMarkdown(metadata.description);
@@ -38,7 +38,7 @@ const hasInteractions = interactionsHtml.length > 0;
 
 <BaseLayout
   title={`${metadata.name} - Component Wiki`}
-  currentSlug={componentId}
+  currentSlug={constructId}
 >
   <div slot="meta" class="p-table-of-contents">
     <div class="p-table-of-contents__section">
@@ -190,14 +190,14 @@ const hasInteractions = interactionsHtml.length > 0;
 
               {metadata.figmaComponentData && (
                 <copy-figma-button
-                  data-component-id={componentId}
+                  data-component-id={constructId}
                   text-content={metadata.name}
                 />
               )}
 
-              <llm-button component-id={componentId} />
+              <llm-button component-id={constructId} />
 
-              <copy-markdown-button component-id={componentId} />
+              <copy-markdown-button component-id={constructId} />
             </div>
           </section>
         )
@@ -454,7 +454,7 @@ const hasInteractions = interactionsHtml.length > 0;
               {metadata.decisionLog.map((entry) => (
                 <tr>
                   <td class="decisionlog-where"><Fragment set:html={renderInlineMarkdown(entry.where)} /></td>
-                  <td class="decisionlog-decision"><Fragment set:html={renderInlineMarkdown(entry.decisionMade)} /></td>
+                  <td class="decisionlog-decision"><Fragment set:html={renderInlineMarkdown(entry.what)} /></td>
                   <td class="decisionlog-link">
                     {entry.link ? (
                       <a

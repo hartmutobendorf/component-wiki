@@ -1,9 +1,9 @@
-import type { Component } from "@wiki/shared";
+import type { Construct } from "@wiki/shared";
 
 /**
  * A minimal valid component with only required fields.
  */
-export const minimalComponent: Component = {
+export const minimalComponent: Construct = {
   name: "Button",
   slug: "button",
   type: "Component",
@@ -18,16 +18,19 @@ export const minimalComponent: Component = {
   interactions: "",
   figmaComponentData: "",
   componentExampleImage: "",
+  sitesArchitectureLevels: "",
   properties: [],
   changeLog: [],
   decisionLog: [],
+  appliedRules: [],
+  exceptionFromRules: [],
   mentionedIn: [],
 };
 
 /**
  * A fully populated component with all optional fields filled in.
  */
-export const fullComponent: Component = {
+export const fullComponent: Construct = {
   name: "Toggle Switch",
   slug: "toggle-switch",
   type: "Complex component",
@@ -145,6 +148,9 @@ export const fullComponent: Component = {
       when: "",
     },
   ],
+  sitesArchitectureLevels: "",
+  appliedRules: [],
+  exceptionFromRules: [],
   mentionedIn: [
     { name: "Form placement", slug: "form-placement" },
     { name: "Settings page", slug: "settings-page" },
@@ -154,7 +160,7 @@ export const fullComponent: Component = {
 /**
  * A component with only description filled (no usage/examples/properties etc).
  */
-export const descriptionOnlyComponent: Component = {
+export const descriptionOnlyComponent: Construct = {
   ...minimalComponent,
   name: "Divider",
   slug: "divider",
@@ -166,7 +172,7 @@ export const descriptionOnlyComponent: Component = {
 /**
  * A component with anatomy but no image.
  */
-export const anatomyNoImageComponent: Component = {
+export const anatomyNoImageComponent: Construct = {
   ...minimalComponent,
   name: "Badge",
   slug: "badge",
@@ -182,7 +188,7 @@ export const anatomyNoImageComponent: Component = {
 /**
  * A component with empty anatomy table.
  */
-export const emptyAnatomyComponent: Component = {
+export const emptyAnatomyComponent: Construct = {
   ...minimalComponent,
   name: "Spacer",
   slug: "spacer",

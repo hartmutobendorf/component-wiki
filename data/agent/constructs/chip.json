@@ -1,0 +1,173 @@
+{
+  "name": "Chip",
+  "slug": "chip",
+  "type": "Component",
+  "tiers": "Global",
+  "documentationStatus": "Minimal",
+  "lastEdited": "2026-02-13T15:18:32.176+00:00",
+  "figmaLink": "https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-19",
+  "codeLink": "https://github.com/canonical/vanilla-framework/blob/d0197b27f5733789d6d23536eabe68356e045ae1/scss/_patterns_chip.scss",
+  "description": "Chips are visual elements that display information about a specific entity on the page. This information can be status, categories, tags, etc. \n\nThey make this information more visually prominent and therefore elevate it in the information hierarchy.\n\nIn addition to displaying information, chips can also facilitate secondary actions such as content filtering, selection and highlighting. When interactive, chips maintain their primary function of displaying information - filter chips display applied filters while allowing dismissal, selection chips highlight selected options while allowing changes. Chips should not replace the primary call-to-action [Button](/button). They should be used for supporting actions that complement the main user flow rather than driving it.",
+  "usage": "Chips are visual elements that display information about a specific entity on the page. This information can be status, categories, tags, etc. They make this information more visually prominent and therefore elevate it in the information hierarchy.\n\nIn addition to displaying information, chips can also facilitate secondary actions such as content filtering, selection and highlighting. When interactive, chips maintain their primary function of displaying information - filter chips display applied filters while allowing dismissal, selection chips highlight selected options while allowing changes. Chips should not replace the primary call-to-action [Button](/button) - they should be used for supporting actions that complement the main user flow rather than driving it.",
+  "examples": "",
+  "interactions": "",
+  "sitesArchitectureLevels": "i-UvVNCYZ44t",
+  "anatomy": {
+    "table": [
+      {
+        "number": 1,
+        "name": "Icon",
+        "description": "The icon can be used to give more context to the chip. All icons from Vanilla are available. Note that semantic icons should only be used with the appropriate color (warning icon with yellow for example)."
+      },
+      {
+        "number": 2,
+        "name": "Value",
+        "description": "The primary textual information that the chip represents. "
+      },
+      {
+        "number": 3,
+        "name": "Dismiss button",
+        "description": "If present allows to dismiss the chip. For example if an applied filter needs to be removed."
+      },
+      {
+        "number": 4,
+        "name": "Lead",
+        "description": "If the value is of a certain category then the key can be used to show that category to provide additional context to the user."
+      },
+      {
+        "number": 5,
+        "name": "Badge",
+        "description": "The [Badge](wiki-ref://grid-ymtdOF6n4R/i-MOO2SBuaqS) can be used to show numerical information. For example the amount of items which fall under a certain filter. See more in the badge documentation."
+      }
+    ]
+  },
+  "properties": [
+    {
+      "name": "Variant",
+      "required": false,
+      "type": "single select",
+      "description": "Wether the chip is interactive or not. Read-only should be used for chips where no secondary action is needed in the lifecycle of the chip. For example to show the status of an entity.",
+      "constraint": "",
+      "defaultOption": "default",
+      "options": [
+        "default",
+        "read-only"
+      ]
+    },
+    {
+      "name": "State",
+      "required": false,
+      "type": "single select",
+      "description": "The state the button is currently in. The read-only variant does not have states.",
+      "constraint": "",
+      "defaultOption": "default",
+      "options": [
+        "default",
+        "hover",
+        "active"
+      ]
+    },
+    {
+      "name": "Color",
+      "required": false,
+      "type": "single select",
+      "description": "The color the chip should have. Be aware that some of the colors might be interpreted in a semantic way by users.",
+      "constraint": "",
+      "defaultOption": "gray",
+      "options": [
+        "gray",
+        "green",
+        "blue",
+        "red",
+        "yellow"
+      ]
+    },
+    {
+      "name": "Size",
+      "required": false,
+      "type": "single select",
+      "description": "Determines the vertical spacing of the chip. Dense can be used in situations where space is limited",
+      "constraint": "",
+      "defaultOption": "default",
+      "options": [
+        "default",
+        "dense"
+      ]
+    },
+    {
+      "name": "Icon",
+      "required": false,
+      "type": "single select",
+      "description": "Controls the icon that is shown in the chip.",
+      "constraint": "",
+      "defaultOption": "",
+      "options": [
+        "All icons available in Vanilla"
+      ]
+    },
+    {
+      "name": "Lead",
+      "required": false,
+      "type": "string",
+      "description": "Controls what the lead of the chip is.",
+      "constraint": "",
+      "defaultOption": ""
+    },
+    {
+      "name": "Value",
+      "required": false,
+      "type": "string",
+      "description": "Controls what the value of the chips is",
+      "constraint": "",
+      "defaultOption": ""
+    },
+    {
+      "name": "Badge",
+      "required": false,
+      "type": "slot",
+      "description": "Can be used to attach a badge to the chip",
+      "constraint": "Can only contain [Badge](wiki-ref://grid-ymtdOF6n4R/i-MOO2SBuaqS)  component",
+      "defaultOption": ""
+    },
+    {
+      "name": "Dismissible",
+      "required": false,
+      "type": "boolean",
+      "description": "Determines wether the chip can be dismissed or not. The read-only variant can not be dismissible.",
+      "constraint": "",
+      "defaultOption": "false",
+      "options": [
+        "true",
+        "false"
+      ]
+    }
+  ],
+  "changeLog": [
+    {
+      "who": "Maximilian Blazek",
+      "when": "2025-11-21T17:00:00.000+00:00",
+      "what": "Initial commit"
+    },
+    {
+      "who": "Maximilian Blazek",
+      "when": "2026-02-13T15:00:00.000+00:00",
+      "what": "Add links"
+    }
+  ],
+  "decisionLog": [],
+  "appliedRules": [],
+  "exceptionFromRules": [],
+  "mentionedIn": [
+    {
+      "name": "Badge",
+      "slug": "badge"
+    }
+  ],
+  "mentionsComponents": [
+    {
+      "name": "Button",
+      "slug": "button"
+    }
+  ],
+  "url": "https://component.wiki/chip"
+}

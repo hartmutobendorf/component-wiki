@@ -1,0 +1,33 @@
+{
+  "name": "Navigation",
+  "slug": "navigation",
+  "type": "Architecture",
+  "tier": "Sites",
+  "documentationStatus": "Unclear",
+  "lastEdited": "2026-02-18T09:29:54.400+00:00",
+  "description": "",
+  "content": "",
+  "changeLog": [],
+  "decisionLog": [],
+  "appliedRules": [
+    "i-fccXU5un82",
+    "i-LjFEVoZ_Ij",
+    "i-PfTz-qcg99",
+    "i-SB1Dt8B9RR",
+    "i-KM2RmVLsIO",
+    "i-U1MJIkrB5P"
+  ],
+  "exceptedFromRules": [],
+  "mentionedIn": [
+    {
+      "name": "Badge",
+      "slug": "badge"
+    },
+    {
+      "name": "Breadcrumbs",
+      "slug": "breadcrumbs"
+    }
+  ],
+  "mentionsComponents": [],
+  "url": "https://component.wiki/navigation"
+}

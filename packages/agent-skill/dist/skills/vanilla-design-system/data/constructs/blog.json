@@ -1,0 +1,129 @@
+{
+  "name": "Blog",
+  "slug": "blog",
+  "type": "Pattern",
+  "tiers": "Sites",
+  "documentationStatus": "Minimal",
+  "lastEdited": "2026-02-10T08:16:26.596+00:00",
+  "figmaLink": "https://www.figma.com/design/1brHCsyeTE6FU7hfJd6ao2/%F0%9F%8C%90-Sites---Core-component-library?node-id=2940-19045",
+  "codeLink": "https://github.com/canonical/vanilla-framework/blob/main/templates/_macros/vf_blog.jinja",
+  "description": "The blog pattern displays 3 to 4 blog articles in a grid layout. Each article shows a cover image, title, description, author information, and publication date. Articles can be loaded dynamically or provided statically. Designed to highlight recent contents in specific topic, the pattern offers users quick access to featured blog posts.",
+  "usage": "The blog pattern displays 3 to 4 blog articles in a grid layout. By presenting posts in a structured, scannable grid, the pattern enables quick comparison and encourages exploration of topics that support the narrative of the page.\n\nThe pattern supports both dynamic and static loading strategies. When connected to the latest news module, the blog pattern automatically pulls recent articles from a defined group, ensuring that the section remains fresh without requiring manual updates. This approach is ideal for pages that benefit from showcasing ongoing activity or frequently updated content. In contrast, static content allows to feature specific articles by providing custom descriptions, and imagery. This curated approach is useful when emphasizing certain messages or guiding users through a planned content journey.\n\nThe grid layout helps users scan titles, descriptions, authors, and publication dates with ease. Cover images provide quick visual context and improve engagement, while fallback imagery maintains uniformity across articles that do not include a native image. Limiting the pattern to three or four items reinforces clarity and prevents cognitive overload, ensuring that each featured article receives adequate attention.\n\n### When to use\n\n*   To feature the latest or most relevant blog posts.\n*   To highlight related articles that support the main content of a page.\n*   To provide users quick access to blog content without navigating to the blog index.\n\n### When not to use\n\n*   When the content includes mixed resource types such as webinars, case studies, or white papers\n*   *   Use resources pattern instead",
+  "examples": "### Layout\n\n4-block layout with linked heading\n\n![Component example wrapper-1.png](images/9ff1dece-30b3-4f3d-b34e-1983c0d186f5.png)\n\n3-block layout\n\n![Component example wrapper-2.png](images/0782185a-094a-4ac8-85fa-6bee31788cf2.png)\n\n### Responsive\n\nMedium dimension\n\n![Component example wrapper-3.png](images/994cd07c-0f95-4979-ac2e-a88557fae638.png)\n\nSmall dimension\n\n![Component example wrapper-4.png](images/0373a42b-32cf-4044-9b5a-bb40573ba606.png)",
+  "interactions": "",
+  "sitesArchitectureLevels": "i-ues18YVwia",
+  "anatomy": {
+    "table": [
+      {
+        "number": 1,
+        "name": "Rule",
+        "description": "The rule component indicates the beginning of a new section."
+      },
+      {
+        "number": 2,
+        "name": "Heading",
+        "description": "The section heading communicates the primary subject or theme of the section."
+      },
+      {
+        "number": 3,
+        "name": "Article image",
+        "description": "Each blog article displays a 16:9 cover image with shallow bottom padding. If a fetched article does not include an image, a [fallback image](https://assets.ubuntu.com/v1/94c82a15-blog_fallback_image.png) is used automatically.\n\nIn dynamic content, the article image displays the cover image of the article. In static content, a custom image should be provided."
+      },
+      {
+        "number": 4,
+        "name": "Article title",
+        "description": "Displaying the full title of the article."
+      },
+      {
+        "number": 5,
+        "name": "Description",
+        "description": "In dynamic content, the description displays the first 180 characters of the article. In static content, a custom description of up to 300 characters should be provided."
+      },
+      {
+        "number": 6,
+        "name": "Citation",
+        "description": "The citation is an optional author/date field in small text and supports showing either or both."
+      }
+    ]
+  },
+  "properties": [
+    {
+      "name": "Section rule",
+      "required": true,
+      "type": "single select",
+      "description": "The rule component indicates the beginning of a new pattern",
+      "constraint": "Only use the default style for the section-level rule",
+      "defaultOption": "default",
+      "options": [
+        "default"
+      ]
+    },
+    {
+      "name": "Linked heading",
+      "required": false,
+      "type": "single select",
+      "description": "The heading can be used as a link when paired with a chevron(›) and a clear indication.",
+      "constraint": "",
+      "defaultOption": "default",
+      "options": [
+        "default",
+        "link"
+      ]
+    },
+    {
+      "name": "Heading",
+      "required": true,
+      "type": "string",
+      "description": "2-column width heading using muted heading",
+      "constraint": "Up to 60 characters",
+      "defaultOption": ""
+    },
+    {
+      "name": "Bottom padding",
+      "required": true,
+      "type": "single select",
+      "description": "The type of padding applied to the bottom of the pattern",
+      "constraint": "",
+      "defaultOption": "default",
+      "options": [
+        "default",
+        "deep",
+        "shallow",
+        "none"
+      ]
+    },
+    {
+      "name": "Number of articles",
+      "required": false,
+      "type": "single select",
+      "description": "It determines the number of articles to display in the section.",
+      "constraint": "",
+      "defaultOption": "4-block",
+      "options": [
+        "3-block",
+        "4-block"
+      ]
+    },
+    {
+      "name": "Content loading strategies",
+      "required": true,
+      "type": "object",
+      "description": "The blog pattern supports two content loading strategies:\n\n- Dynamic content:  Articles are loaded asynchronously using a template  \nStatic content: Articles are passed directly to the pattern",
+      "constraint": "",
+      "defaultOption": "",
+      "options": [
+        "dinamic",
+        "static"
+      ]
+    }
+  ],
+  "changeLog": [],
+  "decisionLog": [],
+  "appliedRules": [],
+  "exceptionFromRules": [
+    "i-U3IwMn0dXk"
+  ],
+  "mentionedIn": [],
+  "mentionsComponents": [],
+  "url": "https://component.wiki/blog"
+}

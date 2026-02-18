@@ -1,10 +1,10 @@
-import type { Component } from "@wiki/shared";
+import type { Construct } from "@wiki/shared";
 
 /**
- * Generates a Markdown document from component data.
+ * Generates a Markdown document from construct data.
  * This is the same logic used by the [slug].md.ts API route.
  */
-export function generateComponentMarkdown(data: Component): string {
+export function generateComponentMarkdown(data: Construct): string {
   let md = `# ${data.name}\n\n`;
 
   // Metadata

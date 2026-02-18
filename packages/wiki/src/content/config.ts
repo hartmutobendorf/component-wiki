@@ -1,13 +1,13 @@
 import { defineCollection } from "astro:content";
 import { glob } from "astro/loaders";
-import { componentSchema } from "@wiki/shared";
+import { constructSchema } from "@wiki/shared";
 
-const components = defineCollection({
+const constructs = defineCollection({
   loader: glob({
     pattern: "*.json",
-    base: "../../data/wiki",
+    base: "../../data/wiki/constructs",
   }),
-  schema: componentSchema,
+  schema: constructSchema,
 });
 
-export const collections = { components };
+export const collections = { constructs };

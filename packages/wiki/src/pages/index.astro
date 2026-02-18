@@ -1,9 +1,9 @@
 ---
 import { getCollection } from 'astro:content';
 
-const components = await getCollection('components');
-const firstComponent = components[0];
+const constructs = await getCollection('constructs');
+const firstConstruct = constructs[0];
 
-// Redirect to the first component
-return Astro.redirect(`/${firstComponent.id}`);
+// Redirect to the first construct
+return Astro.redirect(`/${firstConstruct.id}`);
 ---

@@ -1,0 +1,73 @@
+{
+  "name": "Tooltip",
+  "slug": "tooltip",
+  "type": "Component",
+  "tiers": "Global",
+  "documentationStatus": "Minimal",
+  "lastEdited": "2026-02-13T16:08:10.623+00:00",
+  "figmaLink": "https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-52",
+  "codeLink": "https://github.com/canonical/vanilla-framework/blob/b1d651365b0714586e6ea14349dea763819c256e/scss/_patterns_tooltips.scss",
+  "description": "A tooltip is a small popup that displays helpful information or context when a user hovers over or focuses on an element, providing additional details without cluttering the interface.",
+  "usage": "Tooltips are contextual overlays that provide supplementary information or clarification when users hover over or focus on an element. They serve as a lightweight way to enhance user understanding without cluttering the interface with permanent text. Tooltips typically appear on hover and disappear when the user moves away from the trigger element, though they must remain visible when users move their cursor from the trigger to the tooltip itself, allowing interaction with the tooltip content. This makes them ideal for progressive disclosure of non-critical information, but designers must consider that hover interactions don't exist on touch devices, making tooltips inaccessible to mobile users unless alternative access methods are provided. Designers should carefully evaluate whether information is truly supplementary. If the content is essential for task completion or understanding, it may warrant permanent placement in the interface rather than being hidden behind a tooltip interaction.\n\n### Positioning\n\nTooltip positioning is critical for usability and should be handled automatically by the component's code implementation. However, it's important to verify proper positioning behavior when implementing tooltips in your product, especially near viewport edges, scrollable containers, or dense interface areas. The tooltip should intelligently adjust its position to remain visible and avoid being cut off by screen boundaries. For detailed information about positioning strategie, refer to the styling documentation below.\n\n### Allowed elements in tooltips\n\nTooltips should contain only text elements.\n\nIncluding [Link](/link) or other interactive elements within tooltips is generally discouraged by most design systems, though not explicitly prohibited by WCAG accessibility guidelines.\n\nIf a [Link](/link) is required in the tooltip then specific interaction patterns must be maintained to satisfy accessibility guidelines:\n\n*   The tooltip must remain visible when users move their cursor from the trigger element to the tooltip content\n*   For keyboard navigation, the tooltip must stay open when users tab into it to focus interactive elements within\n\nWhen these conditions are met, interactive tooltip content can be considered accessible, though simpler alternatives like dedicated help sections or inline explanations often provide better user experiences.\n\n### When to use\n\n*   Show truncated text by displaying the full content when text has been cut off due to space constraints\n*   Explain disabled states by providing context for why a [Button](/button) or action is currently unavailable\n*   Clarify icon meanings by adding descriptive text to icons or icon-only [Button](/button)s that may be ambiguous\n*   Pairing with dedicated help or information icons to provide detailed explanations\n*   Define abbreviations or technical terms by offering quick definitions without requiring navigation away from the current context\n*   Provide keyboard shortcuts by showing available hotkeys for interactive elements\n\n### When not to use\n\n*   Essential information should not be hidden behind tooltips if users need it to complete their primary task\n*   Complex content that would be better suited for dedicated help sections rather than brief tooltip text\n*   Mobile-first experiences where hover states don't exist on touch devices unless alternative access methods are provided\n*   Permanent reference information that users will need to reference repeatedly during their workflow\n*   Error messages should use dedicated error states instead of tooltips for validation feedback\n*   Primary navigation should not rely on tooltips as the sole method of explaining navigation options",
+  "examples": "",
+  "interactions": "",
+  "sitesArchitectureLevels": "i-UvVNCYZ44t",
+  "anatomy": {
+    "table": []
+  },
+  "properties": [
+    {
+      "name": "Arrow location",
+      "required": false,
+      "type": "single select",
+      "description": "Where the location of the arrow of the tooltip is.",
+      "constraint": "",
+      "defaultOption": "left",
+      "options": [
+        "left",
+        "right",
+        "top left",
+        "top middle",
+        "top right",
+        "bottom left",
+        "bottom middle",
+        "bottom right"
+      ]
+    },
+    {
+      "name": "Tooltip text",
+      "required": false,
+      "type": "string",
+      "description": "The text content of the tooltip.",
+      "constraint": "",
+      "defaultOption": ""
+    }
+  ],
+  "changeLog": [
+    {
+      "who": "Maximilian Blazek",
+      "when": "2025-11-21T17:00:00.000+00:00",
+      "what": "Initial commit"
+    }
+  ],
+  "decisionLog": [],
+  "appliedRules": [],
+  "exceptionFromRules": [],
+  "mentionedIn": [
+    {
+      "name": "Button",
+      "slug": "button"
+    }
+  ],
+  "mentionsComponents": [
+    {
+      "name": "Button",
+      "slug": "button"
+    },
+    {
+      "name": "Link",
+      "slug": "link"
+    }
+  ],
+  "url": "https://component.wiki/tooltip"
+}

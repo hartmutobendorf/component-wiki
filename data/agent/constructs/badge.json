@@ -1,0 +1,85 @@
+{
+  "name": "Badge",
+  "slug": "badge",
+  "type": "Component",
+  "tiers": "Global",
+  "documentationStatus": "Minimal",
+  "lastEdited": "2026-02-13T14:56:32.929+00:00",
+  "figmaLink": "https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-5",
+  "codeLink": "https://github.com/canonical/vanilla-framework/blob/b1d651365b0714586e6ea14349dea763819c256e/scss/_patterns_badge.scss",
+  "description": "A badge is a read-only visual indicator for numeric values. It is often used in other components to show for example a number of elements contained in that component.",
+  "usage": "A badge is a read-only visual indicator for numeric values. As such only numbers should be used in the badge. An exception is using non numeric characters to show larger numbers than can be shown in the width of the badge. For example using a “+” to indicate a larger number such as “999+” or using letters to indicate larger numbers such as “2M” or “25k”.\n\n  \n\nIt is often used in other components to show for example a number of elements contained in that component. Such as in [Tabs](/tabs) to indicate the amount of elements contained inside of it, or in a [Chip](/chip) to for example indicate the amount of items which fall under that filter.\n\n### When to use\n\n*   If you need to indicate a specific numeric value and you want to give it visual prominence. For example for:\n*   *   Unread messages\n    *   Amount of items requiring attention\n    *   Activity indicators (e.g. comments)\n    *   Inventory counts\n    *   Total items in collections (items in cart)\n    *   Performance metrics (e.g. amount of errors in a log)\n*   As part of other components such as [Navigation](/navigation) items, [Chip](/chip)s , [Tabs](/tabs) etc. to show some of the above mentioned metrics\n\n### When not to use\n\n*   Do not use the badge to show non-numeric values. Use for example a [Chip](/chip) instead.\n*   Do not use for complex data that needs context\n*   Do not use the badge as an interactive element users can take an action with. If your users need to take action on the shown numeric values then provide other means of taking action. For example if the badge shows the amount of unread [Notification](/notification)s show it for example in a [Navigation](/navigation)  item with which user can go to the [Notification](/notification) center to take action.",
+  "examples": "",
+  "interactions": "",
+  "sitesArchitectureLevels": "i-UvVNCYZ44t",
+  "anatomy": {
+    "table": [
+      {
+        "number": 1,
+        "name": "Numeric value",
+        "description": "The numeric value that is being shown as part of the badge."
+      }
+    ]
+  },
+  "properties": [
+    {
+      "name": "Type",
+      "required": false,
+      "type": "single select",
+      "description": "The type property controls what type of badge to display.",
+      "constraint": "",
+      "defaultOption": "default",
+      "options": [
+        "default",
+        "negative"
+      ]
+    },
+    {
+      "name": "Numeric value",
+      "required": true,
+      "type": "number",
+      "description": "The numeric value that should be shown in the badge. Also allows non numeric characters to allow for values such as “999+)",
+      "constraint": "",
+      "defaultOption": ""
+    }
+  ],
+  "changeLog": [
+    {
+      "who": "Maximilian Blazek",
+      "when": "2025-11-21T17:00:00.000+00:00",
+      "what": "Initial commit"
+    },
+    {
+      "who": "Maximilian Blazek",
+      "when": "2026-02-13T15:00:00.000+00:00",
+      "what": "Added links"
+    }
+  ],
+  "decisionLog": [],
+  "appliedRules": [],
+  "exceptionFromRules": [],
+  "mentionedIn": [],
+  "mentionsComponents": [
+    {
+      "name": "Chip",
+      "slug": "chip"
+    },
+    {
+      "name": "Navigation",
+      "slug": "navigation"
+    },
+    {
+      "name": "Navigation",
+      "slug": "navigation"
+    },
+    {
+      "name": "Notification",
+      "slug": "notification"
+    },
+    {
+      "name": "Tabs",
+      "slug": "tabs"
+    }
+  ],
+  "url": "https://component.wiki/badge"
+}

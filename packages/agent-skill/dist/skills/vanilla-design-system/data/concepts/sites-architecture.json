@@ -1,0 +1,17 @@
+{
+  "name": "Sites architecture",
+  "slug": "sites-architecture",
+  "type": "Architecture",
+  "tier": "Sites",
+  "documentationStatus": "Unclear",
+  "lastEdited": "2026-02-18T09:29:51.485+00:00",
+  "description": "",
+  "content": "",
+  "changeLog": [],
+  "decisionLog": [],
+  "appliedRules": [],
+  "exceptedFromRules": [],
+  "mentionedIn": [],
+  "mentionsComponents": [],
+  "url": "https://component.wiki/sites-architecture"
+}

@@ -34,6 +34,10 @@ export async function sync() {
     `  Doc: ${config.docId}, Tables: ${Object.keys(config.tables).join(", ")}\n`
   );
 
+  // Clean output directory before writing fresh data
+  await rm(DATA_RAW_DIR, { recursive: true, force: true });
+  await mkdir(DATA_RAW_DIR, { recursive: true });
+
   // ── Phase B: API Fetch ────────────────────────────────────────
   console.log("Phase B: Fetching all tables (rich format)...");
   const rawTables = await fetchAllTables(services, config.docId, config);

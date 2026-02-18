@@ -1,6 +1,9 @@
-// Output schemas
+// ── Output schemas ──────────────────────────────────────────
+
 export {
-  componentSchema,
+  constructSchema,
+  conceptSchema,
+  ruleSchema,
   propertySchema,
   anatomyPartSchema,
   anatomySchema,
@@ -10,25 +13,56 @@ export {
   mentionedInEntrySchema,
 } from "./schema.js";
 
-// Raw schemas
+// ── Raw row schemas ─────────────────────────────────────────
+
 export {
-  rawComponentRowSchema,
-  rawPropertyRowSchema,
-  rawAnatomyRowSchema,
-  rawChangeLogRowSchema,
-  rawDecisionLogRowSchema,
+  rawConstructRowSchema,
+  rawConstructPropertyRowSchema,
+  rawConstructAnatomyRowSchema,
+  rawDocumentationChangelogRowSchema,
+  rawDocumentationDecisionlogRowSchema,
+  rawDocumentationStatusRowSchema,
+  rawConstructTypeRowSchema,
+  rawDocumentationTierRowSchema,
+  rawDocumentationEditorRowSchema,
+  rawConstructPropertyTypeRowSchema,
+  rawConceptRowSchema,
+  rawRuleRowSchema,
+  rawConceptTypeRowSchema,
+  rawDocumentationRequirementLevelRowSchema,
+  rawRuleStatusRowSchema,
+  rawRuleTypeRowSchema,
   rawLookupRowSchema,
-  rawComponentsTableSchema,
-  rawPropertiesTableSchema,
-  rawAnatomyTableSchema,
-  rawChangeLogTableSchema,
-  rawDecisionLogTableSchema,
+} from "./schema.js";
+
+// ── Raw table schemas ───────────────────────────────────────
+
+export {
+  rawConstructTableSchema,
+  rawConstructPropertiesTableSchema,
+  rawConstructAnatomyTableSchema,
+  rawDocumentationChangelogTableSchema,
+  rawDocumentationDecisionlogTableSchema,
+  rawDocumentationStatusTableSchema,
+  rawConstructTypesTableSchema,
+  rawDocumentationTiersTableSchema,
+  rawDocumentationEditorsTableSchema,
+  rawConstructPropertyTypesTableSchema,
+  rawConceptsTableSchema,
+  rawRulesTableSchema,
+  rawConceptTypesTableSchema,
+  rawDocumentationRequirementLevelsTableSchema,
+  rawRuleStatusTableSchema,
+  rawRuleTypesTableSchema,
   rawLookupTableSchema,
 } from "./schema.js";
 
-// Output types
+// ── Output types ────────────────────────────────────────────
+
 export type {
-  Component,
+  Construct,
+  Concept,
+  Rule,
   Property,
   AnatomyPart,
   Anatomy,
@@ -38,18 +72,46 @@ export type {
   MentionedInEntry,
 } from "./types.js";
 
-// Raw types
+// ── Raw row types ───────────────────────────────────────────
+
 export type {
-  RawComponentRow,
-  RawPropertyRow,
-  RawAnatomyRow,
-  RawChangeLogRow,
-  RawDecisionLogRow,
+  RawConstructRow,
+  RawConstructPropertyRow,
+  RawConstructAnatomyRow,
+  RawDocumentationChangelogRow,
+  RawDocumentationDecisionlogRow,
+  RawDocumentationStatusRow,
+  RawConstructTypeRow,
+  RawDocumentationTierRow,
+  RawDocumentationEditorRow,
+  RawConstructPropertyTypeRow,
+  RawConceptRow,
+  RawRuleRow,
+  RawConceptTypeRow,
+  RawDocumentationRequirementLevelRow,
+  RawRuleStatusRow,
+  RawRuleTypeRow,
   RawLookupRow,
-  RawComponentsTable,
-  RawPropertiesTable,
-  RawAnatomyTable,
-  RawChangeLogTable,
-  RawDecisionLogTable,
+} from "./types.js";
+
+// ── Raw table types ─────────────────────────────────────────
+
+export type {
+  RawConstructTable,
+  RawConstructPropertiesTable,
+  RawConstructAnatomyTable,
+  RawDocumentationChangelogTable,
+  RawDocumentationDecisionlogTable,
+  RawDocumentationStatusTable,
+  RawConstructTypesTable,
+  RawDocumentationTiersTable,
+  RawDocumentationEditorsTable,
+  RawConstructPropertyTypesTable,
+  RawConceptsTable,
+  RawRulesTable,
+  RawConceptTypesTable,
+  RawDocumentationRequirementLevelsTable,
+  RawRuleStatusTable,
+  RawRuleTypesTable,
   RawLookupTable,
 } from "./types.js";

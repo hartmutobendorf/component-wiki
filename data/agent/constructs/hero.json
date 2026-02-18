@@ -1,0 +1,56 @@
+{
+  "name": "Hero",
+  "slug": "hero",
+  "type": "Pattern",
+  "tiers": "Sites",
+  "documentationStatus": "Needs work",
+  "lastEdited": "2026-02-10T08:16:31.096+00:00",
+  "figmaLink": "",
+  "codeLink": "",
+  "description": "",
+  "usage": "",
+  "examples": "",
+  "interactions": "",
+  "sitesArchitectureLevels": "i-ues18YVwia",
+  "properties": [
+    {
+      "name": "Bottom padding",
+      "required": true,
+      "type": "single select",
+      "description": "The type of padding applied to the bottom of the pattern",
+      "constraint": "",
+      "defaultOption": "default",
+      "options": [
+        "default",
+        "deep",
+        "shallow",
+        "none"
+      ]
+    }
+  ],
+  "changeLog": [],
+  "decisionLog": [],
+  "appliedRules": [],
+  "exceptionFromRules": [
+    "i-2Bh98UVeCN",
+    "i-lTkH1FYTZj",
+    "i-U3IwMn0dXk",
+    "i-c0fL3b9UM5"
+  ],
+  "mentionedIn": [
+    {
+      "name": "Button",
+      "slug": "button"
+    },
+    {
+      "name": "In-page navigation",
+      "slug": "in-page-navigation"
+    },
+    {
+      "name": "Link",
+      "slug": "link"
+    }
+  ],
+  "mentionsComponents": [],
+  "url": "https://component.wiki/hero"
+}

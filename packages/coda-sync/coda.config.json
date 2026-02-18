@@ -2,46 +2,71 @@
   "baseUrl": "https://coda.io/apis/v1",
   "docId": "_MEO4xiNKu",
   "tables": {
-    "components": {
+    "construct": {
       "id": "grid-ymtdOF6n4R",
       "pageId": "canvas-u-VYu-W68M",
       "htmlColumns": ["Usage", "Examples", "Interactions"]
     },
-    "properties": {
+    "constructProperties": {
       "id": "grid-9IKJO03-mN",
-      "relatesTo": "components"
+      "relatesTo": "construct"
     },
-    "changelog": {
+    "documentationChangelog": {
       "id": "grid-cafUcPTmbr",
-      "relatesTo": "components"
+      "relatesTo": ["construct", "concepts"]
     },
-    "anatomy": {
+    "constructAnatomy": {
       "id": "grid-YfHOdsWGM_",
-      "relatesTo": "components"
+      "relatesTo": "construct"
     },
-    "decisionLog": {
+    "documentationDecisionlog": {
       "id": "grid-mEwLLn1qdr",
-      "relatesTo": "components"
+      "relatesTo": ["construct", "concepts"]
     },
-    "documentationStatuses": {
+    "documentationStatus": {
       "id": "grid-INwV-b3gw8",
-      "relatesTo": "components"
+      "relatesTo": ["construct", "concepts"]
     },
-    "types": {
+    "constructTypes": {
       "id": "grid-gZWfbmFU31",
-      "relatesTo": "components"
+      "relatesTo": "construct"
     },
-    "tiers": {
+    "documentationTiers": {
       "id": "grid-L2wrVfBmTu",
-      "relatesTo": "components"
+      "relatesTo": ["construct", "concepts"]
     },
-    "editors": {
+    "documentationEditors": {
       "id": "grid-Bb7vyg8RIb",
-      "relatesTo": "changelog"
+      "relatesTo": "documentationChangelog"
     },
-    "propertyTypes": {
+    "constructPropertyTypes": {
       "id": "grid-JUzhYTGRhp",
-      "relatesTo": "properties"
+      "relatesTo": "constructProperties"
+    },
+    "concepts": {
+      "id": "grid-THtT8-Hqru",
+      "pageId": "canvas-gtL7WfECrR",
+      "htmlColumns": ["Content"]
+    },
+    "rules": {
+      "id": "grid-gNz33rvt3M",
+      "relatesTo": ["construct", "concepts"]
+    },
+    "conceptTypes": {
+      "id": "grid-sjmE_2XD4O",
+      "relatesTo": "concepts"
+    },
+    "documentationRequirementLevels": {
+      "id": "grid-b9VRd-JDRn",
+      "relatesTo": "rules"
+    },
+    "ruleStatus": {
+      "id": "grid-yCHeaxBRE3",
+      "relatesTo": "rules"
+    },
+    "ruleTypes": {
+      "id": "grid-wWUahJEX9E",
+      "relatesTo": "rules"
     }
   }
 }

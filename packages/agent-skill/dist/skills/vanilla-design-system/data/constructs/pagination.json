@@ -1,0 +1,99 @@
+{
+  "name": "Pagination",
+  "slug": "pagination",
+  "type": "Component",
+  "tiers": "Global",
+  "documentationStatus": "Needs work",
+  "lastEdited": "2026-02-13T15:51:20.032+00:00",
+  "figmaLink": "https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-36",
+  "codeLink": "https://github.com/canonical/vanilla-framework/blob/b1d651365b0714586e6ea14349dea763819c256e/scss/_patterns_pagination.scss",
+  "description": "Pagination is a navigational component that allows users to move between pages of content. It provides controls for navigating to the previous or next page, as well as optionally jumping directly to a specific numbered page. This component is best suited for content-heavy sites where information is divided across multiple pages, such as blog posts, articles, tutorials, or [Search](/search) results. For paginating tabular data, use the Table pagination component instead.\n\n",
+  "usage": "Pagination is a navigational component that allows users to move between pages of content. It provides controls for navigating to the previous or next page, as well as optionally jumping directly to a specific numbered page. This component is best suited for content-heavy sites where information is divided across multiple pages, such as blog posts, articles, tutorials, or [Search](/search) results.\n\n### When to use\n\n*   Content is divided across multiple pages and requires navigation controls\n*   Users may need to jump to a specific page within the content\n*   Users are likely to return to a previously visited page\n*   The total number of items or pages is known and finite\n*   Content consumption benefits from clear boundaries between pages\n\n### When not to use\n\n*   Paginating tabular data; use the Table pagination component instead\n*   Guided flows or multi-step processes; use step navigation (“Back” and “Next” buttons) instead\n*   Exploratory interfaces where users browse without a specific target; consider infinite scrolling\n*   Single-page content that does not require division\n\n### Page number display behavior\n\nThe pagination component adapts based on the total number of pages. When there are five or fewer pages, all page numbers are displayed, allowing users to access any page directly. When the page count exceeds five, the component truncates the page numbers to maintain a compact footprint. In the truncated state, the first and last pages are always visible, with an ellipsis indicating omitted pages. The three page numbers displayed in the middle section are centered around the currently active page, ensuring the user always has context for their current position within the content.\n\n### Navigation-only variant\n\nIn some cases, displaying page numbers may not be necessary or practical. The pagination component can be configured to show only the previous and next navigation buttons without page numbers. This variant is appropriate when the total page count is unknown, such as with keyset pagination, or when space constraints require a more compact interface. It is also suitable in scenarios where users are expected to browse content sequentially rather than jump to specific pages, and where there is no expectation that users will need to return to a previously visited page.\n\n### Placement\n\nPosition the pagination component at the bottom right of the page or section containing the paginated content. This placement aligns with conventional reading patterns and provides a consistent location for users to find navigation controls after consuming content.\n\n### Pagination vs step navigation\n\nPagination and step navigation buttons serve distinct purposes. Step navigation, typically labeled as \"Next\" and \"Back,\" is intended for guided flows such as wizards, multi-step forms, or onboarding sequences where users progress through a defined series of steps. Pagination, by contrast, is designed for browsing discrete pages of content where users may navigate non-sequentially and revisit previous pages.\n\n### Pagination vs infinite scrolling\n\nChoose between pagination and infinite scrolling based on expected user behavior. Infinite scrolling is more appropriate when users are exploring content without a specific target in mind, as it encourages continued engagement by automatically loading additional items. Pagination is preferable when users are searching for a specific item and may want to target a particular page where they expect to find it. Pagination also supports scenarios where users need to return to a previously identified item, as page numbers provide a reliable reference point.",
+  "examples": "",
+  "interactions": "",
+  "sitesArchitectureLevels": "i-UvVNCYZ44t",
+  "anatomy": {
+    "table": [
+      {
+        "number": 1,
+        "name": "Previous page",
+        "description": "Navigates to the page immediately before the current page. It’s disabled on the first page."
+      },
+      {
+        "number": 2,
+        "name": "First and last page",
+        "description": "The first and last pages of the list are always visible."
+      },
+      {
+        "number": 3,
+        "name": "Elipsis",
+        "description": "Indicates hidden pages when the total number of pages is large. It appears when there is a gap of more than one page between the active page and the first or last page."
+      },
+      {
+        "number": 4,
+        "name": "Page",
+        "description": "A page is a single view of a fixed subset of items within a larger dataset."
+      },
+      {
+        "number": 5,
+        "name": "Next page",
+        "description": "Navigates to the page immediately after the current page. It’s disabled on the last page."
+      },
+      {
+        "number": 6,
+        "name": "Numbered pages",
+        "description": "The numbered pages can be hidden in situations where there isn’t the technical ability to jump to specific number pages, or when the the layout requires a simpler pagination"
+      }
+    ]
+  },
+  "properties": [
+    {
+      "name": "Show/hide numbered pages",
+      "required": false,
+      "type": "boolean",
+      "description": "To show or hide the numbered pages ",
+      "constraint": "",
+      "defaultOption": "Show",
+      "options": [
+        "Show",
+        "hide"
+      ]
+    },
+    {
+      "name": "Pages data",
+      "required": true,
+      "type": "object",
+      "description": "The data of the pages that should be paginated",
+      "constraint": "",
+      "defaultOption": ""
+    }
+  ],
+  "changeLog": [
+    {
+      "who": "Maximilian Blazek",
+      "when": "2025-11-21T17:00:00.000+00:00",
+      "what": "Initial commit"
+    },
+    {
+      "who": "Maximilian Blazek",
+      "when": "2026-02-13T15:00:00.000+00:00",
+      "what": "Added links"
+    },
+    {
+      "who": "Daniel Mutis",
+      "when": "2026-01-05T12:00:00.000+00:00",
+      "what": "Write description, anatomy, usage guidelines and properties"
+    }
+  ],
+  "decisionLog": [],
+  "appliedRules": [],
+  "exceptionFromRules": [],
+  "mentionedIn": [],
+  "mentionsComponents": [
+    {
+      "name": "Search",
+      "slug": "search"
+    }
+  ],
+  "url": "https://component.wiki/pagination"
+}

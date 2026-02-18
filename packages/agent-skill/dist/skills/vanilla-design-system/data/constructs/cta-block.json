@@ -1,0 +1,171 @@
+{
+  "name": "CTA block",
+  "slug": "cta-block",
+  "type": "Complex component",
+  "tiers": "Sites",
+  "documentationStatus": "Minimal",
+  "lastEdited": "2026-02-13T15:26:11.288+00:00",
+  "figmaLink": "https://www.figma.com/design/1brHCsyeTE6FU7hfJd6ao2/%F0%9F%8C%90-Sites---Core-component-library?node-id=33-1471",
+  "codeLink": "https://github.com/canonical/vanilla-framework/blob/main/scss/_patterns_cta.scss",
+  "description": "The CTA (call to action) block presents one or more related actions that guide the user toward the next step within a section, such as learning more, making contact, or downloading a resource. It supports primary, secondary, and link-level CTA, all of which are optional and can be combined depending on the context. It provides a visually prominent way to highlight key next steps and should be used when you want to encourage decisive user engagement within a page or section. ",
+  "usage": "Use the CTA block to indicate a clear next step in the user journey. Copy should start with an accurate, inclusive verb and clearly state where the user will end up. The block supports primary, secondary, and link-level actions, all of which are optional and can be combined depending on the context.\n\nChoose the appropriate action type based on the priority of the task: use a [Primary CTA](/cta-block#anatomy) only in sections that require a clear, high-emphasis step; use [Secondary CTA](/cta-block#anatomy) for general navigation or supportive flows; and use [Link CTA](/cta-block#anatomy) for lightweight, contextual paths to additional information. Keep copy short, action-oriented, and descriptive of where the user will end up. For more detailed content best practices, refer to the [copy style guide](https://docs.google.com/document/d/1AX-kSNztuAmShEoohe8L3LNLRnSKF7I0qkZGNeoGOok/edit?tab=t.0#heading=h.435t7gykww).\n\n### When to use\n\n*   When a section needs to present one or more clear next steps related to its content.\n*   When guiding users toward a conversion, task, or content pathway that benefits from visual grouping.\n*   When the section requires a defined hierarchy of actions, such as highlighting one main option and supporting it with alternatives.\n\n### When not to use\n\n*   When more than three competing actions must be shown together.\n*   *   Use a list with link type or restructure content to limit actions to one clear choice.\n*   When the actions are not related or cannot be meaningfully grouped together in one block.\n*   *   Separate them across individual subsections or sections.\n*   When the primary purpose of a section is to present and emphasise a single CTA.\n*   *   Use [CTA section](/cta-section) instead.\n*   Button type ([Primary CTA](/cta-block#anatomy), [Secondary CTA](/cta-block#anatomy)): when the text cannot be expressed clearly within 20 characters.\n*   *   Use [Link CTA](/cta-block#anatomy) instead.",
+  "examples": "Single [Primary CTA](/cta-block#anatomy)\n\n![Component example wrapper-2.png](images/8e575e93-ecf8-4454-af70-b0fea9288185.png)\n\n[Primary CTA](/cta-block#anatomy) + [Secondary CTA](/cta-block#anatomy)\n\n![Component example wrapper-1.png](images/cb4c593e-d88e-43c3-aa34-b9fd8e081b1e.png)\n\n[Primary CTA](/cta-block#anatomy) + [Link CTA](/cta-block#anatomy)\n\n![Component example wrapper.png](images/00bc99cb-bc49-496c-b028-a596aa83e7cf.png)\n\nSingle [Secondary CTA](/cta-block#anatomy)\n\n![Component example wrapper-3.png](images/a20b23f5-9212-4058-ac7e-11381f128279.png)\n\n[Secondary CTA](/cta-block#anatomy) + [Link CTA](/cta-block#anatomy)\n\n![Component example wrapper-5.png](images/5b5234b0-6c52-4c8a-bdd5-dad8147da778.png)\n\nSingle [Link CTA](/cta-block#anatomy)\n\n![Component example wrapper-4.png](images/8847746a-2dc4-44fb-a3f4-86b307988930.png)",
+  "interactions": "",
+  "sitesArchitectureLevels": "i-UvVNCYZ44t",
+  "anatomy": {
+    "table": [
+      {
+        "number": 1,
+        "name": "Primary CTA",
+        "description": "The primary CTA provides the highest level of emphasis within the CTA block and can be used when a section requires a clear, dominant next step. This action helps users understand the most encouraged path forward in moments where a key conversion or major interaction is expected. It may be used in hero or other sections that call for a strong prompt."
+      },
+      {
+        "number": 2,
+        "name": "Secondary CTA",
+        "description": "The secondary action offers a positive next step with reduced visual weight and is suitable for sections that do not require a high-emphasis option. Rather than competing with a primary action, it supports the overall flow by presenting a clear but moderate choice. This makes it appropriate for general sections, where it may serve as the main actionable element."
+      },
+      {
+        "number": 3,
+        "name": "Link CTA",
+        "description": "The link CTA provides a lightweight option for additional or contextual actions that sit outside the main task flow. Instead of guiding users toward a primary conversion, it typically routes them to more information or related pages. This longer, descriptive text format helps users explore details without drawing attention away from higher-priority actions."
+      }
+    ]
+  },
+  "properties": [
+    {
+      "name": "Link CTA",
+      "required": false,
+      "type": "string",
+      "description": "The text link used for contextual actions or pathways to more information. It uses a chevron (›) to indicate navigation to additional content or pages.",
+      "constraint": "Up to 60 characters",
+      "defaultOption": ""
+    },
+    {
+      "name": "Primary CTA",
+      "required": false,
+      "type": "string",
+      "description": "The CTA used with the positive button style. It indicates a high-priority, positive action and is reserved for hero areas or other key call-to-action sections.",
+      "constraint": "Up to 20 characters",
+      "defaultOption": ""
+    },
+    {
+      "name": "Secondary CTA",
+      "required": false,
+      "type": "string",
+      "description": "The CTA using the default button style. It is used for most actions that are positive but not primary, and may serve as the main CTA in non-hero sections.",
+      "constraint": "Up to 20 characters",
+      "defaultOption": ""
+    }
+  ],
+  "childProperties": [
+    {
+      "name": "Button",
+      "properties": [
+        {
+          "name": "Type",
+          "required": false,
+          "type": "single select",
+          "description": "Type controls the semantic type of the button.",
+          "constraint": "",
+          "defaultOption": "default",
+          "options": [
+            "default",
+            "base",
+            "brand",
+            "positive",
+            "negative"
+          ]
+        },
+        {
+          "name": "State",
+          "required": false,
+          "type": "single select",
+          "description": "The state the button is currently in.",
+          "constraint": "",
+          "defaultOption": "default",
+          "options": [
+            "default",
+            "hover",
+            "active",
+            "processing",
+            "disabled"
+          ]
+        },
+        {
+          "name": "Size",
+          "required": false,
+          "type": "single select",
+          "description": "Controls the size of the button. Smaller sizes can be used in places where space is at a premium.",
+          "constraint": "",
+          "defaultOption": "default",
+          "options": [
+            "default",
+            "small",
+            "dense"
+          ]
+        },
+        {
+          "name": "Text",
+          "required": false,
+          "type": "string",
+          "description": "Determines the [Text](wiki-ref://grid-YfHOdsWGM_/i-O2YLH2Npwe) that is being displayed in the button. Either text or an icon needs to be provided. If no text is provided but an icon is it is an icon only button",
+          "constraint": "",
+          "defaultOption": ""
+        },
+        {
+          "name": "Icon left",
+          "required": false,
+          "type": "single select",
+          "description": "Determines the type of icon that is shown in the button on the left side. Either the text or this icon needs to be provided. If only this icon is provided then it is an icon only button. If no icon is provided the icon is not shown",
+          "constraint": "",
+          "defaultOption": "",
+          "options": [
+            "Available icons in Vanilla"
+          ]
+        },
+        {
+          "name": "Icon right",
+          "required": false,
+          "type": "single select",
+          "description": "Determines the type of icon that is shown in the button on the right side. While there is no restriction which icon can be shown here be aware that semantic icons should be shown on the left. For the most part only chevrons are used on this side.",
+          "constraint": "",
+          "defaultOption": "",
+          "options": [
+            "Available icons in Vanilla"
+          ]
+        }
+      ]
+    }
+  ],
+  "changeLog": [
+    {
+      "who": "Maximilian Blazek",
+      "when": "2026-02-13T15:00:00.000+00:00",
+      "what": "Added links"
+    }
+  ],
+  "decisionLog": [],
+  "appliedRules": [],
+  "exceptionFromRules": [],
+  "mentionedIn": [
+    {
+      "name": "Basic section",
+      "slug": "basic-section"
+    },
+    {
+      "name": "CTA section",
+      "slug": "cta-section"
+    },
+    {
+      "name": "Divided section",
+      "slug": "divided-section"
+    }
+  ],
+  "mentionsComponents": [
+    {
+      "name": "CTA section",
+      "slug": "cta-section"
+    }
+  ],
+  "url": "https://component.wiki/cta-block"
+}

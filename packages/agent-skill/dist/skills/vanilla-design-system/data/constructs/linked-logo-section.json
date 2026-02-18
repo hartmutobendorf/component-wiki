@@ -1,0 +1,101 @@
+{
+  "name": "Linked logo section",
+  "slug": "linked-logo-section",
+  "type": "Pattern",
+  "tiers": "Sites",
+  "documentationStatus": "Needs work",
+  "lastEdited": "2026-02-10T08:16:33.049+00:00",
+  "figmaLink": "",
+  "codeLink": "",
+  "description": "",
+  "usage": "",
+  "examples": "",
+  "interactions": "",
+  "sitesArchitectureLevels": "i-ues18YVwia",
+  "properties": [
+    {
+      "name": "Section rule",
+      "required": true,
+      "type": "single select",
+      "description": "The rule component indicates the beginning of a new pattern",
+      "constraint": "Only use the default style for the section-level rule",
+      "defaultOption": "default",
+      "options": [
+        "default"
+      ]
+    },
+    {
+      "name": "Heading",
+      "required": true,
+      "type": "string",
+      "description": "4-column width heading using H2",
+      "constraint": "Up to 60 characters",
+      "defaultOption": ""
+    },
+    {
+      "name": "Linked heading",
+      "required": false,
+      "type": "single select",
+      "description": "The heading can be used as a link when paired with a chevron(›) and a clear indication.",
+      "constraint": "",
+      "defaultOption": "default",
+      "options": [
+        "default",
+        "link"
+      ]
+    },
+    {
+      "name": "Link CTA",
+      "required": false,
+      "type": "string",
+      "description": "The text link used for contextual actions or pathways to more information. It uses a chevron (›) to indicate navigation to additional content or pages.",
+      "constraint": "Up to 60 characters",
+      "defaultOption": ""
+    },
+    {
+      "name": "Bottom padding",
+      "required": true,
+      "type": "single select",
+      "description": "The type of padding applied to the bottom of the pattern",
+      "constraint": "",
+      "defaultOption": "default",
+      "options": [
+        "default",
+        "deep",
+        "shallow",
+        "none"
+      ]
+    },
+    {
+      "name": "Link text",
+      "required": true,
+      "type": "string",
+      "description": "The link text for the logo",
+      "constraint": "Up to 60 characters",
+      "defaultOption": ""
+    },
+    {
+      "name": "Linked logo image",
+      "required": true,
+      "type": "object",
+      "description": "16:9 image container with the logo image inside ",
+      "constraint": "",
+      "defaultOption": ""
+    }
+  ],
+  "changeLog": [],
+  "decisionLog": [],
+  "appliedRules": [],
+  "exceptionFromRules": [
+    "i-G2gqVu6pWJ",
+    "i-c0fL3b9UM5"
+  ],
+  "mentionedIn": [
+    {
+      "name": "Basic section",
+      "slug": "basic-section"
+    }
+  ],
+  "mentionsComponents": [],
+  "url": "https://component.wiki/linked-logo-section"
+}

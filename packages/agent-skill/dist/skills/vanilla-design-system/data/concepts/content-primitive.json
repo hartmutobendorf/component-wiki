@@ -1,0 +1,26 @@
+{
+  "name": "Content primitive",
+  "slug": "content-primitive",
+  "type": "Architecture",
+  "tier": "Sites",
+  "documentationStatus": "Unclear",
+  "lastEdited": "2026-02-18T09:29:54.400+00:00",
+  "description": "The smallest meaningful authored content value.",
+  "content": "",
+  "changeLog": [],
+  "decisionLog": [],
+  "appliedRules": [
+    "i-U3IwMn0dXk",
+    "i-oDEFAbETSH",
+    "i-a2Gvf8PqqZ",
+    "i-R2qsN9a5_r",
+    "i-DClns4jP5n",
+    "i-WesQQ1XF0e",
+    "i-GzGBjzo9ua",
+    "i-0beC9X4XSV"
+  ],
+  "exceptedFromRules": [],
+  "mentionedIn": [],
+  "mentionsComponents": [],
+  "url": "https://component.wiki/content-primitive"
+}

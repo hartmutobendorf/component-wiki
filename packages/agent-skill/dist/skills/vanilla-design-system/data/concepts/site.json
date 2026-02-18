@@ -1,0 +1,28 @@
+{
+  "name": "Site",
+  "slug": "site",
+  "type": "Architecture",
+  "tier": "Sites",
+  "documentationStatus": "Unclear",
+  "lastEdited": "2026-02-18T09:29:54.400+00:00",
+  "description": "The complete web property or domain.",
+  "content": "",
+  "changeLog": [],
+  "decisionLog": [],
+  "appliedRules": [
+    "i-fccXU5un82",
+    "i-LjFEVoZ_Ij",
+    "i-oTSGQdCEDB",
+    "i-PfTz-qcg99",
+    "i-TLC1vpYS-W",
+    "i-XZuz5ismLA",
+    "i-SB1Dt8B9RR",
+    "i-KM2RmVLsIO",
+    "i-BiYYMGD9DJ",
+    "i-U1MJIkrB5P"
+  ],
+  "exceptedFromRules": [],
+  "mentionedIn": [],
+  "mentionsComponents": [],
+  "url": "https://component.wiki/site"
+}

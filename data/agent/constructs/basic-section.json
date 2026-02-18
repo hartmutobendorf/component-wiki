@@ -1,0 +1,513 @@
+{
+  "name": "Basic section",
+  "slug": "basic-section",
+  "type": "Pattern",
+  "tiers": "Sites",
+  "documentationStatus": "Minimal",
+  "lastEdited": "2026-02-17T08:35:03.837+00:00",
+  "figmaLink": "https://www.figma.com/design/1brHCsyeTE6FU7hfJd6ao2/%F0%9F%9A%A7---WIP--Sites---Core-component-library?node-id=41-9326",
+  "codeLink": "https://github.com/canonical/vanilla-framework/blob/WD-22552-feat-data-spotlight-pattern/templates/_macros/vf_basic-section.jinja",
+  "description": "The Basic section is a two-column (50/50) layout pattern for presenting a single topic with a mix of content blocks. It can include text, images, videos, lists, code snippets, logos, and call-to-action elements. \n\nChoose this pattern to communicate a single topic that can be clearly conveyed in a side-by-side, two-column structure.",
+  "usage": "Use the Basic section to communicate one idea and support that idea in a variety of content blocks. To promote readability and cohesion, limit each section to seven or fewer content blocks. This section works best when the copy is concise and each block supports the main topic. Avoid mixing unrelated messages or different content types.\n\nThe Basic section typically works best with a title on the left and supporting material on the right. For medium size, the macro has 50/50 and full-width variants to accommodate different content needs.\n\n### Supported UI blocks for the [Content area](/basic-section#anatomy)\n\n1.  **Subtitle / subheading** \\- Add more hierarchy beneath the title, using H4 or H5.\n2.  **Description / body text** \\- Use for long-form descriptions or explanations, when full sentences and paragraphs work best.\n3.  **Image** - Include a 3:2 or 16:9 ratio image to illustrate or enhance the content including: photography, isometric illustrations, diagrams, and similar visuals. The image can include an optional caption.\n4.  **Video** \\- Embed and link video content in 16:9 ratio.\n5.  **[List](/list)** - List up to 10 items, with bullet type options including: none, bullet, status, or number.\n6.  **Code block** - Display pre-formatted code.\n7.  **[Logo block](/logo-block)** - Display related logos such as customers or partners.\n8.  **[Linked logo block](/linked-logo-block)** \\- Display logos that link to additional resources.\n9.  **[CTA block](/cta-block)** - Share one or more call-to-action elements, including a primary button, secondary button, and link.\n10.  **[Notification](/notification)** - Highlight alerts, updates, or contextual messages within the section.\n\n### When to use\n\n*   You’re not sure what other section to use, this is the fallback\n*   To present one clear topic with supporting explanatory content\n*   For both marketing and informational content that requires a flexible pattern\n*   The 50/50 layout balances text and media for better readability.\n\n### When not to use\n\n*   When multiple topics or groups require clearer separation, or the content needs to be quickly scanned like a list. Consider the [Tiered list](/tiered-list), [Equal heights](/equal-heights), or [Divided section](/divided-section) instead.\n*   If one content block is sufficient, use the section for that particular purpose. For example, the [Logo section](/logo-section), [Linked logo section](/linked-logo-section), or [Resources](/resources).\n*   When an immersive or highlight-oriented layout is appropriate, use the [Rich vertical list](/rich-vertical-list), or [Text spotlight](/text-spotlight) or [Data spotlight](/data-spotlight) sections.",
+  "examples": "### Responsive\n\nMedium dimension (50/50 split)\n\n![Component example wrapper-1.png](images/7b46c4bb-07d9-4930-b67f-2110346511de.png)\n\nMedium dimension (100)\n\n![Component example wrapper-3.png](images/bce789e2-077e-4c32-bac1-50570b9628ce.png)\n\nSmall dimension\n\n![Component example wrapper-2.png](images/49e5bf4c-72b8-473c-9f6c-48ead538dbaf.png)",
+  "interactions": "",
+  "sitesArchitectureLevels": "i-ues18YVwia",
+  "anatomy": {
+    "table": [
+      {
+        "number": 1,
+        "name": "Rule",
+        "description": "The rule component indicates the beginning of a new section."
+      },
+      {
+        "number": 2,
+        "name": "Heading",
+        "description": "The section heading communicates the primary subject or theme of the section."
+      },
+      {
+        "number": 3,
+        "name": "Eyebrow",
+        "description": "The optional muted eyebrow placed above the section title. It provides additional contextual information or categorization for the section when needed."
+      },
+      {
+        "number": 4,
+        "name": "Content area",
+        "description": "The content area on the right side of the 50/50 layout where various block types can be placed. Supported blocks include text, images, lists, videos, code snippets, logos, CTAs, and other compatible patterns. The Basic Section layout provides flexible composition while maintaining structural consistency."
+      }
+    ]
+  },
+  "properties": [
+    {
+      "name": "Section rule",
+      "required": true,
+      "type": "single select",
+      "description": "The rule component indicates the beginning of a new pattern",
+      "constraint": "Only use the default style for the section-level rule",
+      "defaultOption": "default",
+      "options": [
+        "default"
+      ]
+    },
+    {
+      "name": "Medium layout",
+      "required": false,
+      "type": "single select",
+      "description": "Indicate layout for medium size",
+      "constraint": "",
+      "defaultOption": "100",
+      "options": [
+        "50/50",
+        "100"
+      ]
+    },
+    {
+      "name": "Heading",
+      "required": true,
+      "type": "string",
+      "description": "4-column width heading using H2",
+      "constraint": "Up to 60 characters",
+      "defaultOption": ""
+    },
+    {
+      "name": "Linked heading",
+      "required": false,
+      "type": "single select",
+      "description": "The heading can be used as a link when paired with a chevron(›) and a clear indication.",
+      "constraint": "",
+      "defaultOption": "default",
+      "options": [
+        "default",
+        "link"
+      ]
+    },
+    {
+      "name": "Body",
+      "required": false,
+      "type": "string",
+      "description": "4-column width body text",
+      "constraint": "Up to 600 characters",
+      "defaultOption": ""
+    },
+    {
+      "name": "Block bottom padding",
+      "required": false,
+      "type": "single select",
+      "description": "The type of padding applied to the block",
+      "constraint": "The last block of the pattern must not have bottom padding.",
+      "defaultOption": "none",
+      "options": [
+        "none",
+        "shallow"
+      ]
+    },
+    {
+      "name": "Bottom padding",
+      "required": true,
+      "type": "single select",
+      "description": "The type of padding applied to the bottom of the pattern",
+      "constraint": "",
+      "defaultOption": "default",
+      "options": [
+        "default",
+        "deep",
+        "shallow",
+        "none"
+      ]
+    },
+    {
+      "name": "Eyebrow",
+      "required": false,
+      "type": "string",
+      "description": "The eyebrow placed above the heading using muted heading",
+      "constraint": "Up to 30 characters",
+      "defaultOption": ""
+    },
+    {
+      "name": "Subheading",
+      "required": false,
+      "type": "string",
+      "description": "The subheading provides additional hierarchy beneath the main title",
+      "constraint": "h4: up to 100 characters\nh5: up to 160 characters",
+      "defaultOption": "h4",
+      "options": [
+        "h4",
+        "h5"
+      ]
+    }
+  ],
+  "childProperties": [
+    {
+      "name": "CTA block",
+      "properties": [
+        {
+          "name": "Link CTA",
+          "required": false,
+          "type": "string",
+          "description": "The text link used for contextual actions or pathways to more information. It uses a chevron (›) to indicate navigation to additional content or pages.",
+          "constraint": "Up to 60 characters",
+          "defaultOption": ""
+        },
+        {
+          "name": "Primary CTA",
+          "required": false,
+          "type": "string",
+          "description": "The CTA used with the positive button style. It indicates a high-priority, positive action and is reserved for hero areas or other key call-to-action sections.",
+          "constraint": "Up to 20 characters",
+          "defaultOption": ""
+        },
+        {
+          "name": "Secondary CTA",
+          "required": false,
+          "type": "string",
+          "description": "The CTA using the default button style. It is used for most actions that are positive but not primary, and may serve as the main CTA in non-hero sections.",
+          "constraint": "Up to 20 characters",
+          "defaultOption": ""
+        }
+      ]
+    },
+    {
+      "name": "Code",
+      "properties": [
+        {
+          "name": "Text",
+          "required": true,
+          "type": "string",
+          "description": "The code that is being shown inside of the code component.",
+          "constraint": "",
+          "defaultOption": ""
+        }
+      ]
+    },
+    {
+      "name": "Notification",
+      "properties": [
+        {
+          "name": "Type",
+          "required": true,
+          "type": "single select",
+          "description": "What semantic type the notification is.",
+          "constraint": "",
+          "defaultOption": "",
+          "options": [
+            "information",
+            "negative",
+            "positive",
+            "caution"
+          ]
+        },
+        {
+          "name": "Border",
+          "required": false,
+          "type": "boolean",
+          "description": "Wether the notification has a border or not. Borderless notifications are used for example in [Table](wiki-ref://grid-ymtdOF6n4R/i-aUPUyjNgjD).",
+          "constraint": "",
+          "defaultOption": "true",
+          "options": [
+            "true",
+            "false"
+          ]
+        },
+        {
+          "name": "Inline",
+          "required": false,
+          "type": "boolean",
+          "description": "Wether the title and description of the notification are being shown in one line. reduces the overall height of the notification allowing it to be used where space is at a premium.",
+          "constraint": "",
+          "defaultOption": "false",
+          "options": [
+            "true",
+            "false"
+          ]
+        },
+        {
+          "name": "Title",
+          "required": false,
+          "type": "string",
+          "description": "Sets the content of the title.",
+          "constraint": "",
+          "defaultOption": ""
+        },
+        {
+          "name": "Description",
+          "required": false,
+          "type": "string",
+          "description": "Sets the content of the description.",
+          "constraint": "",
+          "defaultOption": ""
+        },
+        {
+          "name": "Dismissible",
+          "required": false,
+          "type": "boolean",
+          "description": "Wether or not the notification can be dismissed. If it can be dismissed the dismiss button is being shown.",
+          "constraint": "",
+          "defaultOption": "true",
+          "options": [
+            "true",
+            "false"
+          ]
+        },
+        {
+          "name": "Actions",
+          "required": false,
+          "type": "slot",
+          "description": "Allows to give associated actions with the notification.",
+          "constraint": "Action link components",
+          "defaultOption": ""
+        },
+        {
+          "name": "Time stamp",
+          "required": false,
+          "type": "string",
+          "description": "Can be set to the timestamp when the event when that triggered the notification took place.",
+          "constraint": "Date formatted string",
+          "defaultOption": ""
+        }
+      ]
+    },
+    {
+      "name": "Logo block",
+      "properties": [
+        {
+          "name": "Logo block",
+          "required": true,
+          "type": "slot",
+          "description": "The logo block showcases a group of related images, such as a group of customer or partner logos.",
+          "constraint": "Up to 10 logos\nLinking individual logos is not allowed",
+          "defaultOption": ""
+        }
+      ]
+    },
+    {
+      "name": "Linked logo block",
+      "properties": [
+        {
+          "name": "Link CTA",
+          "required": false,
+          "type": "string",
+          "description": "The text link used for contextual actions or pathways to more information. It uses a chevron (›) to indicate navigation to additional content or pages.",
+          "constraint": "Up to 60 characters",
+          "defaultOption": ""
+        },
+        {
+          "name": "Link text",
+          "required": true,
+          "type": "string",
+          "description": "The link text for the logo",
+          "constraint": "Up to 60 characters",
+          "defaultOption": ""
+        },
+        {
+          "name": "Linked logo image",
+          "required": true,
+          "type": "object",
+          "description": "16:9 image container with the logo image inside ",
+          "constraint": "",
+          "defaultOption": ""
+        }
+      ]
+    },
+    {
+      "name": "Images",
+      "properties": [
+        {
+          "name": "Image",
+          "required": false,
+          "type": "slot",
+          "description": "The container for placing visual content such as images, illustrations, or diagrams.",
+          "constraint": "",
+          "defaultOption": ""
+        },
+        {
+          "name": "Image aspect ratio ",
+          "required": false,
+          "type": "single select",
+          "description": "Indicate ratio of the image",
+          "constraint": "",
+          "defaultOption": "default",
+          "options": [
+            "default",
+            "16:9",
+            "3:2"
+          ]
+        },
+        {
+          "name": "Image aspect ratio ",
+          "required": false,
+          "type": "single select",
+          "description": "Indicate ratio of the image",
+          "constraint": "",
+          "defaultOption": "default",
+          "options": [
+            "default",
+            "16:9",
+            "3:2",
+            "2:3",
+            "cinematic",
+            "square"
+          ]
+        },
+        {
+          "name": "Image responsive aspect ratio",
+          "required": false,
+          "type": "multi select",
+          "description": "Change the aspect ratio of an image container, depending on the screen size",
+          "constraint": "",
+          "defaultOption": "",
+          "options": [
+            "16:9",
+            "3:2",
+            "2:3",
+            "cinematic",
+            "square\non large",
+            "on medium",
+            "on small"
+          ]
+        },
+        {
+          "name": "Image caption",
+          "required": false,
+          "type": "string",
+          "description": "Optional HTML caption below the image",
+          "constraint": "",
+          "defaultOption": ""
+        }
+      ]
+    },
+    {
+      "name": "List",
+      "properties": [
+        {
+          "name": "List item text",
+          "required": true,
+          "type": "string",
+          "description": "Sets the content of the list",
+          "constraint": "Up to 250 characters",
+          "defaultOption": ""
+        },
+        {
+          "name": "List",
+          "required": true,
+          "type": "slot",
+          "description": "The divided list supporting up to 10 items",
+          "constraint": "Up to 10 items",
+          "defaultOption": ""
+        },
+        {
+          "name": "List bullet type",
+          "required": false,
+          "type": "single select",
+          "description": "Bullet type options",
+          "constraint": "",
+          "defaultOption": "bullet",
+          "options": [
+            "none",
+            "bullet",
+            "status",
+            "number"
+          ]
+        },
+        {
+          "name": "List divided",
+          "required": false,
+          "type": "boolean",
+          "description": "Whether has muted rule between list items",
+          "constraint": "",
+          "defaultOption": "true",
+          "options": [
+            "true",
+            "false"
+          ]
+        },
+        {
+          "name": "List nested",
+          "required": false,
+          "type": "boolean",
+          "description": "Hierarchical list structures",
+          "constraint": "",
+          "defaultOption": "false",
+          "options": [
+            "true",
+            "false"
+          ]
+        }
+      ]
+    }
+  ],
+  "changeLog": [
+    {
+      "who": "Isaac Kim",
+      "when": "2025-11-21T17:00:00.000+00:00",
+      "what": "Initial commit"
+    },
+    {
+      "who": "Maximilian Blazek",
+      "when": "2026-02-13T15:00:00.000+00:00",
+      "what": "Added links"
+    }
+  ],
+  "decisionLog": [],
+  "appliedRules": [],
+  "exceptionFromRules": [],
+  "mentionedIn": [
+    {
+      "name": "CTA section",
+      "slug": "cta-section"
+    },
+    {
+      "name": "Divided section",
+      "slug": "divided-section"
+    }
+  ],
+  "mentionsComponents": [
+    {
+      "name": "CTA block",
+      "slug": "cta-block"
+    },
+    {
+      "name": "Data spotlight",
+      "slug": "data-spotlight"
+    },
+    {
+      "name": "Divided section",
+      "slug": "divided-section"
+    },
+    {
+      "name": "Equal heights",
+      "slug": "equal-heights"
+    },
+    {
+      "name": "Linked logo section",
+      "slug": "linked-logo-section"
+    },
+    {
+      "name": "List",
+      "slug": "list"
+    },
+    {
+      "name": "Logo section",
+      "slug": "logo-section"
+    },
+    {
+      "name": "Notification",
+      "slug": "notification"
+    },
+    {
+      "name": "Resources",
+      "slug": "resources"
+    },
+    {
+      "name": "Rich vertical list",
+      "slug": "rich-vertical-list"
+    },
+    {
+      "name": "Text spotlight",
+      "slug": "text-spotlight"
+    },
+    {
+      "name": "Tiered list",
+      "slug": "tiered-list"
+    }
+  ],
+  "url": "https://component.wiki/basic-section"
+}

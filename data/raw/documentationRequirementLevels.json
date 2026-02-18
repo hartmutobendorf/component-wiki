@@ -1,0 +1,134 @@
+{
+  "fetchedAt": "2026-02-18T11:12:38.938Z",
+  "rows": {
+    "i-ZJJjLkCWPu": {
+      "rowId": "i-ZJJjLkCWPu",
+      "keyWord": "NOT RECOMMENDED",
+      "description": "This phrase means that there may exist valid reasons in particular circumstances when the particular behavior is acceptable or even useful, but the full implications should be understood and the case carefully weighed before implementing any behavior described with this label.",
+      "conceptRules": ""
+    },
+    "i-LtH6rbAhr7": {
+      "rowId": "i-LtH6rbAhr7",
+      "keyWord": "MAY",
+      "description": "This word, or the adjective \"OPTIONAL\", mean that an item is truly optional.  One vendor may choose to include the item because a particular marketplace requires it or because the vendor feels that it enhances the product while another vendor may omit the same item. An implementation which does not include a particular option MUST be prepared to interoperate with another implementation which does include the option, though perhaps with reduced functionality. In the same vein an implementation which does include a particular option MUST be prepared to interoperate with another implementation which does not include the option (except, of course, for the feature the option provides.)",
+      "conceptRules": [
+        "i-RMzGlwDepa"
+      ]
+    },
+    "i-drEdmSxQv3": {
+      "rowId": "i-drEdmSxQv3",
+      "keyWord": "RECOMMENDED",
+      "description": "This adjective means that there may exist valid reasons in particular circumstances to ignore a particular item, but the full implications must be understood and carefully weighed before choosing a different course.",
+      "conceptRules": ""
+    },
+    "i-ol-rcOGLel": {
+      "rowId": "i-ol-rcOGLel",
+      "keyWord": "SHOULD NOT",
+      "description": "This phrase means that there may exist valid reasons in particular circumstances when the particular behavior is acceptable or even useful, but the full implications should be understood and the case carefully weighed before implementing any behavior described with this label.",
+      "conceptRules": ""
+    },
+    "i-MAT8ECM5oJ": {
+      "rowId": "i-MAT8ECM5oJ",
+      "keyWord": "SHOULD",
+      "description": "This word means that there may exist valid reasons in particular circumstances to ignore a particular item, but the full implications must be understood and carefully weighed before choosing a different course.",
+      "conceptRules": [
+        "i-G2gqVu6pWJ",
+        "i-A-73lXY-ax",
+        "i-npaG8YqZTv",
+        "i-p8Fv0e9Vn7",
+        "i-WesQQ1XF0e",
+        "i-0beC9X4XSV",
+        "i-U1MJIkrB5P",
+        "i-ZgPIFRNEVD",
+        "i-XaN4xKvGD7",
+        "i-tJQQOsZiMo",
+        "i-j-r1lZBhZp",
+        "i-1dcNQ8tIgU",
+        "i-JAVphNmWek",
+        "i-FmWFEIIPaJ",
+        "i-4rbJ4No2NZ",
+        "i-fccXU5un82",
+        "i-LjFEVoZ_Ij",
+        "i-UHzCJkGOgE",
+        "i-oTSGQdCEDB",
+        "i-PfTz-qcg99",
+        "i-TLC1vpYS-W",
+        "i-FZ-Km5eJ5b",
+        "i-MhOInQY0HT",
+        "i-XZuz5ismLA",
+        "i-SB1Dt8B9RR",
+        "i-X_mB5tolP9",
+        "i-3D-wTL_ZpX",
+        "i-8yNo6YoSKP",
+        "i--Z1CGclocL",
+        "i-KM2RmVLsIO",
+        "i-BiYYMGD9DJ",
+        "i-8Y-lOwXNl6",
+        "i-lAauaXXEXi",
+        "i-Adsxx3Q45y",
+        "i-8yJpAyM3v7",
+        "i-iyiHuhuOON",
+        "i-c0fL3b9UM5",
+        "i-ZfhWnS-frx",
+        "i-44rYxH-KL7",
+        "i-3bh5fUHXlx"
+      ]
+    },
+    "i-EVMTDfzBew": {
+      "rowId": "i-EVMTDfzBew",
+      "keyWord": "SHALL NOT",
+      "description": "This phrase, means that the definition is an absolute prohibition of the specification.",
+      "conceptRules": ""
+    },
+    "i-to06NhHIpn": {
+      "rowId": "i-to06NhHIpn",
+      "keyWord": "SHALL",
+      "description": "This word means that the definition is an absolute requirement of the specification.",
+      "conceptRules": ""
+    },
+    "i-JbDemeJZt5": {
+      "rowId": "i-JbDemeJZt5",
+      "keyWord": "MUST",
+      "description": "This word means that the definition is an absolute requirement of the specification.",
+      "conceptRules": [
+        "i-fzDIK_WZZU",
+        "i-2Bh98UVeCN",
+        "i-lTkH1FYTZj",
+        "i-B0iImJb_X1",
+        "i-vGmYX0fJ59",
+        "i-ZlUxcVMTlJ",
+        "i-U3IwMn0dXk",
+        "i-oDEFAbETSH",
+        "i-a2Gvf8PqqZ",
+        "i-R2qsN9a5_r",
+        "i-DClns4jP5n",
+        "i-GQvPWhgG-j",
+        "i-y3DBXPQ5wy",
+        "i-GzGBjzo9ua",
+        "i-jZgXWq_7bQ",
+        "i-oFPi2Wm4Cu",
+        "i-trysCiJisz",
+        "i-eofRS01iR3",
+        "i-h-bSbOSXY-",
+        "i-UAlyIFZ9mO",
+        "i-gqd_IXOIuk",
+        "i-391Nxqc9A9",
+        "i-sko58g_anS",
+        "i-CUx9WMmolk",
+        "i-8_U4S1DRcz"
+      ]
+    },
+    "i-FFlRM9yB0o": {
+      "rowId": "i-FFlRM9yB0o",
+      "keyWord": "MUST NOT",
+      "description": "This phrase, means that the definition is an absolute prohibition of the specification.",
+      "conceptRules": ""
+    },
+    "i-Hj3t_sMwce": {
+      "rowId": "i-Hj3t_sMwce",
+      "keyWord": "REQUIRED",
+      "description": "This word means that the definition is an absolute requirement of the specification.",
+      "conceptRules": ""
+    }
+  }
+}

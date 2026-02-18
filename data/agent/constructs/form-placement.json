@@ -1,0 +1,50 @@
+{
+  "name": "Form placement",
+  "slug": "form-placement",
+  "type": "Mental model",
+  "tiers": "Apps",
+  "documentationStatus": "Minimal",
+  "lastEdited": "2026-02-13T15:40:22.710+00:00",
+  "figmaLink": "",
+  "codeLink": "",
+  "description": "Form placement refers to the deliberate choice of surface: page, side panel, or modal, for presenting forms and multi-input tasks. The right surface depends on the complexity of the task, the amount of context the user needs from the current screen, and the level of disruption that is acceptable.",
+  "usage": "### Quick reference\n\nTable 1\n\n### Pages\n\nUse a dedicated page when the form involves a complex, multi-step process that requires significant user attention and multiple [Input](/input) or interactions. Pages are appropriate when the content cannot be comfortably contained within a side panel, and when the user does not need to retain context from the previous screen. For example, creating or managing an item independently of where it will eventually appear.\n\n### Side panels\n\nUse a side panel when maintaining context from the current page is important. If the user is performing a task directly related to the content or structure of the current page, such as creating a sub-item or editing an inline component. The side panel allows them to maintain that relationship without disruption. Side panels work best for lightweight or medium-complexity forms where having the surrounding information visible enhances the user's understanding or efficiency.\n\n### Modal windows\n\nModal windows should generally not be used for forms. Since modals interrupt user flow and demand focus, they are better suited for confirmation dialogs, warnings, or critical decisions, particularly destructive actions that may involve a confirmation [Input](/input) (such as typing \"DELETE\" to confirm an irreversible operation). Modals should not be used as a shortcut for tasks that are better suited to a full page or a contextual side panel.",
+  "examples": "",
+  "interactions": "",
+  "sitesArchitectureLevels": "",
+  "properties": [],
+  "changeLog": [
+    {
+      "who": "Maximilian Blazek",
+      "when": "2026-02-10T14:00:00.000+00:00",
+      "what": "Initial commit"
+    },
+    {
+      "who": "Maximilian Blazek",
+      "when": "2026-02-13T15:00:00.000+00:00",
+      "what": "Added links"
+    }
+  ],
+  "decisionLog": [
+    {
+      "where": "App mafia",
+      "what": "We’ve agreed that **pages** should be used for more complex, multi-step processes that require significant user attention and involve multiple inputs or interactions. Pages are most appropriate when the task at hand cannot be naturally or comfortably contained within a side panel, either due to the complexity of the content or the length of the process. Additionally, pages are ideal when the user does not need to retain context from the previous screen. For example, when creating or managing an item independently of where it will eventually appear.\n\nIn contrast, **side panels** are most effective when context is important. If the user is performing a task that is directly related to the content or structure of the current page, such as creating a sub-item or editing an inline component, the side panel allows them to maintain that relationship without disruption. Side panels work best for lightweight or medium-complexity forms where having the surrounding information visible enhances the user’s understanding or efficiency.\n\n**Modal windows** should generally not be used for forms. Since modals interrupt the user flow and demand focus, they are better suited for confirmation dialogs, warnings, or critical decisions, particularly destructive actions that may involve a confirmation input (such as typing \"DELETE\" to confirm an irreversible operation). Modals should not be used as a shortcut for tasks that are better suited to a full page or a contextual side panel.",
+      "link": "https://docs.google.com/document/d/1e96PtV1x-CiHkvrCn6_U0_1fHV6yTQg3UTXKvQyG9wc/edit?tab=t.5l0pasbf331b#bookmark=id.278axbctzfcy",
+      "when": ""
+    }
+  ],
+  "appliedRules": [],
+  "exceptionFromRules": [],
+  "mentionedIn": [],
+  "mentionsComponents": [
+    {
+      "name": "Input",
+      "slug": "input"
+    },
+    {
+      "name": "Input",
+      "slug": "input"
+    }
+  ],
+  "url": "https://component.wiki/form-placement"
+}

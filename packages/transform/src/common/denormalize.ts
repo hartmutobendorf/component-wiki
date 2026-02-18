@@ -1,22 +1,34 @@
 import type {
-  Component,
+  Construct,
+  Concept,
   Property,
   ChangeLogEntry,
   DecisionLogEntry,
   AnatomyPart,
   ChildPropertyGroup,
-  RawComponentRow,
-  RawPropertyRow,
-  RawAnatomyRow,
-  RawChangeLogRow,
-  RawDecisionLogRow,
+  RawConstructRow,
+  RawConstructPropertyRow,
+  RawConstructAnatomyRow,
+  RawDocumentationChangelogRow,
+  RawDocumentationDecisionlogRow,
   RawLookupRow,
-  RawComponentsTable,
-  RawPropertiesTable,
-  RawAnatomyTable,
-  RawChangeLogTable,
-  RawDecisionLogTable,
-  RawLookupTable,
+  RawConceptRow,
+  RawConstructTable,
+  RawConstructPropertiesTable,
+  RawConstructAnatomyTable,
+  RawDocumentationChangelogTable,
+  RawDocumentationDecisionlogTable,
+  RawConstructTypesTable,
+  RawDocumentationTiersTable,
+  RawDocumentationStatusTable,
+  RawDocumentationEditorsTable,
+  RawConstructPropertyTypesTable,
+  RawConceptsTable,
+  RawRulesTable,
+  RawConceptTypesTable,
+  RawDocumentationRequirementLevelsTable,
+  RawRuleStatusTable,
+  RawRuleTypesTable,
 } from "@wiki/shared";
 import { resolveAllWikiRefs } from "./resolve-links.js";
 import type { SyncConfig } from "./types.js";
@@ -24,16 +36,22 @@ import type { SyncConfig } from "./types.js";
 // --- Input shape for denormalize ---
 
 export interface RawData {
-  components: RawComponentsTable;
-  properties: RawPropertiesTable;
-  changelog: RawChangeLogTable;
-  anatomy: RawAnatomyTable;
-  decisionLog: RawDecisionLogTable;
-  types: RawLookupTable;
-  tiers: RawLookupTable;
-  documentationStatuses: RawLookupTable;
-  propertyTypes: RawLookupTable;
-  editors: RawLookupTable;
+  construct: RawConstructTable;
+  constructProperties: RawConstructPropertiesTable;
+  constructAnatomy: RawConstructAnatomyTable;
+  constructTypes: RawConstructTypesTable;
+  constructPropertyTypes: RawConstructPropertyTypesTable;
+  documentationChangelog: RawDocumentationChangelogTable;
+  documentationDecisionlog: RawDocumentationDecisionlogTable;
+  documentationStatus: RawDocumentationStatusTable;
+  documentationTiers: RawDocumentationTiersTable;
+  documentationEditors: RawDocumentationEditorsTable;
+  concepts: RawConceptsTable;
+  rules: RawRulesTable;
+  conceptTypes: RawConceptTypesTable;
+  documentationRequirementLevels: RawDocumentationRequirementLevelsTable;
+  ruleStatus: RawRuleStatusTable;
+  ruleTypes: RawRuleTypesTable;
 }
 
 // --- Helpers ---
@@ -74,10 +92,32 @@ function toStringArray(value: string | string[] | undefined): string[] {
   return [];
 }
 
+/** Build all raw tables into a single lookup for wiki-ref resolution. */
+function buildAllRawTables(raw: RawData): Record<string, { rows: Record<string, Record<string, unknown>> }> {
+  return {
+    construct: raw.construct,
+    constructProperties: raw.constructProperties,
+    constructAnatomy: raw.constructAnatomy,
+    constructTypes: raw.constructTypes,
+    constructPropertyTypes: raw.constructPropertyTypes,
+    documentationChangelog: raw.documentationChangelog,
+    documentationDecisionlog: raw.documentationDecisionlog,
+    documentationStatus: raw.documentationStatus,
+    documentationTiers: raw.documentationTiers,
+    documentationEditors: raw.documentationEditors,
+    concepts: raw.concepts,
+    rules: raw.rules,
+    conceptTypes: raw.conceptTypes,
+    documentationRequirementLevels: raw.documentationRequirementLevels,
+    ruleStatus: raw.ruleStatus,
+    ruleTypes: raw.ruleTypes,
+  };
+}
+
 // --- Transform functions ---
 
 function transformProperty(
-  row: RawPropertyRow,
+  row: RawConstructPropertyRow,
   propertyTypeRows: Record<string, RawLookupRow>,
 ): Property {
   const typeName = lookupName(propertyTypeRows, row.type).toLowerCase();
@@ -115,7 +155,7 @@ function transformProperty(
 }
 
 function transformChangelog(
-  row: RawChangeLogRow,
+  row: RawDocumentationChangelogRow,
   editorRows: Record<string, RawLookupRow>,
 ): ChangeLogEntry {
   return {
@@ -125,7 +165,7 @@ function transformChangelog(
   };
 }
 
-function transformDecisionLog(row: RawDecisionLogRow): DecisionLogEntry {
+function transformDecisionLog(row: RawDocumentationDecisionlogRow): DecisionLogEntry {
   return {
     where: row.where ?? "",
     what: row.what ?? "",
@@ -134,7 +174,7 @@ function transformDecisionLog(row: RawDecisionLogRow): DecisionLogEntry {
   };
 }
 
-function transformAnatomyPart(row: RawAnatomyRow): AnatomyPart {
+function transformAnatomyPart(row: RawConstructAnatomyRow): AnatomyPart {
   return {
     number: row.number ?? 0,
     name: row.name ?? "",
@@ -142,64 +182,64 @@ function transformAnatomyPart(row: RawAnatomyRow): AnatomyPart {
   };
 }
 
-// --- Main denormalization ---
+// --- Construct denormalization ---
 
-export function denormalize(raw: RawData, syncConfig?: SyncConfig): Component[] {
+export function denormalizeConstructs(raw: RawData, syncConfig?: SyncConfig): Construct[] {
   const {
-    components,
-    properties,
-    changelog,
-    anatomy,
-    decisionLog,
-    types,
-    tiers,
-    documentationStatuses,
-    propertyTypes,
-    editors,
+    construct,
+    constructProperties,
+    documentationChangelog,
+    constructAnatomy,
+    documentationDecisionlog,
+    constructTypes,
+    documentationTiers,
+    documentationStatus,
+    constructPropertyTypes,
+    documentationEditors,
   } = raw;
 
-  const results: Component[] = [];
+  const results: Construct[] = [];
   const warnings: string[] = [];
 
-  for (const [rowId, comp] of Object.entries(components.rows)) {
+  for (const [rowId, comp] of Object.entries(construct.rows)) {
     // Resolve type name
-    const typeName = lookupName(types.rows, comp.type);
+    const typeName = lookupName(constructTypes.rows as Record<string, RawLookupRow>, comp.type);
 
-    // Filter out "Block" type components
+    // Filter out "Block" type constructs
     if (typeName === "Block") {
       continue;
     }
 
     // Resolve lookup values
-    const tierName = lookupName(tiers.rows, comp.tiers);
-    const docStatus = lookupName(documentationStatuses.rows, comp.documentationStatus);
+    const tierName = lookupName(documentationTiers.rows as Record<string, RawLookupRow>, comp.tiers);
+    const docStatus = lookupName(documentationStatus.rows as Record<string, RawLookupRow>, comp.documentationStatus);
 
     // Generate slug
     const slug = generateSlug(comp.name);
 
     // Join properties by rowId
     const propertyIds = toStringArray(comp.properties);
-    const componentProperties: Property[] = propertyIds
+    const constructPropertyList: Property[] = propertyIds
       .map((id) => {
-        const propRow = properties.rows[id];
+        const propRow = constructProperties.rows[id];
         if (!propRow) {
           warnings.push(`[${comp.name}] Missing property rowId: ${id}`);
           return null;
         }
-        return transformProperty(propRow, propertyTypes.rows);
+        return transformProperty(propRow, constructPropertyTypes.rows as Record<string, RawLookupRow>);
       })
       .filter((p): p is Property => p !== null);
 
     // Join changelog by rowId
     const changeLogIds = toStringArray(comp.changeLog);
-    const componentChangelog: ChangeLogEntry[] = changeLogIds
+    const constructChangelog: ChangeLogEntry[] = changeLogIds
       .map((id) => {
-        const clRow = changelog.rows[id];
+        const clRow = documentationChangelog.rows[id];
         if (!clRow) {
           warnings.push(`[${comp.name}] Missing changelog rowId: ${id}`);
           return null;
         }
-        return transformChangelog(clRow, editors.rows);
+        return transformChangelog(clRow, documentationEditors.rows as Record<string, RawLookupRow>);
       })
       .filter((c): c is ChangeLogEntry => c !== null);
 
@@ -207,7 +247,7 @@ export function denormalize(raw: RawData, syncConfig?: SyncConfig): Component[] 
     const anatomyIds = toStringArray(comp.anatomy);
     const anatomyParts: AnatomyPart[] = anatomyIds
       .map((id) => {
-        const anatRow = anatomy.rows[id];
+        const anatRow = constructAnatomy.rows[id];
         if (!anatRow) {
           warnings.push(`[${comp.name}] Missing anatomy rowId: ${id}`);
           return null;
@@ -219,9 +259,9 @@ export function denormalize(raw: RawData, syncConfig?: SyncConfig): Component[] 
 
     // Join decision log by rowId
     const decisionLogIds = toStringArray(comp.decisionLog);
-    const componentDecisionLog: DecisionLogEntry[] = decisionLogIds
+    const constructDecisionLog: DecisionLogEntry[] = decisionLogIds
       .map((id) => {
-        const dlRow = decisionLog.rows[id];
+        const dlRow = documentationDecisionlog.rows[id];
         if (!dlRow) {
           warnings.push(`[${comp.name}] Missing decisionLog rowId: ${id}`);
           return null;
@@ -236,7 +276,7 @@ export function denormalize(raw: RawData, syncConfig?: SyncConfig): Component[] 
     if (blockIds.length > 0) {
       childProperties = blockIds
         .map((blockId) => {
-          const blockRow = components.rows[blockId];
+          const blockRow = construct.rows[blockId];
           if (!blockRow) {
             warnings.push(`[${comp.name}] Missing block rowId: ${blockId}`);
             return null;
@@ -244,14 +284,14 @@ export function denormalize(raw: RawData, syncConfig?: SyncConfig): Component[] 
           const blockPropertyIds = toStringArray(blockRow.properties);
           const blockProps = blockPropertyIds
             .map((propId) => {
-              const propRow = properties.rows[propId];
+              const propRow = constructProperties.rows[propId];
               if (!propRow) {
                 warnings.push(
                   `[${comp.name}] Missing block property rowId: ${propId}`,
                 );
                 return null;
               }
-              return transformProperty(propRow, propertyTypes.rows);
+              return transformProperty(propRow, constructPropertyTypes.rows as Record<string, RawLookupRow>);
             })
             .filter((p): p is Property => p !== null);
 
@@ -277,9 +317,7 @@ export function denormalize(raw: RawData, syncConfig?: SyncConfig): Component[] 
         ? { image: anatomyImage, table: anatomyParts }
         : undefined;
 
-    // Resolve wiki-ref:// links in markdown content fields to final wiki paths.
-    // This converts source-agnostic references (from coda-sync) into actual
-    // wiki URLs like [Checkbox](/checkbox) for component cross-links.
+    // Resolve wiki-ref:// links in markdown content fields
     const rawMarkdownFields = {
       description: comp.description ?? "",
       usage: comp.usage ?? "",
@@ -287,30 +325,19 @@ export function denormalize(raw: RawData, syncConfig?: SyncConfig): Component[] 
       interactions: comp.interactions ?? "",
     };
 
-    const allRawTables: Record<string, { rows: Record<string, Record<string, unknown>> }> = {
-      components: components,
-      properties: properties,
-      changelog: changelog,
-      anatomy: anatomy,
-      decisionLog: decisionLog,
-      types: types,
-      tiers: tiers,
-      documentationStatuses: documentationStatuses,
-      propertyTypes: propertyTypes,
-      editors: editors,
-    };
+    const allRawTables = buildAllRawTables(raw);
 
     const resolvedFields = syncConfig
       ? resolveAllWikiRefs(rawMarkdownFields, syncConfig, allRawTables)
       : rawMarkdownFields;
 
-    // Build component
-    const component: Component = {
+    // Build construct
+    const result: Construct = {
       name: comp.name,
       slug,
-      type: typeName as Component["type"],
-      tiers: tierName as Component["tiers"],
-      documentationStatus: docStatus as Component["documentationStatus"],
+      type: typeName as Construct["type"],
+      tiers: tierName as Construct["tiers"],
+      documentationStatus: docStatus as Construct["documentationStatus"],
       lastEdited: comp.lastEdited ?? "",
       figmaLink: comp.figma ?? "",
       codeLink: comp.code ?? "",
@@ -322,20 +349,118 @@ export function denormalize(raw: RawData, syncConfig?: SyncConfig): Component[] 
       componentExampleImage: resolveImage(comp.componentExampleImage),
       sitesArchitectureLevels: comp["sites-ArchitectureLevels"] ?? "",
       anatomy: anatomyObj,
-      properties: componentProperties,
+      properties: constructPropertyList,
       childProperties,
-      changeLog: componentChangelog,
-      decisionLog: componentDecisionLog,
+      changeLog: constructChangelog,
+      decisionLog: constructDecisionLog,
+      appliedRules: toStringArray(comp.appliedRule),
+      exceptionFromRules: toStringArray(comp.exceptionFromRule),
       mentionedIn: [],
     };
 
-    results.push(component);
+    results.push(result);
   }
 
   // Print warnings
   if (warnings.length > 0) {
     console.warn(
-      `\n⚠️  ${warnings.length} warning(s) during denormalization:`,
+      `\n⚠️  ${warnings.length} construct warning(s) during denormalization:`,
+    );
+    for (const w of warnings) {
+      console.warn(`  ${w}`);
+    }
+  }
+
+  return results;
+}
+
+// --- Concept denormalization ---
+
+export function denormalizeConcepts(raw: RawData, syncConfig?: SyncConfig): Concept[] {
+  const {
+    concepts,
+    conceptTypes,
+    documentationStatus,
+    documentationTiers,
+    documentationChangelog,
+    documentationDecisionlog,
+    documentationEditors,
+  } = raw;
+
+  const results: Concept[] = [];
+  const warnings: string[] = [];
+
+  for (const [rowId, conc] of Object.entries(concepts.rows)) {
+    // Resolve lookup values
+    const typeName = lookupName(conceptTypes.rows as Record<string, RawLookupRow>, conc.type);
+    const tierName = lookupName(documentationTiers.rows as Record<string, RawLookupRow>, conc.tier);
+    const docStatus = lookupName(documentationStatus.rows as Record<string, RawLookupRow>, conc.documentationStatus);
+
+    const slug = generateSlug(conc.name);
+
+    // Join changelog by rowId
+    const changeLogIds = toStringArray(conc.changelog);
+    const conceptChangelog: ChangeLogEntry[] = changeLogIds
+      .map((id) => {
+        const clRow = documentationChangelog.rows[id];
+        if (!clRow) {
+          warnings.push(`[${conc.name}] Missing changelog rowId: ${id}`);
+          return null;
+        }
+        return transformChangelog(clRow, documentationEditors.rows as Record<string, RawLookupRow>);
+      })
+      .filter((c): c is ChangeLogEntry => c !== null);
+
+    // Join decision log by rowId
+    const decisionLogIds = toStringArray(conc.decisionlog);
+    const conceptDecisionLog: DecisionLogEntry[] = decisionLogIds
+      .map((id) => {
+        const dlRow = documentationDecisionlog.rows[id];
+        if (!dlRow) {
+          warnings.push(`[${conc.name}] Missing decisionLog rowId: ${id}`);
+          return null;
+        }
+        return transformDecisionLog(dlRow);
+      })
+      .filter((d): d is DecisionLogEntry => d !== null);
+
+    // Resolve wiki-ref:// links in markdown content fields
+    const rawMarkdownFields = {
+      description: conc.description ?? "",
+      usage: "",
+      examples: "",
+      interactions: "",
+      content: conc.content ?? "",
+    };
+
+    const allRawTables = buildAllRawTables(raw);
+
+    const resolvedFields = syncConfig
+      ? resolveAllWikiRefs(rawMarkdownFields, syncConfig, allRawTables)
+      : rawMarkdownFields;
+
+    const result: Concept = {
+      name: conc.name,
+      slug,
+      type: typeName,
+      tier: tierName,
+      documentationStatus: docStatus,
+      lastEdited: conc.lastEdited ?? "",
+      description: resolvedFields.description,
+      content: resolvedFields.content ?? conc.content ?? "",
+      changeLog: conceptChangelog,
+      decisionLog: conceptDecisionLog,
+      appliedRules: toStringArray(conc.appliedRule),
+      exceptedFromRules: toStringArray(conc.exceptedFromRule),
+      mentionedIn: [],
+    };
+
+    results.push(result);
+  }
+
+  if (warnings.length > 0) {
+    console.warn(
+      `\n⚠️  ${warnings.length} concept warning(s) during denormalization:`,
     );
     for (const w of warnings) {
       console.warn(`  ${w}`);

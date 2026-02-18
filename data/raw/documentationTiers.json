@@ -1,0 +1,110 @@
+{
+  "fetchedAt": "2026-02-18T11:12:38.936Z",
+  "rows": {
+    "i-eMuMy4n-z3": {
+      "rowId": "i-eMuMy4n-z3",
+      "name": "Global",
+      "components": [
+        "i-oIOmJPwz-S",
+        "i-ur5nTty1E1",
+        "i-MOO2SBuaqS",
+        "i-nMXFKxR44N",
+        "i-nsWL1xi6H5",
+        "i-hES7I02ImG",
+        "i-JVsLc8_nm0",
+        "i-9dtE-EGtSJ",
+        "i-0HDSYo-iyI",
+        "i-9t3OC1fOBH",
+        "i-LVgLIPfo6Z",
+        "i-cgTm31OtA9",
+        "i-LYZ4XyOt-O",
+        "i-kzPA2kabPA",
+        "i-qxrdEI_jxI",
+        "i-aa-F7fGOPL",
+        "i-k4_PsQKTUt",
+        "i-I09Xg2rXPg",
+        "i-Yr-MKv1jbf",
+        "i-YIkBkUT4ZS",
+        "i-uIQULVt2eZ",
+        "i-FgQOUawQ2g",
+        "i-YArgfP7o_q",
+        "i-eoOMJgGK_d",
+        "i--w8-6ot1a8",
+        "i-xUFwNsfx30",
+        "i-aUPUyjNgjD",
+        "i-LbP9pdhuJw"
+      ],
+      "text": "The tier of components that will be used across almost every product, project or site.",
+      "concepts": [
+        "i-T9g6Adkwpp"
+      ]
+    },
+    "i-gn08gunoqe": {
+      "rowId": "i-gn08gunoqe",
+      "name": "Sites",
+      "components": [
+        "i-0Z_OLuJDCc",
+        "i-YbRxZruWIu",
+        "i-oWJdMiuIb4",
+        "i-O69ixYm_Ee",
+        "i-6vkVdZz0ii",
+        "i-PJTyZ77is5",
+        "i-K1FTmoSxdo",
+        "i-S0DpOp5ECr",
+        "i-tuS5YgvrGJ",
+        "i-yQrLWRZ945",
+        "i-nslqMCF7EQ",
+        "i-JZBi9ESLvH",
+        "i-s27nSmifM3",
+        "i-cn19jqZNBr",
+        "i-c3Pi4CEcZV",
+        "i-kIPkdAErqW",
+        "i-VDemBEWUNA",
+        "i-If5dFjalAR",
+        "i-fhZD60Hwqn",
+        "i-vpN6ETB7hS",
+        "i-If3N15kC6H",
+        "i-5BuOzbNcXV"
+      ],
+      "text": "The tier of components that are mostly used by marketing websites.",
+      "concepts": [
+        "i-zcRnO2gbe_",
+        "i-sxV2-vvwEh",
+        "i-77amDzVdN2",
+        "i-ziaRlWZKzo",
+        "i-yoJyVydxF2",
+        "i-RO0xf8rGKJ",
+        "i-UbqAYcn-kL",
+        "i-J6KXahUgv8",
+        "i-pXsRJolrey",
+        "i-vT8fuOZWKp",
+        "i-EOdlr3f3B2",
+        "i-5CX0qx0-ix",
+        "i-DlY4iCeiNo",
+        "i-MughqPHCHW",
+        "i-aVl7tNyWPZ",
+        "i-f9CHH3BInv",
+        "i-N61an6hFc8",
+        "i-KFif7gGk3u",
+        "i-y72GvvD9Q2",
+        "i-2Y_zFSicja",
+        "i-g0pEWIdnoV",
+        "i-FWuxPOUZFc",
+        "i-xLNaieGTOY",
+        "i-H6X0PaYoji"
+      ]
+    },
+    "i-sRNrVrHSnM": {
+      "rowId": "i-sRNrVrHSnM",
+      "name": "Apps",
+      "components": [
+        "i-KtIvN04WN9",
+        "i-plkjzhg8m1"
+      ],
+      "text": "The tier of components that are mostly used by applications.",
+      "concepts": [
+        "i-N9wKI9QSCL"
+      ]
+    }
+  }
+}

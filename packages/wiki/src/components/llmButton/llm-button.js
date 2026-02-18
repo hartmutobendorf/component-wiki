@@ -137,7 +137,7 @@ export class LlmButtonComponent extends LitElement {
   _buildPrompt() {
     // GitHub Copilot uses the file path, others use the website URL
     if (this._selectedProvider === "copilot") {
-      const githubFilePath = `@dgtlntv/component-wiki/data/components/${this.componentId}.json`;
+      const githubFilePath = `@dgtlntv/component-wiki/data/wiki/constructs/${this.componentId}.json`;
       const prompt = `${githubFilePath}
 
 Please analyze the component documentation in this file and help me understand this component and answer any questions I have about it.`;

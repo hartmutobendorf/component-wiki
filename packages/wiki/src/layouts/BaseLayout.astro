@@ -10,8 +10,8 @@ interface Props {
 
 const { title = "Component Wiki", currentSlug = "" } = Astro.props;
 
-// Get all components from the collection
-const components = await getCollection("components");
+// Get all constructs from the collection
+const constructs = await getCollection("constructs");
 
 const typeOrder = [
   "Foundation",
@@ -22,17 +22,17 @@ const typeOrder = [
   "Mental model",
 ];
 
-const groupedComponents = components.reduce(
-  (acc, component) => {
-    const type = component.data.type;
+const groupedConstructs = constructs.reduce(
+  (acc, construct) => {
+    const type = construct.data.type;
     if (!acc[type]) {
       acc[type] = [];
     }
     acc[type].push({
-      name: component.data.name,
-      slug: component.id,
-      tier: component.data.tiers,
-      type: component.data.type,
+      name: construct.data.name,
+      slug: construct.id,
+      tier: construct.data.tiers,
+      type: construct.data.type,
     });
     return acc;
   },
@@ -46,7 +46,7 @@ const groupedComponents = components.reduce(
 const navItems = typeOrder
   .map((type) => ({
     type,
-    items: (groupedComponents[type] || []).sort((a, b) =>
+    items: (groupedConstructs[type] || []).sort((a, b) =>
       a.name.localeCompare(b.name),
     ),
   }))

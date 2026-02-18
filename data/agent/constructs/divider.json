@@ -1,0 +1,38 @@
+{
+  "name": "Divider",
+  "slug": "divider",
+  "type": "Component",
+  "tiers": "Global",
+  "documentationStatus": "Needs work",
+  "lastEdited": "2026-02-10T08:14:10.242+00:00",
+  "figmaLink": "https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-25",
+  "codeLink": "https://github.com/canonical/vanilla-framework/blob/d0197b27f5733789d6d23536eabe68356e045ae1/scss/_patterns_divider.scss",
+  "description": "The divider is a vertical line used to separate content within an interface. It creates clear boundaries between distinct sections, helping users understand the structure and organization of information.",
+  "usage": "The divider is a vertical line used to separate content within an interface. It creates clear boundaries between distinct sections, helping users understand the structure and organization of information.\n\n## Visual grouping and emphasis\n\nDividers delineate where one group of content ends and another begins, reinforcing visual hierarchy by drawing attention to separation between discrete elements. They communicate that adjacent items, while spatially close, are not part of the same logical group. This is useful in dense interfaces where proximity alone does not sufficiently convey the relationship between elements.\n\nSpace should always be the first tool considered when separating content. Dividers are a secondary measure, appropriate only when whitespace fails to establish sufficient distinction. Overuse quickly becomes counterproductive. Too many lines create visual noise that obscures rather than clarifies structure. Additionally, avoid placing dividers adjacent to elements that already have borders, such as cards.\n\nDetermining when a divider is warranted remains a judgment call. Evaluate whether the separation genuinely improves clarity, or merely adds visual weight without benefit.\n\n## When to Use\n\n*   Space alone is insufficient to communicate that elements are separate\n*   A clear visual boundary is needed between discrete sections\n*   Reinforcing hierarchy improves usability\n\n## When Not to Use\n\n*   Whitespace adequately separates the content\n*   Adjacent elements already have visible borders\n*   Multiple dividers would appear in close proximity\n*   The addition does not meaningfully improve clarity",
+  "examples": "",
+  "interactions": "",
+  "sitesArchitectureLevels": "i-UvVNCYZ44t",
+  "anatomy": {
+    "table": [
+      {
+        "number": 1,
+        "name": "Line",
+        "description": "The line that separates content."
+      }
+    ]
+  },
+  "properties": [],
+  "changeLog": [
+    {
+      "who": "Maximilian Blazek",
+      "when": "2025-11-21T17:00:00.000+00:00",
+      "what": "Initial commit"
+    }
+  ],
+  "decisionLog": [],
+  "appliedRules": [],
+  "exceptionFromRules": [],
+  "mentionedIn": [],
+  "mentionsComponents": [],
+  "url": "https://component.wiki/divider"
+}

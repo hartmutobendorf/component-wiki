@@ -1,0 +1,141 @@
+{
+  "name": "Accordion",
+  "slug": "accordion",
+  "type": "Component",
+  "tiers": "Global",
+  "documentationStatus": "Minimal",
+  "lastEdited": "2026-02-13T14:52:55.340+00:00",
+  "figmaLink": "https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-3",
+  "codeLink": "https://github.com/canonical/vanilla-framework/blob/b1d651365b0714586e6ea14349dea763819c256e/scss/_patterns_accordion.scss",
+  "description": "The accordion is a vertically stacked content area which can be collapsed and expanded to reveal or hide its contents. An accordion can be opened or closed independently of its surrounding counterparts (i.e: multiple accordions can be open at the same time). \n\nWhen used right, accordions can help browse different pieces of related content in a more efficient way. Be wary that they can also hide content from users and are not suitable when a user is meant to read all of the page content.\n\n",
+  "usage": "The accordion can be used to pack a lot of content into a constrained space by allowing to collapse and expand the accordion item to show or hide its contents. It also allows the user to consume the contents at their own pace and preference by not immediately showing but relying on progressive disclosure instead.\n\nTherefore when used right, accordions can help browse different pieces of related content in a more efficient way. Be wary that they can also hide content from users and are not suitable when a user is meant to read all of the page content.\n\n### Heading\n\nThe [Heading](/accordion#anatomy) of the accordion should give the user a clear indication of what the contents of accordion item are going to be. The user should not have to open the accordion item to understand what is contained inside of it.\n\n### Panel\n\nThe [Panel](/accordion#anatomy) is what contains the content of an accordion item. Be mindful of what contents are put in the accordion item as an accordion does not lend itself well to containing overly complex components or patterns. The contents of an accordion will most often be just plain text or a simple component arrangement like filters ([Checkbox](/checkbox) + label).\n\nIt is not allowed to nest accordion items.\n\n### When to use\n\n*   In cases where there is a lot more content than the available screen estate allows for. E.g. when there is a lot of filters to show in a sidebar.\n*   When you want to allow the user to scan large amounts of contents in a smaller amount of space and dive deeper at their own choosing. E.g. in an FAQ.\n*   To shorten page lengths (an scroll time) if it is not important that the user reads everything.\n\n### When not to use\n\n*   It’s not recommended to use accordions when the page content must be seen at a glance by a user.\n*   *   Instead you might consider restructuring your content or using a [Table of contents](/table-of-contents) which redirect the user to specific sections of the page.\n*   If the data you want to show is inherently nested as navigation items do not allow to be nested.",
+  "examples": "",
+  "interactions": "",
+  "sitesArchitectureLevels": "i-UvVNCYZ44t",
+  "anatomy": {
+    "table": [
+      {
+        "number": 1,
+        "name": "Chevron",
+        "description": "Indicates wether the accordion item is open or closed. It points down when open and points right when closed."
+      },
+      {
+        "number": 2,
+        "name": "Heading",
+        "description": "The heading indicates what the subject of the contents is."
+      },
+      {
+        "number": 3,
+        "name": "Tab",
+        "description": "The tab is the clickable area of the accordion with which the accordion can be opened and closed."
+      },
+      {
+        "number": 4,
+        "name": "Panel",
+        "description": "The panel is the area in which the content of the accordion item can be placed."
+      },
+      {
+        "number": 5,
+        "name": "Divider",
+        "description": "The divider at the end of an accordion indicates the end of an accordion item."
+      }
+    ]
+  },
+  "properties": [
+    {
+      "name": "Expanded",
+      "required": false,
+      "type": "boolean",
+      "description": "The expanded property controls wether an accordion item is opened or closed. ",
+      "constraint": "",
+      "defaultOption": "false",
+      "options": [
+        "true",
+        "false"
+      ]
+    },
+    {
+      "name": "Heading",
+      "required": true,
+      "type": "string",
+      "description": "The heading property controls the text content of the accordion item heading and can be freely set by the designer / developer.",
+      "constraint": "",
+      "defaultOption": ""
+    },
+    {
+      "name": "Heading style",
+      "required": false,
+      "type": "single select",
+      "description": "The heading style property changes the styling of the heading of an accordion item.",
+      "constraint": "",
+      "defaultOption": "default",
+      "options": [
+        "default",
+        "h1",
+        "h2",
+        "h3",
+        "h4",
+        "h5",
+        "h6"
+      ]
+    },
+    {
+      "name": "State",
+      "required": false,
+      "type": "single select",
+      "description": "The state property controls the current user interaction state of an accordion item.",
+      "constraint": "",
+      "defaultOption": "default",
+      "options": [
+        "default",
+        "hover",
+        "active"
+      ]
+    },
+    {
+      "name": "Content",
+      "required": true,
+      "type": "slot",
+      "description": "The content property sets the content that is being shown in the panel of the accordion. The content can be set to any content that the designer / developer wants to show. It is not allowed to nest accordions in the content section. By default the content section contains just a text element.",
+      "constraint": "",
+      "defaultOption": ""
+    }
+  ],
+  "changeLog": [
+    {
+      "who": "Daniel Mutis",
+      "when": "2025-11-21T16:00:00.000+00:00",
+      "what": "Initial commit"
+    },
+    {
+      "who": "Maximilian Blazek",
+      "when": "2026-02-13T15:00:00.000+00:00",
+      "what": "Added links"
+    },
+    {
+      "who": "Maximilian Blazek",
+      "when": "2025-11-21T16:30:00.000+00:00",
+      "what": "Test the change log table"
+    }
+  ],
+  "decisionLog": [],
+  "appliedRules": [],
+  "exceptionFromRules": [],
+  "mentionedIn": [
+    {
+      "name": "Tabs",
+      "slug": "tabs"
+    }
+  ],
+  "mentionsComponents": [
+    {
+      "name": "Checkbox",
+      "slug": "checkbox"
+    },
+    {
+      "name": "Table of contents",
+      "slug": "table-of-contents"
+    }
+  ],
+  "url": "https://component.wiki/accordion"
+}

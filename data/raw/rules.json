@@ -1,0 +1,1592 @@
+{
+  "fetchedAt": "2026-02-18T11:12:38.937Z",
+  "rows": {
+    "i-fzDIK_WZZU": {
+      "rowId": "i-fzDIK_WZZU",
+      "rule": "Rules (visual dividers) in regular style are mandatory elements that separate sections from each other. ",
+      "knownExceptionForThisConstruct": "",
+      "appliesToTheseConcepts": [
+        "i-RO0xf8rGKJ"
+      ],
+      "ruleStrength": [
+        "i-JbDemeJZt5"
+      ],
+      "status": [
+        "i-hbSOUFH0I1"
+      ],
+      "type": [
+        "i-Gv9rTD4HHR"
+      ],
+      "lastEdited": "2026-02-18T09:35:07.035+00:00",
+      "changelog": [],
+      "decisionlog": [],
+      "appliesToTheseConstructs": "",
+      "knownExceptionForThisConcept": ""
+    },
+    "i-A-73lXY-ax": {
+      "rowId": "i-A-73lXY-ax",
+      "rule": "Maintain calm, clarity, and visual cleanliness. The design should feel measured, stable, and spacious. Avoid clutter, noise, and unnecessary motion.",
+      "knownExceptionForThisConstruct": "",
+      "appliesToTheseConcepts": [
+        "i-yoJyVydxF2",
+        "i-ziaRlWZKzo",
+        "i-5CX0qx0-ix"
+      ],
+      "ruleStrength": [
+        "i-MAT8ECM5oJ"
+      ],
+      "status": [
+        "i-hbSOUFH0I1"
+      ],
+      "type": [
+        "i-7wuynCTRxU"
+      ],
+      "lastEdited": "2026-02-18T09:35:07.035+00:00",
+      "changelog": [],
+      "decisionlog": [],
+      "appliesToTheseConstructs": "",
+      "knownExceptionForThisConcept": ""
+    },
+    "i-npaG8YqZTv": {
+      "rowId": "i-npaG8YqZTv",
+      "rule": "Embrace whitespace. Spacing is a core part of the brand. Pages should be spacious.",
+      "knownExceptionForThisConstruct": "",
+      "appliesToTheseConcepts": [
+        "i-ziaRlWZKzo",
+        "i-5CX0qx0-ix"
+      ],
+      "ruleStrength": [
+        "i-MAT8ECM5oJ"
+      ],
+      "status": [
+        "i-hbSOUFH0I1"
+      ],
+      "type": [
+        "i-7wuynCTRxU"
+      ],
+      "lastEdited": "2026-02-18T09:35:07.035+00:00",
+      "changelog": [],
+      "decisionlog": [],
+      "appliesToTheseConstructs": "",
+      "knownExceptionForThisConcept": ""
+    },
+    "i-2Bh98UVeCN": {
+      "rowId": "i-2Bh98UVeCN",
+      "rule": "Vertical spacing is regulated exclusively by the bottom padding.",
+      "knownExceptionForThisConstruct": [
+        "i-K1FTmoSxdo",
+        "i-oWJdMiuIb4"
+      ],
+      "appliesToTheseConcepts": [
+        "i-KFif7gGk3u"
+      ],
+      "ruleStrength": [
+        "i-JbDemeJZt5"
+      ],
+      "status": [
+        "i-GWi5cya2mo"
+      ],
+      "type": [
+        "i-Gv9rTD4HHR"
+      ],
+      "lastEdited": "2026-02-18T09:35:07.035+00:00",
+      "changelog": [],
+      "decisionlog": [],
+      "appliesToTheseConstructs": "",
+      "knownExceptionForThisConcept": ""
+    },
+    "i-lTkH1FYTZj": {
+      "rowId": "i-lTkH1FYTZj",
+      "rule": "Sections do not use top padding.",
+      "knownExceptionForThisConstruct": [
+        "i-K1FTmoSxdo",
+        "i-oWJdMiuIb4"
+      ],
+      "appliesToTheseConcepts": [
+        "i-RO0xf8rGKJ"
+      ],
+      "ruleStrength": [
+        "i-JbDemeJZt5"
+      ],
+      "status": [
+        "i-GWi5cya2mo"
+      ],
+      "type": [
+        "i-Gv9rTD4HHR"
+      ],
+      "lastEdited": "2026-02-18T09:35:07.035+00:00",
+      "changelog": [],
+      "decisionlog": [],
+      "appliesToTheseConstructs": "",
+      "knownExceptionForThisConcept": ""
+    },
+    "i-B0iImJb_X1": {
+      "rowId": "i-B0iImJb_X1",
+      "rule": "Bottom padding of a section is 64 px (regular) - except the last section for which it is 128 px (deep).",
+      "knownExceptionForThisConstruct": "",
+      "appliesToTheseConcepts": [
+        "i-KFif7gGk3u",
+        "i-RO0xf8rGKJ"
+      ],
+      "ruleStrength": [
+        "i-JbDemeJZt5"
+      ],
+      "status": [
+        "i-HIQNJ9q8UC"
+      ],
+      "type": [
+        "i-Gv9rTD4HHR"
+      ],
+      "lastEdited": "2026-02-18T09:35:07.035+00:00",
+      "changelog": [],
+      "decisionlog": [],
+      "appliesToTheseConstructs": "",
+      "knownExceptionForThisConcept": ""
+    },
+    "i-vGmYX0fJ59": {
+      "rowId": "i-vGmYX0fJ59",
+      "rule": "Hero is a mandatory first section.",
+      "knownExceptionForThisConstruct": "",
+      "appliesToTheseConcepts": [
+        "i-yoJyVydxF2",
+        "i-RO0xf8rGKJ"
+      ],
+      "ruleStrength": [
+        "i-JbDemeJZt5"
+      ],
+      "status": [
+        "i-HIQNJ9q8UC"
+      ],
+      "type": [
+        "i-Gv9rTD4HHR"
+      ],
+      "lastEdited": "2026-02-18T09:35:07.035+00:00",
+      "changelog": [],
+      "decisionlog": [],
+      "appliesToTheseConstructs": "",
+      "knownExceptionForThisConcept": ""
+    },
+    "i-ZlUxcVMTlJ": {
+      "rowId": "i-ZlUxcVMTlJ",
+      "rule": "Section titles can only have one of two styles: H2 or Heading muted",
+      "knownExceptionForThisConstruct": [
+        "i-oWJdMiuIb4",
+        "i-yQrLWRZ945"
+      ],
+      "appliesToTheseConcepts": [
+        "i-f9CHH3BInv",
+        "i-RO0xf8rGKJ"
+      ],
+      "ruleStrength": [
+        "i-JbDemeJZt5"
+      ],
+      "status": [
+        "i-HIQNJ9q8UC"
+      ],
+      "type": [
+        "i-Gv9rTD4HHR"
+      ],
+      "lastEdited": "2026-02-18T09:35:07.035+00:00",
+      "changelog": [],
+      "decisionlog": [],
+      "appliesToTheseConstructs": "",
+      "knownExceptionForThisConcept": ""
+    },
+    "i-U3IwMn0dXk": {
+      "rowId": "i-U3IwMn0dXk",
+      "rule": "Section title is styled as H2 or Heading muted",
+      "knownExceptionForThisConstruct": [
+        "i-K1FTmoSxdo",
+        "i-YbRxZruWIu",
+        "i-O69ixYm_Ee",
+        "i-tuS5YgvrGJ",
+        "i-JZBi9ESLvH"
+      ],
+      "appliesToTheseConcepts": [
+        "i-RO0xf8rGKJ",
+        "i-pXsRJolrey"
+      ],
+      "ruleStrength": [
+        "i-JbDemeJZt5"
+      ],
+      "status": [
+        "i-HIQNJ9q8UC"
+      ],
+      "type": [
+        "i-Gv9rTD4HHR"
+      ],
+      "lastEdited": "2026-02-18T09:35:07.035+00:00",
+      "changelog": [],
+      "decisionlog": [],
+      "appliesToTheseConstructs": "",
+      "knownExceptionForThisConcept": ""
+    },
+    "i-oDEFAbETSH": {
+      "rowId": "i-oDEFAbETSH",
+      "rule": "Section title always starts in the first column of the grid.",
+      "knownExceptionForThisConstruct": [
+        "i-cn19jqZNBr"
+      ],
+      "appliesToTheseConcepts": [
+        "i-RO0xf8rGKJ",
+        "i-pXsRJolrey"
+      ],
+      "ruleStrength": [
+        "i-JbDemeJZt5"
+      ],
+      "status": [
+        "i-HIQNJ9q8UC"
+      ],
+      "type": [
+        "i-Gv9rTD4HHR"
+      ],
+      "lastEdited": "2026-02-18T09:35:07.035+00:00",
+      "changelog": [],
+      "decisionlog": [],
+      "appliesToTheseConstructs": "",
+      "knownExceptionForThisConcept": ""
+    },
+    "i-a2Gvf8PqqZ": {
+      "rowId": "i-a2Gvf8PqqZ",
+      "rule": "Section title (H2) can occupy either 4 or 8 columns of the grid.",
+      "knownExceptionForThisConstruct": "",
+      "appliesToTheseConcepts": [
+        "i-RO0xf8rGKJ",
+        "i-pXsRJolrey"
+      ],
+      "ruleStrength": [
+        "i-JbDemeJZt5"
+      ],
+      "status": [
+        "i-AWrWmXzOTJ"
+      ],
+      "type": [
+        "i-Gv9rTD4HHR"
+      ],
+      "lastEdited": "2026-02-18T09:35:07.035+00:00",
+      "changelog": [],
+      "decisionlog": [],
+      "appliesToTheseConstructs": "",
+      "knownExceptionForThisConcept": ""
+    },
+    "i-R2qsN9a5_r": {
+      "rowId": "i-R2qsN9a5_r",
+      "rule": "Section title (Heading muted) can occupy either 2 or 4 columns of the grid.",
+      "knownExceptionForThisConstruct": "",
+      "appliesToTheseConcepts": [
+        "i-N61an6hFc8",
+        "i-RO0xf8rGKJ",
+        "i-pXsRJolrey"
+      ],
+      "ruleStrength": [
+        "i-JbDemeJZt5"
+      ],
+      "status": [
+        "i-AWrWmXzOTJ"
+      ],
+      "type": [
+        "i-Gv9rTD4HHR"
+      ],
+      "lastEdited": "2026-02-18T09:35:07.035+00:00",
+      "changelog": [],
+      "decisionlog": [],
+      "appliesToTheseConstructs": "",
+      "knownExceptionForThisConcept": ""
+    },
+    "i-DClns4jP5n": {
+      "rowId": "i-DClns4jP5n",
+      "rule": "Section title can only be preceded by the label/eyebrow in Heading muted style and horizontal rule (visual divider). ",
+      "knownExceptionForThisConstruct": "",
+      "appliesToTheseConcepts": [
+        "i-RO0xf8rGKJ",
+        "i-pXsRJolrey"
+      ],
+      "ruleStrength": [
+        "i-JbDemeJZt5"
+      ],
+      "status": [
+        "i-hbSOUFH0I1"
+      ],
+      "type": [
+        "i-Gv9rTD4HHR"
+      ],
+      "lastEdited": "2026-02-18T09:35:39.922+00:00",
+      "changelog": [],
+      "decisionlog": [],
+      "appliesToTheseConstructs": "",
+      "knownExceptionForThisConcept": ""
+    },
+    "i-p8Fv0e9Vn7": {
+      "rowId": "i-p8Fv0e9Vn7",
+      "rule": "Larger blocks of content are placed on the right-hand side of smaller blocks.",
+      "knownExceptionForThisConstruct": [
+        "i-cn19jqZNBr"
+      ],
+      "appliesToTheseConcepts": [
+        "i-RO0xf8rGKJ",
+        "i-yoJyVydxF2"
+      ],
+      "ruleStrength": [
+        "i-MAT8ECM5oJ"
+      ],
+      "status": [
+        "i-GWi5cya2mo"
+      ],
+      "type": [
+        "i-Gv9rTD4HHR"
+      ],
+      "lastEdited": "2026-02-18T09:35:44.436+00:00",
+      "changelog": [],
+      "decisionlog": [],
+      "appliesToTheseConstructs": "",
+      "knownExceptionForThisConcept": ""
+    },
+    "i-WesQQ1XF0e": {
+      "rowId": "i-WesQQ1XF0e",
+      "rule": "Description text cannot be shorter than 2 lines.",
+      "knownExceptionForThisConstruct": "",
+      "appliesToTheseConcepts": [
+        "i-pXsRJolrey",
+        "i-RO0xf8rGKJ"
+      ],
+      "ruleStrength": [
+        "i-MAT8ECM5oJ"
+      ],
+      "status": [
+        "i-GWi5cya2mo"
+      ],
+      "type": [
+        "i-Gv9rTD4HHR"
+      ],
+      "lastEdited": "2026-02-18T09:35:49.009+00:00",
+      "changelog": [],
+      "decisionlog": [],
+      "appliesToTheseConstructs": "",
+      "knownExceptionForThisConcept": ""
+    },
+    "i-GQvPWhgG-j": {
+      "rowId": "i-GQvPWhgG-j",
+      "rule": "Order of sections should always form a consistent narrative communicated with a clear intent.",
+      "knownExceptionForThisConstruct": "",
+      "appliesToTheseConcepts": [
+        "i-yoJyVydxF2",
+        "i-RO0xf8rGKJ"
+      ],
+      "ruleStrength": [
+        "i-JbDemeJZt5"
+      ],
+      "status": [
+        "i-hbSOUFH0I1"
+      ],
+      "type": [
+        "i-Gv9rTD4HHR"
+      ],
+      "lastEdited": "2026-02-18T09:35:53.218+00:00",
+      "changelog": [],
+      "decisionlog": [],
+      "appliesToTheseConstructs": "",
+      "knownExceptionForThisConcept": ""
+    },
+    "i-y3DBXPQ5wy": {
+      "rowId": "i-y3DBXPQ5wy",
+      "rule": "Layout is controlled by the 8-column responsive grid.",
+      "knownExceptionForThisConstruct": "",
+      "appliesToTheseConcepts": [
+        "i-N61an6hFc8",
+        "i-yoJyVydxF2"
+      ],
+      "ruleStrength": [
+        "i-JbDemeJZt5"
+      ],
+      "status": [
+        "i-HIQNJ9q8UC"
+      ],
+      "type": [
+        "i-Gv9rTD4HHR"
+      ],
+      "lastEdited": "2026-02-18T09:35:57.566+00:00",
+      "changelog": [],
+      "decisionlog": [],
+      "appliesToTheseConstructs": "",
+      "knownExceptionForThisConcept": ""
+    },
+    "i-GzGBjzo9ua": {
+      "rowId": "i-GzGBjzo9ua",
+      "rule": "Content within a layout must align to the grid columns. Content should not \"hang\" in the gutters (spacing between columns).",
+      "knownExceptionForThisConstruct": "",
+      "appliesToTheseConcepts": [
+        "i-N61an6hFc8",
+        "i-yoJyVydxF2",
+        "i-RO0xf8rGKJ",
+        "i-pXsRJolrey"
+      ],
+      "ruleStrength": [
+        "i-JbDemeJZt5"
+      ],
+      "status": [
+        "i-HIQNJ9q8UC"
+      ],
+      "type": [
+        "i-Gv9rTD4HHR"
+      ],
+      "lastEdited": "2026-02-18T09:36:05.173+00:00",
+      "changelog": [],
+      "decisionlog": [],
+      "appliesToTheseConstructs": "",
+      "knownExceptionForThisConcept": ""
+    },
+    "i-0beC9X4XSV": {
+      "rowId": "i-0beC9X4XSV",
+      "rule": "Content can occupy 25% of the available space or a multiple of that 25% (25/50/75/100)",
+      "knownExceptionForThisConstruct": "",
+      "appliesToTheseConcepts": [
+        "i-N61an6hFc8",
+        "i-yoJyVydxF2",
+        "i-RO0xf8rGKJ",
+        "i-pXsRJolrey",
+        "i-UbqAYcn-kL",
+        "i-J6KXahUgv8"
+      ],
+      "ruleStrength": [
+        "i-MAT8ECM5oJ"
+      ],
+      "status": [
+        "i-HIQNJ9q8UC"
+      ],
+      "type": [
+        "i-Gv9rTD4HHR"
+      ],
+      "lastEdited": "2026-02-18T09:36:36.610+00:00",
+      "changelog": [],
+      "decisionlog": [],
+      "appliesToTheseConstructs": "",
+      "knownExceptionForThisConcept": ""
+    },
+    "i-ZgPIFRNEVD": {
+      "rowId": "i-ZgPIFRNEVD",
+      "rule": "Layouts are either fully predefined (templated) or built from modular Sections with embedded parameters.",
+      "knownExceptionForThisConstruct": "",
+      "appliesToTheseConcepts": [
+        "i-yoJyVydxF2"
+      ],
+      "ruleStrength": [
+        "i-MAT8ECM5oJ"
+      ],
+      "status": [
+        "i-HIQNJ9q8UC"
+      ],
+      "type": [
+        "i-Gv9rTD4HHR"
+      ],
+      "lastEdited": "2026-02-18T09:36:39.389+00:00",
+      "changelog": [],
+      "decisionlog": [],
+      "appliesToTheseConstructs": "",
+      "knownExceptionForThisConcept": ""
+    },
+    "i-XaN4xKvGD7": {
+      "rowId": "i-XaN4xKvGD7",
+      "rule": "Layouts must preserve consistent vertical spacing between sections. Do not manually reduce spacing to fit more content \"above the fold\".",
+      "knownExceptionForThisConstruct": "",
+      "appliesToTheseConcepts": [
+        "i-KFif7gGk3u",
+        "i-yoJyVydxF2"
+      ],
+      "ruleStrength": [
+        "i-MAT8ECM5oJ"
+      ],
+      "status": [
+        "i-HIQNJ9q8UC"
+      ],
+      "type": [
+        "i-Gv9rTD4HHR"
+      ],
+      "lastEdited": "2026-02-18T09:36:42.863+00:00",
+      "changelog": [],
+      "decisionlog": [],
+      "appliesToTheseConstructs": "",
+      "knownExceptionForThisConcept": ""
+    },
+    "i-tJQQOsZiMo": {
+      "rowId": "i-tJQQOsZiMo",
+      "rule": "Prioritise critical information at the top. All users see the top of the page; only a minority reach the bottom. Ensure that the most important message, value proposition, or action is communicated immediately.",
+      "knownExceptionForThisConstruct": "",
+      "appliesToTheseConcepts": [
+        "i-ziaRlWZKzo",
+        "i-5CX0qx0-ix"
+      ],
+      "ruleStrength": [
+        "i-MAT8ECM5oJ"
+      ],
+      "status": [
+        "i-HIQNJ9q8UC"
+      ],
+      "type": [
+        "i-7wuynCTRxU"
+      ],
+      "lastEdited": "2026-02-18T09:36:46.770+00:00",
+      "changelog": [],
+      "decisionlog": [],
+      "appliesToTheseConstructs": "",
+      "knownExceptionForThisConcept": ""
+    },
+    "i-j-r1lZBhZp": {
+      "rowId": "i-j-r1lZBhZp",
+      "rule": "Keep text concise. Favour brevity. Remove non-essential copy and avoid long, dense paragraphs.",
+      "knownExceptionForThisConstruct": "",
+      "appliesToTheseConcepts": [
+        "i-5CX0qx0-ix",
+        "i-DlY4iCeiNo"
+      ],
+      "ruleStrength": [
+        "i-MAT8ECM5oJ"
+      ],
+      "status": [
+        "i-HIQNJ9q8UC"
+      ],
+      "type": [
+        "i-7wuynCTRxU"
+      ],
+      "lastEdited": "2026-02-18T09:36:51.796+00:00",
+      "changelog": [],
+      "decisionlog": [],
+      "appliesToTheseConstructs": "",
+      "knownExceptionForThisConcept": ""
+    },
+    "i-1dcNQ8tIgU": {
+      "rowId": "i-1dcNQ8tIgU",
+      "rule": "Communicate with intent. Copy should either sell or explain. Avoid hybrid messaging that weakens both.",
+      "knownExceptionForThisConstruct": "",
+      "appliesToTheseConcepts": [
+        "i-5CX0qx0-ix",
+        "i-DlY4iCeiNo"
+      ],
+      "ruleStrength": [
+        "i-MAT8ECM5oJ"
+      ],
+      "status": [
+        "i-HIQNJ9q8UC"
+      ],
+      "type": [
+        "i-7wuynCTRxU"
+      ],
+      "lastEdited": "2026-02-18T09:36:56.069+00:00",
+      "changelog": [],
+      "decisionlog": [],
+      "appliesToTheseConstructs": "",
+      "knownExceptionForThisConcept": ""
+    },
+    "i-JAVphNmWek": {
+      "rowId": "i-JAVphNmWek",
+      "rule": "Avoid generic or empty statements. Do not publish vague, clichéd, or low-value claims (e.g. “cutting-edge”, “powerful”, “we are cloud”). Every statement must convey meaningful, differentiated information.",
+      "knownExceptionForThisConstruct": "",
+      "appliesToTheseConcepts": [
+        "i-5CX0qx0-ix",
+        "i-DlY4iCeiNo"
+      ],
+      "ruleStrength": [
+        "i-MAT8ECM5oJ"
+      ],
+      "status": [
+        "i-hbSOUFH0I1"
+      ],
+      "type": [
+        "i-7wuynCTRxU"
+      ],
+      "lastEdited": "2026-02-18T09:37:00.616+00:00",
+      "changelog": [],
+      "decisionlog": [],
+      "appliesToTheseConstructs": "",
+      "knownExceptionForThisConcept": ""
+    },
+    "i-FmWFEIIPaJ": {
+      "rowId": "i-FmWFEIIPaJ",
+      "rule": "Show character and humanity. Maintain a professional yet approachable tone. Use clear, confident language that reflects expertise without being sterile or overly formal.",
+      "knownExceptionForThisConstruct": "",
+      "appliesToTheseConcepts": [
+        "i-DlY4iCeiNo",
+        "i-5CX0qx0-ix"
+      ],
+      "ruleStrength": [
+        "i-MAT8ECM5oJ"
+      ],
+      "status": [
+        "i-HIQNJ9q8UC"
+      ],
+      "type": [
+        "i-7wuynCTRxU"
+      ],
+      "lastEdited": "2026-02-18T09:37:13.589+00:00",
+      "changelog": [],
+      "decisionlog": [],
+      "appliesToTheseConstructs": "",
+      "knownExceptionForThisConcept": ""
+    },
+    "i-4rbJ4No2NZ": {
+      "rowId": "i-4rbJ4No2NZ",
+      "rule": "Follow the Copy style guide. For detailed rules of content execution, follow the official Canonical Copy style guide.",
+      "knownExceptionForThisConstruct": "",
+      "appliesToTheseConcepts": [
+        "i-ziaRlWZKzo",
+        "i-5CX0qx0-ix",
+        "i-DlY4iCeiNo"
+      ],
+      "ruleStrength": [
+        "i-MAT8ECM5oJ"
+      ],
+      "status": [
+        "i-HIQNJ9q8UC"
+      ],
+      "type": [
+        "i-7wuynCTRxU"
+      ],
+      "lastEdited": "2026-02-18T09:37:21.759+00:00",
+      "changelog": [],
+      "decisionlog": [],
+      "appliesToTheseConstructs": "",
+      "knownExceptionForThisConcept": ""
+    },
+    "i-fccXU5un82": {
+      "rowId": "i-fccXU5un82",
+      "rule": "Prefer vertical depth over horizontal complexity. Scrolling preserves context. Clicking breaks it. Build long, structured pages rather than spreading content across many shallow destinations.",
+      "knownExceptionForThisConstruct": "",
+      "appliesToTheseConcepts": [
+        "i-vT8fuOZWKp",
+        "i-sxV2-vvwEh",
+        "i-77amDzVdN2",
+        "i-ziaRlWZKzo",
+        "i-5CX0qx0-ix"
+      ],
+      "ruleStrength": [
+        "i-MAT8ECM5oJ"
+      ],
+      "status": [
+        "i-hbSOUFH0I1"
+      ],
+      "type": [
+        "i-7wuynCTRxU"
+      ],
+      "lastEdited": "2026-02-18T09:37:30.020+00:00",
+      "changelog": [],
+      "decisionlog": [],
+      "appliesToTheseConstructs": "",
+      "knownExceptionForThisConcept": ""
+    },
+    "i-LjFEVoZ_Ij": {
+      "rowId": "i-LjFEVoZ_Ij",
+      "rule": "Two levels of navigation maximum. Users should reach any key page with one click from the homepage. Keep the information architecture shallow and predictable.",
+      "knownExceptionForThisConstruct": "",
+      "appliesToTheseConcepts": [
+        "i-vT8fuOZWKp",
+        "i-sxV2-vvwEh",
+        "i-77amDzVdN2",
+        "i-ziaRlWZKzo",
+        "i-5CX0qx0-ix"
+      ],
+      "ruleStrength": [
+        "i-MAT8ECM5oJ"
+      ],
+      "status": [
+        "i-hbSOUFH0I1"
+      ],
+      "type": [
+        "i-7wuynCTRxU"
+      ],
+      "lastEdited": "2026-02-18T09:37:41.337+00:00",
+      "changelog": [],
+      "decisionlog": [],
+      "appliesToTheseConstructs": "",
+      "knownExceptionForThisConcept": ""
+    },
+    "i-UHzCJkGOgE": {
+      "rowId": "i-UHzCJkGOgE",
+      "rule": "No unprompted movement. Nothing on the page should animate or move unless triggered by explicit user interaction.",
+      "knownExceptionForThisConstruct": "",
+      "appliesToTheseConcepts": [
+        "i-H6X0PaYoji",
+        "i-ziaRlWZKzo",
+        "i-5CX0qx0-ix"
+      ],
+      "ruleStrength": [
+        "i-MAT8ECM5oJ"
+      ],
+      "status": [
+        "i-hbSOUFH0I1"
+      ],
+      "type": [
+        "i-7wuynCTRxU"
+      ],
+      "lastEdited": "2026-02-18T09:37:45.959+00:00",
+      "changelog": [],
+      "decisionlog": [],
+      "appliesToTheseConstructs": "",
+      "knownExceptionForThisConcept": ""
+    },
+    "i-oTSGQdCEDB": {
+      "rowId": "i-oTSGQdCEDB",
+      "rule": "Maintain a tight, intentional core site. Aim for a concise set of evergreen pages (approximately 30–50). Prioritise depth of content quality over breadth.",
+      "knownExceptionForThisConstruct": "",
+      "appliesToTheseConcepts": [
+        "i-sxV2-vvwEh",
+        "i-77amDzVdN2",
+        "i-5CX0qx0-ix"
+      ],
+      "ruleStrength": [
+        "i-MAT8ECM5oJ"
+      ],
+      "status": [
+        "i-HIQNJ9q8UC"
+      ],
+      "type": [
+        "i-7wuynCTRxU"
+      ],
+      "lastEdited": "2026-02-18T09:37:51.034+00:00",
+      "changelog": [],
+      "decisionlog": [],
+      "appliesToTheseConstructs": "",
+      "knownExceptionForThisConcept": ""
+    },
+    "i-PfTz-qcg99": {
+      "rowId": "i-PfTz-qcg99",
+      "rule": "Separate evergreen content from dated content. Use URLs and page design to clearly distinguish core content from news, updates, or temporary material.",
+      "knownExceptionForThisConstruct": "",
+      "appliesToTheseConcepts": [
+        "i-vT8fuOZWKp",
+        "i-sxV2-vvwEh",
+        "i-5CX0qx0-ix"
+      ],
+      "ruleStrength": [
+        "i-MAT8ECM5oJ"
+      ],
+      "status": [
+        "i-hbSOUFH0I1"
+      ],
+      "type": [
+        "i-7wuynCTRxU"
+      ],
+      "lastEdited": "2026-02-18T09:37:58.144+00:00",
+      "changelog": [],
+      "decisionlog": [],
+      "appliesToTheseConstructs": "",
+      "knownExceptionForThisConcept": ""
+    },
+    "i-TLC1vpYS-W": {
+      "rowId": "i-TLC1vpYS-W",
+      "rule": "Enable a self-cleaning site. Monitor aged or outdated content and archive it proactively. Pages should expire and move out of the main IA automatically through process, metadata, or review cycles.",
+      "knownExceptionForThisConstruct": "",
+      "appliesToTheseConcepts": [
+        "i-sxV2-vvwEh",
+        "i-77amDzVdN2",
+        "i-5CX0qx0-ix",
+        "i-DlY4iCeiNo"
+      ],
+      "ruleStrength": [
+        "i-MAT8ECM5oJ"
+      ],
+      "status": [
+        "i-AWrWmXzOTJ"
+      ],
+      "type": [
+        "i-7wuynCTRxU"
+      ],
+      "lastEdited": "2026-02-18T09:38:05.666+00:00",
+      "changelog": [],
+      "decisionlog": [],
+      "appliesToTheseConstructs": "",
+      "knownExceptionForThisConcept": ""
+    },
+    "i-FZ-Km5eJ5b": {
+      "rowId": "i-FZ-Km5eJ5b",
+      "rule": "Avoid duplication. Do not rewrite or replicate existing information. Link to the canonical source instead.",
+      "knownExceptionForThisConstruct": "",
+      "appliesToTheseConcepts": [
+        "i-5CX0qx0-ix",
+        "i-DlY4iCeiNo"
+      ],
+      "ruleStrength": [
+        "i-MAT8ECM5oJ"
+      ],
+      "status": [
+        "i-HIQNJ9q8UC"
+      ],
+      "type": [
+        "i-7wuynCTRxU"
+      ],
+      "lastEdited": "2026-02-18T09:38:10.344+00:00",
+      "changelog": [],
+      "decisionlog": [],
+      "appliesToTheseConstructs": "",
+      "knownExceptionForThisConcept": ""
+    },
+    "i-MhOInQY0HT": {
+      "rowId": "i-MhOInQY0HT",
+      "rule": "One place per concept. Each topic should have a single authoritative page. Do not create new pages where updates to existing pages are appropriate.",
+      "knownExceptionForThisConstruct": "",
+      "appliesToTheseConcepts": [
+        "i-ziaRlWZKzo",
+        "i-77amDzVdN2",
+        "i-5CX0qx0-ix",
+        "i-DlY4iCeiNo"
+      ],
+      "ruleStrength": [
+        "i-MAT8ECM5oJ"
+      ],
+      "status": [
+        "i-HIQNJ9q8UC"
+      ],
+      "type": [
+        "i-7wuynCTRxU"
+      ],
+      "lastEdited": "2026-02-18T09:38:17.019+00:00",
+      "changelog": [],
+      "decisionlog": [],
+      "appliesToTheseConstructs": "",
+      "knownExceptionForThisConcept": ""
+    },
+    "i-XZuz5ismLA": {
+      "rowId": "i-XZuz5ismLA",
+      "rule": "Constant refinement. Adding a new page should be exceptional. In most cases, introducing new content requires retiring or consolidating an existing page.",
+      "knownExceptionForThisConstruct": "",
+      "appliesToTheseConcepts": [
+        "i-sxV2-vvwEh",
+        "i-77amDzVdN2",
+        "i-ziaRlWZKzo",
+        "i-5CX0qx0-ix"
+      ],
+      "ruleStrength": [
+        "i-MAT8ECM5oJ"
+      ],
+      "status": [
+        "i-AWrWmXzOTJ"
+      ],
+      "type": [
+        "i-7wuynCTRxU"
+      ],
+      "lastEdited": "2026-02-18T09:38:24.171+00:00",
+      "changelog": [],
+      "decisionlog": [],
+      "appliesToTheseConstructs": "",
+      "knownExceptionForThisConcept": ""
+    },
+    "i-SB1Dt8B9RR": {
+      "rowId": "i-SB1Dt8B9RR",
+      "rule": "No orphan pages. All content must be reachable through the defined IA. Pages without a home will surface through search engines and degrade user trust.",
+      "knownExceptionForThisConstruct": "",
+      "appliesToTheseConcepts": [
+        "i-vT8fuOZWKp",
+        "i-sxV2-vvwEh",
+        "i-ziaRlWZKzo",
+        "i-5CX0qx0-ix"
+      ],
+      "ruleStrength": [
+        "i-MAT8ECM5oJ"
+      ],
+      "status": [
+        "i-HIQNJ9q8UC"
+      ],
+      "type": [
+        "i-7wuynCTRxU"
+      ],
+      "lastEdited": "2026-02-18T09:38:37.675+00:00",
+      "changelog": [],
+      "decisionlog": [],
+      "appliesToTheseConstructs": "",
+      "knownExceptionForThisConcept": ""
+    },
+    "i-X_mB5tolP9": {
+      "rowId": "i-X_mB5tolP9",
+      "rule": "No “coming soon” placeholders. Pages must ship completely or not at all. Avoid publishing stubs or speculative destinations.",
+      "knownExceptionForThisConstruct": "",
+      "appliesToTheseConcepts": [
+        "i-ziaRlWZKzo",
+        "i-5CX0qx0-ix"
+      ],
+      "ruleStrength": [
+        "i-MAT8ECM5oJ"
+      ],
+      "status": [
+        "i-HIQNJ9q8UC"
+      ],
+      "type": [
+        "i-7wuynCTRxU"
+      ],
+      "lastEdited": "2026-02-18T09:38:42.295+00:00",
+      "changelog": [],
+      "decisionlog": [],
+      "appliesToTheseConstructs": "",
+      "knownExceptionForThisConcept": ""
+    },
+    "i-3D-wTL_ZpX": {
+      "rowId": "i-3D-wTL_ZpX",
+      "rule": "Case studies are core sales assets. Present them with strong storytelling and design. They should feel aspirational, credible, and easy to explore.",
+      "knownExceptionForThisConstruct": "",
+      "appliesToTheseConcepts": [
+        "i-yoJyVydxF2",
+        "i-5CX0qx0-ix",
+        "i-DlY4iCeiNo"
+      ],
+      "ruleStrength": [
+        "i-MAT8ECM5oJ"
+      ],
+      "status": [
+        "i-AWrWmXzOTJ"
+      ],
+      "type": [
+        "i-7wuynCTRxU"
+      ],
+      "lastEdited": "2026-02-18T09:38:48.317+00:00",
+      "changelog": [],
+      "decisionlog": [],
+      "appliesToTheseConstructs": "",
+      "knownExceptionForThisConcept": ""
+    },
+    "i-8yNo6YoSKP": {
+      "rowId": "i-8yNo6YoSKP",
+      "rule": "Strengthen offers and calls to action. Ensure CTAs and lead-generation elements are compelling, clear, and optimised for conversion.",
+      "knownExceptionForThisConstruct": "",
+      "appliesToTheseConcepts": [
+        "i-ziaRlWZKzo",
+        "i-yoJyVydxF2",
+        "i-DlY4iCeiNo",
+        "i-5CX0qx0-ix"
+      ],
+      "ruleStrength": [
+        "i-MAT8ECM5oJ"
+      ],
+      "status": [
+        "i-HIQNJ9q8UC"
+      ],
+      "type": [
+        "i-7wuynCTRxU"
+      ],
+      "lastEdited": "2026-02-18T09:38:55.193+00:00",
+      "changelog": [],
+      "decisionlog": [],
+      "appliesToTheseConstructs": "",
+      "knownExceptionForThisConcept": ""
+    },
+    "i--Z1CGclocL": {
+      "rowId": "i--Z1CGclocL",
+      "rule": "Use takeovers strategically. When implementing homepage or section takeovers, prioritise craft, wit, and visual quality. They should always lead somewhere meaningful.",
+      "knownExceptionForThisConstruct": "",
+      "appliesToTheseConcepts": [
+        "i-ziaRlWZKzo",
+        "i-yoJyVydxF2",
+        "i-5CX0qx0-ix",
+        "i-DlY4iCeiNo"
+      ],
+      "ruleStrength": [
+        "i-MAT8ECM5oJ"
+      ],
+      "status": [
+        "i-HIQNJ9q8UC"
+      ],
+      "type": [
+        "i-7wuynCTRxU"
+      ],
+      "lastEdited": "2026-02-18T09:39:02.509+00:00",
+      "changelog": [],
+      "decisionlog": [],
+      "appliesToTheseConstructs": "",
+      "knownExceptionForThisConcept": ""
+    },
+    "i-KM2RmVLsIO": {
+      "rowId": "i-KM2RmVLsIO",
+      "rule": "Cascade takeover content. Major homepage narratives should flow into section pages and later into deeper pages, decreasing in prominence as they age.",
+      "knownExceptionForThisConstruct": "",
+      "appliesToTheseConcepts": [
+        "i-vT8fuOZWKp",
+        "i-sxV2-vvwEh",
+        "i-yoJyVydxF2",
+        "i-5CX0qx0-ix"
+      ],
+      "ruleStrength": [
+        "i-MAT8ECM5oJ"
+      ],
+      "status": [
+        "i-AWrWmXzOTJ"
+      ],
+      "type": [
+        "i-7wuynCTRxU"
+      ],
+      "lastEdited": "2026-02-18T09:39:11.887+00:00",
+      "changelog": [],
+      "decisionlog": [],
+      "appliesToTheseConstructs": "",
+      "knownExceptionForThisConcept": ""
+    },
+    "i-BiYYMGD9DJ": {
+      "rowId": "i-BiYYMGD9DJ",
+      "rule": "Respect the professional threshold. Different properties (marketing site, subdomains, docs, wiki, community) require different levels of design control. Maintain differentiation while ensuring they still feel part of a coherent brand system.",
+      "knownExceptionForThisConstruct": "",
+      "appliesToTheseConcepts": [
+        "i-sxV2-vvwEh",
+        "i-yoJyVydxF2",
+        "i-5CX0qx0-ix"
+      ],
+      "ruleStrength": [
+        "i-MAT8ECM5oJ"
+      ],
+      "status": [
+        "i-AWrWmXzOTJ"
+      ],
+      "type": [
+        "i-7wuynCTRxU"
+      ],
+      "lastEdited": "2026-02-18T09:39:17.806+00:00",
+      "changelog": [],
+      "decisionlog": [],
+      "appliesToTheseConstructs": "",
+      "knownExceptionForThisConcept": ""
+    },
+    "i-U1MJIkrB5P": {
+      "rowId": "i-U1MJIkrB5P",
+      "rule": "Keep it lean. Design, copy, and IA should always move towards simplicity, reduction, and clarity.",
+      "knownExceptionForThisConstruct": "",
+      "appliesToTheseConcepts": [
+        "i-vT8fuOZWKp",
+        "i-ziaRlWZKzo",
+        "i-yoJyVydxF2",
+        "i-77amDzVdN2",
+        "i-sxV2-vvwEh",
+        "i-5CX0qx0-ix",
+        "i-DlY4iCeiNo"
+      ],
+      "ruleStrength": [
+        "i-MAT8ECM5oJ"
+      ],
+      "status": [
+        "i-HIQNJ9q8UC"
+      ],
+      "type": [
+        "i-7wuynCTRxU"
+      ],
+      "lastEdited": "2026-02-18T09:39:31.958+00:00",
+      "changelog": [],
+      "decisionlog": [],
+      "appliesToTheseConstructs": "",
+      "knownExceptionForThisConcept": ""
+    },
+    "i-jZgXWq_7bQ": {
+      "rowId": "i-jZgXWq_7bQ",
+      "rule": "Sites’ system uses predefined spacing applied to the page as a whole as well as to particular sections.",
+      "knownExceptionForThisConstruct": "",
+      "appliesToTheseConcepts": [
+        "i-KFif7gGk3u",
+        "i-ziaRlWZKzo"
+      ],
+      "ruleStrength": [
+        "i-JbDemeJZt5"
+      ],
+      "status": [
+        "i-GWi5cya2mo"
+      ],
+      "type": [
+        "i-Gv9rTD4HHR"
+      ],
+      "lastEdited": "2026-02-18T09:39:35.355+00:00",
+      "changelog": [],
+      "decisionlog": [],
+      "appliesToTheseConstructs": "",
+      "knownExceptionForThisConcept": ""
+    },
+    "i-8Y-lOwXNl6": {
+      "rowId": "i-8Y-lOwXNl6",
+      "rule": "Content layout should consist of minimum 3 and maximum 15 sections.",
+      "knownExceptionForThisConstruct": "",
+      "appliesToTheseConcepts": [
+        "i-ziaRlWZKzo",
+        "i-yoJyVydxF2",
+        "i-RO0xf8rGKJ",
+        "i-DlY4iCeiNo"
+      ],
+      "ruleStrength": [
+        "i-MAT8ECM5oJ"
+      ],
+      "status": [
+        "i-hbSOUFH0I1"
+      ],
+      "type": [
+        "i-Gv9rTD4HHR"
+      ],
+      "lastEdited": "2026-02-18T09:39:43.839+00:00",
+      "changelog": [],
+      "decisionlog": [],
+      "appliesToTheseConstructs": "",
+      "knownExceptionForThisConcept": ""
+    },
+    "i-lAauaXXEXi": {
+      "rowId": "i-lAauaXXEXi",
+      "rule": "In special use cases (ie. error page, thank you page) when there is only one section used - deep padding can be used on top and on the bottom to achieve visual balance.",
+      "knownExceptionForThisConstruct": "",
+      "appliesToTheseConcepts": [
+        "i-KFif7gGk3u",
+        "i-yoJyVydxF2"
+      ],
+      "ruleStrength": [
+        "i-MAT8ECM5oJ"
+      ],
+      "status": [
+        "i-hbSOUFH0I1"
+      ],
+      "type": [
+        "i-Gv9rTD4HHR"
+      ],
+      "lastEdited": "2026-02-18T09:39:47.827+00:00",
+      "changelog": [],
+      "decisionlog": [],
+      "appliesToTheseConstructs": "",
+      "knownExceptionForThisConcept": ""
+    },
+    "i-oFPi2Wm4Cu": {
+      "rowId": "i-oFPi2Wm4Cu",
+      "rule": "Section padding has 4 possible values: deep (128px) / regular (64px) / shallow (24px) or none (0px).",
+      "knownExceptionForThisConstruct": "",
+      "appliesToTheseConcepts": [
+        "i-KFif7gGk3u",
+        "i-RO0xf8rGKJ"
+      ],
+      "ruleStrength": [
+        "i-JbDemeJZt5"
+      ],
+      "status": [
+        "i-GWi5cya2mo"
+      ],
+      "type": [
+        "i-Gv9rTD4HHR"
+      ],
+      "lastEdited": "2026-02-18T09:39:51.188+00:00",
+      "changelog": [],
+      "decisionlog": [],
+      "appliesToTheseConstructs": "",
+      "knownExceptionForThisConcept": ""
+    },
+    "i-trysCiJisz": {
+      "rowId": "i-trysCiJisz",
+      "rule": "Distance between sections can be affected by the spacing baked in individual UI components.",
+      "knownExceptionForThisConstruct": "",
+      "appliesToTheseConcepts": [
+        "i-KFif7gGk3u",
+        "i-RO0xf8rGKJ",
+        "i-J6KXahUgv8"
+      ],
+      "ruleStrength": [
+        "i-JbDemeJZt5"
+      ],
+      "status": [
+        "i-AWrWmXzOTJ"
+      ],
+      "type": [
+        "i-Gv9rTD4HHR"
+      ],
+      "lastEdited": "2026-02-18T09:39:57.714+00:00",
+      "changelog": [],
+      "decisionlog": [],
+      "appliesToTheseConstructs": "",
+      "knownExceptionForThisConcept": ""
+    },
+    "i-RMzGlwDepa": {
+      "rowId": "i-RMzGlwDepa",
+      "rule": "Sections padding can be switched to shallow to form a visually unified block of content in the layout. ",
+      "knownExceptionForThisConstruct": "",
+      "appliesToTheseConcepts": [
+        "i-KFif7gGk3u",
+        "i-yoJyVydxF2",
+        "i-RO0xf8rGKJ"
+      ],
+      "ruleStrength": [
+        "i-LtH6rbAhr7"
+      ],
+      "status": [
+        "i-hbSOUFH0I1"
+      ],
+      "type": [
+        "i-Gv9rTD4HHR"
+      ],
+      "lastEdited": "2026-02-18T09:40:13.611+00:00",
+      "changelog": [],
+      "decisionlog": [],
+      "appliesToTheseConstructs": "",
+      "knownExceptionForThisConcept": ""
+    },
+    "i-eofRS01iR3": {
+      "rowId": "i-eofRS01iR3",
+      "rule": "Only one primary CTA can be visible on the screen (with 100% zoom).",
+      "knownExceptionForThisConstruct": "",
+      "appliesToTheseConcepts": [
+        "i-ziaRlWZKzo",
+        "i-yoJyVydxF2",
+        "i-DlY4iCeiNo"
+      ],
+      "ruleStrength": [
+        "i-JbDemeJZt5"
+      ],
+      "status": [
+        "i-hbSOUFH0I1"
+      ],
+      "type": [
+        "i-Gv9rTD4HHR"
+      ],
+      "lastEdited": "2026-02-18T09:40:20.000+00:00",
+      "changelog": [],
+      "decisionlog": [],
+      "appliesToTheseConstructs": "",
+      "knownExceptionForThisConcept": ""
+    },
+    "i-Adsxx3Q45y": {
+      "rowId": "i-Adsxx3Q45y",
+      "rule": "Number of CTAs in the layout should be as limited as possible.",
+      "knownExceptionForThisConstruct": "",
+      "appliesToTheseConcepts": [
+        "i-ziaRlWZKzo",
+        "i-yoJyVydxF2",
+        "i-DlY4iCeiNo"
+      ],
+      "ruleStrength": [
+        "i-MAT8ECM5oJ"
+      ],
+      "status": [
+        "i-HIQNJ9q8UC"
+      ],
+      "type": [
+        "i-Gv9rTD4HHR"
+      ],
+      "lastEdited": "2026-02-18T09:40:31.535+00:00",
+      "changelog": [],
+      "decisionlog": [],
+      "appliesToTheseConstructs": "",
+      "knownExceptionForThisConcept": ""
+    },
+    "i-h-bSbOSXY-": {
+      "rowId": "i-h-bSbOSXY-",
+      "rule": "Every tab in the tab section must have a unique name - this applies also if more than one tab section is used in the layout.",
+      "knownExceptionForThisConstruct": "",
+      "appliesToTheseConcepts": [
+        "i-RO0xf8rGKJ"
+      ],
+      "ruleStrength": [
+        "i-JbDemeJZt5"
+      ],
+      "status": [
+        "i-HIQNJ9q8UC"
+      ],
+      "type": [
+        "i-Gv9rTD4HHR"
+      ],
+      "lastEdited": "2026-02-18T09:40:33.551+00:00",
+      "changelog": [],
+      "decisionlog": [],
+      "appliesToTheseConstructs": "",
+      "knownExceptionForThisConcept": ""
+    },
+    "i-UAlyIFZ9mO": {
+      "rowId": "i-UAlyIFZ9mO",
+      "rule": "Written English follows US spelling conventions.",
+      "knownExceptionForThisConstruct": "",
+      "appliesToTheseConcepts": [
+        "i-DlY4iCeiNo"
+      ],
+      "ruleStrength": [
+        "i-JbDemeJZt5"
+      ],
+      "status": [
+        "i-AWrWmXzOTJ"
+      ],
+      "type": [
+        "i-Gv9rTD4HHR"
+      ],
+      "lastEdited": "2026-02-18T09:40:37.303+00:00",
+      "changelog": [],
+      "decisionlog": [],
+      "appliesToTheseConstructs": "",
+      "knownExceptionForThisConcept": ""
+    },
+    "i-8yJpAyM3v7": {
+      "rowId": "i-8yJpAyM3v7",
+      "rule": "The average sentence length in any paragraph should be between 12 and 20 words. Not longer.",
+      "knownExceptionForThisConstruct": "",
+      "appliesToTheseConcepts": [
+        "i-DlY4iCeiNo"
+      ],
+      "ruleStrength": [
+        "i-MAT8ECM5oJ"
+      ],
+      "status": [
+        "i-GWi5cya2mo"
+      ],
+      "type": [
+        "i-Gv9rTD4HHR"
+      ],
+      "lastEdited": "2026-02-18T09:40:40.302+00:00",
+      "changelog": [],
+      "decisionlog": [],
+      "appliesToTheseConstructs": "",
+      "knownExceptionForThisConcept": ""
+    },
+    "i-gqd_IXOIuk": {
+      "rowId": "i-gqd_IXOIuk",
+      "rule": "Only illustrations from Canonical assets can be used for web pages (if illustration is missing, it can be requested from the brand team). ",
+      "knownExceptionForThisConstruct": "",
+      "appliesToTheseConcepts": [
+        "i-DlY4iCeiNo",
+        "i-2Y_zFSicja"
+      ],
+      "ruleStrength": [
+        "i-JbDemeJZt5"
+      ],
+      "status": [
+        "i-hbSOUFH0I1"
+      ],
+      "type": [
+        "i-Gv9rTD4HHR"
+      ],
+      "lastEdited": "2026-02-18T09:40:46.105+00:00",
+      "changelog": [],
+      "decisionlog": [],
+      "appliesToTheseConstructs": "",
+      "knownExceptionForThisConcept": ""
+    },
+    "i-391Nxqc9A9": {
+      "rowId": "i-391Nxqc9A9",
+      "rule": "Only photos from our photo library (add link) can be used on web pages",
+      "knownExceptionForThisConstruct": "",
+      "appliesToTheseConcepts": [
+        "i-xLNaieGTOY",
+        "i-DlY4iCeiNo"
+      ],
+      "ruleStrength": [
+        "i-JbDemeJZt5"
+      ],
+      "status": [
+        "i-hbSOUFH0I1"
+      ],
+      "type": [
+        "i-Gv9rTD4HHR"
+      ],
+      "lastEdited": "2026-02-18T09:40:51.081+00:00",
+      "changelog": [],
+      "decisionlog": [],
+      "appliesToTheseConstructs": "",
+      "knownExceptionForThisConcept": ""
+    },
+    "i-iyiHuhuOON": {
+      "rowId": "i-iyiHuhuOON",
+      "rule": "Section must be introduced by a concise title that clearly defines the topic.",
+      "knownExceptionForThisConstruct": [
+        "i-oWJdMiuIb4"
+      ],
+      "appliesToTheseConcepts": [
+        "i-DlY4iCeiNo"
+      ],
+      "ruleStrength": [
+        "i-MAT8ECM5oJ"
+      ],
+      "status": [
+        "i-HIQNJ9q8UC"
+      ],
+      "type": [
+        "i-Gv9rTD4HHR"
+      ],
+      "lastEdited": "2026-02-18T09:40:53.413+00:00",
+      "changelog": [],
+      "decisionlog": [],
+      "appliesToTheseConstructs": "",
+      "knownExceptionForThisConcept": ""
+    },
+    "i-c0fL3b9UM5": {
+      "rowId": "i-c0fL3b9UM5",
+      "rule": "Headings/titles of sections and blocks can be linked if they follow links rules.",
+      "knownExceptionForThisConstruct": [
+        "i-K1FTmoSxdo",
+        "i-O69ixYm_Ee",
+        "i-S0DpOp5ECr",
+        "i-tuS5YgvrGJ",
+        "i-yQrLWRZ945",
+        "i-nslqMCF7EQ",
+        "i-JZBi9ESLvH",
+        "i-cn19jqZNBr",
+        "i-VDemBEWUNA"
+      ],
+      "appliesToTheseConcepts": [
+        "i-RO0xf8rGKJ",
+        "i-UbqAYcn-kL",
+        "i-DlY4iCeiNo"
+      ],
+      "ruleStrength": [
+        "i-MAT8ECM5oJ"
+      ],
+      "status": [
+        "i-hbSOUFH0I1"
+      ],
+      "type": [
+        "i-Gv9rTD4HHR"
+      ],
+      "lastEdited": "2026-02-18T09:40:59.834+00:00",
+      "changelog": [],
+      "decisionlog": [],
+      "appliesToTheseConstructs": "",
+      "knownExceptionForThisConcept": ""
+    },
+    "i-8_U4S1DRcz": {
+      "rowId": "i-8_U4S1DRcz",
+      "rule": "Buttons cannot be placed as the first content element in a section (directly under the rule).",
+      "knownExceptionForThisConstruct": "",
+      "appliesToTheseConcepts": [
+        "i-RO0xf8rGKJ"
+      ],
+      "ruleStrength": [
+        "i-JbDemeJZt5"
+      ],
+      "status": [
+        "i-hbSOUFH0I1"
+      ],
+      "type": [
+        "i-Gv9rTD4HHR"
+      ],
+      "lastEdited": "2026-02-18T09:41:02.026+00:00",
+      "changelog": [],
+      "decisionlog": [],
+      "appliesToTheseConstructs": "",
+      "knownExceptionForThisConcept": ""
+    },
+    "i-ZfhWnS-frx": {
+      "rowId": "i-ZfhWnS-frx",
+      "rule": "Two kinds of linked elements cannot be applied one after another - ie. linked title cannot be followed by a list of links.",
+      "knownExceptionForThisConstruct": "",
+      "appliesToTheseConcepts": [
+        "i-RO0xf8rGKJ"
+      ],
+      "ruleStrength": [
+        "i-MAT8ECM5oJ"
+      ],
+      "status": [
+        "i-HIQNJ9q8UC"
+      ],
+      "type": [
+        "i-Gv9rTD4HHR"
+      ],
+      "lastEdited": "2026-02-18T09:41:03.307+00:00",
+      "changelog": [],
+      "decisionlog": [],
+      "appliesToTheseConstructs": "",
+      "knownExceptionForThisConcept": ""
+    },
+    "i-CUx9WMmolk": {
+      "rowId": "i-CUx9WMmolk",
+      "rule": "Each page is defined by a unique H1 title (max 60 characters) and a meta description (max 160 characters) that establishes its context within the site.",
+      "knownExceptionForThisConstruct": "",
+      "appliesToTheseConcepts": [
+        "i-ziaRlWZKzo"
+      ],
+      "ruleStrength": [
+        "i-JbDemeJZt5"
+      ],
+      "status": [
+        "i-HIQNJ9q8UC"
+      ],
+      "type": [
+        "i-Gv9rTD4HHR"
+      ],
+      "lastEdited": "2026-02-18T09:41:05.077+00:00",
+      "changelog": [],
+      "decisionlog": [],
+      "appliesToTheseConstructs": "",
+      "knownExceptionForThisConcept": ""
+    },
+    "i-44rYxH-KL7": {
+      "rowId": "i-44rYxH-KL7",
+      "rule": "Each page should have and OpenGraph image thumbnail, otherwise fallback default image is used.",
+      "knownExceptionForThisConstruct": "",
+      "appliesToTheseConcepts": [
+        "i-ziaRlWZKzo"
+      ],
+      "ruleStrength": [
+        "i-MAT8ECM5oJ"
+      ],
+      "status": [
+        "i-HIQNJ9q8UC"
+      ],
+      "type": [
+        "i-Gv9rTD4HHR"
+      ],
+      "lastEdited": "2026-02-18T09:41:07.478+00:00",
+      "changelog": [],
+      "decisionlog": [],
+      "appliesToTheseConstructs": "",
+      "knownExceptionForThisConcept": ""
+    },
+    "i-sko58g_anS": {
+      "rowId": "i-sko58g_anS",
+      "rule": "All rules (visual dividers) use default style color",
+      "knownExceptionForThisConstruct": [
+        "i-O69ixYm_Ee"
+      ],
+      "appliesToTheseConcepts": [
+        "i-UbqAYcn-kL",
+        "i-RO0xf8rGKJ"
+      ],
+      "ruleStrength": [
+        "i-JbDemeJZt5"
+      ],
+      "status": [
+        "i-hbSOUFH0I1"
+      ],
+      "type": [
+        "i-Gv9rTD4HHR"
+      ],
+      "lastEdited": "2026-02-18T09:41:18.424+00:00",
+      "changelog": [],
+      "decisionlog": [],
+      "appliesToTheseConstructs": "",
+      "knownExceptionForThisConcept": ""
+    },
+    "i-3bh5fUHXlx": {
+      "rowId": "i-3bh5fUHXlx",
+      "rule": "Block titles serve as an introduction to the block content or as a category for elements listed within the block.",
+      "knownExceptionForThisConstruct": "",
+      "appliesToTheseConcepts": [
+        "i-UbqAYcn-kL"
+      ],
+      "ruleStrength": [
+        "i-MAT8ECM5oJ"
+      ],
+      "status": [
+        "i-HIQNJ9q8UC"
+      ],
+      "type": [
+        "i-Gv9rTD4HHR"
+      ],
+      "lastEdited": "2026-02-18T09:41:21.730+00:00",
+      "changelog": [],
+      "decisionlog": [],
+      "appliesToTheseConstructs": "",
+      "knownExceptionForThisConcept": ""
+    },
+    "i-G2gqVu6pWJ": {
+      "rowId": "i-G2gqVu6pWJ",
+      "rule": "Every section consists of a horizontal rule (visual divider), a title* and a content body.",
+      "knownExceptionForThisConstruct": [
+        "i-oWJdMiuIb4",
+        "i-S0DpOp5ECr",
+        "i-JZBi9ESLvH"
+      ],
+      "appliesToTheseConcepts": [
+        "i-RO0xf8rGKJ"
+      ],
+      "ruleStrength": [
+        "i-MAT8ECM5oJ"
+      ],
+      "status": [
+        "i-AWrWmXzOTJ"
+      ],
+      "type": [
+        "i-Gv9rTD4HHR"
+      ],
+      "lastEdited": "2026-02-18T09:35:07.035+00:00",
+      "changelog": [],
+      "decisionlog": [],
+      "appliesToTheseConstructs": "",
+      "knownExceptionForThisConcept": ""
+    }
+  }
+}

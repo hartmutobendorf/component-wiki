@@ -1,0 +1,168 @@
+{
+  "name": "Data spotlight",
+  "slug": "data-spotlight",
+  "type": "Pattern",
+  "tiers": "Sites",
+  "documentationStatus": "Minimal",
+  "lastEdited": "2026-02-13T15:32:03.456+00:00",
+  "figmaLink": "https://www.figma.com/design/1brHCsyeTE6FU7hfJd6ao2/%F0%9F%8C%90-Sites---Core-component-library?node-id=332-14533",
+  "codeLink": "https://github.com/canonical/vanilla-framework/blob/main/templates/_macros/vf_data-spotlight.jinja",
+  "description": "The data spotlight pattern presents key statistics as the primary content, supported by short [Headline](/data-spotlight#anatomy)s and optional [Description](/data-spotlight#anatomy)s. It is designed to surface important numbers in a clear, scannable layout that helps users quickly understand impact, scale, or outcomes.\n\n",
+  "usage": "The data spotlight pattern is used to present key numeric information as the primary focus of a section, allowing users to quickly scan and understand important metrics at a glance. It is composed of a visually emphasized blocks that combines a highlight rule, a [Numeric stat](/data-spotlight#anatomy) with a short [Headline](/data-spotlight#anatomy), optionally supported by a brief [Description](/data-spotlight#anatomy) and a [Link](/data-spotlight#anatomy) for further exploration. The pattern supports 2–4 blocks, with strict character limits to ensure clarity and visual consistency.\n\n### Contents guide\n\n*   Use numeric values to represent measurable data points\n*   Keep stats concise and scannable, with a maximum of 10 characters\n*   Units or numeric modifiers may be included when needed (for example: %, x, min, +, \\-, ~)\n*   Use abbreviations and symbols to improve readability at a glance\n*   Prefer compact numeric expressions over spelled-out text\n\n**Abbreviation guidelines**\n\n*   Use + instead of “more than” (for example, 10+)\n*   Use ~ instead of “up to” or “approximately” (for example, ~10)\n*   Use abbreviated units such as min, sec, hrs instead of full words\n\n**Good examples**\n\n*   10+\n*   ~10\n*   99.9%\n*   3x\n*   15 min\n\n**Avoid**\n\n*   Spelled-out units or phrases (for example, “minutes”, “more than 10”)\n*   Long or complex expressions that reduce scannability\n*   Combining multiple values in a single stat\n\n### When to use\n\n*   To draw attention to important data points or achievements\n*   To support a story with clear, easy-to-digest numbers\n*   To summarize key metrics in a simple and consistent layout\n\n### When not to use\n\n*   When the content is descriptive text rather than numeric data, please use [Text spotlight](/text-spotlight) instead\n*   When you have fewer than 2 or more than 4 stats\n*   When detailed explanations are required instead of concise highlights",
+  "examples": "### **Layout**\n\nLarge dimension (4 blocks)\n\n![example-5.png](images/6e200849-9ac0-4d0e-85e4-d43cfee9a9df.png)\n\nLarge dimension (3 blocks)\n\n![example-1.png](images/1a3efa55-0375-4a65-9c08-ec9ad988f158.png)\n\nLarge dimension (2 blocks)\n\n![example-2.png](images/1b5631c1-d4bd-40da-8e36-2269945bd322.png)\n\nMedium dimension (4 blocks)\n\n![example-3.png](images/9bb5cc92-9962-45fc-939b-10ecd61d6cf5.png)\n\nMedium dimension (3 blocks)\n\n![example.png](images/0fd15079-d7fc-40e7-ad85-30e3d3324b29.png)\n\nSmall dimension\n\n![example-4.png](images/98b9187d-66f1-4d03-844e-9ba4ac64ccd5.png)\n\n### **Usage example**\n\nWithout [Description](/data-spotlight#anatomy)\n\n![example.png](images/931886ef-ff92-4c9e-85a6-c7d1d7374b15.png)\n\nWithout [Description](/data-spotlight#anatomy) and [Link](/data-spotlight#anatomy)\n\n![example-2.png](images/3af5955a-e330-498a-b4f0-7d71633953f0.png)\n\nWithout [Headline](/data-spotlight#anatomy)\n\n![example-3.png](images/4505f972-b63f-4004-a412-ff39bec6f7de.png)\n\nLink style heading\n\n![example-1.png](images/173731f7-565c-49db-a18d-bac9c430a3cd.png)",
+  "interactions": "",
+  "sitesArchitectureLevels": "i-ues18YVwia",
+  "anatomy": {
+    "table": [
+      {
+        "number": 1,
+        "name": "Heading",
+        "description": "The section heading communicates the primary subject or theme of the section."
+      },
+      {
+        "number": 2,
+        "name": "Block rule",
+        "description": "The rule component indicates and visually highlights the start of each block."
+      },
+      {
+        "number": 3,
+        "name": "Numeric stat",
+        "description": "The numeric stat displays the primary data point for the block."
+      },
+      {
+        "number": 4,
+        "name": "Headline",
+        "description": "The headline labels and clarifies what the numeric stat represents."
+      },
+      {
+        "number": 5,
+        "name": "Description",
+        "description": "The description provides optional supporting context for the data point."
+      },
+      {
+        "number": 6,
+        "name": "Link",
+        "description": "The link is an optional element that directs users to more detailed or related information."
+      }
+    ]
+  },
+  "properties": [
+    {
+      "name": "Linked heading",
+      "required": false,
+      "type": "single select",
+      "description": "The heading can be used as a link when paired with a chevron(›) and a clear indication.",
+      "constraint": "",
+      "defaultOption": "default",
+      "options": [
+        "default",
+        "link"
+      ]
+    },
+    {
+      "name": "Heading",
+      "required": true,
+      "type": "string",
+      "description": "2-column width heading using muted heading",
+      "constraint": "Up to 60 characters",
+      "defaultOption": ""
+    },
+    {
+      "name": "Data spotlight block",
+      "required": true,
+      "type": "object",
+      "description": "This block consists of the required highlight rule, stat, along with an optional headline, description and link.\n2, 3 or 4 blocks can be used within the pattern.\nThe height is determined by the item with the longest line in the same row.",
+      "constraint": "",
+      "defaultOption": "",
+      "options": [
+        "2 blocks",
+        "3 blocks",
+        "4 blocks"
+      ]
+    },
+    {
+      "name": "Block rule",
+      "required": true,
+      "type": "object",
+      "description": "The rule component used to emphasize each data block and create separation.",
+      "constraint": "",
+      "defaultOption": "highlight",
+      "options": [
+        "highlight"
+      ]
+    },
+    {
+      "name": "Numeric stat",
+      "required": true,
+      "type": "string",
+      "description": "2-column width stat text with H1 style ",
+      "constraint": "Up to 10 characters",
+      "defaultOption": ""
+    },
+    {
+      "name": "Headline",
+      "required": false,
+      "type": "string",
+      "description": "Optional 2-column width headline text with H3 style for each stat.",
+      "constraint": "Up to 20 characters",
+      "defaultOption": ""
+    },
+    {
+      "name": "Body",
+      "required": false,
+      "type": "string",
+      "description": "2-column width body text",
+      "constraint": "300 (As part of a highlighted section, the content should be limited to a single sentence.)",
+      "defaultOption": ""
+    },
+    {
+      "name": "Link CTA",
+      "required": false,
+      "type": "string",
+      "description": "The text link used for contextual actions or pathways to more information. It uses a chevron (›) to indicate navigation to additional content or pages.",
+      "constraint": "Up to 60 characters",
+      "defaultOption": ""
+    },
+    {
+      "name": "Bottom padding",
+      "required": true,
+      "type": "single select",
+      "description": "The type of padding applied to the bottom of the pattern",
+      "constraint": "",
+      "defaultOption": "default",
+      "options": [
+        "default",
+        "deep",
+        "shallow",
+        "none"
+      ]
+    }
+  ],
+  "changeLog": [
+    {
+      "who": "Maximilian Blazek",
+      "when": "2026-02-13T15:00:00.000+00:00",
+      "what": "Add links"
+    }
+  ],
+  "decisionLog": [],
+  "appliedRules": [],
+  "exceptionFromRules": [
+    "i-U3IwMn0dXk",
+    "i-c0fL3b9UM5",
+    "i-sko58g_anS"
+  ],
+  "mentionedIn": [
+    {
+      "name": "Basic section",
+      "slug": "basic-section"
+    }
+  ],
+  "mentionsComponents": [
+    {
+      "name": "Text spotlight",
+      "slug": "text-spotlight"
+    }
+  ],
+  "url": "https://component.wiki/data-spotlight"
+}
