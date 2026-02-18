@@ -344,6 +344,7 @@ export const conceptSchema = z.object({
   appliedRules: z.array(z.string()).optional().default([]),
   exceptedFromRules: z.array(z.string()).optional().default([]),
   mentionedIn: z.array(mentionedInEntrySchema).optional().default([]),
+  mentionsComponents: z.array(mentionedInEntrySchema).optional().default([]),
 });
 
 export const ruleSchema = z.object({

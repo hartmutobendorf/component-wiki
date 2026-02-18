@@ -27,6 +27,14 @@ export function buildConstructPath(tier: string, slug: string): string {
 }
 
 /**
+ * Builds a concept URL path given a tier and concept slug.
+ * e.g. ("Global", "color") → "global/concept/color"
+ */
+export function buildConceptPath(tier: string, slug: string): string {
+  return `${tierToPrefix(tier)}/concept/${slug}`;
+}
+
+/**
  * Filters an array of constructs (or any objects with a `tiers` property)
  * to only include those matching the given tier.
  */
