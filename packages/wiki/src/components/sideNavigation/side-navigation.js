@@ -425,18 +425,6 @@ export class SideNavigationComponent extends LitElement {
               </button>
             </div>
 
-            <p
-              style="font-size: 0.75rem; margin-bottom: 0.5rem; margin-top: -0.5rem; padding: 0 1.5rem; opacity: 0.7;"
-            >
-              Docs for
-              <a
-                href="https://vanillaframework.io"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Vanilla Framework</a
-              >
-            </p>
-
             <div style="margin-bottom: 1rem;">
               <label class="p-side-navigation__heading" for="filter-components"
                 >Filter components</label

@@ -68,8 +68,11 @@ const navItems = typeOrder
     <ClientRouter />
   </head>
   <body>
-    <TopNavigation activeTier={activeTier} />
     <div class="l-docs">
+      <div class="l-docs__header">
+        <TopNavigation activeTier={activeTier} />
+      </div>
+
       <aside class="l-docs__sidebar">
         <script
           id="nav-data"
