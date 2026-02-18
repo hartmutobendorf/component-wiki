@@ -84,7 +84,22 @@ const tiers = TIERS.map((tier) => ({
     });
   }
 
+  function updateNavigationHeight() {
+    const navigation = document.getElementById('top-navigation');
+    if (navigation) {
+      document.documentElement.style.setProperty(
+        '--navigation-height',
+        `${navigation.offsetHeight}px`
+      );
+    }
+  }
+
   // Run on initial load and after Astro page transitions
   setupTopNavToggle();
-  document.addEventListener('astro:page-load', setupTopNavToggle);
+  updateNavigationHeight();
+  window.addEventListener('resize', updateNavigationHeight);
+  document.addEventListener('astro:page-load', () => {
+    setupTopNavToggle();
+    updateNavigationHeight();
+  });
 </script>

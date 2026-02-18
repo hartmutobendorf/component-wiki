@@ -27,13 +27,18 @@ export class SideNavigationComponent extends LitElement {
 
         .p-side-navigation {
           /* Remove drawer classes on desktop */
-          min-height: 100vh;
+          min-height: calc(100vh - var(--navigation-height, 0px));
 
           &.is-drawer-hidden,
           &.is-drawer-expanded,
           &.is-drawer-collapsed {
             /* Reset to normal state */
           }
+        }
+
+        .p-side-navigation.is-sticky {
+          max-height: calc(100dvh - var(--navigation-height, 0px));
+          top: var(--navigation-height, 0px);
         }
 
         .p-side-navigation__drawer {
