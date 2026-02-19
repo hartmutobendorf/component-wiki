@@ -1,5 +1,6 @@
 ---
-import { TIERS, tierToPrefix } from "../utils/tiers";
+import { getCollection } from "astro:content";
+import { TIERS, tierToPrefix, buildConceptPath } from "../utils/tiers";
 
 interface Props {
   activeTier: string;
@@ -7,9 +8,34 @@ interface Props {
 
 const { activeTier } = Astro.props;
 
+const conceptTypeOrder = ["Architecture", "Principle", "Decision guide"];
+const allConcepts = await getCollection("concepts");
+const allConstructs = await getCollection("constructs");
+
+function getFirstPageForTier(tier: string): string {
+  const concepts = allConcepts
+    .filter((c) => c.data.tier === tier)
+    .sort((a, b) => a.data.name.localeCompare(b.data.name));
+
+  const first = conceptTypeOrder.reduce<(typeof concepts)[number] | null>(
+    (found, type) => found ?? concepts.find((c) => c.data.type === type) ?? null,
+    null,
+  ) ?? concepts[0];
+
+  if (first) {
+    return `/${buildConceptPath(tier, first.id)}`;
+  }
+
+  const constructs = allConstructs
+    .filter((c) => c.data.tiers === tier)
+    .sort((a, b) => a.data.name.localeCompare(b.data.name));
+
+  return `/${tierToPrefix(tier)}/${constructs[0]?.id ?? ""}`;
+}
+
 const tiers = TIERS.map((tier) => ({
   label: tier,
-  href: `/${tierToPrefix(tier)}`,
+  href: getFirstPageForTier(tier),
 }));
 ---
 
@@ -18,7 +44,7 @@ const tiers = TIERS.map((tier) => ({
     <div class="l-docs__sidebar">
       <div class="p-navigation__banner">
         <div class="p-navigation__tagged-logo">
-          <a class="p-navigation__link" href="/global">
+          <a class="p-navigation__link" href={tiers[0].href}>
             <div class="p-navigation__logo-tag">
               <img
                 class="p-navigation__logo-icon"
