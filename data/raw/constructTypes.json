@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-02-18T17:21:05.885Z",
+  "fetchedAt": "2026-02-19T12:33:16.047Z",
   "rows": {
     "i-qokjJxQw1_": {
       "rowId": "i-qokjJxQw1_",
@@ -28,15 +28,6 @@
       "name": "Foundation",
       "components": [],
       "description": "**Foundations** are the basic elements of styling. For example,  colours, fonts, spacing and borders. They codify our brand guidelines so that our UIs look and feel like they belong to Canonical. They are usually represented as Design tokens."
-    },
-    "i-AnTozSzw_R": {
-      "rowId": "i-AnTozSzw_R",
-      "name": "Mental model",
-      "components": [
-        "i-plkjzhg8m1",
-        "i-LbP9pdhuJw"
-      ],
-      "description": "**Mental models** are policies, practices, and rules for solving generic UX problems in a consistent way. For example, data visualisation, forms, and error handling."
     },
     "i-B7wAtn3Kkh": {
       "rowId": "i-B7wAtn3Kkh",

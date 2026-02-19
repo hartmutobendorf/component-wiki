@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-02-18T17:21:05.885Z",
+  "fetchedAt": "2026-02-19T12:33:16.047Z",
   "rows": {
     "i-eMuMy4n-z3": {
       "rowId": "i-eMuMy4n-z3",
@@ -31,8 +31,7 @@
         "i-eoOMJgGK_d",
         "i--w8-6ot1a8",
         "i-xUFwNsfx30",
-        "i-aUPUyjNgjD",
-        "i-LbP9pdhuJw"
+        "i-aUPUyjNgjD"
       ],
       "text": "The tier of components that will be used across almost every product, project or site.",
       "concepts": [
@@ -98,8 +97,7 @@
       "rowId": "i-sRNrVrHSnM",
       "name": "Apps",
       "components": [
-        "i-KtIvN04WN9",
-        "i-plkjzhg8m1"
+        "i-KtIvN04WN9"
       ],
       "text": "The tier of components that are mostly used by applications.",
       "concepts": [

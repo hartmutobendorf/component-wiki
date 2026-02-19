@@ -1,11 +1,10 @@
 {
-  "generatedAt": "2026-02-18T17:21:06.973Z",
-  "constructCount": 49,
+  "generatedAt": "2026-02-19T12:33:17.296Z",
+  "constructCount": 47,
   "conceptCount": 26,
   "constructTypes": [
     "Complex component",
     "Component",
-    "Mental model",
     "Pattern"
   ],
   "constructTiers": [
@@ -20,25 +19,11 @@
   ],
   "constructs": [
     {
-      "name": "Form placement",
-      "slug": "form-placement",
-      "type": "Mental model",
-      "tiers": "Apps",
-      "description": "Form placement refers to the deliberate choice of surface: page, side panel, or modal, for presenting forms and multi-input tasks. The right surface depends on the complexity of the task, the amount of context the user needs from the current screen, and the level of disruption that is acceptable."
-    },
-    {
       "name": "In-page navigation",
       "slug": "in-page-navigation",
       "type": "Complex component",
       "tiers": "Sites",
       "description": "In-page navigation is a navigational component for exploring content within a single page. Users can scan the page structure, jump directly to sections, and understand their current position as they scroll."
-    },
-    {
-      "name": "Intentional friction",
-      "slug": "intentional-friction",
-      "type": "Mental model",
-      "tiers": "Global",
-      "description": "Design friction is the intentional use of obstacles in a user interface to prevent accidental or destructive mistakes. It should be used when a user is about to perform an action that is irreversible, such as deleting data or changing permanent system settings.\n\nFor high-risk tasks, use blocking friction like requiring the user to type a confirmation word or check a box acknowledging specific risks. For medium-risk or advanced settings, use non-blocking friction like warning dialogs or technical language to ensure the user is acting deliberately rather than clicking through mindlessly."
     },
     {
       "name": "List",
