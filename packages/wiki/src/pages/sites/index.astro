@@ -16,7 +16,7 @@ const first = conceptTypeOrder.reduce<(typeof sitesConcepts)[number] | null>(
 ) ?? sitesConcepts[0];
 
 if (first) {
-  return Astro.redirect(buildConceptPath('Sites', first.id));
+  return Astro.redirect(`/${buildConceptPath('Sites', first.id)}`, 301);
 }
 
 // Fallback to first construct if no concepts exist
@@ -25,5 +25,5 @@ const sitesConstructs = constructs
   .filter((c) => c.data.tiers === 'Sites')
   .sort((a, b) => a.data.name.localeCompare(b.data.name));
 
-return Astro.redirect(`/sites/${sitesConstructs[0]?.id ?? ''}`);
+return Astro.redirect(`/sites/${sitesConstructs[0]?.id ?? ''}`, 301);
 ---

@@ -16,7 +16,7 @@ const first = conceptTypeOrder.reduce<(typeof globalConcepts)[number] | null>(
 ) ?? globalConcepts[0];
 
 if (first) {
-  return Astro.redirect(buildConceptPath('Global', first.id));
+  return Astro.redirect(`/${buildConceptPath('Global', first.id)}`, 301);
 }
 
 // Fallback to first construct if no concepts exist
@@ -25,5 +25,5 @@ const globalConstructs = constructs
   .filter((c) => c.data.tiers === 'Global')
   .sort((a, b) => a.data.name.localeCompare(b.data.name));
 
-return Astro.redirect(`/global/${globalConstructs[0]?.id ?? ''}`);
+return Astro.redirect(`/global/${globalConstructs[0]?.id ?? ''}`, 301);
 ---
