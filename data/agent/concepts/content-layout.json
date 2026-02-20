@@ -353,6 +353,22 @@
       "knownExceptionForConcepts": "",
       "changeLog": [],
       "decisionLog": []
+    },
+    {
+      "rule": "Use [webpage copy doc template](https://docs.google.com/document/d/1EPA_Ea8ShIvyftAc9oVxZYUIMHfAPFF6S5x6FOvLkwM) to structure and visualize the content within the boundaries of available sections and layouts.",
+      "ruleStrength": "MUST",
+      "status": "Existing",
+      "type": "Specific rule",
+      "lastEdited": "2026-02-20T08:33:59.063+00:00",
+      "appliesToConcepts": [
+        "Content guide",
+        "Content layout"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
     }
   ],
   "exceptedFromRules": [],

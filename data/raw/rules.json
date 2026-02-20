@@ -1,6 +1,29 @@
 {
-  "fetchedAt": "2026-02-19T12:56:56.221Z",
+  "fetchedAt": "2026-02-20T13:30:24.934Z",
   "rows": {
+    "i-enjVjrDg2b": {
+      "rowId": "i-enjVjrDg2b",
+      "rule": "Use [webpage copy doc template](https://docs.google.com/document/d/1EPA_Ea8ShIvyftAc9oVxZYUIMHfAPFF6S5x6FOvLkwM) to structure and visualize the content within the boundaries of available sections and layouts.",
+      "knownExceptionForThisConstruct": "",
+      "appliesToTheseConcepts": [
+        "i-DlY4iCeiNo",
+        "i-yoJyVydxF2"
+      ],
+      "ruleStrength": [
+        "i-JbDemeJZt5"
+      ],
+      "status": [
+        "i-GWi5cya2mo"
+      ],
+      "type": [
+        "i-Gv9rTD4HHR"
+      ],
+      "lastEdited": "2026-02-20T08:33:59.063+00:00",
+      "changelog": [],
+      "decisionlog": [],
+      "appliesToTheseConstructs": "",
+      "knownExceptionForThisConcept": ""
+    },
     "i-fzDIK_WZZU": {
       "rowId": "i-fzDIK_WZZU",
       "rule": "Rules (visual dividers) in regular style are mandatory elements that separate sections from each other. ",

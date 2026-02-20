@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-02-19T12:56:57.463Z",
+  "generatedAt": "2026-02-20T13:30:26.042Z",
   "constructCount": 47,
   "conceptCount": 26,
   "constructTypes": [
@@ -431,7 +431,7 @@
       "slug": "content-guide",
       "type": "Principle",
       "tier": "Sites",
-      "description": "Codification of our brand guidelines ensuring proper Canonical branding on Sites."
+      "description": "The Content guide establishes the editorial and structural standards for creating web content within the Canonical design system. While the [Copy style guide](https://docs.google.com/document/d/1AX-kSNztuAmShEoohe8L3LNLRnSKF7I0qkZGNeoGOok/edit?tab=t.0) addresses grammar, voice, and tone, this guide focuses on the strategic application and structural optimization of the page content."
     },
     {
       "name": "Color",
