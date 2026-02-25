@@ -124,6 +124,10 @@
     {
       "name": "Basic section",
       "slug": "basic-section"
+    },
+    {
+      "name": "Logo section",
+      "slug": "logo-section"
     }
   ],
   "mentionsComponents": [],

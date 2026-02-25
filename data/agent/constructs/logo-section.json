@@ -3,15 +3,44 @@
   "slug": "logo-section",
   "type": "Pattern",
   "tiers": "Sites",
-  "documentationStatus": "Needs work",
-  "lastEdited": "2026-02-10T08:16:33.829+00:00",
-  "figmaLink": "",
-  "codeLink": "",
-  "description": "",
-  "usage": "",
-  "examples": "",
+  "documentationStatus": "Minimal",
+  "lastEdited": "2026-02-23T11:24:06.325+00:00",
+  "figmaLink": "https://www.figma.com/design/1brHCsyeTE6FU7hfJd6ao2/%F0%9F%8C%90-Sites---Core-component-library?node-id=336-20426&p=f&t=I4p3Raifg4O82H5a-11",
+  "codeLink": "https://github.com/canonical/vanilla-framework/blob/main/templates/_macros/vf_logo-section.jinja",
+  "description": "The logo section showcases a group of related images, such as a group of customer or partner logos. For best results, ensure that the images have identical dimensions.\n\n  \n",
+  "usage": "The logo section highlights the logo as the primary content. It is typically paired with a muted heading, an optional description, and a CTA block. This pattern is used to emphasize brand identity or partner associations within a page.\n\n### When to use\n\n*   In cases where the logo block functions as the main content, with all other elements acting as supporting content\n\n### When not to use\n\n*   When images, lists, or other content need to be included, use the [Basic section](/basic-section) instead\n*   If logos need to be linked, use the [Linked logo section](/linked-logo-section) instead",
+  "examples": "Medium dimension\n\n![example-4.png](images/49a3911b-05bd-44ed-a086-a71a5395e469.png)\n\nSmall dimension\n\n![example-5.png](images/2dfd24a5-0eff-4878-bcff-4769c911115f.png)\n\nLinked heading\n\n![example-2.png](images/450bb0a5-58d5-4c7d-af70-be3955b22b66.png)",
   "interactions": "",
   "sitesArchitectureLevels": "i-ues18YVwia",
+  "anatomy": {
+    "table": [
+      {
+        "number": 1,
+        "name": "Rule",
+        "description": "The rule component indicates the beginning of a new section."
+      },
+      {
+        "number": 2,
+        "name": "Heading",
+        "description": "The section heading communicates the primary subject or theme of the section."
+      },
+      {
+        "number": 3,
+        "name": "Description",
+        "description": "The description provides introductory context for the section. It appears at the top of the section and helps users understand the purpose or scope of the content before engaging with the logo block."
+      },
+      {
+        "number": 4,
+        "name": "CTA block",
+        "description": "The CTA (call to action) block presents one or more related actions that guide the user toward the next step within a section"
+      },
+      {
+        "number": 5,
+        "name": "Logo block",
+        "description": "The array of related images, such as customer or partner logos."
+      }
+    ]
+  },
   "properties": [
     {
       "name": "Section rule",
@@ -23,6 +52,14 @@
       "options": [
         "default"
       ]
+    },
+    {
+      "name": "Heading",
+      "required": true,
+      "type": "string",
+      "description": "4-column width H2 heading using muted heading style",
+      "constraint": "Up to 60 characters",
+      "defaultOption": ""
     },
     {
       "name": "Linked heading",
@@ -57,6 +94,37 @@
       "description": "The logo block showcases a group of related images, such as a group of customer or partner logos.",
       "constraint": "Up to 10 logos\nLinking individual logos is not allowed",
       "defaultOption": ""
+    }
+  ],
+  "childProperties": [
+    {
+      "name": "CTA block",
+      "properties": [
+        {
+          "name": "Link CTA",
+          "required": false,
+          "type": "string",
+          "description": "The text link used for contextual actions or pathways to more information. It uses a chevron (›) to indicate navigation to additional content or pages.",
+          "constraint": "Up to 60 characters",
+          "defaultOption": ""
+        },
+        {
+          "name": "Primary CTA",
+          "required": false,
+          "type": "string",
+          "description": "The CTA used with the positive button style. It indicates a high-priority, positive action and is reserved for hero areas or other key call-to-action sections.",
+          "constraint": "Up to 20 characters",
+          "defaultOption": ""
+        },
+        {
+          "name": "Secondary CTA",
+          "required": false,
+          "type": "string",
+          "description": "The CTA using the default button style. It is used for most actions that are positive but not primary, and may serve as the main CTA in non-hero sections.",
+          "constraint": "Up to 20 characters",
+          "defaultOption": ""
+        }
+      ]
     }
   ],
   "changeLog": [],
@@ -103,6 +171,15 @@
       "slug": "basic-section"
     }
   ],
-  "mentionsComponents": [],
+  "mentionsComponents": [
+    {
+      "name": "Basic section",
+      "slug": "basic-section"
+    },
+    {
+      "name": "Linked logo section",
+      "slug": "linked-logo-section"
+    }
+  ],
   "url": "https://component.wiki/logo-section"
 }

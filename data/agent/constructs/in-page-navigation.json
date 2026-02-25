@@ -4,12 +4,12 @@
   "type": "Complex component",
   "tiers": "Sites",
   "documentationStatus": "Needs work",
-  "lastEdited": "2026-02-13T15:42:28.799+00:00",
+  "lastEdited": "2026-02-23T08:29:25.628+00:00",
   "figmaLink": "https://www.figma.com/design/1brHCsyeTE6FU7hfJd6ao2/%F0%9F%8C%90-Sites---Core-component-library?node-id=5867-1245&p=f&t=H03drqhsN72gwk3n-11",
   "codeLink": "",
   "description": "In-page navigation is a navigational component for exploring content within a single page. Users can scan the page structure, jump directly to sections, and understand their current position as they scroll.",
-  "usage": "In-page navigation is intended for pages with structured, section-based content where users benefit from an overview of the page and quick access to specific sections.\n\nThe in-page navigation can either apply to a full page after the [Hero](/hero) or be manually scoped to specific sections.\n\nWhen used at a full-page scope, only one instance is allowed per page. When manually scoped, multiple instances may be used as long as their scopes do not overlap. \n\nFull-page and manually scoped instances cannot be used together.\n\n### Component structure\n\n*   The component is structured around section headings within the page.\n*   Headings in the [Hero](/hero) section are excluded from the in-page navigation.\n\n### Usage scope\n\n*   The component can be used for an entire page or manually applied to specific sections or groups of content.\n*   When a full-page scope is used, only one component is allowed per page.\n*   When scoped to specific sections, multiple components may be used.\n*   *   There is an option to add a [Heading](/in-page-navigation#anatomy) on top of the in-page navigation component, which can be helpful in cases where the in-page navigation targets specific sections\n    *   When multiple manually scoped components are used, their scopes must not overlap.\n\n### Component placement\n\n*   It is placed after the [Hero](/hero) section and applies only to content that follows the [Hero](/hero).\n*   On initial load, the component position is fixed.\n*   As the user scrolls, the component transitions to sticky positioning once its container reaches the domain/bubble navigation boundary (24px below on desktop).\n*   When scoped to specific sections, it starts with the first section and remains sticky until the last section scrolls out of view.\n*   Large screens: The in-page navigation is positioned in the left two-column rail.\n*   Smaller screens: The component spans the full screen width.\n\n### Anchor scroll offset\n\nThe scroll anchor offset ensures that the target section heading remains fully visible after in-page navigation interactions. It is determined by whether the domain/bubble navigation is sticky and by the screen size.\n\n**Sticky domain/bubble navigation**\n\n*   Desktop: 80px\n*   Mobile / Tablet: 120px\n\n**Fixed domain/bubble navigation**\n\n*   Desktop: 24px\n*   Mobile / Tablet: 72px",
-  "examples": "",
+  "usage": "In-page navigation is intended for pages with structured, section-based content where users benefit from an overview of the page and quick access to specific sections.\n\nThe in-page navigation can either apply to a full page after the [Hero](/hero) or be manually scoped to specific sections.\n\nWhen used at a full-page scope, only one instance is allowed per page. When manually scoped, multiple instances may be used as long as their scopes do not overlap. \n\nFull-page and manually scoped instances cannot be used together.\n\n### Component structure\n\n*   The component is structured around section headings within the page.\n*   Headings in the [Hero](/hero) section are excluded from the in-page navigation.\n\n### Usage scope\n\n*   The component can be used for an entire page or manually applied to specific sections or groups of content.\n*   When a full-page scope is used, only one component is allowed per page.\n*   When scoped to specific sections, multiple components may be used.\n*   *   There is an option to add a [Heading](/in-page-navigation#anatomy) on top of the in-page navigation component, which can be helpful in cases where the in-page navigation targets specific sections\n    *   When multiple manually scoped components are used, their scopes must not overlap.\n\n### Component placement\n\n*   It is placed after the [Hero](/hero) section and applies only to content that follows the [Hero](/hero).\n*   On initial load, the component position is fixed.\n*   As the user scrolls, the component transitions to sticky positioning once its container reaches the domain/bubble navigation boundary (24px below on desktop).\n*   When scoped to specific sections, it starts with the first section and remains sticky until the last section scrolls out of view.\n*   Large dimension: The in-page navigation is positioned in the left two-column rail.\n*   Small and medium dimension: The component spans the full screen width.\n\n### Anchor scroll offset\n\nThe scroll anchor offset ensures that the target section heading remains fully visible after in-page navigation interactions. It is determined by whether the domain/bubble navigation is sticky and by the screen size.\n\n**Sticky domain/bubble navigation**\n\n*   Large dimension: 80px\n*   Small and medium dimension: 120px\n\n**Fixed domain/bubble navigation**\n\n*   Large dimension: 24px\n*   Small and medium dimension: 72px",
+  "examples": "Large dimension, full-page, before scrolling (fixed position)\n\n![example.png](images/50298914-e71b-4978-93b6-9fbbc59e5158.png)\n\nLarge dimension, full-page, after scrolling (sticky position)\n\n![example-2.png](images/f6d9f5f1-4eff-4cd8-b22b-1beef660744a.png)\n\nLarge dimension, manual scope with the optional [Heading](/in-page-navigation#anatomy)\n\n![example-4.png](images/76826d0d-26d6-4d9e-9faa-05fa6913c0b8.png)\n\nLarge dimension with independent scrolling by overflow\n\n![example-9.png](images/db0720ab-fb55-4404-9232-e18257c7f63b.png)\n\nSmall dimension in the collapsed variant, full-page, before scrolling (fixed position)\n\n![example-5.png](images/1411d926-2c11-478c-814f-9ed55c1d247e.png)\n\nSmall dimension in the collapsed variant, full-page, after scrolling (sticky position)\n\n![example-7.png](images/6a6b57c8-dd20-441b-9212-ad4ad939bee7.png)\n\nSmall dimension in the expanded variant, full-page, after scrolling (sticky position)\n\n![example-8.png](images/33c73660-894a-4d0a-b193-ed389af79429.png)\n\nSmall dimension in expanded variant, manual scope with the optional [Heading](/in-page-navigation#anatomy)\n\n![example-6.png](images/8a0614d0-6079-48f2-8979-26ee884452b7.png)",
   "interactions": "",
   "sitesArchitectureLevels": "i-UvVNCYZ44t",
   "anatomy": {
@@ -56,12 +56,88 @@
       }
     ]
   },
-  "properties": [],
+  "properties": [
+    {
+      "name": "Heading",
+      "required": false,
+      "type": "string",
+      "description": "The heading of the in-page navigation in muted heading style",
+      "constraint": "Up to 60 characters",
+      "defaultOption": ""
+    },
+    {
+      "name": "Item",
+      "required": true,
+      "type": "object",
+      "description": "The navigation item represented as an object. The hierachy and order of the navigation should be reflected in the object to a maximum of 2 levels deep.",
+      "constraint": "",
+      "defaultOption": ""
+    },
+    {
+      "name": "Primary level",
+      "required": true,
+      "type": "single select",
+      "description": "Defines how primary-level navigation items are generated.",
+      "constraint": "",
+      "defaultOption": "H2",
+      "options": [
+        "- H2\n- H3 - only used when the in-page navigation is scoped to specific sections or content group."
+      ]
+    },
+    {
+      "name": "Secondary level",
+      "required": false,
+      "type": "single select",
+      "description": "Defines how secondary-level navigation items are generated under the primary level.\n",
+      "constraint": "",
+      "defaultOption": "H3",
+      "options": [
+        "- H3 (when primary is H2)\n- H4 (when primary is H3)"
+      ]
+    },
+    {
+      "name": "Item heading",
+      "required": true,
+      "type": "string",
+      "description": "The item heading as it will appear in the navigation item",
+      "constraint": "",
+      "defaultOption": ""
+    },
+    {
+      "name": "Item ID",
+      "required": true,
+      "type": "string",
+      "description": "The ID of the target heading",
+      "constraint": "",
+      "defaultOption": ""
+    },
+    {
+      "name": "Scope",
+      "required": false,
+      "type": "string",
+      "description": "Defines whether the in-page navigation applies to the entire page or is manually limited to a specific sections or content group.",
+      "constraint": "",
+      "defaultOption": "Full page",
+      "options": [
+        "- Full-page\n- Manual"
+      ]
+    }
+  ],
   "changeLog": [
     {
       "who": "Maximilian Blazek",
       "when": "2026-02-13T15:00:00.000+00:00",
       "what": "Added links"
+    },
+    {
+      "who": "Isaac Kim",
+      "when": "2026-02-23T10:00:00.000+00:00",
+      "what": "Add description, usage guidelines, examples and properties."
+    },
+    {
+      "who": "Isaac Kim",
+      "when": "2026-02-09T10:00:00.000+00:00",
+      "what": "Initial commit"
     }
   ],
   "decisionLog": [],

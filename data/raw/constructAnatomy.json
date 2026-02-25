@@ -1,6 +1,118 @@
 {
-  "fetchedAt": "2026-02-20T13:30:24.931Z",
+  "fetchedAt": "2026-02-25T09:30:39.850Z",
   "rows": {
+    "i-0MoJoZIAYh": {
+      "rowId": "i-0MoJoZIAYh",
+      "number": 11,
+      "name": "Muted rule",
+      "description": "The muted rule indicates the start of a new category. It appears from the second category onward.",
+      "component": "i-s27nSmifM3"
+    },
+    "i-sddg66Rj8h": {
+      "rowId": "i-sddg66Rj8h",
+      "number": 10,
+      "name": "Citation metadata",
+      "description": "The citation is an optional author/date field in small text and supports showing either or both.",
+      "component": "i-s27nSmifM3"
+    },
+    "i-wKrKQ6A9jN": {
+      "rowId": "i-wKrKQ6A9jN",
+      "number": 7,
+      "name": "Cover image",
+      "description": "16:9 cover image or logo representing the resource. In dynamic content, it displays the content’s cover image. In static content, a custom image can be provided.",
+      "component": "i-s27nSmifM3"
+    },
+    "i-9w3njlVRro": {
+      "rowId": "i-9w3njlVRro",
+      "number": 9,
+      "name": "Resource description",
+      "description": "In dynamic content, the description displays the first 180 characters of the content. In static content, it serves as a custom introductory context for the content.",
+      "component": "i-s27nSmifM3"
+    },
+    "i-cgcPnXzkwv": {
+      "rowId": "i-cgcPnXzkwv",
+      "number": 8,
+      "name": "Resource title",
+      "description": "The resource title displays the full title of the resource and functions as a link.",
+      "component": "i-s27nSmifM3"
+    },
+    "i-ZF5piBtnyT": {
+      "rowId": "i-ZF5piBtnyT",
+      "number": 6,
+      "name": "Article block",
+      "description": "The Article block represents an individual resource item within a category or section. It consists of a required title, along with optional cover image, description, and the citation metadata",
+      "component": "i-s27nSmifM3"
+    },
+    "i-eqD1VTycu8": {
+      "rowId": "i-eqD1VTycu8",
+      "number": 5,
+      "name": "Category",
+      "description": "The category is a structural grouping element used to organize related resource blocks under a shared theme or topic.",
+      "component": "i-s27nSmifM3"
+    },
+    "i-VagWTSPHab": {
+      "rowId": "i-VagWTSPHab",
+      "number": 4,
+      "name": "CTA block",
+      "description": "The CTA (call to action) block presents one or more related actions that guide the user toward the next step within a section",
+      "component": "i-s27nSmifM3"
+    },
+    "i-y9mEudgtQx": {
+      "rowId": "i-y9mEudgtQx",
+      "number": 3,
+      "name": "Description",
+      "description": "The description provides introductory context for the section. It appears at the top of the section and helps users understand the purpose or scope of the content before engaging with the content below.",
+      "component": "i-s27nSmifM3"
+    },
+    "i-dwC_Mb8cK5": {
+      "rowId": "i-dwC_Mb8cK5",
+      "number": 2,
+      "name": "Heading",
+      "description": "The section heading communicates the primary subject or theme of the section.",
+      "component": "i-s27nSmifM3"
+    },
+    "i-d5AkbsqpB1": {
+      "rowId": "i-d5AkbsqpB1",
+      "number": 1,
+      "name": "Rule",
+      "description": "The rule component indicates the beginning of a new section.",
+      "component": "i-s27nSmifM3"
+    },
+    "i-3GNBSzsHXD": {
+      "rowId": "i-3GNBSzsHXD",
+      "number": 1,
+      "name": "Rule",
+      "description": "The rule component indicates the beginning of a new section.",
+      "component": "i-tuS5YgvrGJ"
+    },
+    "i-Pm87esvwBQ": {
+      "rowId": "i-Pm87esvwBQ",
+      "number": 5,
+      "name": "Logo block",
+      "description": "The array of related images, such as customer or partner logos.",
+      "component": "i-tuS5YgvrGJ"
+    },
+    "i-CBlqkiUiR6": {
+      "rowId": "i-CBlqkiUiR6",
+      "number": 4,
+      "name": "CTA block",
+      "description": "The CTA (call to action) block presents one or more related actions that guide the user toward the next step within a section",
+      "component": "i-tuS5YgvrGJ"
+    },
+    "i-LNx7KZbwwW": {
+      "rowId": "i-LNx7KZbwwW",
+      "number": 3,
+      "name": "Description",
+      "description": "The description provides introductory context for the section. It appears at the top of the section and helps users understand the purpose or scope of the content before engaging with the logo block.",
+      "component": "i-tuS5YgvrGJ"
+    },
+    "i-7pB3sb4igv": {
+      "rowId": "i-7pB3sb4igv",
+      "number": 2,
+      "name": "Heading",
+      "description": "The section heading communicates the primary subject or theme of the section.",
+      "component": "i-tuS5YgvrGJ"
+    },
     "i-YZ8_13U79t": {
       "rowId": "i-YZ8_13U79t",
       "number": 8,
@@ -361,29 +473,29 @@
     "i-db5mlx4E33": {
       "rowId": "i-db5mlx4E33",
       "number": 6,
-      "name": "Citation",
+      "name": "Citation metadata",
       "description": "The citation is an optional author/date field in small text and supports showing either or both.",
       "component": "i-YbRxZruWIu"
     },
     "i-fPNqVUwEDh": {
       "rowId": "i-fPNqVUwEDh",
       "number": 5,
-      "name": "Description",
-      "description": "In dynamic content, the description displays the first 180 characters of the article. In static content, a custom description of up to 300 characters should be provided.",
+      "name": "Article description",
+      "description": "In dynamic content, the description displays the first 180 characters of the content. In static content, it serves as a custom introductory context for the content.",
       "component": "i-YbRxZruWIu"
     },
     "i-I1VorVz0-i": {
       "rowId": "i-I1VorVz0-i",
       "number": 4,
       "name": "Article title",
-      "description": "Displaying the full title of the article.",
+      "description": "The article title displays the full title of the article and functions as a link.",
       "component": "i-YbRxZruWIu"
     },
     "i-R6EvgWseQi": {
       "rowId": "i-R6EvgWseQi",
       "number": 3,
-      "name": "Article image",
-      "description": "Each blog article displays a 16:9 cover image with shallow bottom padding. If a fetched article does not include an image, a [fallback image](https://assets.ubuntu.com/v1/94c82a15-blog_fallback_image.png) is used automatically.\n\nIn dynamic content, the article image displays the cover image of the article. In static content, a custom image should be provided.",
+      "name": "Cover image",
+      "description": "16:9 cover image of the resource. If a fetched article does not include an image, a [fallback image](https://assets.ubuntu.com/v1/94c82a15-blog_fallback_image.png) is used automatically.\n\nIn dynamic content, the article image displays the cover image of the article. In static content, a custom image should be provided.",
       "component": "i-YbRxZruWIu"
     },
     "i-nTeh_-C7O0": {

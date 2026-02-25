@@ -4,12 +4,12 @@
   "type": "Pattern",
   "tiers": "Sites",
   "documentationStatus": "Minimal",
-  "lastEdited": "2026-02-10T08:16:26.596+00:00",
+  "lastEdited": "2026-02-23T08:33:53.324+00:00",
   "figmaLink": "https://www.figma.com/design/1brHCsyeTE6FU7hfJd6ao2/%F0%9F%8C%90-Sites---Core-component-library?node-id=2940-19045",
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/main/templates/_macros/vf_blog.jinja",
   "description": "The blog pattern displays 3 to 4 blog articles in a grid layout. Each article shows a cover image, title, description, author information, and publication date. Articles can be loaded dynamically or provided statically. Designed to highlight recent contents in specific topic, the pattern offers users quick access to featured blog posts.",
   "usage": "The blog pattern displays 3 to 4 blog articles in a grid layout. By presenting posts in a structured, scannable grid, the pattern enables quick comparison and encourages exploration of topics that support the narrative of the page.\n\nThe pattern supports both dynamic and static loading strategies. When connected to the latest news module, the blog pattern automatically pulls recent articles from a defined group, ensuring that the section remains fresh without requiring manual updates. This approach is ideal for pages that benefit from showcasing ongoing activity or frequently updated content. In contrast, static content allows to feature specific articles by providing custom descriptions, and imagery. This curated approach is useful when emphasizing certain messages or guiding users through a planned content journey.\n\nThe grid layout helps users scan titles, descriptions, authors, and publication dates with ease. Cover images provide quick visual context and improve engagement, while fallback imagery maintains uniformity across articles that do not include a native image. Limiting the pattern to three or four items reinforces clarity and prevents cognitive overload, ensuring that each featured article receives adequate attention.\n\n### When to use\n\n*   To feature the latest or most relevant blog posts.\n*   To highlight related articles that support the main content of a page.\n*   To provide users quick access to blog content without navigating to the blog index.\n\n### When not to use\n\n*   When the content includes mixed resource types such as webinars, case studies, or white papers\n*   *   Use resources pattern instead",
-  "examples": "### Layout\n\n4-block layout with linked heading\n\n![Component example wrapper-1.png](images/52b831f6-20f4-4327-8887-bc923e2c4a10.png)\n\n3-block layout\n\n![Component example wrapper-2.png](images/2318cded-4df1-44e9-be92-5f7e5d82d6cd.png)\n\n### Responsive\n\nMedium dimension\n\n![Component example wrapper-3.png](images/f1bf32a0-efea-4e36-86b8-75de6742d375.png)\n\nSmall dimension\n\n![Component example wrapper-4.png](images/dd570238-133b-428f-a530-1f28c7bf64ad.png)",
+  "examples": "### Layout\n\n4-block layout with linked heading\n\n![Component example wrapper-1.png](images/15271039-4f97-4f9b-8cdd-31604aa8dbd6.png)\n\n3-block layout\n\n![Component example wrapper-2.png](images/feafa832-d05c-4319-9df5-9c6fb2c3a855.png)\n\n### Responsive\n\nMedium dimension\n\n![Component example wrapper-3.png](images/c4b6a162-7128-46fb-a600-20cb542ad5b2.png)\n\nSmall dimension\n\n![Component example wrapper-4.png](images/23e1a843-1706-4b4e-81dd-437806bd15c4.png)",
   "interactions": "",
   "sitesArchitectureLevels": "i-ues18YVwia",
   "anatomy": {
@@ -26,22 +26,22 @@
       },
       {
         "number": 3,
-        "name": "Article image",
-        "description": "Each blog article displays a 16:9 cover image with shallow bottom padding. If a fetched article does not include an image, a [fallback image](https://assets.ubuntu.com/v1/94c82a15-blog_fallback_image.png) is used automatically.\n\nIn dynamic content, the article image displays the cover image of the article. In static content, a custom image should be provided."
+        "name": "Cover image",
+        "description": "16:9 cover image of the resource. If a fetched article does not include an image, a [fallback image](https://assets.ubuntu.com/v1/94c82a15-blog_fallback_image.png) is used automatically.\n\nIn dynamic content, the article image displays the cover image of the article. In static content, a custom image should be provided."
       },
       {
         "number": 4,
         "name": "Article title",
-        "description": "Displaying the full title of the article."
+        "description": "The article title displays the full title of the article and functions as a link."
       },
       {
         "number": 5,
-        "name": "Description",
-        "description": "In dynamic content, the description displays the first 180 characters of the article. In static content, a custom description of up to 300 characters should be provided."
+        "name": "Article description",
+        "description": "In dynamic content, the description displays the first 180 characters of the content. In static content, it serves as a custom introductory context for the content."
       },
       {
         "number": 6,
-        "name": "Citation",
+        "name": "Citation metadata",
         "description": "The citation is an optional author/date field in small text and supports showing either or both."
       }
     ]
@@ -117,7 +117,13 @@
       ]
     }
   ],
-  "changeLog": [],
+  "changeLog": [
+    {
+      "who": "Isaac Kim",
+      "when": "2025-12-08T09:00:00.000+00:00",
+      "what": "Initial commit"
+    }
+  ],
   "decisionLog": [],
   "appliedRules": [],
   "exceptionFromRules": [
@@ -138,7 +144,12 @@
       "decisionLog": []
     }
   ],
-  "mentionedIn": [],
+  "mentionedIn": [
+    {
+      "name": "Resources",
+      "slug": "resources"
+    }
+  ],
   "mentionsComponents": [],
   "url": "https://component.wiki/blog"
 }

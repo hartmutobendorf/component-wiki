@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-02-20T13:30:24.932Z",
+  "fetchedAt": "2026-02-25T09:30:39.851Z",
   "rows": {
     "i-vAGSibtHRr": {
       "rowId": "i-vAGSibtHRr",
@@ -26,6 +26,8 @@
         "i-oWJdMiuIb4",
         "i-O69ixYm_Ee",
         "i-6vkVdZz0ii",
+        "i-tuS5YgvrGJ",
+        "i-s27nSmifM3",
         "i-vpN6ETB7hS"
       ],
       "description": "The documentation has the minimal needed sections:\n\n- Description\n- Anatomy\n- Usage\n- Properties\n- Metadata\n\n\n\nHas been reviewed by at least one other person and follows Canonical style guide.",
@@ -86,11 +88,9 @@
         "i-PJTyZ77is5",
         "i-K1FTmoSxdo",
         "i-S0DpOp5ECr",
-        "i-tuS5YgvrGJ",
         "i-yQrLWRZ945",
         "i-nslqMCF7EQ",
         "i-JZBi9ESLvH",
-        "i-s27nSmifM3",
         "i-cn19jqZNBr",
         "i-c3Pi4CEcZV",
         "i-kIPkdAErqW",
@@ -100,11 +100,8 @@
         "i-KtIvN04WN9",
         "i--w8-6ot1a8",
         "i-xUFwNsfx30",
-        "i-If5dFjalAR",
-        "i-fhZD60Hwqn",
         "i-aUPUyjNgjD",
-        "i-If3N15kC6H",
-        "i-5BuOzbNcXV"
+        "i-If3N15kC6H"
       ],
       "description": "Either no documentation for this component exists or its in a state that is not usable.",
       "concepts": []
