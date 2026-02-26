@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-02-25T09:30:39.853Z",
+  "fetchedAt": "2026-02-26T08:48:36.428Z",
   "rows": {
     "i-ZJJjLkCWPu": {
       "rowId": "i-ZJJjLkCWPu",
@@ -12,7 +12,8 @@
       "keyWord": "MAY",
       "description": "This word, or the adjective \"OPTIONAL\", mean that an item is truly optional.  One vendor may choose to include the item because a particular marketplace requires it or because the vendor feels that it enhances the product while another vendor may omit the same item. An implementation which does not include a particular option MUST be prepared to interoperate with another implementation which does include the option, though perhaps with reduced functionality. In the same vein an implementation which does include a particular option MUST be prepared to interoperate with another implementation which does not include the option (except, of course, for the feature the option provides.)",
       "conceptRules": [
-        "i-RMzGlwDepa"
+        "i-RMzGlwDepa",
+        "i-QhmX-PUHIN"
       ]
     },
     "i-drEdmSxQv3": {
