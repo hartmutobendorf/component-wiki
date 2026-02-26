@@ -3,9 +3,9 @@ import { getCollection, getEntry } from "astro:content";
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const constructs = await getCollection("constructs");
-  return constructs.map((construct) => ({
-    params: { slug: construct.id },
-  }));
+  return constructs
+    .filter((c) => c.data.tiers === "Sites")
+    .map((c) => ({ params: { slug: c.id } }));
 };
 
 export const GET: APIRoute = async ({ params }) => {
@@ -13,7 +13,6 @@ export const GET: APIRoute = async ({ params }) => {
   if (!construct) {
     return new Response("Not found", { status: 404 });
   }
-
   return new Response(JSON.stringify(construct.data, null, 2), {
     headers: { "Content-Type": "application/json; charset=utf-8" },
   });

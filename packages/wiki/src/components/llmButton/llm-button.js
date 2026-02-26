@@ -6,11 +6,11 @@ export class LlmButtonComponent extends LitElement {
     vanillaStyleSheet,
     css`
       :host {
-        display: inline-block;
+        display: block;
       }
 
       .llm-button-wrapper {
-        display: inline-flex;
+        display: flex;
         gap: 0;
         align-items: stretch;
       }
@@ -22,13 +22,21 @@ export class LlmButtonComponent extends LitElement {
         margin-right: 0;
         display: inline-flex;
         align-items: center;
+        justify-content: center;
         gap: 0.5rem;
+        flex: 1;
       }
 
       .p-contextual-menu--left {
         display: inline-block;
         margin-left: 0;
         vertical-align: top;
+        position: relative;
+      }
+
+      .p-contextual-menu__dropdown {
+        right: 0 !important;
+        left: auto !important;
       }
 
       .p-contextual-menu__toggle {
@@ -135,9 +143,14 @@ export class LlmButtonComponent extends LitElement {
   }
 
   _buildPrompt() {
+    const currentPath = window.location.pathname.replace(/\/$/, "");
+
     // GitHub Copilot uses the file path, others use the website URL
     if (this._selectedProvider === "copilot") {
-      const githubFilePath = `@dgtlntv/component-wiki/data/wiki/constructs/${this.componentId}.json`;
+      // Determine if this is a concept or construct based on URL path
+      const isConcept = currentPath.includes("/concept/");
+      const dataDir = isConcept ? "concepts" : "constructs";
+      const githubFilePath = `@dgtlntv/component-wiki/data/wiki/${dataDir}/${this.componentId}.json`;
       const prompt = `${githubFilePath}
 
 Please analyze the component documentation in this file and help me understand this component and answer any questions I have about it.`;
@@ -145,7 +158,7 @@ Please analyze the component documentation in this file and help me understand t
     }
 
     const baseUrl = window.location.origin || "https://component.wiki";
-    const markdownUrl = `${baseUrl}/${this.componentId}.md`;
+    const markdownUrl = `${baseUrl}${currentPath}.md`;
 
     const prompt = `Please fetch and analyze the component documentation from the following URL: ${markdownUrl}
 
@@ -231,7 +244,7 @@ After reading the documentation, please help me understand this component and an
     return html`
       <div class="llm-button-wrapper">
         <button
-          class="p-button llm-main-button"
+          class="p-button--base llm-main-button"
           @click=${this._handleMainButtonClick}
         >
           ${this._renderProviderIcon(this._selectedProvider)} Ask
@@ -241,7 +254,7 @@ After reading the documentation, please help me understand this component and an
         <span class="p-contextual-menu--left">
           <button
             type="button"
-            class="p-button has-icon p-contextual-menu__toggle"
+            class="p-button--base has-icon p-contextual-menu__toggle"
             aria-controls="llm-menu"
             aria-expanded="${this._isOpen}"
             @click="${this._handleDropdownToggle}"

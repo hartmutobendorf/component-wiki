@@ -57,7 +57,8 @@ export class CopyMarkdownButtonComponent extends LitElement {
         this._abortController = new AbortController()
 
         try {
-            const markdownPath = `/${this.componentId}.md`
+            const currentPath = window.location.pathname.replace(/\/$/, "")
+            const markdownPath = `${currentPath}.md`
             const response = await fetch(markdownPath, {
                 signal: this._abortController.signal,
             })

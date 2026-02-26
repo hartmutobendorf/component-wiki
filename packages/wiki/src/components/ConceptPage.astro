@@ -45,7 +45,11 @@ const sortedRuleTypes = [...rulesByType.keys()].sort();
   currentSlug={buildConceptPath(activeTier, conceptId)}
   activeTier={activeTier}
 >
-  <div slot="meta" class="p-table-of-contents">
+  <div slot="meta">
+    <div style="padding-right: 1rem; margin-bottom: 1rem;">
+      <llm-button component-id={conceptId} />
+    </div>
+    <div class="p-table-of-contents">
     <div class="p-table-of-contents__section">
       <h2 class="p-table-of-contents__header">On this page</h2>
       <ul class="p-table-of-contents__list">
@@ -116,6 +120,7 @@ const sortedRuleTypes = [...rulesByType.keys()].sort();
       </ul>
     </div>
   </div>
+  </div>
 
   <div class="l-docs__title">
     <div class="p-strip is-shallow u-no-padding--bottom">
@@ -164,6 +169,11 @@ const sortedRuleTypes = [...rulesByType.keys()].sort();
           })}
         </span>
       </div>
+
+    </div>
+
+    <div style="margin-top: 1rem;">
+      <copy-markdown-button component-id={conceptId} />
     </div>
   </section>
 
@@ -360,5 +370,7 @@ const sortedRuleTypes = [...rulesByType.keys()].sort();
 
   <script>
     import "../components/imageLightbox/image-lightbox.js";
+    import "../components/llmButton/llm-button.js";
+    import "../components/copyMarkdownButton/copy-markdown-button.js";
   </script>
 </BaseLayout>

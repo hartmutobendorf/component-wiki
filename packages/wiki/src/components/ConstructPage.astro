@@ -39,7 +39,11 @@ const hasInteractions = interactionsHtml.length > 0;
   currentSlug={buildConstructPath(activeTier, constructId)}
   activeTier={activeTier}
 >
-  <div slot="meta" class="p-table-of-contents">
+  <div slot="meta">
+    <div style="padding-right: 1rem; margin-bottom: 1rem;">
+      <llm-button component-id={constructId} />
+    </div>
+    <div class="p-table-of-contents">
     <div class="p-table-of-contents__section">
       <h2 class="p-table-of-contents__header">On this page</h2>
       <ul class="p-table-of-contents__list">
@@ -135,6 +139,7 @@ const hasInteractions = interactionsHtml.length > 0;
       </ul>
     </div>
   </div>
+  </div>
 
   <div class="l-docs__title">
     <div class="p-strip is-shallow u-no-padding--bottom">
@@ -193,8 +198,6 @@ const hasInteractions = interactionsHtml.length > 0;
                   text-content={metadata.name}
                 />
               )}
-
-              <llm-button component-id={constructId} />
 
               <copy-markdown-button component-id={constructId} />
             </div>

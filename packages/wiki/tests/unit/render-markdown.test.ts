@@ -86,7 +86,7 @@ describe("renderMarkdown — image lightbox", () => {
     const result = renderMarkdown("![alt text](image.png)");
     expect(result).toContain("<image-lightbox>");
     expect(result).toContain("</image-lightbox>");
-    expect(result).toContain('<img src="image.png" alt="alt text"');
+    expect(result).toContain('<img src="/image.png" alt="alt text"');
   });
 
   it("includes title attribute when provided", () => {

@@ -18,7 +18,7 @@ const chipVariantMap: Record<string, string> = {
   MAY: "p-chip--positive",
 };
 
-const chipClass = chipVariantMap[strength] ?? "p-chip";
+const chipClass = chipVariantMap[strength.toUpperCase()] ?? "p-chip";
 const label = strength ? strength.charAt(0).toUpperCase() + strength.slice(1).toLowerCase() : "";
 ---
 
