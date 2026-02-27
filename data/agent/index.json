@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-02-25T09:30:41.051Z",
+  "generatedAt": "2026-02-26T08:48:37.524Z",
   "constructCount": 47,
   "conceptCount": 26,
   "constructTypes": [
@@ -368,14 +368,14 @@
       "slug": "page",
       "type": "Architecture",
       "tier": "Sites",
-      "description": "A single URL-defined document containing navigation, content layout footer."
+      "description": "A page is a complete, published document accessible under a unique URL. It represents a full piece of communication intended for end-users. A page must have one clear purpose and follow editorial, structural, and information architecture (IA) rules. Every page has a fixed position of navigation on the top and footer on the bottom. All the page content is placed in between. "
     },
     {
       "name": "Content layout",
       "slug": "content-layout",
       "type": "Architecture",
       "tier": "Sites",
-      "description": "Narrative structure, the structural pattern used to arrange sections."
+      "description": "A Content layout defines how Sections are organized within the page.  It sets the narrative flow, structural rhythm, and hierarchy of information. Content layout can be either modular or templated. \n\n"
     },
     {
       "name": "Section",
@@ -466,7 +466,7 @@
       "slug": "spacing",
       "type": "Principle",
       "tier": "Sites",
-      "description": "Sites are using predefined vertical spacing tokens ensuring content is properly positioned and maintains vertical consistency."
+      "description": "Sites are using predefined vertical spacing tokens ensuring content is properly positioned on the baseline grid. All levels of architectural elementsv have a set of predefined spacing tokens allowing to maintain vertical consistency. "
     },
     {
       "name": "Logos",

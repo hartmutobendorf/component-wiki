@@ -1,6 +1,28 @@
 {
-  "fetchedAt": "2026-02-25T09:30:39.853Z",
+  "fetchedAt": "2026-02-26T08:48:36.427Z",
   "rows": {
+    "i-QhmX-PUHIN": {
+      "rowId": "i-QhmX-PUHIN",
+      "rule": "If two or more sections need to be combined - padding can be switched to shallow to form a visually unified block of content in the layout. ",
+      "knownExceptionForThisConstruct": "",
+      "appliesToTheseConcepts": [
+        "i-KFif7gGk3u"
+      ],
+      "ruleStrength": [
+        "i-LtH6rbAhr7"
+      ],
+      "status": [
+        "i-hbSOUFH0I1"
+      ],
+      "type": [
+        "i-Gv9rTD4HHR"
+      ],
+      "lastEdited": "2026-02-25T15:24:50.531+00:00",
+      "changelog": [],
+      "decisionlog": [],
+      "appliesToTheseConstructs": "",
+      "knownExceptionForThisConcept": ""
+    },
     "i-enjVjrDg2b": {
       "rowId": "i-enjVjrDg2b",
       "rule": "Use [webpage copy doc template](https://docs.google.com/document/d/1EPA_Ea8ShIvyftAc9oVxZYUIMHfAPFF6S5x6FOvLkwM) to structure and visualize the content within the boundaries of available sections and layouts.",
