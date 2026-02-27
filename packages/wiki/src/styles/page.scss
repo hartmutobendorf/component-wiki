@@ -28,6 +28,11 @@ body {
   z-index: 100;
 }
 
+// Offset anchor scroll targets so they don't end up behind the sticky header
+[id] {
+  scroll-margin-top: calc(var(--navigation-height, 3rem) + 1rem);
+}
+
 // Offset sticky meta container for the sticky header height
 .l-docs__sticky-container {
   max-height: calc(100dvh - var(--navigation-height, 3rem)) !important;

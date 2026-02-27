@@ -180,7 +180,7 @@ const sortedRuleTypes = [...rulesByType.keys()].sort();
   {
     hasContent && (
       <section id="content" class="p-section u-text-max-width">
-        <h2>Content</h2>
+        <h2 id="content"><a href="#content" class="p-link--anchor-heading">Content</a></h2>
         <Fragment set:html={contentHtml} />
       </section>
     )
@@ -189,7 +189,7 @@ const sortedRuleTypes = [...rulesByType.keys()].sort();
   {
     metadata.appliedRules && metadata.appliedRules.length > 0 && (
       <section id="rules" class="p-section">
-        <h2>Applied rules</h2>
+        <h2 id="rules"><a href="#rules" class="p-link--anchor-heading">Applied rules</a></h2>
         {sortedRuleTypes.map((ruleType) => (
           <RulesTable ruleType={ruleType} rules={rulesByType.get(ruleType)!} />
         ))}
@@ -201,7 +201,7 @@ const sortedRuleTypes = [...rulesByType.keys()].sort();
     metadata.changeLog && metadata.changeLog.length > 0 && (
       <div class="p-section">
         <section id="changelog" class="u-text-max-width">
-          <h2>Change log</h2>
+          <h2 id="changelog"><a href="#changelog" class="p-link--anchor-heading">Change log</a></h2>
           <table aria-label="Change log" class="changelog-table">
             <thead>
               <tr>
@@ -237,7 +237,7 @@ const sortedRuleTypes = [...rulesByType.keys()].sort();
     metadata.decisionLog && metadata.decisionLog.length > 0 && (
       <div class="p-section">
         <section id="decisionlog" class="u-text-max-width">
-          <h2>Decision log</h2>
+          <h2 id="decisionlog"><a href="#decisionlog" class="p-link--anchor-heading">Decision log</a></h2>
           <table aria-label="Decision log" class="decisionlog-table">
             <thead>
               <tr>
@@ -281,7 +281,7 @@ const sortedRuleTypes = [...rulesByType.keys()].sort();
     metadata.mentionedIn && metadata.mentionedIn.length > 0 && (
       <div class="p-section">
         <section id="mentionedin" class="u-text-max-width">
-          <h2>Mentioned in</h2>
+          <h2 id="mentionedin"><a href="#mentionedin" class="p-link--anchor-heading">Mentioned in</a></h2>
           <ul class="p-list">
             {metadata.mentionedIn.map((entry) => (
               <li class="p-list__item">
@@ -298,7 +298,7 @@ const sortedRuleTypes = [...rulesByType.keys()].sort();
     metadata.mentionsComponents && metadata.mentionsComponents.length > 0 && (
       <div class="p-section">
         <section id="mentionscomponents" class="u-text-max-width">
-          <h2>References</h2>
+          <h2 id="mentionscomponents"><a href="#mentionscomponents" class="p-link--anchor-heading">References</a></h2>
           <p>This concept references the following constructs:</p>
           <ul class="p-list">
             {[...new Map(metadata.mentionsComponents.map((entry) => [entry.slug, entry])).values()].map((entry) => (

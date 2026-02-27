@@ -1,8 +1,33 @@
 import { marked, Renderer } from "marked";
 
-// Custom renderer that wraps images in <image-lightbox>
-// and ensures relative image paths are resolved from the site root
+/**
+ * Generate a URL-friendly slug from heading text.
+ * Strips HTML tags, lowercases, replaces non-alphanumeric chars with hyphens,
+ * and trims leading/trailing hyphens.
+ */
+export function slugify(text: string): string {
+  return text
+    .replace(/<[^>]*>/g, "") // strip HTML tags
+    .toLowerCase()
+    .trim()
+    .replace(/[^\w\s-]/g, "") // remove non-word chars (except spaces and hyphens)
+    .replace(/[\s_]+/g, "-") // collapse whitespace/underscores to hyphens
+    .replace(/-+/g, "-") // collapse multiple hyphens
+    .replace(/^-+|-+$/g, ""); // trim leading/trailing hyphens
+}
+
+// Custom renderer that wraps images in <image-lightbox>,
+// ensures relative image paths are resolved from the site root,
+// and renders headings as anchor links for deep-linking.
 const renderer = new Renderer();
+
+renderer.heading = function ({ text, depth, tokens }) {
+  // Parse inline tokens to get rendered HTML (bold, italic, code, etc.)
+  const innerHTML = this.parser.parseInline(tokens);
+  const slug = slugify(text);
+  return `<h${depth} id="${slug}"><a href="#${slug}" class="p-link--anchor-heading">${innerHTML}</a></h${depth}>\n`;
+};
+
 renderer.image = function ({ href, title, text }) {
   const titleAttr = title ? ` title="${title}"` : "";
   // Ensure relative paths like "images/..." become absolute "/images/..."

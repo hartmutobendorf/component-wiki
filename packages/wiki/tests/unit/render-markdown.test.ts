@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { renderMarkdown } from "../../src/utils/render-markdown.js";
+import { renderMarkdown, slugify } from "../../src/utils/render-markdown.js";
 
 // ── Basic rendering ─────────────────────────────────────────
 
@@ -9,10 +9,10 @@ describe("renderMarkdown — basic rendering", () => {
     expect(result).toContain("<p>Hello world</p>");
   });
 
-  it("renders headings", () => {
+  it("renders headings as anchor links with ids", () => {
     const result = renderMarkdown("# Title\n\n## Subtitle");
-    expect(result).toContain("<h1>Title</h1>");
-    expect(result).toContain("<h2>Subtitle</h2>");
+    expect(result).toContain('<h1 id="title"><a href="#title" class="p-link--anchor-heading">Title</a></h1>');
+    expect(result).toContain('<h2 id="subtitle"><a href="#subtitle" class="p-link--anchor-heading">Subtitle</a></h2>');
   });
 
   it("renders bold text", () => {
@@ -108,6 +108,65 @@ describe("renderMarkdown — image lightbox", () => {
   });
 });
 
+// ── Slugify ─────────────────────────────────────────────────
+
+describe("slugify", () => {
+  it("lowercases and hyphenates text", () => {
+    expect(slugify("Hello World")).toBe("hello-world");
+  });
+
+  it("strips HTML tags", () => {
+    expect(slugify("Hello <code>World</code>")).toBe("hello-world");
+  });
+
+  it("removes special characters", () => {
+    expect(slugify("What's this?")).toBe("whats-this");
+  });
+
+  it("collapses multiple spaces and hyphens", () => {
+    expect(slugify("Too   many   spaces")).toBe("too-many-spaces");
+    expect(slugify("too---many---hyphens")).toBe("too-many-hyphens");
+  });
+
+  it("trims leading and trailing hyphens", () => {
+    expect(slugify("  --hello--  ")).toBe("hello");
+  });
+
+  it("handles empty string", () => {
+    expect(slugify("")).toBe("");
+  });
+});
+
+// ── Heading anchor links ────────────────────────────────────
+
+describe("renderMarkdown — heading anchor links", () => {
+  it("adds id attribute to headings", () => {
+    const result = renderMarkdown("## My Section");
+    expect(result).toContain('id="my-section"');
+  });
+
+  it("wraps heading text in anchor link with correct class", () => {
+    const result = renderMarkdown("## My Section");
+    expect(result).toContain('class="p-link--anchor-heading"');
+    expect(result).toContain('href="#my-section"');
+  });
+
+  it("renders all heading levels with anchors", () => {
+    const md = "# H1\n\n## H2\n\n### H3\n\n#### H4\n\n##### H5\n\n###### H6";
+    const result = renderMarkdown(md);
+    for (let i = 1; i <= 6; i++) {
+      expect(result).toContain(`<h${i} id=`);
+      expect(result).toContain(`</a></h${i}>`);
+    }
+  });
+
+  it("handles headings with inline formatting", () => {
+    const result = renderMarkdown("## **Bold** heading");
+    expect(result).toContain('id="bold-heading"');
+    expect(result).toContain("<strong>Bold</strong> heading</a>");
+  });
+});
+
 // ── Empty / whitespace input ────────────────────────────────
 
 describe("renderMarkdown — empty input", () => {
@@ -143,7 +202,8 @@ Some **bold** and *italic* text.
 ![example](img.png)`;
 
     const result = renderMarkdown(md);
-    expect(result).toContain("<h1>Title</h1>");
+    expect(result).toContain('<h1 id="title">');
+    expect(result).toContain("Title</a></h1>");
     expect(result).toContain("<strong>bold</strong>");
     expect(result).toContain("<em>italic</em>");
     expect(result).toContain("<ul>");
