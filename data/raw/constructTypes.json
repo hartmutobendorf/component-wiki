@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-02-26T08:48:36.426Z",
+  "fetchedAt": "2026-02-27T10:55:02.840Z",
   "rows": {
     "i-qokjJxQw1_": {
       "rowId": "i-qokjJxQw1_",
@@ -7,7 +7,8 @@
       "components": [
         "i-If5dFjalAR",
         "i-fhZD60Hwqn",
-        "i-5BuOzbNcXV"
+        "i-5BuOzbNcXV",
+        "i-9OaD6bj5Qe"
       ],
       "description": "**Blocks** are grouping of related content or functionality within a pattern in sites, used to organize multiple components into a cohesive unit. While blocks are reusable across patterns, they always exist as part of a pattern rather than standing alone. (*This is not part of the Vanilla Framework, but included within the shared macro and the macro of the Basic section)"
     },

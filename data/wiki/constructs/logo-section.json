@@ -9,13 +9,13 @@
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/main/templates/_macros/vf_logo-section.jinja",
   "description": "The logo section showcases a group of related images, such as a group of customer or partner logos. For best results, ensure that the images have identical dimensions.\n\n  \n",
   "usage": "The logo section highlights the logo as the primary content. It is typically paired with a muted heading, an optional description, and a CTA block. This pattern is used to emphasize brand identity or partner associations within a page.\n\n### When to use\n\n*   In cases where the logo block functions as the main content, with all other elements acting as supporting content\n\n### When not to use\n\n*   When images, lists, or other content need to be included, use the [Basic section](/basic-section) instead\n*   If logos need to be linked, use the [Linked logo section](/linked-logo-section) instead",
-  "examples": "Medium dimension\n\n![example-4.png](images/1b3103fe-5495-4c69-88dd-abfd4b71d409.png)\n\nSmall dimension\n\n![example-5.png](images/365d2ec4-ae8a-4bf0-bb67-4b812a3a39f6.png)\n\nLinked heading\n\n![example-2.png](images/e8feaf49-f44f-49dd-acaa-cbeef4e6ba99.png)",
+  "examples": "Medium dimension\n\n![example-4.png](images/0fe820f1-bbc5-4411-a237-04c40b4d1c19.png)\n\nSmall dimension\n\n![example-5.png](images/95c74535-9f35-48dc-8574-4f7900ee195f.png)\n\nLinked heading\n\n![example-2.png](images/439ee67b-48a1-4d4c-99e0-5d3fcd785cfd.png)",
   "interactions": "",
   "figmaComponentData": "",
-  "componentExampleImage": "images/a2d94630-0155-4912-a276-72861dc6c6ec.png",
+  "componentExampleImage": "images/19d3aa54-c1de-448a-8210-b37cb370be30.png",
   "sitesArchitectureLevels": "i-ues18YVwia",
   "anatomy": {
-    "image": "images/5fb7ebc3-53cd-45b9-a242-019d1743dae7.png",
+    "image": "images/a8463acf-f03e-4480-a453-20a774b92cd1.png",
     "table": [
       {
         "number": 1,

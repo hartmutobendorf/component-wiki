@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-02-26T08:48:37.524Z",
+  "generatedAt": "2026-02-27T10:55:04.096Z",
   "constructCount": 47,
   "conceptCount": 26,
   "constructTypes": [
@@ -128,7 +128,7 @@
       "slug": "equal-heights",
       "type": "Pattern",
       "tiers": "Sites",
-      "description": ""
+      "description": "The equal heights pattern is used to provide consistent alignment for grid items within a row format.\n\n  \n"
     },
     {
       "name": "Divided section",
