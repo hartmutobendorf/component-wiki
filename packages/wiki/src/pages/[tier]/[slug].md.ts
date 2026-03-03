@@ -1,12 +1,17 @@
 import type { APIRoute, GetStaticPaths } from "astro";
 import { getCollection, getEntry } from "astro:content";
+import { TIERS } from "../../utils/tiers";
 import { generateComponentMarkdown } from "../../utils/generate-component-markdown";
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const constructs = await getCollection("constructs");
-  return constructs
-    .filter((c) => c.data.tiers === "Sites")
-    .map((c) => ({ params: { slug: c.id } }));
+
+  return TIERS.flatMap((tier) => {
+    const prefix = tier.toLowerCase();
+    return constructs
+      .filter((c) => c.data.tiers === tier)
+      .map((c) => ({ params: { tier: prefix, slug: c.id } }));
+  });
 };
 
 export const GET: APIRoute = async ({ params }) => {

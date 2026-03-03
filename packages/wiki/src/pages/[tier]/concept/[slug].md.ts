@@ -1,12 +1,17 @@
 import type { APIRoute, GetStaticPaths } from "astro";
 import { getCollection, getEntry } from "astro:content";
+import { TIERS } from "../../../utils/tiers";
 import { generateConceptMarkdown } from "../../../utils/generate-concept-markdown";
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const concepts = await getCollection("concepts");
-  return concepts
-    .filter((c) => c.data.tier === "Global")
-    .map((c) => ({ params: { slug: c.id } }));
+
+  return TIERS.flatMap((tier) => {
+    const prefix = tier.toLowerCase();
+    return concepts
+      .filter((c) => c.data.tier === tier)
+      .map((c) => ({ params: { tier: prefix, slug: c.id } }));
+  });
 };
 
 export const GET: APIRoute = async ({ params }) => {

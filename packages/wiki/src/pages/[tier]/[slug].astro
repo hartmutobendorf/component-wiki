@@ -1,0 +1,23 @@
+---
+import { getCollection } from "astro:content";
+import ConstructPage from "../../components/ConstructPage.astro";
+import { TIERS, prefixToTier } from "../../utils/tiers";
+
+export async function getStaticPaths() {
+  const constructs = await getCollection("constructs");
+
+  return TIERS.flatMap((tier) => {
+    const prefix = tier.toLowerCase();
+    return constructs
+      .filter((construct) => construct.data.tiers === tier)
+      .map((construct) => ({
+        params: { tier: prefix, slug: construct.id },
+        props: { constructId: construct.id, activeTier: tier },
+      }));
+  });
+}
+
+const { constructId, activeTier } = Astro.props;
+---
+
+<ConstructPage constructId={constructId} activeTier={activeTier} />

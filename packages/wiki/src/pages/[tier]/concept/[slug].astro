@@ -1,0 +1,23 @@
+---
+import { getCollection } from "astro:content";
+import ConceptPage from "../../../components/ConceptPage.astro";
+import { TIERS } from "../../../utils/tiers";
+
+export async function getStaticPaths() {
+  const concepts = await getCollection("concepts");
+
+  return TIERS.flatMap((tier) => {
+    const prefix = tier.toLowerCase();
+    return concepts
+      .filter((concept) => concept.data.tier === tier)
+      .map((concept) => ({
+        params: { tier: prefix, slug: concept.id },
+        props: { conceptId: concept.id, activeTier: tier },
+      }));
+  });
+}
+
+const { conceptId, activeTier } = Astro.props;
+---
+
+<ConceptPage conceptId={conceptId} activeTier={activeTier} />

@@ -1,12 +1,16 @@
 import type { APIRoute, GetStaticPaths } from "astro";
 import { getCollection, getEntry } from "astro:content";
-import { generateConceptMarkdown } from "../../../utils/generate-concept-markdown";
+import { TIERS } from "../../../utils/tiers";
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const concepts = await getCollection("concepts");
-  return concepts
-    .filter((c) => c.data.tier === "Apps")
-    .map((c) => ({ params: { slug: c.id } }));
+
+  return TIERS.flatMap((tier) => {
+    const prefix = tier.toLowerCase();
+    return concepts
+      .filter((c) => c.data.tier === tier)
+      .map((c) => ({ params: { tier: prefix, slug: c.id } }));
+  });
 };
 
 export const GET: APIRoute = async ({ params }) => {
@@ -14,7 +18,7 @@ export const GET: APIRoute = async ({ params }) => {
   if (!concept) {
     return new Response("Not found", { status: 404 });
   }
-  return new Response(generateConceptMarkdown(concept.data), {
-    headers: { "Content-Type": "text/markdown; charset=utf-8" },
+  return new Response(JSON.stringify(concept.data, null, 2), {
+    headers: { "Content-Type": "application/json; charset=utf-8" },
   });
 };
