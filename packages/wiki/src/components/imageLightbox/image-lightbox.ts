@@ -1,4 +1,5 @@
 import { LitElement, css, html } from "lit";
+import { state, query } from "lit/decorators.js";
 
 export class ImageLightboxComponent extends LitElement {
   static styles = css`
@@ -38,73 +39,57 @@ export class ImageLightboxComponent extends LitElement {
     }
   `;
 
-  static properties = {
-    _isOpen: { state: true },
-  };
+  @state()
+  private _isOpen = false;
 
-  constructor() {
-    super();
-    this._isOpen = false;
-    this._handleKeyDown = this._handleKeyDown.bind(this);
-  }
+  @query("dialog")
+  private _dialog!: HTMLDialogElement;
 
-  connectedCallback() {
-    super.connectedCallback();
-    document.addEventListener("keydown", this._handleKeyDown);
-  }
+  private _image: HTMLImageElement | undefined;
 
-  disconnectedCallback() {
-    super.disconnectedCallback();
-    document.removeEventListener("keydown", this._handleKeyDown);
-  }
-
-  firstUpdated() {
+  firstUpdated(): void {
     // Find the slotted image
-    const slot = this.shadowRoot.querySelector("slot");
-    const assignedElements = slot.assignedElements();
-    this._image = assignedElements.find((el) => el.tagName === "IMG");
+    const slot = this.shadowRoot!.querySelector("slot");
+    const assignedElements = slot?.assignedElements() ?? [];
+    this._image = assignedElements.find(
+      (el): el is HTMLImageElement => el.tagName === "IMG",
+    );
 
     if (!this._image) {
       console.warn("ImageLightbox: No image element found in slot");
     }
+
+    // Sync _isOpen state when the native dialog closes (e.g. Escape key)
+    this._dialog?.addEventListener("close", () => {
+      this._isOpen = false;
+    });
   }
 
-  _handleKeyDown(e) {
-    if (e.key === "Escape" && this._isOpen) {
-      this._closeDialog();
-    }
-  }
-
-  _handleSlotClick(e) {
-    // Check if the clicked element is an image
+  private _handleSlotClick(e: Event): void {
     const path = e.composedPath();
-    const clickedImage = path.find((el) => el.tagName === "IMG");
+    const clickedImage = path.find(
+      (el): el is HTMLImageElement =>
+        el instanceof HTMLElement && el.tagName === "IMG",
+    );
 
     if (clickedImage) {
       this._openDialog();
     }
   }
 
-  _openDialog() {
-    if (!this._image) return;
-
-    const dialog = this.shadowRoot.querySelector("dialog");
-    if (dialog) {
-      dialog.showModal();
-      this._isOpen = true;
-    }
+  private _openDialog(): void {
+    if (!this._image || !this._dialog) return;
+    this._dialog.showModal();
+    this._isOpen = true;
   }
 
-  _closeDialog() {
-    const dialog = this.shadowRoot.querySelector("dialog");
-    if (dialog) {
-      dialog.close();
-      this._isOpen = false;
-    }
+  private _closeDialog(): void {
+    if (!this._dialog) return;
+    this._dialog.close();
+    this._isOpen = false;
   }
 
-  _handleDialogClick(e) {
-    // Close when clicking anywhere in the dialog
+  private _handleDialogClick(): void {
     this._closeDialog();
   }
 

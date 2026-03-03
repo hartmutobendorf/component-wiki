@@ -1,5 +1,7 @@
 import { LitElement, css, html } from "lit";
-import { vanillaStyleSheet } from "../../styles/vanilla.js";
+import { property, state } from "lit/decorators.js";
+import { vanillaStyleSheet } from "../../styles/vanilla.ts";
+import type { NavData, NavGroup, NavItem } from "../../utils/nav-data.js";
 
 export class SideNavigationComponent extends LitElement {
   static styles = [
@@ -106,79 +108,102 @@ export class SideNavigationComponent extends LitElement {
          nesting indent. Vanilla sets nested accordion links to 4rem / 4.5rem.
          The accordion button itself uses 3rem / 3rem (accordion-offset only).
          Override with matching specificity to align child text with button text. */
-      .p-side-navigation--accordion .p-side-navigation__item .p-side-navigation__item .p-side-navigation__link {
+      .p-side-navigation--accordion
+        .p-side-navigation__item
+        .p-side-navigation__item
+        .p-side-navigation__link {
         padding-left: 3rem;
       }
       @media (min-width: 620px) {
-        .p-side-navigation--accordion .p-side-navigation__item .p-side-navigation__item .p-side-navigation__link {
+        .p-side-navigation--accordion
+          .p-side-navigation__item
+          .p-side-navigation__item
+          .p-side-navigation__link {
           padding-left: 3rem;
         }
+      }
+
+      .wiki-side-nav-spacer {
+        padding-top: 1.5rem;
+      }
+
+      .wiki-side-nav-empty {
+        padding: 0 1rem;
       }
     `,
   ];
 
-  static properties = {
-    navData: {
-      type: Object,
-      attribute: "nav-data",
-      converter: {
-        fromAttribute: (value) => {
-          try {
-            return JSON.parse(value);
-          } catch {
-            return { sections: [] };
-          }
-        },
+  @property({
+    type: Object,
+    attribute: "nav-data",
+    converter: {
+      fromAttribute: (value: string | null): NavData => {
+        try {
+          return JSON.parse(value ?? "{}") as NavData;
+        } catch {
+          return { sections: [] };
+        }
       },
     },
-    currentSlug: {
-      type: String,
-      attribute: "current-slug",
-    },
-    darkMode: {
-      type: Boolean,
-      attribute: "dark-mode",
-    },
-    _collapsedGroups: { state: true },
-  };
+  })
+  navData: NavData = { sections: [] };
+
+  @property({ type: String, attribute: "current-slug" })
+  currentSlug = "";
+
+  @property({ type: Boolean, attribute: "dark-mode" })
+  darkMode = false;
+
+  @state()
+  private _collapsedGroups: Set<string> = new Set();
+
+  private _expandedSidenavContainer: HTMLElement | null = null;
+  private _lastFocus: Element | null = null;
+  private _ignoreFocusChanges = false;
+  private _focusAfterClose: HTMLElement | null = null;
+
+  // Store bound references for proper add/removeEventListener pairing
+  private _boundTrapFocus: (e: FocusEvent) => void;
+  private _boundHandleKeyDown: (e: KeyboardEvent) => void;
 
   constructor() {
     super();
-    this.navData = { sections: [] };
-    this.currentSlug = "";
-    this.darkMode = false;
-    this.expandedSidenavContainer = null;
-    this.lastFocus = null;
-    this.ignoreFocusChanges = false;
-    this.focusAfterClose = null;
-    // All groups are expanded by default; collapsed ones are tracked here
     this._collapsedGroups = this._loadCollapsedGroups();
+    this._boundTrapFocus = this._trapFocus.bind(this);
+    this._boundHandleKeyDown = this._handleKeyDown.bind(this);
   }
 
-  _loadCollapsedGroups() {
+  disconnectedCallback(): void {
+    super.disconnectedCallback();
+    // Clean up all global listeners to prevent leaks
+    document.removeEventListener("focus", this._boundTrapFocus, true);
+    window.removeEventListener("keydown", this._boundHandleKeyDown);
+  }
+
+  private _loadCollapsedGroups(): Set<string> {
     try {
       const stored = sessionStorage.getItem("side-nav-collapsed-groups");
       if (stored) {
-        return new Set(JSON.parse(stored));
+        return new Set(JSON.parse(stored) as string[]);
       }
-    } catch (e) {
+    } catch {
       // ignore
     }
     return new Set();
   }
 
-  _saveCollapsedGroups() {
+  private _saveCollapsedGroups(): void {
     try {
       sessionStorage.setItem(
         "side-nav-collapsed-groups",
         JSON.stringify([...this._collapsedGroups]),
       );
-    } catch (e) {
+    } catch {
       // ignore
     }
   }
 
-  _toggleGroup(groupKey) {
+  private _toggleGroup(groupKey: string): void {
     const next = new Set(this._collapsedGroups);
     if (next.has(groupKey)) {
       next.delete(groupKey);
@@ -189,137 +214,148 @@ export class SideNavigationComponent extends LitElement {
     this._saveCollapsedGroups();
   }
 
-  firstUpdated() {
-    this.setupDrawerToggle();
+  firstUpdated(): void {
+    this._setupDrawerToggle();
   }
 
-  trapFocus(event) {
-    if (this.ignoreFocusChanges || !this.expandedSidenavContainer) return;
-    const sidenavContainer = this.shadowRoot.querySelector(
+  private _trapFocus(event: FocusEvent): void {
+    if (this._ignoreFocusChanges || !this._expandedSidenavContainer) return;
+    const sidenavContainer = this.shadowRoot!.querySelector(
       ".p-side-navigation--accordion",
-    );
-    if (!sidenavContainer.classList.contains("is-drawer-expanded")) return;
+    ) as HTMLElement | null;
+    if (!sidenavContainer?.classList.contains("is-drawer-expanded")) return;
     const sidenavDrawer = sidenavContainer.querySelector(
       ".p-side-navigation__drawer",
-    );
+    ) as HTMLElement | null;
+    if (!sidenavDrawer) return;
 
-    if (sidenavDrawer.contains(event.target)) {
-      this.lastFocus = event.target;
+    if (sidenavDrawer.contains(event.target as Node)) {
+      this._lastFocus = event.target as Element;
     } else {
-      this.focusFirstDescendant(sidenavDrawer);
-      if (this.lastFocus == this.shadowRoot.activeElement) {
-        this.focusLastDescendant(sidenavDrawer);
+      this._focusFirstDescendant(sidenavDrawer);
+      if (this._lastFocus === this.shadowRoot!.activeElement) {
+        this._focusLastDescendant(sidenavDrawer);
       }
-      this.lastFocus = this.shadowRoot.activeElement;
+      this._lastFocus = this.shadowRoot!.activeElement;
     }
   }
 
-  attemptFocus(child) {
+  private _attemptFocus(child: HTMLElement): boolean {
     if (child.focus) {
-      this.ignoreFocusChanges = true;
+      this._ignoreFocusChanges = true;
       child.focus();
-      this.ignoreFocusChanges = false;
-      return this.shadowRoot.activeElement === child;
+      this._ignoreFocusChanges = false;
+      return this.shadowRoot!.activeElement === child;
     }
     return false;
   }
 
-  focusFirstDescendant(element) {
-    for (var i = 0; i < element.childNodes.length; i++) {
-      var child = element.childNodes[i];
-      if (this.attemptFocus(child) || this.focusFirstDescendant(child)) {
+  private _focusFirstDescendant(element: HTMLElement): boolean {
+    for (let i = 0; i < element.childNodes.length; i++) {
+      const child = element.childNodes[i];
+      if (
+        child instanceof HTMLElement &&
+        (this._attemptFocus(child) || this._focusFirstDescendant(child))
+      ) {
         return true;
       }
     }
     return false;
   }
 
-  focusLastDescendant(element) {
-    for (var i = element.childNodes.length - 1; i >= 0; i--) {
-      var child = element.childNodes[i];
-      if (this.attemptFocus(child) || this.focusLastDescendant(child)) {
+  private _focusLastDescendant(element: HTMLElement): boolean {
+    for (let i = element.childNodes.length - 1; i >= 0; i--) {
+      const child = element.childNodes[i];
+      if (
+        child instanceof HTMLElement &&
+        (this._attemptFocus(child) || this._focusLastDescendant(child))
+      ) {
         return true;
       }
     }
     return false;
   }
 
-  toggleDrawer(show) {
-    const sideNavigation = this.shadowRoot.querySelector(
+  private _toggleDrawer(show: boolean): void {
+    const sideNavigation = this.shadowRoot!.querySelector(
       ".p-side-navigation--accordion",
-    );
+    ) as HTMLElement | null;
+    if (!sideNavigation) return;
+
     const toggleButtonOutsideDrawer = sideNavigation.querySelector(
       ".p-side-navigation__toggle",
-    );
+    ) as HTMLElement | null;
     const toggleButtonInsideDrawer = sideNavigation.querySelector(
       ".p-side-navigation__toggle--in-drawer",
-    );
+    ) as HTMLElement | null;
 
-    this.expandedSidenavContainer = show ? sideNavigation : null;
+    this._expandedSidenavContainer = show ? sideNavigation : null;
 
-    if (sideNavigation) {
-      if (show) {
-        sideNavigation.classList.remove("is-drawer-collapsed");
-        sideNavigation.classList.add("is-drawer-expanded");
-        sideNavigation.classList.remove("is-drawer-hidden");
+    if (show) {
+      sideNavigation.classList.remove("is-drawer-collapsed");
+      sideNavigation.classList.add("is-drawer-expanded");
+      sideNavigation.classList.remove("is-drawer-hidden");
 
-        toggleButtonOutsideDrawer.setAttribute("aria-expanded", true);
-        toggleButtonInsideDrawer.setAttribute("aria-expanded", true);
-        this.focusAfterClose = toggleButtonOutsideDrawer;
-        document.addEventListener("focus", this.trapFocus.bind(this), true);
-      } else {
-        sideNavigation.classList.remove("is-drawer-expanded");
-        sideNavigation.classList.add("is-drawer-collapsed");
+      toggleButtonOutsideDrawer?.setAttribute("aria-expanded", "true");
+      toggleButtonInsideDrawer?.setAttribute("aria-expanded", "true");
+      this._focusAfterClose = toggleButtonOutsideDrawer;
+      document.addEventListener("focus", this._boundTrapFocus, true);
+    } else {
+      sideNavigation.classList.remove("is-drawer-expanded");
+      sideNavigation.classList.add("is-drawer-collapsed");
 
-        toggleButtonOutsideDrawer.setAttribute("aria-expanded", false);
-        toggleButtonInsideDrawer.setAttribute("aria-expanded", false);
-        if (this.focusAfterClose && this.focusAfterClose.focus) {
-          this.focusAfterClose.focus();
-        }
-        document.removeEventListener("focus", this.trapFocus.bind(this), true);
+      toggleButtonOutsideDrawer?.setAttribute("aria-expanded", "false");
+      toggleButtonInsideDrawer?.setAttribute("aria-expanded", "false");
+      if (this._focusAfterClose?.focus) {
+        this._focusAfterClose.focus();
       }
+      document.removeEventListener("focus", this._boundTrapFocus, true);
     }
   }
 
-  setupDrawerToggle() {
-    const sideNavigation = this.shadowRoot.querySelector(
+  private _handleKeyDown(e: KeyboardEvent): void {
+    if (e.key === "Escape") {
+      this._toggleDrawer(false);
+    }
+  }
+
+  private _setupDrawerToggle(): void {
+    const sideNavigation = this.shadowRoot!.querySelector(
       ".p-side-navigation--accordion",
-    );
-    const toggles = this.shadowRoot.querySelectorAll(".js-drawer-toggle");
+    ) as HTMLElement | null;
+    if (!sideNavigation) return;
+
+    const toggles = this.shadowRoot!.querySelectorAll(".js-drawer-toggle");
     const drawerEl = sideNavigation.querySelector(
       ".p-side-navigation__drawer",
-    );
+    ) as HTMLElement | null;
 
-    drawerEl.addEventListener("animationend", () => {
+    drawerEl?.addEventListener("animationend", () => {
       if (!sideNavigation.classList.contains("is-drawer-expanded")) {
         sideNavigation.classList.add("is-drawer-hidden");
       }
     });
 
-    window.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") {
-        this.toggleDrawer(false);
-      }
-    });
+    window.addEventListener("keydown", this._boundHandleKeyDown);
 
     toggles.forEach((toggle) => {
       toggle.addEventListener("click", (event) => {
         event.preventDefault();
         sideNavigation.classList.remove("is-drawer-hidden");
-        this.toggleDrawer(
+        this._toggleDrawer(
           !sideNavigation.classList.contains("is-drawer-expanded"),
         );
       });
     });
   }
 
-  isCurrentPage(slug) {
+  private _isCurrentPage(slug: string): boolean {
     return this.currentSlug === slug;
   }
 
-  renderNavigationItem(item) {
+  private _renderNavigationItem(item: NavItem) {
     const href = `/${item.slug}`;
-    const isCurrentPage = this.isCurrentPage(item.slug);
+    const isCurrentPage = this._isCurrentPage(item.slug);
 
     return html`
       <li class="p-side-navigation__item">
@@ -334,7 +370,7 @@ export class SideNavigationComponent extends LitElement {
     `;
   }
 
-  renderAccordionGroup(group, sectionHeading) {
+  private _renderAccordionGroup(group: NavGroup, sectionHeading: string) {
     const groupKey = `${sectionHeading}/${group.type}`;
     const isExpanded = !this._collapsedGroups.has(groupKey);
 
@@ -351,15 +387,14 @@ export class SideNavigationComponent extends LitElement {
           class="p-side-navigation__list"
           aria-expanded="${isExpanded ? "true" : "false"}"
         >
-          ${group.items.map((item) => this.renderNavigationItem(item))}
+          ${group.items.map((item) => this._renderNavigationItem(item))}
         </ul>
       </li>
     `;
   }
 
   render() {
-    const sections =
-      this.navData && this.navData.sections ? this.navData.sections : [];
+    const sections = this.navData?.sections ?? [];
     const visibleSections = sections.filter(
       (s) => s.items && s.items.length > 0,
     );
@@ -394,7 +429,9 @@ export class SideNavigationComponent extends LitElement {
                 Toggle side navigation
               </button>
             </div>
-            <p style="padding: 0 1rem;">No navigation items available</p>
+            <p class="wiki-side-nav-empty">
+              No navigation items available
+            </p>
           </nav>
         </div>
       `;
@@ -427,14 +464,16 @@ export class SideNavigationComponent extends LitElement {
             </button>
           </div>
 
-          <div style="padding-top: 1.5rem;"></div>
+          <div class="wiki-side-nav-spacer"></div>
 
           ${visibleSections.map(
             (section) => html`
-              <h3 class="p-side-navigation__heading p-text--small-caps">${section.heading}</h3>
+              <h3 class="p-side-navigation__heading p-text--small-caps">
+                ${section.heading}
+              </h3>
               <ul class="p-side-navigation__list">
                 ${section.items.map((group) =>
-                  this.renderAccordionGroup(group, section.heading),
+                  this._renderAccordionGroup(group, section.heading),
                 )}
               </ul>
             `,
