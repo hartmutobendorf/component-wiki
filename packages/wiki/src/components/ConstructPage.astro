@@ -5,10 +5,10 @@ import MetadataBlock from "./MetadataBlock.astro";
 import ChangeLogTable from "./ChangeLogTable.astro";
 import DecisionLogTable from "./DecisionLogTable.astro";
 import MentionedInList from "./MentionedInList.astro";
-import { renderMarkdown, renderInlineMarkdown, type OptimizedImageInfo } from "../utils/render-markdown";
+import { renderMarkdown, renderInlineMarkdown } from "../utils/render-markdown";
 import { tierToPrefix, buildConstructPath } from "../utils/tiers";
 import { collectMarkdownImages } from "../utils/collect-markdown-images";
-import { getImage } from "astro:assets";
+import { buildImageLookup, buildOptimizedImageMap } from "../utils/image-map";
 import OptimizedImage from "./OptimizedImage.astro";
 
 interface Props {
@@ -31,36 +31,21 @@ const metadata = construct.data;
 // Markdown lives in JSON fields (not .md files), so it bypasses Astro's
 // markdown pipeline and its automatic image optimization. We bridge that
 // gap by calling getImage() for each referenced image and passing the
-// resulting URL map to the markdown renderer.
+// resulting URL map to the markdown renderer. See image-map.ts for details.
+// NOTE: import.meta.glob() must be called here — Vite requires a static
+// string literal at the call site; it cannot be moved into a utility.
 const allImages = import.meta.glob<{ default: ImageMetadata }>(
   "/../../data/raw/images/*.{png,jpg,jpeg,gif,svg,webp}",
   { eager: true },
 );
-const imageFilenameMap = new Map<string, ImageMetadata>();
-for (const [path, mod] of Object.entries(allImages)) {
-  imageFilenameMap.set(path.split("/").pop()!, mod.default);
-}
-
+const imageLookup = buildImageLookup(allImages);
 const markdownImagePaths = collectMarkdownImages(
   metadata.description,
   metadata.usage,
   metadata.examples,
   metadata.interactions,
 );
-
-const imageMap = new Map<string, OptimizedImageInfo>();
-for (const imgPath of markdownImagePaths) {
-  const filename = imgPath.split("/").pop()!;
-  const imageMeta = imageFilenameMap.get(filename);
-  if (imageMeta) {
-    const optimized = await getImage({ src: imageMeta });
-    imageMap.set(imgPath, {
-      src: optimized.src,
-      width: optimized.attributes.width as number,
-      height: optimized.attributes.height as number,
-    });
-  }
-}
+const imageMap = await buildOptimizedImageMap(markdownImagePaths, imageLookup);
 
 // Render markdown sections with optimized image URLs
 const descriptionHtml = renderMarkdown(metadata.description, imageMap);
