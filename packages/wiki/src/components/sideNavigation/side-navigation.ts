@@ -1,7 +1,10 @@
 import { LitElement, css, html } from "lit";
 import { property, state } from "lit/decorators.js";
+import { classMap } from "lit/directives/class-map.js";
 import { vanillaStyleSheet } from "../../styles/vanilla.ts";
 import type { NavData, NavGroup, NavItem } from "../../utils/nav-data.js";
+
+type DrawerState = "hidden" | "expanded" | "collapsed";
 
 export class SideNavigationComponent extends LitElement {
   static styles = [
@@ -157,7 +160,10 @@ export class SideNavigationComponent extends LitElement {
   @state()
   private _collapsedGroups: Set<string> = new Set();
 
-  private _expandedSidenavContainer: HTMLElement | null = null;
+  /** Reactive drawer state — drives CSS classes via classMap. */
+  @state()
+  private _drawerState: DrawerState = "hidden";
+
   private _lastFocus: Element | null = null;
   private _ignoreFocusChanges = false;
   private _focusAfterClose: HTMLElement | null = null;
@@ -173,12 +179,18 @@ export class SideNavigationComponent extends LitElement {
     this._boundHandleKeyDown = this._handleKeyDown.bind(this);
   }
 
+  connectedCallback(): void {
+    super.connectedCallback();
+    window.addEventListener("keydown", this._boundHandleKeyDown);
+  }
+
   disconnectedCallback(): void {
     super.disconnectedCallback();
-    // Clean up all global listeners to prevent leaks
     document.removeEventListener("focus", this._boundTrapFocus, true);
     window.removeEventListener("keydown", this._boundHandleKeyDown);
   }
+
+  // -- Collapsed groups (accordion) ------------------------------------------
 
   private _loadCollapsedGroups(): Set<string> {
     try {
@@ -214,17 +226,50 @@ export class SideNavigationComponent extends LitElement {
     this._saveCollapsedGroups();
   }
 
-  firstUpdated(): void {
-    this._setupDrawerToggle();
+  // -- Drawer (mobile) -------------------------------------------------------
+
+  private _toggleDrawer(): void {
+    if (this._drawerState === "expanded") {
+      this._closeDrawer();
+    } else {
+      this._openDrawer();
+    }
   }
 
-  private _trapFocus(event: FocusEvent): void {
-    if (this._ignoreFocusChanges || !this._expandedSidenavContainer) return;
-    const sidenavContainer = this.shadowRoot!.querySelector(
-      ".p-side-navigation--accordion",
+  private _openDrawer(): void {
+    this._drawerState = "expanded";
+    this._focusAfterClose = this.shadowRoot!.querySelector(
+      ".p-side-navigation__toggle",
     ) as HTMLElement | null;
-    if (!sidenavContainer?.classList.contains("is-drawer-expanded")) return;
-    const sidenavDrawer = sidenavContainer.querySelector(
+    document.addEventListener("focus", this._boundTrapFocus, true);
+  }
+
+  private _closeDrawer(): void {
+    this._drawerState = "collapsed";
+    if (this._focusAfterClose?.focus) {
+      this._focusAfterClose.focus();
+    }
+    document.removeEventListener("focus", this._boundTrapFocus, true);
+  }
+
+  private _handleDrawerAnimationEnd(): void {
+    // After the collapse animation finishes, fully hide the drawer
+    if (this._drawerState === "collapsed") {
+      this._drawerState = "hidden";
+    }
+  }
+
+  private _handleKeyDown(e: KeyboardEvent): void {
+    if (e.key === "Escape") {
+      this._closeDrawer();
+    }
+  }
+
+  // -- Focus trap -------------------------------------------------------------
+
+  private _trapFocus(event: FocusEvent): void {
+    if (this._ignoreFocusChanges || this._drawerState !== "expanded") return;
+    const sidenavDrawer = this.shadowRoot!.querySelector(
       ".p-side-navigation__drawer",
     ) as HTMLElement | null;
     if (!sidenavDrawer) return;
@@ -276,78 +321,7 @@ export class SideNavigationComponent extends LitElement {
     return false;
   }
 
-  private _toggleDrawer(show: boolean): void {
-    const sideNavigation = this.shadowRoot!.querySelector(
-      ".p-side-navigation--accordion",
-    ) as HTMLElement | null;
-    if (!sideNavigation) return;
-
-    const toggleButtonOutsideDrawer = sideNavigation.querySelector(
-      ".p-side-navigation__toggle",
-    ) as HTMLElement | null;
-    const toggleButtonInsideDrawer = sideNavigation.querySelector(
-      ".p-side-navigation__toggle--in-drawer",
-    ) as HTMLElement | null;
-
-    this._expandedSidenavContainer = show ? sideNavigation : null;
-
-    if (show) {
-      sideNavigation.classList.remove("is-drawer-collapsed");
-      sideNavigation.classList.add("is-drawer-expanded");
-      sideNavigation.classList.remove("is-drawer-hidden");
-
-      toggleButtonOutsideDrawer?.setAttribute("aria-expanded", "true");
-      toggleButtonInsideDrawer?.setAttribute("aria-expanded", "true");
-      this._focusAfterClose = toggleButtonOutsideDrawer;
-      document.addEventListener("focus", this._boundTrapFocus, true);
-    } else {
-      sideNavigation.classList.remove("is-drawer-expanded");
-      sideNavigation.classList.add("is-drawer-collapsed");
-
-      toggleButtonOutsideDrawer?.setAttribute("aria-expanded", "false");
-      toggleButtonInsideDrawer?.setAttribute("aria-expanded", "false");
-      if (this._focusAfterClose?.focus) {
-        this._focusAfterClose.focus();
-      }
-      document.removeEventListener("focus", this._boundTrapFocus, true);
-    }
-  }
-
-  private _handleKeyDown(e: KeyboardEvent): void {
-    if (e.key === "Escape") {
-      this._toggleDrawer(false);
-    }
-  }
-
-  private _setupDrawerToggle(): void {
-    const sideNavigation = this.shadowRoot!.querySelector(
-      ".p-side-navigation--accordion",
-    ) as HTMLElement | null;
-    if (!sideNavigation) return;
-
-    const toggles = this.shadowRoot!.querySelectorAll(".js-drawer-toggle");
-    const drawerEl = sideNavigation.querySelector(
-      ".p-side-navigation__drawer",
-    ) as HTMLElement | null;
-
-    drawerEl?.addEventListener("animationend", () => {
-      if (!sideNavigation.classList.contains("is-drawer-expanded")) {
-        sideNavigation.classList.add("is-drawer-hidden");
-      }
-    });
-
-    window.addEventListener("keydown", this._boundHandleKeyDown);
-
-    toggles.forEach((toggle) => {
-      toggle.addEventListener("click", (event) => {
-        event.preventDefault();
-        sideNavigation.classList.remove("is-drawer-hidden");
-        this._toggleDrawer(
-          !sideNavigation.classList.contains("is-drawer-expanded"),
-        );
-      });
-    });
-  }
+  // -- Rendering --------------------------------------------------------------
 
   private _isCurrentPage(slug: string): boolean {
     return this.currentSlug === slug;
@@ -393,6 +367,62 @@ export class SideNavigationComponent extends LitElement {
     `;
   }
 
+  /** CSS classes for the top-level container, derived from reactive state. */
+  private _containerClasses(isEmpty: boolean) {
+    return classMap({
+      "p-side-navigation--accordion": true,
+      "is-sticky": true,
+      "is-drawer-hidden": this._drawerState === "hidden",
+      "is-drawer-expanded": this._drawerState === "expanded",
+      "is-drawer-collapsed": this._drawerState === "collapsed",
+      "is-dark": this.darkMode && isEmpty,
+    });
+  }
+
+  private _renderShell(content: unknown) {
+    const isExpanded = this._drawerState === "expanded";
+
+    return html`
+      <div
+        class=${this._containerClasses(false)}
+        id="drawer"
+      >
+        <button
+          class="p-side-navigation__toggle js-drawer-toggle"
+          aria-controls="drawer"
+          aria-expanded="${isExpanded}"
+          @click=${(e: Event) => { e.preventDefault(); this._toggleDrawer(); }}
+        >
+          Toggle side navigation
+        </button>
+
+        <div
+          class="p-side-navigation__overlay"
+          aria-controls="drawer"
+          @click=${(e: Event) => { e.preventDefault(); this._closeDrawer(); }}
+        ></div>
+
+        <nav
+          class="p-side-navigation__drawer"
+          aria-label="Side navigation"
+          @animationend=${this._handleDrawerAnimationEnd}
+        >
+          <div class="p-side-navigation__drawer-header">
+            <button
+              class="p-side-navigation__toggle--in-drawer js-drawer-toggle"
+              aria-controls="drawer"
+              aria-expanded="${isExpanded}"
+              @click=${(e: Event) => { e.preventDefault(); this._toggleDrawer(); }}
+            >
+              Toggle side navigation
+            </button>
+          </div>
+          ${content}
+        </nav>
+      </div>
+    `;
+  }
+
   render() {
     const sections = this.navData?.sections ?? [];
     const visibleSections = sections.filter(
@@ -400,87 +430,26 @@ export class SideNavigationComponent extends LitElement {
     );
 
     if (visibleSections.length === 0) {
-      return html`
-        <div
-          class="p-side-navigation--accordion is-sticky is-drawer-hidden ${this
-            .darkMode
-            ? "is-dark"
-            : ""}"
-          id="drawer"
-        >
-          <button
-            class="p-side-navigation__toggle js-drawer-toggle"
-            aria-controls="drawer"
-          >
-            Toggle side navigation
-          </button>
-
-          <div
-            class="p-side-navigation__overlay js-drawer-toggle"
-            aria-controls="drawer"
-          ></div>
-
-          <nav class="p-side-navigation__drawer" aria-label="Side navigation">
-            <div class="p-side-navigation__drawer-header">
-              <button
-                class="p-side-navigation__toggle--in-drawer js-drawer-toggle"
-                aria-controls="drawer"
-              >
-                Toggle side navigation
-              </button>
-            </div>
-            <p class="wiki-side-nav-empty">
-              No navigation items available
-            </p>
-          </nav>
-        </div>
-      `;
+      return this._renderShell(
+        html`<p class="wiki-side-nav-empty">No navigation items available</p>`,
+      );
     }
 
-    return html`
-      <div
-        class="p-side-navigation--accordion is-sticky is-drawer-hidden"
-        id="drawer"
-      >
-        <button
-          class="p-side-navigation__toggle js-drawer-toggle"
-          aria-controls="drawer"
-        >
-          Toggle side navigation
-        </button>
-
-        <div
-          class="p-side-navigation__overlay js-drawer-toggle"
-          aria-controls="drawer"
-        ></div>
-
-        <nav class="p-side-navigation__drawer" aria-label="Side navigation">
-          <div class="p-side-navigation__drawer-header">
-            <button
-              class="p-side-navigation__toggle--in-drawer js-drawer-toggle"
-              aria-controls="drawer"
-            >
-              Toggle side navigation
-            </button>
-          </div>
-
-          <div class="wiki-side-nav-spacer"></div>
-
-          ${visibleSections.map(
-            (section) => html`
-              <h3 class="p-side-navigation__heading p-text--small-caps">
-                ${section.heading}
-              </h3>
-              <ul class="p-side-navigation__list">
-                ${section.items.map((group) =>
-                  this._renderAccordionGroup(group, section.heading),
-                )}
-              </ul>
-            `,
-          )}
-        </nav>
-      </div>
-    `;
+    return this._renderShell(html`
+      <div class="wiki-side-nav-spacer"></div>
+      ${visibleSections.map(
+        (section) => html`
+          <h3 class="p-side-navigation__heading p-text--small-caps">
+            ${section.heading}
+          </h3>
+          <ul class="p-side-navigation__list">
+            ${section.items.map((group) =>
+              this._renderAccordionGroup(group, section.heading),
+            )}
+          </ul>
+        `,
+      )}
+    `);
   }
 }
 

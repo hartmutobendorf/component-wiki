@@ -228,5 +228,44 @@ test.describe("llm-button", () => {
       expect(url).toContain("button.md");
       await newPage.close();
     });
+
+    test("copilot URL uses default repo path", async ({ page, context }) => {
+      await page.goto("/global/button");
+      await page.evaluate(() => localStorage.clear());
+      await page.reload();
+
+      const [newPage] = await Promise.all([
+        context.waitForEvent("page"),
+        page.locator("llm-button .llm-main-button").click(),
+      ]);
+
+      const url = decodeURIComponent(newPage.url());
+      expect(url).toContain("@dgtlntv/component-wiki");
+      await newPage.close();
+    });
+
+    test("copilot URL uses custom repo-path attribute", async ({
+      page,
+      context,
+    }) => {
+      await page.goto("/global/button");
+      await page.evaluate(() => localStorage.clear());
+      await page.reload();
+
+      // Set a custom repo path
+      await page.locator("llm-button").evaluate((el) => {
+        el.setAttribute("repo-path", "@my-org/my-wiki");
+      });
+
+      const [newPage] = await Promise.all([
+        context.waitForEvent("page"),
+        page.locator("llm-button .llm-main-button").click(),
+      ]);
+
+      const url = decodeURIComponent(newPage.url());
+      expect(url).toContain("@my-org/my-wiki/data/wiki/constructs/button.json");
+      expect(url).not.toContain("@dgtlntv");
+      await newPage.close();
+    });
   });
 });

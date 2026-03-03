@@ -136,6 +136,9 @@ export class LlmButtonComponent extends LitElement {
   @property({ type: String, attribute: "component-id" })
   componentId = "";
 
+  @property({ type: String, attribute: "repo-path" })
+  repoPath = "@dgtlntv/component-wiki";
+
   @state()
   private _selectedProvider: LlmProvider = "copilot";
 
@@ -190,7 +193,7 @@ export class LlmButtonComponent extends LitElement {
     if (this._selectedProvider === "copilot") {
       const isConcept = currentPath.includes("/concept/");
       const dataDir = isConcept ? "concepts" : "constructs";
-      const githubFilePath = `@dgtlntv/component-wiki/data/wiki/${dataDir}/${this.componentId}.json`;
+      const githubFilePath = `${this.repoPath}/data/wiki/${dataDir}/${this.componentId}.json`;
       return `${githubFilePath}\n\nPlease analyze the component documentation in this file and help me understand this component and answer any questions I have about it.`;
     }
 
