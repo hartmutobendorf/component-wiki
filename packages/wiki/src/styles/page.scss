@@ -6,6 +6,11 @@ $assets-path: "/fonts/";
 @import "vanilla-framework";
 @include vanilla;
 
+// Project-level styles — patterns VF doesn't cover
+@import "wiki-variables";
+@import "wiki-utilities";
+@import "wiki-components";
+
 * {
   margin: 0;
   padding: 0;

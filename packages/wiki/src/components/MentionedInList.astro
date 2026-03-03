@@ -1,0 +1,28 @@
+---
+interface MentionedInEntry {
+  name: string;
+  slug: string;
+}
+
+interface Props {
+  entries: MentionedInEntry[];
+  tierPrefix: string;
+}
+
+const { entries, tierPrefix } = Astro.props;
+---
+
+{entries.length > 0 && (
+  <div class="p-section">
+    <section id="mentionedin" class="u-text-max-width">
+      <h2 id="mentionedin"><a href="#mentionedin" class="p-link--anchor-heading">Mentioned in</a></h2>
+      <ul class="p-list">
+        {entries.map((entry) => (
+          <li class="p-list__item">
+            <a href={`/${tierPrefix}/${entry.slug}`}>{entry.name}</a>
+          </li>
+        ))}
+      </ul>
+    </section>
+  </div>
+)}

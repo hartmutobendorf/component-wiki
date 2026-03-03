@@ -1,0 +1,44 @@
+---
+import { renderInlineMarkdown } from "../utils/render-markdown";
+import { formatDate } from "../utils/format-date";
+
+interface ChangeLogEntry {
+  who: string;
+  when: string;
+  what: string;
+}
+
+interface Props {
+  entries: ChangeLogEntry[];
+}
+
+const { entries } = Astro.props;
+---
+
+{entries.length > 0 && (
+  <div class="p-section">
+    <section id="changelog" class="u-text-max-width">
+      <h2 id="changelog"><a href="#changelog" class="p-link--anchor-heading">Change log</a></h2>
+      <table aria-label="Change log" class="wiki-changelog-table">
+        <thead>
+          <tr>
+            <th class="wiki-changelog-who">Who</th>
+            <th class="wiki-changelog-when">When</th>
+            <th class="wiki-changelog-what">What</th>
+          </tr>
+        </thead>
+        <tbody>
+          {entries.map((entry) => (
+            <tr>
+              <td class="wiki-changelog-who">{entry.who}</td>
+              <td class="wiki-changelog-when">{formatDate(entry.when)}</td>
+              <td class="wiki-changelog-what">
+                <Fragment set:html={renderInlineMarkdown(entry.what)} />
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </section>
+  </div>
+)}

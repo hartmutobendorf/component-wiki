@@ -1,10 +1,13 @@
 ---
 import { getEntry } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import MetadataBlock from "./MetadataBlock.astro";
+import ChangeLogTable from "./ChangeLogTable.astro";
+import DecisionLogTable from "./DecisionLogTable.astro";
+import MentionedInList from "./MentionedInList.astro";
 import RulesTable from "./RulesTable.astro";
-import { renderMarkdown, renderInlineMarkdown } from "../utils/render-markdown";
+import { renderMarkdown } from "../utils/render-markdown";
 import { tierToPrefix, buildConceptPath } from "../utils/tiers";
-import { formatDate } from "../utils/format-date";
 
 interface Props {
   conceptId: string;
@@ -47,7 +50,7 @@ const sortedRuleTypes = [...rulesByType.keys()].sort();
   activeTier={activeTier}
 >
   <div slot="meta">
-    <div style="padding-right: 1rem; margin-bottom: 1rem;">
+    <div class="wiki-llm-button-wrapper">
       <llm-button component-id={conceptId} />
     </div>
     <div class="p-table-of-contents">
@@ -140,35 +143,14 @@ const sortedRuleTypes = [...rulesByType.keys()].sort();
       )
     }
 
-    <div class="metadata-list">
-      <div class="metadata-item">
-        <span class="metadata-key p-text--small-caps u-text--muted">Type</span>
-        <span class="metadata-value">{metadata.type}</span>
-      </div>
+    <MetadataBlock
+      type={metadata.type}
+      tier={metadata.tier}
+      documentationStatus={metadata.documentationStatus}
+      lastEdited={metadata.lastEdited}
+    />
 
-      <div class="metadata-item">
-        <span class="metadata-key p-text--small-caps u-text--muted">Tier</span>
-        <span class="metadata-value">{metadata.tier}</span>
-      </div>
-
-      <div class="metadata-item">
-        <span class="metadata-key p-text--small-caps u-text--muted">
-          Documentation Status
-        </span>
-        <span class="metadata-value">{metadata.documentationStatus}</span>
-      </div>
-
-      <div class="metadata-item">
-        <span class="metadata-key p-text--small-caps u-text--muted">
-          Last Edited
-        </span>
-        <span class="metadata-value">
-{formatDate(metadata.lastEdited)}
-        </span>
-      </div>
-    </div>
-
-    <div style="margin-top: 1rem;">
+    <div class="wiki-copy-button-wrapper">
       <copy-markdown-button component-id={conceptId} />
     </div>
   </section>
@@ -193,98 +175,9 @@ const sortedRuleTypes = [...rulesByType.keys()].sort();
     )
   }
 
-  {
-    metadata.changeLog && metadata.changeLog.length > 0 && (
-      <div class="p-section">
-        <section id="changelog" class="u-text-max-width">
-          <h2 id="changelog"><a href="#changelog" class="p-link--anchor-heading">Change log</a></h2>
-          <table aria-label="Change log" class="changelog-table">
-            <thead>
-              <tr>
-                <th class="changelog-who">Who</th>
-                <th class="changelog-when">When</th>
-                <th class="changelog-what">What</th>
-              </tr>
-            </thead>
-            <tbody>
-              {metadata.changeLog.map((entry) => (
-                <tr>
-                  <td class="changelog-who">{entry.who}</td>
-                  <td class="changelog-when">
-                    {formatDate(entry.when)}
-                  </td>
-                  <td class="changelog-what">
-                    <Fragment set:html={renderInlineMarkdown(entry.what)} />
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </section>
-      </div>
-    )
-  }
-
-  {
-    metadata.decisionLog && metadata.decisionLog.length > 0 && (
-      <div class="p-section">
-        <section id="decisionlog" class="u-text-max-width">
-          <h2 id="decisionlog"><a href="#decisionlog" class="p-link--anchor-heading">Decision log</a></h2>
-          <table aria-label="Decision log" class="decisionlog-table">
-            <thead>
-              <tr>
-                <th class="decisionlog-where">Where</th>
-                <th class="decisionlog-decision">Decision made</th>
-                <th class="decisionlog-link">Link</th>
-              </tr>
-            </thead>
-            <tbody>
-              {metadata.decisionLog.map((entry) => (
-                <tr>
-                  <td class="decisionlog-where">
-                    <Fragment set:html={renderInlineMarkdown(entry.where)} />
-                  </td>
-                  <td class="decisionlog-decision">
-                    <Fragment set:html={renderInlineMarkdown(entry.what)} />
-                  </td>
-                  <td class="decisionlog-link">
-                    {entry.link ? (
-                      <a
-                        href={entry.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        View
-                      </a>
-                    ) : (
-                      "-"
-                    )}
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </section>
-      </div>
-    )
-  }
-
-  {
-    metadata.mentionedIn && metadata.mentionedIn.length > 0 && (
-      <div class="p-section">
-        <section id="mentionedin" class="u-text-max-width">
-          <h2 id="mentionedin"><a href="#mentionedin" class="p-link--anchor-heading">Mentioned in</a></h2>
-          <ul class="p-list">
-            {metadata.mentionedIn.map((entry) => (
-              <li class="p-list__item">
-                <a href={`/${tierPrefix}/${entry.slug}`}>{entry.name}</a>
-              </li>
-            ))}
-          </ul>
-        </section>
-      </div>
-    )
-  }
+  <ChangeLogTable entries={metadata.changeLog ?? []} />
+  <DecisionLogTable entries={metadata.decisionLog ?? []} />
+  <MentionedInList entries={metadata.mentionedIn ?? []} tierPrefix={tierPrefix} />
 
   {
     metadata.mentionsComponents && metadata.mentionsComponents.length > 0 && (
@@ -303,62 +196,6 @@ const sortedRuleTypes = [...rulesByType.keys()].sort();
       </div>
     )
   }
-
-  <style>
-    .metadata-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem 2rem;
-      align-items: center;
-    }
-
-    .metadata-item {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .metadata-key {
-      margin: 0;
-    }
-
-    .metadata-value {
-      margin: 0;
-    }
-
-    .changelog-table {
-      table-layout: fixed;
-      width: 100%;
-    }
-
-    .changelog-who {
-      width: 200px;
-    }
-
-    .changelog-when {
-      width: 150px;
-    }
-
-    .changelog-what {
-      width: auto;
-    }
-
-    .decisionlog-table {
-      table-layout: fixed;
-      width: 100%;
-    }
-
-    .decisionlog-where {
-      width: 200px;
-    }
-
-    .decisionlog-decision {
-      width: auto;
-    }
-
-    .decisionlog-link {
-      width: 100px;
-    }
-  </style>
 
   <script>
     import "../components/imageLightbox/image-lightbox.js";

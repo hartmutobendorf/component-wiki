@@ -1,11 +1,12 @@
 ---
 import { getEntry } from "astro:content";
-import FigmaLink from "./FigmaLink.astro";
-import GithubLink from "./GithubLink.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import MetadataBlock from "./MetadataBlock.astro";
+import ChangeLogTable from "./ChangeLogTable.astro";
+import DecisionLogTable from "./DecisionLogTable.astro";
+import MentionedInList from "./MentionedInList.astro";
 import { renderMarkdown, renderInlineMarkdown } from "../utils/render-markdown";
 import { tierToPrefix, buildConstructPath } from "../utils/tiers";
-import { formatDate } from "../utils/format-date";
 
 interface Props {
   constructId: string;
@@ -41,7 +42,7 @@ const hasInteractions = interactionsHtml.length > 0;
   activeTier={activeTier}
 >
   <div slot="meta">
-    <div style="padding-right: 1rem; margin-bottom: 1rem;">
+    <div class="wiki-llm-button-wrapper">
       <llm-button component-id={constructId} />
     </div>
     <div class="p-table-of-contents">
@@ -157,42 +158,14 @@ const hasInteractions = interactionsHtml.length > 0;
           <section id="description" class="u-text-max-width">
             <Fragment set:html={descriptionHtml} />
 
-            <div class="metadata-list">
-              <div class="metadata-item">
-                <span class="metadata-key p-text--small-caps u-text--muted">
-                  Type
-                </span>
-                <span class="metadata-value">{metadata.type}</span>
-              </div>
-
-              <div class="metadata-item">
-                <span class="metadata-key p-text--small-caps u-text--muted">
-                  Tier
-                </span>
-                <span class="metadata-value">{metadata.tiers}</span>
-              </div>
-
-              <div class="metadata-item">
-                <span class="metadata-key p-text--small-caps u-text--muted">
-                  Documentation Status
-                </span>
-                <span class="metadata-value">
-                  {metadata.documentationStatus}
-                </span>
-              </div>
-
-              <div class="metadata-item">
-                <span class="metadata-key p-text--small-caps u-text--muted">
-                  Last Edited
-                </span>
-                <span class="metadata-value">{formatDate(metadata.lastEdited)}</span>
-              </div>
-
-              <div class="metadata-chips">
-                {metadata.figmaLink && <FigmaLink href={metadata.figmaLink} />}
-                {metadata.codeLink && <GithubLink href={metadata.codeLink} />}
-              </div>
-
+            <MetadataBlock
+              type={metadata.type}
+              tier={metadata.tiers}
+              documentationStatus={metadata.documentationStatus}
+              lastEdited={metadata.lastEdited}
+              figmaLink={metadata.figmaLink}
+              codeLink={metadata.codeLink}
+            >
               {metadata.figmaComponentData && (
                 <copy-figma-button
                   data-component-id={constructId}
@@ -201,7 +174,7 @@ const hasInteractions = interactionsHtml.length > 0;
               )}
 
               <copy-markdown-button component-id={constructId} />
-            </div>
+            </MetadataBlock>
           </section>
         )
       }
@@ -214,11 +187,11 @@ const hasInteractions = interactionsHtml.length > 0;
             <img
               src={`/${metadata.componentExampleImage}`}
               alt={`${metadata.name} example`}
-              style="width: 100%; height: 500px; object-fit: contain; background-color: #F7F7F7;"
+              class="wiki-image-preview"
             />
           </image-lightbox>
         ) : (
-          <div style="width: 100%; height: 500px; background-color: #F7F7F7;" />
+          <div class="wiki-image-placeholder" />
         )
       }
     </div>
@@ -233,16 +206,16 @@ const hasInteractions = interactionsHtml.length > 0;
           <div class="row--50-50">
             <div class="col">
               {metadata.anatomy.table && metadata.anatomy.table.length > 0 && (
-                <div class="anatomy-list">
+                <div class="wiki-anatomy-list">
                   {[...metadata.anatomy.table]
                     .sort((a, b) => a.number - b.number)
                     .map((item) => (
-                      <div class="anatomy-item">
-                        <div class="anatomy-item-header">
-                          <div class="anatomy-number">{item.number}</div>
-                          <div class="anatomy-name">{item.name}</div>
+                      <div class="wiki-anatomy-item">
+                        <div class="wiki-anatomy-item-header">
+                          <div class="wiki-anatomy-number">{item.number}</div>
+                          <div class="wiki-anatomy-name">{item.name}</div>
                         </div>
-                        <div class="anatomy-description">
+                        <div class="wiki-anatomy-description">
                           <Fragment set:html={renderInlineMarkdown(item.description)} />
                         </div>
                       </div>
@@ -257,7 +230,7 @@ const hasInteractions = interactionsHtml.length > 0;
                   <img
                     src={`/${metadata.anatomy.image}`}
                     alt={`${metadata.name} anatomy`}
-                    style="width: 100%; height: auto; object-fit: contain;"
+                    class="wiki-image-contain"
                   />
                 </image-lightbox>
               )}
@@ -308,38 +281,38 @@ const hasInteractions = interactionsHtml.length > 0;
           <h2 id="properties"><a href="#properties" class="p-link--anchor-heading">Properties</a></h2>
 
           {metadata.properties && metadata.properties.length > 0 && (
-            <table aria-label="Properties" class="properties-table">
+            <table aria-label="Properties" class="wiki-properties-table">
               <thead>
                 <tr>
-                  <th class="properties-name">Name</th>
-                  <th class="properties-type">Type</th>
-                  <th class="properties-required">Required</th>
-                  <th class="properties-description">Description</th>
-                  <th class="properties-constraint">Constraint</th>
-                  <th class="properties-options">Options</th>
-                  <th class="properties-default-option">Default option</th>
+                  <th class="wiki-properties-name">Name</th>
+                  <th class="wiki-properties-type">Type</th>
+                  <th class="wiki-properties-required">Required</th>
+                  <th class="wiki-properties-description">Description</th>
+                  <th class="wiki-properties-constraint">Constraint</th>
+                  <th class="wiki-properties-options">Options</th>
+                  <th class="wiki-properties-default-option">Default option</th>
                 </tr>
               </thead>
               <tbody>
                 {metadata.properties.map((property) => (
                   <tr>
-                    <td class="properties-name">{property.name}</td>
-                    <td class="properties-type">{property.type}</td>
-                    <td class="properties-required">
+                    <td class="wiki-properties-name">{property.name}</td>
+                    <td class="wiki-properties-type">{property.type}</td>
+                    <td class="wiki-properties-required">
                       {property.required ? "Yes" : "No"}
                     </td>
-                    <td class="properties-description">
+                    <td class="wiki-properties-description">
                       <Fragment set:html={renderInlineMarkdown(property.description) || "-"} />
                     </td>
-                    <td class="properties-constraint">
+                    <td class="wiki-properties-constraint">
                       <Fragment set:html={renderInlineMarkdown(property.constraint) || "-"} />
                     </td>
-                    <td class="properties-options">
+                    <td class="wiki-properties-options">
                       {property.options && property.options.length > 0
                         ? property.options.join(", ")
                         : "-"}
                     </td>
-                    <td class="properties-default-option">
+                    <td class="wiki-properties-default-option">
                       {property.defaultOption || "-"}
                     </td>
                   </tr>
@@ -356,17 +329,17 @@ const hasInteractions = interactionsHtml.length > 0;
                   <h4>{child.name}</h4>
                   <table
                     aria-label={`${child.name} properties`}
-                    class="properties-table"
+                    class="wiki-properties-table"
                   >
                     <thead>
                       <tr>
-                        <th class="properties-name">Name</th>
-                        <th class="properties-type">Type</th>
-                        <th class="properties-required">Required</th>
-                        <th class="properties-description">Description</th>
-                        <th class="properties-constraint">Constraint</th>
-                        <th class="properties-options">Options</th>
-                        <th class="properties-default-option">
+                        <th class="wiki-properties-name">Name</th>
+                        <th class="wiki-properties-type">Type</th>
+                        <th class="wiki-properties-required">Required</th>
+                        <th class="wiki-properties-description">Description</th>
+                        <th class="wiki-properties-constraint">Constraint</th>
+                        <th class="wiki-properties-options">Options</th>
+                        <th class="wiki-properties-default-option">
                           Default option
                         </th>
                       </tr>
@@ -374,23 +347,23 @@ const hasInteractions = interactionsHtml.length > 0;
                     <tbody>
                       {child.properties.map((property) => (
                         <tr>
-                          <td class="properties-name">{property.name}</td>
-                          <td class="properties-type">{property.type}</td>
-                          <td class="properties-required">
+                          <td class="wiki-properties-name">{property.name}</td>
+                          <td class="wiki-properties-type">{property.type}</td>
+                          <td class="wiki-properties-required">
                             {property.required ? "Yes" : "No"}
                           </td>
-                          <td class="properties-description">
+                          <td class="wiki-properties-description">
                             <Fragment set:html={renderInlineMarkdown(property.description) || "-"} />
                           </td>
-                          <td class="properties-constraint">
+                          <td class="wiki-properties-constraint">
                             <Fragment set:html={renderInlineMarkdown(property.constraint) || "-"} />
                           </td>
-                          <td class="properties-options">
+                          <td class="wiki-properties-options">
                             {property.options && property.options.length > 0
                               ? property.options.join(", ")
                               : "-"}
                           </td>
-                          <td class="properties-default-option">
+                          <td class="wiki-properties-default-option">
                             {property.defaultOption || "-"}
                           </td>
                         </tr>
@@ -406,228 +379,9 @@ const hasInteractions = interactionsHtml.length > 0;
     }
   </div>
 
-  <div class="p-section">
-    {
-      metadata.changeLog && metadata.changeLog.length > 0 && (
-        <section id="changelog" class="u-text-max-width">
-          <h2 id="changelog"><a href="#changelog" class="p-link--anchor-heading">Change log</a></h2>
-          <table aria-label="Change log" class="changelog-table">
-            <thead>
-              <tr>
-                <th class="changelog-who">Who</th>
-                <th class="changelog-when">When</th>
-                <th class="changelog-what">What</th>
-              </tr>
-            </thead>
-            <tbody>
-              {metadata.changeLog.map((entry) => (
-                <tr>
-                  <td class="changelog-who">{entry.who}</td>
-                  <td class="changelog-when">
-                    {formatDate(entry.when)}
-                  </td>
-                  <td class="changelog-what"><Fragment set:html={renderInlineMarkdown(entry.what)} /></td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </section>
-      )
-    }
-  </div>
-
-  <div class="p-section">
-    {
-      metadata.decisionLog && metadata.decisionLog.length > 0 && (
-        <section id="decisionlog" class="u-text-max-width">
-          <h2 id="decisionlog"><a href="#decisionlog" class="p-link--anchor-heading">Decision log</a></h2>
-          <table aria-label="Decision log" class="decisionlog-table">
-            <thead>
-              <tr>
-                <th class="decisionlog-where">Where</th>
-                <th class="decisionlog-decision">Decision made</th>
-                <th class="decisionlog-link">Link</th>
-              </tr>
-            </thead>
-            <tbody>
-              {metadata.decisionLog.map((entry) => (
-                <tr>
-                  <td class="decisionlog-where"><Fragment set:html={renderInlineMarkdown(entry.where)} /></td>
-                  <td class="decisionlog-decision"><Fragment set:html={renderInlineMarkdown(entry.what)} /></td>
-                  <td class="decisionlog-link">
-                    {entry.link ? (
-                      <a
-                        href={entry.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        View
-                      </a>
-                    ) : (
-                      "-"
-                    )}
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </section>
-      )
-    }
-  </div>
-
-  {
-    metadata.mentionedIn && metadata.mentionedIn.length > 0 && (
-      <div class="p-section">
-        <section id="mentionedin" class="u-text-max-width">
-          <h2 id="mentionedin"><a href="#mentionedin" class="p-link--anchor-heading">Mentioned in</a></h2>
-          <ul class="p-list">
-            {metadata.mentionedIn.map((entry) => (
-              <li class="p-list__item">
-                <a href={`/${tierPrefix}/${entry.slug}`}>{entry.name}</a>
-              </li>
-            ))}
-          </ul>
-        </section>
-      </div>
-    )
-  }
-
-  <style>
-    .metadata-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem 2rem;
-      align-items: center;
-    }
-
-    .metadata-item {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .metadata-key {
-      margin: 0;
-    }
-
-    .metadata-value {
-      margin: 0;
-    }
-
-    .metadata-chips {
-      display: flex;
-      gap: 1.5rem;
-      align-items: center;
-    }
-
-    .changelog-table {
-      table-layout: fixed;
-      width: 100%;
-    }
-
-    .changelog-who {
-      width: 200px;
-    }
-
-    .changelog-when {
-      width: 150px;
-    }
-
-    .changelog-what {
-      width: auto;
-    }
-
-    .decisionlog-table {
-      table-layout: fixed;
-      width: 100%;
-    }
-
-    .decisionlog-where {
-      width: 200px;
-    }
-
-    .decisionlog-decision {
-      width: auto;
-    }
-
-    .decisionlog-link {
-      width: 100px;
-    }
-
-    .properties-table {
-      table-layout: fixed;
-      width: 100%;
-    }
-
-    .properties-name {
-      width: 150px;
-    }
-
-    .properties-type {
-      width: 120px;
-    }
-
-    .properties-required {
-      width: 100px;
-    }
-
-    .properties-description {
-      width: auto;
-      min-width: 200px;
-    }
-
-    .properties-constraint {
-      width: 150px;
-    }
-
-    .properties-options {
-      width: 180px;
-    }
-
-    .properties-default-option {
-      width: 120px;
-    }
-
-    .anatomy-list {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-    }
-
-    .anatomy-item {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-
-    .anatomy-item-header {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-    }
-
-    .anatomy-number {
-      width: 24px;
-      height: 24px;
-      border-radius: 50%;
-      background-color: #cf0075;
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.875rem;
-      font-weight: 500;
-      flex-shrink: 0;
-    }
-
-    .anatomy-name {
-      font-weight: bold;
-    }
-
-    .anatomy-description {
-      margin-left: calc(24px + 0.75rem);
-    }
-  </style>
+  <ChangeLogTable entries={metadata.changeLog ?? []} />
+  <DecisionLogTable entries={metadata.decisionLog ?? []} />
+  <MentionedInList entries={metadata.mentionedIn ?? []} tierPrefix={tierPrefix} />
 
   <script>
     import "../components/copyFigmaButton/copy-figma-button.js";

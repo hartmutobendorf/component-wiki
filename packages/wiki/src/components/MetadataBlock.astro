@@ -1,0 +1,47 @@
+---
+import FigmaLink from "./FigmaLink.astro";
+import GithubLink from "./GithubLink.astro";
+import { formatDate } from "../utils/format-date";
+
+interface Props {
+  type: string;
+  tier: string;
+  documentationStatus: string;
+  lastEdited: string;
+  figmaLink?: string;
+  codeLink?: string;
+}
+
+const { type, tier, documentationStatus, lastEdited, figmaLink, codeLink } = Astro.props;
+---
+
+<div class="wiki-metadata-list">
+  <div class="wiki-metadata-item">
+    <span class="wiki-metadata-key p-text--small-caps u-text--muted">Type</span>
+    <span class="wiki-metadata-value">{type}</span>
+  </div>
+
+  <div class="wiki-metadata-item">
+    <span class="wiki-metadata-key p-text--small-caps u-text--muted">Tier</span>
+    <span class="wiki-metadata-value">{tier}</span>
+  </div>
+
+  <div class="wiki-metadata-item">
+    <span class="wiki-metadata-key p-text--small-caps u-text--muted">Documentation Status</span>
+    <span class="wiki-metadata-value">{documentationStatus}</span>
+  </div>
+
+  <div class="wiki-metadata-item">
+    <span class="wiki-metadata-key p-text--small-caps u-text--muted">Last Edited</span>
+    <span class="wiki-metadata-value">{formatDate(lastEdited)}</span>
+  </div>
+
+  {(figmaLink || codeLink) && (
+    <div class="wiki-metadata-chips">
+      {figmaLink && <FigmaLink href={figmaLink} />}
+      {codeLink && <GithubLink href={codeLink} />}
+    </div>
+  )}
+
+  <slot />
+</div>

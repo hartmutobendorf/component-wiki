@@ -1,0 +1,52 @@
+---
+import { renderInlineMarkdown } from "../utils/render-markdown";
+
+interface DecisionLogEntry {
+  where: string;
+  what: string;
+  link: string;
+  when: string;
+}
+
+interface Props {
+  entries: DecisionLogEntry[];
+}
+
+const { entries } = Astro.props;
+---
+
+{entries.length > 0 && (
+  <div class="p-section">
+    <section id="decisionlog" class="u-text-max-width">
+      <h2 id="decisionlog"><a href="#decisionlog" class="p-link--anchor-heading">Decision log</a></h2>
+      <table aria-label="Decision log" class="wiki-decisionlog-table">
+        <thead>
+          <tr>
+            <th class="wiki-decisionlog-where">Where</th>
+            <th class="wiki-decisionlog-decision">Decision made</th>
+            <th class="wiki-decisionlog-link">Link</th>
+          </tr>
+        </thead>
+        <tbody>
+          {entries.map((entry) => (
+            <tr>
+              <td class="wiki-decisionlog-where">
+                <Fragment set:html={renderInlineMarkdown(entry.where)} />
+              </td>
+              <td class="wiki-decisionlog-decision">
+                <Fragment set:html={renderInlineMarkdown(entry.what)} />
+              </td>
+              <td class="wiki-decisionlog-link">
+                {entry.link ? (
+                  <a href={entry.link} target="_blank" rel="noopener noreferrer">View</a>
+                ) : (
+                  "-"
+                )}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </section>
+  </div>
+)}
