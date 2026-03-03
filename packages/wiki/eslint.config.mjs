@@ -32,13 +32,9 @@ export default [
     },
   },
 
-  // JavaScript files (web components, vanilla.js)
+  // Lit web component files (.ts and .js)
   {
-    files: ["src/**/*.js"],
-    languageOptions: {
-      ecmaVersion: "latest",
-      sourceType: "module",
-    },
+    files: ["src/**/*.ts", "src/**/*.js"],
     plugins: {
       lit: eslintPluginLit,
     },

@@ -1,21 +1,15 @@
 import type { APIRoute, GetStaticPaths } from "astro";
-import { getCollection, getEntry } from "astro:content";
-import { TIERS } from "../../utils/tiers";
+import { getEntry } from "astro:content";
+import { getConstructPaths } from "../../utils/static-paths";
 import { generateComponentMarkdown } from "../../utils/generate-component-markdown";
 
-export const getStaticPaths: GetStaticPaths = async () => {
-  const constructs = await getCollection("constructs");
-
-  return TIERS.flatMap((tier) => {
-    const prefix = tier.toLowerCase();
-    return constructs
-      .filter((c) => c.data.tiers === tier)
-      .map((c) => ({ params: { tier: prefix, slug: c.id } }));
-  });
-};
+export const getStaticPaths: GetStaticPaths = getConstructPaths;
 
 export const GET: APIRoute = async ({ params }) => {
-  const construct = await getEntry("constructs", params.slug!);
+  const slug = params.slug;
+  if (!slug) return new Response("Not found", { status: 404 });
+
+  const construct = await getEntry("constructs", slug);
   if (!construct) {
     return new Response("Not found", { status: 404 });
   }

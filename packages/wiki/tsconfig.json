@@ -1,6 +1,9 @@
 {
   "extends": "./node_modules/astro/tsconfigs/strict.json",
   "compilerOptions": {
+    // TODO: Migrate to TC39 standard decorators once Lit 3 and the toolchain
+    // fully stabilise support, then remove experimentalDecorators and
+    // useDefineForClassFields overrides. Track: https://github.com/lit/lit/issues/1476
     "experimentalDecorators": true,
     "useDefineForClassFields": false,
     "paths": {

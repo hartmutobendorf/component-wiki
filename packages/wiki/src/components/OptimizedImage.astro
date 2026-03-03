@@ -10,6 +10,9 @@
  * loading="lazy" + decoding="async".
  *
  * See image-map.ts for the shared lookup logic.
+ *
+ * Accepts an optional `imageLookup` prop to avoid re-globbing when the
+ * caller has already built one (e.g. ConstructPage, ConceptPage).
  */
 import { Image } from "astro:assets";
 import { buildImageLookup, resolveImage } from "../utils/image-map";
@@ -19,17 +22,26 @@ interface Props {
   src: string;
   alt: string;
   class?: string;
+  /** Pre-built image lookup map. When provided, skips import.meta.glob(). */
+  imageLookup?: Map<string, ImageMetadata>;
 }
 
+const { src, alt, class: className, imageLookup: providedLookup } = Astro.props;
+
+// Use the provided lookup if available, otherwise glob here as a fallback.
 // NOTE: import.meta.glob() must be called here — Vite requires a static
 // string literal at the call site; it cannot be moved into a utility.
-const allImages = import.meta.glob<{ default: ImageMetadata }>(
-  "/../../data/raw/images/*.{png,jpg,jpeg,gif,svg,webp}",
-  { eager: true },
-);
-const imageLookup = buildImageLookup(allImages);
+let imageLookup: Map<string, ImageMetadata>;
+if (providedLookup) {
+  imageLookup = providedLookup;
+} else {
+  const allImages = import.meta.glob<{ default: ImageMetadata }>(
+    "/../../data/raw/images/*.{png,jpg,jpeg,gif,svg,webp}",
+    { eager: true },
+  );
+  imageLookup = buildImageLookup(allImages);
+}
 
-const { src, alt, class: className } = Astro.props;
 const imageData = resolveImage(src, imageLookup);
 ---
 

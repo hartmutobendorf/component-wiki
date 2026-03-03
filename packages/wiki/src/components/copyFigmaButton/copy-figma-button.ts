@@ -21,8 +21,8 @@ export class CopyFigmaButtonComponent extends LitElement {
   @property({ type: String, attribute: "data-component-id" })
   componentId = "";
 
-  @property({ type: String, attribute: "text-content" })
-  declare textContent: string;
+  @property({ type: String, attribute: "copy-text" })
+  copyText = "Button";
 
   @property({ type: String, attribute: "button-text" })
   buttonText = "Copy as Figma component";
@@ -37,7 +37,6 @@ export class CopyFigmaButtonComponent extends LitElement {
 
   constructor() {
     super();
-    this.textContent = "Button";
   }
 
   connectedCallback(): void {
@@ -108,7 +107,7 @@ export class CopyFigmaButtonComponent extends LitElement {
 
     try {
       const htmlBlob = new Blob([this._htmlContent], { type: "text/html" });
-      const textBlob = new Blob([this.textContent], { type: "text/plain" });
+      const textBlob = new Blob([this.copyText], { type: "text/plain" });
       const data = new ClipboardItem({
         "text/html": htmlBlob,
         "text/plain": textBlob,
@@ -155,4 +154,5 @@ export class CopyFigmaButtonComponent extends LitElement {
   }
 }
 
+// Side-effectful: importing this module registers the <copy-figma-button> element.
 customElements.define("copy-figma-button", CopyFigmaButtonComponent);

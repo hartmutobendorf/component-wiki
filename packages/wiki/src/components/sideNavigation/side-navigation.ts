@@ -1,4 +1,4 @@
-import { LitElement, css, html } from "lit";
+import { LitElement, css, html, nothing } from "lit";
 import { property, state } from "lit/decorators.js";
 import { classMap } from "lit/directives/class-map.js";
 import { vanillaStyleSheet } from "../../styles/vanilla.ts";
@@ -336,7 +336,7 @@ export class SideNavigationComponent extends LitElement {
         <a
           class="p-side-navigation__link ${isCurrentPage ? "is-active" : ""}"
           href="${href}"
-          ${isCurrentPage ? 'aria-current="page"' : ""}
+          aria-current=${isCurrentPage ? "page" : nothing}
         >
           ${item.name}
         </a>
@@ -453,4 +453,5 @@ export class SideNavigationComponent extends LitElement {
   }
 }
 
+// Side-effectful: importing this module registers the <side-navigation> element.
 customElements.define("side-navigation", SideNavigationComponent);

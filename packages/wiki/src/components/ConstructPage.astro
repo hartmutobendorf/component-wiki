@@ -192,7 +192,7 @@ const hasInteractions = interactionsHtml.length > 0;
               {metadata.figmaComponentData && (
                 <copy-figma-button
                   data-component-id={constructId}
-                  text-content={metadata.name}
+                  copy-text={metadata.name}
                 />
               )}
 
@@ -211,6 +211,7 @@ const hasInteractions = interactionsHtml.length > 0;
               src={metadata.componentExampleImage}
               alt={`${metadata.name} example`}
               class="wiki-image-preview"
+              imageLookup={imageLookup}
             />
           </image-lightbox>
         ) : (
@@ -225,7 +226,7 @@ const hasInteractions = interactionsHtml.length > 0;
       (metadata.anatomy.image ||
         (metadata.anatomy.table && metadata.anatomy.table.length > 0)) && (
         <section id="anatomy" class="p-section">
-          <h2 id="anatomy"><a href="#anatomy" class="p-link--anchor-heading">Anatomy</a></h2>
+          <h2><a href="#anatomy" class="p-link--anchor-heading">Anatomy</a></h2>
           <div class="row--50-50">
             <div class="col">
               {metadata.anatomy.table && metadata.anatomy.table.length > 0 && (
@@ -254,6 +255,7 @@ const hasInteractions = interactionsHtml.length > 0;
                     src={metadata.anatomy.image}
                     alt={`${metadata.name} anatomy`}
                     class="wiki-image-contain"
+                    imageLookup={imageLookup}
                   />
                 </image-lightbox>
               )}
@@ -268,7 +270,7 @@ const hasInteractions = interactionsHtml.length > 0;
       {
         hasUsage && (
           <section id="usage" class="u-text-max-width">
-            <h2 id="usage"><a href="#usage" class="p-link--anchor-heading">Usage</a></h2>
+            <h2><a href="#usage" class="p-link--anchor-heading">Usage</a></h2>
             <Fragment set:html={usageHtml} />
           </section>
         )
@@ -277,7 +279,7 @@ const hasInteractions = interactionsHtml.length > 0;
       {
         hasExamples && (
           <section id="examples" class="u-text-max-width">
-            <h2 id="examples"><a href="#examples" class="p-link--anchor-heading">Examples</a></h2>
+            <h2><a href="#examples" class="p-link--anchor-heading">Examples</a></h2>
             <Fragment set:html={examplesHtml} />
           </section>
         )
@@ -286,7 +288,7 @@ const hasInteractions = interactionsHtml.length > 0;
       {
         hasInteractions && (
           <section id="interactions" class="u-text-max-width">
-            <h2 id="interactions"><a href="#interactions" class="p-link--anchor-heading">Interactions</a></h2>
+            <h2><a href="#interactions" class="p-link--anchor-heading">Interactions</a></h2>
             <Fragment set:html={interactionsHtml} />
           </section>
         )
@@ -301,7 +303,7 @@ const hasInteractions = interactionsHtml.length > 0;
       ((metadata.properties && metadata.properties.length > 0) ||
         (metadata.childProperties && metadata.childProperties.length > 0)) && (
         <section id="properties" class="u-text-max-width">
-          <h2 id="properties"><a href="#properties" class="p-link--anchor-heading">Properties</a></h2>
+          <h2><a href="#properties" class="p-link--anchor-heading">Properties</a></h2>
 
           {metadata.properties && metadata.properties.length > 0 && (
             <table aria-label="Properties" class="wiki-properties-table">
@@ -346,7 +348,7 @@ const hasInteractions = interactionsHtml.length > 0;
 
           {metadata.childProperties && metadata.childProperties.length > 0 && (
             <div class="p-section--shallow">
-              <h3 id="child-properties"><a href="#child-properties" class="p-link--anchor-heading">Child properties</a></h3>
+              <h3><a href="#child-properties" class="p-link--anchor-heading">Child properties</a></h3>
               {metadata.childProperties.map((child) => (
                 <>
                   <h4>{child.name}</h4>

@@ -111,4 +111,5 @@ export class ImageLightboxComponent extends LitElement {
   }
 }
 
+// Side-effectful: importing this module registers the <image-lightbox> element.
 customElements.define("image-lightbox", ImageLightboxComponent);

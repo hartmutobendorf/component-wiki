@@ -106,4 +106,5 @@ export class CopyMarkdownButtonComponent extends LitElement {
   }
 }
 
+// Side-effectful: importing this module registers the <copy-markdown-button> element.
 customElements.define("copy-markdown-button", CopyMarkdownButtonComponent);

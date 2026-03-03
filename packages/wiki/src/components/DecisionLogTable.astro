@@ -1,12 +1,6 @@
 ---
+import type { DecisionLogEntry } from "@wiki/shared";
 import { renderInlineMarkdown } from "../utils/render-markdown";
-
-interface DecisionLogEntry {
-  where: string;
-  what: string;
-  link: string;
-  when: string;
-}
 
 interface Props {
   entries: DecisionLogEntry[];
@@ -18,7 +12,7 @@ const { entries } = Astro.props;
 {entries.length > 0 && (
   <div class="p-section">
     <section id="decisionlog" class="u-text-max-width">
-      <h2 id="decisionlog"><a href="#decisionlog" class="p-link--anchor-heading">Decision log</a></h2>
+      <h2><a href="#decisionlog" class="p-link--anchor-heading">Decision log</a></h2>
       <table aria-label="Decision log" class="wiki-decisionlog-table">
         <thead>
           <tr>

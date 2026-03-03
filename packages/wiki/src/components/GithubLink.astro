@@ -6,27 +6,13 @@ interface Props {
 const { href } = Astro.props;
 ---
 
-<a href={href} target="_blank" rel="noopener noreferrer" class="github-chip">
+<a href={href} target="_blank" rel="noopener noreferrer" class="wiki-chip">
   <img
     src="/logos/github.svg"
     alt="GitHub logo"
-    class="github-chip__icon"
+    class="wiki-chip__icon"
     width="16"
     height="16"
   />
-  <span class="github-chip__text">View on GitHub</span>
+  <span>View on GitHub</span>
 </a>
-
-<style>
-  .github-chip {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-
-  .github-chip__icon {
-    width: 16px;
-    height: 16px;
-    filter: invert(27%) sepia(95%) saturate(2521%) hue-rotate(201deg) brightness(98%) contrast(101%);
-  }
-</style>

@@ -1,7 +1,7 @@
 ---
 import { getCollection } from "astro:content";
-import { TIERS, prefixToTier, buildConceptPath } from "../../utils/tiers";
-import { CONCEPT_TYPE_ORDER } from "../../utils/nav-data";
+import { TIERS } from "../../utils/tiers";
+import { getFirstPageForTier } from "../../utils/first-page-for-tier";
 
 export function getStaticPaths() {
   return TIERS.map((tier) => ({
@@ -11,30 +11,12 @@ export function getStaticPaths() {
 }
 
 const { activeTier } = Astro.props;
-const tierPrefix = activeTier.toLowerCase();
 
 const allConcepts = await getCollection("concepts");
-const tierConcepts = allConcepts
-  .filter((c) => c.data.tier === activeTier)
-  .sort((a, b) => a.data.name.localeCompare(b.data.name));
+const allConstructs = await getCollection("constructs");
 
-// Find the first concept matching the type order (same order as side nav)
-const first =
-  CONCEPT_TYPE_ORDER.reduce<(typeof tierConcepts)[number] | null>(
-    (found, type) =>
-      found ?? tierConcepts.find((c) => c.data.type === type) ?? null,
-    null,
-  ) ?? tierConcepts[0];
-
-if (first) {
-  return Astro.redirect(`/${buildConceptPath(activeTier, first.id)}`, 301);
-}
-
-// Fallback to first construct if no concepts exist
-const constructs = await getCollection("constructs");
-const tierConstructs = constructs
-  .filter((c) => c.data.tiers === activeTier)
-  .sort((a, b) => a.data.name.localeCompare(b.data.name));
-
-return Astro.redirect(`/${tierPrefix}/${tierConstructs[0]?.id ?? ""}`, 301);
+return Astro.redirect(
+  getFirstPageForTier(activeTier, allConcepts, allConstructs),
+  301,
+);
 ---

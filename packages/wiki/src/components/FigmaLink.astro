@@ -6,27 +6,13 @@ interface Props {
 const { href } = Astro.props;
 ---
 
-<a href={href} target="_blank" rel="noopener noreferrer" class="figma-chip">
+<a href={href} target="_blank" rel="noopener noreferrer" class="wiki-chip">
   <img
     src="/logos/figma.svg"
     alt="Figma logo"
-    class="figma-chip__icon"
+    class="wiki-chip__icon"
     width="16"
     height="16"
   />
-  <span class="figma-chip__text">Open in Figma</span>
+  <span>Open in Figma</span>
 </a>
-
-<style>
-  .figma-chip {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-
-  .figma-chip__icon {
-    width: 16px;
-    height: 16px;
-    filter: invert(27%) sepia(95%) saturate(2521%) hue-rotate(201deg) brightness(98%) contrast(101%);
-  }
-</style>

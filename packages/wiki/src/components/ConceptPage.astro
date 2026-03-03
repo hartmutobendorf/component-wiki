@@ -173,7 +173,7 @@ const sortedRuleTypes = [...rulesByType.keys()].sort();
   {
     hasContent && (
       <section id="content" class="p-section u-text-max-width">
-        <h2 id="content"><a href="#content" class="p-link--anchor-heading">Content</a></h2>
+        <h2><a href="#content" class="p-link--anchor-heading">Content</a></h2>
         <Fragment set:html={contentHtml} />
       </section>
     )
@@ -182,7 +182,7 @@ const sortedRuleTypes = [...rulesByType.keys()].sort();
   {
     metadata.appliedRules && metadata.appliedRules.length > 0 && (
       <section id="rules" class="p-section">
-        <h2 id="rules"><a href="#rules" class="p-link--anchor-heading">Applied rules</a></h2>
+        <h2><a href="#rules" class="p-link--anchor-heading">Applied rules</a></h2>
         {sortedRuleTypes.map((ruleType) => (
           <RulesTable ruleType={ruleType} rules={rulesByType.get(ruleType)!} />
         ))}
@@ -198,7 +198,7 @@ const sortedRuleTypes = [...rulesByType.keys()].sort();
     metadata.mentionsComponents && metadata.mentionsComponents.length > 0 && (
       <div class="p-section">
         <section id="mentionscomponents" class="u-text-max-width">
-          <h2 id="mentionscomponents"><a href="#mentionscomponents" class="p-link--anchor-heading">References</a></h2>
+          <h2><a href="#mentionscomponents" class="p-link--anchor-heading">References</a></h2>
           <p>This concept references the following constructs:</p>
           <ul class="p-list">
             {[...new Map(metadata.mentionsComponents.map((entry) => [entry.slug, entry])).values()].map((entry) => (
