@@ -2,7 +2,10 @@
   "extends": "./node_modules/astro/tsconfigs/strict.json",
   "compilerOptions": {
     "experimentalDecorators": true,
-    "useDefineForClassFields": false
+    "useDefineForClassFields": false,
+    "paths": {
+      "@images/*": ["../../data/raw/images/*"]
+    }
   },
   "include": [".astro/types.d.ts", "**/*"],
   "exclude": ["dist"]

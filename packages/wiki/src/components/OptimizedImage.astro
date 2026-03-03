@@ -1,0 +1,54 @@
+---
+/**
+ * OptimizedImage — wraps Astro's <Image /> for images stored outside src/.
+ *
+ * Images live in data/raw/images/ (written by coda-sync) and are made
+ * available to Astro's asset pipeline via the @images Vite alias.
+ * This component resolves a relative path like "images/abc.png" to the
+ * corresponding ImageMetadata and passes it to <Image />, which
+ * generates WebP, sets width/height (preventing CLS), and adds
+ * loading="lazy" + decoding="async".
+ */
+import { Image } from "astro:assets";
+
+interface Props {
+  /** Image path as stored in JSON data, e.g. "images/abc-123.png" */
+  src: string;
+  alt: string;
+  class?: string;
+}
+
+// Build a map of all available images at build time.
+// The glob pattern must be a string literal for Vite to resolve it.
+const allImages = import.meta.glob<{ default: ImageMetadata }>(
+  "/../../data/raw/images/*.{png,jpg,jpeg,gif,svg,webp}",
+  { eager: true },
+);
+
+// Normalize the glob keys to just filenames for easy lookup
+const imageMap = new Map<string, ImageMetadata>();
+for (const [path, module] of Object.entries(allImages)) {
+  const filename = path.split("/").pop()!;
+  imageMap.set(filename, module.default);
+}
+
+const { src, alt, class: className } = Astro.props;
+
+// Extract filename from path like "images/abc-123.png"
+const filename = src.split("/").pop()!;
+const imageData = imageMap.get(filename);
+---
+
+{
+  imageData ? (
+    <Image
+      src={imageData}
+      alt={alt}
+      class={className}
+      loading="lazy"
+      decoding="async"
+    />
+  ) : (
+    <img src={`/${src}`} alt={alt} class={className} loading="lazy" decoding="async" />
+  )
+}

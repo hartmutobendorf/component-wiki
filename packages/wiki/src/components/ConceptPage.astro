@@ -6,8 +6,10 @@ import ChangeLogTable from "./ChangeLogTable.astro";
 import DecisionLogTable from "./DecisionLogTable.astro";
 import MentionedInList from "./MentionedInList.astro";
 import RulesTable from "./RulesTable.astro";
-import { renderMarkdown } from "../utils/render-markdown";
+import { renderMarkdown, type OptimizedImageInfo } from "../utils/render-markdown";
 import { tierToPrefix, buildConceptPath } from "../utils/tiers";
+import { collectMarkdownImages } from "../utils/collect-markdown-images";
+import { getImage } from "astro:assets";
 
 interface Props {
   conceptId: string;
@@ -25,9 +27,39 @@ if (!concept) {
 }
 const metadata = concept.data;
 
-// Render markdown sections
-const descriptionHtml = renderMarkdown(metadata.description);
-const contentHtml = renderMarkdown(metadata.content);
+// Build optimized image map for markdown images.
+// See ConstructPage.astro for detailed explanation of why this is needed.
+const allImages = import.meta.glob<{ default: ImageMetadata }>(
+  "/../../data/raw/images/*.{png,jpg,jpeg,gif,svg,webp}",
+  { eager: true },
+);
+const imageFilenameMap = new Map<string, ImageMetadata>();
+for (const [path, mod] of Object.entries(allImages)) {
+  imageFilenameMap.set(path.split("/").pop()!, mod.default);
+}
+
+const markdownImagePaths = collectMarkdownImages(
+  metadata.description,
+  metadata.content,
+);
+
+const imageMap = new Map<string, OptimizedImageInfo>();
+for (const imgPath of markdownImagePaths) {
+  const filename = imgPath.split("/").pop()!;
+  const imageMeta = imageFilenameMap.get(filename);
+  if (imageMeta) {
+    const optimized = await getImage({ src: imageMeta });
+    imageMap.set(imgPath, {
+      src: optimized.src,
+      width: optimized.attributes.width as number,
+      height: optimized.attributes.height as number,
+    });
+  }
+}
+
+// Render markdown sections with optimized image URLs
+const descriptionHtml = renderMarkdown(metadata.description, imageMap);
+const contentHtml = renderMarkdown(metadata.content, imageMap);
 
 const hasDescription = descriptionHtml.length > 0;
 const hasContent = contentHtml.length > 0;

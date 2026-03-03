@@ -5,8 +5,11 @@ import MetadataBlock from "./MetadataBlock.astro";
 import ChangeLogTable from "./ChangeLogTable.astro";
 import DecisionLogTable from "./DecisionLogTable.astro";
 import MentionedInList from "./MentionedInList.astro";
-import { renderMarkdown, renderInlineMarkdown } from "../utils/render-markdown";
+import { renderMarkdown, renderInlineMarkdown, type OptimizedImageInfo } from "../utils/render-markdown";
 import { tierToPrefix, buildConstructPath } from "../utils/tiers";
+import { collectMarkdownImages } from "../utils/collect-markdown-images";
+import { getImage } from "astro:assets";
+import OptimizedImage from "./OptimizedImage.astro";
 
 interface Props {
   constructId: string;
@@ -24,11 +27,46 @@ if (!construct) {
 }
 const metadata = construct.data;
 
-// Render markdown sections
-const descriptionHtml = renderMarkdown(metadata.description);
-const usageHtml = renderMarkdown(metadata.usage);
-const examplesHtml = renderMarkdown(metadata.examples);
-const interactionsHtml = renderMarkdown(metadata.interactions);
+// Build optimized image map for markdown images.
+// Markdown lives in JSON fields (not .md files), so it bypasses Astro's
+// markdown pipeline and its automatic image optimization. We bridge that
+// gap by calling getImage() for each referenced image and passing the
+// resulting URL map to the markdown renderer.
+const allImages = import.meta.glob<{ default: ImageMetadata }>(
+  "/../../data/raw/images/*.{png,jpg,jpeg,gif,svg,webp}",
+  { eager: true },
+);
+const imageFilenameMap = new Map<string, ImageMetadata>();
+for (const [path, mod] of Object.entries(allImages)) {
+  imageFilenameMap.set(path.split("/").pop()!, mod.default);
+}
+
+const markdownImagePaths = collectMarkdownImages(
+  metadata.description,
+  metadata.usage,
+  metadata.examples,
+  metadata.interactions,
+);
+
+const imageMap = new Map<string, OptimizedImageInfo>();
+for (const imgPath of markdownImagePaths) {
+  const filename = imgPath.split("/").pop()!;
+  const imageMeta = imageFilenameMap.get(filename);
+  if (imageMeta) {
+    const optimized = await getImage({ src: imageMeta });
+    imageMap.set(imgPath, {
+      src: optimized.src,
+      width: optimized.attributes.width as number,
+      height: optimized.attributes.height as number,
+    });
+  }
+}
+
+// Render markdown sections with optimized image URLs
+const descriptionHtml = renderMarkdown(metadata.description, imageMap);
+const usageHtml = renderMarkdown(metadata.usage, imageMap);
+const examplesHtml = renderMarkdown(metadata.examples, imageMap);
+const interactionsHtml = renderMarkdown(metadata.interactions, imageMap);
 
 const hasDescription = descriptionHtml.length > 0;
 const hasUsage = usageHtml.length > 0;
@@ -184,8 +222,8 @@ const hasInteractions = interactionsHtml.length > 0;
       {
         metadata.componentExampleImage ? (
           <image-lightbox>
-            <img
-              src={`/${metadata.componentExampleImage}`}
+            <OptimizedImage
+              src={metadata.componentExampleImage}
               alt={`${metadata.name} example`}
               class="wiki-image-preview"
             />
@@ -227,8 +265,8 @@ const hasInteractions = interactionsHtml.length > 0;
             <div class="col">
               {metadata.anatomy.image && (
                 <image-lightbox>
-                  <img
-                    src={`/${metadata.anatomy.image}`}
+                  <OptimizedImage
+                    src={metadata.anatomy.image}
                     alt={`${metadata.name} anatomy`}
                     class="wiki-image-contain"
                   />

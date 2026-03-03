@@ -1,5 +1,9 @@
 import { describe, it, expect } from "vitest";
-import { renderMarkdown, slugify } from "../../src/utils/render-markdown.js";
+import {
+  renderMarkdown,
+  slugify,
+  type OptimizedImageInfo,
+} from "../../src/utils/render-markdown.js";
 
 // ── Basic rendering ─────────────────────────────────────────
 
@@ -105,6 +109,60 @@ describe("renderMarkdown — image lightbox", () => {
     const result = renderMarkdown(md);
     const matches = result.match(/<image-lightbox>/g);
     expect(matches).toHaveLength(2);
+  });
+});
+
+// ── Image optimization (image map) ──────────────────────────
+
+describe("renderMarkdown — image map optimization", () => {
+  const imageMap = new Map<string, OptimizedImageInfo>([
+    [
+      "images/abc.png",
+      { src: "/_astro/abc.D4f2k.webp", width: 1280, height: 720 },
+    ],
+  ]);
+
+  it("substitutes image src with optimized URL", () => {
+    const result = renderMarkdown("![alt](images/abc.png)", imageMap);
+    expect(result).toContain('src="/_astro/abc.D4f2k.webp"');
+  });
+
+  it("adds width and height attributes", () => {
+    const result = renderMarkdown("![alt](images/abc.png)", imageMap);
+    expect(result).toContain('width="1280"');
+    expect(result).toContain('height="720"');
+  });
+
+  it("adds loading=lazy and decoding=async", () => {
+    const result = renderMarkdown("![alt](images/abc.png)", imageMap);
+    expect(result).toContain('loading="lazy"');
+    expect(result).toContain('decoding="async"');
+  });
+
+  it("falls back to original path for images not in map", () => {
+    const result = renderMarkdown("![alt](images/unknown.png)", imageMap);
+    expect(result).toContain('src="/images/unknown.png"');
+    expect(result).not.toContain("width=");
+  });
+
+  it("still wraps in image-lightbox", () => {
+    const result = renderMarkdown("![alt](images/abc.png)", imageMap);
+    expect(result).toContain("<image-lightbox>");
+    expect(result).toContain("</image-lightbox>");
+  });
+
+  it("passes through external URLs unchanged", () => {
+    const result = renderMarkdown(
+      "![alt](https://example.com/img.png)",
+      imageMap,
+    );
+    expect(result).toContain('src="https://example.com/img.png"');
+  });
+
+  it("adds lazy loading even without image map", () => {
+    const result = renderMarkdown("![alt](images/test.png)");
+    expect(result).toContain('loading="lazy"');
+    expect(result).toContain('decoding="async"');
   });
 });
 
