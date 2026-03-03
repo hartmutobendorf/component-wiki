@@ -7,8 +7,8 @@ export default defineConfig({
     include: ["tests/**/*.test.ts"],
     coverage: {
       provider: "v8",
-      include: ["src/utils/**/*.ts"],
-      exclude: [],
+      include: ["src/**/*.ts"],
+      exclude: ["src/content/**", "**/*.test.ts", "**/*.d.ts"],
       reporter: ["text", "lcov"],
       thresholds: {
         statements: 90,

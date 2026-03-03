@@ -130,10 +130,10 @@ describe("generateConceptMarkdown — change log", () => {
     expect(md).toContain("| Who | When | What |");
   });
 
-  it("formats dates in en-US locale", () => {
+  it("formats dates in en-GB long format", () => {
     const md = generateConceptMarkdown(fullConcept);
-    expect(md).toContain("Mar 1, 2025");
-    expect(md).toContain("May 10, 2025");
+    expect(md).toContain("1 Mar 2025");
+    expect(md).toContain("10 May 2025");
   });
 
   it("includes who and what fields", () => {

@@ -1,4 +1,5 @@
 import type { Construct } from "@wiki/shared";
+import { formatDate } from "./format-date";
 
 /**
  * Generates a Markdown document from construct data.
@@ -88,12 +89,7 @@ export function generateComponentMarkdown(data: Construct): string {
     md += `| Who | When | What |\n`;
     md += `|-----|------|------|\n`;
     for (const entry of data.changeLog) {
-      const when = new Date(entry.when).toLocaleDateString("en-US", {
-        year: "numeric",
-        month: "short",
-        day: "numeric",
-      });
-      md += `| ${entry.who} | ${when} | ${entry.what} |\n`;
+      md += `| ${entry.who} | ${formatDate(entry.when, "long")} | ${entry.what} |\n`;
     }
     md += `\n`;
   }

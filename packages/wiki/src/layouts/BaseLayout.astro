@@ -3,7 +3,7 @@ import "../styles/page.scss";
 import { getCollection } from "astro:content";
 import { ClientRouter } from "astro:transitions";
 import TopNavigation from "../components/TopNavigation.astro";
-import { buildConstructPath, buildConceptPath } from "../utils/tiers";
+import { buildNavData } from "../utils/nav-data";
 
 interface Props {
   title?: string;
@@ -13,101 +13,9 @@ interface Props {
 
 const { title = "Component Wiki", currentSlug = "", activeTier = "Global" } = Astro.props;
 
-// Get all constructs from the collection, filtered by active tier
 const allConstructs = await getCollection("constructs");
-const constructs = allConstructs.filter(
-  (construct) => construct.data.tiers === activeTier,
-);
-
-const constructTypeOrder = [
-  "Foundation",
-  "Block",
-  "Component",
-  "Complex component",
-  "Pattern",
-  "Page",
-  "Mental model",
-];
-
-const groupedConstructs = constructs.reduce(
-  (acc, construct) => {
-    const type = construct.data.type;
-    if (!acc[type]) {
-      acc[type] = [];
-    }
-    acc[type].push({
-      name: construct.data.name,
-      slug: buildConstructPath(activeTier, construct.id),
-      tier: construct.data.tiers,
-      type: construct.data.type,
-    });
-    return acc;
-  },
-  {} as Record<
-    string,
-    { name: string; slug: string; tier: string; type: string }[]
-  >,
-);
-
-// Create construct nav items, sorted alphabetically within each group
-const constructNavItems = constructTypeOrder
-  .map((type) => ({
-    type,
-    items: (groupedConstructs[type] || []).sort((a, b) =>
-      a.name.localeCompare(b.name),
-    ),
-  }))
-  .filter((group) => group.items.length > 0);
-
-// Get all concepts from the collection, filtered by active tier
 const allConcepts = await getCollection("concepts");
-const concepts = allConcepts.filter(
-  (concept) => concept.data.tier === activeTier,
-);
-
-const conceptTypeOrder = [
-  "Architecture",
-  "Principle",
-  "Decision guide",
-];
-
-const groupedConcepts = concepts.reduce(
-  (acc, concept) => {
-    const type = concept.data.type;
-    if (!acc[type]) {
-      acc[type] = [];
-    }
-    acc[type].push({
-      name: concept.data.name,
-      slug: buildConceptPath(activeTier, concept.id),
-      tier: concept.data.tier,
-      type: concept.data.type,
-    });
-    return acc;
-  },
-  {} as Record<
-    string,
-    { name: string; slug: string; tier: string; type: string }[]
-  >,
-);
-
-// Create concept nav items, sorted alphabetically within each group
-const conceptNavItems = conceptTypeOrder
-  .map((type) => ({
-    type,
-    items: (groupedConcepts[type] || []).sort((a, b) =>
-      a.name.localeCompare(b.name),
-    ),
-  }))
-  .filter((group) => group.items.length > 0);
-
-// Combined nav data with section info
-const navData = {
-  sections: [
-    { heading: "Concept", items: conceptNavItems },
-    { heading: "Construct", items: constructNavItems },
-  ],
-};
+const navData = buildNavData(activeTier, allConstructs, allConcepts);
 ---
 
 <!doctype html>

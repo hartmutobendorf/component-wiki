@@ -4,6 +4,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import RulesTable from "./RulesTable.astro";
 import { renderMarkdown, renderInlineMarkdown } from "../utils/render-markdown";
 import { tierToPrefix, buildConceptPath } from "../utils/tiers";
+import { formatDate } from "../utils/format-date";
 
 interface Props {
   conceptId: string;
@@ -162,11 +163,7 @@ const sortedRuleTypes = [...rulesByType.keys()].sort();
           Last Edited
         </span>
         <span class="metadata-value">
-          {new Date(metadata.lastEdited).toLocaleDateString("de-DE", {
-            day: "2-digit",
-            month: "2-digit",
-            year: "numeric",
-          })}
+{formatDate(metadata.lastEdited)}
         </span>
       </div>
     </div>
@@ -214,11 +211,7 @@ const sortedRuleTypes = [...rulesByType.keys()].sort();
                 <tr>
                   <td class="changelog-who">{entry.who}</td>
                   <td class="changelog-when">
-                    {new Date(entry.when).toLocaleDateString("de-AT", {
-                      year: "numeric",
-                      month: "2-digit",
-                      day: "2-digit",
-                    })}
+                    {formatDate(entry.when)}
                   </td>
                   <td class="changelog-what">
                     <Fragment set:html={renderInlineMarkdown(entry.what)} />

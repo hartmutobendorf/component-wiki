@@ -5,6 +5,7 @@ import GithubLink from "./GithubLink.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { renderMarkdown, renderInlineMarkdown } from "../utils/render-markdown";
 import { tierToPrefix, buildConstructPath } from "../utils/tiers";
+import { formatDate } from "../utils/format-date";
 
 interface Props {
   constructId: string;
@@ -184,7 +185,7 @@ const hasInteractions = interactionsHtml.length > 0;
                 <span class="metadata-key p-text--small-caps u-text--muted">
                   Last Edited
                 </span>
-                <span class="metadata-value">{new Date(metadata.lastEdited).toLocaleDateString("de-DE", { day: "2-digit", month: "2-digit", year: "numeric" })}</span>
+                <span class="metadata-value">{formatDate(metadata.lastEdited)}</span>
               </div>
 
               <div class="metadata-chips">
@@ -423,11 +424,7 @@ const hasInteractions = interactionsHtml.length > 0;
                 <tr>
                   <td class="changelog-who">{entry.who}</td>
                   <td class="changelog-when">
-                    {new Date(entry.when).toLocaleDateString("de-AT", {
-                      year: "numeric",
-                      month: "2-digit",
-                      day: "2-digit",
-                    })}
+                    {formatDate(entry.when)}
                   </td>
                   <td class="changelog-what"><Fragment set:html={renderInlineMarkdown(entry.what)} /></td>
                 </tr>

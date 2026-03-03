@@ -285,12 +285,12 @@ describe("generateComponentMarkdown — change log", () => {
     expect(md).toContain("| Who | When | What |");
   });
 
-  it("formats dates in en-US locale", () => {
+  it("formats dates in en-GB long format", () => {
     const md = generateComponentMarkdown(fullComponent);
-    // 2025-01-10 → "Jan 10, 2025"
-    expect(md).toContain("Jan 10, 2025");
-    // 2025-03-15 → "Mar 15, 2025"
-    expect(md).toContain("Mar 15, 2025");
+    // 2025-01-10 → "10 Jan 2025"
+    expect(md).toContain("10 Jan 2025");
+    // 2025-03-15 → "15 Mar 2025"
+    expect(md).toContain("15 Mar 2025");
   });
 
   it("includes who and what fields", () => {
