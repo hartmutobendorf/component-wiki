@@ -19,8 +19,10 @@
   "dependencies": {
     "@wiki/shared": "workspace:*",
     "astro": "^5.15.8",
+    "astro-purgecss": "^5.5.0",
     "lit": "^3.3.1",
     "marked": "^17.0.2",
+    "purgecss": "^7.0.2",
     "sass": "^1.94.0",
     "sharp": "^0.34.5",
     "vanilla-framework": "^4.37.0"
