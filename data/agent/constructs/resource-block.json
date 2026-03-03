@@ -1,0 +1,140 @@
+{
+  "name": "Resource block",
+  "slug": "resource-block",
+  "type": "Block",
+  "tiers": "Sites",
+  "documentationStatus": "Minimal",
+  "lastEdited": "2026-03-02T15:37:33.300+00:00",
+  "figmaLink": "https://www.figma.com/design/1brHCsyeTE6FU7hfJd6ao2/%F0%9F%8C%90-Sites---Core-component-library?node-id=389-24513&p=f&t=Wm4Zk8A1vTAMrGBp-11",
+  "codeLink": "https://github.com/canonical/vanilla-framework/blob/main/templates/_macros/shared/vf_article_block.jinja",
+  "description": "The resource block is a content unit that represents an individual resource item within a listing. It displays a title, a cover image, a description, and citation metadata. The block supports a range of resource types, including blog posts, videos, webinars, case studies, solution briefs, white papers, and reports.",
+  "usage": "Use Resource block to present scannable listings of editorial or knowledge-driven content. It supports a range of resource types, including blog posts, videos, webinars, case studies, solution briefs, white papers, and reports.\n\n### Where to use\n\nResource block can appear in the following patterns and contexts:\n\n*   [Resources](/resources)\n*   [Blog](/blog)\n*   [Tab section](/tab-section)\n\n### Layout\n\nResource block comes in two layouts:\n\n**[Horizontal layout](/resource-block#anatomy)** : It places content in a single row, with the image on one side and the title, description, and citation stacked in a column on the other. The cover image is optional. When included, it can be either a 16:9 image or a fixed-size logo.\n\n**[Vertical layout](/resource-block#anatomy)** **:** It stacks content in a single column in the order: image, title, description, and citation. The cover image is required and uses a 16:9 ratio.\n\n### When to use\n\n*   Each item represents a standalone piece of content with a title and short preview\n*   Users need to scan multiple items quickly before navigating to one\n*   Content may be dynamically fetched or statically configured\n\n### When not to use\n\n*   When the content is purely textual without article-level separation, use Tiered block or [Equal height block](/equal-height-block) instead\n*   If items require rich structured elements (such as lists, code blocks, or calls to action) within the preview, consider converting them into a section-level layout using a [Basic section](/basic-section) or [Divided section](/divided-section) instead",
+  "examples": "",
+  "interactions": "",
+  "sitesArchitectureLevels": "i-ytTJ4UrPBn",
+  "anatomy": {
+    "table": [
+      {
+        "number": 1,
+        "name": "Horizontal layout",
+        "description": "The layout divided into two columns that presents elements horizontally."
+      },
+      {
+        "number": 2,
+        "name": "Vertical layout",
+        "description": "The layout that presents elements within a single column."
+      },
+      {
+        "number": 3,
+        "name": "Cover image",
+        "description": "16:9 cover image or logo(horizontal layout only) representing the resource. In dynamic content, it displays the content’s cover image. In static content, a custom image can be provided."
+      },
+      {
+        "number": 4,
+        "name": "Heading",
+        "description": "The resource heading displays the full title of the resource and functions as a link."
+      },
+      {
+        "number": 5,
+        "name": "Body",
+        "description": "In dynamic content, the body displays the first 180 characters of the content. In static content, it serves as a custom introductory context for the content."
+      },
+      {
+        "number": 5,
+        "name": "Citation metadata",
+        "description": "The citation is an optional author/date field in small text and supports showing either or both."
+      }
+    ]
+  },
+  "properties": [
+    {
+      "name": "Article title",
+      "required": true,
+      "type": "string",
+      "description": "Title configuration for the article; functions as a link to the resource",
+      "constraint": "Dynamic: -\nStatic: up to 100 characters",
+      "defaultOption": ""
+    },
+    {
+      "name": "Article description",
+      "required": false,
+      "type": "string",
+      "description": "Description text for the article\nDynamic: displays the first 180 characters of the article. \nStatic: a custom description should be provided.",
+      "constraint": "Dynamic: 180 characters (with the truncation)\nStatic: up to 300 characters",
+      "defaultOption": ""
+    },
+    {
+      "name": "Citation author",
+      "required": false,
+      "type": "string",
+      "description": "Author name text in the citation",
+      "constraint": "Up to 20 characters",
+      "defaultOption": ""
+    },
+    {
+      "name": "Citation date",
+      "required": false,
+      "type": "string",
+      "description": "Publishing date in the citation format “DD Month YYYY”",
+      "constraint": "",
+      "defaultOption": ""
+    },
+    {
+      "name": "Image",
+      "required": false,
+      "type": "object",
+      "description": "Cover image for the article. In the blog pattern, it is required and falls back to a default image when not provided. In the resources pattern, it supports 16:9 image, logo, or none as options.",
+      "constraint": "",
+      "defaultOption": ""
+    },
+    {
+      "name": "Citation",
+      "required": false,
+      "type": "object",
+      "description": "Author/date field in small text and supports showing either or both.",
+      "constraint": "",
+      "defaultOption": ""
+    }
+  ],
+  "changeLog": [],
+  "decisionLog": [],
+  "appliedRules": [],
+  "exceptionFromRules": [],
+  "mentionedIn": [
+    {
+      "name": "Blog",
+      "slug": "blog"
+    },
+    {
+      "name": "Resources",
+      "slug": "resources"
+    }
+  ],
+  "mentionsComponents": [
+    {
+      "name": "Basic section",
+      "slug": "basic-section"
+    },
+    {
+      "name": "Blog",
+      "slug": "blog"
+    },
+    {
+      "name": "Divided section",
+      "slug": "divided-section"
+    },
+    {
+      "name": "Equal height block",
+      "slug": "equal-height-block"
+    },
+    {
+      "name": "Resources",
+      "slug": "resources"
+    },
+    {
+      "name": "Tab section",
+      "slug": "tab-section"
+    }
+  ],
+  "url": "https://component.wiki/resource-block"
+}

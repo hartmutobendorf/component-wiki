@@ -183,6 +183,20 @@ function transformAnatomyPart(row: RawConstructAnatomyRow): AnatomyPart {
   };
 }
 
+const ALLOWED_RULE_STATUSES = new Set(["Existing", "Approved"]);
+
+/** Check whether a raw rule row has an allowed status for wiki output. */
+function isRuleAllowed(
+  ruleRow: RawData["rules"]["rows"][string],
+  ruleStatusRows: Record<string, RawLookupRow>,
+): boolean {
+  const statusIds = toStringArray(ruleRow.status);
+  const statuses = statusIds
+    .map((id) => ruleStatusRows[id]?.name?.trim() ?? "")
+    .filter(Boolean);
+  return statuses.some((s) => ALLOWED_RULE_STATUSES.has(s));
+}
+
 function transformRule(
   ruleRow: RawData["rules"]["rows"][string],
   raw: RawData,
@@ -312,11 +326,6 @@ export function denormalizeConstructs(raw: RawData, syncConfig?: SyncConfig): Co
     // Resolve type name
     const typeName = lookupName(constructTypes.rows as Record<string, RawLookupRow>, comp.type);
 
-    // Filter out "Block" type constructs
-    if (typeName === "Block") {
-      continue;
-    }
-
     // Resolve lookup values
     const tierName = lookupName(documentationTiers.rows as Record<string, RawLookupRow>, comp.tiers);
     const docStatus = lookupName(documentationStatus.rows as Record<string, RawLookupRow>, comp.documentationStatus);
@@ -438,7 +447,7 @@ export function denormalizeConstructs(raw: RawData, syncConfig?: SyncConfig): Co
       ? resolveAllWikiRefs(rawMarkdownFields, syncConfig, allRawTables)
       : rawMarkdownFields;
 
-    // Resolve applied rules: map row IDs to full rule objects
+    // Resolve applied rules: map row IDs to full rule objects (only Existing/Approved)
     const appliedRuleIds = toStringArray(comp.appliedRule);
     const resolvedAppliedRules: Rule[] = appliedRuleIds
       .map((id) => {
@@ -447,17 +456,23 @@ export function denormalizeConstructs(raw: RawData, syncConfig?: SyncConfig): Co
           warnings.push(`[${comp.name}] Missing appliedRule rowId: ${id}`);
           return null;
         }
+        if (!isRuleAllowed(ruleRow, raw.ruleStatus.rows as Record<string, RawLookupRow>)) {
+          return null;
+        }
         return transformRule(ruleRow, raw, documentationEditors.rows as Record<string, RawLookupRow>);
       })
       .filter((r): r is Rule => r !== null);
 
-    // Resolve exception-from rules: map row IDs to full rule objects
+    // Resolve exception-from rules: map row IDs to full rule objects (only Existing/Approved)
     const exceptionRuleIds = toStringArray(comp.exceptionFromRule);
     const resolvedExceptionRules: Rule[] = exceptionRuleIds
       .map((id) => {
         const ruleRow = raw.rules.rows[id];
         if (!ruleRow) {
           warnings.push(`[${comp.name}] Missing exceptionFromRule rowId: ${id}`);
+          return null;
+        }
+        if (!isRuleAllowed(ruleRow, raw.ruleStatus.rows as Record<string, RawLookupRow>)) {
           return null;
         }
         return transformRule(ruleRow, raw, documentationEditors.rows as Record<string, RawLookupRow>);
@@ -572,7 +587,7 @@ export function denormalizeConcepts(raw: RawData, syncConfig?: SyncConfig): Conc
       ? resolveAllWikiRefs(rawMarkdownFields, syncConfig, allRawTables)
       : rawMarkdownFields;
 
-    // Resolve applied rules: map row IDs to full rule objects
+    // Resolve applied rules: map row IDs to full rule objects (only Existing/Approved)
     const appliedRuleIds = toStringArray(conc.appliedRule);
     const resolvedAppliedRules: Rule[] = appliedRuleIds
       .map((id) => {
@@ -581,17 +596,23 @@ export function denormalizeConcepts(raw: RawData, syncConfig?: SyncConfig): Conc
           warnings.push(`[${conc.name}] Missing appliedRule rowId: ${id}`);
           return null;
         }
+        if (!isRuleAllowed(ruleRow, raw.ruleStatus.rows as Record<string, RawLookupRow>)) {
+          return null;
+        }
         return transformRule(ruleRow, raw, documentationEditors.rows as Record<string, RawLookupRow>);
       })
       .filter((r): r is Rule => r !== null);
 
-    // Resolve excepted-from rules: map row IDs to full rule objects
+    // Resolve excepted-from rules: map row IDs to full rule objects (only Existing/Approved)
     const exceptedRuleIds = toStringArray(conc.exceptedFromRule);
     const resolvedExceptedRules: Rule[] = exceptedRuleIds
       .map((id) => {
         const ruleRow = raw.rules.rows[id];
         if (!ruleRow) {
           warnings.push(`[${conc.name}] Missing exceptedFromRule rowId: ${id}`);
+          return null;
+        }
+        if (!isRuleAllowed(ruleRow, raw.ruleStatus.rows as Record<string, RawLookupRow>)) {
           return null;
         }
         return transformRule(ruleRow, raw, documentationEditors.rows as Record<string, RawLookupRow>);

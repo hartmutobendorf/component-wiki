@@ -4,12 +4,12 @@
   "type": "Pattern",
   "tiers": "Sites",
   "documentationStatus": "Minimal",
-  "lastEdited": "2026-02-17T08:35:03.837+00:00",
+  "lastEdited": "2026-03-02T16:22:43.064+00:00",
   "figmaLink": "https://www.figma.com/design/1brHCsyeTE6FU7hfJd6ao2/%F0%9F%9A%A7---WIP--Sites---Core-component-library?node-id=41-9326",
-  "codeLink": "https://github.com/canonical/vanilla-framework/blob/WD-22552-feat-data-spotlight-pattern/templates/_macros/vf_basic-section.jinja",
+  "codeLink": "https://github.com/canonical/vanilla-framework/blob/main/templates/_macros/vf_basic-section.jinja",
   "description": "The Basic section is a two-column (50/50) layout pattern for presenting a single topic with a mix of content blocks. It can include text, images, videos, lists, code snippets, logos, and call-to-action elements. \n\nChoose this pattern to communicate a single topic that can be clearly conveyed in a side-by-side, two-column structure.",
   "usage": "Use the Basic section to communicate one idea and support that idea in a variety of content blocks. To promote readability and cohesion, limit each section to seven or fewer content blocks. This section works best when the copy is concise and each block supports the main topic. Avoid mixing unrelated messages or different content types.\n\nThe Basic section typically works best with a title on the left and supporting material on the right. For medium size, the macro has 50/50 and full-width variants to accommodate different content needs.\n\n### Supported UI blocks for the [Content area](/basic-section#anatomy)\n\n1.  **Subtitle / subheading** \\- Add more hierarchy beneath the title, using H4 or H5.\n2.  **Description / body text** \\- Use for long-form descriptions or explanations, when full sentences and paragraphs work best.\n3.  **Image** - Include a 3:2 or 16:9 ratio image to illustrate or enhance the content including: photography, isometric illustrations, diagrams, and similar visuals. The image can include an optional caption.\n4.  **Video** \\- Embed and link video content in 16:9 ratio.\n5.  **[List](/list)** - List up to 10 items, with bullet type options including: none, bullet, status, or number.\n6.  **Code block** - Display pre-formatted code.\n7.  **[Logo block](/logo-block)** - Display related logos such as customers or partners.\n8.  **[Linked logo block](/linked-logo-block)** \\- Display logos that link to additional resources.\n9.  **[CTA block](/cta-block)** - Share one or more call-to-action elements, including a primary button, secondary button, and link.\n10.  **[Notification](/notification)** - Highlight alerts, updates, or contextual messages within the section.\n\n### When to use\n\n*   You’re not sure what other section to use, this is the fallback\n*   To present one clear topic with supporting explanatory content\n*   For both marketing and informational content that requires a flexible pattern\n*   The 50/50 layout balances text and media for better readability.\n\n### When not to use\n\n*   When multiple topics or groups require clearer separation, or the content needs to be quickly scanned like a list. Consider the [Tiered list](/tiered-list), [Equal heights](/equal-heights), or [Divided section](/divided-section) instead.\n*   If one content block is sufficient, use the section for that particular purpose. For example, the [Logo section](/logo-section), [Linked logo section](/linked-logo-section), or [Resources](/resources).\n*   When an immersive or highlight-oriented layout is appropriate, use the [Rich vertical list](/rich-vertical-list), or [Text spotlight](/text-spotlight) or [Data spotlight](/data-spotlight) sections.",
-  "examples": "### Responsive\n\nMedium dimension (50/50 split)\n\n![Component example wrapper-1.png](images/03861de0-2584-4251-9507-35dd944b54ef.png)\n\nMedium dimension (100)\n\n![Component example wrapper-3.png](images/be94ab36-eb00-4865-bf32-dea54a595efd.png)\n\nSmall dimension\n\n![Component example wrapper-2.png](images/6c0a5c73-9f13-47e6-8ee4-198565f21c65.png)",
+  "examples": "### Responsive\n\nMedium dimension (50/50 split)\n\n![Component example wrapper-1.png](images/090c5724-9d97-445f-b03f-9a73531a2c54.png)\n\nMedium dimension (full-width)\n\n![Component example wrapper-3.png](images/925251f9-005f-4c66-8575-9c77dff376dc.png)\n\nSmall dimension\n\n![Component example wrapper-2.png](images/9ee25a37-1335-4a82-b6ff-3f4efb1fb64c.png)",
   "interactions": "",
   "sitesArchitectureLevels": "i-ues18YVwia",
   "anatomy": {
@@ -52,12 +52,12 @@
       "name": "Medium layout",
       "required": false,
       "type": "single select",
-      "description": "Indicate layout for medium size",
+      "description": "Indicate layout for the medium dimension",
       "constraint": "",
-      "defaultOption": "100",
+      "defaultOption": "full-width",
       "options": [
         "50/50",
-        "100"
+        "full-width"
       ]
     },
     {
@@ -72,7 +72,7 @@
       "name": "Linked heading",
       "required": false,
       "type": "single select",
-      "description": "The heading can be used as a link when paired with a chevron(›) and a clear indication.",
+      "description": "The heading may function as a link when clearly indicated.",
       "constraint": "",
       "defaultOption": "default",
       "options": [
@@ -271,9 +271,9 @@
         {
           "name": "Logo block",
           "required": true,
-          "type": "slot",
+          "type": "object",
           "description": "The logo block showcases a group of related images, such as a group of customer or partner logos.",
-          "constraint": "Up to 10 logos\nLinking individual logos is not allowed",
+          "constraint": "- Avoid exceeding 10 logos \n- Linking individual logos is not allowed",
           "defaultOption": ""
         }
       ]
@@ -282,11 +282,11 @@
       "name": "Linked logo block",
       "properties": [
         {
-          "name": "Link CTA",
-          "required": false,
-          "type": "string",
-          "description": "The text link used for contextual actions or pathways to more information. It uses a chevron (›) to indicate navigation to additional content or pages.",
-          "constraint": "Up to 60 characters",
+          "name": "Linked logo image",
+          "required": true,
+          "type": "object",
+          "description": "16:9 image container with the logo image inside ",
+          "constraint": "",
           "defaultOption": ""
         },
         {
@@ -295,14 +295,6 @@
           "type": "string",
           "description": "The link text for the logo",
           "constraint": "Up to 60 characters",
-          "defaultOption": ""
-        },
-        {
-          "name": "Linked logo image",
-          "required": true,
-          "type": "object",
-          "description": "16:9 image container with the logo image inside ",
-          "constraint": "",
           "defaultOption": ""
         }
       ]
@@ -459,8 +451,24 @@
       "slug": "divided-section"
     },
     {
+      "name": "Linked logo block",
+      "slug": "linked-logo-block"
+    },
+    {
+      "name": "Linked logo section",
+      "slug": "linked-logo-section"
+    },
+    {
+      "name": "Logo block",
+      "slug": "logo-block"
+    },
+    {
       "name": "Logo section",
       "slug": "logo-section"
+    },
+    {
+      "name": "Resource block",
+      "slug": "resource-block"
     }
   ],
   "mentionsComponents": [
@@ -481,12 +489,20 @@
       "slug": "equal-heights"
     },
     {
+      "name": "Linked logo block",
+      "slug": "linked-logo-block"
+    },
+    {
       "name": "Linked logo section",
       "slug": "linked-logo-section"
     },
     {
       "name": "List",
       "slug": "list"
+    },
+    {
+      "name": "Logo block",
+      "slug": "logo-block"
     },
     {
       "name": "Logo section",

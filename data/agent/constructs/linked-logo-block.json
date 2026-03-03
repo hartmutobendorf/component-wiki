@@ -1,0 +1,103 @@
+{
+  "name": "Linked logo block",
+  "slug": "linked-logo-block",
+  "type": "Block",
+  "tiers": "Sites",
+  "documentationStatus": "Minimal",
+  "lastEdited": "2026-03-02T16:16:32.104+00:00",
+  "figmaLink": "https://www.figma.com/design/1brHCsyeTE6FU7hfJd6ao2/%F0%9F%8C%90-Sites---Core-component-library?node-id=455-18979&p=f&t=Wm4Zk8A1vTAMrGBp-11",
+  "codeLink": "https://github.com/canonical/vanilla-framework/blob/main/templates/_macros/vf_linked-logo-section.jinja",
+  "description": "The linked logo block is a content unit that displays a logo with a link to additional pages or resources.\n\n",
+  "usage": "The Logo block is the primary content element of the [Linked logo section](/linked-logo-section). It can also be used as a block item within the  [Basic section](/basic-section) , [Divided section](/divided-section) , and [Tab section](/tab-section).\n\nWhile the [Logo block](/logo-block) is a non-interactive visual listing of images, the Linked logo block introduces interaction by adding a [Link](/linked-logo-block#anatomy) below the [Logo container](/linked-logo-block#anatomy).\n\nThe block width follows the content container of its parent pattern, with options of 50, 75, and full-width.\n\n### When to use\n\n*   Each logo needs to link to additional pages or resources\n*   Logos function as navigational elements\n\n### When not to use\n\n*   If logos are purely decorative or editorial and do not require interaction, use the [Logo block](/logo-block) instead",
+  "examples": "",
+  "interactions": "",
+  "sitesArchitectureLevels": "i-ytTJ4UrPBn",
+  "anatomy": {
+    "table": [
+      {
+        "number": 1,
+        "name": "Logo container",
+        "description": "The logo container wraps each logo image, uses a 16:9 aspect ratio, and includes an alt background"
+      },
+      {
+        "number": 2,
+        "name": "Rule",
+        "description": "The muted rule appears below the logo container"
+      },
+      {
+        "number": 3,
+        "name": "Link",
+        "description": "The link directs users to more detailed or related information"
+      }
+    ]
+  },
+  "properties": [
+    {
+      "name": "Linked logo image",
+      "required": true,
+      "type": "object",
+      "description": "16:9 image container with the logo image inside ",
+      "constraint": "",
+      "defaultOption": ""
+    },
+    {
+      "name": "Link text",
+      "required": true,
+      "type": "string",
+      "description": "The link text for the logo",
+      "constraint": "Up to 60 characters",
+      "defaultOption": ""
+    }
+  ],
+  "changeLog": [
+    {
+      "who": "Isaac Kim",
+      "when": "2026-03-02T11:00:00.000+00:00",
+      "what": "Initial commit"
+    }
+  ],
+  "decisionLog": [],
+  "appliedRules": [],
+  "exceptionFromRules": [],
+  "mentionedIn": [
+    {
+      "name": "Basic section",
+      "slug": "basic-section"
+    },
+    {
+      "name": "Divided section",
+      "slug": "divided-section"
+    },
+    {
+      "name": "Linked logo section",
+      "slug": "linked-logo-section"
+    },
+    {
+      "name": "Logo block",
+      "slug": "logo-block"
+    }
+  ],
+  "mentionsComponents": [
+    {
+      "name": "Basic section",
+      "slug": "basic-section"
+    },
+    {
+      "name": "Divided section",
+      "slug": "divided-section"
+    },
+    {
+      "name": "Linked logo section",
+      "slug": "linked-logo-section"
+    },
+    {
+      "name": "Logo block",
+      "slug": "logo-block"
+    },
+    {
+      "name": "Tab section",
+      "slug": "tab-section"
+    }
+  ],
+  "url": "https://component.wiki/linked-logo-block"
+}

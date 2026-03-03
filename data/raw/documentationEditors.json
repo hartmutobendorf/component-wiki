@@ -1,12 +1,13 @@
 {
-  "fetchedAt": "2026-02-27T10:55:02.840Z",
+  "fetchedAt": "2026-03-03T14:04:09.605Z",
   "rows": {
     "i-Yq2wlvxz8r": {
       "rowId": "i-Yq2wlvxz8r",
       "name": "Katarzyna Duda",
       "changelog": [
         "i-qeSroFEnpX",
-        "i-4QvFcM--aD"
+        "i-4QvFcM--aD",
+        "i-XcnWPOAvzA"
       ]
     },
     "i-0IJit1shDk": {
@@ -27,7 +28,8 @@
         "i-So4Iagv15I",
         "i-GNWl6fnU4S",
         "i-rngZ78fUFj",
-        "i-VsSXGy189U"
+        "i-VsSXGy189U",
+        "i-ZkoznoMe0J"
       ]
     },
     "i-4iuNVivxQY": {
@@ -85,7 +87,7 @@
         "i-JfZnjvDiQG",
         "i-_QwERknNP1",
         "i-blsQL3em0O",
-        "i-ZkoznoMe0J",
+        "i-b_amoByQXV",
         "i-8Jv7LMY047",
         "i-ngcywYoDY8",
         "i-HUf3fhYsSC",
@@ -107,7 +109,12 @@
         "i-i9tuSClLsd",
         "i-OKhtZYmwYr",
         "i-OINpAVrK-l",
-        "i-60X4YcsYno"
+        "i-60X4YcsYno",
+        "i-A3sGUEPeM2",
+        "i-baTFDaBrhz",
+        "i-EWg7peCofv",
+        "i-JTxie-LNIu",
+        "i-pQ1h_WcI5R"
       ]
     }
   }

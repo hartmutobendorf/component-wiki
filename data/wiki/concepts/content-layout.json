@@ -6,27 +6,10 @@
   "documentationStatus": "Minimal",
   "lastEdited": "2026-02-25T15:53:38.692+00:00",
   "description": "A Content layout defines how Sections are organized within the page.  It sets the narrative flow, structural rhythm, and hierarchy of information. Content layout can be either modular or templated. \n\n",
-  "content": "## **Composition model**\n\nContent in the modular layout is composed from the ready Sections. In some (rare and business justified) use cases, specific sections can be custom-designed to cater to the communication priorities of the page and incorporated in the layout. Those tailor-made sections can only be built from available Blocks or UI components.\n\n​\n\nTemplated layouts are designed to fulfill very specific communication goals, they can be composed from the combination of Sections, Blocks and UI components. Layout composition determines the storytelling rhythm, reading path, and editorial priorities for the Page. The image below shows possible layout combinations on a grid.\n\n![Grid layout.png](images/6c653e7c-3cb1-4091-bd9a-a68ded84356b.png)  \n\n### **Types of Content Layouts:**\n\nDepending on the Page type layout can be a:\n\n1.  **Templated layouts (fixed sequence)**\n\nFor page families with consistent editorial requirements (such as case studies or blog articles) the Content Layout prescribes a fixed, repeatable sequence of Sections. These templates ensure alignment in storytelling, SEO behaviour, and conversion patterns across all Pages of that type.\n\n3.  **Modular layouts (rules-driven composition)**\n\nFor more flexible or mixed-content pages, the Content Layout provides structural rules rather than a fixed sequence. Authors can compose the Page by stacking approved Sections in any order, as long as they follow mandatory rules defined in the layout’s documentation.",
+  "content": "## **Composition model**\n\nContent in the modular layout is composed from the ready Sections. In some (rare and business justified) use cases, specific sections can be custom-designed to cater to the communication priorities of the page and incorporated in the layout. Those tailor-made sections can only be built from available Blocks or UI components.\n\n​\n\nTemplated layouts are designed to fulfill very specific communication goals, they can be composed from the combination of Sections, Blocks and UI components. Layout composition determines the storytelling rhythm, reading path, and editorial priorities for the Page. The image below shows possible layout combinations on a grid.\n\n![Grid layout.png](images/a87ccb35-aeb8-45f9-9dea-11d210b4ac28.png)  \n\n### **Types of Content Layouts:**\n\nDepending on the Page type layout can be a:\n\n1.  **Templated layouts (fixed sequence)**\n\nFor page families with consistent editorial requirements (such as case studies or blog articles) the Content Layout prescribes a fixed, repeatable sequence of Sections. These templates ensure alignment in storytelling, SEO behaviour, and conversion patterns across all Pages of that type.\n\n3.  **Modular layouts (rules-driven composition)**\n\nFor more flexible or mixed-content pages, the Content Layout provides structural rules rather than a fixed sequence. Authors can compose the Page by stacking approved Sections in any order, as long as they follow mandatory rules defined in the layout’s documentation.",
   "changeLog": [],
   "decisionLog": [],
   "appliedRules": [
-    {
-      "rule": "Maintain calm, clarity, and visual cleanliness. The design should feel measured, stable, and spacious. Avoid clutter, noise, and unnecessary motion.",
-      "ruleStrength": "SHOULD",
-      "status": "Proposal",
-      "type": "Design principle",
-      "lastEdited": "2026-02-18T09:35:07.035+00:00",
-      "appliesToConcepts": [
-        "Content layout",
-        "Page",
-        "Web design principles"
-      ],
-      "appliesToConstructs": [],
-      "knownExceptionForConstructs": "",
-      "knownExceptionForConcepts": "",
-      "changeLog": [],
-      "decisionLog": []
-    },
     {
       "rule": "Hero is a mandatory first section.",
       "ruleStrength": "MUST",
@@ -55,22 +38,6 @@
       ],
       "appliesToConstructs": [],
       "knownExceptionForConstructs": "Rich vertical list",
-      "knownExceptionForConcepts": "",
-      "changeLog": [],
-      "decisionLog": []
-    },
-    {
-      "rule": "Order of sections should always form a consistent narrative communicated with a clear intent.",
-      "ruleStrength": "MUST",
-      "status": "Proposal",
-      "type": "Specific rule",
-      "lastEdited": "2026-02-18T09:35:53.218+00:00",
-      "appliesToConcepts": [
-        "Content layout",
-        "Section"
-      ],
-      "appliesToConstructs": [],
-      "knownExceptionForConstructs": "",
       "knownExceptionForConcepts": "",
       "changeLog": [],
       "decisionLog": []
@@ -161,23 +128,6 @@
       "decisionLog": []
     },
     {
-      "rule": "Case studies are core sales assets. Present them with strong storytelling and design. They should feel aspirational, credible, and easy to explore.",
-      "ruleStrength": "SHOULD",
-      "status": "Rejected",
-      "type": "Design principle",
-      "lastEdited": "2026-02-18T09:38:48.317+00:00",
-      "appliesToConcepts": [
-        "Content layout",
-        "Web design principles",
-        "Content guide"
-      ],
-      "appliesToConstructs": [],
-      "knownExceptionForConstructs": "",
-      "knownExceptionForConcepts": "",
-      "changeLog": [],
-      "decisionLog": []
-    },
-    {
       "rule": "Strengthen offers and calls to action. Ensure CTAs and lead-generation elements are compelling, clear, and optimised for conversion.",
       "ruleStrength": "SHOULD",
       "status": "Approved",
@@ -214,41 +164,6 @@
       "decisionLog": []
     },
     {
-      "rule": "Cascade takeover content. Major homepage narratives should flow into section pages and later into deeper pages, decreasing in prominence as they age.",
-      "ruleStrength": "SHOULD",
-      "status": "Rejected",
-      "type": "Design principle",
-      "lastEdited": "2026-02-18T09:39:11.887+00:00",
-      "appliesToConcepts": [
-        "Navigation",
-        "Site",
-        "Content layout",
-        "Web design principles"
-      ],
-      "appliesToConstructs": [],
-      "knownExceptionForConstructs": "",
-      "knownExceptionForConcepts": "",
-      "changeLog": [],
-      "decisionLog": []
-    },
-    {
-      "rule": "Respect the professional threshold. Different properties (marketing site, subdomains, docs, wiki, community) require different levels of design control. Maintain differentiation while ensuring they still feel part of a coherent brand system.",
-      "ruleStrength": "SHOULD",
-      "status": "Rejected",
-      "type": "Design principle",
-      "lastEdited": "2026-02-18T09:39:17.806+00:00",
-      "appliesToConcepts": [
-        "Site",
-        "Content layout",
-        "Web design principles"
-      ],
-      "appliesToConstructs": [],
-      "knownExceptionForConstructs": "",
-      "knownExceptionForConcepts": "",
-      "changeLog": [],
-      "decisionLog": []
-    },
-    {
       "rule": "Keep it lean. Design, copy, and IA should always move towards simplicity, reduction, and clarity.",
       "ruleStrength": "SHOULD",
       "status": "Approved",
@@ -261,74 +176,6 @@
         "Bubble",
         "Site",
         "Web design principles",
-        "Content guide"
-      ],
-      "appliesToConstructs": [],
-      "knownExceptionForConstructs": "",
-      "knownExceptionForConcepts": "",
-      "changeLog": [],
-      "decisionLog": []
-    },
-    {
-      "rule": "Content layout should consist of minimum 3 and maximum 15 sections.",
-      "ruleStrength": "SHOULD",
-      "status": "Proposal",
-      "type": "Specific rule",
-      "lastEdited": "2026-02-18T09:39:43.839+00:00",
-      "appliesToConcepts": [
-        "Page",
-        "Content layout",
-        "Section",
-        "Content guide"
-      ],
-      "appliesToConstructs": [],
-      "knownExceptionForConstructs": "",
-      "knownExceptionForConcepts": "",
-      "changeLog": [],
-      "decisionLog": []
-    },
-    {
-      "rule": "In special use cases (ie. error page, thank you page) when there is only one section used - deep padding can be used on top and on the bottom to achieve visual balance.",
-      "ruleStrength": "SHOULD",
-      "status": "Proposal",
-      "type": "Specific rule",
-      "lastEdited": "2026-02-18T09:39:47.827+00:00",
-      "appliesToConcepts": [
-        "Spacing",
-        "Content layout"
-      ],
-      "appliesToConstructs": [],
-      "knownExceptionForConstructs": "",
-      "knownExceptionForConcepts": "",
-      "changeLog": [],
-      "decisionLog": []
-    },
-    {
-      "rule": "Sections padding can be switched to shallow to form a visually unified block of content in the layout. ",
-      "ruleStrength": "MAY",
-      "status": "Proposal",
-      "type": "Specific rule",
-      "lastEdited": "2026-02-18T09:40:13.611+00:00",
-      "appliesToConcepts": [
-        "Spacing",
-        "Content layout",
-        "Section"
-      ],
-      "appliesToConstructs": [],
-      "knownExceptionForConstructs": "",
-      "knownExceptionForConcepts": "",
-      "changeLog": [],
-      "decisionLog": []
-    },
-    {
-      "rule": "Only one primary CTA can be visible on the screen (with 100% zoom).",
-      "ruleStrength": "MUST",
-      "status": "Proposal",
-      "type": "Specific rule",
-      "lastEdited": "2026-02-18T09:40:20.000+00:00",
-      "appliesToConcepts": [
-        "Page",
-        "Content layout",
         "Content guide"
       ],
       "appliesToConstructs": [],

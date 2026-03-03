@@ -23,19 +23,14 @@ describe("denormalizeConstructs — basic output", () => {
     expect(result.length).toBeGreaterThan(0);
   });
 
-  it("filters out Block-type constructs", () => {
-    const result = denormalizeConstructs(buildRawData());
-    const names = result.map((c) => c.name);
-    expect(names).not.toContain("Internal block");
-  });
-
-  it("includes non-Block constructs", () => {
+  it("includes all construct types including Block", () => {
     const result = denormalizeConstructs(buildRawData());
     const names = result.map((c) => c.name);
     expect(names).toContain("Button");
     expect(names).toContain("Toggle switch");
     expect(names).toContain("Card pattern");
     expect(names).toContain("Plain component");
+    expect(names).toContain("Internal block");
   });
 
   it("all output passes constructSchema validation", () => {

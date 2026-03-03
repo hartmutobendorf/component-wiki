@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-02-27T10:55:02.842Z",
+  "fetchedAt": "2026-03-03T14:04:09.610Z",
   "rows": {
     "i-QhmX-PUHIN": {
       "rowId": "i-QhmX-PUHIN",
@@ -49,7 +49,10 @@
     "i-fzDIK_WZZU": {
       "rowId": "i-fzDIK_WZZU",
       "rule": "Rules (visual dividers) in regular style are mandatory elements that separate sections from each other. ",
-      "knownExceptionForThisConstruct": "",
+      "knownExceptionForThisConstruct": [
+        "i-oWJdMiuIb4",
+        "i-K1FTmoSxdo"
+      ],
       "appliesToTheseConcepts": [
         "i-RO0xf8rGKJ"
       ],
@@ -62,7 +65,7 @@
       "type": [
         "i-Gv9rTD4HHR"
       ],
-      "lastEdited": "2026-02-18T09:35:07.035+00:00",
+      "lastEdited": "2026-03-03T11:31:56.088+00:00",
       "changelog": [],
       "decisionlog": [],
       "appliesToTheseConstructs": "",

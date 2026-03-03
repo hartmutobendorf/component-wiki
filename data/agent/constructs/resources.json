@@ -4,12 +4,12 @@
   "type": "Pattern",
   "tiers": "Sites",
   "documentationStatus": "Minimal",
-  "lastEdited": "2026-02-23T11:30:36.153+00:00",
+  "lastEdited": "2026-03-02T17:05:18.409+00:00",
   "figmaLink": "https://www.figma.com/design/1brHCsyeTE6FU7hfJd6ao2/%F0%9F%8C%90-Sites---Core-component-library?node-id=1679-16010&p=f&t=I4p3Raifg4O82H5a-11",
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/main/templates/_macros/vf_resources.jinja",
-  "description": "The resources pattern is used to display a collection of resources. Each resource can include a title and optional image, description, author(s), and publication date.",
-  "usage": "The resources presents a variety of resources at a glance on one level. It supports between 1 and 5 categories (video, webinar, case study, blog, solution brief, white paper, report, etc.), each containing 1–5 items. This layout is intended for cases where showing multiple types of resources in a compact view.  \n  \nFor blog, it supports both static content and API-fetched blog posts by tag/category. Imported blog descriptions are truncated after 180 characters. If a specific blog article needs to be included, a static description must be provided.\n\n### When to use\n\n*   To present various curated resource types at a glance\n*   To supplement a page where resources are not the main content\n*   To provide quick access to mixed resource formats in a compact layout\n\n### When not to use\n\n*   When the content is limited to the recent blog posts only; use the [Blog](/blog) pattern instead",
-  "examples": "Medium dimension\n\n![example.png](images/3dc592fa-43a2-4d1c-98d9-ede59d2d9a45.png)\n\nSmall dimension\n\n![example-4.png](images/1fab9fa1-e42c-4ae9-8475-fafe7529e4d9.png)\n\nWithout [Cover image](/resources#anatomy)\n\n![example-1.png](images/b52ef2f2-644a-4980-9c7e-d29b44eb7fdb.png)\n\nWithout [Category](/resources#anatomy)\n\n![example-3.png](images/99f12456-4a86-4c46-8882-c6c9386b1ea7.png)\n\nMixed image types used\n\n![example-2.png](images/fa333a3e-a92a-4f54-91df-2418e1793439.png)",
+  "description": "The resources pattern is used to display a collection of resources. Each resource can include a title and optional image, description, author(s), and publication date.\n\n",
+  "usage": "The resources presents a variety of resources at a glance on one level. It supports between 1 and 5 categories (video, webinar, case study, blog, solution brief, white paper, report, etc.), each containing 1–5 items using the [Resource block](/resource-block). This layout is intended for cases where showing multiple types of resources in a compact view.  \n  \nFor blog, it supports both static content and API-fetched blog posts by tag/category. Imported blog descriptions are truncated after 180 characters. If a specific blog article needs to be included, a static description must be provided.\n\n### When to use\n\n*   To present various curated resource types at a glance\n*   To supplement a page where resources are not the main content\n*   To provide quick access to mixed resource formats in a compact layout\n\n### When not to use\n\n*   When the content is limited to the recent blog posts only; use the [Blog](/blog) pattern instead",
+  "examples": "Medium dimension\n\n![example.png](images/c4c900e7-2c89-4f3e-859c-768ea947b1f4.png)\n\nSmall dimension\n\n![example-4.png](images/9f13c606-7f96-4d5f-8443-dbd53687b335.png)\n\nWithout\n\n![example-1.png](images/6022fcf0-5c54-47a3-bc3f-cc27b2168928.png)\n\nWithout [Category](/resources#anatomy)\n\n![example-3.png](images/f00734a1-33bd-4d4d-a898-9b3cae394a0e.png)\n\nMixed image types used\n\n![example-2.png](images/c61fb54e-3cbd-4e07-b425-83c98b96b174.png)",
   "interactions": "",
   "sitesArchitectureLevels": "i-ues18YVwia",
   "anatomy": {
@@ -26,8 +26,8 @@
       },
       {
         "number": 3,
-        "name": "Description",
-        "description": "The description provides introductory context for the section. It appears at the top of the section and helps users understand the purpose or scope of the content before engaging with the content below."
+        "name": "Body",
+        "description": "The body provides introductory context for the section. It appears at the top of the section and helps users understand the purpose or scope of the content before engaging with the content below."
       },
       {
         "number": 4,
@@ -41,28 +41,8 @@
       },
       {
         "number": 6,
-        "name": "Article block",
-        "description": "The Article block represents an individual resource item within a category or section. It consists of a required title, along with optional cover image, description, and the citation metadata"
-      },
-      {
-        "number": 7,
-        "name": "Cover image",
-        "description": "16:9 cover image or logo representing the resource. In dynamic content, it displays the content’s cover image. In static content, a custom image can be provided."
-      },
-      {
-        "number": 8,
-        "name": "Resource title",
-        "description": "The resource title displays the full title of the resource and functions as a link."
-      },
-      {
-        "number": 9,
-        "name": "Resource description",
-        "description": "In dynamic content, the description displays the first 180 characters of the content. In static content, it serves as a custom introductory context for the content."
-      },
-      {
-        "number": 10,
-        "name": "Citation metadata",
-        "description": "The citation is an optional author/date field in small text and supports showing either or both."
+        "name": "[Resource block](wiki-ref://grid-ymtdOF6n4R/i-5BuOzbNcXV) ",
+        "description": "The resource block is a content unit that represents an individual resource item within a listing. It displays a title, a cover image, a description, and citation metadata. The block supports a range of resource types, including blog posts, videos, webinars, case studies, solution briefs, white papers, and reports."
       },
       {
         "number": 11,
@@ -95,7 +75,7 @@
       "name": "Linked heading",
       "required": false,
       "type": "single select",
-      "description": "The heading can be used as a link when paired with a chevron(›) and a clear indication.",
+      "description": "The heading may function as a link when clearly indicated.",
       "constraint": "",
       "defaultOption": "default",
       "options": [
@@ -173,13 +153,13 @@
       ]
     },
     {
-      "name": "Article block",
+      "name": "Resource block",
       "properties": [
         {
           "name": "Article title",
           "required": true,
           "type": "string",
-          "description": "Title configuration for the article",
+          "description": "Title configuration for the article; functions as a link to the resource",
           "constraint": "Dynamic: -\nStatic: up to 100 characters",
           "defaultOption": ""
         },
@@ -234,12 +214,24 @@
     {
       "name": "Basic section",
       "slug": "basic-section"
+    },
+    {
+      "name": "Blog",
+      "slug": "blog"
+    },
+    {
+      "name": "Resource block",
+      "slug": "resource-block"
     }
   ],
   "mentionsComponents": [
     {
       "name": "Blog",
       "slug": "blog"
+    },
+    {
+      "name": "Resource block",
+      "slug": "resource-block"
     }
   ],
   "url": "https://component.wiki/resources"

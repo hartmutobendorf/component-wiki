@@ -4,18 +4,18 @@
   "type": "Pattern",
   "tiers": "Sites",
   "documentationStatus": "Minimal",
-  "lastEdited": "2026-02-23T11:24:06.325+00:00",
+  "lastEdited": "2026-03-02T15:45:24.016+00:00",
   "figmaLink": "https://www.figma.com/design/1brHCsyeTE6FU7hfJd6ao2/%F0%9F%8C%90-Sites---Core-component-library?node-id=336-20426&p=f&t=I4p3Raifg4O82H5a-11",
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/main/templates/_macros/vf_logo-section.jinja",
   "description": "The logo section showcases a group of related images, such as a group of customer or partner logos. For best results, ensure that the images have identical dimensions.\n\n  \n",
-  "usage": "The logo section highlights the logo as the primary content. It is typically paired with a muted heading, an optional description, and a CTA block. This pattern is used to emphasize brand identity or partner associations within a page.\n\n### When to use\n\n*   In cases where the logo block functions as the main content, with all other elements acting as supporting content\n\n### When not to use\n\n*   When images, lists, or other content need to be included, use the [Basic section](/basic-section) instead\n*   If logos need to be linked, use the [Linked logo section](/linked-logo-section) instead",
-  "examples": "Medium dimension\n\n![example-4.png](images/0fe820f1-bbc5-4411-a237-04c40b4d1c19.png)\n\nSmall dimension\n\n![example-5.png](images/95c74535-9f35-48dc-8574-4f7900ee195f.png)\n\nLinked heading\n\n![example-2.png](images/439ee67b-48a1-4d4c-99e0-5d3fcd785cfd.png)",
+  "usage": "The logo section highlights the array of logos as the primary content, building on on the [Logo block](/logo-block). It is typically paired with a muted heading, an optional description, and a [CTA block](/cta-block). This pattern is used to emphasize brand identity or partner associations within a page.\n\n### When to use\n\n*   In cases where the [Logo block](/logo-block) functions as the main content, with all other elements acting as supporting content\n\n### When not to use\n\n*   When images, lists, or other content need to be included, use the [Basic section](/basic-section) instead\n*   If logos need to be linked, use the [Linked logo section](/linked-logo-section) instead",
+  "examples": "Medium dimension\n\n![example-4.png](images/712d225f-19f4-4048-80e8-f26aa8fe1649.png)\n\nSmall dimension\n\n![example-5.png](images/315fa49b-01d6-4a5e-8381-45e378fd5cc7.png)\n\nLinked heading\n\n![example-2.png](images/d71dd046-e1f9-4ef6-bb0d-2718d51c7549.png)",
   "interactions": "",
   "figmaComponentData": "",
-  "componentExampleImage": "images/19d3aa54-c1de-448a-8210-b37cb370be30.png",
+  "componentExampleImage": "images/064de0b2-2545-4f10-8c7d-cfb46e56017e.png",
   "sitesArchitectureLevels": "i-ues18YVwia",
   "anatomy": {
-    "image": "images/a8463acf-f03e-4480-a453-20a774b92cd1.png",
+    "image": "images/3189d8ff-8677-4e2c-adaf-d340b79a3643.png",
     "table": [
       {
         "number": 1,
@@ -29,17 +29,17 @@
       },
       {
         "number": 3,
-        "name": "Description",
-        "description": "The description provides introductory context for the section. It appears at the top of the section and helps users understand the purpose or scope of the content before engaging with the logo block."
+        "name": "Body",
+        "description": "The body provides introductory context for the section. It appears at the top of the section and helps users understand the purpose or scope of the content before engaging with the logo block."
       },
       {
         "number": 4,
-        "name": "CTA block",
+        "name": "[CTA block](wiki-ref://grid-ymtdOF6n4R/i-0Z_OLuJDCc) ",
         "description": "The CTA (call to action) block presents one or more related actions that guide the user toward the next step within a section"
       },
       {
         "number": 5,
-        "name": "Logo block",
+        "name": "[Logo block](wiki-ref://grid-ymtdOF6n4R/i-If5dFjalAR) ",
         "description": "The array of related images, such as customer or partner logos."
       }
     ]
@@ -68,7 +68,7 @@
       "name": "Linked heading",
       "required": false,
       "type": "single select",
-      "description": "The heading can be used as a link when paired with a chevron(›) and a clear indication.",
+      "description": "The heading may function as a link when clearly indicated.",
       "constraint": "",
       "defaultOption": "default",
       "options": [
@@ -89,14 +89,6 @@
         "shallow",
         "none"
       ]
-    },
-    {
-      "name": "Logo block",
-      "required": true,
-      "type": "slot",
-      "description": "The logo block showcases a group of related images, such as a group of customer or partner logos.",
-      "constraint": "Up to 10 logos\nLinking individual logos is not allowed",
-      "defaultOption": ""
     }
   ],
   "childProperties": [
@@ -128,9 +120,28 @@
           "defaultOption": ""
         }
       ]
+    },
+    {
+      "name": "Logo block",
+      "properties": [
+        {
+          "name": "Logo block",
+          "required": true,
+          "type": "object",
+          "description": "The logo block showcases a group of related images, such as a group of customer or partner logos.",
+          "constraint": "- Avoid exceeding 10 logos \n- Linking individual logos is not allowed",
+          "defaultOption": ""
+        }
+      ]
     }
   ],
-  "changeLog": [],
+  "changeLog": [
+    {
+      "who": "Isaac Kim",
+      "when": "2025-12-08T16:00:00.000+00:00",
+      "what": "Initial commit"
+    }
+  ],
   "decisionLog": [],
   "appliedRules": [],
   "exceptionFromRules": [
@@ -149,29 +160,20 @@
       "knownExceptionForConcepts": "",
       "changeLog": [],
       "decisionLog": []
-    },
-    {
-      "rule": "Headings/titles of sections and blocks can be linked if they follow links rules.",
-      "ruleStrength": "SHOULD",
-      "status": "Proposal",
-      "type": "Specific rule",
-      "lastEdited": "2026-02-18T09:40:59.834+00:00",
-      "appliesToConcepts": [
-        "Section",
-        "Block",
-        "Content guide"
-      ],
-      "appliesToConstructs": [],
-      "knownExceptionForConstructs": "Hero, Data spotlight, Linked logo section, Logo section, Newsletter signup, Pricing block, Quote wrapper, Rich vertical list, Tiered list",
-      "knownExceptionForConcepts": "",
-      "changeLog": [],
-      "decisionLog": []
     }
   ],
   "mentionedIn": [
     {
       "name": "Basic section",
       "slug": "basic-section"
+    },
+    {
+      "name": "Linked logo section",
+      "slug": "linked-logo-section"
+    },
+    {
+      "name": "Logo block",
+      "slug": "logo-block"
     }
   ],
   "mentionsComponents": [
@@ -180,8 +182,16 @@
       "slug": "basic-section"
     },
     {
+      "name": "CTA block",
+      "slug": "cta-block"
+    },
+    {
       "name": "Linked logo section",
       "slug": "linked-logo-section"
+    },
+    {
+      "name": "Logo block",
+      "slug": "logo-block"
     }
   ]
 }

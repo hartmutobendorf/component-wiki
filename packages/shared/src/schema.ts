@@ -302,6 +302,7 @@ export const constructSchema = z.object({
     "Page",
     "Mental model",
     "Layout",
+    "Block",
   ]),
   tiers: z.enum(["Global", "Sites", "Apps"]),
   documentationStatus: z.enum([

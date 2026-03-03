@@ -4,12 +4,12 @@
   "type": "Pattern",
   "tiers": "Sites",
   "documentationStatus": "Minimal",
-  "lastEdited": "2026-02-13T15:29:14.192+00:00",
+  "lastEdited": "2026-03-02T16:19:07.580+00:00",
   "figmaLink": "https://www.figma.com/design/1brHCsyeTE6FU7hfJd6ao2/%F0%9F%8C%90-Sites---Core-component-library?node-id=211-14507",
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/main/templates/_macros/vf_cta-section.jinja",
   "description": "The CTA section is a prominent and visually engaging section designed to encourage users to take a clear next step. It combines a concise copy and one or more call-to-action elements into a focused layout that stands out from surrounding content. This pattern is typically used mid-page or near the end of a page to re-engage users and guide them toward a specific action such as downloading resources, contacting sales, or exploring key documentation. The CTA section helps reduce decision friction by clearly communicating what the action is and why it matters now.",
   "usage": "Use the CTA section to highlight a clear, intentional next step within the page flow. This pattern is designed to create a moment of focus, helping users transition from consuming information to taking action.  \nCTA sections are typically placed mid-page or near the end of a page, where users have enough context to understand the value of the action being proposed.\n\nThe CTA section should represent a single primary intent. Any supporting text or additional elements should reinforce this intent rather than introduce new topics.\n\n  \n\n### When to use\n\n*   A specific user action is the primary purpose of the section, not a secondary affordance.\n*   You need to visually separate a call to action from surrounding content to increase emphasis.\n\n### When not to use\n\n*   If long-form explanatory content is needed, use a [Basic section](/basic-section) with the [CTA block](/cta-block) instead.\n*   The CTA appears too early in the page flow, before users have sufficient context to understand its value.",
-  "examples": "### Layout\n\n100(Default)\n\n![example-1.png](images/983d9026-8e87-4fbc-a491-f28bc00b761b.png)\n\n100([CTA block](/cta-block))\n\n![example-4.png](images/023672d3-9e71-48ab-a066-375932683661.png)\n\n25/75(Default)\n\n![example.png](images/5ec36e8d-9101-4159-88c3-c9a14260bbfc.png)\n\n25/75([CTA block](/cta-block))\n\n![example-5.png](images/9e31aae6-1389-4aee-917e-76c0c968f0c9.png)\n\n### Responsive\n\nMedium dimension (Default)\n\n![example-2.png](images/fe6b4ab4-50ee-4bef-8026-e3299a7fa069.png)\n\nMedium dimension ([CTA block](/cta-block))\n\n![example-6.png](images/99f424fc-093c-4fcb-bf57-43e94376d728.png)\n\nSmall dimension (Default)\n\n![example-3.png](images/d5343c37-d0b7-42bc-b0dc-a33a1b680093.png)\n\nSmall dimension ([CTA block](/cta-block))\n\n![example-7.png](images/8ac41f04-c8b5-4f7e-bb55-66a8edfd3522.png)",
+  "examples": "### Layout\n\nFull-width(Default)\n\n![example-1.png](images/e65a30f6-e8eb-4ebd-aec4-43206cd33938.png)\n\nFull-width([CTA block](/cta-block))\n\n![example-4.png](images/a50ba8e4-1927-4fef-b444-5910f39193ab.png)\n\n25/75(Default)\n\n![example.png](images/5ee07cf7-ea12-4033-905c-4530ce4b4f6f.png)\n\n25/75([CTA block](/cta-block))\n\n![example-5.png](images/7704c925-957e-462e-936c-f84ecbcf9465.png)\n\n### Responsive\n\nMedium dimension (Default)\n\n![example-2.png](images/0aa5457b-eb81-4e26-a001-d60ad9aaa4ad.png)\n\nMedium dimension ([CTA block](/cta-block))\n\n![example-6.png](images/3fafd426-3667-4aa6-a30c-8cc8f4df9c65.png)\n\nSmall dimension (Default)\n\n![example-3.png](images/e0695066-2e37-4295-b51b-b9187b8c8229.png)\n\nSmall dimension ([CTA block](/cta-block))\n\n![example-7.png](images/9795ee63-b989-4d3a-870c-4c13e783a854.png)",
   "interactions": "",
   "sitesArchitectureLevels": "i-ues18YVwia",
   "anatomy": {
@@ -87,6 +87,18 @@
       "description": "4-column width body text",
       "constraint": "300 (As part of a highlighted section, the content should be limited to a single sentence.)",
       "defaultOption": ""
+    },
+    {
+      "name": "Large layout",
+      "required": true,
+      "type": "single select",
+      "description": "Indicate layout for the large dimension",
+      "constraint": "",
+      "defaultOption": "full-width",
+      "options": [
+        "25/75",
+        "full-width"
+      ]
     }
   ],
   "childProperties": [
@@ -130,21 +142,6 @@
   "decisionLog": [],
   "appliedRules": [],
   "exceptionFromRules": [
-    {
-      "rule": "Every section consists of a horizontal rule (visual divider), a title* and a content body.",
-      "ruleStrength": "SHOULD",
-      "status": "Rejected",
-      "type": "Specific rule",
-      "lastEdited": "2026-02-18T15:46:31.726+00:00",
-      "appliesToConcepts": [
-        "Section"
-      ],
-      "appliesToConstructs": [],
-      "knownExceptionForConstructs": "CTA section, Linked logo section, Quote wrapper",
-      "knownExceptionForConcepts": "",
-      "changeLog": [],
-      "decisionLog": []
-    },
     {
       "rule": "Vertical spacing is regulated exclusively by the bottom padding.",
       "ruleStrength": "MUST",

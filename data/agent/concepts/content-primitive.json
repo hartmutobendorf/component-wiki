@@ -43,55 +43,6 @@
       "decisionLog": []
     },
     {
-      "rule": "Section title (H2) can occupy either 4 or 8 columns of the grid.",
-      "ruleStrength": "MUST",
-      "status": "Rejected",
-      "type": "Specific rule",
-      "lastEdited": "2026-02-18T09:35:07.035+00:00",
-      "appliesToConcepts": [
-        "Section",
-        "Content primitive"
-      ],
-      "appliesToConstructs": [],
-      "knownExceptionForConstructs": "",
-      "knownExceptionForConcepts": "",
-      "changeLog": [],
-      "decisionLog": []
-    },
-    {
-      "rule": "Section title (Heading muted) can occupy either 2 or 4 columns of the grid.",
-      "ruleStrength": "MUST",
-      "status": "Rejected",
-      "type": "Specific rule",
-      "lastEdited": "2026-02-18T09:35:07.035+00:00",
-      "appliesToConcepts": [
-        "Grid",
-        "Section",
-        "Content primitive"
-      ],
-      "appliesToConstructs": [],
-      "knownExceptionForConstructs": "",
-      "knownExceptionForConcepts": "",
-      "changeLog": [],
-      "decisionLog": []
-    },
-    {
-      "rule": "Section title can only be preceded by the label/eyebrow in Heading muted style and horizontal rule (visual divider). ",
-      "ruleStrength": "MUST",
-      "status": "Proposal",
-      "type": "Specific rule",
-      "lastEdited": "2026-02-18T09:35:39.922+00:00",
-      "appliesToConcepts": [
-        "Section",
-        "Content primitive"
-      ],
-      "appliesToConstructs": [],
-      "knownExceptionForConstructs": "",
-      "knownExceptionForConcepts": "",
-      "changeLog": [],
-      "decisionLog": []
-    },
-    {
       "rule": "Description text cannot be shorter than 2 lines.",
       "ruleStrength": "SHOULD",
       "status": "Existing",

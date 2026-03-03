@@ -77,23 +77,6 @@
       "knownExceptionForConcepts": "",
       "changeLog": [],
       "decisionLog": []
-    },
-    {
-      "rule": "Headings/titles of sections and blocks can be linked if they follow links rules.",
-      "ruleStrength": "SHOULD",
-      "status": "Proposal",
-      "type": "Specific rule",
-      "lastEdited": "2026-02-18T09:40:59.834+00:00",
-      "appliesToConcepts": [
-        "Section",
-        "Block",
-        "Content guide"
-      ],
-      "appliesToConstructs": [],
-      "knownExceptionForConstructs": "Hero, Data spotlight, Linked logo section, Logo section, Newsletter signup, Pricing block, Quote wrapper, Rich vertical list, Tiered list",
-      "knownExceptionForConcepts": "",
-      "changeLog": [],
-      "decisionLog": []
     }
   ],
   "mentionedIn": [

@@ -11,23 +11,6 @@
   "decisionLog": [],
   "appliedRules": [
     {
-      "rule": "Section title (Heading muted) can occupy either 2 or 4 columns of the grid.",
-      "ruleStrength": "MUST",
-      "status": "Rejected",
-      "type": "Specific rule",
-      "lastEdited": "2026-02-18T09:35:07.035+00:00",
-      "appliesToConcepts": [
-        "Grid",
-        "Section",
-        "Content primitive"
-      ],
-      "appliesToConstructs": [],
-      "knownExceptionForConstructs": "",
-      "knownExceptionForConcepts": "",
-      "changeLog": [],
-      "decisionLog": []
-    },
-    {
       "rule": "Layout is controlled by the 8-column responsive grid.",
       "ruleStrength": "MUST",
       "status": "Approved",

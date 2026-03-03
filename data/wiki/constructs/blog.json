@@ -4,18 +4,18 @@
   "type": "Pattern",
   "tiers": "Sites",
   "documentationStatus": "Minimal",
-  "lastEdited": "2026-02-23T08:33:53.324+00:00",
+  "lastEdited": "2026-03-02T17:01:06.118+00:00",
   "figmaLink": "https://www.figma.com/design/1brHCsyeTE6FU7hfJd6ao2/%F0%9F%8C%90-Sites---Core-component-library?node-id=2940-19045",
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/main/templates/_macros/vf_blog.jinja",
   "description": "The blog pattern displays 3 to 4 blog articles in a grid layout. Each article shows a cover image, title, description, author information, and publication date. Articles can be loaded dynamically or provided statically. Designed to highlight recent contents in specific topic, the pattern offers users quick access to featured blog posts.",
-  "usage": "The blog pattern displays 3 to 4 blog articles in a grid layout. By presenting posts in a structured, scannable grid, the pattern enables quick comparison and encourages exploration of topics that support the narrative of the page.\n\nThe pattern supports both dynamic and static loading strategies. When connected to the latest news module, the blog pattern automatically pulls recent articles from a defined group, ensuring that the section remains fresh without requiring manual updates. This approach is ideal for pages that benefit from showcasing ongoing activity or frequently updated content. In contrast, static content allows to feature specific articles by providing custom descriptions, and imagery. This curated approach is useful when emphasizing certain messages or guiding users through a planned content journey.\n\nThe grid layout helps users scan titles, descriptions, authors, and publication dates with ease. Cover images provide quick visual context and improve engagement, while fallback imagery maintains uniformity across articles that do not include a native image. Limiting the pattern to three or four items reinforces clarity and prevents cognitive overload, ensuring that each featured article receives adequate attention.\n\n### When to use\n\n*   To feature the latest or most relevant blog posts.\n*   To highlight related articles that support the main content of a page.\n*   To provide users quick access to blog content without navigating to the blog index.\n\n### When not to use\n\n*   When the content includes mixed resource types such as webinars, case studies, or white papers\n*   *   Use resources pattern instead",
-  "examples": "### Layout\n\n4-block layout with linked heading\n\n![Component example wrapper-1.png](images/aab84e06-8e2d-41c7-a692-f98acceb6f40.png)\n\n3-block layout\n\n![Component example wrapper-2.png](images/fb3e31c5-e203-4a63-a5d6-cdce5f84a727.png)\n\n### Responsive\n\nMedium dimension\n\n![Component example wrapper-3.png](images/171e6b8b-cdb2-4836-aa85-7c512768526c.png)\n\nSmall dimension\n\n![Component example wrapper-4.png](images/4b2da8f8-7f02-4e82-a3b1-768c9a93f045.png)",
+  "usage": "The Blog pattern displays 3–4 articles in a grid layout, each using the [Resource block](/resource-block). By presenting posts in a structured and scannable grid, the pattern enables quick comparison and encourages exploration of topics that support the narrative of the page.\n\nThe pattern supports both dynamic and static loading strategies. When connected to the latest news module, the blog pattern automatically pulls recent articles from a defined group, ensuring that the section remains fresh without requiring manual updates. This approach is ideal for pages that benefit from showcasing ongoing activity or frequently updated content. In contrast, static content allows to feature specific articles by providing custom descriptions, and imagery. This curated approach is useful when emphasizing certain messages or guiding users through a planned content journey.\n\nThe grid layout helps users scan titles, descriptions, authors, and publication dates with ease. Cover images provide quick visual context and improve engagement, while fallback imagery maintains uniformity across articles that do not include a native image. Limiting the pattern to three or four items reinforces clarity and prevents cognitive overload, ensuring that each featured article receives adequate attention.\n\n### When to use\n\n*   To feature the latest or most relevant blog posts.\n*   To highlight related articles that support the main content of a page.\n*   To provide users quick access to blog content without navigating to the blog index.\n\n### When not to use\n\n*   When the content includes mixed resource types such as webinars, case studies, or white papers, use [Resources](/resources) instead",
+  "examples": "### Layout\n\n4-block layout with linked heading\n\n![Component example wrapper-1.png](images/02fe41b7-08c6-46b6-9855-6818d59165a4.png)\n\n3-block layout\n\n![Component example wrapper-2.png](images/86479599-137e-40bb-9aa1-3df34b3f79ab.png)\n\n### Responsive\n\nMedium dimension\n\n![Component example wrapper-3.png](images/219549ca-ef1f-4b48-a2d0-6dcac5b1870c.png)\n\nSmall dimension\n\n![Component example wrapper-4.png](images/ed2b0af8-78ba-4ced-906a-7499616da769.png)",
   "interactions": "",
   "figmaComponentData": "",
-  "componentExampleImage": "images/c015c233-7c7e-4be9-8e20-4f8be4cc6724.png",
+  "componentExampleImage": "images/5468e4c0-c5fe-4d63-b36e-f0802cd680e9.png",
   "sitesArchitectureLevels": "i-ues18YVwia",
   "anatomy": {
-    "image": "images/4989c4d3-8105-4226-85da-00bde3e483c4.png",
+    "image": "images/65f25c8c-d1ba-49f4-86b5-cce3ab4b7560.png",
     "table": [
       {
         "number": 1,
@@ -29,23 +29,8 @@
       },
       {
         "number": 3,
-        "name": "Cover image",
-        "description": "16:9 cover image of the resource. If a fetched article does not include an image, a [fallback image](https://assets.ubuntu.com/v1/94c82a15-blog_fallback_image.png) is used automatically.\n\nIn dynamic content, the article image displays the cover image of the article. In static content, a custom image should be provided."
-      },
-      {
-        "number": 4,
-        "name": "Article title",
-        "description": "The article title displays the full title of the article and functions as a link."
-      },
-      {
-        "number": 5,
-        "name": "Article description",
-        "description": "In dynamic content, the description displays the first 180 characters of the content. In static content, it serves as a custom introductory context for the content."
-      },
-      {
-        "number": 6,
-        "name": "Citation metadata",
-        "description": "The citation is an optional author/date field in small text and supports showing either or both."
+        "name": "[Resource block](wiki-ref://grid-ymtdOF6n4R/i-5BuOzbNcXV) ",
+        "description": "The resource block is a content unit that represents an individual resource item within a listing. It displays a title, a cover image, a description, and citation metadata. The block supports a range of resource types, including blog posts, videos, webinars, case studies, solution briefs, white papers, and reports."
       }
     ]
   },
@@ -65,7 +50,7 @@
       "name": "Linked heading",
       "required": false,
       "type": "single select",
-      "description": "The heading can be used as a link when paired with a chevron(›) and a clear indication.",
+      "description": "The heading may function as a link when clearly indicated.",
       "constraint": "",
       "defaultOption": "default",
       "options": [
@@ -120,6 +105,61 @@
       ]
     }
   ],
+  "childProperties": [
+    {
+      "name": "Resource block",
+      "properties": [
+        {
+          "name": "Article title",
+          "required": true,
+          "type": "string",
+          "description": "Title configuration for the article; functions as a link to the resource",
+          "constraint": "Dynamic: -\nStatic: up to 100 characters",
+          "defaultOption": ""
+        },
+        {
+          "name": "Article description",
+          "required": false,
+          "type": "string",
+          "description": "Description text for the article\nDynamic: displays the first 180 characters of the article. \nStatic: a custom description should be provided.",
+          "constraint": "Dynamic: 180 characters (with the truncation)\nStatic: up to 300 characters",
+          "defaultOption": ""
+        },
+        {
+          "name": "Citation author",
+          "required": false,
+          "type": "string",
+          "description": "Author name text in the citation",
+          "constraint": "Up to 20 characters",
+          "defaultOption": ""
+        },
+        {
+          "name": "Citation date",
+          "required": false,
+          "type": "string",
+          "description": "Publishing date in the citation format “DD Month YYYY”",
+          "constraint": "",
+          "defaultOption": ""
+        },
+        {
+          "name": "Image",
+          "required": false,
+          "type": "object",
+          "description": "Cover image for the article. In the blog pattern, it is required and falls back to a default image when not provided. In the resources pattern, it supports 16:9 image, logo, or none as options.",
+          "constraint": "",
+          "defaultOption": ""
+        },
+        {
+          "name": "Citation",
+          "required": false,
+          "type": "object",
+          "description": "Author/date field in small text and supports showing either or both.",
+          "constraint": "",
+          "defaultOption": ""
+        }
+      ]
+    }
+  ],
   "changeLog": [
     {
       "who": "Isaac Kim",
@@ -149,9 +189,22 @@
   ],
   "mentionedIn": [
     {
+      "name": "Resource block",
+      "slug": "resource-block"
+    },
+    {
       "name": "Resources",
       "slug": "resources"
     }
   ],
-  "mentionsComponents": []
+  "mentionsComponents": [
+    {
+      "name": "Resource block",
+      "slug": "resource-block"
+    },
+    {
+      "name": "Resources",
+      "slug": "resources"
+    }
+  ]
 }

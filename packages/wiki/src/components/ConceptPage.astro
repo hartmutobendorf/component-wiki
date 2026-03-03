@@ -130,15 +130,15 @@ const sortedRuleTypes = [...rulesByType.keys()].sort();
     </div>
   </div>
 
-  {
-    hasDescription && (
-      <section id="description" class="p-section u-text-max-width">
-        <Fragment set:html={descriptionHtml} />
-      </section>
-    )
-  }
+  <section id="metadata" class="p-section u-text-max-width">
+    {
+      hasDescription && (
+        <div id="description">
+          <Fragment set:html={descriptionHtml} />
+        </div>
+      )
+    }
 
-  <section id="metadata" class="p-section">
     <div class="metadata-list">
       <div class="metadata-item">
         <span class="metadata-key p-text--small-caps u-text--muted">Type</span>
@@ -169,7 +169,6 @@ const sortedRuleTypes = [...rulesByType.keys()].sort();
           })}
         </span>
       </div>
-
     </div>
 
     <div style="margin-top: 1rem;">

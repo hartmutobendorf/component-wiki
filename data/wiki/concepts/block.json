@@ -4,9 +4,9 @@
   "type": "Architecture",
   "tier": "Sites",
   "documentationStatus": "Unclear",
-  "lastEdited": "2026-02-18T09:29:54.400+00:00",
-  "description": "A repeatable micro-structure with parallel content units.",
-  "content": "",
+  "lastEdited": "2026-03-03T12:30:14.830+00:00",
+  "description": "Blocks are repeatable micro-structures that organize content within a section. They act as reusable compositions of content and UI components that function together as a single group. While Sections represent the \"chapters\" of a page's narrative, Blocks manage the local composition of parallel content units, such as a list of features, a grid of logos, or a set of pricing options.",
+  "content": "## **Composition model:**\n\nBlock is a composition of 2-5 elements forming a repeatable layout that can be combined vertically or horizontally. Blocks are built from UI components.",
   "changeLog": [],
   "decisionLog": [],
   "appliedRules": [
@@ -26,39 +26,6 @@
       ],
       "appliesToConstructs": [],
       "knownExceptionForConstructs": "",
-      "knownExceptionForConcepts": "",
-      "changeLog": [],
-      "decisionLog": []
-    },
-    {
-      "rule": "Headings/titles of sections and blocks can be linked if they follow links rules.",
-      "ruleStrength": "SHOULD",
-      "status": "Proposal",
-      "type": "Specific rule",
-      "lastEdited": "2026-02-18T09:40:59.834+00:00",
-      "appliesToConcepts": [
-        "Section",
-        "Block",
-        "Content guide"
-      ],
-      "appliesToConstructs": [],
-      "knownExceptionForConstructs": "Hero, Data spotlight, Linked logo section, Logo section, Newsletter signup, Pricing block, Quote wrapper, Rich vertical list, Tiered list",
-      "knownExceptionForConcepts": "",
-      "changeLog": [],
-      "decisionLog": []
-    },
-    {
-      "rule": "All rules (visual dividers) use default style color",
-      "ruleStrength": "MUST",
-      "status": "Proposal",
-      "type": "Specific rule",
-      "lastEdited": "2026-02-18T09:41:18.424+00:00",
-      "appliesToConcepts": [
-        "Block",
-        "Section"
-      ],
-      "appliesToConstructs": [],
-      "knownExceptionForConstructs": "Data spotlight",
       "knownExceptionForConcepts": "",
       "changeLog": [],
       "decisionLog": []

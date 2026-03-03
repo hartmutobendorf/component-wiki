@@ -1,5 +1,6 @@
 ---
 import RuleStrengthChip from "./RuleStrengthChip.astro";
+import { renderInlineMarkdown } from "../utils/render-markdown";
 
 interface Rule {
   rule: string;
@@ -29,11 +30,11 @@ const { ruleType, rules } = Astro.props;
   <tbody>
     {rules.map((rule) => (
       <tr>
-        <td>{rule.rule}</td>
+        <td><Fragment set:html={renderInlineMarkdown(rule.rule)} /></td>
         <td>
           <RuleStrengthChip strength={rule.ruleStrength} />
         </td>
-        <td>{rule.knownExceptionForConstructs || "—"}</td>
+        <td><Fragment set:html={renderInlineMarkdown(rule.knownExceptionForConstructs) || "—"} /></td>
       </tr>
     ))}
   </tbody>

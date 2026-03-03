@@ -1,6 +1,188 @@
 {
-  "fetchedAt": "2026-02-27T10:55:02.838Z",
+  "fetchedAt": "2026-03-03T14:04:09.598Z",
   "rows": {
+    "i-DGYOdkshrf": {
+      "rowId": "i-DGYOdkshrf",
+      "name": "Highlighted image",
+      "required": false,
+      "type": "i-YtFbduYGgp",
+      "description": " Whether to highlight image with the alt background.",
+      "constraint": "",
+      "options": "true, false",
+      "defaultOption": "false",
+      "component": [
+        "i-9OaD6bj5Qe"
+      ]
+    },
+    "i-TmYqxazdqi": {
+      "rowId": "i-TmYqxazdqi",
+      "name": "Image ratio small",
+      "required": false,
+      "type": "i-We9i4W9Klo",
+      "description": "The aspect ratio to apply to item images on small screens.",
+      "constraint": "",
+      "options": "- square\n- 2:3\n- 3:2\n- 6:9\n- cinematic\n- auto(to use the image's original aspect ratio)",
+      "defaultOption": "square",
+      "component": [
+        "i-9OaD6bj5Qe"
+      ]
+    },
+    "i-Ytu6EiCidq": {
+      "rowId": "i-Ytu6EiCidq",
+      "name": "Image ratio medium",
+      "required": false,
+      "type": "i-We9i4W9Klo",
+      "description": "The aspect ratio to apply to item images on medium screens.",
+      "constraint": "",
+      "options": "- square\n- 2:3\n- 3:2\n- 6:9\n- cinematic\n- auto(to use the image's original aspect ratio)",
+      "defaultOption": "square",
+      "component": [
+        "i-9OaD6bj5Qe"
+      ]
+    },
+    "i-oV1dpPrRDv": {
+      "rowId": "i-oV1dpPrRDv",
+      "name": "Image ratio large",
+      "required": false,
+      "type": "i-We9i4W9Klo",
+      "description": "The aspect ratio to apply to item images on large screens.",
+      "constraint": "",
+      "options": "- square\n- 2:3\n- 3:2\n- 6:9\n- cinematic\n- auto(to use the image's original aspect ratio)",
+      "defaultOption": "2:3",
+      "component": [
+        "i-9OaD6bj5Qe"
+      ]
+    },
+    "i-JXto3-sbXV": {
+      "rowId": "i-JXto3-sbXV",
+      "name": "Image",
+      "required": false,
+      "type": "i-cVu2UuOKT2",
+      "description": "The image at the top of the block.",
+      "constraint": "",
+      "options": "",
+      "defaultOption": "",
+      "component": [
+        "i-9OaD6bj5Qe"
+      ]
+    },
+    "i-6B26N242en": {
+      "rowId": "i-6B26N242en",
+      "name": "Heading",
+      "required": false,
+      "type": "i-E9ZaIqQXvg",
+      "description": "2-column width H5 heading",
+      "constraint": "Up to 60 characters",
+      "options": "",
+      "defaultOption": "",
+      "component": [
+        "i-9OaD6bj5Qe"
+      ]
+    },
+    "i-1yqOwP_VzB": {
+      "rowId": "i-1yqOwP_VzB",
+      "name": "Large layout",
+      "required": true,
+      "type": "i-We9i4W9Klo",
+      "description": "Indicate layout for the large dimension",
+      "constraint": "",
+      "options": "25/75, full-width",
+      "defaultOption": "full-width",
+      "component": [
+        "i-oWJdMiuIb4"
+      ]
+    },
+    "i-rkf09xfqn8": {
+      "rowId": "i-rkf09xfqn8",
+      "name": "Layout",
+      "required": true,
+      "type": "i-We9i4W9Klo",
+      "description": "The intended grid layout for the section.",
+      "constraint": "",
+      "options": "full-width, 50/50, 25/75",
+      "defaultOption": "full-width",
+      "component": [
+        "i-S0DpOp5ECr"
+      ]
+    },
+    "i-0c1O4lOE0X": {
+      "rowId": "i-0c1O4lOE0X",
+      "name": "Line wrapping",
+      "required": false,
+      "type": "i-YtFbduYGgp",
+      "description": "Wether to wrap the lines in the code or not.",
+      "constraint": "",
+      "options": "True, False",
+      "defaultOption": "False",
+      "component": [
+        "i-YArgfP7o_q"
+      ]
+    },
+    "i-e9hbjecTyW": {
+      "rowId": "i-e9hbjecTyW",
+      "name": "Code",
+      "required": true,
+      "type": "i-E9ZaIqQXvg",
+      "description": "The code content to show.",
+      "constraint": "",
+      "options": "",
+      "defaultOption": "",
+      "component": [
+        "i-YArgfP7o_q"
+      ]
+    },
+    "i-ytoCwcXHcz": {
+      "rowId": "i-ytoCwcXHcz",
+      "name": "Line indicator",
+      "required": true,
+      "type": "i-We9i4W9Klo",
+      "description": "Whether the line has command indicators or numbers",
+      "constraint": "",
+      "options": "None, terminal-indicator, line-numbers",
+      "defaultOption": "None",
+      "component": [
+        "i-YArgfP7o_q"
+      ]
+    },
+    "i-AJXk4voPHY": {
+      "rowId": "i-AJXk4voPHY",
+      "name": "Property selector options",
+      "required": false,
+      "type": "i-cVu2UuOKT2",
+      "description": "The available property selectors and their options",
+      "constraint": "",
+      "options": "",
+      "defaultOption": "",
+      "component": [
+        "i-YArgfP7o_q"
+      ]
+    },
+    "i-DOpXz9wbcS": {
+      "rowId": "i-DOpXz9wbcS",
+      "name": "Heading",
+      "required": true,
+      "type": "i-E9ZaIqQXvg",
+      "description": "Descriptive title for the whole code snippet",
+      "constraint": "",
+      "options": "",
+      "defaultOption": "",
+      "component": [
+        "i-YArgfP7o_q"
+      ]
+    },
+    "i-42ECCjU2hP": {
+      "rowId": "i-42ECCjU2hP",
+      "name": "Logo block",
+      "required": true,
+      "type": "i-cVu2UuOKT2",
+      "description": "The logo block showcases a group of related images, such as a group of customer or partner logos.",
+      "constraint": "- Avoid exceeding 10 logos \n- Linking individual logos is not allowed",
+      "options": "",
+      "defaultOption": "",
+      "component": [
+        "i-If5dFjalAR"
+      ]
+    },
     "i--Cfys6G5or": {
       "rowId": "i--Cfys6G5or",
       "name": "Category heading",
@@ -176,11 +358,12 @@
       "required": false,
       "type": "i-E9ZaIqQXvg",
       "description": "2-column width body text",
-      "constraint": "300 (As part of a highlighted section, the content should be limited to a single sentence.)",
+      "constraint": "Up to 300 characters (The content is recommended to be limited to a single sentence)",
       "options": "",
       "defaultOption": "",
       "component": [
-        "i-O69ixYm_Ee"
+        "i-O69ixYm_Ee",
+        "i-9OaD6bj5Qe"
       ]
     },
     "i-a0Bo-Iqzms": {
@@ -604,7 +787,7 @@
       "name": "Article title",
       "required": true,
       "type": "i-E9ZaIqQXvg",
-      "description": "Title configuration for the article",
+      "description": "Title configuration for the article; functions as a link to the resource",
       "constraint": "Dynamic: -\nStatic: up to 100 characters",
       "options": "",
       "defaultOption": "",
@@ -814,10 +997,10 @@
       "name": "Medium layout",
       "required": false,
       "type": "i-We9i4W9Klo",
-      "description": "Indicate layout for medium size",
+      "description": "Indicate layout for the medium dimension",
       "constraint": "",
-      "options": "50/50, 100",
-      "defaultOption": "100",
+      "options": "50/50, full-width",
+      "defaultOption": "full-width",
       "component": [
         "i-vpN6ETB7hS",
         "i-6vkVdZz0ii",
@@ -850,7 +1033,7 @@
       "name": "Linked heading",
       "required": false,
       "type": "i-We9i4W9Klo",
-      "description": "The heading can be used as a link when paired with a chevron(›) and a clear indication.",
+      "description": "The heading may function as a link when clearly indicated.",
       "constraint": "",
       "options": "default, link",
       "defaultOption": "default",
@@ -868,7 +1051,8 @@
         "i-c3Pi4CEcZV",
         "i-kIPkdAErqW",
         "i-VDemBEWUNA",
-        "i-vpN6ETB7hS"
+        "i-vpN6ETB7hS",
+        "i-9OaD6bj5Qe"
       ]
     },
     "i-bMyzwL5XUw": {
@@ -898,9 +1082,20 @@
       "component": [
         "i-0Z_OLuJDCc",
         "i-oWJdMiuIb4",
-        "i-S0DpOp5ECr",
-        "i-fhZD60Hwqn",
         "i-O69ixYm_Ee"
+      ]
+    },
+    "i-TtKGUKacgH": {
+      "rowId": "i-TtKGUKacgH",
+      "name": "Linked logo image",
+      "required": true,
+      "type": "i-cVu2UuOKT2",
+      "description": "16:9 image container with the logo image inside ",
+      "constraint": "",
+      "options": "",
+      "defaultOption": "",
+      "component": [
+        "i-fhZD60Hwqn"
       ]
     },
     "i-_7Ix358itw": {
@@ -978,21 +1173,6 @@
       "options": "",
       "defaultOption": "",
       "component": [
-        "i-S0DpOp5ECr",
-        "i-fhZD60Hwqn"
-      ]
-    },
-    "i-TtKGUKacgH": {
-      "rowId": "i-TtKGUKacgH",
-      "name": "Linked logo image",
-      "required": true,
-      "type": "i-cVu2UuOKT2",
-      "description": "16:9 image container with the logo image inside ",
-      "constraint": "",
-      "options": "",
-      "defaultOption": "",
-      "component": [
-        "i-S0DpOp5ECr",
         "i-fhZD60Hwqn"
       ]
     },
@@ -1046,20 +1226,6 @@
       "defaultOption": "false",
       "component": [
         "i-xUFwNsfx30"
-      ]
-    },
-    "i-tkrkp4exQn": {
-      "rowId": "i-tkrkp4exQn",
-      "name": "Logo block",
-      "required": true,
-      "type": "i-H7NYDvgoEy",
-      "description": "The logo block showcases a group of related images, such as a group of customer or partner logos.",
-      "constraint": "Up to 10 logos\nLinking individual logos is not allowed",
-      "options": "",
-      "defaultOption": "",
-      "component": [
-        "i-If5dFjalAR",
-        "i-tuS5YgvrGJ"
       ]
     },
     "i-8bW_aZUyGa": {

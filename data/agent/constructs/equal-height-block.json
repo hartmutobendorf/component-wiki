@@ -1,0 +1,150 @@
+{
+  "name": "Equal height block",
+  "slug": "equal-height-block",
+  "type": "Block",
+  "tiers": "Sites",
+  "documentationStatus": "Minimal",
+  "lastEdited": "2026-03-02T17:55:02.743+00:00",
+  "figmaLink": "https://www.figma.com/design/1brHCsyeTE6FU7hfJd6ao2/%F0%9F%8C%90-Sites---Core-component-library?node-id=432-12914&p=f&t=Wm4Zk8A1vTAMrGBp-11",
+  "codeLink": "https://github.com/canonical/vanilla-framework/blob/main/templates/_macros/shared/vf_equal-heights-block.jinja",
+  "description": "The equal height block is a content unit that ensures consistent vertical alignment for multiple items arranged within a row. It standardises the height of each item so that all blocks in the same row share equal dimensions, regardless of variations in content length.",
+  "usage": "Use the equal heights block to present multiple items in a row where visual alignment and structural consistency are required. The block ensures that each item maintains the same height within the row, creating a balanced and orderly layout. All corresponding elements([Image](/equal-height-block#anatomy), [Heading](/equal-height-block#anatomy), [Body](/equal-height-block#anatomy), and [Link](/equal-height-block#anatomy)) are optional. However, a minimum of two elements is required. It is recommended that blocks within the same row use a same set of elements.\n\nEach item follows a consistent internal structure to maintain clarity and alignment. The equal height behaviour is applied at the row level, ensuring that corresponding elements([Image](/equal-height-block#anatomy), [Heading](/equal-height-block#anatomy), [Body](/equal-height-block#anatomy), and [Link](/equal-height-block#anatomy)) align to consistent vertical positions across items. If a heading spans two lines in one item, the same vertical space is reserved for headings in the other items within the row, preserving structural alignment and visual balance.\n\n### Image container ratio\n\nThe image container ratio defines the aspect ratio applied to item images across responsive breakpoints. Different ratios can be specified for small, medium, and large screens to optimise layout and content visibility per viewport size.\n\nThe ratio can be set using predefined image container aspect ratio identifiers, or auto to preserve the image’s original aspect ratio. By default, a 2:3 ratio is used on large dimension, while a square ratio is applied on small and medium dimension to maintain balanced proportions and predictable vertical spacing across breakpoints.\n\n*   Large dimension (2:3 ratio)\n\n![large.png](images/e63363aa-d77c-4d3d-adc3-2ca9a69f2c67.png)\n\n*   Medium, small dimension (square ratio)\n\n![medium.png](images/4a512911-88d1-44d1-b423-025aff8fc963.png)\n\n### Highlighted background\n\nWhen using images with transparent backgrounds (e.g. illustrations or product images), use the highlighted image with the alt background. This visually separates the image container from the surrounding background and improves clarity within the layout.\n\n![large-alt.png](images/9d90577f-be07-4836-9bc8-f4e823a1ea5d.png)",
+  "examples": "**Linked** **[Heading](/equal-height-block#anatomy)**\n\n![1.png](images/6e723355-77a7-461b-9d23-a545ae6e2c07.png)\n\nThe [Heading](/equal-height-block#anatomy) may function as a link. In this case, avoid including an additional [Link](/equal-height-block#anatomy) at the bottom of the block.\n\n**Without** **[Image](/equal-height-block#anatomy)**\n\n![2.png](images/b51046b5-cc0b-4962-aba4-b503d440f631.png)\n\nIt can be used without [Image](/equal-height-block#anatomy). However, in such cases, consider using a text-based block such as the [Tiered block](/tiered-block) instead.\n\n**Without description and link**\n\n![3.png](images/1f736935-6aad-4b2b-9bd6-f21a3ee5030f.png)\n\nA minimum of two elements is required.",
+  "interactions": "",
+  "sitesArchitectureLevels": "i-ytTJ4UrPBn",
+  "anatomy": {
+    "table": [
+      {
+        "number": 1,
+        "name": "Image",
+        "description": "Displays the visual representation of the content. It typically follows a predefined aspect ratio and scales responsively within the grid."
+      },
+      {
+        "number": 2,
+        "name": "Highlighted rule",
+        "description": "The visual accent element positioned between the image and the heading"
+      },
+      {
+        "number": 3,
+        "name": "Heading",
+        "description": "The primary title of the block. It can function as a link."
+      },
+      {
+        "number": 4,
+        "name": "Body",
+        "description": "Provides supporting information that elaborates on the heading."
+      },
+      {
+        "number": 6,
+        "name": "Link",
+        "description": "The optional CTA that directs users to related or more detailed content."
+      }
+    ]
+  },
+  "properties": [
+    {
+      "name": "Heading",
+      "required": false,
+      "type": "string",
+      "description": "2-column width H5 heading",
+      "constraint": "Up to 60 characters",
+      "defaultOption": ""
+    },
+    {
+      "name": "Linked heading",
+      "required": false,
+      "type": "single select",
+      "description": "The heading may function as a link when clearly indicated.",
+      "constraint": "",
+      "defaultOption": "default",
+      "options": [
+        "default",
+        "link"
+      ]
+    },
+    {
+      "name": "Body",
+      "required": false,
+      "type": "string",
+      "description": "2-column width body text",
+      "constraint": "Up to 300 characters (The content is recommended to be limited to a single sentence)",
+      "defaultOption": ""
+    },
+    {
+      "name": "Image",
+      "required": false,
+      "type": "object",
+      "description": "The image at the top of the block.",
+      "constraint": "",
+      "defaultOption": ""
+    },
+    {
+      "name": "Image ratio large",
+      "required": false,
+      "type": "single select",
+      "description": "The aspect ratio to apply to item images on large screens.",
+      "constraint": "",
+      "defaultOption": "2:3",
+      "options": [
+        "- square\n- 2:3\n- 3:2\n- 6:9\n- cinematic\n- auto(to use the image's original aspect ratio)"
+      ]
+    },
+    {
+      "name": "Image ratio medium",
+      "required": false,
+      "type": "single select",
+      "description": "The aspect ratio to apply to item images on medium screens.",
+      "constraint": "",
+      "defaultOption": "square",
+      "options": [
+        "- square\n- 2:3\n- 3:2\n- 6:9\n- cinematic\n- auto(to use the image's original aspect ratio)"
+      ]
+    },
+    {
+      "name": "Image ratio small",
+      "required": false,
+      "type": "single select",
+      "description": "The aspect ratio to apply to item images on small screens.",
+      "constraint": "",
+      "defaultOption": "square",
+      "options": [
+        "- square\n- 2:3\n- 3:2\n- 6:9\n- cinematic\n- auto(to use the image's original aspect ratio)"
+      ]
+    },
+    {
+      "name": "Highlighted image",
+      "required": false,
+      "type": "boolean",
+      "description": " Whether to highlight image with the alt background.",
+      "constraint": "",
+      "defaultOption": "false",
+      "options": [
+        "true",
+        "false"
+      ]
+    }
+  ],
+  "changeLog": [
+    {
+      "who": "Isaac Kim",
+      "when": "2026-03-02T17:00:00.000+00:00",
+      "what": "Initial commit"
+    }
+  ],
+  "decisionLog": [],
+  "appliedRules": [],
+  "exceptionFromRules": [],
+  "mentionedIn": [
+    {
+      "name": "Resource block",
+      "slug": "resource-block"
+    }
+  ],
+  "mentionsComponents": [
+    {
+      "name": "Tiered block",
+      "slug": "tiered-block"
+    }
+  ],
+  "url": "https://component.wiki/equal-height-block"
+}

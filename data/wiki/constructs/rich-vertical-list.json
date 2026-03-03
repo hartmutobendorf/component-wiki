@@ -38,7 +38,7 @@
       "name": "Linked heading",
       "required": false,
       "type": "single select",
-      "description": "The heading can be used as a link when paired with a chevron(›) and a clear indication.",
+      "description": "The heading may function as a link when clearly indicated.",
       "constraint": "",
       "defaultOption": "default",
       "options": [
@@ -93,23 +93,6 @@
       ],
       "appliesToConstructs": [],
       "knownExceptionForConstructs": "Rich vertical list",
-      "knownExceptionForConcepts": "",
-      "changeLog": [],
-      "decisionLog": []
-    },
-    {
-      "rule": "Headings/titles of sections and blocks can be linked if they follow links rules.",
-      "ruleStrength": "SHOULD",
-      "status": "Proposal",
-      "type": "Specific rule",
-      "lastEdited": "2026-02-18T09:40:59.834+00:00",
-      "appliesToConcepts": [
-        "Section",
-        "Block",
-        "Content guide"
-      ],
-      "appliesToConstructs": [],
-      "knownExceptionForConstructs": "Hero, Data spotlight, Linked logo section, Logo section, Newsletter signup, Pricing block, Quote wrapper, Rich vertical list, Tiered list",
       "knownExceptionForConcepts": "",
       "changeLog": [],
       "decisionLog": []

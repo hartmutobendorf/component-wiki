@@ -9,25 +9,7 @@
   "content": "",
   "changeLog": [],
   "decisionLog": [],
-  "appliedRules": [
-    {
-      "rule": "No unprompted movement. Nothing on the page should animate or move unless triggered by explicit user interaction.",
-      "ruleStrength": "SHOULD",
-      "status": "Proposal",
-      "type": "Design principle",
-      "lastEdited": "2026-02-18T09:37:45.959+00:00",
-      "appliesToConcepts": [
-        "Animation",
-        "Page",
-        "Web design principles"
-      ],
-      "appliesToConstructs": [],
-      "knownExceptionForConstructs": "",
-      "knownExceptionForConcepts": "",
-      "changeLog": [],
-      "decisionLog": []
-    }
-  ],
+  "appliedRules": [],
   "exceptedFromRules": [],
   "mentionedIn": [],
   "mentionsComponents": [],
