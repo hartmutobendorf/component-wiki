@@ -11,11 +11,8 @@
   "usage": "The Logo block is the primary content element of the [Linked logo section](/linked-logo-section). It can also be used as a block item within the  [Basic section](/basic-section) , [Divided section](/divided-section) , and [Tab section](/tab-section).\n\nWhile the [Logo block](/logo-block) is a non-interactive visual listing of images, the Linked logo block introduces interaction by adding a [Link](/linked-logo-block#anatomy) below the [Logo container](/linked-logo-block#anatomy).\n\nThe block width follows the content container of its parent pattern, with options of 50, 75, and full-width.\n\n### When to use\n\n*   Each logo needs to link to additional pages or resources\n*   Logos function as navigational elements\n\n### When not to use\n\n*   If logos are purely decorative or editorial and do not require interaction, use the [Logo block](/logo-block) instead",
   "examples": "",
   "interactions": "",
-  "figmaComponentData": "",
-  "componentExampleImage": "images/b66d6119-af1b-4871-8b5b-c014d1681144.png",
   "sitesArchitectureLevels": "i-ytTJ4UrPBn",
   "anatomy": {
-    "image": "images/6faf4ca5-f46a-472e-b1a7-1812943d5669.png",
     "table": [
       {
         "number": 1,
@@ -101,5 +98,6 @@
       "name": "Tab section",
       "slug": "tab-section"
     }
-  ]
+  ],
+  "url": "https://component.wiki/linked-logo-block"
 }

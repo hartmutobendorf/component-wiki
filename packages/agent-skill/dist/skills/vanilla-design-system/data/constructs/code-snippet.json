@@ -3,30 +3,131 @@
   "slug": "code-snippet",
   "type": "Complex component",
   "tiers": "Global",
-  "documentationStatus": "Needs work",
-  "lastEdited": "2026-02-10T08:10:03.190+00:00",
+  "documentationStatus": "Minimal",
+  "lastEdited": "2026-03-02T16:01:11.555+00:00",
   "figmaLink": "https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2319-278",
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/b1d651365b0714586e6ea14349dea763819c256e/scss/_patterns_code-snippet.scss",
-  "description": "",
-  "usage": "",
+  "description": "The code snippet component displays multi-line or complex code, commands, and technical content that requires distinct visual treatment from surrounding content. This covers full code files, terminal commands, and their output. It supports showing code in multiple languages and different versions of a product or library. For single-line code, use the [Code](/code) component's inline variant instead.\n\n",
+  "usage": "Use code snippet to display complex or lengthy code, commands, and technical content that benefits from features such as syntax highlighting, line numbers, and language or version selection. Always provide surrounding context that explains how the displayed code is relevant to the reader or the page content.\n\nKeep titles short and descriptive of the type of code the reader can expect in the content area.\n\n### **When to use**\n\n*   The code is multi-line and benefits from syntax highlighting or correct indentation.\n*   The content needs to be presented in multiple languages.\n*   The content needs to be presented across different versions of a product or library, such as a command with different syntax between versions.\n*   Line numbers would help the reader navigate or reference the code.\n*   You need to display a full code file.\n\n### **When not to use**\n\n*   For inline code references within running text. Use the [Code](/code) component's inline variant instead.\n*   For log output or simple preformatted text. Use the [Code](/code) component's code block variant instead.\n*   As a code editor. Code snippet is read-only and should not be made editable. As of now the design system does not provide a code editor.\n\n### **Overflow and max height**\n\nCode snippets can either wrap long lines or allow horizontal overflow with scrolling.\n\nPrefer horizontal overflow when:\n\n*   Code is meant to be copied and executed exactly as shown.\n*   Indentation carries syntactic meaning, such as in Python or YAML.\n*   Content is diagnostic, such as log output with column-based formatting.\n\nPrefer wrapping when readability matters more than preserving exact formatting, such as in illustrative pseudocode or conceptual examples.\n\nDo not allow a code snippet to grow vertically without limit. Set a sensible max height that suits the surrounding content.\n\n### Terminal indicator\n\nWhen using the code snippet to show terminal commands enable the terminal indicator. This indicates to the user that the command should be used in a terminal.\n\n### **Line numbers**\n\nLine numbers provide positional references within the displayed code. They help the reader identify, discuss, and navigate to specific lines, which is particularly useful in longer code examples or when documentation references a specific part of the code.\n\nEnable line numbers when the code is long enough that readers may need to reference or locate specific lines. Disable them for short examples where the added visual weight provides no benefit.\n\n### **Property selectors**\n\nProperty selectors allow the reader to switch between different representations of the same content, such as different programming languages or versions of a product or library. The code area updates to reflect the selected property.\n\nUse property selectors only to present equivalent content in different forms. Do not use them to switch between unrelated code files or fundamentally different examples.\n\nDo not use more than three property selectors on a single code snippet.\n\nIf a property selector switches between programming languages, ensure the syntax highlighting updates to match the selected language.",
   "examples": "",
   "interactions": "",
   "sitesArchitectureLevels": "i-f0NxAPcXhj",
   "anatomy": {
-    "table": []
+    "table": [
+      {
+        "number": 1,
+        "name": "Heading",
+        "description": "Optional title that describes the content of the code snippet."
+      },
+      {
+        "number": 2,
+        "name": "Property selector",
+        "description": "Optional dropdown that allows the reader to select a property such as language or version."
+      },
+      {
+        "number": 3,
+        "name": "Header",
+        "description": "Container for the heading and property selectors."
+      },
+      {
+        "number": 4,
+        "name": "Terminal indicator",
+        "description": "Optional symbol that identifies a line as a terminal command."
+      },
+      {
+        "number": 5,
+        "name": "Line number",
+        "description": "Optional numerical identifier for a line of content."
+      },
+      {
+        "number": 6,
+        "name": "Line content",
+        "description": "A single line of code."
+      },
+      {
+        "number": 7,
+        "name": "Code",
+        "description": "The complete code content displayed within the component."
+      }
+    ]
   },
-  "properties": [],
+  "properties": [
+    {
+      "name": "Heading",
+      "required": true,
+      "type": "string",
+      "description": "Descriptive title for the whole code snippet",
+      "constraint": "",
+      "defaultOption": ""
+    },
+    {
+      "name": "Property selector options",
+      "required": false,
+      "type": "object",
+      "description": "The available property selectors and their options",
+      "constraint": "",
+      "defaultOption": ""
+    },
+    {
+      "name": "Line indicator",
+      "required": true,
+      "type": "single select",
+      "description": "Whether the line has command indicators or numbers",
+      "constraint": "",
+      "defaultOption": "None",
+      "options": [
+        "None",
+        "terminal-indicator",
+        "line-numbers"
+      ]
+    },
+    {
+      "name": "Code",
+      "required": true,
+      "type": "string",
+      "description": "The code content to show.",
+      "constraint": "",
+      "defaultOption": ""
+    },
+    {
+      "name": "Line wrapping",
+      "required": false,
+      "type": "boolean",
+      "description": "Wether to wrap the lines in the code or not.",
+      "constraint": "",
+      "defaultOption": "False",
+      "options": [
+        "True",
+        "False"
+      ]
+    }
+  ],
   "changeLog": [
     {
-      "who": "Maximilian Blazek",
+      "who": "Daniel Mutis",
       "when": "2025-11-21T17:00:00.000+00:00",
       "what": "Initial commit"
+    },
+    {
+      "who": "Maximilian Blazek",
+      "when": "2026-03-02T14:00:00.000+00:00",
+      "what": "Revised the description and usage, added properties table"
     }
   ],
   "decisionLog": [],
   "appliedRules": [],
   "exceptionFromRules": [],
-  "mentionedIn": [],
-  "mentionsComponents": [],
+  "mentionedIn": [
+    {
+      "name": "Code",
+      "slug": "code"
+    }
+  ],
+  "mentionsComponents": [
+    {
+      "name": "Code",
+      "slug": "code"
+    }
+  ],
   "url": "https://component.wiki/code-snippet"
 }

@@ -3,15 +3,39 @@
   "slug": "linked-logo-section",
   "type": "Pattern",
   "tiers": "Sites",
-  "documentationStatus": "Needs work",
-  "lastEdited": "2026-02-10T08:16:33.049+00:00",
-  "figmaLink": "",
-  "codeLink": "",
-  "description": "",
-  "usage": "",
-  "examples": "",
+  "documentationStatus": "Minimal",
+  "lastEdited": "2026-03-02T16:00:18.526+00:00",
+  "figmaLink": "https://www.figma.com/design/1brHCsyeTE6FU7hfJd6ao2/%F0%9F%8C%90-Sites---Core-component-library?node-id=332-9375&p=f&t=Wm4Zk8A1vTAMrGBp-11",
+  "codeLink": "https://github.com/canonical/vanilla-framework/blob/main/templates/_macros/vf_linked-logo-section.jinja",
+  "description": "The linked logo section is used to display a list of logos which explicitly link to additional pages or resources.",
+  "usage": "The Linked logo section highlights a collection of logos as interactive navigational elements, building on the [Linked logo section](/linked-logo-section) by pairing each logo with a link to additional pages or resources.\n\n### Placing additional contextual elements\n\nThis pattern does not include a description slot.\n\nFor the 25/75 and 100 layouts, when a description or CTA block is required, use the [Basic section](/basic-section) and place the Linked logo section (without the [Rule](/linked-logo-section#anatomy) and [Heading](/linked-logo-section#anatomy)) below it, rather than extending this pattern.\n\nFor the 50/50 layout, the [Linked logo block](/linked-logo-block) is supported within the Basic section. Therefore use the [Basic section](/basic-section) alone instead of introducing a separate Linked logo section.\n\n### When to use\n\n*   Each logo needs to link to an additional page or resource\n*   Logos act as primary navigational elements rather than decorative assets\n\n### When not to use\n\n*   If logos are purely decorative or editorial and do not require interaction, use the [Logo section](/logo-section) instead\n*   When items require rich structured content (e.g., detailed descriptions, lists, CTAs), use the [Basic section](/basic-section) or [Divided section](/divided-section) instead\n*   If multiple groups or categories need to be displayed, separate them into multiple sections or use the [Tab section](/tab-section)",
+  "examples": "Large dimension (50/50 layout)![example-1.png](images/43da5efc-0bb7-447c-8012-50d4950c1ed4.png)\n\nLarge dimension (25/75 layout)\n\n![example-4.png](images/d36a0345-5fb0-4b87-8c85-dc2b0645f152.png)\n\nMedium dimension\n\n![example-2.png](images/de6599ca-655b-493d-8d73-69b3d2a1a10d.png)\n\nSmall dimension\n\n![example-3.png](images/99158465-14f4-4f25-a228-11560dcf86a1.png)",
   "interactions": "",
   "sitesArchitectureLevels": "i-ues18YVwia",
+  "anatomy": {
+    "table": [
+      {
+        "number": 1,
+        "name": "Rule",
+        "description": "The rule component indicates the beginning of a new section."
+      },
+      {
+        "number": 2,
+        "name": "Heading",
+        "description": "The section heading communicates the primary subject or theme of the section."
+      },
+      {
+        "number": 3,
+        "name": "[Linked logo block](wiki-ref://grid-ymtdOF6n4R/i-fhZD60Hwqn) ",
+        "description": "The linked logo block is a content unit that displays a logo with a link to additional pages or resources."
+      },
+      {
+        "number": 4,
+        "name": "Layout",
+        "description": "The Linked logo section layout supports three configurations: a full-width layout where the blocks are placed below the [Heading](wiki-ref://grid-YfHOdsWGM_/i-qeggI3fKKD), and 50/50 and 25/75 layouts where the blocks are positioned beside the [Heading](wiki-ref://grid-YfHOdsWGM_/i-qeggI3fKKD)."
+      }
+    ]
+  },
   "properties": [
     {
       "name": "Section rule",
@@ -36,21 +60,13 @@
       "name": "Linked heading",
       "required": false,
       "type": "single select",
-      "description": "The heading can be used as a link when paired with a chevron(›) and a clear indication.",
+      "description": "The heading may function as a link when clearly indicated.",
       "constraint": "",
       "defaultOption": "default",
       "options": [
         "default",
         "link"
       ]
-    },
-    {
-      "name": "Link CTA",
-      "required": false,
-      "type": "string",
-      "description": "The text link used for contextual actions or pathways to more information. It uses a chevron (›) to indicate navigation to additional content or pages.",
-      "constraint": "Up to 60 characters",
-      "defaultOption": ""
     },
     {
       "name": "Bottom padding",
@@ -67,35 +83,87 @@
       ]
     },
     {
-      "name": "Link text",
+      "name": "Layout",
       "required": true,
-      "type": "string",
-      "description": "The link text for the logo",
-      "constraint": "Up to 60 characters",
-      "defaultOption": ""
-    },
-    {
-      "name": "Linked logo image",
-      "required": true,
-      "type": "object",
-      "description": "16:9 image container with the logo image inside ",
+      "type": "single select",
+      "description": "The intended grid layout for the section.",
       "constraint": "",
-      "defaultOption": ""
+      "defaultOption": "full-width",
+      "options": [
+        "full-width",
+        "50/50",
+        "25/75"
+      ]
     }
   ],
-  "changeLog": [],
+  "childProperties": [
+    {
+      "name": "Linked logo block",
+      "properties": [
+        {
+          "name": "Linked logo image",
+          "required": true,
+          "type": "object",
+          "description": "16:9 image container with the logo image inside ",
+          "constraint": "",
+          "defaultOption": ""
+        },
+        {
+          "name": "Link text",
+          "required": true,
+          "type": "string",
+          "description": "The link text for the logo",
+          "constraint": "Up to 60 characters",
+          "defaultOption": ""
+        }
+      ]
+    }
+  ],
+  "changeLog": [
+    {
+      "who": "Isaac Kim",
+      "when": "2026-03-02T16:00:00.000+00:00",
+      "what": "initial commit"
+    }
+  ],
   "decisionLog": [],
   "appliedRules": [],
-  "exceptionFromRules": [
-    "i-G2gqVu6pWJ",
-    "i-c0fL3b9UM5"
-  ],
+  "exceptionFromRules": [],
   "mentionedIn": [
     {
       "name": "Basic section",
       "slug": "basic-section"
+    },
+    {
+      "name": "Linked logo block",
+      "slug": "linked-logo-block"
+    },
+    {
+      "name": "Logo section",
+      "slug": "logo-section"
     }
   ],
-  "mentionsComponents": [],
+  "mentionsComponents": [
+    {
+      "name": "Basic section",
+      "slug": "basic-section"
+    },
+    {
+      "name": "Divided section",
+      "slug": "divided-section"
+    },
+    {
+      "name": "Linked logo block",
+      "slug": "linked-logo-block"
+    },
+    {
+      "name": "Logo section",
+      "slug": "logo-section"
+    },
+    {
+      "name": "Tab section",
+      "slug": "tab-section"
+    }
+  ],
   "url": "https://component.wiki/linked-logo-section"
 }

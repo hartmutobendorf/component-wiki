@@ -28,7 +28,7 @@
       "name": "Linked heading",
       "required": false,
       "type": "single select",
-      "description": "The heading can be used as a link when paired with a chevron(›) and a clear indication.",
+      "description": "The heading may function as a link when clearly indicated.",
       "constraint": "",
       "defaultOption": "default",
       "options": [
@@ -55,9 +55,22 @@
   "decisionLog": [],
   "appliedRules": [],
   "exceptionFromRules": [
-    "i-G2gqVu6pWJ",
-    "i-U3IwMn0dXk",
-    "i-c0fL3b9UM5"
+    {
+      "rule": "Section title is styled as H2 or Heading muted",
+      "ruleStrength": "MUST",
+      "status": "Approved",
+      "type": "Specific rule",
+      "lastEdited": "2026-02-18T09:35:07.035+00:00",
+      "appliesToConcepts": [
+        "Section",
+        "Content primitive"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "Hero, Blog, Data spotlight, Logo section, Quote wrapper",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    }
   ],
   "mentionedIn": [],
   "mentionsComponents": [],

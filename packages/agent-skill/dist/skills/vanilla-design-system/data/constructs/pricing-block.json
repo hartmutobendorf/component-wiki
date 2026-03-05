@@ -36,7 +36,7 @@
       "name": "Linked heading",
       "required": false,
       "type": "single select",
-      "description": "The heading can be used as a link when paired with a chevron(›) and a clear indication.",
+      "description": "The heading may function as a link when clearly indicated.",
       "constraint": "",
       "defaultOption": "default",
       "options": [
@@ -62,9 +62,7 @@
   "changeLog": [],
   "decisionLog": [],
   "appliedRules": [],
-  "exceptionFromRules": [
-    "i-c0fL3b9UM5"
-  ],
+  "exceptionFromRules": [],
   "mentionedIn": [],
   "mentionsComponents": [],
   "url": "https://component.wiki/pricing-block"

@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-02-18T11:39:33.642Z",
-  "constructCount": 49,
+  "generatedAt": "2026-03-05T15:19:10.393Z",
+  "constructCount": 52,
   "conceptCount": 26,
   "constructTypes": [
+    "Block",
     "Complex component",
     "Component",
-    "Mental model",
     "Pattern"
   ],
   "constructTiers": [
@@ -20,11 +20,18 @@
   ],
   "constructs": [
     {
-      "name": "Form placement",
-      "slug": "form-placement",
-      "type": "Mental model",
-      "tiers": "Apps",
-      "description": "Form placement refers to the deliberate choice of surface: page, side panel, or modal, for presenting forms and multi-input tasks. The right surface depends on the complexity of the task, the amount of context the user needs from the current screen, and the level of disruption that is acceptable."
+      "name": "Tiered block",
+      "slug": "tiered-block",
+      "type": "Block",
+      "tiers": "Sites",
+      "description": ""
+    },
+    {
+      "name": "Equal height block",
+      "slug": "equal-height-block",
+      "type": "Block",
+      "tiers": "Sites",
+      "description": "The equal height block is a content unit that ensures consistent vertical alignment for multiple items arranged within a row. It standardises the height of each item so that all blocks in the same row share equal dimensions, regardless of variations in content length."
     },
     {
       "name": "In-page navigation",
@@ -34,11 +41,11 @@
       "description": "In-page navigation is a navigational component for exploring content within a single page. Users can scan the page structure, jump directly to sections, and understand their current position as they scroll."
     },
     {
-      "name": "Intentional friction",
-      "slug": "intentional-friction",
-      "type": "Mental model",
-      "tiers": "Global",
-      "description": "Design friction is the intentional use of obstacles in a user interface to prevent accidental or destructive mistakes. It should be used when a user is about to perform an action that is irreversible, such as deleting data or changing permanent system settings.\n\nFor high-risk tasks, use blocking friction like requiring the user to type a confirmation word or check a box acknowledging specific risks. For medium-risk or advanced settings, use non-blocking friction like warning dialogs or technical language to ensure the user is acting deliberately rather than clicking through mindlessly."
+      "name": "Resource block",
+      "slug": "resource-block",
+      "type": "Block",
+      "tiers": "Sites",
+      "description": "The resource block is a content unit that represents an individual resource item within a listing. It displays a title, a cover image, a description, and citation metadata. The block supports a range of resource types, including blog posts, videos, webinars, case studies, solution briefs, white papers, and reports."
     },
     {
       "name": "List",
@@ -53,6 +60,20 @@
       "type": "Component",
       "tiers": "Global",
       "description": ""
+    },
+    {
+      "name": "Logo block",
+      "slug": "logo-block",
+      "type": "Block",
+      "tiers": "Sites",
+      "description": "The logo block is a content unit that showcases a group of related images, such as a group of customer or partner logos. For best results, ensure that the images have identical dimensions.\n\n"
+    },
+    {
+      "name": "Linked logo block",
+      "slug": "linked-logo-block",
+      "type": "Block",
+      "tiers": "Sites",
+      "description": "The linked logo block is a content unit that displays a logo with a link to additional pages or resources.\n\n"
     },
     {
       "name": "CTA block",
@@ -73,7 +94,7 @@
       "slug": "text-spotlight",
       "type": "Pattern",
       "tiers": "Sites",
-      "description": ""
+      "description": "A Text Spotlight is a prominent section typically used to quickly capture user's attention to specific action items / benefits or advantages of selecting a specific product."
     },
     {
       "name": "Tab section",
@@ -94,7 +115,7 @@
       "slug": "resources",
       "type": "Pattern",
       "tiers": "Sites",
-      "description": ""
+      "description": "The resources pattern is used to display a collection of resources. Each resource can include a title and optional image, description, author(s), and publication date.\n\n"
     },
     {
       "name": "Quote wrapper",
@@ -122,14 +143,14 @@
       "slug": "logo-section",
       "type": "Pattern",
       "tiers": "Sites",
-      "description": ""
+      "description": "The logo section showcases a group of related images, such as a group of customer or partner logos. For best results, ensure that the images have identical dimensions.\n\n  \n"
     },
     {
       "name": "Linked logo section",
       "slug": "linked-logo-section",
       "type": "Pattern",
       "tiers": "Sites",
-      "description": ""
+      "description": "The linked logo section is used to display a list of logos which explicitly link to additional pages or resources."
     },
     {
       "name": "Hero",
@@ -143,7 +164,7 @@
       "slug": "equal-heights",
       "type": "Pattern",
       "tiers": "Sites",
-      "description": ""
+      "description": "The equal heights pattern is used to provide consistent alignment for grid items within a row format.\n\n  \n"
     },
     {
       "name": "Divided section",
@@ -157,7 +178,7 @@
       "slug": "data-spotlight",
       "type": "Pattern",
       "tiers": "Sites",
-      "description": "The data spotlight pattern presents key statistics as the primary content, supported by short [Headline](/data-spotlight#anatomy)s and optional [Description](/data-spotlight#anatomy)s. It is designed to surface important numbers in a clear, scannable layout that helps users quickly understand impact, scale, or outcomes.\n\n"
+      "description": "The data spotlight pattern presents key statistics as the primary content, supported by short [Headline](/data-spotlight#anatomy)s and optional [Body](/data-spotlight#anatomy)s. It is designed to surface important numbers in a clear, scannable layout that helps users quickly understand impact, scale, or outcomes.\n\n"
     },
     {
       "name": "CTA section",
@@ -206,7 +227,7 @@
       "slug": "code-snippet",
       "type": "Complex component",
       "tiers": "Global",
-      "description": ""
+      "description": "The code snippet component displays multi-line or complex code, commands, and technical content that requires distinct visual treatment from surrounding content. This covers full code files, terminal commands, and their output. It supports showing code in multiple languages and different versions of a product or library. For single-line code, use the [Code](/code) component's inline variant instead.\n\n"
     },
     {
       "name": "Tooltip",
@@ -283,7 +304,7 @@
       "slug": "code",
       "type": "Component",
       "tiers": "Global",
-      "description": "The code component displays code, commands, and technical language that requires distinct visual treatment. This includes programming languages, domain-specific languages such as search syntax, terminal commands, file paths, and configuration values."
+      "description": "The code component displays code, commands, and technical language that requires distinct visual treatment. This includes programming languages, domain-specific languages such as search syntax, terminal commands, file paths, and configuration values. This component is designed for simple, single-line code. For multi-line or more complex use cases, use [Code snippet](/code-snippet) instead."
     },
     {
       "name": "Link",
@@ -383,28 +404,28 @@
       "slug": "page",
       "type": "Architecture",
       "tier": "Sites",
-      "description": "A single URL-defined document containing navigation, content layout footer."
+      "description": "A page is a complete, published document accessible under a unique URL. It represents a full piece of communication intended for end-users. A page must have one clear purpose and follow editorial, structural, and information architecture (IA) rules. Every page has a fixed position of navigation on the top and footer on the bottom. All the page content is placed in between. "
     },
     {
       "name": "Content layout",
       "slug": "content-layout",
       "type": "Architecture",
       "tier": "Sites",
-      "description": "Narrative structure, the structural pattern used to arrange sections."
+      "description": "A Content layout defines how Sections are organized within the page.  It sets the narrative flow, structural rhythm, and hierarchy of information. Content layout can be either modular or templated. \n\n"
     },
     {
       "name": "Section",
       "slug": "section",
       "type": "Architecture",
       "tier": "Sites",
-      "description": "A cohesive content unit expressing one idea or purpose."
+      "description": "A section is a cohesive content unit expressing one idea or purpose. It serves as the primary building block of a content layout, containing specific UI components in the predesigned order. Sections in Vanilla framework are built with patterns offered as [Jinja macros](https://jinja.palletsprojects.com/templates/#macros), which are useful to you if you build sites using the [Jinja](https://jinja.palletsprojects.com/) templating engine. These macros can help abstract away some of the complexity of Vanilla's HTML, making producing complex page layouts simpler and faster."
     },
     {
       "name": "Block",
       "slug": "block",
       "type": "Architecture",
       "tier": "Sites",
-      "description": "A repeatable micro-structure with parallel content units."
+      "description": "Blocks are repeatable micro-structures that organize content within a section. They act as reusable compositions of content and UI components that function together as a single group. While Sections represent the \"chapters\" of a page's narrative, Blocks manage the local composition of parallel content units, such as a list of features, a grid of logos, or a set of pricing options."
     },
     {
       "name": "UI component",
@@ -446,7 +467,7 @@
       "slug": "content-guide",
       "type": "Principle",
       "tier": "Sites",
-      "description": "Codification of our brand guidelines ensuring proper Canonical branding on Sites."
+      "description": "The Content guide establishes the editorial and structural standards for creating web content within the Canonical design system. While the [Copy style guide](https://docs.google.com/document/d/1AX-kSNztuAmShEoohe8L3LNLRnSKF7I0qkZGNeoGOok/edit?tab=t.0) addresses grammar, voice, and tone, this guide focuses on the strategic application and structural optimization of the page content."
     },
     {
       "name": "Color",
@@ -481,7 +502,7 @@
       "slug": "spacing",
       "type": "Principle",
       "tier": "Sites",
-      "description": "Sites are using predefined vertical spacing tokens ensuring content is properly positioned and maintains vertical consistency."
+      "description": "Sites are using predefined vertical spacing tokens ensuring content is properly positioned on the baseline grid. All levels of architectural elementsv have a set of predefined spacing tokens allowing to maintain vertical consistency. "
     },
     {
       "name": "Logos",

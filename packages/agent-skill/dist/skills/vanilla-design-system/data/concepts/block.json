@@ -4,16 +4,47 @@
   "type": "Architecture",
   "tier": "Sites",
   "documentationStatus": "Unclear",
-  "lastEdited": "2026-02-18T09:29:54.400+00:00",
-  "description": "A repeatable micro-structure with parallel content units.",
-  "content": "",
+  "lastEdited": "2026-03-03T12:30:14.830+00:00",
+  "description": "Blocks are repeatable micro-structures that organize content within a section. They act as reusable compositions of content and UI components that function together as a single group. While Sections represent the \"chapters\" of a page's narrative, Blocks manage the local composition of parallel content units, such as a list of features, a grid of logos, or a set of pricing options.",
+  "content": "## **Composition model:**\n\nBlock is a composition of 2-5 elements forming a repeatable layout that can be combined vertically or horizontally. Blocks are built from UI components.",
   "changeLog": [],
   "decisionLog": [],
   "appliedRules": [
-    "i-0beC9X4XSV",
-    "i-c0fL3b9UM5",
-    "i-sko58g_anS",
-    "i-3bh5fUHXlx"
+    {
+      "rule": "Content can occupy 25% of the available space or a multiple of that 25% (25/50/75/100)",
+      "ruleStrength": "SHOULD",
+      "status": "Approved",
+      "type": "Specific rule",
+      "lastEdited": "2026-02-18T09:36:36.610+00:00",
+      "appliesToConcepts": [
+        "Grid",
+        "Content layout",
+        "Section",
+        "Content primitive",
+        "Block",
+        "UI component"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    },
+    {
+      "rule": "Block titles serve as an introduction to the block content or as a category for elements listed within the block.",
+      "ruleStrength": "SHOULD",
+      "status": "Approved",
+      "type": "Specific rule",
+      "lastEdited": "2026-02-18T09:41:21.730+00:00",
+      "appliesToConcepts": [
+        "Block"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    }
   ],
   "exceptedFromRules": [],
   "mentionedIn": [],

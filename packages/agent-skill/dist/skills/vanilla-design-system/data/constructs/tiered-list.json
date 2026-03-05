@@ -28,12 +28,12 @@
       "name": "Medium layout",
       "required": false,
       "type": "single select",
-      "description": "Indicate layout for medium size",
+      "description": "Indicate layout for the medium dimension",
       "constraint": "",
-      "defaultOption": "100",
+      "defaultOption": "full-width",
       "options": [
         "50/50",
-        "100"
+        "full-width"
       ]
     },
     {
@@ -48,7 +48,7 @@
       "name": "Linked heading",
       "required": false,
       "type": "single select",
-      "description": "The heading can be used as a link when paired with a chevron(›) and a clear indication.",
+      "description": "The heading may function as a link when clearly indicated.",
       "constraint": "",
       "defaultOption": "default",
       "options": [
@@ -74,9 +74,7 @@
   "changeLog": [],
   "decisionLog": [],
   "appliedRules": [],
-  "exceptionFromRules": [
-    "i-c0fL3b9UM5"
-  ],
+  "exceptionFromRules": [],
   "mentionedIn": [
     {
       "name": "Basic section",

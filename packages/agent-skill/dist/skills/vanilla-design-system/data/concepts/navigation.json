@@ -10,12 +10,45 @@
   "changeLog": [],
   "decisionLog": [],
   "appliedRules": [
-    "i-fccXU5un82",
-    "i-LjFEVoZ_Ij",
-    "i-PfTz-qcg99",
-    "i-SB1Dt8B9RR",
-    "i-KM2RmVLsIO",
-    "i-U1MJIkrB5P"
+    {
+      "rule": "No orphan pages. All content must be reachable through the defined IA. Pages without a home will surface through search engines and degrade user trust.",
+      "ruleStrength": "SHOULD",
+      "status": "Approved",
+      "type": "Design principle",
+      "lastEdited": "2026-02-18T09:38:37.675+00:00",
+      "appliesToConcepts": [
+        "Navigation",
+        "Site",
+        "Page",
+        "Web design principles"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    },
+    {
+      "rule": "Keep it lean. Design, copy, and IA should always move towards simplicity, reduction, and clarity.",
+      "ruleStrength": "SHOULD",
+      "status": "Approved",
+      "type": "Design principle",
+      "lastEdited": "2026-02-18T09:39:31.958+00:00",
+      "appliesToConcepts": [
+        "Navigation",
+        "Page",
+        "Content layout",
+        "Bubble",
+        "Site",
+        "Web design principles",
+        "Content guide"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    }
   ],
   "exceptedFromRules": [],
   "mentionedIn": [

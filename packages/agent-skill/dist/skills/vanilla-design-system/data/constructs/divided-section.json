@@ -4,12 +4,12 @@
   "type": "Pattern",
   "tiers": "Sites",
   "documentationStatus": "Minimal",
-  "lastEdited": "2026-02-13T15:38:27.688+00:00",
+  "lastEdited": "2026-03-02T16:17:59.588+00:00",
   "figmaLink": "https://www.figma.com/design/1brHCsyeTE6FU7hfJd6ao2/%F0%9F%8C%90-Sites---Core-component-library?node-id=673-5104",
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/main/templates/_macros/vf_divided-section.jinja",
   "description": "The divided section pattern is used to separate related content into distinct steps or items within a single section. Each item is visually divided using a muted [Rule](/divided-section#anatomy) and shallow padding, helping users distinguish between content blocks while maintaining a cohesive layout.\n\n",
   "usage": "The divided section pattern provides a flexible layout for presenting grouped content that needs clear internal separation, such as steps, stages, or sequential elements. Each [Divided block](/divided-section#anatomy) is separated by a muted [Rule](/divided-section#anatomy) and shallow padding, creating visual structure without introducing strong section breaks.\n\nThe pattern can accommodate a wide range of content types, including text, images, videos, lists, code blocks, logos, and call-to-action elements. Both the section description area and the [Divided block](/divided-section#anatomy)s themselves support these content types.\n\nInternally, the divided section reuses content blocks from the [Basic section](/basic-section) pattern. As a result, most layout configurations and content options behave identically to those in [Basic section](/basic-section), ensuring consistency and reducing the need for additional configuration or learning.\n\n### **Supported UI blocks for the** **[Content area](/divided-section#anatomy)**\n\n1.  **Description / body text** - Use for long-form descriptions or explanations, when full sentences and paragraphs work best.\n2.  **Image** - Include a 3:2 or 16:9 ratio image to illustrate or enhance the content including: photography, isometric illustrations, diagrams, and similar visuals. The image can include an optional caption.\n3.  **Video** - Embed and link video content in 16:9 ratio.\n4.  **[List](/list)** - List up to 10 items, with bullet type options including: none, bullet, status, or number.\n5.  **Code block** - Display preformatted code.\n6.  **[Logo block](/logo-block)** - Display related logos such as customers or partners.\n7.  **[Linked logo block](/linked-logo-block)** - Display logos that link to additional resources.\n8.  **[CTA block](/cta-block)** - Share one or more call-to-action elements, including a primary button, secondary button, and link.\n9.  **[Notification](/notification)** - Highlight alerts, updates, or contextual messages within the section.\n\n### **When to use**\n\n*   When content needs to be broken into clear steps or distinct items within a single section\n*   When a subtle visual separation is needed without creating fully independent sections\n\n### **When not to use**\n\n*   When images, lists, or other content need to stand alone without internal dividers, use [Basic section](/basic-section) instead\n*   When the content consists of text only, use a [Tiered list](/tiered-list) instead\n*   When the content is made up of short text and a single representative image, consider using [Equal heights](/equal-heights) instead",
-  "examples": "### Responsive\n\nMedium dimension (100)\n\n![example-8.png](images/949b8aad-ffd6-43c6-b101-ec416be49769.png)\n\nMedium dimension (50/50)\n\n![example-7.png](images/a9ed75de-f301-44e4-82dd-c4b119dcafbc.png)\n\nSmall dimension\n\n![example-9.png](images/163ce83d-9ead-4357-b7e2-4bd0097046ee.png)\n\n### Heading type\n\nWith icon\n\n![example-1.png](images/38ed530c-f440-4456-81e9-02b0cb5e4920.png)\n\nWith bullet\n\n![example-2.png](images/a4d75148-14cb-41a0-8e63-d662f7c62d04.png)\n\nWith number\n\n![example-3.png](images/29286d8a-4ca3-4acd-83c6-5d4fb9f1d7e0.png)\n\nWithout bullet\n\n![example-4.png](images/cbd240b1-77ee-4cd9-8d7b-3c7ee8e34824.png)\n\nWithout heading\n\n![example-5.png](images/9cad7e53-9e91-4f1b-ab3a-3588e5a392a7.png)\n\n### Contents type\n\nMix of various content types\n\n![example-6.png](images/98383fe6-4c74-4b87-ba6f-e6cebfe4a8bd.png)",
+  "examples": "### Responsive\n\nMedium dimension (full-width)\n\n![example-8.png](images/fd7281b7-610e-40ff-9661-d1de55c8d396.png)\n\nMedium dimension (50/50)\n\n![example-7.png](images/579cc21a-3a2a-40f1-9caf-d0ef926f8a4e.png)\n\nSmall dimension\n\n![example-9.png](images/b50c0c61-1c52-413b-80f8-4f71f7c25ec4.png)\n\n### Heading type\n\nWith icon\n\n![example-1.png](images/b6b3b631-f499-41f0-9189-9ed9e9f7a964.png)\n\nWith bullet\n\n![example-2.png](images/2b0fc659-117e-45c9-9e4e-2a7872d0ba2d.png)\n\nWith number\n\n![example-3.png](images/0e752801-0081-43d8-a242-6f46e6cb6fa9.png)\n\nWithout bullet\n\n![example-4.png](images/febe85a4-5fd9-4a03-b9b8-d8895aca507f.png)\n\nWithout heading\n\n![example-5.png](images/141201ab-0f3b-4d83-bcf2-fb1ccd272f7d.png)\n\n### Contents type\n\nMix of various content types\n\n![example-6.png](images/e419e7b4-5a0c-4bd5-9711-0305ecdd2d2c.png)",
   "interactions": "",
   "sitesArchitectureLevels": "i-ues18YVwia",
   "anatomy": {
@@ -67,12 +67,12 @@
       "name": "Medium layout",
       "required": false,
       "type": "single select",
-      "description": "Indicate layout for medium size",
+      "description": "Indicate layout for the medium dimension",
       "constraint": "",
-      "defaultOption": "100",
+      "defaultOption": "full-width",
       "options": [
         "50/50",
-        "100"
+        "full-width"
       ]
     },
     {
@@ -87,7 +87,7 @@
       "name": "Linked heading",
       "required": false,
       "type": "single select",
-      "description": "The heading can be used as a link when paired with a chevron(›) and a clear indication.",
+      "description": "The heading may function as a link when clearly indicated.",
       "constraint": "",
       "defaultOption": "default",
       "options": [
@@ -370,9 +370,9 @@
         {
           "name": "Logo block",
           "required": true,
-          "type": "slot",
+          "type": "object",
           "description": "The logo block showcases a group of related images, such as a group of customer or partner logos.",
-          "constraint": "Up to 10 logos\nLinking individual logos is not allowed",
+          "constraint": "- Avoid exceeding 10 logos \n- Linking individual logos is not allowed",
           "defaultOption": ""
         }
       ]
@@ -381,11 +381,11 @@
       "name": "Linked logo block",
       "properties": [
         {
-          "name": "Link CTA",
-          "required": false,
-          "type": "string",
-          "description": "The text link used for contextual actions or pathways to more information. It uses a chevron (›) to indicate navigation to additional content or pages.",
-          "constraint": "Up to 60 characters",
+          "name": "Linked logo image",
+          "required": true,
+          "type": "object",
+          "description": "16:9 image container with the logo image inside ",
+          "constraint": "",
           "defaultOption": ""
         },
         {
@@ -394,14 +394,6 @@
           "type": "string",
           "description": "The link text for the logo",
           "constraint": "Up to 60 characters",
-          "defaultOption": ""
-        },
-        {
-          "name": "Linked logo image",
-          "required": true,
-          "type": "object",
-          "description": "16:9 image container with the logo image inside ",
-          "constraint": "",
           "defaultOption": ""
         }
       ]
@@ -480,6 +472,22 @@
     {
       "name": "Basic section",
       "slug": "basic-section"
+    },
+    {
+      "name": "Linked logo block",
+      "slug": "linked-logo-block"
+    },
+    {
+      "name": "Linked logo section",
+      "slug": "linked-logo-section"
+    },
+    {
+      "name": "Logo block",
+      "slug": "logo-block"
+    },
+    {
+      "name": "Resource block",
+      "slug": "resource-block"
     }
   ],
   "mentionsComponents": [
@@ -496,8 +504,16 @@
       "slug": "equal-heights"
     },
     {
+      "name": "Linked logo block",
+      "slug": "linked-logo-block"
+    },
+    {
       "name": "List",
       "slug": "list"
+    },
+    {
+      "name": "Logo block",
+      "slug": "logo-block"
     },
     {
       "name": "Notification",

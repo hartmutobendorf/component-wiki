@@ -3,15 +3,54 @@
   "slug": "resources",
   "type": "Pattern",
   "tiers": "Sites",
-  "documentationStatus": "Needs work",
-  "lastEdited": "2026-02-10T08:16:37.588+00:00",
-  "figmaLink": "",
-  "codeLink": "",
-  "description": "",
-  "usage": "",
-  "examples": "",
+  "documentationStatus": "Minimal",
+  "lastEdited": "2026-03-02T17:05:18.409+00:00",
+  "figmaLink": "https://www.figma.com/design/1brHCsyeTE6FU7hfJd6ao2/%F0%9F%8C%90-Sites---Core-component-library?node-id=1679-16010&p=f&t=I4p3Raifg4O82H5a-11",
+  "codeLink": "https://github.com/canonical/vanilla-framework/blob/main/templates/_macros/vf_resources.jinja",
+  "description": "The resources pattern is used to display a collection of resources. Each resource can include a title and optional image, description, author(s), and publication date.\n\n",
+  "usage": "The resources presents a variety of resources at a glance on one level. It supports between 1 and 5 categories (video, webinar, case study, blog, solution brief, white paper, report, etc.), each containing 1–5 items using the [Resource block](/resource-block). This layout is intended for cases where showing multiple types of resources in a compact view.  \n  \nFor blog, it supports both static content and API-fetched blog posts by tag/category. Imported blog descriptions are truncated after 180 characters. If a specific blog article needs to be included, a static description must be provided.\n\n### When to use\n\n*   To present various curated resource types at a glance\n*   To supplement a page where resources are not the main content\n*   To provide quick access to mixed resource formats in a compact layout\n\n### When not to use\n\n*   When the content is limited to the recent blog posts only; use the [Blog](/blog) pattern instead",
+  "examples": "Medium dimension\n\n![example.png](images/47fba465-d62f-4ab8-a253-e8315981d8e5.png)\n\nSmall dimension\n\n![example-4.png](images/d1898e69-00f1-4f34-9c87-07da4fb733c2.png)\n\nWithout\n\n![example-1.png](images/9bedd562-4f76-456d-acd1-4abae83b9bfb.png)\n\nWithout [Category](/resources#anatomy)\n\n![example-3.png](images/33307e93-cc4c-4901-ba89-01255d2b0ca4.png)\n\nMixed image types used\n\n![example-2.png](images/14cf48b3-e8b6-4c7b-a582-d72fd942745c.png)",
   "interactions": "",
   "sitesArchitectureLevels": "i-ues18YVwia",
+  "anatomy": {
+    "table": [
+      {
+        "number": 1,
+        "name": "Rule",
+        "description": "The rule component indicates the beginning of a new section."
+      },
+      {
+        "number": 2,
+        "name": "Heading",
+        "description": "The section heading communicates the primary subject or theme of the section."
+      },
+      {
+        "number": 3,
+        "name": "Body",
+        "description": "The body provides introductory context for the section. It appears at the top of the section and helps users understand the purpose or scope of the content before engaging with the content below."
+      },
+      {
+        "number": 4,
+        "name": "CTA block",
+        "description": "The CTA (call to action) block presents one or more related actions that guide the user toward the next step within a section"
+      },
+      {
+        "number": 5,
+        "name": "Category",
+        "description": "The category is a structural grouping element used to organize related resource blocks under a shared theme or topic."
+      },
+      {
+        "number": 6,
+        "name": "[Resource block](wiki-ref://grid-ymtdOF6n4R/i-5BuOzbNcXV) ",
+        "description": "The resource block is a content unit that represents an individual resource item within a listing. It displays a title, a cover image, a description, and citation metadata. The block supports a range of resource types, including blog posts, videos, webinars, case studies, solution briefs, white papers, and reports."
+      },
+      {
+        "number": 11,
+        "name": "Muted rule",
+        "description": "The muted rule indicates the start of a new category. It appears from the second category onward."
+      }
+    ]
+  },
   "properties": [
     {
       "name": "Section rule",
@@ -25,16 +64,32 @@
       ]
     },
     {
+      "name": "Heading",
+      "required": true,
+      "type": "string",
+      "description": "4-column width heading using H2",
+      "constraint": "Up to 60 characters",
+      "defaultOption": ""
+    },
+    {
       "name": "Linked heading",
       "required": false,
       "type": "single select",
-      "description": "The heading can be used as a link when paired with a chevron(›) and a clear indication.",
+      "description": "The heading may function as a link when clearly indicated.",
       "constraint": "",
       "defaultOption": "default",
       "options": [
         "default",
         "link"
       ]
+    },
+    {
+      "name": "Body",
+      "required": false,
+      "type": "string",
+      "description": "4-column width body text",
+      "constraint": "Up to 600 characters",
+      "defaultOption": ""
     },
     {
       "name": "Bottom padding",
@@ -49,6 +104,106 @@
         "shallow",
         "none"
       ]
+    },
+    {
+      "name": "Categories",
+      "required": false,
+      "type": "object",
+      "description": "List of categories, containing category title and 1 to 5 article blocks",
+      "constraint": "2-5 categories can be displayed within a single section",
+      "defaultOption": ""
+    },
+    {
+      "name": "Category heading",
+      "required": false,
+      "type": "string",
+      "description": "2-column width H3 heading in muted heading style ",
+      "constraint": "Up to 60 characters",
+      "defaultOption": ""
+    }
+  ],
+  "childProperties": [
+    {
+      "name": "CTA block",
+      "properties": [
+        {
+          "name": "Link CTA",
+          "required": false,
+          "type": "string",
+          "description": "The text link used for contextual actions or pathways to more information. It uses a chevron (›) to indicate navigation to additional content or pages.",
+          "constraint": "Up to 60 characters",
+          "defaultOption": ""
+        },
+        {
+          "name": "Primary CTA",
+          "required": false,
+          "type": "string",
+          "description": "The CTA used with the positive button style. It indicates a high-priority, positive action and is reserved for hero areas or other key call-to-action sections.",
+          "constraint": "Up to 20 characters",
+          "defaultOption": ""
+        },
+        {
+          "name": "Secondary CTA",
+          "required": false,
+          "type": "string",
+          "description": "The CTA using the default button style. It is used for most actions that are positive but not primary, and may serve as the main CTA in non-hero sections.",
+          "constraint": "Up to 20 characters",
+          "defaultOption": ""
+        }
+      ]
+    },
+    {
+      "name": "Resource block",
+      "properties": [
+        {
+          "name": "Article title",
+          "required": true,
+          "type": "string",
+          "description": "Title configuration for the article; functions as a link to the resource",
+          "constraint": "Dynamic: -\nStatic: up to 100 characters",
+          "defaultOption": ""
+        },
+        {
+          "name": "Article description",
+          "required": false,
+          "type": "string",
+          "description": "Description text for the article\nDynamic: displays the first 180 characters of the article. \nStatic: a custom description should be provided.",
+          "constraint": "Dynamic: 180 characters (with the truncation)\nStatic: up to 300 characters",
+          "defaultOption": ""
+        },
+        {
+          "name": "Citation author",
+          "required": false,
+          "type": "string",
+          "description": "Author name text in the citation",
+          "constraint": "Up to 20 characters",
+          "defaultOption": ""
+        },
+        {
+          "name": "Citation date",
+          "required": false,
+          "type": "string",
+          "description": "Publishing date in the citation format “DD Month YYYY”",
+          "constraint": "",
+          "defaultOption": ""
+        },
+        {
+          "name": "Image",
+          "required": false,
+          "type": "object",
+          "description": "Cover image for the article. In the blog pattern, it is required and falls back to a default image when not provided. In the resources pattern, it supports 16:9 image, logo, or none as options.",
+          "constraint": "",
+          "defaultOption": ""
+        },
+        {
+          "name": "Citation",
+          "required": false,
+          "type": "object",
+          "description": "Author/date field in small text and supports showing either or both.",
+          "constraint": "",
+          "defaultOption": ""
+        }
+      ]
     }
   ],
   "changeLog": [],
@@ -59,8 +214,25 @@
     {
       "name": "Basic section",
       "slug": "basic-section"
+    },
+    {
+      "name": "Blog",
+      "slug": "blog"
+    },
+    {
+      "name": "Resource block",
+      "slug": "resource-block"
     }
   ],
-  "mentionsComponents": [],
+  "mentionsComponents": [
+    {
+      "name": "Blog",
+      "slug": "blog"
+    },
+    {
+      "name": "Resource block",
+      "slug": "resource-block"
+    }
+  ],
   "url": "https://component.wiki/resources"
 }

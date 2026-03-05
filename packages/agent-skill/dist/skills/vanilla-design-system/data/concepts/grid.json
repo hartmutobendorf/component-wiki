@@ -10,10 +10,60 @@
   "changeLog": [],
   "decisionLog": [],
   "appliedRules": [
-    "i-R2qsN9a5_r",
-    "i-y3DBXPQ5wy",
-    "i-GzGBjzo9ua",
-    "i-0beC9X4XSV"
+    {
+      "rule": "Layout is controlled by the 8-column responsive grid.",
+      "ruleStrength": "MUST",
+      "status": "Approved",
+      "type": "Specific rule",
+      "lastEdited": "2026-02-18T09:35:57.566+00:00",
+      "appliesToConcepts": [
+        "Grid",
+        "Content layout"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    },
+    {
+      "rule": "Content within a layout must align to the grid columns. Content should not \"hang\" in the gutters (spacing between columns).",
+      "ruleStrength": "MUST",
+      "status": "Approved",
+      "type": "Specific rule",
+      "lastEdited": "2026-02-18T09:36:05.173+00:00",
+      "appliesToConcepts": [
+        "Grid",
+        "Content layout",
+        "Section",
+        "Content primitive"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    },
+    {
+      "rule": "Content can occupy 25% of the available space or a multiple of that 25% (25/50/75/100)",
+      "ruleStrength": "SHOULD",
+      "status": "Approved",
+      "type": "Specific rule",
+      "lastEdited": "2026-02-18T09:36:36.610+00:00",
+      "appliesToConcepts": [
+        "Grid",
+        "Content layout",
+        "Section",
+        "Content primitive",
+        "Block",
+        "UI component"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    }
   ],
   "exceptedFromRules": [],
   "mentionedIn": [],

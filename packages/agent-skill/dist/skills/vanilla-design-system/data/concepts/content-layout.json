@@ -3,33 +3,220 @@
   "slug": "content-layout",
   "type": "Architecture",
   "tier": "Sites",
-  "documentationStatus": "Unclear",
-  "lastEdited": "2026-02-18T09:29:54.400+00:00",
-  "description": "Narrative structure, the structural pattern used to arrange sections.",
-  "content": "",
+  "documentationStatus": "Minimal",
+  "lastEdited": "2026-02-25T15:53:38.692+00:00",
+  "description": "A Content layout defines how Sections are organized within the page.  It sets the narrative flow, structural rhythm, and hierarchy of information. Content layout can be either modular or templated. \n\n",
+  "content": "## **Composition model**\n\nContent in the modular layout is composed from the ready Sections. In some (rare and business justified) use cases, specific sections can be custom-designed to cater to the communication priorities of the page and incorporated in the layout. Those tailor-made sections can only be built from available Blocks or UI components.\n\n​\n\nTemplated layouts are designed to fulfill very specific communication goals, they can be composed from the combination of Sections, Blocks and UI components. Layout composition determines the storytelling rhythm, reading path, and editorial priorities for the Page. The image below shows possible layout combinations on a grid.\n\n![Grid layout.png](images/77f42c48-a19a-492f-9c3c-63ed531af6fc.png)  \n\n### **Types of Content Layouts:**\n\nDepending on the Page type layout can be a:\n\n1.  **Templated layouts (fixed sequence)**\n\nFor page families with consistent editorial requirements (such as case studies or blog articles) the Content Layout prescribes a fixed, repeatable sequence of Sections. These templates ensure alignment in storytelling, SEO behaviour, and conversion patterns across all Pages of that type.\n\n3.  **Modular layouts (rules-driven composition)**\n\nFor more flexible or mixed-content pages, the Content Layout provides structural rules rather than a fixed sequence. Authors can compose the Page by stacking approved Sections in any order, as long as they follow mandatory rules defined in the layout’s documentation.",
   "changeLog": [],
   "decisionLog": [],
   "appliedRules": [
-    "i-A-73lXY-ax",
-    "i-vGmYX0fJ59",
-    "i-p8Fv0e9Vn7",
-    "i-GQvPWhgG-j",
-    "i-y3DBXPQ5wy",
-    "i-GzGBjzo9ua",
-    "i-0beC9X4XSV",
-    "i-ZgPIFRNEVD",
-    "i-XaN4xKvGD7",
-    "i-3D-wTL_ZpX",
-    "i-8yNo6YoSKP",
-    "i--Z1CGclocL",
-    "i-KM2RmVLsIO",
-    "i-BiYYMGD9DJ",
-    "i-U1MJIkrB5P",
-    "i-8Y-lOwXNl6",
-    "i-lAauaXXEXi",
-    "i-RMzGlwDepa",
-    "i-eofRS01iR3",
-    "i-Adsxx3Q45y"
+    {
+      "rule": "Hero is a mandatory first section.",
+      "ruleStrength": "MUST",
+      "status": "Approved",
+      "type": "Specific rule",
+      "lastEdited": "2026-02-18T09:35:07.035+00:00",
+      "appliesToConcepts": [
+        "Content layout",
+        "Section"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    },
+    {
+      "rule": "Larger blocks of content are placed on the right-hand side of smaller blocks.",
+      "ruleStrength": "SHOULD",
+      "status": "Existing",
+      "type": "Specific rule",
+      "lastEdited": "2026-02-18T09:35:44.436+00:00",
+      "appliesToConcepts": [
+        "Section",
+        "Content layout"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "Rich vertical list",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    },
+    {
+      "rule": "Layout is controlled by the 8-column responsive grid.",
+      "ruleStrength": "MUST",
+      "status": "Approved",
+      "type": "Specific rule",
+      "lastEdited": "2026-02-18T09:35:57.566+00:00",
+      "appliesToConcepts": [
+        "Grid",
+        "Content layout"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    },
+    {
+      "rule": "Content within a layout must align to the grid columns. Content should not \"hang\" in the gutters (spacing between columns).",
+      "ruleStrength": "MUST",
+      "status": "Approved",
+      "type": "Specific rule",
+      "lastEdited": "2026-02-18T09:36:05.173+00:00",
+      "appliesToConcepts": [
+        "Grid",
+        "Content layout",
+        "Section",
+        "Content primitive"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    },
+    {
+      "rule": "Content can occupy 25% of the available space or a multiple of that 25% (25/50/75/100)",
+      "ruleStrength": "SHOULD",
+      "status": "Approved",
+      "type": "Specific rule",
+      "lastEdited": "2026-02-18T09:36:36.610+00:00",
+      "appliesToConcepts": [
+        "Grid",
+        "Content layout",
+        "Section",
+        "Content primitive",
+        "Block",
+        "UI component"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    },
+    {
+      "rule": "Layouts are either fully predefined (templated) or built from modular Sections with embedded parameters.",
+      "ruleStrength": "SHOULD",
+      "status": "Approved",
+      "type": "Specific rule",
+      "lastEdited": "2026-02-18T09:36:39.389+00:00",
+      "appliesToConcepts": [
+        "Content layout"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    },
+    {
+      "rule": "Layouts must preserve consistent vertical spacing between sections. Do not manually reduce spacing to fit more content \"above the fold\".",
+      "ruleStrength": "SHOULD",
+      "status": "Approved",
+      "type": "Specific rule",
+      "lastEdited": "2026-02-18T09:36:42.863+00:00",
+      "appliesToConcepts": [
+        "Spacing",
+        "Content layout"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    },
+    {
+      "rule": "Strengthen offers and calls to action. Ensure CTAs and lead-generation elements are compelling, clear, and optimised for conversion.",
+      "ruleStrength": "SHOULD",
+      "status": "Approved",
+      "type": "Design principle",
+      "lastEdited": "2026-02-18T09:38:55.193+00:00",
+      "appliesToConcepts": [
+        "Page",
+        "Content layout",
+        "Content guide",
+        "Web design principles"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    },
+    {
+      "rule": "Use takeovers strategically. When implementing homepage or section takeovers, prioritise craft, wit, and visual quality. They should always lead somewhere meaningful.",
+      "ruleStrength": "SHOULD",
+      "status": "Approved",
+      "type": "Design principle",
+      "lastEdited": "2026-02-18T09:39:02.509+00:00",
+      "appliesToConcepts": [
+        "Page",
+        "Content layout",
+        "Web design principles",
+        "Content guide"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    },
+    {
+      "rule": "Keep it lean. Design, copy, and IA should always move towards simplicity, reduction, and clarity.",
+      "ruleStrength": "SHOULD",
+      "status": "Approved",
+      "type": "Design principle",
+      "lastEdited": "2026-02-18T09:39:31.958+00:00",
+      "appliesToConcepts": [
+        "Navigation",
+        "Page",
+        "Content layout",
+        "Bubble",
+        "Site",
+        "Web design principles",
+        "Content guide"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    },
+    {
+      "rule": "Number of CTAs in the layout should be as limited as possible.",
+      "ruleStrength": "SHOULD",
+      "status": "Approved",
+      "type": "Specific rule",
+      "lastEdited": "2026-02-18T09:40:31.535+00:00",
+      "appliesToConcepts": [
+        "Page",
+        "Content layout",
+        "Content guide"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    },
+    {
+      "rule": "Use [webpage copy doc template](https://docs.google.com/document/d/1EPA_Ea8ShIvyftAc9oVxZYUIMHfAPFF6S5x6FOvLkwM) to structure and visualize the content within the boundaries of available sections and layouts.",
+      "ruleStrength": "MUST",
+      "status": "Existing",
+      "type": "Specific rule",
+      "lastEdited": "2026-02-20T08:33:59.063+00:00",
+      "appliesToConcepts": [
+        "Content guide",
+        "Content layout"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    }
   ],
   "exceptedFromRules": [],
   "mentionedIn": [],

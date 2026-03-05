@@ -10,13 +10,62 @@
   "changeLog": [],
   "decisionLog": [],
   "appliedRules": [
-    "i-fccXU5un82",
-    "i-LjFEVoZ_Ij",
-    "i-oTSGQdCEDB",
-    "i-TLC1vpYS-W",
-    "i-MhOInQY0HT",
-    "i-XZuz5ismLA",
-    "i-U1MJIkrB5P"
+    {
+      "rule": "Maintain a tight, intentional core site. Aim for a concise set of evergreen pages (approximately 30–50). Prioritise depth of content quality over breadth.",
+      "ruleStrength": "SHOULD",
+      "status": "Approved",
+      "type": "Design principle",
+      "lastEdited": "2026-02-18T09:37:51.034+00:00",
+      "appliesToConcepts": [
+        "Site",
+        "Bubble",
+        "Web design principles"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    },
+    {
+      "rule": "One place per concept. Each topic should have a single authoritative page. Do not create new pages where updates to existing pages are appropriate.",
+      "ruleStrength": "SHOULD",
+      "status": "Approved",
+      "type": "Design principle",
+      "lastEdited": "2026-02-18T09:38:17.019+00:00",
+      "appliesToConcepts": [
+        "Page",
+        "Bubble",
+        "Web design principles",
+        "Content guide"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    },
+    {
+      "rule": "Keep it lean. Design, copy, and IA should always move towards simplicity, reduction, and clarity.",
+      "ruleStrength": "SHOULD",
+      "status": "Approved",
+      "type": "Design principle",
+      "lastEdited": "2026-02-18T09:39:31.958+00:00",
+      "appliesToConcepts": [
+        "Navigation",
+        "Page",
+        "Content layout",
+        "Bubble",
+        "Site",
+        "Web design principles",
+        "Content guide"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    }
   ],
   "exceptedFromRules": [],
   "mentionedIn": [],

@@ -36,7 +36,7 @@
       "name": "Linked heading",
       "required": false,
       "type": "single select",
-      "description": "The heading can be used as a link when paired with a chevron(›) and a clear indication.",
+      "description": "The heading may function as a link when clearly indicated.",
       "constraint": "",
       "defaultOption": "default",
       "options": [
@@ -63,9 +63,38 @@
   "decisionLog": [],
   "appliedRules": [],
   "exceptionFromRules": [
-    "i-oDEFAbETSH",
-    "i-p8Fv0e9Vn7",
-    "i-c0fL3b9UM5"
+    {
+      "rule": "Section title always starts in the first column of the grid.",
+      "ruleStrength": "MUST",
+      "status": "Approved",
+      "type": "Specific rule",
+      "lastEdited": "2026-02-18T09:35:07.035+00:00",
+      "appliesToConcepts": [
+        "Section",
+        "Content primitive"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "Rich vertical list",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    },
+    {
+      "rule": "Larger blocks of content are placed on the right-hand side of smaller blocks.",
+      "ruleStrength": "SHOULD",
+      "status": "Existing",
+      "type": "Specific rule",
+      "lastEdited": "2026-02-18T09:35:44.436+00:00",
+      "appliesToConcepts": [
+        "Section",
+        "Content layout"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "Rich vertical list",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    }
   ],
   "mentionedIn": [
     {

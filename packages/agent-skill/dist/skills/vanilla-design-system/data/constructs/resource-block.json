@@ -11,11 +11,8 @@
   "usage": "Use Resource block to present scannable listings of editorial or knowledge-driven content. It supports a range of resource types, including blog posts, videos, webinars, case studies, solution briefs, white papers, and reports.\n\n### Where to use\n\nResource block can appear in the following patterns and contexts:\n\n*   [Resources](/resources)\n*   [Blog](/blog)\n*   [Tab section](/tab-section)\n\n### Layout\n\nResource block comes in two layouts:\n\n**[Horizontal layout](/resource-block#anatomy)** : It places content in a single row, with the image on one side and the title, description, and citation stacked in a column on the other. The cover image is optional. When included, it can be either a 16:9 image or a fixed-size logo.\n\n**[Vertical layout](/resource-block#anatomy)** **:** It stacks content in a single column in the order: image, title, description, and citation. The cover image is required and uses a 16:9 ratio.\n\n### When to use\n\n*   Each item represents a standalone piece of content with a title and short preview\n*   Users need to scan multiple items quickly before navigating to one\n*   Content may be dynamically fetched or statically configured\n\n### When not to use\n\n*   When the content is purely textual without article-level separation, use Tiered block or [Equal height block](/equal-height-block) instead\n*   If items require rich structured elements (such as lists, code blocks, or calls to action) within the preview, consider converting them into a section-level layout using a [Basic section](/basic-section) or [Divided section](/divided-section) instead",
   "examples": "",
   "interactions": "",
-  "figmaComponentData": "",
-  "componentExampleImage": "images/2bf5b28f-3f13-48fc-8b3f-f621354fc7e5.png",
   "sitesArchitectureLevels": "i-ytTJ4UrPBn",
   "anatomy": {
-    "image": "images/eb37067d-8d60-42c7-93a7-c3eac0837fae.png",
     "table": [
       {
         "number": 1,
@@ -138,5 +135,6 @@
       "name": "Tab section",
       "slug": "tab-section"
     }
-  ]
+  ],
+  "url": "https://component.wiki/resource-block"
 }

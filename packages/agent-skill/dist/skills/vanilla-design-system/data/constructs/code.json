@@ -3,12 +3,12 @@
   "slug": "code",
   "type": "Component",
   "tiers": "Global",
-  "documentationStatus": "Needs work",
-  "lastEdited": "2026-02-13T15:19:59.713+00:00",
+  "documentationStatus": "Minimal",
+  "lastEdited": "2026-03-02T14:54:31.713+00:00",
   "figmaLink": "https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-20",
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/d0197b27f5733789d6d23536eabe68356e045ae1/scss/_base_code.scss",
-  "description": "The code component displays code, commands, and technical language that requires distinct visual treatment. This includes programming languages, domain-specific languages such as search syntax, terminal commands, file paths, and configuration values.",
-  "usage": "The code component displays code, commands, and technical language that requires distinct visual treatment. This includes programming languages, domain-specific languages such as search syntax, terminal commands, file paths, and configuration values. Code uses a monospace font to distinguish it from human language, which uses the default text style.\n\nThe component appears most often within paragraph text but can also be used in lists, [Table](/table)s, and other structured content.\n\n## Inline code\n\nUse inline code for short, simple references within the normal text flow, such as commands, function names, or configuration keys. Keep inline code concise. Long expressions or multi-part statements should use a code block instead.\n\n## Code blocks\n\nUse code blocks for code spanning more than one line or when single-line code benefits from separation from surrounding text.\n\n### Wrapping and overflow\n\nCode blocks can either wrap long lines or allow horizontal overflow with scrolling.\n\nPrefer horizontal overflow when:\n\n*   Code is meant to be copied and executed exactly as shown\n*   Indentation carries syntactic meaning, such as in Python or YAML\n*   Content is diagnostic, such as log output with column-based formatting\n\nPrefer wrapping when readability matters more than preserving exact formatting, such as illustrative pseudocode or conceptual examples.\n\n## Presenting code effectively\n\nIntroduce what the code does before showing it. After presenting code, explain what the user should notice or learn. Maintain proper indentation within code blocks.\n\n## When to use\n\n*   To display programming code, terminal commands, or domain-specific languages\n*   For technical values that should be interpreted literally\n*   To present executable snippets users may copy\n\n## When not to use\n\n*   For regular prose or human-readable text\n*   For emphasis or stress (use bold or italics instead)",
+  "description": "The code component displays code, commands, and technical language that requires distinct visual treatment. This includes programming languages, domain-specific languages such as search syntax, terminal commands, file paths, and configuration values. This component is designed for simple, single-line code. For multi-line or more complex use cases, use [Code snippet](/code-snippet) instead.",
+  "usage": "The code component displays code, commands, and technical language that requires distinct visual treatment. This includes programming languages, domain-specific languages such as search syntax, terminal commands, file paths, and configuration values. Code uses a monospace font to distinguish it from human language, which uses the default text style.\n\nThe component appears most often within paragraph text but can also be used in lists, [Table](/table)s, and other structured content.\n\n## Inline code\n\nUse inline code for short, simple references within the normal text flow, such as commands, function names, or configuration keys. Keep inline code concise.\n\n## Code blocks\n\nUse code block when single-line code benefits from separation from surrounding text. Code block scrolls horizontally by default if the line length exceeds the available width. For code that requires wrapping or multiple lines, use [Code snippet](/code-snippet) instead.\n\n## When to use\n\n*   To display programming code, terminal commands, or domain-specific languages\n*   For technical values that should be interpreted literally\n*   To present executable snippets users may copy\n\n## When not to use\n\n*   For regular prose or human-readable text\n*   For emphasis or stress (use bold or italics instead)\n*   For multi-line code (use [Code snippet](/code-snippet) instead)",
   "examples": "",
   "interactions": "",
   "sitesArchitectureLevels": "i-UvVNCYZ44t",
@@ -51,8 +51,17 @@
   "decisionLog": [],
   "appliedRules": [],
   "exceptionFromRules": [],
-  "mentionedIn": [],
+  "mentionedIn": [
+    {
+      "name": "Code snippet",
+      "slug": "code-snippet"
+    }
+  ],
   "mentionsComponents": [
+    {
+      "name": "Code snippet",
+      "slug": "code-snippet"
+    },
     {
       "name": "Table",
       "slug": "table"

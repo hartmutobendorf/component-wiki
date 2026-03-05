@@ -3,15 +3,44 @@
   "slug": "logo-section",
   "type": "Pattern",
   "tiers": "Sites",
-  "documentationStatus": "Needs work",
-  "lastEdited": "2026-02-10T08:16:33.829+00:00",
-  "figmaLink": "",
-  "codeLink": "",
-  "description": "",
-  "usage": "",
-  "examples": "",
+  "documentationStatus": "Minimal",
+  "lastEdited": "2026-03-02T15:45:24.016+00:00",
+  "figmaLink": "https://www.figma.com/design/1brHCsyeTE6FU7hfJd6ao2/%F0%9F%8C%90-Sites---Core-component-library?node-id=336-20426&p=f&t=I4p3Raifg4O82H5a-11",
+  "codeLink": "https://github.com/canonical/vanilla-framework/blob/main/templates/_macros/vf_logo-section.jinja",
+  "description": "The logo section showcases a group of related images, such as a group of customer or partner logos. For best results, ensure that the images have identical dimensions.\n\n  \n",
+  "usage": "The logo section highlights the array of logos as the primary content, building on on the [Logo block](/logo-block). It is typically paired with a muted heading, an optional description, and a [CTA block](/cta-block). This pattern is used to emphasize brand identity or partner associations within a page.\n\n### When to use\n\n*   In cases where the [Logo block](/logo-block) functions as the main content, with all other elements acting as supporting content\n\n### When not to use\n\n*   When images, lists, or other content need to be included, use the [Basic section](/basic-section) instead\n*   If logos need to be linked, use the [Linked logo section](/linked-logo-section) instead",
+  "examples": "Medium dimension\n\n![example-4.png](images/6c023499-83d1-4f6a-a0c3-cf42e2028c32.png)\n\nSmall dimension\n\n![example-5.png](images/2891dcb9-2c2e-4683-bf1f-99d505d8709c.png)\n\nLinked heading\n\n![example-2.png](images/a7d8ed3e-b4cc-42fa-ab37-57afed2a75b9.png)",
   "interactions": "",
   "sitesArchitectureLevels": "i-ues18YVwia",
+  "anatomy": {
+    "table": [
+      {
+        "number": 1,
+        "name": "Rule",
+        "description": "The rule component indicates the beginning of a new section."
+      },
+      {
+        "number": 2,
+        "name": "Heading",
+        "description": "The section heading communicates the primary subject or theme of the section."
+      },
+      {
+        "number": 3,
+        "name": "Body",
+        "description": "The body provides introductory context for the section. It appears at the top of the section and helps users understand the purpose or scope of the content before engaging with the logo block."
+      },
+      {
+        "number": 4,
+        "name": "[CTA block](wiki-ref://grid-ymtdOF6n4R/i-0Z_OLuJDCc) ",
+        "description": "The CTA (call to action) block presents one or more related actions that guide the user toward the next step within a section"
+      },
+      {
+        "number": 5,
+        "name": "[Logo block](wiki-ref://grid-ymtdOF6n4R/i-If5dFjalAR) ",
+        "description": "The array of related images, such as customer or partner logos."
+      }
+    ]
+  },
   "properties": [
     {
       "name": "Section rule",
@@ -25,10 +54,18 @@
       ]
     },
     {
+      "name": "Heading",
+      "required": true,
+      "type": "string",
+      "description": "4-column width H2 heading using muted heading style",
+      "constraint": "Up to 60 characters",
+      "defaultOption": ""
+    },
+    {
       "name": "Linked heading",
       "required": false,
       "type": "single select",
-      "description": "The heading can be used as a link when paired with a chevron(›) and a clear indication.",
+      "description": "The heading may function as a link when clearly indicated.",
       "constraint": "",
       "defaultOption": "default",
       "options": [
@@ -49,29 +86,110 @@
         "shallow",
         "none"
       ]
+    }
+  ],
+  "childProperties": [
+    {
+      "name": "CTA block",
+      "properties": [
+        {
+          "name": "Link CTA",
+          "required": false,
+          "type": "string",
+          "description": "The text link used for contextual actions or pathways to more information. It uses a chevron (›) to indicate navigation to additional content or pages.",
+          "constraint": "Up to 60 characters",
+          "defaultOption": ""
+        },
+        {
+          "name": "Primary CTA",
+          "required": false,
+          "type": "string",
+          "description": "The CTA used with the positive button style. It indicates a high-priority, positive action and is reserved for hero areas or other key call-to-action sections.",
+          "constraint": "Up to 20 characters",
+          "defaultOption": ""
+        },
+        {
+          "name": "Secondary CTA",
+          "required": false,
+          "type": "string",
+          "description": "The CTA using the default button style. It is used for most actions that are positive but not primary, and may serve as the main CTA in non-hero sections.",
+          "constraint": "Up to 20 characters",
+          "defaultOption": ""
+        }
+      ]
     },
     {
       "name": "Logo block",
-      "required": true,
-      "type": "slot",
-      "description": "The logo block showcases a group of related images, such as a group of customer or partner logos.",
-      "constraint": "Up to 10 logos\nLinking individual logos is not allowed",
-      "defaultOption": ""
+      "properties": [
+        {
+          "name": "Logo block",
+          "required": true,
+          "type": "object",
+          "description": "The logo block showcases a group of related images, such as a group of customer or partner logos.",
+          "constraint": "- Avoid exceeding 10 logos \n- Linking individual logos is not allowed",
+          "defaultOption": ""
+        }
+      ]
     }
   ],
-  "changeLog": [],
+  "changeLog": [
+    {
+      "who": "Isaac Kim",
+      "when": "2025-12-08T16:00:00.000+00:00",
+      "what": "Initial commit"
+    }
+  ],
   "decisionLog": [],
   "appliedRules": [],
   "exceptionFromRules": [
-    "i-U3IwMn0dXk",
-    "i-c0fL3b9UM5"
+    {
+      "rule": "Section title is styled as H2 or Heading muted",
+      "ruleStrength": "MUST",
+      "status": "Approved",
+      "type": "Specific rule",
+      "lastEdited": "2026-02-18T09:35:07.035+00:00",
+      "appliesToConcepts": [
+        "Section",
+        "Content primitive"
+      ],
+      "appliesToConstructs": [],
+      "knownExceptionForConstructs": "Hero, Blog, Data spotlight, Logo section, Quote wrapper",
+      "knownExceptionForConcepts": "",
+      "changeLog": [],
+      "decisionLog": []
+    }
   ],
   "mentionedIn": [
     {
       "name": "Basic section",
       "slug": "basic-section"
+    },
+    {
+      "name": "Linked logo section",
+      "slug": "linked-logo-section"
+    },
+    {
+      "name": "Logo block",
+      "slug": "logo-block"
     }
   ],
-  "mentionsComponents": [],
+  "mentionsComponents": [
+    {
+      "name": "Basic section",
+      "slug": "basic-section"
+    },
+    {
+      "name": "CTA block",
+      "slug": "cta-block"
+    },
+    {
+      "name": "Linked logo section",
+      "slug": "linked-logo-section"
+    },
+    {
+      "name": "Logo block",
+      "slug": "logo-block"
+    }
+  ],
   "url": "https://component.wiki/logo-section"
 }
