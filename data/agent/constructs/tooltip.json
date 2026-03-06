@@ -4,7 +4,7 @@
   "type": "Component",
   "tiers": "Global",
   "documentationStatus": "Minimal",
-  "lastEdited": "2026-02-13T16:08:10.623+00:00",
+  "lastEdited": "2026-03-06T08:39:26.224+00:00",
   "figmaLink": "https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-52",
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/b1d651365b0714586e6ea14349dea763819c256e/scss/_patterns_tooltips.scss",
   "description": "A tooltip is a small popup that displays helpful information or context when a user hovers over or focuses on an element, providing additional details without cluttering the interface.",
@@ -13,7 +13,18 @@
   "interactions": "",
   "sitesArchitectureLevels": "i-UvVNCYZ44t",
   "anatomy": {
-    "table": []
+    "table": [
+      {
+        "number": 1,
+        "name": "Text",
+        "description": "The main content area that contains the informational text or message displayed to the user. This text should be concise and provide helpful context or additional details about the associated element."
+      },
+      {
+        "number": 2,
+        "name": "Arrow",
+        "description": "A small triangular pointer that visually connects the tooltip to its trigger element. The arrow indicates which UI element the tooltip information refers to and helps establish the relationship between the tooltip and its target."
+      }
+    ]
   },
   "properties": [
     {
