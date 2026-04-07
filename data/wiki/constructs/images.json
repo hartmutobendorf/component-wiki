@@ -1,8 +1,9 @@
 {
+  "kind": "construct",
   "name": "Images",
   "slug": "images",
   "type": "Component",
-  "tiers": "Global",
+  "tier": "Global",
   "documentationStatus": "Needs work",
   "lastEdited": "2026-02-10T08:15:57.774+00:00",
   "figmaLink": "",
@@ -15,7 +16,7 @@
   "componentExampleImage": "",
   "sitesArchitectureLevels": "i-UvVNCYZ44t",
   "anatomy": {
-    "image": "images/75b0db74-d0d6-4081-8d9b-0ef965978ba0.png",
+    "image": "images/923fe06d-7cf1-429a-bf0a-7030c7621ead.png",
     "table": []
   },
   "properties": [

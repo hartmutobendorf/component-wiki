@@ -1,8 +1,9 @@
 {
+  "kind": "construct",
   "name": "Text spotlight",
   "slug": "text-spotlight",
   "type": "Pattern",
-  "tiers": "Sites",
+  "tier": "Sites",
   "documentationStatus": "Needs work",
   "lastEdited": "2026-02-23T10:42:16.457+00:00",
   "figmaLink": "https://www.figma.com/design/1brHCsyeTE6FU7hfJd6ao2/%F0%9F%8C%90-Sites---Core-component-library?node-id=362-18300&p=f&t=I4p3Raifg4O82H5a-11",

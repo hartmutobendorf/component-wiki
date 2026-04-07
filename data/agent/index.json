@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-07T07:56:07.275Z",
+  "generatedAt": "2026-04-07T08:29:31.236Z",
   "constructCount": 61,
   "conceptCount": 26,
   "constructTypes": [
@@ -24,427 +24,427 @@
       "name": "Images",
       "slug": "images",
       "type": "Component",
-      "tiers": "",
+      "tier": "",
       "description": ""
     },
     {
       "name": "CTA block",
       "slug": "cta-block",
       "type": "Component",
-      "tiers": "",
+      "tier": "",
       "description": "The CTA (call to action) block presents one or more related actions that guide the user toward the next step within a section, such as learning more, making contact, or downloading a resource. It supports primary, secondary, and link-level CTA, all of which are optional and can be combined depending on the context. It provides a visually prominent way to highlight key next steps and should be used when you want to encourage decisive user engagement within a page or section. "
     },
     {
       "name": "Code",
       "slug": "code",
       "type": "Component",
-      "tiers": "",
+      "tier": "",
       "description": "The code component displays code, commands, and technical language that requires distinct visual treatment. This includes programming languages, domain-specific languages such as search syntax, terminal commands, file paths, and configuration values. This component is designed for simple, single-line code. For multi-line or more complex use cases, use [Code snippet](/global/construct/code-snippet) instead."
     },
     {
       "name": "Notification",
       "slug": "notification",
       "type": "Component",
-      "tiers": "",
+      "tier": "",
       "description": "Notifications display brief, contextual messages to inform users about system status, user actions, or important updates. They typically appear temporarily and can convey success, error, warning, or informational states to provide immediate feedback without disrupting the user's workflow."
     },
     {
       "name": "Logo block",
       "slug": "logo-block",
       "type": "Component",
-      "tiers": "",
+      "tier": "",
       "description": "The logo block is a content unit that showcases a group of related images, such as a group of customer or partner logos. For best results, ensure that the images have identical dimensions. This block is used as the primary content unit in the [Logo section](/sites/construct/logo-section).\n\n"
     },
     {
       "name": "Linked logo block",
       "slug": "linked-logo-block",
       "type": "Component",
-      "tiers": "",
+      "tier": "",
       "description": "The linked logo block is a content unit that displays a logo with a link to additional pages or resources. This block is used as the primary content unit in the [Linked logo section](/sites/construct/linked-logo-section).\n\n"
     },
     {
       "name": "List",
       "slug": "list",
       "type": "Component",
-      "tiers": "",
+      "tier": "",
       "description": ""
     },
     {
       "name": "Divided block",
       "slug": "divided-block",
       "type": "Component",
-      "tiers": "",
+      "tier": "",
       "description": "The divided block is a content unit that represents a single step, stage, or content item. It supports a wide range of content types, including text, images, videos, [List](/global/construct/list), [Code](/global/construct/code), [Logo block](/sites/construct/logo-block), [Notification](/global/construct/notification), and [CTA block](/sites/construct/cta-block). This block is used as the primary content unit in the [Divided section](/sites/construct/divided-section).\n\n"
     },
     {
       "name": "Divided block",
       "slug": "divided-block",
       "type": "Block",
-      "tiers": "Sites",
+      "tier": "Sites",
       "description": "The divided block is a content unit that represents a single step, stage, or content item. It supports a wide range of content types, including text, [Images](/global/construct/images), videos, [List](/global/construct/list), [Code](/global/construct/code), [Logo block](/sites/construct/logo-block), [Notification](/global/construct/notification), and [CTA block](/sites/construct/cta-block). This block is used as the primary content unit in the [Divided section](/sites/construct/divided-section).\n\n"
     },
     {
       "name": "Tiered block",
       "slug": "tiered-block",
       "type": "Block",
-      "tiers": "Sites",
+      "tier": "Sites",
       "description": "The tiered block is a content unit that pairs a heading with a body to present a single item in a structured, scannable format. An optional CTA link can appear beneath the body. This block is used as the primary content unit in the [Tiered list](/sites/construct/tiered-list)."
     },
     {
       "name": "Equal height block",
       "slug": "equal-height-block",
       "type": "Block",
-      "tiers": "Sites",
+      "tier": "Sites",
       "description": "The equal height block is a content unit that ensures consistent vertical alignment for multiple items arranged within a row. It standardises the height of each item so that all blocks in the same row share equal dimensions, regardless of variations in content length. This block is used as the primary content unit in the [Equal heights](/sites/construct/equal-heights).\n\n"
     },
     {
       "name": "In-page navigation",
       "slug": "in-page-navigation",
       "type": "Complex component",
-      "tiers": "Sites",
+      "tier": "Sites",
       "description": "In-page navigation is a navigational component for exploring content within a single page. Users can scan the page structure, jump directly to sections, and understand their current position as they scroll."
     },
     {
       "name": "Resource block",
       "slug": "resource-block",
       "type": "Block",
-      "tiers": "Sites",
+      "tier": "Sites",
       "description": "The resource block is a content unit that represents an individual resource item within a listing. It displays a title, a cover image, a description, and citation metadata. The block supports a range of resource types, including blog posts, videos, webinars, case studies, solution briefs, white papers, and reports. This block is used as the primary content unit in the [Blog](/sites/construct/blog) and [Resources](/sites/construct/resources)."
     },
     {
       "name": "List",
       "slug": "list",
       "type": "Component",
-      "tiers": "Global",
+      "tier": "Global",
       "description": "A list displays related pieces of information where each item represents only one attribute. It helps organize static content and create visual rhythm, making information easier to scan and understand. Lists are not interactive, so users cannot modify, filter, or otherwise change their contents. If an item needs to show more than one attribute, use a table instead."
     },
     {
       "name": "Images",
       "slug": "images",
       "type": "Component",
-      "tiers": "Global",
+      "tier": "Global",
       "description": ""
     },
     {
       "name": "Logo block",
       "slug": "logo-block",
       "type": "Block",
-      "tiers": "Sites",
+      "tier": "Sites",
       "description": "The logo block is a content unit that showcases a group of related images, such as a group of customer or partner logos. For best results, ensure that the images have identical dimensions. This block is used as the primary content unit in the [Logo section](/sites/construct/logo-section).\n\n"
     },
     {
       "name": "Linked logo block",
       "slug": "linked-logo-block",
       "type": "Block",
-      "tiers": "Sites",
+      "tier": "Sites",
       "description": "The linked logo block is a content unit that displays a logo with a link to additional pages or resources. This block is used as the primary content unit in the [Linked logo section](/sites/construct/linked-logo-section).\n\n"
     },
     {
       "name": "CTA block",
       "slug": "cta-block",
       "type": "Complex component",
-      "tiers": "Sites",
+      "tier": "Sites",
       "description": "The CTA (call to action) block presents one or more related actions that guide the user toward the next step within a section, such as learning more, making contact, or downloading a resource. It supports primary, secondary, and link-level CTA, all of which are optional and can be combined depending on the context. It provides a visually prominent way to highlight key next steps and should be used when you want to encourage decisive user engagement within a page or section. "
     },
     {
       "name": "Tiered list",
       "slug": "tiered-list",
       "type": "Pattern",
-      "tiers": "Sites",
+      "tier": "Sites",
       "description": "Tiered list is a pattern for presenting a list of paired titles and descriptions underneath a top-level title and description. It organises related items into a structured, scannable format using Tiered blocks as its primary content units. An optional [CTA block](/sites/construct/cta-block) can appear at the section level, below the top-level description."
     },
     {
       "name": "Text spotlight",
       "slug": "text-spotlight",
       "type": "Pattern",
-      "tiers": "Sites",
+      "tier": "Sites",
       "description": "A Text Spotlight is a prominent section typically used to quickly capture user's attention to specific action items / benefits or advantages of selecting a specific product."
     },
     {
       "name": "Tab section",
       "slug": "tab-section",
       "type": "Pattern",
-      "tiers": "Sites",
+      "tier": "Sites",
       "description": ""
     },
     {
       "name": "Rich vertical list",
       "slug": "rich-vertical-list",
       "type": "Pattern",
-      "tiers": "Sites",
+      "tier": "Sites",
       "description": ""
     },
     {
       "name": "Resources",
       "slug": "resources",
       "type": "Pattern",
-      "tiers": "Sites",
+      "tier": "Sites",
       "description": "The resources pattern is used to display a collection of resources. Each resource can include a title and optional image, description, author(s), and publication date.\n\n"
     },
     {
       "name": "Quote wrapper",
       "slug": "quote-wrapper",
       "type": "Pattern",
-      "tiers": "Sites",
+      "tier": "Sites",
       "description": ""
     },
     {
       "name": "Pricing block",
       "slug": "pricing-block",
       "type": "Pattern",
-      "tiers": "Sites",
+      "tier": "Sites",
       "description": ""
     },
     {
       "name": "Newsletter signup",
       "slug": "newsletter-signup",
       "type": "Pattern",
-      "tiers": "Sites",
+      "tier": "Sites",
       "description": ""
     },
     {
       "name": "Logo section",
       "slug": "logo-section",
       "type": "Pattern",
-      "tiers": "Sites",
+      "tier": "Sites",
       "description": "The logo section showcases a group of related images, such as a group of customer or partner logos. For best results, ensure that the images have identical dimensions.\n\n  \n"
     },
     {
       "name": "Linked logo section",
       "slug": "linked-logo-section",
       "type": "Pattern",
-      "tiers": "Sites",
+      "tier": "Sites",
       "description": "The linked logo section is used to display a list of logos which explicitly link to additional pages or resources."
     },
     {
       "name": "Hero",
       "slug": "hero",
       "type": "Pattern",
-      "tiers": "Sites",
+      "tier": "Sites",
       "description": "Hero is a prominent banner pattern used at the top of a page to make a strong statement about a product or service. It communicates the core value proposition and gives users an immediate reason to engage.  \nThe pattern supports several layout variants. All variants share a required heading. Other content elements ( subheading, body text, CTA, and image) are optional, with one exception: when an image appears in the same row as text content, it is required for that layout to function correctly. \n\n"
     },
     {
       "name": "Equal heights",
       "slug": "equal-heights",
       "type": "Pattern",
-      "tiers": "Sites",
+      "tier": "Sites",
       "description": "The Equal heights pattern arranges content blocks in a horizontal row where each block maintains the same height regardless of the amount of content inside. This creates a visually balanced layout that allows items to be easily compared and scanned.  An optional [CTA block](/sites/construct/cta-block) can appear at the section level, beneath blocks list.\n\n  \n"
     },
     {
       "name": "Divided section",
       "slug": "divided-section",
       "type": "Pattern",
-      "tiers": "Sites",
+      "tier": "Sites",
       "description": "The divided section pattern is used to separate related content into distinct steps or items within a single section. Each item is visually divided using a muted [Rule](/sites/construct/divided-section#anatomy) and shallow padding, helping users distinguish between content blocks while maintaining a cohesive layout.\n\n"
     },
     {
       "name": "Data spotlight",
       "slug": "data-spotlight",
       "type": "Pattern",
-      "tiers": "Sites",
+      "tier": "Sites",
       "description": "The data spotlight pattern presents key statistics as the primary content, supported by short [Headline](/sites/construct/data-spotlight#anatomy)s and optional [Body](/sites/construct/data-spotlight#anatomy)s. It is designed to surface important numbers in a clear, scannable layout that helps users quickly understand impact, scale, or outcomes.\n\n"
     },
     {
       "name": "CTA section",
       "slug": "cta-section",
       "type": "Pattern",
-      "tiers": "Sites",
+      "tier": "Sites",
       "description": "The CTA section is a prominent and visually engaging section designed to encourage users to take a clear next step. It combines a concise copy and one or more call-to-action elements into a focused layout that stands out from surrounding content. This pattern is typically used mid-page or near the end of a page to re-engage users and guide them toward a specific action such as downloading resources, contacting sales, or exploring key documentation. The CTA section helps reduce decision friction by clearly communicating what the action is and why it matters now."
     },
     {
       "name": "Blog",
       "slug": "blog",
       "type": "Pattern",
-      "tiers": "Sites",
+      "tier": "Sites",
       "description": "The blog pattern displays 3 to 4 blog articles in a grid layout. Each article shows a cover image, title, description, author information, and publication date. Articles can be loaded dynamically or provided statically. Designed to highlight recent contents in specific topic, the pattern offers users quick access to featured blog posts."
     },
     {
       "name": "Basic section",
       "slug": "basic-section",
       "type": "Pattern",
-      "tiers": "Sites",
+      "tier": "Sites",
       "description": "The Basic section is a two-column (50/50) layout pattern for presenting a single topic with a mix of content blocks. It can include text, images, videos, lists, code snippets, logos, and call-to-action elements. \n\nChoose this pattern to communicate a single topic that can be clearly conveyed in a side-by-side, two-column structure."
     },
     {
       "name": "Table",
       "slug": "table",
       "type": "Complex component",
-      "tiers": "Global",
+      "tier": "Global",
       "description": "A table displays data in rows and columns. This structured format helps users review and compare large data sets efficiently. The table is a static component suited to presenting data without complex interactions. For advanced needs – pagination, selection, bulk actions, filtering, sorting, and grouping – use the data table (Apps tier) instead. Sites tier products typically use this table. However, if a use case requires richer functionality, refer to the data table documentation.\n\n"
     },
     {
       "name": "Side navigation",
       "slug": "side-navigation",
       "type": "Complex component",
-      "tiers": "Apps",
+      "tier": "Apps",
       "description": ""
     },
     {
       "name": "Navigation",
       "slug": "navigation",
       "type": "Complex component",
-      "tiers": "Global",
+      "tier": "Global",
       "description": ""
     },
     {
       "name": "Code snippet",
       "slug": "code-snippet",
       "type": "Complex component",
-      "tiers": "Global",
+      "tier": "Global",
       "description": "The code snippet component displays multi-line or complex code, commands, and technical content that requires distinct visual treatment from surrounding content. This covers full code files, terminal commands, and their output. It supports showing code in multiple languages and different versions of a product or library. For single-line code, use the [Code](/global/construct/code) component's inline variant instead.\n\n"
     },
     {
       "name": "Tooltip",
       "slug": "tooltip",
       "type": "Component",
-      "tiers": "Global",
+      "tier": "Global",
       "description": "A tooltip is a small popup that displays helpful information or context when a user hovers over or focuses on an element, providing additional details without cluttering the interface."
     },
     {
       "name": "Text area",
       "slug": "text-area",
       "type": "Component",
-      "tiers": "Global",
+      "tier": "Global",
       "description": "- Allows user to input multiple lines of text\n- Used in cases where user needs to be able to provide longer form text. such as when writing a comment or note."
     },
     {
       "name": "Tabs",
       "slug": "tabs",
       "type": "Component",
-      "tiers": "Global",
+      "tier": "Global",
       "description": "A tabs component organizes related content into separate sections, allowing users to switch between different content panels within the same context by clicking on labeled tab headers. It helps reduce visual clutter by displaying only one content panel at a time while keeping all options easily accessible."
     },
     {
       "name": "Table of contents",
       "slug": "table-of-contents",
       "type": "Component",
-      "tiers": "Global",
+      "tier": "Global",
       "description": "The table of contents is a navigational component consisting of a series of anchor links that correspond to sections within a page. When clicked, each link scrolls the user to the relevant section of content. This component is typically used on pages with substantial content, such as documentation or long-form articles, where users benefit from being able to quickly locate and jump to specific information without manually scrolling through the entire page."
     },
     {
       "name": "Switch",
       "slug": "switch",
       "type": "Component",
-      "tiers": "Global",
+      "tier": "Global",
       "description": "A switch allows users to instantly change between two states (on/off, enabled/disabled). It provides immediate visual feedback and is commonly used for settings, preferences, or features that can be activated or deactivated with a single interaction."
     },
     {
       "name": "Select",
       "slug": "select",
       "type": "Component",
-      "tiers": "Global",
+      "tier": "Global",
       "description": "Select components allow users to choose a single option from a list of choices, mostly in forms. Selects are ideal when users need to pick from a predefined set of options where displaying all choices at once would consume too much screen space. "
     },
     {
       "name": "Segmented control",
       "slug": "segmented-control",
       "type": "Component",
-      "tiers": "Global",
+      "tier": "Global",
       "description": "A segmented control allows users to toggle between alternate views of the same content, displaying only one view at a time. This component is commonly used to let users switch between different formats or representations of the same underlying data, such as viewing information as a table, a list, or a cards."
     },
     {
       "name": "Search",
       "slug": "search",
       "type": "Component",
-      "tiers": "Global",
+      "tier": "Global",
       "description": "The search component serves as the entry point to a search experience, allowing users to quickly find and access content by specifying a word or phrase rather than manually navigating through an interface. It is almost always used in conjunction with other components that enrich the search experience and display results. Search is well-suited for documentation sites, dashboards, and marketing websites where users need to locate specific items efficiently. Use this component when users would benefit from a faster alternative to manually browsing and scrolling through content."
     },
     {
       "name": "Radio",
       "slug": "radio",
       "type": "Component",
-      "tiers": "Global",
+      "tier": "Global",
       "description": "Radios are used to select a single option from a group of mutually exclusive choices, commonly found in forms, settings, and preference panels. Unlike [Checkbox](/global/construct/checkbox)es which allow multiple selections, radios ensure only one option can be selected at a time within each group.\n\n"
     },
     {
       "name": "Notification",
       "slug": "notification",
       "type": "Component",
-      "tiers": "Global",
+      "tier": "Global",
       "description": "Notifications display brief, contextual messages to inform users about system status, user actions, or important updates. They typically appear temporarily and can convey success, error, warning, or informational states to provide immediate feedback without disrupting the user's workflow."
     },
     {
       "name": "Code",
       "slug": "code",
       "type": "Component",
-      "tiers": "Global",
+      "tier": "Global",
       "description": "The code component displays code, commands, and technical language that requires distinct visual treatment. This includes programming languages, domain-specific languages such as search syntax, terminal commands, file paths, and configuration values. This component is designed for simple, single-line code. For multi-line or more complex use cases, use [Code snippet](/global/construct/code-snippet) instead."
     },
     {
       "name": "Link",
       "slug": "link",
       "type": "Component",
-      "tiers": "Global",
+      "tier": "Global",
       "description": "Links are usually used for navigation. They connect users to different pages or sections in an interface. Navigational links can be embedded in body text, listed in footers, or integrated into [Breadcrumbs](/global/construct/breadcrumbs) and other wayfinding components. \n\nLinks can also prompt actions. They work best for actions that support but do not define the main user flow. Command links should clearly state that they lead to an action."
     },
     {
       "name": "Input",
       "slug": "input",
       "type": "Component",
-      "tiers": "Global",
+      "tier": "Global",
       "description": "The input component allows users to enter and edit text-based data. It provides a standardized interface for collecting user input such as names, email addresses, passwords and other textual information."
     },
     {
       "name": "Divider",
       "slug": "divider",
       "type": "Component",
-      "tiers": "Global",
+      "tier": "Global",
       "description": "The divider is a vertical line used to separate content within an interface. It creates clear boundaries between distinct sections, helping users understand the structure and organization of information."
     },
     {
       "name": "Contextual menu",
       "slug": "contextual-menu",
       "type": "Component",
-      "tiers": "Global",
+      "tier": "Global",
       "description": "A contextual menu provides secondary actions and options that can be attached to various interface controls, including [Button](/global/construct/button)s, command [Link](/global/construct/link)s, and right-click interactions. It displays relevant actions based on the context of the element or area it's associated with, helping to keep the interface clean while making additional functionality easily accessible when needed. \n\n"
     },
     {
       "name": "Chip",
       "slug": "chip",
       "type": "Component",
-      "tiers": "Global",
+      "tier": "Global",
       "description": "Chips are visual elements that display information about a specific entity on the page. This information can be status, categories, tags, etc. \n\nThey make this information more visually prominent and therefore elevate it in the information hierarchy.\n\nIn addition to displaying information, chips can also facilitate secondary actions such as content filtering, selection and highlighting. When interactive, chips maintain their primary function of displaying information - filter chips display applied filters while allowing dismissal, selection chips highlight selected options while allowing changes. Chips should not replace the primary call-to-action [Button](/global/construct/button). They should be used for supporting actions that complement the main user flow rather than driving it."
     },
     {
       "name": "Checkbox",
       "slug": "checkbox",
       "type": "Component",
-      "tiers": "Global",
+      "tier": "Global",
       "description": "Checkboxes are used to select items from lists or [Table](/global/construct/table)s, and to enable/disable settings or features. Unlike [Switch](/global/construct/switch), checkboxes typically require confirmation (such as pressing a \"Save\" [Button](/global/construct/button)) before changes take effect, while [Switch](/global/construct/switch)es apply changes immediately."
     },
     {
       "name": "Button",
       "slug": "button",
       "type": "Component",
-      "tiers": "Global",
+      "tier": "Global",
       "description": "Buttons trigger actions within an interface, typically involving data transformation or manipulation. They provide clear visual indicators of the primary actions users can perform on a page or section.\n\n"
     },
     {
       "name": "Breadcrumbs",
       "slug": "breadcrumbs",
       "type": "Component",
-      "tiers": "Global",
+      "tier": "Global",
       "description": "Breadcrumbs are a navigational aid that shows users their current location within a site's information hierarchy. They provide a clear path from the root of the information hierarchy (IA) to the current page, allowing users to quickly understand where they are and easily navigate back to previous levels in the IA. Breadcrumbs should reflect the IA, not the user's path they took to arrive at the current page. They work best in websites or applications with multiple levels of hierarchy and are particularly useful when users might arrive at deep pages through [Search](/global/construct/search) or [Link](/global/construct/link)s.\n\n"
     },
     {
       "name": "Badge",
       "slug": "badge",
       "type": "Component",
-      "tiers": "Global",
+      "tier": "Global",
       "description": "A badge is a read-only visual indicator for numeric values. It is often used in other components to show for example a number of elements contained in that component."
     },
     {
       "name": "Accordion",
       "slug": "accordion",
       "type": "Component",
-      "tiers": "Global",
+      "tier": "Global",
       "description": "The accordion is a vertically stacked content area which can be collapsed and expanded to reveal or hide its contents. An accordion can be opened or closed independently of its surrounding counterparts (i.e: multiple accordions can be open at the same time). \n\nWhen used right, accordions can help browse different pieces of related content in a more efficient way. Be wary that they can also hide content from users and are not suitable when a user is meant to read all of the page content.\n\n"
     },
     {
       "name": "Pagination",
       "slug": "pagination",
       "type": "Component",
-      "tiers": "Global",
+      "tier": "Global",
       "description": "Pagination is a navigational component that allows users to move between pages of content. It provides controls for navigating to the previous or next page, as well as optionally jumping directly to a specific numbered page. This component is best suited for content-heavy sites where information is divided across multiple pages, such as blog posts, articles, tutorials, or [Search](/global/construct/search) results. For paginating tabular data, use the Table pagination component instead.\n\n"
     }
   ],

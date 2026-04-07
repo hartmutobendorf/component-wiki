@@ -1,8 +1,9 @@
 {
+  "kind": "construct",
   "name": "Tab section",
   "slug": "tab-section",
   "type": "Pattern",
-  "tiers": "Sites",
+  "tier": "Sites",
   "documentationStatus": "Needs work",
   "lastEdited": "2026-02-10T08:16:41.311+00:00",
   "figmaLink": "",

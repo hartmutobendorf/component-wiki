@@ -1,8 +1,9 @@
 {
+  "kind": "construct",
   "name": "Navigation",
   "slug": "navigation",
   "type": "Complex component",
-  "tiers": "Global",
+  "tier": "Global",
   "documentationStatus": "Needs work",
   "lastEdited": "2026-03-23T16:52:39.130+00:00",
   "figmaLink": "https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-54",

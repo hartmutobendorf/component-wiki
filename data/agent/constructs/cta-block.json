@@ -1,8 +1,9 @@
 {
+  "kind": "construct",
   "name": "CTA block",
   "slug": "cta-block",
   "type": "Complex component",
-  "tiers": "Sites",
+  "tier": "Sites",
   "documentationStatus": "Minimal",
   "lastEdited": "2026-02-13T15:26:11.288+00:00",
   "figmaLink": "https://www.figma.com/design/1brHCsyeTE6FU7hfJd6ao2/%F0%9F%8C%90-Sites---Core-component-library?node-id=33-1471",

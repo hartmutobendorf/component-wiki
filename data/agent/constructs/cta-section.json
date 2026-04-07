@@ -1,15 +1,16 @@
 {
+  "kind": "construct",
   "name": "CTA section",
   "slug": "cta-section",
   "type": "Pattern",
-  "tiers": "Sites",
+  "tier": "Sites",
   "documentationStatus": "Minimal",
   "lastEdited": "2026-03-02T16:19:07.580+00:00",
   "figmaLink": "https://www.figma.com/design/1brHCsyeTE6FU7hfJd6ao2/%F0%9F%8C%90-Sites---Core-component-library?node-id=211-14507",
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/main/templates/_macros/vf_cta-section.jinja",
   "description": "The CTA section is a prominent and visually engaging section designed to encourage users to take a clear next step. It combines a concise copy and one or more call-to-action elements into a focused layout that stands out from surrounding content. This pattern is typically used mid-page or near the end of a page to re-engage users and guide them toward a specific action such as downloading resources, contacting sales, or exploring key documentation. The CTA section helps reduce decision friction by clearly communicating what the action is and why it matters now.",
   "usage": "Use the CTA section to highlight a clear, intentional next step within the page flow. This pattern is designed to create a moment of focus, helping users transition from consuming information to taking action.  \nCTA sections are typically placed mid-page or near the end of a page, where users have enough context to understand the value of the action being proposed.\n\nThe CTA section should represent a single primary intent. Any supporting text or additional elements should reinforce this intent rather than introduce new topics.\n\n  \n\n### When to use\n\n*   A specific user action is the primary purpose of the section, not a secondary affordance.\n*   You need to visually separate a call to action from surrounding content to increase emphasis.\n\n### When not to use\n\n*   If long-form explanatory content is needed, use a [Basic section](/sites/construct/basic-section) with the [CTA block](/sites/construct/cta-block) instead.\n*   The CTA appears too early in the page flow, before users have sufficient context to understand its value.",
-  "examples": "### Layout\n\nFull-width(Default)\n\n![example-1.png](images/66b208c8-e0ce-4e4f-91dc-3f024bc2ff71.png)\n\nFull-width([CTA block](/sites/construct/cta-block))\n\n![example-4.png](images/2fe93e34-164c-4496-9654-ad7c8fd7a77d.png)\n\n25/75(Default)\n\n![example.png](images/17e8a11e-f7a0-4173-80f9-14188612cc59.png)\n\n25/75([CTA block](/sites/construct/cta-block))\n\n![example-5.png](images/7331b396-c74b-4052-ac31-a4b25176e12d.png)\n\n### Responsive\n\nMedium dimension (Default)\n\n![example-2.png](images/d2ccc33f-0e9a-4fa8-b879-fe33d06669dc.png)\n\nMedium dimension ([CTA block](/sites/construct/cta-block))\n\n![example-6.png](images/8c6b47d1-4f67-440d-81e5-b042f96adcf7.png)\n\nSmall dimension (Default)\n\n![example-3.png](images/df4033a4-14dc-49ea-96a7-c93c25c327c9.png)\n\nSmall dimension ([CTA block](/sites/construct/cta-block))\n\n![example-7.png](images/36fda695-c807-4f0e-95f4-d882acac6264.png)",
+  "examples": "### Layout\n\nFull-width(Default)\n\n![example-1.png](images/42abb2b1-2651-42bf-ba72-adba4044984e.png)\n\nFull-width([CTA block](/sites/construct/cta-block))\n\n![example-4.png](images/9b4cea9e-9b59-4a39-b55f-b20a39ec1008.png)\n\n25/75(Default)\n\n![example.png](images/d29191b0-c391-42be-aa23-479929d9d060.png)\n\n25/75([CTA block](/sites/construct/cta-block))\n\n![example-5.png](images/55faf426-5a30-496b-ae1b-d35d345285f9.png)\n\n### Responsive\n\nMedium dimension (Default)\n\n![example-2.png](images/897bf083-38c4-40d3-b073-f3c5c7f4b560.png)\n\nMedium dimension ([CTA block](/sites/construct/cta-block))\n\n![example-6.png](images/ac86e0ba-46cb-40ea-b3d5-523fa8c55bcc.png)\n\nSmall dimension (Default)\n\n![example-3.png](images/416eedc1-d642-4ce3-9104-8a731e293164.png)\n\nSmall dimension ([CTA block](/sites/construct/cta-block))\n\n![example-7.png](images/921a4dd3-eccf-442d-bb81-274332b5e43c.png)",
   "interactions": "",
   "sitesArchitectureLevels": "i-ues18YVwia",
   "anatomy": {
@@ -220,7 +221,7 @@
     {
       "name": "CTA block",
       "slug": "cta-block",
-      "path": "cta-block"
+      "path": "construct/cta-block"
     },
     {
       "name": "CTA block",

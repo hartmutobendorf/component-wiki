@@ -1,8 +1,9 @@
 {
+  "kind": "construct",
   "name": "Side navigation",
   "slug": "side-navigation",
   "type": "Complex component",
-  "tiers": "Apps",
+  "tier": "Apps",
   "documentationStatus": "Needs work",
   "lastEdited": "2026-02-10T08:11:50.930+00:00",
   "figmaLink": "https://www.figma.com/design/KHJBlNJnoTEoLXzwjWSI9l/%F0%9F%92%A0-Apps---Core-component-library?node-id=0-1",

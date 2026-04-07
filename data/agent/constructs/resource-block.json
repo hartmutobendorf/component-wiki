@@ -1,8 +1,9 @@
 {
+  "kind": "construct",
   "name": "Resource block",
   "slug": "resource-block",
   "type": "Block",
-  "tiers": "Sites",
+  "tier": "Sites",
   "documentationStatus": "Minimal",
   "lastEdited": "2026-03-16T16:31:44.125+00:00",
   "figmaLink": "https://www.figma.com/design/1brHCsyeTE6FU7hfJd6ao2/%F0%9F%8C%90-Sites---Core-component-library?node-id=389-24513&p=f&t=Wm4Zk8A1vTAMrGBp-11",

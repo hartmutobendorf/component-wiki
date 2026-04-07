@@ -1,8 +1,9 @@
 {
+  "kind": "construct",
   "name": "Resource block",
   "slug": "resource-block",
   "type": "Block",
-  "tiers": "Sites",
+  "tier": "Sites",
   "documentationStatus": "Minimal",
   "lastEdited": "2026-03-16T16:31:44.125+00:00",
   "figmaLink": "https://www.figma.com/design/1brHCsyeTE6FU7hfJd6ao2/%F0%9F%8C%90-Sites---Core-component-library?node-id=389-24513&p=f&t=Wm4Zk8A1vTAMrGBp-11",
@@ -12,10 +13,10 @@
   "examples": "",
   "interactions": "",
   "figmaComponentData": "",
-  "componentExampleImage": "images/7017394b-fb9c-4759-b54c-a094f6882e03.png",
+  "componentExampleImage": "images/eda923eb-4a08-410b-aea6-1876bdb80bc6.png",
   "sitesArchitectureLevels": "i-ytTJ4UrPBn",
   "anatomy": {
-    "image": "images/bc3d1ee8-4b7c-4570-b78a-fe7d16b88833.png",
+    "image": "images/3184bf7e-98d7-459d-834d-070d6fb9148a.png",
     "table": [
       {
         "number": 1,

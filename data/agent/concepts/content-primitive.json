@@ -1,4 +1,5 @@
 {
+  "kind": "concept",
   "name": "Content primitive",
   "slug": "content-primitive",
   "type": "Architecture",

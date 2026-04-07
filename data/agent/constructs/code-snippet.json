@@ -1,8 +1,9 @@
 {
+  "kind": "construct",
   "name": "Code snippet",
   "slug": "code-snippet",
   "type": "Complex component",
-  "tiers": "Global",
+  "tier": "Global",
   "documentationStatus": "Minimal",
   "lastEdited": "2026-03-02T16:01:11.555+00:00",
   "figmaLink": "https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2319-278",
@@ -133,7 +134,7 @@
     {
       "name": "Code",
       "slug": "code",
-      "path": "code"
+      "path": "construct/code"
     },
     {
       "name": "Code",

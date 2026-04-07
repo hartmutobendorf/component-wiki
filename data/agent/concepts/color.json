@@ -1,4 +1,5 @@
 {
+  "kind": "concept",
   "name": "Color",
   "slug": "color",
   "type": "Principle",

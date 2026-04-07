@@ -1,8 +1,9 @@
 {
+  "kind": "construct",
   "name": "Select",
   "slug": "select",
   "type": "Component",
-  "tiers": "Global",
+  "tier": "Global",
   "documentationStatus": "Minimal",
   "lastEdited": "2026-02-13T16:00:44.645+00:00",
   "figmaLink": "https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-43",
@@ -12,10 +13,10 @@
   "examples": "",
   "interactions": "",
   "figmaComponentData": "",
-  "componentExampleImage": "images/2644dd93-3e33-400a-943f-0414d73e025e.png",
+  "componentExampleImage": "images/9c3d7235-b731-4025-bd30-efb5c9420486.png",
   "sitesArchitectureLevels": "i-UvVNCYZ44t",
   "anatomy": {
-    "image": "images/ca385c75-32a0-4c9e-8900-25a6db6bea2e.png",
+    "image": "images/0eb03aee-468f-405c-a52f-ef4c5877b129.png",
     "table": [
       {
         "number": 1,

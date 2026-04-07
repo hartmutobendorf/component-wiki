@@ -1,8 +1,9 @@
 {
+  "kind": "construct",
   "name": "CTA block",
   "slug": "cta-block",
   "type": "Complex component",
-  "tiers": "Sites",
+  "tier": "Sites",
   "documentationStatus": "Minimal",
   "lastEdited": "2026-02-13T15:26:11.288+00:00",
   "figmaLink": "https://www.figma.com/design/1brHCsyeTE6FU7hfJd6ao2/%F0%9F%8C%90-Sites---Core-component-library?node-id=33-1471",
@@ -12,10 +13,10 @@
   "examples": "",
   "interactions": "",
   "figmaComponentData": "",
-  "componentExampleImage": "images/6544d26b-c113-4bdb-94b4-b5511530d613.png",
+  "componentExampleImage": "images/3178b4a6-9ae2-4f55-9b58-82d99edc0aaf.png",
   "sitesArchitectureLevels": "i-UvVNCYZ44t",
   "anatomy": {
-    "image": "images/1b674dc9-ebc9-4a1c-b7b4-d804c6821a63.png",
+    "image": "images/69704085-a751-4f75-9942-4d51a7fbfe83.png",
     "table": [
       {
         "number": 1,

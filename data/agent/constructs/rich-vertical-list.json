@@ -1,8 +1,9 @@
 {
+  "kind": "construct",
   "name": "Rich vertical list",
   "slug": "rich-vertical-list",
   "type": "Pattern",
-  "tiers": "Sites",
+  "tier": "Sites",
   "documentationStatus": "Needs work",
   "lastEdited": "2026-02-10T08:16:40.671+00:00",
   "figmaLink": "",

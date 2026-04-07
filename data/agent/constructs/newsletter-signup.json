@@ -1,8 +1,9 @@
 {
+  "kind": "construct",
   "name": "Newsletter signup",
   "slug": "newsletter-signup",
   "type": "Pattern",
-  "tiers": "Sites",
+  "tier": "Sites",
   "documentationStatus": "Needs work",
   "lastEdited": "2026-02-10T08:16:34.704+00:00",
   "figmaLink": "",

@@ -1,8 +1,9 @@
 {
+  "kind": "construct",
   "name": "Checkbox",
   "slug": "checkbox",
   "type": "Component",
-  "tiers": "Global",
+  "tier": "Global",
   "documentationStatus": "Minimal",
   "lastEdited": "2026-02-13T15:16:14.169+00:00",
   "figmaLink": "https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2006-123",

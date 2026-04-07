@@ -1,8 +1,9 @@
 {
+  "kind": "construct",
   "name": "Linked logo block",
   "slug": "linked-logo-block",
   "type": "Block",
-  "tiers": "Sites",
+  "tier": "Sites",
   "documentationStatus": "Minimal",
   "lastEdited": "2026-03-16T16:31:24.410+00:00",
   "figmaLink": "https://www.figma.com/design/1brHCsyeTE6FU7hfJd6ao2/%F0%9F%8C%90-Sites---Core-component-library?node-id=455-18979&p=f&t=Wm4Zk8A1vTAMrGBp-11",
@@ -12,10 +13,10 @@
   "examples": "",
   "interactions": "",
   "figmaComponentData": "",
-  "componentExampleImage": "images/e99610ee-1dd9-4094-b608-c5862b042361.png",
+  "componentExampleImage": "images/24d318ef-ae01-4ef4-946a-fd028c49dae0.png",
   "sitesArchitectureLevels": "i-ytTJ4UrPBn",
   "anatomy": {
-    "image": "images/d5e96ac8-3bcb-4d95-9a9a-29b2a523a1d5.png",
+    "image": "images/b6b58ed2-c675-48c2-9b6a-84914af87db4.png",
     "table": [
       {
         "number": 1,
@@ -108,7 +109,7 @@
     {
       "name": "Logo block",
       "slug": "logo-block",
-      "path": "logo-block"
+      "path": "construct/logo-block"
     },
     {
       "name": "Logo block",

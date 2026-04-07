@@ -1,8 +1,9 @@
 {
+  "kind": "construct",
   "name": "Divided block",
   "slug": "divided-block",
   "type": "Block",
-  "tiers": "Sites",
+  "tier": "Sites",
   "documentationStatus": "Minimal",
   "lastEdited": "2026-03-16T18:38:27.352+00:00",
   "figmaLink": "https://www.figma.com/design/1brHCsyeTE6FU7hfJd6ao2/%F0%9F%8C%90-Sites---Core-component-library?node-id=56-1535&p=f&t=faU3KuZjeS3ZsVZJ-11",
@@ -12,10 +13,10 @@
   "examples": "",
   "interactions": "",
   "figmaComponentData": "",
-  "componentExampleImage": "images/7938058e-51a9-4f77-a669-8bf711f8f09c.png",
+  "componentExampleImage": "images/12718e21-0c4f-4653-aeda-ba901fd1c465.png",
   "sitesArchitectureLevels": "i-ytTJ4UrPBn",
   "anatomy": {
-    "image": "images/57d145e1-6c32-4ca0-9087-0450148b719f.png",
+    "image": "images/18e538aa-3e58-4d2a-8f6a-7bc78f9a0d19.png",
     "table": [
       {
         "number": 1,
@@ -406,12 +407,12 @@
     {
       "name": "Code",
       "slug": "code",
-      "path": "code"
+      "path": "construct/code"
     },
     {
       "name": "Code",
       "slug": "code",
-      "path": "code"
+      "path": "construct/code"
     },
     {
       "name": "Code",
@@ -426,12 +427,12 @@
     {
       "name": "CTA block",
       "slug": "cta-block",
-      "path": "cta-block"
+      "path": "construct/cta-block"
     },
     {
       "name": "CTA block",
       "slug": "cta-block",
-      "path": "cta-block"
+      "path": "construct/cta-block"
     },
     {
       "name": "CTA block",
@@ -461,7 +462,7 @@
     {
       "name": "Images",
       "slug": "images",
-      "path": "images"
+      "path": "construct/images"
     },
     {
       "name": "Images",
@@ -471,7 +472,7 @@
     {
       "name": "Linked logo block",
       "slug": "linked-logo-block",
-      "path": "linked-logo-block"
+      "path": "construct/linked-logo-block"
     },
     {
       "name": "Linked logo block",
@@ -481,12 +482,12 @@
     {
       "name": "List",
       "slug": "list",
-      "path": "list"
+      "path": "construct/list"
     },
     {
       "name": "List",
       "slug": "list",
-      "path": "list"
+      "path": "construct/list"
     },
     {
       "name": "List",
@@ -501,12 +502,12 @@
     {
       "name": "Logo block",
       "slug": "logo-block",
-      "path": "logo-block"
+      "path": "construct/logo-block"
     },
     {
       "name": "Logo block",
       "slug": "logo-block",
-      "path": "logo-block"
+      "path": "construct/logo-block"
     },
     {
       "name": "Logo block",
@@ -521,12 +522,12 @@
     {
       "name": "Notification",
       "slug": "notification",
-      "path": "notification"
+      "path": "construct/notification"
     },
     {
       "name": "Notification",
       "slug": "notification",
-      "path": "notification"
+      "path": "construct/notification"
     },
     {
       "name": "Notification",

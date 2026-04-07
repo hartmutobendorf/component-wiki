@@ -1,8 +1,9 @@
 {
+  "kind": "construct",
   "name": "Contextual menu",
   "slug": "contextual-menu",
   "type": "Component",
-  "tiers": "Global",
+  "tier": "Global",
   "documentationStatus": "Minimal",
   "lastEdited": "2026-02-13T15:21:54.845+00:00",
   "figmaLink": "https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-22",
@@ -12,10 +13,10 @@
   "examples": "",
   "interactions": "",
   "figmaComponentData": "",
-  "componentExampleImage": "images/8a602081-9b6c-4917-a35f-e3cdc693f949.png",
+  "componentExampleImage": "images/df01c29f-9411-4925-9b33-1c4a65aa7497.png",
   "sitesArchitectureLevels": "i-UvVNCYZ44t",
   "anatomy": {
-    "image": "images/c988531b-ad2d-433d-b0c8-afd5cef80c69.png",
+    "image": "images/a0accaf9-1cc2-4c57-8927-e20c8e0799bb.png",
     "table": [
       {
         "number": 1,

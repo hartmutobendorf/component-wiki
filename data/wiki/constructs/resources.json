@@ -1,21 +1,22 @@
 {
+  "kind": "construct",
   "name": "Resources",
   "slug": "resources",
   "type": "Pattern",
-  "tiers": "Sites",
+  "tier": "Sites",
   "documentationStatus": "Minimal",
   "lastEdited": "2026-03-02T17:05:18.409+00:00",
   "figmaLink": "https://www.figma.com/design/1brHCsyeTE6FU7hfJd6ao2/%F0%9F%8C%90-Sites---Core-component-library?node-id=1679-16010&p=f&t=I4p3Raifg4O82H5a-11",
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/main/templates/_macros/vf_resources.jinja",
   "description": "The resources pattern is used to display a collection of resources. Each resource can include a title and optional image, description, author(s), and publication date.\n\n",
   "usage": "The resources presents a variety of resources at a glance on one level. It supports between 1 and 5 categories (video, webinar, case study, blog, solution brief, white paper, report, etc.), each containing 1–5 items using the [Resource block](/sites/construct/resource-block). This layout is intended for cases where showing multiple types of resources in a compact view.  \n  \nFor blog, it supports both static content and API-fetched blog posts by tag/category. Imported blog descriptions are truncated after 180 characters. If a specific blog article needs to be included, a static description must be provided.\n\n### When to use\n\n*   To present various curated resource types at a glance\n*   To supplement a page where resources are not the main content\n*   To provide quick access to mixed resource formats in a compact layout\n\n### When not to use\n\n*   When the content is limited to the recent blog posts only; use the [Blog](/sites/construct/blog) pattern instead",
-  "examples": "Medium dimension\n\n![example.png](images/ba9e60d3-1d7e-483f-b738-594a42a3cbb9.png)\n\nSmall dimension\n\n![example-4.png](images/72c7e737-3895-4c35-a2a2-811de3839598.png)\n\nWithout\n\n![example-1.png](images/bbbec459-990e-4746-b659-aa9acadf8002.png)\n\nWithout [Category](/sites/construct/resources#anatomy)\n\n![example-3.png](images/5c70d0e2-7866-4140-88ee-b4830f515ab9.png)\n\nMixed image types used\n\n![example-2.png](images/b352cf66-66d8-47a8-95b7-2c8c41f0be56.png)",
+  "examples": "Medium dimension\n\n![example.png](images/dc7689a6-d8ff-4e4a-9a61-575082d91e3a.png)\n\nSmall dimension\n\n![example-4.png](images/a1aefa44-8eea-4b98-9476-59ebfc3b6e4b.png)\n\nWithout\n\n![example-1.png](images/bd36ad25-5a1d-4e4c-8731-019f1548248b.png)\n\nWithout [Category](/sites/construct/resources#anatomy)\n\n![example-3.png](images/fc21dcfa-857f-422c-9241-bd77583c6c8f.png)\n\nMixed image types used\n\n![example-2.png](images/2648cce5-962f-4af1-9673-5354d8674cef.png)",
   "interactions": "",
   "figmaComponentData": "",
-  "componentExampleImage": "images/8b1d0d4e-df99-4510-9929-a61669b85b71.png",
+  "componentExampleImage": "images/f932f398-87a8-4914-8065-1916b3734a56.png",
   "sitesArchitectureLevels": "i-ues18YVwia",
   "anatomy": {
-    "image": "images/59680b7f-5c30-47bf-bf45-0dededd1c6e3.png",
+    "image": "images/31201232-d3dc-4992-982f-7e9aa5fcf204.png",
     "table": [
       {
         "number": 1,

@@ -1,8 +1,9 @@
 {
+  "kind": "construct",
   "name": "Badge",
   "slug": "badge",
   "type": "Component",
-  "tiers": "Global",
+  "tier": "Global",
   "documentationStatus": "Minimal",
   "lastEdited": "2026-02-13T14:56:32.929+00:00",
   "figmaLink": "https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-5",
@@ -78,7 +79,7 @@
     {
       "name": "Notification",
       "slug": "notification",
-      "path": "notification"
+      "path": "construct/notification"
     },
     {
       "name": "Notification",

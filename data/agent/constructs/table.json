@@ -1,8 +1,9 @@
 {
+  "kind": "construct",
   "name": "Table",
   "slug": "table",
   "type": "Complex component",
-  "tiers": "Global",
+  "tier": "Global",
   "documentationStatus": "Needs work",
   "lastEdited": "2026-03-16T12:33:01.342+00:00",
   "figmaLink": "https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2002-2",

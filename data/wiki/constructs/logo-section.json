@@ -1,21 +1,22 @@
 {
+  "kind": "construct",
   "name": "Logo section",
   "slug": "logo-section",
   "type": "Pattern",
-  "tiers": "Sites",
+  "tier": "Sites",
   "documentationStatus": "Minimal",
   "lastEdited": "2026-03-02T15:45:24.016+00:00",
   "figmaLink": "https://www.figma.com/design/1brHCsyeTE6FU7hfJd6ao2/%F0%9F%8C%90-Sites---Core-component-library?node-id=336-20426&p=f&t=I4p3Raifg4O82H5a-11",
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/main/templates/_macros/vf_logo-section.jinja",
   "description": "The logo section showcases a group of related images, such as a group of customer or partner logos. For best results, ensure that the images have identical dimensions.\n\n  \n",
   "usage": "The logo section highlights the array of logos as the primary content, building on on the [Logo block](/sites/construct/logo-block). It is typically paired with a muted heading, an optional description, and a [CTA block](/sites/construct/cta-block). This pattern is used to emphasize brand identity or partner associations within a page.\n\n### When to use\n\n*   In cases where the [Logo block](/sites/construct/logo-block) functions as the main content, with all other elements acting as supporting content\n\n### When not to use\n\n*   When images, lists, or other content need to be included, use the [Basic section](/sites/construct/basic-section) instead\n*   If logos need to be linked, use the [Linked logo section](/sites/construct/linked-logo-section) instead",
-  "examples": "Medium dimension\n\n![example-4.png](images/e1ea8adf-5929-4b42-ae68-374bf22a0797.png)\n\nSmall dimension\n\n![example-5.png](images/62fc5815-e1cf-46cb-b418-fde4a97562e4.png)\n\nLinked heading\n\n![example-2.png](images/4fc1d168-9651-4ccf-a3f5-04770b09b850.png)",
+  "examples": "Medium dimension\n\n![example-4.png](images/9cfb7825-91b4-41de-b8ed-d76534733502.png)\n\nSmall dimension\n\n![example-5.png](images/f7f9fe2b-ab45-4f17-a934-f20c709d8f8d.png)\n\nLinked heading\n\n![example-2.png](images/a672e487-5d28-419c-9b64-db1d99f3ff0c.png)",
   "interactions": "",
   "figmaComponentData": "",
-  "componentExampleImage": "images/a7725f2d-9cd9-4588-a13f-c3a5729a828f.png",
+  "componentExampleImage": "images/226ac2ab-4db4-4ae3-856b-27305e0561a1.png",
   "sitesArchitectureLevels": "i-ues18YVwia",
   "anatomy": {
-    "image": "images/5e76c2e1-3b77-438b-88bd-8bf439ce365b.png",
+    "image": "images/09162b8c-34b9-4394-9c8e-67e3510b85c6.png",
     "table": [
       {
         "number": 1,
@@ -193,7 +194,7 @@
     {
       "name": "CTA block",
       "slug": "cta-block",
-      "path": "cta-block"
+      "path": "construct/cta-block"
     },
     {
       "name": "CTA block",
@@ -208,7 +209,7 @@
     {
       "name": "Logo block",
       "slug": "logo-block",
-      "path": "logo-block"
+      "path": "construct/logo-block"
     },
     {
       "name": "Logo block",

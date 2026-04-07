@@ -1,8 +1,9 @@
 {
+  "kind": "construct",
   "name": "Logo block",
   "slug": "logo-block",
   "type": "Block",
-  "tiers": "Sites",
+  "tier": "Sites",
   "documentationStatus": "Minimal",
   "lastEdited": "2026-03-16T16:31:09.550+00:00",
   "figmaLink": "https://www.figma.com/design/1brHCsyeTE6FU7hfJd6ao2/%F0%9F%8C%90-Sites---Core-component-library?node-id=452-16684&p=f&t=Wm4Zk8A1vTAMrGBp-11",
@@ -12,10 +13,10 @@
   "examples": "",
   "interactions": "",
   "figmaComponentData": "",
-  "componentExampleImage": "images/235af81b-3405-44d6-803e-ccb20c02effa.png",
+  "componentExampleImage": "images/d4883af3-12ed-41c4-891d-0309fd6e55ea.png",
   "sitesArchitectureLevels": "i-ytTJ4UrPBn",
   "anatomy": {
-    "image": "images/c288de7e-90a1-4a50-86b8-683e3658590a.png",
+    "image": "images/53aab660-40c8-4f3e-9d1b-23c4cf62b146.png",
     "table": [
       {
         "number": 1,

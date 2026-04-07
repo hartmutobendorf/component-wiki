@@ -1,8 +1,9 @@
 {
+  "kind": "construct",
   "name": "Link",
   "slug": "link",
   "type": "Component",
-  "tiers": "Global",
+  "tier": "Global",
   "documentationStatus": "Minimal",
   "lastEdited": "2026-02-13T15:48:59.189+00:00",
   "figmaLink": "https://www.figma.com/design/PYyGJFg1uN9eK6mZMrsik2/%F0%9F%93%95-Vanilla---core-component-documentation-visuals?node-id=804-15948",
@@ -12,10 +13,10 @@
   "examples": "",
   "interactions": "",
   "figmaComponentData": "",
-  "componentExampleImage": "images/13d01619-22e4-4bfd-a33c-a3c320855242.png",
+  "componentExampleImage": "images/a97b8a19-0028-4606-8440-6fcf4ba38ff7.png",
   "sitesArchitectureLevels": "i-UvVNCYZ44t",
   "anatomy": {
-    "image": "images/8317fb1f-8326-40e1-ac8c-f8909342a8db.png",
+    "image": "images/d360a84b-4a7d-4102-b0ed-6c2308233c9f.png",
     "table": [
       {
         "number": 1,

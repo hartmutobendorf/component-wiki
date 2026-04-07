@@ -1,21 +1,22 @@
 {
+  "kind": "construct",
   "name": "Tiered list",
   "slug": "tiered-list",
   "type": "Pattern",
-  "tiers": "Sites",
+  "tier": "Sites",
   "documentationStatus": "Minimal",
   "lastEdited": "2026-03-16T21:49:08.627+00:00",
   "figmaLink": "https://www.figma.com/design/1brHCsyeTE6FU7hfJd6ao2/%F0%9F%8C%90-Sites---Core-component-library?node-id=114-2279&p=f&t=faU3KuZjeS3ZsVZJ-11",
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/main/templates/_macros/vf_tiered-list.jinja",
   "description": "Tiered list is a pattern for presenting a list of paired titles and descriptions underneath a top-level title and description. It organises related items into a structured, scannable format using Tiered blocks as its primary content units. An optional [CTA block](/sites/construct/cta-block) can appear at the section level, below the top-level description.",
   "usage": "Use Tiered list to present multiple related items that share a consistent structure of paired titles and descriptions. It works best for text-heavy content where each item is concise and parallel in nature.\n\n### Layout\n\nTiered list adapts across screen sizes. On large screens, it uses a 6-column layout — 2 columns for the heading and 4 for the body, arranged in a single row. On medium screens, the layout is configurable: content can split(50/50) or stack vertically(full-width). On small screens, content always stacks.\n\n### When to use\n\n*   Content consists of paired titles and descriptions organised under a single top-level heading\n*   Items are primarily text-based with short, parallel headings\n*   Users need to scan a structured list quickly\n*   Content represents steps, stages, features, or grouped concepts\n\n### When not to use\n\n*   Each item requires rich content such as images, videos, or code blocks — use [Divided section](/sites/construct/divided-section) instead\n*   Content is brief with an image as the primary focus — use [Equal heights](/sites/construct/equal-heights) instead\n*   The list contains only one or two items within a single topic — use a [Basic section](/sites/construct/basic-section) instead",
-  "examples": "Large dimension with section level CTA and block level CTA\n\n![example-1.png](images/d1e59f6b-7c8b-4b2c-a1a0-1f26e193d1cb.png)\n\nLarge dimension without description\n\n![example-2.png](images/3b349587-a12a-47ca-bdd4-5d3efb651251.png)\n\nMedium dimension (50/50)\n\n![example-3.png](images/55477b1f-2b27-4279-bd22-5954ec0964f8.png)\n\nMedium dimension (full-width)\n\n![example-4.png](images/bc93dc50-e01e-4679-aed1-52f0bf83ff1d.png)\n\nSmall dimension\n\n![example-5.png](images/05c98e9b-082f-4e67-b94e-39c4d264eded.png)",
+  "examples": "Large dimension with section level CTA and block level CTA\n\n![example-1.png](images/4a2b6626-8642-4a38-a2ae-b2c7fa55162f.png)\n\nLarge dimension without description\n\n![example-2.png](images/774558b3-2168-464c-80ec-4656343233bb.png)\n\nMedium dimension (50/50)\n\n![example-3.png](images/725e85cc-84c1-444d-8138-c1b23a20cc79.png)\n\nMedium dimension (full-width)\n\n![example-4.png](images/5dced744-b27c-4336-81fa-45c383cda46a.png)\n\nSmall dimension\n\n![example-5.png](images/4479b9cf-6dde-41da-9186-af5ef154ec4c.png)",
   "interactions": "",
   "figmaComponentData": "",
-  "componentExampleImage": "images/6749f4ce-158e-4638-b4e9-5ced93235ee1.png",
+  "componentExampleImage": "images/9f1985c1-ca63-4081-9b5e-477d0eac9034.png",
   "sitesArchitectureLevels": "i-ues18YVwia",
   "anatomy": {
-    "image": "images/80df6eee-f7ad-4c4c-a4df-30b182d824af.png",
+    "image": "images/fb97e465-fa47-4b09-9f8e-1f3b5e1d555e.png",
     "table": [
       {
         "number": 1,
@@ -249,7 +250,7 @@
     {
       "name": "CTA block",
       "slug": "cta-block",
-      "path": "cta-block"
+      "path": "construct/cta-block"
     },
     {
       "name": "CTA block",

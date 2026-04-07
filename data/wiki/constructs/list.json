@@ -1,8 +1,9 @@
 {
+  "kind": "construct",
   "name": "List",
   "slug": "list",
   "type": "Component",
-  "tiers": "Global",
+  "tier": "Global",
   "documentationStatus": "Needs work",
   "lastEdited": "2026-04-06T14:15:48.785+01:00",
   "figmaLink": "",
@@ -15,7 +16,7 @@
   "componentExampleImage": "",
   "sitesArchitectureLevels": "i-UvVNCYZ44t",
   "anatomy": {
-    "image": "images/2ea2c94e-a632-4830-bd1c-6e24d6f5404c.png",
+    "image": "images/dff3f890-6018-4cad-ba55-e72be42cb1c9.png",
     "table": [
       {
         "number": 1,
