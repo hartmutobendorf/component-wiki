@@ -16,7 +16,7 @@
     {
       "name": "Section rule",
       "required": true,
-      "type": "single select",
+      "type": "object",
       "description": "The rule component indicates the beginning of a new pattern",
       "constraint": "Only use the default style for the section-level rule",
       "defaultOption": "default",
@@ -66,19 +66,18 @@
   "mentionedIn": [
     {
       "name": "Linked logo block",
-      "slug": "linked-logo-block"
+      "slug": "linked-logo-block",
+      "path": "sites/construct/linked-logo-block"
     },
     {
       "name": "Linked logo section",
-      "slug": "linked-logo-section"
-    },
-    {
-      "name": "Logo block",
-      "slug": "logo-block"
+      "slug": "linked-logo-section",
+      "path": "sites/construct/linked-logo-section"
     },
     {
       "name": "Resource block",
-      "slug": "resource-block"
+      "slug": "resource-block",
+      "path": "sites/construct/resource-block"
     }
   ],
   "mentionsComponents": [],

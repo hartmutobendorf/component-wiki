@@ -158,19 +158,33 @@
   "mentionedIn": [
     {
       "name": "Badge",
-      "slug": "badge"
+      "slug": "badge",
+      "path": "global/construct/badge"
     },
     {
       "name": "Basic section",
-      "slug": "basic-section"
+      "slug": "basic-section",
+      "path": "sites/construct/basic-section"
+    },
+    {
+      "name": "Divided block",
+      "slug": "divided-block",
+      "path": "sites/construct/divided-block"
+    },
+    {
+      "name": "Divided block",
+      "slug": "divided-block",
+      "path": "sites/construct/divided-block"
     },
     {
       "name": "Divided section",
-      "slug": "divided-section"
+      "slug": "divided-section",
+      "path": "sites/construct/divided-section"
     },
     {
       "name": "Intentional friction",
-      "slug": "intentional-friction"
+      "slug": "intentional-friction",
+      "path": "global/concept/intentional-friction"
     }
   ],
   "mentionsComponents": [],

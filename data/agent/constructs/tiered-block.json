@@ -3,26 +3,138 @@
   "slug": "tiered-block",
   "type": "Block",
   "tiers": "Sites",
-  "documentationStatus": "Needs work",
-  "lastEdited": "2026-03-02T17:42:25.110+00:00",
-  "figmaLink": "",
-  "codeLink": "",
-  "description": "",
-  "usage": "",
-  "examples": "",
+  "documentationStatus": "Minimal",
+  "lastEdited": "2026-03-16T16:30:22.595+00:00",
+  "figmaLink": "https://www.figma.com/design/1brHCsyeTE6FU7hfJd6ao2/%F0%9F%8C%90-Sites---Core-component-library?node-id=114-7856&p=f&t=faU3KuZjeS3ZsVZJ-11",
+  "codeLink": "https://github.com/canonical/vanilla-framework/blob/main/templates/_macros/vf_tiered-list.jinja",
+  "description": "The tiered block is a content unit that pairs a heading with a body to present a single item in a structured, scannable format. An optional CTA link can appear beneath the body. This block is used as the primary content unit in the [Tiered list](/sites/construct/tiered-list).",
+  "usage": "Use Tiered block to present a list of related items that follow a clear hierarchy. It works best for text-heavy content where each item consists of a short heading and supporting body text. An optional CTA link can appear beneath the body.  \nTiered block is well-suited for items that represent steps, stages, levels, or grouped concepts. It creates a clear reading flow from top to bottom while keeping each item visually separated within a single sequence.\n\n### Layout\n\nThe block adapts across screen sizes. On large screens, it uses a 6-column layout — 2 columns for the heading and 4 for the body, arranged in a single row. On medium screens, the layout is configurable: content can split(50/50) or stack vertically(full-width). On small screens, content always stacks.\n\n### When to use\n\n*   Content is primarily text-based with a short, simple heading and supporting body\n*   Items represent steps, stages, levels, or grouped concepts\n*   The page needs a clear top-to-bottom reading flow\n*   Each item should feel visually separated but part of a single sequence\n\n### When not to use\n\n*   Content needs a longer heading or rich elements such as code blocks, images, or lists — use [Divided section](/sites/construct/divided-section) instead\n*   Overall content is brief, similar in volume across items, and the image is the main focus — use [Equal height block](/sites/construct/equal-height-block) instead",
+  "examples": "Large dimension\n\n![large-1.png](images/6254d26f-49d6-4e24-bb39-2a685e02371c.png)\n\nWith the CTA link\n\n![large-2.png](images/4d3b5d42-00fd-4cbd-a255-598bfb7b6179.png)\n\nLinked heading\n\n![large.png](images/e140c563-1a17-4e1e-b696-d39eab8858a9.png)\n\nImage heading\n\n![large-3.png](images/4c8de611-0554-43c0-ae62-44a598dd6757.png)\n\nMedium dimension (50/50)\n\n![medium.png](images/861a6ac9-cbd9-421a-93d8-19213cecf03f.png)\n\nMedium dimension (Full-width)\n\n![medium-2.png](images/061d871c-62f9-497e-8cdb-6e25a2312f4c.png)\n\nSmall dimension\n\n![medium-1.png](images/06d94e1e-37fa-47b2-abf7-7ffabc8829d2.png)",
   "interactions": "",
-  "sitesArchitectureLevels": "",
-  "properties": [],
-  "changeLog": [],
+  "sitesArchitectureLevels": "i-ytTJ4UrPBn",
+  "anatomy": {
+    "table": [
+      {
+        "number": 1,
+        "name": "Rule",
+        "description": "The muted rule component indicates the beginning of a new block. It is not used for the first block and appears from the second block onward."
+      },
+      {
+        "number": 2,
+        "name": "Heading",
+        "description": "The primary title of the block. It can function as a link and may also be represented as a image, such as a logo."
+      },
+      {
+        "number": 3,
+        "name": "Body",
+        "description": "Provides supporting information that elaborates on the heading."
+      },
+      {
+        "number": 4,
+        "name": "Link",
+        "description": "The optional CTA that directs users to related or more detailed content."
+      }
+    ]
+  },
+  "properties": [
+    {
+      "name": "Linked heading",
+      "required": false,
+      "type": "single select",
+      "description": "The heading may function as a link when clearly indicated.",
+      "constraint": "",
+      "defaultOption": "default",
+      "options": [
+        "default",
+        "link"
+      ]
+    },
+    {
+      "name": "Block rule",
+      "required": true,
+      "type": "object",
+      "description": "The muted rule component indicates the beginning of a new block",
+      "constraint": "It is not used for the first block and appears from the second block onward.",
+      "defaultOption": "",
+      "options": [
+        "none",
+        "muted"
+      ]
+    },
+    {
+      "name": "Heading",
+      "required": true,
+      "type": "string",
+      "description": "2-column width H5 heading",
+      "constraint": "Up to 60 characters",
+      "defaultOption": ""
+    },
+    {
+      "name": "Image heading",
+      "required": false,
+      "type": "object",
+      "description": "Image used in place of heading",
+      "constraint": "If an image is used as the heading, it cannot function as a link.",
+      "defaultOption": ""
+    },
+    {
+      "name": "Body",
+      "required": true,
+      "type": "string",
+      "description": "4-column width body text",
+      "constraint": "Up to 600 characters",
+      "defaultOption": ""
+    },
+    {
+      "name": "Link CTA",
+      "required": false,
+      "type": "string",
+      "description": "The text link used for contextual actions or pathways to more information. It uses a chevron (›) to indicate navigation to additional content or pages.",
+      "constraint": "Up to 60 characters",
+      "defaultOption": ""
+    },
+    {
+      "name": "Bottom padding",
+      "required": true,
+      "type": "single select",
+      "description": "The type of padding applied to the bottom of the pattern",
+      "constraint": "",
+      "defaultOption": "deep"
+    }
+  ],
+  "changeLog": [
+    {
+      "who": "Isaac Kim",
+      "when": "2026-03-16T09:00:00.000+00:00",
+      "what": "Initial commit"
+    }
+  ],
   "decisionLog": [],
   "appliedRules": [],
   "exceptionFromRules": [],
   "mentionedIn": [
     {
       "name": "Equal height block",
-      "slug": "equal-height-block"
+      "slug": "equal-height-block",
+      "path": "sites/construct/equal-height-block"
     }
   ],
-  "mentionsComponents": [],
+  "mentionsComponents": [
+    {
+      "name": "Divided section",
+      "slug": "divided-section",
+      "path": "sites/construct/divided-section"
+    },
+    {
+      "name": "Equal height block",
+      "slug": "equal-height-block",
+      "path": "sites/construct/equal-height-block"
+    },
+    {
+      "name": "Tiered list",
+      "slug": "tiered-list",
+      "path": "sites/construct/tiered-list"
+    }
+  ],
   "url": "https://component.wiki/tiered-block"
 }

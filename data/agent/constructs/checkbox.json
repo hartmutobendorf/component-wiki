@@ -7,8 +7,8 @@
   "lastEdited": "2026-02-13T15:16:14.169+00:00",
   "figmaLink": "https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2006-123",
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/d0197b27f5733789d6d23536eabe68356e045ae1/scss/_patterns_form-tick-elements.scss",
-  "description": "Checkboxes are used to select items from lists or [Table](/table)s, and to enable/disable settings or features. Unlike [Switch](/switch), checkboxes typically require confirmation (such as pressing a \"Save\" [Button](/button)) before changes take effect, while [Switch](/switch)es apply changes immediately.",
-  "usage": "Checkboxes are used to select none, one or more options from a list or to enable/disable specific settings. Each checkbox operates independently of others.\n\nThey are commonly found in data tables for row selection, filter interfaces, and settings forms where users need to toggle features on or off.\n\nUnlike switches, checkboxes typically require user confirmation to take effect. When users check or uncheck a checkbox, the change is usually applied only after they perform an action such as clicking a \"Save\" or \"Apply\" [Button](/button). In contrast, [Switch](/switch)es provide immediate feedback and apply changes instantly without requiring additional confirmation.\n\n### In data tables\n\nIn data [Table](/table), include a checkbox in the header row to control all row selections. This header checkbox should display different states based on the current selection:\n\n*   **Child-selected state:** When some, but not all, [Table](/table) rows are selected\n*   **Checked state:** Only when all rows in the [Table](/table) are selected\n*   **Unchecked state:** When no rows are selected\n\n### When to use\n\n*   Selecting multiple items from a list or [Table](/table)\n*   Enabling or disabling features (e.g. in a form)\n*   When requiring user acknowledgment of something (e.g. accepting TOS)\n*   Filtering content where changes should be applied deliberately\n*   The selection state needs to be confirmed before taking effect\n\n### When not to use\n\n*   Only one option can be selected (use [Radio](/radio) instead)\n*   The change should take immediate effect (use a [Switch](/switch) instead)\n*   The action is destructive or has immediate consequences",
+  "description": "Checkboxes are used to select items from lists or [Table](/global/construct/table)s, and to enable/disable settings or features. Unlike [Switch](/global/construct/switch), checkboxes typically require confirmation (such as pressing a \"Save\" [Button](/global/construct/button)) before changes take effect, while [Switch](/global/construct/switch)es apply changes immediately.",
+  "usage": "Checkboxes are used to select none, one or more options from a list or to enable/disable specific settings. Each checkbox operates independently of others.\n\nThey are commonly found in data tables for row selection, filter interfaces, and settings forms where users need to toggle features on or off.\n\nUnlike switches, checkboxes typically require user confirmation to take effect. When users check or uncheck a checkbox, the change is usually applied only after they perform an action such as clicking a \"Save\" or \"Apply\" [Button](/global/construct/button). In contrast, [Switch](/global/construct/switch)es provide immediate feedback and apply changes instantly without requiring additional confirmation.\n\n### In data tables\n\nIn data [Table](/global/construct/table), include a checkbox in the header row to control all row selections. This header checkbox should display different states based on the current selection:\n\n*   **Child-selected state:** When some, but not all, [Table](/global/construct/table) rows are selected\n*   **Checked state:** Only when all rows in the [Table](/global/construct/table) are selected\n*   **Unchecked state:** When no rows are selected\n\n### When to use\n\n*   Selecting multiple items from a list or [Table](/global/construct/table)\n*   Enabling or disabling features (e.g. in a form)\n*   When requiring user acknowledgment of something (e.g. accepting TOS)\n*   Filtering content where changes should be applied deliberately\n*   The selection state needs to be confirmed before taking effect\n\n### When not to use\n\n*   Only one option can be selected (use [Radio](/global/construct/radio) instead)\n*   The change should take immediate effect (use a [Switch](/global/construct/switch) instead)\n*   The action is destructive or has immediate consequences",
   "examples": "",
   "interactions": "",
   "sitesArchitectureLevels": "i-UvVNCYZ44t",
@@ -67,41 +67,50 @@
   "mentionedIn": [
     {
       "name": "Accordion",
-      "slug": "accordion"
+      "slug": "accordion",
+      "path": "global/construct/accordion"
     },
     {
       "name": "Input",
-      "slug": "input"
+      "slug": "input",
+      "path": "global/construct/input"
     },
     {
       "name": "Radio",
-      "slug": "radio"
+      "slug": "radio",
+      "path": "global/construct/radio"
     },
     {
       "name": "Select",
-      "slug": "select"
+      "slug": "select",
+      "path": "global/construct/select"
     },
     {
       "name": "Switch",
-      "slug": "switch"
+      "slug": "switch",
+      "path": "global/construct/switch"
     }
   ],
   "mentionsComponents": [
     {
       "name": "Button",
-      "slug": "button"
+      "slug": "button",
+      "path": "global/construct/button"
     },
     {
       "name": "Radio",
-      "slug": "radio"
+      "slug": "radio",
+      "path": "global/construct/radio"
     },
     {
       "name": "Switch",
-      "slug": "switch"
+      "slug": "switch",
+      "path": "global/construct/switch"
     },
     {
       "name": "Table",
-      "slug": "table"
+      "slug": "table",
+      "path": "global/construct/table"
     }
   ],
   "url": "https://component.wiki/checkbox"

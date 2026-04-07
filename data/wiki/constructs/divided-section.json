@@ -4,18 +4,18 @@
   "type": "Pattern",
   "tiers": "Sites",
   "documentationStatus": "Minimal",
-  "lastEdited": "2026-03-02T16:17:59.588+00:00",
+  "lastEdited": "2026-03-16T21:49:40.639+00:00",
   "figmaLink": "https://www.figma.com/design/1brHCsyeTE6FU7hfJd6ao2/%F0%9F%8C%90-Sites---Core-component-library?node-id=673-5104",
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/main/templates/_macros/vf_divided-section.jinja",
-  "description": "The divided section pattern is used to separate related content into distinct steps or items within a single section. Each item is visually divided using a muted [Rule](/divided-section#anatomy) and shallow padding, helping users distinguish between content blocks while maintaining a cohesive layout.\n\n",
-  "usage": "The divided section pattern provides a flexible layout for presenting grouped content that needs clear internal separation, such as steps, stages, or sequential elements. Each [Divided block](/divided-section#anatomy) is separated by a muted [Rule](/divided-section#anatomy) and shallow padding, creating visual structure without introducing strong section breaks.\n\nThe pattern can accommodate a wide range of content types, including text, images, videos, lists, code blocks, logos, and call-to-action elements. Both the section description area and the [Divided block](/divided-section#anatomy)s themselves support these content types.\n\nInternally, the divided section reuses content blocks from the [Basic section](/basic-section) pattern. As a result, most layout configurations and content options behave identically to those in [Basic section](/basic-section), ensuring consistency and reducing the need for additional configuration or learning.\n\n### **Supported UI blocks for the** **[Content area](/divided-section#anatomy)**\n\n1.  **Description / body text** - Use for long-form descriptions or explanations, when full sentences and paragraphs work best.\n2.  **Image** - Include a 3:2 or 16:9 ratio image to illustrate or enhance the content including: photography, isometric illustrations, diagrams, and similar visuals. The image can include an optional caption.\n3.  **Video** - Embed and link video content in 16:9 ratio.\n4.  **[List](/list)** - List up to 10 items, with bullet type options including: none, bullet, status, or number.\n5.  **Code block** - Display preformatted code.\n6.  **[Logo block](/logo-block)** - Display related logos such as customers or partners.\n7.  **[Linked logo block](/linked-logo-block)** - Display logos that link to additional resources.\n8.  **[CTA block](/cta-block)** - Share one or more call-to-action elements, including a primary button, secondary button, and link.\n9.  **[Notification](/notification)** - Highlight alerts, updates, or contextual messages within the section.\n\n### **When to use**\n\n*   When content needs to be broken into clear steps or distinct items within a single section\n*   When a subtle visual separation is needed without creating fully independent sections\n\n### **When not to use**\n\n*   When images, lists, or other content need to stand alone without internal dividers, use [Basic section](/basic-section) instead\n*   When the content consists of text only, use a [Tiered list](/tiered-list) instead\n*   When the content is made up of short text and a single representative image, consider using [Equal heights](/equal-heights) instead",
-  "examples": "### Responsive\n\nMedium dimension (full-width)\n\n![example-8.png](images/eb2f392c-573d-4f9a-ace8-08480668aee7.png)\n\nMedium dimension (50/50)\n\n![example-7.png](images/ef021980-4571-4c62-90f5-b12923df32f4.png)\n\nSmall dimension\n\n![example-9.png](images/5c7dc2f1-cb02-4cae-9d69-7546a17cafbb.png)\n\n### Heading type\n\nWith icon\n\n![example-1.png](images/a819cc06-bdee-43a8-997b-06bed052f261.png)\n\nWith bullet\n\n![example-2.png](images/12635786-e8b5-4edc-b578-e28d41598c2a.png)\n\nWith number\n\n![example-3.png](images/8b55f8ef-c28b-45a7-b28d-db0f2a92581b.png)\n\nWithout bullet\n\n![example-4.png](images/22241fd5-94a7-49a9-8590-d8106e8ae037.png)\n\nWithout heading\n\n![example-5.png](images/e91fe9c5-fe88-485c-ba41-a73c914acfb2.png)\n\n### Contents type\n\nMix of various content types\n\n![example-6.png](images/9ede4630-8f8c-4687-bb1a-0e48d27dc498.png)",
+  "description": "The divided section pattern is used to separate related content into distinct steps or items within a single section. Each item is visually divided using a muted [Rule](/sites/construct/divided-section#anatomy) and shallow padding, helping users distinguish between content blocks while maintaining a cohesive layout.\n\n",
+  "usage": "The divided section pattern provides a flexible layout for presenting grouped content that needs clear internal separation, such as steps, stages, or sequential elements. Each [Divided block](/sites/construct/divided-section#anatomy) is separated by a muted [Rule](/sites/construct/divided-section#anatomy) and shallow padding, creating visual structure without introducing strong section breaks.\n\nThe pattern can accommodate a wide range of content types, including text, images, videos, lists, code blocks, logos, and call-to-action elements. Both the section description area and the [Divided block](/sites/construct/divided-section#anatomy)s themselves support these content types.\n\nInternally, the divided section reuses content blocks from the [Basic section](/sites/construct/basic-section) pattern. As a result, most layout configurations and content options behave identically to those in [Basic section](/sites/construct/basic-section), ensuring consistency and reducing the need for additional configuration or learning.\n\n### Layout\n\nDivided section adapts across screen sizes. On medium screens, the layout is configurable: content can split(50/50) or stack vertically(full-width). On small screens, content always stacks.\n\n### **Supported UI blocks for the** **[Content area](/sites/construct/divided-section#anatomy)**\n\n1.  **Description / body text** - Use for long-form descriptions or explanations, when full sentences and paragraphs work best.\n2.  **Image** - Include a 3:2 or 16:9 ratio image to illustrate or enhance the content including: photography, isometric illustrations, diagrams, and similar visuals. The image can include an optional caption.\n3.  **Video** - Embed and link video content in 16:9 ratio.\n4.  **[List](/global/construct/list)** - List up to 10 items, with bullet type options including: none, bullet, status, or number.\n5.  **Code block** - Display preformatted code.\n6.  **[Logo block](/sites/construct/logo-block)** - Display related logos such as customers or partners.\n7.  **[Linked logo block](/sites/construct/linked-logo-block)** - Display logos that link to additional resources.\n8.  **[CTA block](/sites/construct/cta-block)** - Share one or more call-to-action elements, including a primary button, secondary button, and link.\n9.  **[Notification](/global/construct/notification)** - Highlight alerts, updates, or contextual messages within the section.\n\n### **When to use**\n\n*   When content needs to be broken into clear steps or distinct items within a single section\n*   When a subtle visual separation is needed without creating fully independent sections\n\n### **When not to use**\n\n*   When images, lists, or other content need to stand alone without internal dividers, use [Basic section](/sites/construct/basic-section) instead\n*   When the content consists of text only, use a [Tiered list](/sites/construct/tiered-list) instead\n*   When the content is made up of short text and a single representative image, consider using [Equal heights](/sites/construct/equal-heights) instead",
+  "examples": "### Responsive\n\nMedium dimension (full-width)\n\n![example-8.png](images/b34cf052-8e6c-4b20-ab9c-16dadc23d7f8.png)\n\nMedium dimension (50/50)\n\n![example-7.png](images/1638a82a-8a37-42e5-ac96-cdead224cbaf.png)\n\nSmall dimension\n\n![example-9.png](images/cb997745-6a46-4918-bc95-5a6e822c72da.png)\n\n### Heading type\n\nWith icon\n\n![example-1.png](images/a2d67f49-7eda-45ac-8126-9c92060deed9.png)\n\nWith bullet\n\n![example-2.png](images/6b8dd4e9-3e76-4ff3-9e29-598faa6cb97c.png)\n\nWith number\n\n![example-3.png](images/5be15801-af7e-4535-b95e-a5a90c9e8645.png)\n\nWithout bullet\n\n![example-4.png](images/c1e3a3ba-f777-4e64-94a1-43804f5190e7.png)\n\nWithout heading\n\n![example-5.png](images/97c13ac8-e6bd-4dc6-9af3-acdc2543df98.png)\n\n### Contents type\n\nMix of various content types\n\n![example-6.png](images/6bdf19a9-c8fb-44f5-9b53-2d80b5186394.png)",
   "interactions": "",
   "figmaComponentData": "",
-  "componentExampleImage": "images/11f5ac9b-1f7a-446d-9939-0dcadb520f23.png",
+  "componentExampleImage": "images/68b0ea83-88ea-4128-9973-b0a3d6628b4d.png",
   "sitesArchitectureLevels": "i-ues18YVwia",
   "anatomy": {
-    "image": "images/96976e8c-520f-47a4-a8a4-0088a3a07557.png",
+    "image": "images/3a1d9952-ebb7-41e0-b710-32013bae25db.png",
     "table": [
       {
         "number": 1,
@@ -58,24 +58,12 @@
     {
       "name": "Section rule",
       "required": true,
-      "type": "single select",
+      "type": "object",
       "description": "The rule component indicates the beginning of a new pattern",
       "constraint": "Only use the default style for the section-level rule",
       "defaultOption": "default",
       "options": [
         "default"
-      ]
-    },
-    {
-      "name": "Medium layout",
-      "required": false,
-      "type": "single select",
-      "description": "Indicate layout for the medium dimension",
-      "constraint": "",
-      "defaultOption": "full-width",
-      "options": [
-        "50/50",
-        "full-width"
       ]
     },
     {
@@ -99,60 +87,15 @@
       ]
     },
     {
-      "name": "Body",
-      "required": false,
-      "type": "string",
-      "description": "4-column width body text",
-      "constraint": "Up to 600 characters",
-      "defaultOption": ""
-    },
-    {
-      "name": "Divided block heading",
-      "required": false,
-      "type": "string",
-      "description": "4-column width H5 heading for each divided block item",
-      "constraint": "Up to 160 characters",
-      "defaultOption": "true",
-      "options": [
-        "true",
-        "false"
-      ]
-    },
-    {
-      "name": "Block heading bullet style",
+      "name": "Medium layout",
       "required": false,
       "type": "single select",
-      "description": "The block heading bullet style defines how the block heading is visually presented within each divided block. When the bullet option is used, an additional 32px indent is applied to the content area below the heading to align the content visually with the bullet marker.",
+      "description": "Indicate layout for the medium dimension",
       "constraint": "",
-      "defaultOption": "number",
+      "defaultOption": "full-width",
       "options": [
-        "number",
-        "bullet",
-        "status",
-        "none"
-      ]
-    },
-    {
-      "name": "Block rule",
-      "required": true,
-      "type": "object",
-      "description": "The rule component to separate each  block",
-      "constraint": "",
-      "defaultOption": "mute",
-      "options": [
-        "mute"
-      ]
-    },
-    {
-      "name": "Block bottom padding",
-      "required": false,
-      "type": "single select",
-      "description": "The type of padding applied to the block",
-      "constraint": "The last block of the pattern must not have bottom padding.",
-      "defaultOption": "none",
-      "options": [
-        "none",
-        "shallow"
+        "50/50",
+        "full-width"
       ]
     },
     {
@@ -168,141 +111,37 @@
         "shallow",
         "none"
       ]
+    },
+    {
+      "name": "Body",
+      "required": false,
+      "type": "string",
+      "description": "4-column width body text",
+      "constraint": "Up to 600 characters",
+      "defaultOption": ""
     }
   ],
   "childProperties": [
     {
-      "name": "Images",
+      "name": "Divided block",
       "properties": [
         {
-          "name": "Image",
-          "required": false,
-          "type": "slot",
-          "description": "The container for placing visual content such as images, illustrations, or diagrams.",
-          "constraint": "",
-          "defaultOption": ""
-        },
-        {
-          "name": "Image aspect ratio ",
-          "required": false,
-          "type": "single select",
-          "description": "Indicate ratio of the image",
-          "constraint": "",
-          "defaultOption": "default",
-          "options": [
-            "default",
-            "16:9",
-            "3:2"
-          ]
-        },
-        {
-          "name": "Image aspect ratio ",
-          "required": false,
-          "type": "single select",
-          "description": "Indicate ratio of the image",
-          "constraint": "",
-          "defaultOption": "default",
-          "options": [
-            "default",
-            "16:9",
-            "3:2",
-            "2:3",
-            "cinematic",
-            "square"
-          ]
-        },
-        {
-          "name": "Image responsive aspect ratio",
-          "required": false,
-          "type": "multi select",
-          "description": "Change the aspect ratio of an image container, depending on the screen size",
-          "constraint": "",
-          "defaultOption": "",
-          "options": [
-            "16:9",
-            "3:2",
-            "2:3",
-            "cinematic",
-            "square\non large",
-            "on medium",
-            "on small"
-          ]
-        },
-        {
-          "name": "Image caption",
-          "required": false,
-          "type": "string",
-          "description": "Optional HTML caption below the image",
-          "constraint": "",
-          "defaultOption": ""
-        }
-      ]
-    },
-    {
-      "name": "CTA block",
-      "properties": [
-        {
-          "name": "Link CTA",
-          "required": false,
-          "type": "string",
-          "description": "The text link used for contextual actions or pathways to more information. It uses a chevron (›) to indicate navigation to additional content or pages.",
-          "constraint": "Up to 60 characters",
-          "defaultOption": ""
-        },
-        {
-          "name": "Primary CTA",
-          "required": false,
-          "type": "string",
-          "description": "The CTA used with the positive button style. It indicates a high-priority, positive action and is reserved for hero areas or other key call-to-action sections.",
-          "constraint": "Up to 20 characters",
-          "defaultOption": ""
-        },
-        {
-          "name": "Secondary CTA",
-          "required": false,
-          "type": "string",
-          "description": "The CTA using the default button style. It is used for most actions that are positive but not primary, and may serve as the main CTA in non-hero sections.",
-          "constraint": "Up to 20 characters",
-          "defaultOption": ""
-        }
-      ]
-    },
-    {
-      "name": "Code",
-      "properties": [
-        {
-          "name": "Text",
+          "name": "Block rule",
           "required": true,
-          "type": "string",
-          "description": "The code that is being shown inside of the code component.",
+          "type": "object",
+          "description": "The rule component to separate each  block",
           "constraint": "",
-          "defaultOption": ""
-        }
-      ]
-    },
-    {
-      "name": "Notification",
-      "properties": [
-        {
-          "name": "Type",
-          "required": true,
-          "type": "single select",
-          "description": "What semantic type the notification is.",
-          "constraint": "",
-          "defaultOption": "",
+          "defaultOption": "mute",
           "options": [
-            "information",
-            "negative",
-            "positive",
-            "caution"
+            "mute"
           ]
         },
         {
-          "name": "Border",
+          "name": "Heading",
           "required": false,
-          "type": "boolean",
-          "description": "Wether the notification has a border or not. Borderless notifications are used for example in [Table](wiki-ref://grid-ymtdOF6n4R/i-aUPUyjNgjD).",
-          "constraint": "",
+          "type": "string",
+          "description": "4-column width H5 heading for divided block",
+          "constraint": "Up to 160 characters",
           "defaultOption": "true",
           "options": [
             "true",
@@ -310,152 +149,29 @@
           ]
         },
         {
-          "name": "Inline",
-          "required": false,
-          "type": "boolean",
-          "description": "Wether the title and description of the notification are being shown in one line. reduces the overall height of the notification allowing it to be used where space is at a premium.",
-          "constraint": "",
-          "defaultOption": "false",
-          "options": [
-            "true",
-            "false"
-          ]
-        },
-        {
-          "name": "Title",
-          "required": false,
-          "type": "string",
-          "description": "Sets the content of the title.",
-          "constraint": "",
-          "defaultOption": ""
-        },
-        {
-          "name": "Description",
-          "required": false,
-          "type": "string",
-          "description": "Sets the content of the description.",
-          "constraint": "",
-          "defaultOption": ""
-        },
-        {
-          "name": "Dismissible",
-          "required": false,
-          "type": "boolean",
-          "description": "Wether or not the notification can be dismissed. If it can be dismissed the dismiss button is being shown.",
-          "constraint": "",
-          "defaultOption": "true",
-          "options": [
-            "true",
-            "false"
-          ]
-        },
-        {
-          "name": "Actions",
-          "required": false,
-          "type": "slot",
-          "description": "Allows to give associated actions with the notification.",
-          "constraint": "Action link components",
-          "defaultOption": ""
-        },
-        {
-          "name": "Time stamp",
-          "required": false,
-          "type": "string",
-          "description": "Can be set to the timestamp when the event when that triggered the notification took place.",
-          "constraint": "Date formatted string",
-          "defaultOption": ""
-        }
-      ]
-    },
-    {
-      "name": "Logo block",
-      "properties": [
-        {
-          "name": "Logo block",
-          "required": true,
-          "type": "object",
-          "description": "The logo block showcases a group of related images, such as a group of customer or partner logos.",
-          "constraint": "- Avoid exceeding 10 logos \n- Linking individual logos is not allowed",
-          "defaultOption": ""
-        }
-      ]
-    },
-    {
-      "name": "Linked logo block",
-      "properties": [
-        {
-          "name": "Linked logo image",
-          "required": true,
-          "type": "object",
-          "description": "16:9 image container with the logo image inside ",
-          "constraint": "",
-          "defaultOption": ""
-        },
-        {
-          "name": "Link text",
-          "required": true,
-          "type": "string",
-          "description": "The link text for the logo",
-          "constraint": "Up to 60 characters",
-          "defaultOption": ""
-        }
-      ]
-    },
-    {
-      "name": "List",
-      "properties": [
-        {
-          "name": "List item text",
-          "required": true,
-          "type": "string",
-          "description": "Sets the content of the list",
-          "constraint": "Up to 250 characters",
-          "defaultOption": ""
-        },
-        {
-          "name": "List",
-          "required": true,
-          "type": "slot",
-          "description": "The divided list supporting up to 10 items",
-          "constraint": "Up to 10 items",
-          "defaultOption": ""
-        },
-        {
-          "name": "List bullet type",
+          "name": "Bullet style",
           "required": false,
           "type": "single select",
-          "description": "Bullet type options",
+          "description": "The bullet style defines how the block heading is visually presented within each divided block. When the bullet option is used, an additional 32px indent is applied to the content area below the heading to align the content visually with the bullet marker.",
           "constraint": "",
-          "defaultOption": "bullet",
+          "defaultOption": "number",
           "options": [
-            "none",
+            "number",
             "bullet",
             "status",
-            "number"
+            "none"
           ]
         },
         {
-          "name": "List divided",
+          "name": "Block item bottom padding",
           "required": false,
-          "type": "boolean",
-          "description": "Whether has muted rule between list items",
-          "constraint": "",
-          "defaultOption": "true",
+          "type": "single select",
+          "description": "The type of padding applied to the block item",
+          "constraint": "The last block item of the pattern/block must not have bottom padding.",
+          "defaultOption": "none",
           "options": [
-            "true",
-            "false"
-          ]
-        },
-        {
-          "name": "List nested",
-          "required": false,
-          "type": "boolean",
-          "description": "Hierarchical list structures",
-          "constraint": "",
-          "defaultOption": "false",
-          "options": [
-            "true",
-            "false"
+            "none",
+            "shallow"
           ]
         }
       ]
@@ -466,6 +182,11 @@
       "who": "Maximilian Blazek",
       "when": "2026-02-13T15:00:00.000+00:00",
       "what": "Added links"
+    },
+    {
+      "who": "Isaac Kim",
+      "when": "2026-01-19T18:00:00.000+00:00",
+      "what": "Initial commit"
     }
   ],
   "decisionLog": [],
@@ -474,57 +195,115 @@
   "mentionedIn": [
     {
       "name": "Basic section",
-      "slug": "basic-section"
+      "slug": "basic-section",
+      "path": "sites/construct/basic-section"
+    },
+    {
+      "name": "Divided block",
+      "slug": "divided-block",
+      "path": "sites/construct/divided-block"
+    },
+    {
+      "name": "Divided block",
+      "slug": "divided-block",
+      "path": "sites/construct/divided-block"
+    },
+    {
+      "name": "Equal heights",
+      "slug": "equal-heights",
+      "path": "sites/construct/equal-heights"
     },
     {
       "name": "Linked logo block",
-      "slug": "linked-logo-block"
+      "slug": "linked-logo-block",
+      "path": "sites/construct/linked-logo-block"
     },
     {
       "name": "Linked logo section",
-      "slug": "linked-logo-section"
-    },
-    {
-      "name": "Logo block",
-      "slug": "logo-block"
+      "slug": "linked-logo-section",
+      "path": "sites/construct/linked-logo-section"
     },
     {
       "name": "Resource block",
-      "slug": "resource-block"
+      "slug": "resource-block",
+      "path": "sites/construct/resource-block"
+    },
+    {
+      "name": "Tiered block",
+      "slug": "tiered-block",
+      "path": "sites/construct/tiered-block"
+    },
+    {
+      "name": "Tiered list",
+      "slug": "tiered-list",
+      "path": "sites/construct/tiered-list"
     }
   ],
   "mentionsComponents": [
     {
       "name": "Basic section",
-      "slug": "basic-section"
+      "slug": "basic-section",
+      "path": "sites/construct/basic-section"
     },
     {
       "name": "CTA block",
-      "slug": "cta-block"
+      "slug": "cta-block",
+      "path": "cta-block"
+    },
+    {
+      "name": "CTA block",
+      "slug": "cta-block",
+      "path": "sites/construct/cta-block"
     },
     {
       "name": "Equal heights",
-      "slug": "equal-heights"
+      "slug": "equal-heights",
+      "path": "sites/construct/equal-heights"
     },
     {
       "name": "Linked logo block",
-      "slug": "linked-logo-block"
+      "slug": "linked-logo-block",
+      "path": "linked-logo-block"
+    },
+    {
+      "name": "Linked logo block",
+      "slug": "linked-logo-block",
+      "path": "sites/construct/linked-logo-block"
     },
     {
       "name": "List",
-      "slug": "list"
+      "slug": "list",
+      "path": "list"
+    },
+    {
+      "name": "List",
+      "slug": "list",
+      "path": "global/construct/list"
     },
     {
       "name": "Logo block",
-      "slug": "logo-block"
+      "slug": "logo-block",
+      "path": "logo-block"
+    },
+    {
+      "name": "Logo block",
+      "slug": "logo-block",
+      "path": "sites/construct/logo-block"
     },
     {
       "name": "Notification",
-      "slug": "notification"
+      "slug": "notification",
+      "path": "notification"
+    },
+    {
+      "name": "Notification",
+      "slug": "notification",
+      "path": "global/construct/notification"
     },
     {
       "name": "Tiered list",
-      "slug": "tiered-list"
+      "slug": "tiered-list",
+      "path": "sites/construct/tiered-list"
     }
   ]
 }

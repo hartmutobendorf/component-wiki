@@ -8,7 +8,7 @@
   "figmaLink": "https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-43",
   "codeLink": "figma.com/exit?url=https%3A%2F%2Fgithub.com%2Fcanonical%2Fvanilla-framework%2Fblob%2Fb1d651365b0714586e6ea14349dea763819c256e%2Fscss%2F_base_forms.scss%23L180",
   "description": "Select components allow users to choose a single option from a list of choices, mostly in forms. Selects are ideal when users need to pick from a predefined set of options where displaying all choices at once would consume too much screen space. ",
-  "usage": "Select allows users to choose a single option from a list of mutually exclusive choices. They're particularly effective for saving screen space when presenting 4 or more options, as they collapse choices behind a single control until activated.\n\nThe selected value should always be visible in the collapsed state, providing clear feedback about the current selection. When no selection has been made, use descriptive placeholder text that guides users on what to choose (e.g., \"Select a country\" or \"Choose payment method\").\n\nSelects work best for selections that require deliberate choice, such as form inputs where changes are confirmed through a submit action.  They should not be used for anything that will have an immediate effect. For example actions that filter or manipulate the current view. In those cases, use a [Button](/button) with a dropdown menu instead.\n\n### Organizing options\n\nFor longer lists, reduce cognitive load by grouping related items. This helps users scan and find options more efficiently. In HTML this could for example be achieved by using so called optgroup elements. This HTML element can be used by developers to group related items. You can also add visual separators between groups by including disabled items with separator characters. When in doubt ask a developer friend how this can be achieved.\n\n### When to use\n\n*   Selecting from 4 or more mutually exclusive options\n*   Form inputs requiring a single choice from a predefined list\n*   When screen space is limited and options don't need to be visible at all times\n*   For selections that require deliberate commitment and confirmation\n\n### When not to use\n\n*   For filtering content or manipulating the current view (use [Button](/button) with dropdown instead)\n*   When presenting 3 or fewer options (use [Radio](/radio) instead)\n*   For settings that should apply changes immediately (use [Switch](/switch))\n*   When users need to select multiple options (use [Checkbox](/checkbox) or combobox)",
+  "usage": "Select allows users to choose a single option from a list of mutually exclusive choices. They're particularly effective for saving screen space when presenting 4 or more options, as they collapse choices behind a single control until activated.\n\nThe selected value should always be visible in the collapsed state, providing clear feedback about the current selection. When no selection has been made, use descriptive placeholder text that guides users on what to choose (e.g., \"Select a country\" or \"Choose payment method\").\n\nSelects work best for selections that require deliberate choice, such as form inputs where changes are confirmed through a submit action.  They should not be used for anything that will have an immediate effect. For example actions that filter or manipulate the current view. In those cases, use a [Button](/global/construct/button) with a dropdown menu instead.\n\n### Organizing options\n\nFor longer lists, reduce cognitive load by grouping related items. This helps users scan and find options more efficiently. In HTML this could for example be achieved by using so called optgroup elements. This HTML element can be used by developers to group related items. You can also add visual separators between groups by including disabled items with separator characters. When in doubt ask a developer friend how this can be achieved.\n\n### When to use\n\n*   Selecting from 4 or more mutually exclusive options\n*   Form inputs requiring a single choice from a predefined list\n*   When screen space is limited and options don't need to be visible at all times\n*   For selections that require deliberate commitment and confirmation\n\n### When not to use\n\n*   For filtering content or manipulating the current view (use [Button](/global/construct/button) with dropdown instead)\n*   When presenting 3 or fewer options (use [Radio](/global/construct/radio) instead)\n*   For settings that should apply changes immediately (use [Switch](/global/construct/switch))\n*   When users need to select multiple options (use [Checkbox](/global/construct/checkbox) or combobox)",
   "examples": "",
   "interactions": "",
   "sitesArchitectureLevels": "i-UvVNCYZ44t",
@@ -95,33 +95,40 @@
   "mentionedIn": [
     {
       "name": "Contextual menu",
-      "slug": "contextual-menu"
+      "slug": "contextual-menu",
+      "path": "global/construct/contextual-menu"
     },
     {
       "name": "Input",
-      "slug": "input"
+      "slug": "input",
+      "path": "global/construct/input"
     },
     {
       "name": "Radio",
-      "slug": "radio"
+      "slug": "radio",
+      "path": "global/construct/radio"
     }
   ],
   "mentionsComponents": [
     {
       "name": "Button",
-      "slug": "button"
+      "slug": "button",
+      "path": "global/construct/button"
     },
     {
       "name": "Checkbox",
-      "slug": "checkbox"
+      "slug": "checkbox",
+      "path": "global/construct/checkbox"
     },
     {
       "name": "Radio",
-      "slug": "radio"
+      "slug": "radio",
+      "path": "global/construct/radio"
     },
     {
       "name": "Switch",
-      "slug": "switch"
+      "slug": "switch",
+      "path": "global/construct/switch"
     }
   ],
   "url": "https://component.wiki/select"

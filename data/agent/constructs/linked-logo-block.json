@@ -4,11 +4,11 @@
   "type": "Block",
   "tiers": "Sites",
   "documentationStatus": "Minimal",
-  "lastEdited": "2026-03-02T16:16:32.104+00:00",
+  "lastEdited": "2026-03-16T16:31:24.410+00:00",
   "figmaLink": "https://www.figma.com/design/1brHCsyeTE6FU7hfJd6ao2/%F0%9F%8C%90-Sites---Core-component-library?node-id=455-18979&p=f&t=Wm4Zk8A1vTAMrGBp-11",
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/main/templates/_macros/vf_linked-logo-section.jinja",
-  "description": "The linked logo block is a content unit that displays a logo with a link to additional pages or resources.\n\n",
-  "usage": "The Logo block is the primary content element of the [Linked logo section](/linked-logo-section). It can also be used as a block item within the  [Basic section](/basic-section) , [Divided section](/divided-section) , and [Tab section](/tab-section).\n\nWhile the [Logo block](/logo-block) is a non-interactive visual listing of images, the Linked logo block introduces interaction by adding a [Link](/linked-logo-block#anatomy) below the [Logo container](/linked-logo-block#anatomy).\n\nThe block width follows the content container of its parent pattern, with options of 50, 75, and full-width.\n\n### When to use\n\n*   Each logo needs to link to additional pages or resources\n*   Logos function as navigational elements\n\n### When not to use\n\n*   If logos are purely decorative or editorial and do not require interaction, use the [Logo block](/logo-block) instead",
+  "description": "The linked logo block is a content unit that displays a logo with a link to additional pages or resources. This block is used as the primary content unit in the [Linked logo section](/sites/construct/linked-logo-section).\n\n",
+  "usage": "The Logo block is the primary content element of the [Linked logo section](/sites/construct/linked-logo-section). It can also be used as a block item within the  [Basic section](/sites/construct/basic-section) , [Divided section](/sites/construct/divided-section) , and [Tab section](/sites/construct/tab-section).\n\nWhile the [Logo block](/sites/construct/logo-block) is a non-interactive visual listing of images, the Linked logo block introduces interaction by adding a [Link](/sites/construct/linked-logo-block#anatomy) below the [Logo container](/sites/construct/linked-logo-block#anatomy).\n\nThe block width follows the content container of its parent pattern, with options of 50, 75, and full-width.\n\n### When to use\n\n*   Each logo needs to link to additional pages or resources\n*   Logos function as navigational elements\n\n### When not to use\n\n*   If logos are purely decorative or editorial and do not require interaction, use the [Logo block](/sites/construct/logo-block) instead",
   "examples": "",
   "interactions": "",
   "sitesArchitectureLevels": "i-ytTJ4UrPBn",
@@ -62,41 +62,60 @@
   "mentionedIn": [
     {
       "name": "Basic section",
-      "slug": "basic-section"
+      "slug": "basic-section",
+      "path": "sites/construct/basic-section"
+    },
+    {
+      "name": "Divided block",
+      "slug": "divided-block",
+      "path": "sites/construct/divided-block"
     },
     {
       "name": "Divided section",
-      "slug": "divided-section"
+      "slug": "divided-section",
+      "path": "sites/construct/divided-section"
     },
     {
       "name": "Linked logo section",
-      "slug": "linked-logo-section"
-    },
-    {
-      "name": "Logo block",
-      "slug": "logo-block"
+      "slug": "linked-logo-section",
+      "path": "sites/construct/linked-logo-section"
     }
   ],
   "mentionsComponents": [
     {
       "name": "Basic section",
-      "slug": "basic-section"
+      "slug": "basic-section",
+      "path": "sites/construct/basic-section"
     },
     {
       "name": "Divided section",
-      "slug": "divided-section"
+      "slug": "divided-section",
+      "path": "sites/construct/divided-section"
     },
     {
       "name": "Linked logo section",
-      "slug": "linked-logo-section"
+      "slug": "linked-logo-section",
+      "path": "sites/construct/linked-logo-section"
+    },
+    {
+      "name": "Linked logo section",
+      "slug": "linked-logo-section",
+      "path": "sites/construct/linked-logo-section"
     },
     {
       "name": "Logo block",
-      "slug": "logo-block"
+      "slug": "logo-block",
+      "path": "logo-block"
+    },
+    {
+      "name": "Logo block",
+      "slug": "logo-block",
+      "path": "sites/construct/logo-block"
     },
     {
       "name": "Tab section",
-      "slug": "tab-section"
+      "slug": "tab-section",
+      "path": "sites/construct/tab-section"
     }
   ],
   "url": "https://component.wiki/linked-logo-block"

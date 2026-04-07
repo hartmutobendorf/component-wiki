@@ -4,16 +4,52 @@
   "type": "Complex component",
   "tiers": "Global",
   "documentationStatus": "Needs work",
-  "lastEdited": "2026-02-10T08:12:19.888+00:00",
+  "lastEdited": "2026-03-23T16:52:39.130+00:00",
   "figmaLink": "https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-54",
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/b1d651365b0714586e6ea14349dea763819c256e/scss/_patterns_navigation.scss",
   "description": "",
-  "usage": "",
+  "usage": "The Navigation component provides persistent, site-wide navigation for sites and documentation. It maintains consistent items, order, and placement across all pages. Navigation is a cornerstone of the user experience and should not change from page to page. The same items should appear in the same order and the same position on every page. Users rely on it being predictable.\n\n### When to use\n\n*   As the primary navigation for a site or documentation property\n\n### When not to use\n\n*   Do not use Navigation for actions. Navigation items should only navigate, not trigger actions like opening a modal or submitting a form. Buttons may appear in the navigation (for example, a contact us button), but these are exceptions and must be approved as snowflakes.\n*   Do not place external links in Navigation. Navigation should only link within its own domain. If an external link is necessary, mark it visually as external and use the link hover effect rather than the navigation hover effect.\n\n### Items and grouping\n\nAim for about 7 items. This is not a hard rule, but it is a good target. Navigation supports one level of items plus groups. No further nesting is available beyond that.\n\nIf you have more items than comfortably fit, group related items together rather than adding more top-level items.\n\n*   A group must have at least 2 items.\n*   A group should not have more than 7 items.\n*   Items in a group need a unifying theme. It must make sense that they are grouped together.\n*   The group label must be meaningful. A user should have a reasonable expectation of what items they will find inside the group based on the label alone.\n\n### Logo behavior\n\nSelecting the logo should take the user to the home page of the domain the navigation belongs to. If the navigation is on a sub-domain (for example, a documentation site within a larger brand), the logo should reflect that sub-domain, not the parent brand. Otherwise, users will expect the logo to take them to the parent site. Change the logo to indicate where the user actually is.\n\n### Optional features\n\nNavigation can optionally include search. The scope of the search is the entire site that the navigation serves, and search results appear on a separate page.\n\nNavigation can also include a sign-in button that forwards the user to a sign-in page. Once signed in, the navigation can show a group of account-related items, including log out.\n\n### Full-width and grid-aligned variants\n\nNavigation comes in two variants: full-width and grid-aligned.\n\n*   Do not mix full-width and grid-aligned navigation on the same domain.\n*   Grid-aligned is the default choice for most cases.",
   "examples": "",
-  "interactions": "",
+  "interactions": "### Active state\n\nThe currently active page is indicated with an underline on its navigation item. When the active page is inside a group, both the group and the item within it show an active state. When a user opens or closes a group without navigating, the group shows an active background color. It does not show the underline that indicates the currently active page.",
   "sitesArchitectureLevels": "",
   "anatomy": {
-    "table": []
+    "table": [
+      {
+        "number": 1,
+        "name": "Logo",
+        "description": ""
+      },
+      {
+        "number": 2,
+        "name": "Navigation items",
+        "description": ""
+      },
+      {
+        "number": 3,
+        "name": "Search trigger",
+        "description": ""
+      },
+      {
+        "number": 4,
+        "name": "Navigation item text",
+        "description": ""
+      },
+      {
+        "number": 5,
+        "name": "Expandable navigation item",
+        "description": ""
+      },
+      {
+        "number": 6,
+        "name": " Navigation item drawer",
+        "description": ""
+      },
+      {
+        "number": 7,
+        "name": "Expanded search bar",
+        "description": ""
+      }
+    ]
   },
   "properties": [],
   "changeLog": [
@@ -29,11 +65,13 @@
   "mentionedIn": [
     {
       "name": "Badge",
-      "slug": "badge"
+      "slug": "badge",
+      "path": "global/construct/badge"
     },
     {
       "name": "Breadcrumbs",
-      "slug": "breadcrumbs"
+      "slug": "breadcrumbs",
+      "path": "global/construct/breadcrumbs"
     }
   ],
   "mentionsComponents": [],

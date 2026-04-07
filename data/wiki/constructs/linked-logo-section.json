@@ -8,14 +8,14 @@
   "figmaLink": "https://www.figma.com/design/1brHCsyeTE6FU7hfJd6ao2/%F0%9F%8C%90-Sites---Core-component-library?node-id=332-9375&p=f&t=Wm4Zk8A1vTAMrGBp-11",
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/main/templates/_macros/vf_linked-logo-section.jinja",
   "description": "The linked logo section is used to display a list of logos which explicitly link to additional pages or resources.",
-  "usage": "The Linked logo section highlights a collection of logos as interactive navigational elements, building on the [Linked logo section](/linked-logo-section) by pairing each logo with a link to additional pages or resources.\n\n### Placing additional contextual elements\n\nThis pattern does not include a description slot.\n\nFor the 25/75 and 100 layouts, when a description or CTA block is required, use the [Basic section](/basic-section) and place the Linked logo section (without the [Rule](/linked-logo-section#anatomy) and [Heading](/linked-logo-section#anatomy)) below it, rather than extending this pattern.\n\nFor the 50/50 layout, the [Linked logo block](/linked-logo-block) is supported within the Basic section. Therefore use the [Basic section](/basic-section) alone instead of introducing a separate Linked logo section.\n\n### When to use\n\n*   Each logo needs to link to an additional page or resource\n*   Logos act as primary navigational elements rather than decorative assets\n\n### When not to use\n\n*   If logos are purely decorative or editorial and do not require interaction, use the [Logo section](/logo-section) instead\n*   When items require rich structured content (e.g., detailed descriptions, lists, CTAs), use the [Basic section](/basic-section) or [Divided section](/divided-section) instead\n*   If multiple groups or categories need to be displayed, separate them into multiple sections or use the [Tab section](/tab-section)",
-  "examples": "Large dimension (50/50 layout)![example-1.png](images/1c9de61e-f43c-43ac-9043-387445604032.png)\n\nLarge dimension (25/75 layout)\n\n![example-4.png](images/64a8e426-4836-4380-86a8-f9862416c301.png)\n\nMedium dimension\n\n![example-2.png](images/6dd1edbf-57f1-4436-ad34-1aa5ec06eecb.png)\n\nSmall dimension\n\n![example-3.png](images/e5cb4b83-5fe4-4555-8f56-27a1f5b9288e.png)",
+  "usage": "The Linked logo section highlights a collection of logos as interactive navigational elements, building on the [Linked logo section](/sites/construct/linked-logo-section) by pairing each logo with a link to additional pages or resources.\n\n### Placing additional contextual elements\n\nThis pattern does not include a description slot.\n\nFor the 25/75 and 100 layouts, when a description or CTA block is required, use the [Basic section](/sites/construct/basic-section) and place the Linked logo section (without the [Rule](/sites/construct/linked-logo-section#anatomy) and [Heading](/sites/construct/linked-logo-section#anatomy)) below it, rather than extending this pattern.\n\nFor the 50/50 layout, the [Linked logo block](/sites/construct/linked-logo-block) is supported within the Basic section. Therefore use the [Basic section](/sites/construct/basic-section) alone instead of introducing a separate Linked logo section.\n\n### When to use\n\n*   Each logo needs to link to an additional page or resource\n*   Logos act as primary navigational elements rather than decorative assets\n\n### When not to use\n\n*   If logos are purely decorative or editorial and do not require interaction, use the [Logo section](/sites/construct/logo-section) instead\n*   When items require rich structured content (e.g., detailed descriptions, lists, CTAs), use the [Basic section](/sites/construct/basic-section) or [Divided section](/sites/construct/divided-section) instead\n*   If multiple groups or categories need to be displayed, separate them into multiple sections or use the [Tab section](/sites/construct/tab-section)",
+  "examples": "Large dimension (50/50 layout)![example-1.png](images/2bf0aa54-0ec6-47b6-b748-a04ee02942d7.png)\n\nLarge dimension (25/75 layout)\n\n![example-4.png](images/eae7ab81-e557-4f4b-9e49-3dbfdd99ffc2.png)\n\nMedium dimension\n\n![example-2.png](images/60889c27-1927-4021-b62b-3bb551159424.png)\n\nSmall dimension\n\n![example-3.png](images/ed69ddd2-3839-48b1-b930-43c9f6ef6c1d.png)",
   "interactions": "",
   "figmaComponentData": "",
-  "componentExampleImage": "images/6367a69f-b0cb-4369-bdac-213aa45699a0.png",
+  "componentExampleImage": "images/c459d300-9571-4ee3-9897-6dd96569220d.png",
   "sitesArchitectureLevels": "i-ues18YVwia",
   "anatomy": {
-    "image": "images/34ca8b76-22cc-46af-853f-a75214edf054.png",
+    "image": "images/f8c6b45d-f576-4223-8b65-7057045aa01c.png",
     "table": [
       {
         "number": 1,
@@ -29,8 +29,8 @@
       },
       {
         "number": 3,
-        "name": "[Linked logo block](wiki-ref://grid-ymtdOF6n4R/i-fhZD60Hwqn) ",
-        "description": "The linked logo block is a content unit that displays a logo with a link to additional pages or resources."
+        "name": "Linked logo blocks",
+        "description": "[Linked logo block](wiki-ref://grid-ymtdOF6n4R/i-fhZD60Hwqn) is a content unit that displays a logo with a link to additional pages or resources."
       },
       {
         "number": 4,
@@ -43,7 +43,7 @@
     {
       "name": "Section rule",
       "required": true,
-      "type": "single select",
+      "type": "object",
       "description": "The rule component indicates the beginning of a new pattern",
       "constraint": "Only use the default style for the section-level rule",
       "defaultOption": "default",
@@ -86,7 +86,7 @@
       ]
     },
     {
-      "name": "Layout",
+      "name": "Large layout",
       "required": true,
       "type": "single select",
       "description": "The intended grid layout for the section.",
@@ -135,37 +135,55 @@
   "mentionedIn": [
     {
       "name": "Basic section",
-      "slug": "basic-section"
+      "slug": "basic-section",
+      "path": "sites/construct/basic-section"
     },
     {
       "name": "Linked logo block",
-      "slug": "linked-logo-block"
+      "slug": "linked-logo-block",
+      "path": "sites/construct/linked-logo-block"
+    },
+    {
+      "name": "Linked logo block",
+      "slug": "linked-logo-block",
+      "path": "sites/construct/linked-logo-block"
     },
     {
       "name": "Logo section",
-      "slug": "logo-section"
+      "slug": "logo-section",
+      "path": "sites/construct/logo-section"
     }
   ],
   "mentionsComponents": [
     {
       "name": "Basic section",
-      "slug": "basic-section"
+      "slug": "basic-section",
+      "path": "sites/construct/basic-section"
     },
     {
       "name": "Divided section",
-      "slug": "divided-section"
+      "slug": "divided-section",
+      "path": "sites/construct/divided-section"
     },
     {
       "name": "Linked logo block",
-      "slug": "linked-logo-block"
+      "slug": "linked-logo-block",
+      "path": "linked-logo-block"
+    },
+    {
+      "name": "Linked logo block",
+      "slug": "linked-logo-block",
+      "path": "sites/construct/linked-logo-block"
     },
     {
       "name": "Logo section",
-      "slug": "logo-section"
+      "slug": "logo-section",
+      "path": "sites/construct/logo-section"
     },
     {
       "name": "Tab section",
-      "slug": "tab-section"
+      "slug": "tab-section",
+      "path": "sites/construct/tab-section"
     }
   ]
 }

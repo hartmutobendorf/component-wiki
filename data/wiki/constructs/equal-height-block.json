@@ -4,18 +4,18 @@
   "type": "Block",
   "tiers": "Sites",
   "documentationStatus": "Minimal",
-  "lastEdited": "2026-03-02T17:55:02.743+00:00",
+  "lastEdited": "2026-03-16T16:30:57.922+00:00",
   "figmaLink": "https://www.figma.com/design/1brHCsyeTE6FU7hfJd6ao2/%F0%9F%8C%90-Sites---Core-component-library?node-id=432-12914&p=f&t=Wm4Zk8A1vTAMrGBp-11",
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/main/templates/_macros/shared/vf_equal-heights-block.jinja",
-  "description": "The equal height block is a content unit that ensures consistent vertical alignment for multiple items arranged within a row. It standardises the height of each item so that all blocks in the same row share equal dimensions, regardless of variations in content length.",
-  "usage": "Use the equal heights block to present multiple items in a row where visual alignment and structural consistency are required. The block ensures that each item maintains the same height within the row, creating a balanced and orderly layout. All corresponding elements([Image](/equal-height-block#anatomy), [Heading](/equal-height-block#anatomy), [Body](/equal-height-block#anatomy), and [Link](/equal-height-block#anatomy)) are optional. However, a minimum of two elements is required. It is recommended that blocks within the same row use a same set of elements.\n\nEach item follows a consistent internal structure to maintain clarity and alignment. The equal height behaviour is applied at the row level, ensuring that corresponding elements([Image](/equal-height-block#anatomy), [Heading](/equal-height-block#anatomy), [Body](/equal-height-block#anatomy), and [Link](/equal-height-block#anatomy)) align to consistent vertical positions across items. If a heading spans two lines in one item, the same vertical space is reserved for headings in the other items within the row, preserving structural alignment and visual balance.\n\n### Image container ratio\n\nThe image container ratio defines the aspect ratio applied to item images across responsive breakpoints. Different ratios can be specified for small, medium, and large screens to optimise layout and content visibility per viewport size.\n\nThe ratio can be set using predefined image container aspect ratio identifiers, or auto to preserve the image’s original aspect ratio. By default, a 2:3 ratio is used on large dimension, while a square ratio is applied on small and medium dimension to maintain balanced proportions and predictable vertical spacing across breakpoints.\n\n*   Large dimension (2:3 ratio)\n\n![large.png](images/b3770e53-7910-4ce2-a497-38cdd1682711.png)\n\n*   Medium, small dimension (square ratio)\n\n![medium.png](images/fb1940ae-b926-48ae-b733-9971a4e61ca6.png)\n\n### Highlighted background\n\nWhen using images with transparent backgrounds (e.g. illustrations or product images), use the highlighted image with the alt background. This visually separates the image container from the surrounding background and improves clarity within the layout.\n\n![large-alt.png](images/2a8c39c3-d3e9-4627-8c27-882eafee7f99.png)",
-  "examples": "**Linked** **[Heading](/equal-height-block#anatomy)**\n\n![1.png](images/0f0521a4-0489-4726-9b97-77c73590a8bd.png)\n\nThe [Heading](/equal-height-block#anatomy) may function as a link. In this case, avoid including an additional [Link](/equal-height-block#anatomy) at the bottom of the block.\n\n**Without** **[Image](/equal-height-block#anatomy)**\n\n![2.png](images/5912c252-0ab7-466f-9332-0fc0c54dc139.png)\n\nIt can be used without [Image](/equal-height-block#anatomy). However, in such cases, consider using a text-based block such as the [Tiered block](/tiered-block) instead.\n\n**Without description and link**\n\n![3.png](images/db11def8-2c93-4b25-a7c6-11bcee742276.png)\n\nA minimum of two elements is required.",
+  "description": "The equal height block is a content unit that ensures consistent vertical alignment for multiple items arranged within a row. It standardises the height of each item so that all blocks in the same row share equal dimensions, regardless of variations in content length. This block is used as the primary content unit in the [Equal heights](/sites/construct/equal-heights).\n\n",
+  "usage": "Use the equal heights block to present multiple items in a row where visual alignment and structural consistency are required. The block ensures that each item maintains the same height within the row, creating a balanced and orderly layout. All corresponding elements([Image](/sites/construct/equal-height-block#anatomy), [Heading](/sites/construct/equal-height-block#anatomy), [Body](/sites/construct/equal-height-block#anatomy), and [Link](/sites/construct/equal-height-block#anatomy)) are optional. However, a minimum of two elements is required. It is recommended that blocks within the same row use a same set of elements.\n\nEach item follows a consistent internal structure to maintain clarity and alignment. The equal height behaviour is applied at the row level, ensuring that corresponding elements([Image](/sites/construct/equal-height-block#anatomy), [Heading](/sites/construct/equal-height-block#anatomy), [Body](/sites/construct/equal-height-block#anatomy), and [Link](/sites/construct/equal-height-block#anatomy)) align to consistent vertical positions across items. If a heading spans two lines in one item, the same vertical space is reserved for headings in the other items within the row, preserving structural alignment and visual balance.\n\n### Image container ratio\n\nThe image container ratio defines the aspect ratio applied to item images across responsive breakpoints. Different ratios can be specified for small, medium, and large screens to optimise layout and content visibility per viewport size.\n\nThe ratio can be set using predefined image container aspect ratio identifiers, or auto to preserve the image’s original aspect ratio. By default, a 2:3 ratio is used on large dimension, while a square ratio is applied on small and medium dimension to maintain balanced proportions and predictable vertical spacing across breakpoints.\n\n*   Large dimension (2:3 ratio)\n\n![large.png](images/590bd937-f0cf-468b-97be-fdd648491378.png)\n\n*   Medium, small dimension (square ratio)\n\n![medium.png](images/428cac0c-b9e6-435c-badd-cab72e9e504d.png)\n\n### Highlighted background\n\nWhen using images with transparent backgrounds (e.g. illustrations or product images), use the highlighted image with the alt background. This visually separates the image container from the surrounding background and improves clarity within the layout.\n\n![large-alt.png](images/4a3ca193-9653-4dd1-adbf-241991ac502b.png)",
+  "examples": "**Linked** **[Heading](/sites/construct/equal-height-block#anatomy)**\n\n![1.png](images/17f83051-94fa-4be4-8b48-1e3e678975e0.png)\n\nThe [Heading](/sites/construct/equal-height-block#anatomy) may function as a link. In this case, avoid including an additional [Link](/sites/construct/equal-height-block#anatomy) at the bottom of the block.\n\n**Without** **[Image](/sites/construct/equal-height-block#anatomy)**\n\n![2.png](images/0824d4ff-8373-4059-9c4c-7ca0416ec5f6.png)\n\nIt can be used without [Image](/sites/construct/equal-height-block#anatomy). However, in such cases, consider using a text-based block such as the [Tiered block](/sites/construct/tiered-block) instead.\n\n**Without description and link**\n\n![3.png](images/3db7eb95-c344-4b40-815e-611853119446.png)\n\nA minimum of two elements is required.",
   "interactions": "",
   "figmaComponentData": "",
-  "componentExampleImage": "images/7043887d-ba3c-4351-b3d0-3e7b7f5be85b.png",
+  "componentExampleImage": "images/17af0e25-634a-4ded-ace7-837e22ed60b1.png",
   "sitesArchitectureLevels": "i-ytTJ4UrPBn",
   "anatomy": {
-    "image": "images/1c385dd1-9041-49c4-8c54-06f27657c160.png",
+    "image": "images/ebf57e8b-c2f7-47cb-b4b8-877df28d9a6a.png",
     "table": [
       {
         "number": 1,
@@ -45,14 +45,6 @@
     ]
   },
   "properties": [
-    {
-      "name": "Heading",
-      "required": false,
-      "type": "string",
-      "description": "2-column width H5 heading",
-      "constraint": "Up to 60 characters",
-      "defaultOption": ""
-    },
     {
       "name": "Linked heading",
       "required": false,
@@ -125,6 +117,14 @@
         "true",
         "false"
       ]
+    },
+    {
+      "name": "Heading",
+      "required": false,
+      "type": "string",
+      "description": "2-column width H5 heading",
+      "constraint": "Up to 60 characters",
+      "defaultOption": ""
     }
   ],
   "changeLog": [
@@ -139,14 +139,36 @@
   "exceptionFromRules": [],
   "mentionedIn": [
     {
+      "name": "Divided block",
+      "slug": "divided-block",
+      "path": "sites/construct/divided-block"
+    },
+    {
+      "name": "Equal heights",
+      "slug": "equal-heights",
+      "path": "sites/construct/equal-heights"
+    },
+    {
       "name": "Resource block",
-      "slug": "resource-block"
+      "slug": "resource-block",
+      "path": "sites/construct/resource-block"
+    },
+    {
+      "name": "Tiered block",
+      "slug": "tiered-block",
+      "path": "sites/construct/tiered-block"
     }
   ],
   "mentionsComponents": [
     {
+      "name": "Equal heights",
+      "slug": "equal-heights",
+      "path": "sites/construct/equal-heights"
+    },
+    {
       "name": "Tiered block",
-      "slug": "tiered-block"
+      "slug": "tiered-block",
+      "path": "sites/construct/tiered-block"
     }
   ]
 }

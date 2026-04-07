@@ -3,22 +3,57 @@
   "slug": "equal-heights",
   "type": "Pattern",
   "tiers": "Sites",
-  "documentationStatus": "Needs work",
-  "lastEdited": "2026-02-27T09:57:59.698+00:00",
+  "documentationStatus": "Minimal",
+  "lastEdited": "2026-03-23T18:00:25.188+00:00",
   "figmaLink": "https://www.figma.com/design/1brHCsyeTE6FU7hfJd6ao2/%F0%9F%8C%90-Sites---Core-component-library?node-id=332-8294&p=f&t=Wm4Zk8A1vTAMrGBp-11",
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/main/templates/_macros/vf_equal-heights.jinja",
-  "description": "The equal heights pattern is used to provide consistent alignment for grid items within a row format.\n\n  \n",
-  "usage": "Use this to break down information into columns. A minimum of three columns with subheadings is recommended. Each column can have four items (image, subheading, supporting paragraph, CTA). The image, CTA, and supporting paragraph are optional.\n\nBest practice: To help the page feel visually balanced, try to have the same volume of content for each column.",
-  "examples": "",
+  "description": "The Equal heights pattern arranges content blocks in a horizontal row where each block maintains the same height regardless of the amount of content inside. This creates a visually balanced layout that allows items to be easily compared and scanned.  An optional [CTA block](/sites/construct/cta-block) can appear at the section level, beneath blocks list.\n\n  \n",
+  "usage": "The Equal heights pattern presents related content in a horizontal layout using [Equal height block](/sites/construct/equal-height-block), ensuring that each item maintains the same height. This creates consistent alignment across the row and supports a balanced, easy-to-scan layout.\n\nUse this pattern to break down information into columns. It is commonly used to present comparable items such as features, benefits, product options, or key resources.\n\nA minimum of three columns is recommended. Equalising the height of each block prevents uneven layouts when content lengths vary while maintaining consistent spacing across the row.\n\n**Best practice:** Keep the content volume similar across columns to maintain visual balance.\n\n### When to use\n\n*   Content consists of comparable items that benefit from side-by-side presentation, such as features, benefits, product options, or key resources\n*   Items share a consistent structure and a similar volume of content\n*   Users need to scan and compare multiple items quickly\n\n### When not to use\n\n*   Each item requires rich or varied content such as images, videos, code blocks, or lists — use [Divided section](/sites/construct/divided-section)  instead\n*   The content covers a single topic with supporting material — use [Basic section](/sites/construct/basic-section)  instead\n*   The content consists of paired titles and descriptions in a text-heavy list format — use [Tiered list](/sites/construct/tiered-list)  instead",
+  "examples": "Large dimension (50/50)\n\n![example-1.png](images/639e5494-7647-4c5c-a678-ea7571b18b55.png)\n\nLarge dimension (25/75)\n\n![example-2.png](images/9580b865-cf20-4415-9f73-88e8e430cfb9.png)\n\nLarge dimension (full-width)\n\n![example-3.png](images/9f882327-245e-47da-b665-a483d30375f6.png)\n\nLarge dimension (full-width, apply predefined image ratio)\n\n![example-6.png](images/42f6bf73-46e4-4f0c-ace9-bebd446f34fb.png)\n\nMedium dimension\n\n![example-5.png](images/7e6d2449-d6e4-4422-a426-6e2a779847e0.png)\n\nSmall dimension\n\n![example-4.png](images/9bed961c-2944-4c0f-8482-779ec18bfbd5.png)",
   "interactions": "",
   "figmaComponentData": "",
-  "componentExampleImage": "",
+  "componentExampleImage": "images/48058323-5a00-4c64-b4aa-40c43fd355c6.png",
   "sitesArchitectureLevels": "i-ues18YVwia",
+  "anatomy": {
+    "image": "images/2f063200-cce4-4fb6-b654-efd84a552647.png",
+    "table": [
+      {
+        "number": 1,
+        "name": "Rule",
+        "description": "The rule component indicates the beginning of a new section."
+      },
+      {
+        "number": 2,
+        "name": "Heading",
+        "description": "The section heading communicates the primary subject or theme of the section."
+      },
+      {
+        "number": 3,
+        "name": "Subheading",
+        "description": "The optional subheading placed above the body. IIt provides additional context or a short explanation that helps clarify the purpose of the section."
+      },
+      {
+        "number": 4,
+        "name": "Body",
+        "description": "A description that provides introductory context for the section. It appears at the top of the section and helps users understand the purpose or scope of the content before engaging with the content below."
+      },
+      {
+        "number": 5,
+        "name": "Equal height blocks",
+        "description": "[Equal height block](wiki-ref://grid-ymtdOF6n4R/i-9OaD6bj5Qe) is a content unit that ensures consistent vertical alignment for multiple items arranged within a row."
+      },
+      {
+        "number": 6,
+        "name": "CTA block",
+        "description": "[CTA block](wiki-ref://grid-ymtdOF6n4R/i-0Z_OLuJDCc) presents one or more related actions that guide the user toward the next step within a section"
+      }
+    ]
+  },
   "properties": [
     {
       "name": "Section rule",
       "required": true,
-      "type": "single select",
+      "type": "object",
       "description": "The rule component indicates the beginning of a new pattern",
       "constraint": "Only use the default style for the section-level rule",
       "defaultOption": "default",
@@ -47,6 +82,18 @@
       ]
     },
     {
+      "name": "Subheading",
+      "required": false,
+      "type": "string",
+      "description": "The subheading provides additional hierarchy beneath the main title",
+      "constraint": "h4: up to 100 characters\nh5: up to 160 characters",
+      "defaultOption": "h5",
+      "options": [
+        "h4",
+        "h5"
+      ]
+    },
+    {
       "name": "Bottom padding",
       "required": true,
       "type": "single select",
@@ -59,21 +106,200 @@
         "shallow",
         "none"
       ]
+    },
+    {
+      "name": "Large layout",
+      "required": true,
+      "type": "single select",
+      "description": "The intended grid layout for the section.",
+      "constraint": "",
+      "defaultOption": "full-width",
+      "options": [
+        "full-width",
+        "50/50",
+        "25/75"
+      ]
     }
   ],
-  "changeLog": [],
+  "childProperties": [
+    {
+      "name": "Equal height block",
+      "properties": [
+        {
+          "name": "Linked heading",
+          "required": false,
+          "type": "single select",
+          "description": "The heading may function as a link when clearly indicated.",
+          "constraint": "",
+          "defaultOption": "default",
+          "options": [
+            "default",
+            "link"
+          ]
+        },
+        {
+          "name": "Body",
+          "required": false,
+          "type": "string",
+          "description": "2-column width body text",
+          "constraint": "Up to 300 characters (The content is recommended to be limited to a single sentence)",
+          "defaultOption": ""
+        },
+        {
+          "name": "Image",
+          "required": false,
+          "type": "object",
+          "description": "The image at the top of the block.",
+          "constraint": "",
+          "defaultOption": ""
+        },
+        {
+          "name": "Image ratio large",
+          "required": false,
+          "type": "single select",
+          "description": "The aspect ratio to apply to item images on large screens.",
+          "constraint": "",
+          "defaultOption": "2:3",
+          "options": [
+            "- square\n- 2:3\n- 3:2\n- 6:9\n- cinematic\n- auto(to use the image's original aspect ratio)"
+          ]
+        },
+        {
+          "name": "Image ratio medium",
+          "required": false,
+          "type": "single select",
+          "description": "The aspect ratio to apply to item images on medium screens.",
+          "constraint": "",
+          "defaultOption": "square",
+          "options": [
+            "- square\n- 2:3\n- 3:2\n- 6:9\n- cinematic\n- auto(to use the image's original aspect ratio)"
+          ]
+        },
+        {
+          "name": "Image ratio small",
+          "required": false,
+          "type": "single select",
+          "description": "The aspect ratio to apply to item images on small screens.",
+          "constraint": "",
+          "defaultOption": "square",
+          "options": [
+            "- square\n- 2:3\n- 3:2\n- 6:9\n- cinematic\n- auto(to use the image's original aspect ratio)"
+          ]
+        },
+        {
+          "name": "Highlighted image",
+          "required": false,
+          "type": "boolean",
+          "description": " Whether to highlight image with the alt background.",
+          "constraint": "",
+          "defaultOption": "false",
+          "options": [
+            "true",
+            "false"
+          ]
+        },
+        {
+          "name": "Heading",
+          "required": false,
+          "type": "string",
+          "description": "2-column width H5 heading",
+          "constraint": "Up to 60 characters",
+          "defaultOption": ""
+        }
+      ]
+    },
+    {
+      "name": "CTA block",
+      "properties": [
+        {
+          "name": "Primary CTA",
+          "required": false,
+          "type": "string",
+          "description": "The CTA used with the positive button style. It indicates a high-priority, positive action and is reserved for hero areas or other key call-to-action sections.",
+          "constraint": "Up to 20 characters",
+          "defaultOption": ""
+        },
+        {
+          "name": "Secondary CTA",
+          "required": false,
+          "type": "string",
+          "description": "The CTA using the default button style. It is used for most actions that are positive but not primary, and may serve as the main CTA in non-hero sections.",
+          "constraint": "Up to 20 characters",
+          "defaultOption": ""
+        },
+        {
+          "name": "Link CTA",
+          "required": false,
+          "type": "string",
+          "description": "The text link used for contextual actions or pathways to more information. It uses a chevron (›) to indicate navigation to additional content or pages.",
+          "constraint": "Up to 60 characters",
+          "defaultOption": ""
+        }
+      ]
+    }
+  ],
+  "changeLog": [
+    {
+      "who": "Isaac Kim",
+      "when": "2026-03-16T09:00:00.000+00:00",
+      "what": "Initial commit"
+    }
+  ],
   "decisionLog": [],
   "appliedRules": [],
   "exceptionFromRules": [],
   "mentionedIn": [
     {
       "name": "Basic section",
-      "slug": "basic-section"
+      "slug": "basic-section",
+      "path": "sites/construct/basic-section"
     },
     {
       "name": "Divided section",
-      "slug": "divided-section"
+      "slug": "divided-section",
+      "path": "sites/construct/divided-section"
+    },
+    {
+      "name": "Equal height block",
+      "slug": "equal-height-block",
+      "path": "sites/construct/equal-height-block"
+    },
+    {
+      "name": "Tiered list",
+      "slug": "tiered-list",
+      "path": "sites/construct/tiered-list"
     }
   ],
-  "mentionsComponents": []
+  "mentionsComponents": [
+    {
+      "name": "Basic section",
+      "slug": "basic-section",
+      "path": "sites/construct/basic-section"
+    },
+    {
+      "name": "CTA block",
+      "slug": "cta-block",
+      "path": "cta-block"
+    },
+    {
+      "name": "CTA block",
+      "slug": "cta-block",
+      "path": "sites/construct/cta-block"
+    },
+    {
+      "name": "Divided section",
+      "slug": "divided-section",
+      "path": "sites/construct/divided-section"
+    },
+    {
+      "name": "Equal height block",
+      "slug": "equal-height-block",
+      "path": "sites/construct/equal-height-block"
+    },
+    {
+      "name": "Tiered list",
+      "slug": "tiered-list",
+      "path": "sites/construct/tiered-list"
+    }
+  ]
 }

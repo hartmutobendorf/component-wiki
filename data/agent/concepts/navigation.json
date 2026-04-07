@@ -54,11 +54,13 @@
   "mentionedIn": [
     {
       "name": "Badge",
-      "slug": "badge"
+      "slug": "badge",
+      "path": "global/construct/badge"
     },
     {
       "name": "Breadcrumbs",
-      "slug": "breadcrumbs"
+      "slug": "breadcrumbs",
+      "path": "global/construct/breadcrumbs"
     }
   ],
   "mentionsComponents": [],

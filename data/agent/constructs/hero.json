@@ -3,16 +3,85 @@
   "slug": "hero",
   "type": "Pattern",
   "tiers": "Sites",
-  "documentationStatus": "Needs work",
-  "lastEdited": "2026-02-10T08:16:31.096+00:00",
-  "figmaLink": "",
-  "codeLink": "",
-  "description": "",
-  "usage": "",
-  "examples": "",
+  "documentationStatus": "Minimal",
+  "lastEdited": "2026-03-24T18:21:21.163+00:00",
+  "figmaLink": "https://www.figma.com/design/1brHCsyeTE6FU7hfJd6ao2/%F0%9F%8C%90-Sites---Core-component-library?node-id=6-33&p=f&t=YhBn3QZHHdKpqFMY-11",
+  "codeLink": "https://github.com/canonical/vanilla-framework/blob/main/templates/_macros/vf_hero.jinja",
+  "description": "Hero is a prominent banner pattern used at the top of a page to make a strong statement about a product or service. It communicates the core value proposition and gives users an immediate reason to engage.  \nThe pattern supports several layout variants. All variants share a required heading. Other content elements ( subheading, body text, CTA, and image) are optional, with one exception: when an image appears in the same row as text content, it is required for that layout to function correctly. \n\n",
+  "usage": "Use Hero to open a page with a strong statement about a product, service, or topic. It communicates the core value proposition and gives users an immediate reason to engage with the page content.  \nHero is the mandatory first section of every page. Only one Hero can appear per page, and it must always be the first section.  \nAny layout variant can be used. On templatized pages — such as Case study or Article page — the Hero must follow the template's defined style.\n\n### When to use\n\n*   At the top of any page to introduce the page's purpose and value\n*   To make a strong, immediate statement about a product, service, or topic\n\n### When not to use\n\n*   On Thank you page and Error page : these do not use a Hero\n*   Within a page section: placing a hero mid-page breaks the visual and structural hierarchy. The hero is a page-level entry point, not a section header. Use a section heading or a text spotlight instead.\n*   As a repeated element: using more than one hero per page splits the user’s attention and dilutes the primary message. If a page covers multiple topics, restructure the content or break it into separate pages.",
+  "examples": "### Full width image\n\nThis variant places the heading on the right, with the subheading, body, and [CTA block](/sites/construct/cta-block) on the left in a 50/50 layout, and positions a cinematic image at the bottom.\n\n**Large dimension**\n\n![example-1.png](images/5ad89623-a259-4950-a4f3-9ed7c14517e0.png)\n\n**Medium dimension**\n\n![example-2.png](images/a59465bf-567a-4e48-b860-7ab84018277a.png)\n\n**Small dimension**\n\n![example-3.png](images/80baa634-d082-4814-a2e6-326cbbc84696.png)\n\n### 50/50\n\nThis variant places content on the right, with a 3:2 or 16:9 image on the left. In this layout, the image is required and may be used as an embedded video.\n\n**Large dimension**\n\n![example.png](images/f1652e19-a922-45f3-b154-3b669401921a.png)\n\n**Medium dimension**\n\nThis variant supports two layout options on medium screens: split (50/50) or stacked (full-width).\n\n50/50\n\n![example-4.png](images/824fbaf6-1d40-4e07-a302-5cfe4fed4fa2.png)\n\nFull-width\n\n![example-5.png](images/2e071141-a7af-4ffd-ab74-5a601cf8edfa.png)\n\n**Small dimension**\n\n![example-6.png](images/44fa3191-b8b4-4e36-a52c-69f7885b7703.png)\n\n### Signpost\n\nIf you have a small image that you want to associate with the hero title, you can use the \"signpost\" layout. This places the image in a small column beside the primary hero content.\n\n**Large dimension**\n\n![example-7.png](images/bbcd2e62-6546-40d6-9bc2-d3b5cad8bb9c.png)\n\n**Medium dimension**\n\n![example-9.png](images/79db64d2-dba0-4c68-b9e0-440d0453bf1b.png)\n\n**Small dimension**\n\n![example-10.png](images/78be328d-5265-46b7-8295-98d5b00c8475.png)\n\n### 75/25\n\nThis variant relies on a deprecated grid and should be avoided until it is updated.\n\nIf you need to accommodate a large amount of body text and/or a portrait-oriented image, the 75/25 layout can be used, placing the image in a narrow column beside the hero content.\n\n### Large dimension\n\n![example-11.png](images/16446335-77fc-4e0f-81e8-2b28517dfcfe.png)\n\n**Medium dimension**\n\nThe .row--75-25 class maintains the 75/25 split on medium screens.\n\n![example-12.png](images/42b406af-d4c7-4a42-9a69-869937da57ab.png)\n\n**Small dimension**\n\nIf the image becomes too tall on small screens, use .u-hide--small to hide it.\n\n![has image.png](images/1bed641b-1410-49ca-8725-c12ef4701e31.png)\n\n![example-13.png](images/82f1e9ae-2d8e-43fe-98c5-1d9e6d757a08.png)\n\n### Fallback\n\nIf you have a very large amount of text content that is difficult to balance with the hero image, you can use the fallback layout. This places the title and subtitle in their own row above the rest of the hero content.\n\n**Large dimension**\n\n![example-15.png](images/b3c63fa6-4b22-4237-bf35-4ba35421853a.png)\n\n**Medium dimension**\n\n![example-16.png](images/82b3809e-1b63-4463-ac6d-30c8aa4297e3.png)\n\n**Small dimension**\n\n![example-17.png](images/443bd976-3a39-4a6d-a86e-7c8d39d874e8.png)",
   "interactions": "",
   "sitesArchitectureLevels": "i-ues18YVwia",
+  "anatomy": {
+    "table": [
+      {
+        "number": 1,
+        "name": "Heading",
+        "description": "The primary title of the hero, present in all layout variants"
+      },
+      {
+        "number": 2,
+        "name": "Subheading",
+        "description": "The secondary title that supports the heading with additional context"
+      },
+      {
+        "number": 3,
+        "name": "Body",
+        "description": "The description that provides supporting context for the hero's core message, helping users understand the value or purpose before engaging with the rest of the page."
+      },
+      {
+        "number": 4,
+        "name": "CTA block",
+        "description": "The [CTA block](wiki-ref://grid-ymtdOF6n4R/i-0Z_OLuJDCc) presents one or more related actions that guide the user toward the next step. In the hero, a primary button can be used."
+      },
+      {
+        "number": 5,
+        "name": "Image",
+        "description": " The visual element that supports the hero's message. Can appear as a full-width element below the content area, or alongside the content area in split layout variants. Required when the layout includes a side-by-side image column."
+      },
+      {
+        "number": 6,
+        "name": "Signpost image",
+        "description": "The signpost image identifies the product, partner, or associated entity relevant to the page content. Displayed in a 25% column alongside the text content in the signpost layout variant."
+      }
+    ]
+  },
   "properties": [
+    {
+      "name": "Layout",
+      "required": true,
+      "type": "single select",
+      "description": " Determines the visual structure of the hero and the column spans of all content areas",
+      "constraint": "",
+      "defaultOption": "fallback",
+      "options": [
+        "full-width with iamge",
+        "50/50",
+        "signpost",
+        "75/25",
+        "fallback"
+      ]
+    },
+    {
+      "name": "Medium layout",
+      "required": false,
+      "type": "single select",
+      "description": "Indicate layout for the medium dimension",
+      "constraint": "",
+      "defaultOption": "full-width",
+      "options": [
+        "50/50",
+        "full-width"
+      ]
+    },
+    {
+      "name": "Heading",
+      "required": true,
+      "type": "string",
+      "description": "Primary title, rendered as H1. Column span is determined by the layout variant",
+      "constraint": "Up to 60 characters",
+      "defaultOption": ""
+    },
     {
       "name": "Bottom padding",
       "required": true,
@@ -26,10 +95,104 @@
         "shallow",
         "none"
       ]
+    },
+    {
+      "name": "Subheading",
+      "required": false,
+      "type": "string",
+      "description": "Secondary title, rendered as H2. Column span is determined by the layout variant",
+      "constraint": "Up to 60 characters",
+      "defaultOption": ""
+    },
+    {
+      "name": "Body",
+      "required": false,
+      "type": "string",
+      "description": "Supporting description.  Spans 4 or 6 columns depending on the layout variant; a max-width of 640px is applied at 6 columns",
+      "constraint": "Up to 600 characters",
+      "defaultOption": ""
+    },
+    {
+      "name": "Image",
+      "required": false,
+      "type": "object",
+      "description": "Required when layout is 75/25, 50/50, or fallback.",
+      "constraint": "",
+      "defaultOption": ""
+    },
+    {
+      "name": "Video",
+      "required": false,
+      "type": "string",
+      "description": "In the 50/50 and fallback variants, an embedded video can be used in place of the image.",
+      "constraint": "",
+      "defaultOption": ""
+    },
+    {
+      "name": "Signpost image",
+      "required": false,
+      "type": "object",
+      "description": "In the signpost variant, an image can be placed in the left two columns and may be left empty if needed.",
+      "constraint": "",
+      "defaultOption": "with image",
+      "options": [
+        "with image",
+        "without image"
+      ]
     }
   ],
-  "changeLog": [],
-  "decisionLog": [],
+  "childProperties": [
+    {
+      "name": "CTA block",
+      "properties": [
+        {
+          "name": "Primary CTA",
+          "required": false,
+          "type": "string",
+          "description": "The CTA used with the positive button style. It indicates a high-priority, positive action and is reserved for hero areas or other key call-to-action sections.",
+          "constraint": "Up to 20 characters",
+          "defaultOption": ""
+        },
+        {
+          "name": "Secondary CTA",
+          "required": false,
+          "type": "string",
+          "description": "The CTA using the default button style. It is used for most actions that are positive but not primary, and may serve as the main CTA in non-hero sections.",
+          "constraint": "Up to 20 characters",
+          "defaultOption": ""
+        },
+        {
+          "name": "Link CTA",
+          "required": false,
+          "type": "string",
+          "description": "The text link used for contextual actions or pathways to more information. It uses a chevron (›) to indicate navigation to additional content or pages.",
+          "constraint": "Up to 60 characters",
+          "defaultOption": ""
+        }
+      ]
+    }
+  ],
+  "changeLog": [
+    {
+      "who": "Isaac Kim",
+      "when": "2026-03-23T16:00:00.000+00:00",
+      "what": "Initial commit"
+    }
+  ],
+  "decisionLog": [
+    {
+      "where": "Design Systems Contributions",
+      "what": "**Decision:** Add option to stack H1 and H2 in the full-width image variant.\n\n**Rationale:** Some layouts require more vertical space for headings, and stacking is already supported in the 50/50 hero pattern.\n\n**Condition:** This should only be used when the right-side content is taller than the left, and requires designer judgment.\n\n**Next step:** Update the pattern and add guidance to the documentation.",
+      "link": "https://github.com/canonical/vanilla-framework/issues/5579",
+      "when": "2025-07-14T17:00:00.000+01:00"
+    },
+    {
+      "where": "Design Systems Contributions",
+      "what": "**Decision:** Proceed with updating the 75/25 hero to align with the new 4/4/8 grid (75/25 split).\n\n**Rationale:** The updated grid changes the medium breakpoint layout from 66/33 to 75/25\n\n**Impact:** Potential visual changes in text wrapping and image proportion should be considered during design implementation.\n\n**Next step:** Update the pattern and add guidance to the documentation.",
+      "link": "https://github.com/canonical/vanilla-framework/issues/5586",
+      "when": "2026-07-18T17:00:00.000+01:00"
+    }
+  ],
   "appliedRules": [],
   "exceptionFromRules": [
     {
@@ -82,17 +245,31 @@
   "mentionedIn": [
     {
       "name": "Button",
-      "slug": "button"
+      "slug": "button",
+      "path": "global/construct/button"
     },
     {
       "name": "In-page navigation",
-      "slug": "in-page-navigation"
+      "slug": "in-page-navigation",
+      "path": "sites/construct/in-page-navigation"
     },
     {
       "name": "Link",
-      "slug": "link"
+      "slug": "link",
+      "path": "global/construct/link"
     }
   ],
-  "mentionsComponents": [],
+  "mentionsComponents": [
+    {
+      "name": "CTA block",
+      "slug": "cta-block",
+      "path": "cta-block"
+    },
+    {
+      "name": "CTA block",
+      "slug": "cta-block",
+      "path": "sites/construct/cta-block"
+    }
+  ],
   "url": "https://component.wiki/hero"
 }

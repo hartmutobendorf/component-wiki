@@ -4,15 +4,126 @@
   "type": "Complex component",
   "tiers": "Global",
   "documentationStatus": "Needs work",
-  "lastEdited": "2026-02-10T08:12:55.974+00:00",
+  "lastEdited": "2026-03-16T12:33:01.342+00:00",
   "figmaLink": "https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2002-2",
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/b1d651365b0714586e6ea14349dea763819c256e/scss/_base_tables.scss",
-  "description": "",
-  "usage": "",
+  "description": "A table displays data in rows and columns. This structured format helps users review and compare large data sets efficiently. The table is a static component suited to presenting data without complex interactions. For advanced needs – pagination, selection, bulk actions, filtering, sorting, and grouping – use the data table (Apps tier) instead. Sites tier products typically use this table. However, if a use case requires richer functionality, refer to the data table documentation.\n\n",
+  "usage": "Use a table to display data where items share two or more characteristics and belong together as a group. Rows represent items, and columns represent their characteristics. Tables work best when all items share the same set of characteristics, allowing users to compare across rows.\n\n### When to use\n\n*   Entities share multiple characteristics and group together under a common category\n*   Cross-row comparison is meaningful to the user\n*   The user needs to locate or compare specific data points within a known dataset\n\n### When not to use\n\n*   Two datasets have different structures. Do not force them into a single table.\n*   The user needs to browse or explore content without a specific goal. Consider cards for exploratory content, or a list for smaller volumes of data.\n*   The use case involves complex interactions such as bulk selection, filtering, multi-column sorting, or pagination. Use the data table (Apps tier) instead.\n\n### Columns\n\nAlign columns to the grid where possible. If that is not feasible, size columns to fit their content. Consider the available space when deciding how many columns to include. Display only the information the user needs at that moment. Keep column headings short, typically one to two words, and ensure they describe the column content.\n\n### Cell content\n\nChips, icons, and linked text are permitted within table cells. Use linked text for navigation only, not as calls to action. Right-align numbers when users need to compare values across rows. Left-align numbers when comparison is not the intent. Do not apply semantic color to cell text. Use icons or status indicators to convey semantic meaning instead.\n\n### Sorting\n\nTables support sorting on a per-column basis. Designers decide which columns should be sortable. Do not enable sorting on every column. Apply sorting where the data has a meaningful order, such as status categories, dates, or alphabetically significant values. Columns with unordered data do not warrant sorting.\n\n### Pagination\n\nCombine a table with simple pagination when the number of rows would overwhelm the user. Pagination is particularly useful when content appears below the table. Without it, a large number of rows can push that content out of the viewport. Paginating the table reduces its vertical size and keeps the surrounding content visible.\n\n### Mobile\n\nOn mobile, consider converting a table into cards if doing so improves usability. Do not convert tables to cards if it reduces the ability to compare items.",
   "examples": "",
   "interactions": "",
   "sitesArchitectureLevels": "i-UvVNCYZ44t",
-  "properties": [],
+  "anatomy": {
+    "table": [
+      {
+        "number": 1,
+        "name": "Column",
+        "description": "A vertical group of cells that share the same data property."
+      },
+      {
+        "number": 2,
+        "name": "Header row",
+        "description": "The top row containing all column headings."
+      },
+      {
+        "number": 3,
+        "name": "Header text",
+        "description": "The label that identifies the data property for its column."
+      },
+      {
+        "number": 4,
+        "name": "Body row",
+        "description": "A horizontal group of cells representing a single entity's data."
+      },
+      {
+        "number": 5,
+        "name": "Cell text",
+        "description": "The text value displayed in a cell for a given column."
+      },
+      {
+        "number": 6,
+        "name": "Cell status indicator",
+        "description": "A semantically colored circle that conveys status severity."
+      },
+      {
+        "number": 7,
+        "name": "Cell icon",
+        "description": "An icon that represents the value displayed in the cell."
+      }
+    ]
+  },
+  "properties": [
+    {
+      "name": "Rows",
+      "required": true,
+      "type": "number",
+      "description": "The number of rows of the table",
+      "constraint": "",
+      "defaultOption": ""
+    },
+    {
+      "name": "Columns",
+      "required": true,
+      "type": "number",
+      "description": "The number of columns of the table",
+      "constraint": "",
+      "defaultOption": ""
+    },
+    {
+      "name": "Column type",
+      "required": true,
+      "type": "single select",
+      "description": "The type of data displayed in the column",
+      "constraint": "",
+      "defaultOption": "Default",
+      "options": [
+        "Default",
+        "icon",
+        "status"
+      ]
+    },
+    {
+      "name": "Header cell text",
+      "required": true,
+      "type": "string",
+      "description": "The text that indicates what type of data the column displays",
+      "constraint": "",
+      "defaultOption": ""
+    },
+    {
+      "name": "Body cell text",
+      "required": true,
+      "type": "string",
+      "description": "The text inside an individual cell",
+      "constraint": "",
+      "defaultOption": ""
+    },
+    {
+      "name": "Cell status color",
+      "required": false,
+      "type": "single select",
+      "description": "The color of the status indicator on status columns",
+      "constraint": "",
+      "defaultOption": "Default",
+      "options": [
+        "Default",
+        "negative",
+        "positive",
+        "warning",
+        "information"
+      ]
+    },
+    {
+      "name": "Cell icon",
+      "required": false,
+      "type": "single select",
+      "description": "The icon accompanying the text of a cell",
+      "constraint": "",
+      "defaultOption": "",
+      "options": [
+        "Vanilla icons"
+      ]
+    }
+  ],
   "changeLog": [
     {
       "who": "Maximilian Blazek",
@@ -26,19 +137,23 @@
   "mentionedIn": [
     {
       "name": "Checkbox",
-      "slug": "checkbox"
+      "slug": "checkbox",
+      "path": "global/construct/checkbox"
     },
     {
       "name": "Code",
-      "slug": "code"
+      "slug": "code",
+      "path": "global/construct/code"
     },
     {
       "name": "Search",
-      "slug": "search"
+      "slug": "search",
+      "path": "global/construct/search"
     },
     {
       "name": "Table of contents",
-      "slug": "table-of-contents"
+      "slug": "table-of-contents",
+      "path": "global/construct/table-of-contents"
     }
   ],
   "mentionsComponents": [],

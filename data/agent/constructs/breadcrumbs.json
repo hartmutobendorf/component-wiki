@@ -7,8 +7,8 @@
   "lastEdited": "2026-02-13T15:07:25.479+00:00",
   "figmaLink": "https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-7",
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/b1d651365b0714586e6ea14349dea763819c256e/scss/_patterns_breadcrumbs.scss",
-  "description": "Breadcrumbs are a navigational aid that shows users their current location within a site's information hierarchy. They provide a clear path from the root of the information hierarchy (IA) to the current page, allowing users to quickly understand where they are and easily navigate back to previous levels in the IA. Breadcrumbs should reflect the IA, not the user's path they took to arrive at the current page. They work best in websites or applications with multiple levels of hierarchy and are particularly useful when users might arrive at deep pages through [Search](/search) or [Link](/link)s.\n\n",
-  "usage": "Breadcrumbs are used to represent the hierarchical structure of content within an application or website, helping users understand where they are in the information architecture (IA). They provide a visual trail of the user's current location and offer quick navigation to other levels in the IA.\n\nBreadcrumbs reflect the site's structure, not the path a user took to arrive at the current page. They show where you are in the hierarchy, not how you got there.\n\nThey are most effective in applications or websites with substantial content organized hierarchically across two or more levels.  The more complex your information architecture, the more valuable breadcrumbs become for helping users maintain context and navigate efficiently.\n\n### When to use\n\n*   In applications or websites with multiple levels of hierarchical content structure\n*   To help users understand their current location within a deep information architecture\n*   To provide quick navigation back to higher levels in the IA\n*   When the relationship between pages follows a clear parent-child hierarchy\n*   As a secondary navigation aid to complement your primary [Navigation](/navigation)\n\n### When not to use\n\n*   On websites or applications with only a single level of hierarchy\n*   On the root of your site or app (as there are no higher levels to navigate to)\n*   As a replacement for primary [Navigation](/navigation).  Breadcrumbs are always secondary and should enrich, not replace, your main [Navigation](/navigation)\n*   To track a user's browsing history or the path they took through your application\n*   As a progress indicator for multi-step processes",
+  "description": "Breadcrumbs are a navigational aid that shows users their current location within a site's information hierarchy. They provide a clear path from the root of the information hierarchy (IA) to the current page, allowing users to quickly understand where they are and easily navigate back to previous levels in the IA. Breadcrumbs should reflect the IA, not the user's path they took to arrive at the current page. They work best in websites or applications with multiple levels of hierarchy and are particularly useful when users might arrive at deep pages through [Search](/global/construct/search) or [Link](/global/construct/link)s.\n\n",
+  "usage": "Breadcrumbs are used to represent the hierarchical structure of content within an application or website, helping users understand where they are in the information architecture (IA). They provide a visual trail of the user's current location and offer quick navigation to other levels in the IA.\n\nBreadcrumbs reflect the site's structure, not the path a user took to arrive at the current page. They show where you are in the hierarchy, not how you got there.\n\nThey are most effective in applications or websites with substantial content organized hierarchically across two or more levels.  The more complex your information architecture, the more valuable breadcrumbs become for helping users maintain context and navigate efficiently.\n\n### When to use\n\n*   In applications or websites with multiple levels of hierarchical content structure\n*   To help users understand their current location within a deep information architecture\n*   To provide quick navigation back to higher levels in the IA\n*   When the relationship between pages follows a clear parent-child hierarchy\n*   As a secondary navigation aid to complement your primary [Navigation](/global/construct/navigation)\n\n### When not to use\n\n*   On websites or applications with only a single level of hierarchy\n*   On the root of your site or app (as there are no higher levels to navigate to)\n*   As a replacement for primary [Navigation](/global/construct/navigation).  Breadcrumbs are always secondary and should enrich, not replace, your main [Navigation](/global/construct/navigation)\n*   To track a user's browsing history or the path they took through your application\n*   As a progress indicator for multi-step processes",
   "examples": "",
   "interactions": "",
   "sitesArchitectureLevels": "i-UvVNCYZ44t",
@@ -71,25 +71,30 @@
   "mentionedIn": [
     {
       "name": "Link",
-      "slug": "link"
+      "slug": "link",
+      "path": "global/construct/link"
     }
   ],
   "mentionsComponents": [
     {
       "name": "Link",
-      "slug": "link"
+      "slug": "link",
+      "path": "global/construct/link"
     },
     {
       "name": "Navigation",
-      "slug": "navigation"
+      "slug": "navigation",
+      "path": "global/construct/navigation"
     },
     {
       "name": "Navigation",
-      "slug": "navigation"
+      "slug": "navigation",
+      "path": "sites/concept/navigation"
     },
     {
       "name": "Search",
-      "slug": "search"
+      "slug": "search",
+      "path": "global/construct/search"
     }
   ],
   "url": "https://component.wiki/breadcrumbs"

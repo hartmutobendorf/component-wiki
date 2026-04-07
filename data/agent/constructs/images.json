@@ -83,7 +83,13 @@
   "decisionLog": [],
   "appliedRules": [],
   "exceptionFromRules": [],
-  "mentionedIn": [],
+  "mentionedIn": [
+    {
+      "name": "Divided block",
+      "slug": "divided-block",
+      "path": "sites/construct/divided-block"
+    }
+  ],
   "mentionsComponents": [],
   "url": "https://component.wiki/images"
 }

@@ -7,8 +7,8 @@
   "lastEdited": "2026-02-13T15:18:32.176+00:00",
   "figmaLink": "https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-19",
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/d0197b27f5733789d6d23536eabe68356e045ae1/scss/_patterns_chip.scss",
-  "description": "Chips are visual elements that display information about a specific entity on the page. This information can be status, categories, tags, etc. \n\nThey make this information more visually prominent and therefore elevate it in the information hierarchy.\n\nIn addition to displaying information, chips can also facilitate secondary actions such as content filtering, selection and highlighting. When interactive, chips maintain their primary function of displaying information - filter chips display applied filters while allowing dismissal, selection chips highlight selected options while allowing changes. Chips should not replace the primary call-to-action [Button](/button). They should be used for supporting actions that complement the main user flow rather than driving it.",
-  "usage": "Chips are visual elements that display information about a specific entity on the page. This information can be status, categories, tags, etc. They make this information more visually prominent and therefore elevate it in the information hierarchy.\n\nIn addition to displaying information, chips can also facilitate secondary actions such as content filtering, selection and highlighting. When interactive, chips maintain their primary function of displaying information - filter chips display applied filters while allowing dismissal, selection chips highlight selected options while allowing changes. Chips should not replace the primary call-to-action [Button](/button) - they should be used for supporting actions that complement the main user flow rather than driving it.",
+  "description": "Chips are visual elements that display information about a specific entity on the page. This information can be status, categories, tags, etc. \n\nThey make this information more visually prominent and therefore elevate it in the information hierarchy.\n\nIn addition to displaying information, chips can also facilitate secondary actions such as content filtering, selection and highlighting. When interactive, chips maintain their primary function of displaying information - filter chips display applied filters while allowing dismissal, selection chips highlight selected options while allowing changes. Chips should not replace the primary call-to-action [Button](/global/construct/button). They should be used for supporting actions that complement the main user flow rather than driving it.",
+  "usage": "Chips are visual elements that display information about a specific entity on the page. This information can be status, categories, tags, etc. They make this information more visually prominent and therefore elevate it in the information hierarchy.\n\nIn addition to displaying information, chips can also facilitate secondary actions such as content filtering, selection and highlighting. When interactive, chips maintain their primary function of displaying information - filter chips display applied filters while allowing dismissal, selection chips highlight selected options while allowing changes. Chips should not replace the primary call-to-action [Button](/global/construct/button) - they should be used for supporting actions that complement the main user flow rather than driving it.",
   "examples": "",
   "interactions": "",
   "sitesArchitectureLevels": "i-UvVNCYZ44t",
@@ -160,13 +160,15 @@
   "mentionedIn": [
     {
       "name": "Badge",
-      "slug": "badge"
+      "slug": "badge",
+      "path": "global/construct/badge"
     }
   ],
   "mentionsComponents": [
     {
       "name": "Button",
-      "slug": "button"
+      "slug": "button",
+      "path": "global/construct/button"
     }
   ],
   "url": "https://component.wiki/chip"

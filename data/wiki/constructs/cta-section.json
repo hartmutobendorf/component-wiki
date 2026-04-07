@@ -8,14 +8,14 @@
   "figmaLink": "https://www.figma.com/design/1brHCsyeTE6FU7hfJd6ao2/%F0%9F%8C%90-Sites---Core-component-library?node-id=211-14507",
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/main/templates/_macros/vf_cta-section.jinja",
   "description": "The CTA section is a prominent and visually engaging section designed to encourage users to take a clear next step. It combines a concise copy and one or more call-to-action elements into a focused layout that stands out from surrounding content. This pattern is typically used mid-page or near the end of a page to re-engage users and guide them toward a specific action such as downloading resources, contacting sales, or exploring key documentation. The CTA section helps reduce decision friction by clearly communicating what the action is and why it matters now.",
-  "usage": "Use the CTA section to highlight a clear, intentional next step within the page flow. This pattern is designed to create a moment of focus, helping users transition from consuming information to taking action.  \nCTA sections are typically placed mid-page or near the end of a page, where users have enough context to understand the value of the action being proposed.\n\nThe CTA section should represent a single primary intent. Any supporting text or additional elements should reinforce this intent rather than introduce new topics.\n\n  \n\n### When to use\n\n*   A specific user action is the primary purpose of the section, not a secondary affordance.\n*   You need to visually separate a call to action from surrounding content to increase emphasis.\n\n### When not to use\n\n*   If long-form explanatory content is needed, use a [Basic section](/basic-section) with the [CTA block](/cta-block) instead.\n*   The CTA appears too early in the page flow, before users have sufficient context to understand its value.",
-  "examples": "### Layout\n\nFull-width(Default)\n\n![example-1.png](images/33cd5c04-d3f3-468c-b845-77dda4e4f413.png)\n\nFull-width([CTA block](/cta-block))\n\n![example-4.png](images/609738ce-e23f-443b-aff2-a31a1194da27.png)\n\n25/75(Default)\n\n![example.png](images/6bb6cc22-44ba-43fd-992b-051dc2a6a75a.png)\n\n25/75([CTA block](/cta-block))\n\n![example-5.png](images/1094749e-cff9-41ee-bd23-026c216ba5c3.png)\n\n### Responsive\n\nMedium dimension (Default)\n\n![example-2.png](images/44308ad0-f168-4776-918f-597ddcedf82f.png)\n\nMedium dimension ([CTA block](/cta-block))\n\n![example-6.png](images/082e9e54-216c-4845-b310-6bcf9c4baced.png)\n\nSmall dimension (Default)\n\n![example-3.png](images/48988b1c-7d82-450f-9643-d60d21d413ef.png)\n\nSmall dimension ([CTA block](/cta-block))\n\n![example-7.png](images/a02a10b3-6965-43f1-b249-456b9569f461.png)",
+  "usage": "Use the CTA section to highlight a clear, intentional next step within the page flow. This pattern is designed to create a moment of focus, helping users transition from consuming information to taking action.  \nCTA sections are typically placed mid-page or near the end of a page, where users have enough context to understand the value of the action being proposed.\n\nThe CTA section should represent a single primary intent. Any supporting text or additional elements should reinforce this intent rather than introduce new topics.\n\n  \n\n### When to use\n\n*   A specific user action is the primary purpose of the section, not a secondary affordance.\n*   You need to visually separate a call to action from surrounding content to increase emphasis.\n\n### When not to use\n\n*   If long-form explanatory content is needed, use a [Basic section](/sites/construct/basic-section) with the [CTA block](/sites/construct/cta-block) instead.\n*   The CTA appears too early in the page flow, before users have sufficient context to understand its value.",
+  "examples": "### Layout\n\nFull-width(Default)\n\n![example-1.png](images/66b208c8-e0ce-4e4f-91dc-3f024bc2ff71.png)\n\nFull-width([CTA block](/sites/construct/cta-block))\n\n![example-4.png](images/2fe93e34-164c-4496-9654-ad7c8fd7a77d.png)\n\n25/75(Default)\n\n![example.png](images/17e8a11e-f7a0-4173-80f9-14188612cc59.png)\n\n25/75([CTA block](/sites/construct/cta-block))\n\n![example-5.png](images/7331b396-c74b-4052-ac31-a4b25176e12d.png)\n\n### Responsive\n\nMedium dimension (Default)\n\n![example-2.png](images/d2ccc33f-0e9a-4fa8-b879-fe33d06669dc.png)\n\nMedium dimension ([CTA block](/sites/construct/cta-block))\n\n![example-6.png](images/8c6b47d1-4f67-440d-81e5-b042f96adcf7.png)\n\nSmall dimension (Default)\n\n![example-3.png](images/df4033a4-14dc-49ea-96a7-c93c25c327c9.png)\n\nSmall dimension ([CTA block](/sites/construct/cta-block))\n\n![example-7.png](images/36fda695-c807-4f0e-95f4-d882acac6264.png)",
   "interactions": "",
   "figmaComponentData": "",
-  "componentExampleImage": "images/ee41ccf6-618d-48bd-9391-19f043641dc9.png",
+  "componentExampleImage": "images/8d94d93b-4b5c-4e7a-be36-b05ea7e2ff25.png",
   "sitesArchitectureLevels": "i-ues18YVwia",
   "anatomy": {
-    "image": "images/acbec6a3-438b-45fb-ab68-62dcfec3c730.png",
+    "image": "images/8892bd82-50d2-417d-bdca-14df6a62cefd.png",
     "table": [
       {
         "number": 1,
@@ -30,7 +30,7 @@
       {
         "number": 3,
         "name": "CTA",
-        "description": "The interactive element(s) that trigger the intended action. Depending on the variant, this may appear as:\n\n- One or more inline text links (link-style CTA), or\n- A dedicated CTA block containing buttons or structured actions\n\nThis element is required and represents the functional core of the CTA section."
+        "description": "The interactive element(s) that trigger the intended action. Depending on the variant, this may appear as:\n\n- One or more inline text links (link-style CTA), or\n- A dedicated [CTA block](wiki-ref://grid-ymtdOF6n4R/i-0Z_OLuJDCc) containing buttons or structured actions\n\nThis element is required and represents the functional core of the CTA section."
       },
       {
         "number": 4,
@@ -43,7 +43,7 @@
     {
       "name": "Section rule",
       "required": true,
-      "type": "single select",
+      "type": "object",
       "description": "The rule component indicates the beginning of a new pattern",
       "constraint": "Only use the default style for the section-level rule",
       "defaultOption": "default",
@@ -52,26 +52,10 @@
       ]
     },
     {
-      "name": "Link CTA",
-      "required": false,
-      "type": "string",
-      "description": "The text link used for contextual actions or pathways to more information. It uses a chevron (›) to indicate navigation to additional content or pages.",
-      "constraint": "Up to 60 characters",
-      "defaultOption": ""
-    },
-    {
       "name": "Top padding",
       "required": true,
       "type": "single select",
       "description": "The type of padding applied to the top of the pattern after the section rule",
-      "constraint": "",
-      "defaultOption": "deep"
-    },
-    {
-      "name": "Bottom padding",
-      "required": true,
-      "type": "single select",
-      "description": "The type of padding applied to the bottom of the pattern",
       "constraint": "",
       "defaultOption": "deep"
     },
@@ -102,20 +86,28 @@
         "25/75",
         "full-width"
       ]
+    },
+    {
+      "name": "Link CTA",
+      "required": false,
+      "type": "string",
+      "description": "The text link used for contextual actions or pathways to more information. It uses a chevron (›) to indicate navigation to additional content or pages.",
+      "constraint": "Up to 60 characters",
+      "defaultOption": ""
+    },
+    {
+      "name": "Bottom padding",
+      "required": true,
+      "type": "single select",
+      "description": "The type of padding applied to the bottom of the pattern",
+      "constraint": "",
+      "defaultOption": "deep"
     }
   ],
   "childProperties": [
     {
       "name": "CTA block",
       "properties": [
-        {
-          "name": "Link CTA",
-          "required": false,
-          "type": "string",
-          "description": "The text link used for contextual actions or pathways to more information. It uses a chevron (›) to indicate navigation to additional content or pages.",
-          "constraint": "Up to 60 characters",
-          "defaultOption": ""
-        },
         {
           "name": "Primary CTA",
           "required": false,
@@ -130,6 +122,14 @@
           "type": "string",
           "description": "The CTA using the default button style. It is used for most actions that are positive but not primary, and may serve as the main CTA in non-hero sections.",
           "constraint": "Up to 20 characters",
+          "defaultOption": ""
+        },
+        {
+          "name": "Link CTA",
+          "required": false,
+          "type": "string",
+          "description": "The text link used for contextual actions or pathways to more information. It uses a chevron (›) to indicate navigation to additional content or pages.",
+          "constraint": "Up to 60 characters",
           "defaultOption": ""
         }
       ]
@@ -210,17 +210,25 @@
   "mentionedIn": [
     {
       "name": "CTA block",
-      "slug": "cta-block"
+      "slug": "cta-block",
+      "path": "sites/construct/cta-block"
     }
   ],
   "mentionsComponents": [
     {
       "name": "Basic section",
-      "slug": "basic-section"
+      "slug": "basic-section",
+      "path": "sites/construct/basic-section"
     },
     {
       "name": "CTA block",
-      "slug": "cta-block"
+      "slug": "cta-block",
+      "path": "cta-block"
+    },
+    {
+      "name": "CTA block",
+      "slug": "cta-block",
+      "path": "sites/construct/cta-block"
     }
   ]
 }

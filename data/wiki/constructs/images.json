@@ -15,7 +15,7 @@
   "componentExampleImage": "",
   "sitesArchitectureLevels": "i-UvVNCYZ44t",
   "anatomy": {
-    "image": "images/91097baa-248e-4931-a228-56a1fabb86f4.png",
+    "image": "images/75b0db74-d0d6-4081-8d9b-0ef965978ba0.png",
     "table": []
   },
   "properties": [
@@ -86,6 +86,12 @@
   "decisionLog": [],
   "appliedRules": [],
   "exceptionFromRules": [],
-  "mentionedIn": [],
+  "mentionedIn": [
+    {
+      "name": "Divided block",
+      "slug": "divided-block",
+      "path": "sites/construct/divided-block"
+    }
+  ],
   "mentionsComponents": []
 }

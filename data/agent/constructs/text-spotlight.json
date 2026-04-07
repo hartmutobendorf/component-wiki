@@ -16,7 +16,7 @@
     {
       "name": "Section rule",
       "required": true,
-      "type": "single select",
+      "type": "object",
       "description": "The rule component indicates the beginning of a new pattern",
       "constraint": "Only use the default style for the section-level rule",
       "defaultOption": "default",
@@ -66,11 +66,13 @@
   "mentionedIn": [
     {
       "name": "Basic section",
-      "slug": "basic-section"
+      "slug": "basic-section",
+      "path": "sites/construct/basic-section"
     },
     {
       "name": "Data spotlight",
-      "slug": "data-spotlight"
+      "slug": "data-spotlight",
+      "path": "sites/construct/data-spotlight"
     }
   ],
   "mentionsComponents": [],
