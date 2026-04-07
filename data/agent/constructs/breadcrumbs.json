@@ -5,7 +5,7 @@
   "type": "Component",
   "tier": "Global",
   "documentationStatus": "Minimal",
-  "lastEdited": "2026-02-13T15:07:25.479+00:00",
+  "lastEdited": "2026-04-07T09:39:36.265+01:00",
   "figmaLink": "https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-7",
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/b1d651365b0714586e6ea14349dea763819c256e/scss/_patterns_breadcrumbs.scss",
   "description": "Breadcrumbs are a navigational aid that shows users their current location within a site's information hierarchy. They provide a clear path from the root of the information hierarchy (IA) to the current page, allowing users to quickly understand where they are and easily navigate back to previous levels in the IA. Breadcrumbs should reflect the IA, not the user's path they took to arrive at the current page. They work best in websites or applications with multiple levels of hierarchy and are particularly useful when users might arrive at deep pages through [Search](/global/construct/search) or [Link](/global/construct/link)s.\n\n",

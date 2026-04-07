@@ -5,7 +5,7 @@
   "type": "Component",
   "tier": "Global",
   "documentationStatus": "Minimal",
-  "lastEdited": "2026-02-13T16:00:44.645+00:00",
+  "lastEdited": "2026-04-07T09:41:32.015+01:00",
   "figmaLink": "https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-43",
   "codeLink": "figma.com/exit?url=https%3A%2F%2Fgithub.com%2Fcanonical%2Fvanilla-framework%2Fblob%2Fb1d651365b0714586e6ea14349dea763819c256e%2Fscss%2F_base_forms.scss%23L180",
   "description": "Select components allow users to choose a single option from a list of choices, mostly in forms. Selects are ideal when users need to pick from a predefined set of options where displaying all choices at once would consume too much screen space. ",

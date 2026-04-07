@@ -5,7 +5,7 @@
   "type": "Component",
   "tier": "Global",
   "documentationStatus": "Minimal",
-  "lastEdited": "2026-02-27T14:07:12.674+00:00",
+  "lastEdited": "2026-04-07T09:41:55.540+01:00",
   "figmaLink": "https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-49",
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/b1d651365b0714586e6ea14349dea763819c256e/scss/_patterns_table-of-contents.scss",
   "description": "The table of contents is a navigational component consisting of a series of anchor links that correspond to sections within a page. When clicked, each link scrolls the user to the relevant section of content. This component is typically used on pages with substantial content, such as documentation or long-form articles, where users benefit from being able to quickly locate and jump to specific information without manually scrolling through the entire page.",

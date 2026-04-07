@@ -5,7 +5,7 @@
   "type": "Complex component",
   "tier": "Global",
   "documentationStatus": "Minimal",
-  "lastEdited": "2026-03-02T16:01:11.555+00:00",
+  "lastEdited": "2026-04-07T09:36:53.287+01:00",
   "figmaLink": "https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2319-278",
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/b1d651365b0714586e6ea14349dea763819c256e/scss/_patterns_code-snippet.scss",
   "description": "The code snippet component displays multi-line or complex code, commands, and technical content that requires distinct visual treatment from surrounding content. This covers full code files, terminal commands, and their output. It supports showing code in multiple languages and different versions of a product or library. For single-line code, use the [Code](/global/construct/code) component's inline variant instead.\n\n",

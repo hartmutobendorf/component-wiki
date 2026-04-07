@@ -5,7 +5,7 @@
   "type": "Component",
   "tier": "Global",
   "documentationStatus": "Minimal",
-  "lastEdited": "2026-02-10T08:14:32.382+00:00",
+  "lastEdited": "2026-04-07T09:40:32.566+01:00",
   "figmaLink": "https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-35",
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/b1d651365b0714586e6ea14349dea763819c256e/scss/_patterns_notifications.scss",
   "description": "Notifications display brief, contextual messages to inform users about system status, user actions, or important updates. They typically appear temporarily and can convey success, error, warning, or informational states to provide immediate feedback without disrupting the user's workflow.",

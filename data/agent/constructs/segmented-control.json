@@ -5,7 +5,7 @@
   "type": "Component",
   "tier": "Global",
   "documentationStatus": "Minimal",
-  "lastEdited": "2026-02-27T14:07:09.144+00:00",
+  "lastEdited": "2026-04-07T09:40:59.453+01:00",
   "figmaLink": "https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-42",
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/b1d651365b0714586e6ea14349dea763819c256e/scss/_patterns_segmented-control.scss",
   "description": "A segmented control allows users to toggle between alternate views of the same content, displaying only one view at a time. This component is commonly used to let users switch between different formats or representations of the same underlying data, such as viewing information as a table, a list, or a cards.",

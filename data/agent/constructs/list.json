@@ -5,7 +5,7 @@
   "type": "Component",
   "tier": "Global",
   "documentationStatus": "Needs work",
-  "lastEdited": "2026-04-06T14:15:48.785+01:00",
+  "lastEdited": "2026-04-07T09:42:57.475+01:00",
   "figmaLink": "",
   "codeLink": "",
   "description": "A list displays related pieces of information where each item represents only one attribute. It helps organize static content and create visual rhythm, making information easier to scan and understand. Lists are not interactive, so users cannot modify, filter, or otherwise change their contents. If an item needs to show more than one attribute, use a table instead.",

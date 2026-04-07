@@ -5,7 +5,7 @@
   "type": "Component",
   "tier": "Global",
   "documentationStatus": "Minimal",
-  "lastEdited": "2026-02-13T15:21:54.845+00:00",
+  "lastEdited": "2026-04-07T09:39:59.724+01:00",
   "figmaLink": "https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-22",
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/d0197b27f5733789d6d23536eabe68356e045ae1/scss/_patterns_contextual-menu.scss",
   "description": "A contextual menu provides secondary actions and options that can be attached to various interface controls, including [Button](/global/construct/button)s, command [Link](/global/construct/link)s, and right-click interactions. It displays relevant actions based on the context of the element or area it's associated with, helping to keep the interface clean while making additional functionality easily accessible when needed. \n\n",
