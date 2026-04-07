@@ -20,7 +20,7 @@ test.describe("API routes", () => {
       expect(data).toHaveProperty("name");
       expect(data).toHaveProperty("slug");
       expect(data).toHaveProperty("type");
-      expect(data).toHaveProperty("tiers");
+      expect(data).toHaveProperty("tier");
       expect(data).toHaveProperty("documentationStatus");
       expect(data).toHaveProperty("lastEdited");
     });

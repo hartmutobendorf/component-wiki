@@ -62,7 +62,7 @@ export function toConstructIndexEntry(construct: Construct): Record<string, unkn
     name: construct.name,
     slug: construct.slug,
     type: construct.type,
-    tiers: construct.tiers,
+    tier: construct.tier,
     description: construct.description ?? "",
   };
 }
@@ -105,7 +105,7 @@ export const agent = {
 
     // Build and write index
     const constructTypes = [...new Set(constructs.map((c) => c.type))].sort();
-    const constructTiers = [...new Set(constructs.map((c) => c.tiers))].sort();
+    const constructTiers = [...new Set(constructs.map((c) => c.tier))].sort();
     const conceptTypes = [...new Set(concepts.map((c) => c.type))].sort();
 
     const index = {

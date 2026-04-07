@@ -327,7 +327,7 @@ export function denormalizeConstructs(raw: RawData, syncConfig?: SyncConfig): Co
     const typeName = lookupName(constructTypes.rows as Record<string, RawLookupRow>, comp.type);
 
     // Resolve lookup values
-    const tierName = lookupName(documentationTiers.rows as Record<string, RawLookupRow>, comp.tiers);
+    const tierName = lookupName(documentationTiers.rows as Record<string, RawLookupRow>, comp.tier);
     const docStatus = lookupName(documentationStatus.rows as Record<string, RawLookupRow>, comp.documentationStatus);
 
     // Generate slug
@@ -481,10 +481,11 @@ export function denormalizeConstructs(raw: RawData, syncConfig?: SyncConfig): Co
 
     // Build construct
     const result: Construct = {
+      kind: "construct",
       name: comp.name,
       slug,
       type: typeName as Construct["type"],
-      tiers: tierName as Construct["tiers"],
+      tier: tierName as Construct["tier"],
       documentationStatus: docStatus as Construct["documentationStatus"],
       lastEdited: comp.lastEdited ?? "",
       figmaLink: comp.figma ?? "",
@@ -620,6 +621,7 @@ export function denormalizeConcepts(raw: RawData, syncConfig?: SyncConfig): Conc
       .filter((r): r is Rule => r !== null);
 
     const result: Concept = {
+      kind: "concept",
       name: conc.name,
       slug,
       type: typeName,

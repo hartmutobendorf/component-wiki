@@ -1,4 +1,4 @@
-import { tierToPrefix, buildConceptPath } from "./tiers";
+import { buildPath } from "@wiki/shared";
 import { CONCEPT_TYPE_ORDER } from "./nav-data";
 
 /**
@@ -12,7 +12,7 @@ interface ConceptLike {
 
 interface ConstructLike {
   id: string;
-  data: { name: string; tiers: string };
+  data: { name: string; tier: string };
 }
 
 /**
@@ -41,12 +41,12 @@ export function getFirstPageForTier(
     ) ?? concepts[0];
 
   if (first) {
-    return `/${buildConceptPath(tier, first.id)}`;
+    return `/${buildPath(tier, "concept", first.id)}`;
   }
 
   const constructs = allConstructs
-    .filter((c) => c.data.tiers === tier)
+    .filter((c) => c.data.tier === tier)
     .sort((a, b) => a.data.name.localeCompare(b.data.name));
 
-  return `/${tierToPrefix(tier)}/${constructs[0]?.id ?? ""}`;
+  return `/${buildPath(tier, "construct", constructs[0]?.id ?? "")}`;
 }

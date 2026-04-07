@@ -2,12 +2,16 @@
  * Resolve `wiki-ref://` links in markdown content to final wiki paths.
  *
  * Resolution rules by table:
- * - Construct table → `[Name](/constructs/slug)`
- * - Concepts table → `[Name](/concepts/slug)`
+ * - Construct table → `[Name](/{tierPrefix}/{slug})`
+ * - Concepts table → `[Name](/{tierPrefix}/concept/{slug})`
  * - Other tables → link to parent construct/concept section, or plain text
  * - Unknown table or missing row → warning logged, link text preserved
+ *
+ * Path construction is delegated to `@wiki/shared` so every package
+ * produces identical URLs.
  */
 
+import { buildPath } from "@wiki/shared";
 import type { SyncConfig } from "./types.js";
 
 interface ParsedWikiRef {
@@ -55,7 +59,6 @@ function getParentRowId(
   let ref: unknown;
 
   if (tableName === "documentationChangelog") {
-    // Changelog has both construct and concept refs
     ref = row.construct || row.concept;
   } else if (tableName === "documentationDecisionlog") {
     ref = row.construct || row.concept;
@@ -91,6 +94,34 @@ function buildTableIndex(
   return index;
 }
 
+/**
+ * Build a map from tier row ID → tier name (e.g. "Global", "Apps", "Sites").
+ */
+function buildTierLookup(
+  tierRows: Record<string, Record<string, unknown>>
+): Map<string, string> {
+  const lookup = new Map<string, string>();
+  for (const [rowId, row] of Object.entries(tierRows)) {
+    const name = (row.name as string) ?? "";
+    if (name) {
+      lookup.set(rowId, name);
+    }
+  }
+  return lookup;
+}
+
+/**
+ * Resolve the tier name from a raw row by looking up its `tier` reference ID
+ * in the documentationTiers table.
+ */
+function resolveTier(
+  row: Record<string, unknown>,
+  tierLookup: Map<string, string>
+): string {
+  const tierId = row.tier as string | undefined;
+  return tierId ? (tierLookup.get(tierId) ?? "") : "";
+}
+
 function resolveWikiRefsInMarkdown(
   markdown: string,
   tableIndex: Map<
@@ -100,7 +131,8 @@ function resolveWikiRefsInMarkdown(
   constructTableId: string,
   constructRows: Record<string, Record<string, unknown>>,
   conceptsTableId: string,
-  conceptRows: Record<string, Record<string, unknown>>
+  conceptRows: Record<string, Record<string, unknown>>,
+  tierLookup: Map<string, string>
 ): string {
   if (!markdown) return markdown;
 
@@ -130,14 +162,16 @@ function resolveWikiRefsInMarkdown(
     if (parsed.tableId === constructTableId) {
       const name = (row.name as string) ?? text;
       const slug = generateSlug(name);
-      return `[${text}](/${slug})`;
+      const tier = resolveTier(row, tierLookup);
+      return `[${text}](/${buildPath(tier, "construct", slug)})`;
     }
 
     // Concepts table: link to the concept page
     if (parsed.tableId === conceptsTableId) {
       const name = (row.name as string) ?? text;
       const slug = generateSlug(name);
-      return `[${text}](/${slug})`;
+      const tier = resolveTier(row, tierLookup);
+      return `[${text}](/${buildPath(tier, "concept", slug)})`;
     }
 
     // Non-primary tables: link to section on parent page
@@ -145,11 +179,17 @@ function resolveWikiRefsInMarkdown(
     if (section) {
       const parentRowId = getParentRowId(tableEntry.tableName, row);
       if (parentRowId) {
-        // Check construct rows first, then concept rows
-        const parentRow = constructRows[parentRowId] ?? conceptRows[parentRowId];
-        if (parentRow) {
-          const parentSlug = generateSlug((parentRow.name as string) ?? "");
-          return `[${text}](/${parentSlug}#${section})`;
+        const parentConstructRow = constructRows[parentRowId];
+        if (parentConstructRow) {
+          const parentSlug = generateSlug((parentConstructRow.name as string) ?? "");
+          const tier = resolveTier(parentConstructRow, tierLookup);
+          return `[${text}](/${buildPath(tier, "construct", parentSlug)}#${section})`;
+        }
+        const parentConceptRow = conceptRows[parentRowId];
+        if (parentConceptRow) {
+          const parentSlug = generateSlug((parentConceptRow.name as string) ?? "");
+          const tier = resolveTier(parentConceptRow, tierLookup);
+          return `[${text}](/${buildPath(tier, "concept", parentSlug)}#${section})`;
         }
       }
       console.warn(
@@ -175,9 +215,11 @@ export function resolveAllWikiRefs(
   const constructRows = allRawTables.construct?.rows ?? {};
   const conceptsTableId = config.tables.concepts?.id ?? "";
   const conceptRows = allRawTables.concepts?.rows ?? {};
+  const tierRows = allRawTables.documentationTiers?.rows ?? {};
+  const tierLookup = buildTierLookup(tierRows);
 
   const resolve = (md: string) =>
-    resolveWikiRefsInMarkdown(md, tableIndex, constructTableId, constructRows, conceptsTableId, conceptRows);
+    resolveWikiRefsInMarkdown(md, tableIndex, constructTableId, constructRows, conceptsTableId, conceptRows, tierLookup);
 
   const result: { description: string; usage: string; examples: string; interactions: string; content?: string } = {
     description: resolve(fields.description),

@@ -7,7 +7,7 @@ import DecisionLogTable from "./DecisionLogTable.astro";
 import MentionedInList from "./MentionedInList.astro";
 import RulesTable from "./RulesTable.astro";
 import { renderMarkdown } from "../utils/render-markdown";
-import { tierToPrefix, buildConceptPath } from "../utils/tiers";
+import { tierToPrefix, buildPath } from "@wiki/shared";
 import { collectMarkdownImages } from "../utils/collect-markdown-images";
 import { buildImageLookup, buildOptimizedImageMap } from "../utils/image-map";
 
@@ -61,7 +61,7 @@ const sortedRuleTypes = [...rulesByType.keys()].sort();
 
 <BaseLayout
   title={`${metadata.name} - Component Wiki`}
-  currentSlug={buildConceptPath(activeTier, conceptId)}
+  currentSlug={buildPath(activeTier, "concept", conceptId)}
   activeTier={activeTier}
 >
   <div slot="meta">
@@ -192,7 +192,7 @@ const sortedRuleTypes = [...rulesByType.keys()].sort();
 
   <ChangeLogTable entries={metadata.changeLog ?? []} />
   <DecisionLogTable entries={metadata.decisionLog ?? []} />
-  <MentionedInList entries={metadata.mentionedIn ?? []} tierPrefix={tierPrefix} />
+  <MentionedInList entries={metadata.mentionedIn ?? []} />
 
   {
     metadata.mentionsComponents && metadata.mentionsComponents.length > 0 && (
@@ -203,7 +203,7 @@ const sortedRuleTypes = [...rulesByType.keys()].sort();
           <ul class="p-list">
             {[...new Map(metadata.mentionsComponents.map((entry) => [entry.slug, entry])).values()].map((entry) => (
               <li class="p-list__item">
-                <a href={`/${tierPrefix}/${entry.slug}`}>{entry.name}</a>
+                <a href={`/${entry.path}`}>{entry.name}</a>
               </li>
             ))}
           </ul>

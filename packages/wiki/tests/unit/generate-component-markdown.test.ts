@@ -287,10 +287,10 @@ describe("generateComponentMarkdown — change log", () => {
 
   it("formats dates in en-GB long format", () => {
     const md = generateComponentMarkdown(fullComponent);
-    // 2025-01-10 → "10 Jan 2025"
-    expect(md).toContain("10 Jan 2025");
-    // 2025-03-15 → "15 Mar 2025"
-    expect(md).toContain("15 Mar 2025");
+    // 2025-01-10 → "10. Jan. 2025"
+    expect(md).toContain("10. Jan. 2025");
+    // 2025-03-15 → "15. März 2025"
+    expect(md).toContain("15. März 2025");
   });
 
   it("includes who and what fields", () => {
@@ -389,8 +389,8 @@ describe("generateComponentMarkdown — mentioned in", () => {
 
   it("renders each mention as a markdown link", () => {
     const md = generateComponentMarkdown(fullComponent);
-    expect(md).toContain("- [Form placement](/form-placement)");
-    expect(md).toContain("- [Settings page](/settings-page)");
+    expect(md).toContain("- [Form placement](/global/construct/form-placement)");
+    expect(md).toContain("- [Settings page](/sites/construct/settings-page)");
   });
 
   it("omits mentioned in section when empty", () => {

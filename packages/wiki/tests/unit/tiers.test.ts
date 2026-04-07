@@ -3,9 +3,9 @@ import {
   TIERS,
   tierToPrefix,
   prefixToTier,
-  buildConstructPath,
+  buildPath,
   filterByTier,
-} from "../../src/utils/tiers.js";
+} from "@wiki/shared";
 
 // ── Constants ───────────────────────────────────────────────
 
@@ -66,26 +66,30 @@ describe("prefixToTier", () => {
   });
 });
 
-// ── buildConstructPath ──────────────────────────────────────
+// ── buildPath ───────────────────────────────────────────────
 
-describe("buildConstructPath", () => {
-  it("builds path for Global tier", () => {
-    expect(buildConstructPath("Global", "button")).toBe("global/button");
+describe("buildPath", () => {
+  it("builds construct path for Global tier", () => {
+    expect(buildPath("Global", "construct", "button")).toBe("global/construct/button");
   });
 
-  it("builds path for Apps tier", () => {
-    expect(buildConstructPath("Apps", "side-navigation")).toBe(
-      "apps/side-navigation",
+  it("builds construct path for Apps tier", () => {
+    expect(buildPath("Apps", "construct", "side-navigation")).toBe(
+      "apps/construct/side-navigation",
     );
   });
 
-  it("builds path for Sites tier", () => {
-    expect(buildConstructPath("Sites", "hero")).toBe("sites/hero");
+  it("builds construct path for Sites tier", () => {
+    expect(buildPath("Sites", "construct", "hero")).toBe("sites/construct/hero");
+  });
+
+  it("builds concept path", () => {
+    expect(buildPath("Global", "concept", "color")).toBe("global/concept/color");
   });
 
   it("handles slugs with hyphens", () => {
-    expect(buildConstructPath("Global", "code-snippet")).toBe(
-      "global/code-snippet",
+    expect(buildPath("Global", "construct", "code-snippet")).toBe(
+      "global/construct/code-snippet",
     );
   });
 });
@@ -94,12 +98,12 @@ describe("buildConstructPath", () => {
 
 describe("filterByTier", () => {
   const items = [
-    { name: "Button", tiers: "Global" },
-    { name: "Hero", tiers: "Sites" },
-    { name: "Side Navigation", tiers: "Apps" },
-    { name: "Accordion", tiers: "Global" },
-    { name: "Blog", tiers: "Sites" },
-    { name: "Form Placement", tiers: "Apps" },
+    { name: "Button", tier: "Global" },
+    { name: "Hero", tier: "Sites" },
+    { name: "Side Navigation", tier: "Apps" },
+    { name: "Accordion", tier: "Global" },
+    { name: "Blog", tier: "Sites" },
+    { name: "Form Placement", tier: "Apps" },
   ];
 
   it("filters to only Global items", () => {

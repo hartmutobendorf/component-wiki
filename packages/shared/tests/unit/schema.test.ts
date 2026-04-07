@@ -59,7 +59,7 @@ describe("rawConstructRowSchema", () => {
     rowId: "comp-01",
     name: "Button",
     type: "type-01",
-    tiers: "tier-01",
+    tier: "tier-01",
     documentationStatus: "status-01",
     lastEdited: "2025-01-01",
     description: "A button.",
@@ -549,7 +549,7 @@ describe("raw table schemas", () => {
           rowId: "comp-01",
           name: "Button",
           type: "t",
-          tiers: "t",
+          tier: "t",
           documentationStatus: "s",
           lastEdited: "",
           description: "",
@@ -991,18 +991,23 @@ describe("childPropertyGroupSchema", () => {
 
 describe("mentionedInEntrySchema", () => {
   it("accepts a valid mentioned-in entry", () => {
-    const entry = { name: "Accordion", slug: "accordion" };
+    const entry = { name: "Accordion", slug: "accordion", path: "global/construct/accordion" };
     const result = mentionedInEntrySchema.parse(entry);
     expect(result.name).toBe("Accordion");
     expect(result.slug).toBe("accordion");
+    expect(result.path).toBe("global/construct/accordion");
   });
 
   it("rejects missing name", () => {
-    expect(() => mentionedInEntrySchema.parse({ slug: "accordion" })).toThrow();
+    expect(() => mentionedInEntrySchema.parse({ slug: "accordion", path: "global/construct/accordion" })).toThrow();
   });
 
   it("rejects missing slug", () => {
-    expect(() => mentionedInEntrySchema.parse({ name: "Accordion" })).toThrow();
+    expect(() => mentionedInEntrySchema.parse({ name: "Accordion", path: "global/construct/accordion" })).toThrow();
+  });
+
+  it("rejects missing path", () => {
+    expect(() => mentionedInEntrySchema.parse({ name: "Accordion", slug: "accordion" })).toThrow();
   });
 });
 
@@ -1010,10 +1015,11 @@ describe("mentionedInEntrySchema", () => {
 
 describe("constructSchema", () => {
   const validConstruct = {
+    kind: "construct" as const,
     name: "Button",
     slug: "button",
     type: "Component",
-    tiers: "Global",
+    tier: "Global",
     documentationStatus: "All good",
     lastEdited: "2025-01-01",
   };
@@ -1068,14 +1074,14 @@ describe("constructSchema", () => {
     const tiers = ["Global", "Sites", "Apps"];
     for (const tier of tiers) {
       expect(() =>
-        constructSchema.parse({ ...validConstruct, tiers: tier }),
+        constructSchema.parse({ ...validConstruct, tier: tier }),
       ).not.toThrow();
     }
   });
 
   it("rejects invalid tiers value", () => {
     expect(() =>
-      constructSchema.parse({ ...validConstruct, tiers: "Local" }),
+      constructSchema.parse({ ...validConstruct, tier: "Local" }),
     ).toThrow();
   });
 
@@ -1157,14 +1163,15 @@ describe("constructSchema", () => {
     const comp = {
       ...validConstruct,
       mentionedIn: [
-        { name: "Accordion", slug: "accordion" },
-        { name: "Form placement", slug: "form-placement" },
+        { name: "Accordion", slug: "accordion", path: "global/construct/accordion" },
+        { name: "Form placement", slug: "form-placement", path: "global/construct/form-placement" },
       ],
     };
     const result = constructSchema.parse(comp);
     expect(result.mentionedIn).toHaveLength(2);
     expect(result.mentionedIn[0].name).toBe("Accordion");
     expect(result.mentionedIn[1].slug).toBe("form-placement");
+    expect(result.mentionedIn[1].path).toBe("global/construct/form-placement");
   });
 });
 
@@ -1172,6 +1179,7 @@ describe("constructSchema", () => {
 
 describe("conceptSchema", () => {
   const validConcept = {
+    kind: "concept" as const,
     name: "Site",
     slug: "site",
     type: "Decision guide",

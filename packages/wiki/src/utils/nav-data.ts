@@ -1,4 +1,4 @@
-import { buildConstructPath, buildConceptPath } from "./tiers";
+import { buildPath } from "@wiki/shared";
 
 /**
  * Ordering constants for navigation groups.
@@ -53,7 +53,7 @@ export interface ConstructEntry {
   id: string;
   data: {
     name: string;
-    tiers: string;
+    tier: string;
     type: string;
   };
 }
@@ -117,20 +117,20 @@ export function buildNavData(
   concepts: ConceptEntry[],
 ): NavData {
   // Filter to current tier
-  const tierConstructs = constructs.filter((c) => c.data.tiers === tier);
+  const tierConstructs = constructs.filter((c) => c.data.tier === tier);
   const tierConcepts = concepts.filter((c) => c.data.tier === tier);
 
   // Map to NavItem shape
   const constructItems: NavItem[] = tierConstructs.map((c) => ({
     name: c.data.name,
-    slug: buildConstructPath(tier, c.id),
-    tier: c.data.tiers,
+    slug: buildPath(tier, "construct", c.id),
+    tier: c.data.tier,
     type: c.data.type,
   }));
 
   const conceptItems: NavItem[] = tierConcepts.map((c) => ({
     name: c.data.name,
-    slug: buildConceptPath(tier, c.id),
+    slug: buildPath(tier, "concept", c.id),
     tier: c.data.tier,
     type: c.data.type,
   }));

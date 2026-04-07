@@ -6,8 +6,9 @@ function makeItem(
   overrides: Partial<Construct> & { name: string; slug: string }
 ): Construct {
   return {
+    kind: "construct",
     type: "Component",
-    tiers: "Global",
+    tier: "Global",
     documentationStatus: "All good",
     lastEdited: "",
     figmaLink: "",
@@ -28,26 +29,43 @@ function makeItem(
 }
 
 describe("buildMentionsComponents", () => {
-  it("builds forward map from mentionedIn", () => {
+  it("builds forward map from mentionedIn with correct paths", () => {
     const items = [
-      makeItem({ name: "Accordion", slug: "accordion" }),
-      makeItem({ name: "Checkbox", slug: "checkbox", mentionedIn: [{ name: "Accordion", slug: "accordion" }] }),
+      makeItem({ name: "Accordion", slug: "accordion", tier: "Global" }),
+      makeItem({
+        name: "Checkbox",
+        slug: "checkbox",
+        tier: "Global",
+        mentionedIn: [{ name: "Accordion", slug: "accordion", path: "global/construct/accordion" }],
+      }),
     ];
     buildMentionsComponents(items);
-    expect((items[0] as any).mentionsComponents).toEqual([{ name: "Checkbox", slug: "checkbox" }]);
+    expect((items[0] as any).mentionsComponents).toEqual([
+      { name: "Checkbox", slug: "checkbox", path: "global/construct/checkbox" },
+    ]);
     expect((items[1] as any).mentionsComponents).toEqual([]);
   });
 
   it("sorts alphabetically", () => {
     const items = [
-      makeItem({ name: "Form", slug: "form" }),
-      makeItem({ name: "Zebra", slug: "zebra", mentionedIn: [{ name: "Form", slug: "form" }] }),
-      makeItem({ name: "Alpha", slug: "alpha", mentionedIn: [{ name: "Form", slug: "form" }] }),
+      makeItem({ name: "Form", slug: "form", tier: "Global" }),
+      makeItem({
+        name: "Zebra",
+        slug: "zebra",
+        tier: "Sites",
+        mentionedIn: [{ name: "Form", slug: "form", path: "global/construct/form" }],
+      }),
+      makeItem({
+        name: "Alpha",
+        slug: "alpha",
+        tier: "Apps",
+        mentionedIn: [{ name: "Form", slug: "form", path: "global/construct/form" }],
+      }),
     ];
     buildMentionsComponents(items);
     expect((items[0] as any).mentionsComponents).toEqual([
-      { name: "Alpha", slug: "alpha" },
-      { name: "Zebra", slug: "zebra" },
+      { name: "Alpha", slug: "alpha", path: "apps/construct/alpha" },
+      { name: "Zebra", slug: "zebra", path: "sites/construct/zebra" },
     ]);
   });
 

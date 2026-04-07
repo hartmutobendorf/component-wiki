@@ -68,7 +68,7 @@ describe("denormalizeConstructs — lookup resolution", () => {
   it("resolves tier name", () => {
     const result = denormalizeConstructs(buildRawData());
     const button = result.find((c) => c.name === "Button")!;
-    expect(button.tiers).toBe("Global");
+    expect(button.tier).toBe("Global");
   });
 
   it("resolves documentation status", () => {
@@ -79,10 +79,10 @@ describe("denormalizeConstructs — lookup resolution", () => {
 
   it("returns empty string for missing lookup", () => {
     const raw = buildRawData();
-    (raw.construct.rows as any)["comp-button"].tiers = "nonexistent";
+    (raw.construct.rows as any)["comp-button"].tier = "nonexistent";
     const result = denormalizeConstructs(raw);
     const button = result.find((c) => c.name === "Button")!;
-    expect(button.tiers).toBe("");
+    expect(button.tier).toBe("");
   });
 });
 
@@ -263,7 +263,7 @@ describe("denormalizeConstructs — wiki-ref resolution", () => {
       "See [Toggle switch](wiki-ref://grid-comp/comp-toggle) for details.";
     const result = denormalizeConstructs(raw, syncConfig);
     const button = result.find((c) => c.name === "Button")!;
-    expect(button.description).toBe("See [Toggle switch](/toggle-switch) for details.");
+    expect(button.description).toBe("See [Toggle switch](/sites/construct/toggle-switch) for details.");
   });
 
   it("does not resolve when no syncConfig", () => {

@@ -1,3 +1,15 @@
+// ── Paths ───────────────────────────────────────────────────
+
+export {
+  TIERS,
+  type Tier,
+  type ItemKind,
+  tierToPrefix,
+  prefixToTier,
+  buildPath,
+  filterByTier,
+} from "./paths.js";
+
 // ── Output schemas ──────────────────────────────────────────
 
 export {

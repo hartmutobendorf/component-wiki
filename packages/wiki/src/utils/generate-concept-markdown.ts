@@ -63,7 +63,7 @@ export function generateConceptMarkdown(data: Concept): string {
   if (data.mentionedIn && data.mentionedIn.length > 0) {
     md += `## Mentioned In\n\n`;
     for (const entry of data.mentionedIn) {
-      md += `- [${entry.name}](/${entry.slug})\n`;
+      md += `- [${entry.name}](/${entry.path})\n`;
     }
     md += `\n`;
   }
@@ -77,7 +77,7 @@ export function generateConceptMarkdown(data: Concept): string {
       ).values(),
     ];
     for (const entry of unique) {
-      md += `- [${entry.name}](/${entry.slug})\n`;
+      md += `- [${entry.name}](/${entry.path})\n`;
     }
     md += `\n`;
   }

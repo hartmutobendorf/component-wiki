@@ -3,10 +3,9 @@ import type { MentionedInEntry } from "@wiki/shared";
 
 interface Props {
   entries: MentionedInEntry[];
-  tierPrefix: string;
 }
 
-const { entries, tierPrefix } = Astro.props;
+const { entries } = Astro.props;
 ---
 
 {entries.length > 0 && (
@@ -16,7 +15,7 @@ const { entries, tierPrefix } = Astro.props;
       <ul class="p-list">
         {entries.map((entry) => (
           <li class="p-list__item">
-            <a href={`/${tierPrefix}/${entry.slug}`}>{entry.name}</a>
+            <a href={`/${entry.path}`}>{entry.name}</a>
           </li>
         ))}
       </ul>

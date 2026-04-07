@@ -4,6 +4,7 @@ import type { Concept } from "@wiki/shared";
  * A minimal valid concept with only required fields.
  */
 export const minimalConcept: Concept = {
+  kind: "concept",
   name: "Spacing",
   slug: "spacing",
   type: "Principle",
@@ -24,6 +25,7 @@ export const minimalConcept: Concept = {
  * A fully populated concept with all optional fields filled in.
  */
 export const fullConcept: Concept = {
+  kind: "concept",
   name: "Form Layout",
   slug: "form-layout",
   type: "Pattern",
@@ -90,13 +92,13 @@ export const fullConcept: Concept = {
   ],
   exceptedFromRules: [],
   mentionedIn: [
-    { name: "Input", slug: "input" },
-    { name: "Select", slug: "select" },
+    { name: "Input", slug: "input", path: "global/construct/input" },
+    { name: "Select", slug: "select", path: "global/construct/select" },
   ],
   mentionsComponents: [
-    { name: "Button", slug: "button" },
-    { name: "Input", slug: "input" },
-    { name: "Button", slug: "button" }, // duplicate to test deduplication
+    { name: "Button", slug: "button", path: "global/construct/button" },
+    { name: "Input", slug: "input", path: "global/construct/input" },
+    { name: "Button", slug: "button", path: "global/construct/button" }, // duplicate to test deduplication
   ],
 };
 

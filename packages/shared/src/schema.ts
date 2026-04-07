@@ -12,7 +12,7 @@ export const rawConstructRowSchema = z.object({
   rowId: z.string(),
   name: z.string(),
   type: z.string(),
-  tiers: z.string(),
+  tier: z.string(),
   documentationStatus: z.string(),
   lastEdited: z.string(),
   description: z.string(),
@@ -289,9 +289,11 @@ export const childPropertyGroupSchema = z.object({
 export const mentionedInEntrySchema = z.object({
   name: z.string(),
   slug: z.string(),
+  path: z.string(),
 });
 
 export const constructSchema = z.object({
+  kind: z.literal("construct"),
   name: z.string(),
   slug: z.string(),
   type: z.enum([
@@ -304,7 +306,7 @@ export const constructSchema = z.object({
     "Layout",
     "Block",
   ]),
-  tiers: z.enum(["Global", "Sites", "Apps"]),
+  tier: z.enum(["Global", "Sites", "Apps"]),
   documentationStatus: z.enum([
     "All good",
     "Minimal",
@@ -332,6 +334,7 @@ export const constructSchema = z.object({
 });
 
 export const conceptSchema = z.object({
+  kind: z.literal("concept"),
   name: z.string(),
   slug: z.string(),
   type: z.string(),

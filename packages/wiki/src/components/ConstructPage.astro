@@ -6,7 +6,7 @@ import ChangeLogTable from "./ChangeLogTable.astro";
 import DecisionLogTable from "./DecisionLogTable.astro";
 import MentionedInList from "./MentionedInList.astro";
 import { renderMarkdown, renderInlineMarkdown } from "../utils/render-markdown";
-import { tierToPrefix, buildConstructPath } from "../utils/tiers";
+import { tierToPrefix, buildPath } from "@wiki/shared";
 import { collectMarkdownImages } from "../utils/collect-markdown-images";
 import { buildImageLookup, buildOptimizedImageMap } from "../utils/image-map";
 import OptimizedImage from "./OptimizedImage.astro";
@@ -61,7 +61,7 @@ const hasInteractions = interactionsHtml.length > 0;
 
 <BaseLayout
   title={`${metadata.name} - Component Wiki`}
-  currentSlug={buildConstructPath(activeTier, constructId)}
+  currentSlug={buildPath(activeTier, "construct", constructId)}
   activeTier={activeTier}
 >
   <div slot="meta">
@@ -183,7 +183,7 @@ const hasInteractions = interactionsHtml.length > 0;
 
             <MetadataBlock
               type={metadata.type}
-              tier={metadata.tiers}
+              tier={metadata.tier}
               documentationStatus={metadata.documentationStatus}
               lastEdited={metadata.lastEdited}
               figmaLink={metadata.figmaLink}
@@ -406,7 +406,7 @@ const hasInteractions = interactionsHtml.length > 0;
 
   <ChangeLogTable entries={metadata.changeLog ?? []} />
   <DecisionLogTable entries={metadata.decisionLog ?? []} />
-  <MentionedInList entries={metadata.mentionedIn ?? []} tierPrefix={tierPrefix} />
+  <MentionedInList entries={metadata.mentionedIn ?? []} />
 
   <script>
     import "../components/copyFigmaButton/copy-figma-button.ts";

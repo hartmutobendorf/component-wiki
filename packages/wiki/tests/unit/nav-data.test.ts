@@ -10,13 +10,13 @@ import {
 // ── Test Data ───────────────────────────────────────────────
 
 const constructs: ConstructEntry[] = [
-  { id: "button", data: { name: "Button", tiers: "Global", type: "Component" } },
-  { id: "accordion", data: { name: "Accordion", tiers: "Global", type: "Component" } },
-  { id: "grid", data: { name: "Grid", tiers: "Global", type: "Foundation" } },
-  { id: "hero", data: { name: "Hero", tiers: "Sites", type: "Pattern" } },
-  { id: "card", data: { name: "Card", tiers: "Global", type: "Block" } },
-  { id: "login-form", data: { name: "Login Form", tiers: "Apps", type: "Complex component" } },
-  { id: "tooltip", data: { name: "Tooltip", tiers: "Global", type: "Component" } },
+  { id: "button", data: { name: "Button", tier: "Global", type: "Component" } },
+  { id: "accordion", data: { name: "Accordion", tier: "Global", type: "Component" } },
+  { id: "grid", data: { name: "Grid", tier: "Global", type: "Foundation" } },
+  { id: "hero", data: { name: "Hero", tier: "Sites", type: "Pattern" } },
+  { id: "card", data: { name: "Card", tier: "Global", type: "Block" } },
+  { id: "login-form", data: { name: "Login Form", tier: "Apps", type: "Complex component" } },
+  { id: "tooltip", data: { name: "Tooltip", tier: "Global", type: "Component" } },
 ];
 
 const concepts: ConceptEntry[] = [
@@ -176,7 +176,7 @@ describe("buildNavData — slug generation", () => {
     const allItems = constructSection.items.flatMap((g) => g.items);
 
     const button = allItems.find((i) => i.name === "Button")!;
-    expect(button.slug).toBe("global/button");
+    expect(button.slug).toBe("global/construct/button");
   });
 
   it("generates correct concept slugs", () => {

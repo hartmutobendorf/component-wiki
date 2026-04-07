@@ -4,10 +4,11 @@ import type { Construct } from "@wiki/shared";
  * A minimal valid component with only required fields.
  */
 export const minimalComponent: Construct = {
+  kind: "construct",
   name: "Button",
   slug: "button",
   type: "Component",
-  tiers: "Global",
+  tier: "Global",
   documentationStatus: "All good",
   lastEdited: "2025-01-15",
   figmaLink: "",
@@ -31,10 +32,11 @@ export const minimalComponent: Construct = {
  * A fully populated component with all optional fields filled in.
  */
 export const fullComponent: Construct = {
+  kind: "construct",
   name: "Toggle Switch",
   slug: "toggle-switch",
   type: "Complex component",
-  tiers: "Sites",
+  tier: "Sites",
   documentationStatus: "Minimal",
   lastEdited: "2025-06-01",
   figmaLink: "https://figma.com/file/abc123",
@@ -152,8 +154,8 @@ export const fullComponent: Construct = {
   appliedRules: [],
   exceptionFromRules: [],
   mentionedIn: [
-    { name: "Form placement", slug: "form-placement" },
-    { name: "Settings page", slug: "settings-page" },
+    { name: "Form placement", slug: "form-placement", path: "global/construct/form-placement" },
+    { name: "Settings page", slug: "settings-page", path: "sites/construct/settings-page" },
   ],
 };
 
@@ -165,7 +167,7 @@ export const descriptionOnlyComponent: Construct = {
   name: "Divider",
   slug: "divider",
   type: "Foundation",
-  tiers: "Global",
+  tier: "Global",
   description: "A horizontal line to separate content sections.",
 };
 

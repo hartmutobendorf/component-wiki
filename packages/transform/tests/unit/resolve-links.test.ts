@@ -20,15 +20,16 @@ const config: SyncConfig = {
     documentationChangelog: { id: "grid-cl" },
     documentationDecisionlog: { id: "grid-dl" },
     concepts: { id: "grid-conc" },
+    documentationTiers: { id: "grid-tiers" },
   },
 };
 
 const allRawTables: Record<string, { rows: Record<string, Record<string, unknown>> }> = {
   construct: {
     rows: {
-      "i-checkbox": { rowId: "i-checkbox", name: "Checkbox" },
-      "i-button": { rowId: "i-button", name: "Button" },
-      "i-cta-block": { rowId: "i-cta-block", name: "CTA block" },
+      "i-checkbox": { rowId: "i-checkbox", name: "Checkbox", tier: "tier-global" },
+      "i-button": { rowId: "i-button", name: "Button", tier: "tier-global" },
+      "i-cta-block": { rowId: "i-cta-block", name: "CTA block", tier: "tier-sites" },
     },
   },
   constructProperties: {
@@ -45,6 +46,7 @@ const allRawTables: Record<string, { rows: Record<string, Record<string, unknown
   documentationChangelog: {
     rows: {
       "i-cl1": { rowId: "i-cl1", construct: "i-button", what: "Initial docs" },
+      "i-cl2": { rowId: "i-cl2", concept: "i-site", what: "Updated concept" },
     },
   },
   documentationDecisionlog: {
@@ -54,29 +56,36 @@ const allRawTables: Record<string, { rows: Record<string, Record<string, unknown
   },
   concepts: {
     rows: {
-      "i-site": { rowId: "i-site", name: "Site" },
-      "i-page": { rowId: "i-page", name: "Page" },
+      "i-site": { rowId: "i-site", name: "Site", tier: "tier-sites" },
+      "i-page": { rowId: "i-page", name: "Page", tier: "tier-global" },
+    },
+  },
+  documentationTiers: {
+    rows: {
+      "tier-global": { rowId: "tier-global", name: "Global" },
+      "tier-sites": { rowId: "tier-sites", name: "Sites" },
+      "tier-apps": { rowId: "tier-apps", name: "Apps" },
     },
   },
 };
 
 describe("resolveAllWikiRefs — construct links", () => {
-  it("resolves a construct wiki-ref to /slug", () => {
+  it("resolves a construct wiki-ref to /{tier}/construct/{slug}", () => {
     const result = resolveAllWikiRefs(
       { description: "Use [Checkbox](wiki-ref://grid-comp/i-checkbox) for filters", usage: "", examples: "" },
       config,
       allRawTables
     );
-    expect(result.description).toBe("Use [Checkbox](/checkbox) for filters");
+    expect(result.description).toBe("Use [Checkbox](/global/construct/checkbox) for filters");
   });
 
-  it("generates correct slug for multi-word names", () => {
+  it("generates correct slug and tier for multi-word names", () => {
     const result = resolveAllWikiRefs(
       { description: "See [CTA block](wiki-ref://grid-comp/i-cta-block) here", usage: "", examples: "" },
       config,
       allRawTables
     );
-    expect(result.description).toBe("See [CTA block](/cta-block) here");
+    expect(result.description).toBe("See [CTA block](/sites/construct/cta-block) here");
   });
 
   it("resolves links in all fields", () => {
@@ -86,58 +95,76 @@ describe("resolveAllWikiRefs — construct links", () => {
       config,
       allRawTables
     );
-    expect(result.description).toContain("[Button](/button)");
-    expect(result.usage).toContain("[Button](/button)");
-    expect(result.examples).toContain("[Button](/button)");
+    expect(result.description).toContain("[Button](/global/construct/button)");
+    expect(result.usage).toContain("[Button](/global/construct/button)");
+    expect(result.examples).toContain("[Button](/global/construct/button)");
   });
 });
 
 describe("resolveAllWikiRefs — concept links", () => {
-  it("resolves a concept wiki-ref to /slug", () => {
+  it("resolves a concept wiki-ref to /{tier}/concept/{slug}", () => {
     const result = resolveAllWikiRefs(
       { description: "See [Site](wiki-ref://grid-conc/i-site) for details", usage: "", examples: "" },
       config,
       allRawTables
     );
-    expect(result.description).toBe("See [Site](/site) for details");
+    expect(result.description).toBe("See [Site](/sites/concept/site) for details");
+  });
+
+  it("includes correct tier prefix for concepts in different tiers", () => {
+    const result = resolveAllWikiRefs(
+      { description: "See [Page](wiki-ref://grid-conc/i-page) for details", usage: "", examples: "" },
+      config,
+      allRawTables
+    );
+    expect(result.description).toBe("See [Page](/global/concept/page) for details");
   });
 });
 
 describe("resolveAllWikiRefs — non-primary table links", () => {
-  it("links property to parent construct's #properties section", () => {
+  it("links property to parent construct's #properties section with tier", () => {
     const result = resolveAllWikiRefs(
       { description: "The [Size](wiki-ref://grid-prop/i-size) property", usage: "", examples: "" },
       config,
       allRawTables
     );
-    expect(result.description).toBe("The [Size](/button#properties) property");
+    expect(result.description).toBe("The [Size](/global/construct/button#properties) property");
   });
 
-  it("links anatomy to parent construct's #anatomy section", () => {
+  it("links anatomy to parent construct's #anatomy section with tier", () => {
     const result = resolveAllWikiRefs(
       { description: "The [Container](wiki-ref://grid-anat/i-anat1) wraps.", usage: "", examples: "" },
       config,
       allRawTables
     );
-    expect(result.description).toBe("The [Container](/button#anatomy) wraps.");
+    expect(result.description).toBe("The [Container](/global/construct/button#anatomy) wraps.");
   });
 
-  it("links changelog to parent's #changelog section", () => {
+  it("links changelog to parent construct's #changelog section with tier", () => {
     const result = resolveAllWikiRefs(
       { description: "See [Initial docs](wiki-ref://grid-cl/i-cl1).", usage: "", examples: "" },
       config,
       allRawTables
     );
-    expect(result.description).toBe("See [Initial docs](/button#changelog).");
+    expect(result.description).toBe("See [Initial docs](/global/construct/button#changelog).");
   });
 
-  it("links decision log to parent's #decisionlog section", () => {
+  it("links changelog to parent concept's #changelog section with tier and concept path", () => {
+    const result = resolveAllWikiRefs(
+      { description: "See [Updated concept](wiki-ref://grid-cl/i-cl2).", usage: "", examples: "" },
+      config,
+      allRawTables
+    );
+    expect(result.description).toBe("See [Updated concept](/sites/concept/site#changelog).");
+  });
+
+  it("links decision log to parent's #decisionlog section with tier", () => {
     const result = resolveAllWikiRefs(
       { description: "See [Review](wiki-ref://grid-dl/i-dl1).", usage: "", examples: "" },
       config,
       allRawTables
     );
-    expect(result.description).toBe("See [Review](/checkbox#decisionlog).");
+    expect(result.description).toBe("See [Review](/global/construct/checkbox#decisionlog).");
   });
 });
 
@@ -148,7 +175,7 @@ describe("resolveAllWikiRefs — content field", () => {
       config,
       allRawTables
     );
-    expect(result.content).toBe("See [Button](/button).");
+    expect(result.content).toBe("See [Button](/global/construct/button).");
   });
 });
 
@@ -171,6 +198,25 @@ describe("resolveAllWikiRefs — missing references", () => {
     );
     expect(result.description).toBe("See Missing here");
     expect(warnSpy).toHaveBeenCalled();
+  });
+});
+
+describe("resolveAllWikiRefs — constructs without tier data", () => {
+  it("falls back to /construct/{slug} when tier is missing", () => {
+    const tablesWithNoTier = {
+      ...allRawTables,
+      construct: {
+        rows: {
+          "i-orphan": { rowId: "i-orphan", name: "Orphan" },
+        },
+      },
+    };
+    const result = resolveAllWikiRefs(
+      { description: "See [Orphan](wiki-ref://grid-comp/i-orphan).", usage: "", examples: "" },
+      config,
+      tablesWithNoTier
+    );
+    expect(result.description).toBe("See [Orphan](/construct/orphan).");
   });
 });
 

@@ -132,8 +132,8 @@ describe("generateConceptMarkdown — change log", () => {
 
   it("formats dates in en-GB long format", () => {
     const md = generateConceptMarkdown(fullConcept);
-    expect(md).toContain("1 Mar 2025");
-    expect(md).toContain("10 May 2025");
+    expect(md).toContain("1. März 2025");
+    expect(md).toContain("10. Mai 2025");
   });
 
   it("includes who and what fields", () => {
@@ -200,8 +200,8 @@ describe("generateConceptMarkdown — mentioned in", () => {
 
   it("renders each mention as a markdown link", () => {
     const md = generateConceptMarkdown(fullConcept);
-    expect(md).toContain("- [Input](/input)");
-    expect(md).toContain("- [Select](/select)");
+    expect(md).toContain("- [Input](/global/construct/input)");
+    expect(md).toContain("- [Select](/global/construct/select)");
   });
 
   it("omits mentioned in section when empty", () => {
@@ -222,13 +222,13 @@ describe("generateConceptMarkdown — references", () => {
 
   it("renders each reference as a markdown link", () => {
     const md = generateConceptMarkdown(fullConcept);
-    expect(md).toContain("- [Button](/button)");
-    expect(md).toContain("- [Input](/input)");
+    expect(md).toContain("- [Button](/global/construct/button)");
+    expect(md).toContain("- [Input](/global/construct/input)");
   });
 
   it("deduplicates references by slug", () => {
     const md = generateConceptMarkdown(fullConcept);
-    const buttonMatches = md.match(/- \[Button\]\(\/button\)/g);
+    const buttonMatches = md.match(/- \[Button\]\(\/global\/construct\/button\)/g);
     expect(buttonMatches).toHaveLength(1);
   });
 

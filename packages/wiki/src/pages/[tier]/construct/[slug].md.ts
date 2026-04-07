@@ -1,7 +1,7 @@
 import type { APIRoute, GetStaticPaths } from "astro";
 import { getEntry } from "astro:content";
-import { getConstructPaths } from "../../utils/static-paths";
-import { generateComponentMarkdown } from "../../utils/generate-component-markdown";
+import { getConstructPaths } from "../../../utils/static-paths";
+import { generateComponentMarkdown } from "../../../utils/generate-component-markdown";
 
 export const getStaticPaths: GetStaticPaths = getConstructPaths;
 

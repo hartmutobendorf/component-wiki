@@ -10,7 +10,7 @@ export function generateComponentMarkdown(data: Construct): string {
 
   // Metadata
   md += `- **Type:** ${data.type}\n`;
-  md += `- **Tier:** ${data.tiers}\n`;
+  md += `- **Tier:** ${data.tier}\n`;
   md += `- **Documentation Status:** ${data.documentationStatus}\n`;
   md += `- **Last Edited:** ${data.lastEdited}\n`;
   if (data.figmaLink) md += `- **Figma:** ${data.figmaLink}\n`;
@@ -111,7 +111,7 @@ export function generateComponentMarkdown(data: Construct): string {
   if (data.mentionedIn && data.mentionedIn.length > 0) {
     md += `## Mentioned In\n\n`;
     for (const entry of data.mentionedIn) {
-      md += `- [${entry.name}](/${entry.slug})\n`;
+      md += `- [${entry.name}](/${entry.path})\n`;
     }
     md += `\n`;
   }

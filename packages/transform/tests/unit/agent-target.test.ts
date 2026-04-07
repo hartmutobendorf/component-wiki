@@ -6,8 +6,9 @@ function makeConstruct(
   overrides: Partial<Construct> & { name: string; slug: string }
 ): Construct {
   return {
+    kind: "construct",
     type: "Component",
-    tiers: "Global",
+    tier: "Global",
     documentationStatus: "All good",
     lastEdited: "2025-06-15T10:00:00.000Z",
     figmaLink: "https://figma.com/file/abc",
@@ -109,14 +110,14 @@ describe("toConstructIndexEntry", () => {
       name: "Button",
       slug: "button",
       type: "Component",
-      tiers: "Global",
+      tier: "Global",
       description: "A test construct for triggering actions.",
     });
   });
 
   it("does not include extra fields", () => {
     const entry = toConstructIndexEntry(makeConstruct({ name: "Button", slug: "button" }));
-    expect(Object.keys(entry).sort()).toEqual(["description", "name", "slug", "tiers", "type"]);
+    expect(Object.keys(entry).sort()).toEqual(["description", "name", "slug", "tier", "type"]);
   });
 });
 

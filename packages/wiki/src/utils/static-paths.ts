@@ -1,5 +1,5 @@
 import { getCollection } from "astro:content";
-import { TIERS } from "./tiers";
+import { TIERS } from "@wiki/shared";
 
 /**
  * Builds static paths for construct routes.
@@ -11,7 +11,7 @@ export async function getConstructPaths() {
   return TIERS.flatMap((tier) => {
     const prefix = tier.toLowerCase();
     return constructs
-      .filter((construct) => construct.data.tiers === tier)
+      .filter((construct) => construct.data.tier === tier)
       .map((construct) => ({
         params: { tier: prefix, slug: construct.id },
         props: { constructId: construct.id, activeTier: tier },
