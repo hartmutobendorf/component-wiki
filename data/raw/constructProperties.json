@@ -1,6 +1,354 @@
 {
-  "fetchedAt": "2026-03-06T09:25:31.498Z",
+  "fetchedAt": "2026-04-07T07:43:35.227Z",
   "rows": {
+    "i-0aGTEkpPsP": {
+      "rowId": "i-0aGTEkpPsP",
+      "name": "",
+      "required": false,
+      "type": "",
+      "description": "",
+      "constraint": "",
+      "options": "",
+      "defaultOption": "",
+      "component": []
+    },
+    "i-XC0JQBydvs": {
+      "rowId": "i-XC0JQBydvs",
+      "name": "",
+      "required": false,
+      "type": "",
+      "description": "",
+      "constraint": "",
+      "options": "",
+      "defaultOption": "",
+      "component": []
+    },
+    "i-tul-9jjySe": {
+      "rowId": "i-tul-9jjySe",
+      "name": "Divider (horizontal list)",
+      "required": false,
+      "type": "i-We9i4W9Klo",
+      "description": "Whether the list has vertical line as a separator or a dot. ",
+      "constraint": "Dot-separated lists can’t have markers. ",
+      "options": "None, line, dot",
+      "defaultOption": "line",
+      "component": [
+        "i-xUFwNsfx30"
+      ]
+    },
+    "i-iNucdeZvem": {
+      "rowId": "i-iNucdeZvem",
+      "name": "",
+      "required": false,
+      "type": "",
+      "description": "",
+      "constraint": "",
+      "options": "",
+      "defaultOption": "",
+      "component": []
+    },
+    "i-nSOsltRqCy": {
+      "rowId": "i-nSOsltRqCy",
+      "name": "Orientation",
+      "required": true,
+      "type": "i-We9i4W9Klo",
+      "description": "Whether the list is displayed horizontally or vertically. ",
+      "constraint": "",
+      "options": "Vertical, horizontal.",
+      "defaultOption": "Vertical",
+      "component": [
+        "i-xUFwNsfx30"
+      ]
+    },
+    "i-SjzWnxSNXg": {
+      "rowId": "i-SjzWnxSNXg",
+      "name": "Signpost image",
+      "required": false,
+      "type": "i-cVu2UuOKT2",
+      "description": "In the signpost variant, an image can be placed in the left two columns and may be left empty if needed.",
+      "constraint": "",
+      "options": "with image, without image",
+      "defaultOption": "with image",
+      "component": [
+        "i-K1FTmoSxdo"
+      ]
+    },
+    "i-oI52vSLdXU": {
+      "rowId": "i-oI52vSLdXU",
+      "name": "Video",
+      "required": false,
+      "type": "i-E9ZaIqQXvg",
+      "description": "In the 50/50 and fallback variants, an embedded video can be used in place of the image.",
+      "constraint": "",
+      "options": "",
+      "defaultOption": "",
+      "component": [
+        "i-K1FTmoSxdo"
+      ]
+    },
+    "i-b_8vuhCFga": {
+      "rowId": "i-b_8vuhCFga",
+      "name": "Image",
+      "required": false,
+      "type": "i-cVu2UuOKT2",
+      "description": "Required when layout is 75/25, 50/50, or fallback.",
+      "constraint": "",
+      "options": "",
+      "defaultOption": "",
+      "component": [
+        "i-K1FTmoSxdo"
+      ]
+    },
+    "i-lGrvz0chhP": {
+      "rowId": "i-lGrvz0chhP",
+      "name": "Body",
+      "required": false,
+      "type": "i-E9ZaIqQXvg",
+      "description": "Supporting description.  Spans 4 or 6 columns depending on the layout variant; a max-width of 640px is applied at 6 columns",
+      "constraint": "Up to 600 characters",
+      "options": "",
+      "defaultOption": "",
+      "component": [
+        "i-K1FTmoSxdo"
+      ]
+    },
+    "i-gROnT1vRDy": {
+      "rowId": "i-gROnT1vRDy",
+      "name": "Subheading",
+      "required": false,
+      "type": "i-E9ZaIqQXvg",
+      "description": "Secondary title, rendered as H2. Column span is determined by the layout variant",
+      "constraint": "Up to 60 characters",
+      "options": "",
+      "defaultOption": "",
+      "component": [
+        "i-K1FTmoSxdo"
+      ]
+    },
+    "i-ZpBhBsZIYL": {
+      "rowId": "i-ZpBhBsZIYL",
+      "name": "Layout",
+      "required": true,
+      "type": "i-We9i4W9Klo",
+      "description": " Determines the visual structure of the hero and the column spans of all content areas",
+      "constraint": "",
+      "options": "full-width with iamge, 50/50, signpost, 75/25, fallback",
+      "defaultOption": "fallback",
+      "component": [
+        "i-K1FTmoSxdo"
+      ]
+    },
+    "i-9FZFeZbXFj": {
+      "rowId": "i-9FZFeZbXFj",
+      "name": "Heading",
+      "required": true,
+      "type": "i-E9ZaIqQXvg",
+      "description": "Primary title, rendered as H1. Column span is determined by the layout variant",
+      "constraint": "Up to 60 characters",
+      "options": "",
+      "defaultOption": "",
+      "component": [
+        "i-K1FTmoSxdo"
+      ]
+    },
+    "i-FgsRDzo94t": {
+      "rowId": "i-FgsRDzo94t",
+      "name": "",
+      "required": false,
+      "type": "",
+      "description": "",
+      "constraint": "",
+      "options": "",
+      "defaultOption": "",
+      "component": []
+    },
+    "i-HhtNKzd5tR": {
+      "rowId": "i-HhtNKzd5tR",
+      "name": "",
+      "required": false,
+      "type": "",
+      "description": "",
+      "constraint": "",
+      "options": "",
+      "defaultOption": "",
+      "component": []
+    },
+    "i-j840KfPSCB": {
+      "rowId": "i-j840KfPSCB",
+      "name": "",
+      "required": false,
+      "type": "",
+      "description": "",
+      "constraint": "",
+      "options": "",
+      "defaultOption": "",
+      "component": []
+    },
+    "i-_u_276Kr4S": {
+      "rowId": "i-_u_276Kr4S",
+      "name": "",
+      "required": false,
+      "type": "",
+      "description": "",
+      "constraint": "",
+      "options": "",
+      "defaultOption": "",
+      "component": []
+    },
+    "i-OCmCc6d3iN": {
+      "rowId": "i-OCmCc6d3iN",
+      "name": "",
+      "required": false,
+      "type": "",
+      "description": "",
+      "constraint": "",
+      "options": "",
+      "defaultOption": "",
+      "component": []
+    },
+    "i-GQcZpW6wz-": {
+      "rowId": "i-GQcZpW6wz-",
+      "name": "Body cell text",
+      "required": true,
+      "type": "i-E9ZaIqQXvg",
+      "description": "The text inside an individual cell",
+      "constraint": "",
+      "options": "",
+      "defaultOption": "",
+      "component": [
+        "i-aUPUyjNgjD"
+      ]
+    },
+    "i-TJ0EYSOuOM": {
+      "rowId": "i-TJ0EYSOuOM",
+      "name": "Header cell text",
+      "required": true,
+      "type": "i-E9ZaIqQXvg",
+      "description": "The text that indicates what type of data the column displays",
+      "constraint": "",
+      "options": "",
+      "defaultOption": "",
+      "component": [
+        "i-aUPUyjNgjD"
+      ]
+    },
+    "i-llShALW8WI": {
+      "rowId": "i-llShALW8WI",
+      "name": "Cell icon",
+      "required": false,
+      "type": "i-We9i4W9Klo",
+      "description": "The icon accompanying the text of a cell",
+      "constraint": "",
+      "options": "Vanilla icons",
+      "defaultOption": "",
+      "component": [
+        "i-aUPUyjNgjD"
+      ]
+    },
+    "i-yqwXJRD7Zc": {
+      "rowId": "i-yqwXJRD7Zc",
+      "name": "Cell status color",
+      "required": false,
+      "type": "i-We9i4W9Klo",
+      "description": "The color of the status indicator on status columns",
+      "constraint": "",
+      "options": "Default, negative, positive, warning, information",
+      "defaultOption": "Default",
+      "component": [
+        "i-aUPUyjNgjD"
+      ]
+    },
+    "i-bfgMWt1unJ": {
+      "rowId": "i-bfgMWt1unJ",
+      "name": "Rows",
+      "required": true,
+      "type": "i-IHXuMDaESR",
+      "description": "The number of rows of the table",
+      "constraint": "",
+      "options": "",
+      "defaultOption": "",
+      "component": [
+        "i-aUPUyjNgjD"
+      ]
+    },
+    "i-Wk4zK6A1Uw": {
+      "rowId": "i-Wk4zK6A1Uw",
+      "name": "Columns",
+      "required": true,
+      "type": "i-IHXuMDaESR",
+      "description": "The number of columns of the table",
+      "constraint": "",
+      "options": "",
+      "defaultOption": "",
+      "component": [
+        "i-aUPUyjNgjD"
+      ]
+    },
+    "i-Azz35z9HoI": {
+      "rowId": "i-Azz35z9HoI",
+      "name": "Column type",
+      "required": true,
+      "type": "i-We9i4W9Klo",
+      "description": "The type of data displayed in the column",
+      "constraint": "",
+      "options": "Default, icon, status",
+      "defaultOption": "Default",
+      "component": [
+        "i-aUPUyjNgjD"
+      ]
+    },
+    "i-cJSldMohCP": {
+      "rowId": "i-cJSldMohCP",
+      "name": "Body",
+      "required": true,
+      "type": "i-E9ZaIqQXvg",
+      "description": "4-column width body text",
+      "constraint": "Up to 600 characters",
+      "options": "",
+      "defaultOption": "",
+      "component": [
+        "i-50G4VqVNjN"
+      ]
+    },
+    "i-i5adOAZf_1": {
+      "rowId": "i-i5adOAZf_1",
+      "name": "Heading",
+      "required": true,
+      "type": "i-E9ZaIqQXvg",
+      "description": "2-column width H5 heading",
+      "constraint": "Up to 60 characters",
+      "options": "",
+      "defaultOption": "",
+      "component": [
+        "i-50G4VqVNjN"
+      ]
+    },
+    "i-nolFP8bZsy": {
+      "rowId": "i-nolFP8bZsy",
+      "name": "Image heading",
+      "required": false,
+      "type": "i-cVu2UuOKT2",
+      "description": "Image used in place of heading",
+      "constraint": "If an image is used as the heading, it cannot function as a link.",
+      "options": "",
+      "defaultOption": "",
+      "component": [
+        "i-50G4VqVNjN"
+      ]
+    },
+    "i-oqkQZSLV1s": {
+      "rowId": "i-oqkQZSLV1s",
+      "name": "Block rule",
+      "required": true,
+      "type": "i-cVu2UuOKT2",
+      "description": "The muted rule component indicates the beginning of a new block",
+      "constraint": "It is not used for the first block and appears from the second block onward.",
+      "options": "none, muted",
+      "defaultOption": "",
+      "component": [
+        "i-50G4VqVNjN"
+      ]
+    },
     "i-DGYOdkshrf": {
       "rowId": "i-DGYOdkshrf",
       "name": "Highlighted image",
@@ -94,7 +442,7 @@
     },
     "i-rkf09xfqn8": {
       "rowId": "i-rkf09xfqn8",
-      "name": "Layout",
+      "name": "Large layout",
       "required": true,
       "type": "i-We9i4W9Klo",
       "description": "The intended grid layout for the section.",
@@ -102,7 +450,8 @@
       "options": "full-width, 50/50, 25/75",
       "defaultOption": "full-width",
       "component": [
-        "i-S0DpOp5ECr"
+        "i-S0DpOp5ECr",
+        "i-PJTyZ77is5"
       ]
     },
     "i-0c1O4lOE0X": {
@@ -315,15 +664,15 @@
     },
     "i-MOYVJ4LSRp": {
       "rowId": "i-MOYVJ4LSRp",
-      "name": "Divided block heading",
+      "name": "Heading",
       "required": false,
       "type": "i-E9ZaIqQXvg",
-      "description": "4-column width H5 heading for each divided block item",
+      "description": "4-column width H5 heading for divided block",
       "constraint": "Up to 160 characters",
       "options": "true, false",
       "defaultOption": "true",
       "component": [
-        "i-6vkVdZz0ii"
+        "i-QYbX6KRhhF"
       ]
     },
     "i-1I3PPX3MjA": {
@@ -336,20 +685,20 @@
       "options": "mute",
       "defaultOption": "mute",
       "component": [
-        "i-6vkVdZz0ii"
+        "i-QYbX6KRhhF"
       ]
     },
     "i-FUhmj1pL0D": {
       "rowId": "i-FUhmj1pL0D",
-      "name": "Block heading bullet style",
+      "name": "Bullet style",
       "required": false,
       "type": "i-We9i4W9Klo",
-      "description": "The block heading bullet style defines how the block heading is visually presented within each divided block. When the bullet option is used, an additional 32px indent is applied to the content area below the heading to align the content visually with the bullet marker.",
+      "description": "The bullet style defines how the block heading is visually presented within each divided block. When the bullet option is used, an additional 32px indent is applied to the content area below the heading to align the content visually with the bullet marker.",
       "constraint": "",
       "options": "number, bullet, status, none",
       "defaultOption": "number",
       "component": [
-        "i-6vkVdZz0ii"
+        "i-QYbX6KRhhF"
       ]
     },
     "i-09DPWOCRi-": {
@@ -862,16 +1211,16 @@
     },
     "i-OF3JZdQjJC": {
       "rowId": "i-OF3JZdQjJC",
-      "name": "Block bottom padding",
+      "name": "Block item bottom padding",
       "required": false,
       "type": "i-We9i4W9Klo",
-      "description": "The type of padding applied to the block",
-      "constraint": "The last block of the pattern must not have bottom padding.",
+      "description": "The type of padding applied to the block item",
+      "constraint": "The last block item of the pattern/block must not have bottom padding.",
       "options": "none, shallow",
       "defaultOption": "none",
       "component": [
         "i-vpN6ETB7hS",
-        "i-6vkVdZz0ii"
+        "i-QYbX6KRhhF"
       ]
     },
     "i-xkOu6bV2YX": {
@@ -962,14 +1311,15 @@
       "options": "",
       "defaultOption": "deep",
       "component": [
-        "i-oWJdMiuIb4"
+        "i-oWJdMiuIb4",
+        "i-50G4VqVNjN"
       ]
     },
     "i-vROo3LE64j": {
       "rowId": "i-vROo3LE64j",
       "name": "Section rule",
       "required": true,
-      "type": "i-We9i4W9Klo",
+      "type": "i-cVu2UuOKT2",
       "description": "The rule component indicates the beginning of a new pattern",
       "constraint": "Only use the default style for the section-level rule",
       "options": "default",
@@ -990,21 +1340,6 @@
         "i-VDemBEWUNA",
         "i-vpN6ETB7hS",
         "i-oWJdMiuIb4"
-      ]
-    },
-    "i-vbxgstp828": {
-      "rowId": "i-vbxgstp828",
-      "name": "Medium layout",
-      "required": false,
-      "type": "i-We9i4W9Klo",
-      "description": "Indicate layout for the medium dimension",
-      "constraint": "",
-      "options": "50/50, full-width",
-      "defaultOption": "full-width",
-      "component": [
-        "i-vpN6ETB7hS",
-        "i-6vkVdZz0ii",
-        "i-VDemBEWUNA"
       ]
     },
     "i-PltLDW_k_G": {
@@ -1052,37 +1387,22 @@
         "i-kIPkdAErqW",
         "i-VDemBEWUNA",
         "i-vpN6ETB7hS",
-        "i-9OaD6bj5Qe"
+        "i-9OaD6bj5Qe",
+        "i-50G4VqVNjN"
       ]
     },
-    "i-bMyzwL5XUw": {
-      "rowId": "i-bMyzwL5XUw",
-      "name": "Body",
+    "i-FN0wNGurti": {
+      "rowId": "i-FN0wNGurti",
+      "name": "Subheading",
       "required": false,
       "type": "i-E9ZaIqQXvg",
-      "description": "4-column width body text",
-      "constraint": "Up to 600 characters",
-      "options": "",
-      "defaultOption": "",
+      "description": "The subheading provides additional hierarchy beneath the main title",
+      "constraint": "h4: up to 100 characters\nh5: up to 160 characters",
+      "options": "h4, h5",
+      "defaultOption": "h5",
       "component": [
         "i-vpN6ETB7hS",
-        "i-6vkVdZz0ii",
-        "i-s27nSmifM3"
-      ]
-    },
-    "i-eWPQTvmrcD": {
-      "rowId": "i-eWPQTvmrcD",
-      "name": "Link CTA",
-      "required": false,
-      "type": "i-E9ZaIqQXvg",
-      "description": "The text link used for contextual actions or pathways to more information. It uses a chevron (›) to indicate navigation to additional content or pages.",
-      "constraint": "Up to 60 characters",
-      "options": "",
-      "defaultOption": "",
-      "component": [
-        "i-0Z_OLuJDCc",
-        "i-oWJdMiuIb4",
-        "i-O69ixYm_Ee"
+        "i-PJTyZ77is5"
       ]
     },
     "i-TtKGUKacgH": {
@@ -1098,6 +1418,22 @@
         "i-fhZD60Hwqn"
       ]
     },
+    "i-vbxgstp828": {
+      "rowId": "i-vbxgstp828",
+      "name": "Medium layout",
+      "required": false,
+      "type": "i-We9i4W9Klo",
+      "description": "Indicate layout for the medium dimension",
+      "constraint": "",
+      "options": "50/50, full-width",
+      "defaultOption": "full-width",
+      "component": [
+        "i-vpN6ETB7hS",
+        "i-6vkVdZz0ii",
+        "i-VDemBEWUNA",
+        "i-K1FTmoSxdo"
+      ]
+    },
     "i-_7Ix358itw": {
       "rowId": "i-_7Ix358itw",
       "name": "Eyebrow",
@@ -1111,22 +1447,22 @@
         "i-vpN6ETB7hS"
       ]
     },
-    "i-FN0wNGurti": {
-      "rowId": "i-FN0wNGurti",
-      "name": "Subheading",
-      "required": false,
-      "type": "i-E9ZaIqQXvg",
-      "description": "The subheading provides additional hierarchy beneath the main title",
-      "constraint": "h4: up to 100 characters\nh5: up to 160 characters",
-      "options": "h4, h5",
-      "defaultOption": "h4",
+    "i-BypmqEqLW-": {
+      "rowId": "i-BypmqEqLW-",
+      "name": "List",
+      "required": true,
+      "type": "i-H7NYDvgoEy",
+      "description": "The grouping of multiple list items. ",
+      "constraint": "Minimum 2. Maximum 10 items.",
+      "options": "",
+      "defaultOption": "",
       "component": [
-        "i-vpN6ETB7hS"
+        "i-xUFwNsfx30"
       ]
     },
     "i-3GHe9XDIoY": {
       "rowId": "i-3GHe9XDIoY",
-      "name": "List item text",
+      "name": "Text",
       "required": true,
       "type": "i-E9ZaIqQXvg",
       "description": "Sets the content of the list",
@@ -1176,35 +1512,22 @@
         "i-fhZD60Hwqn"
       ]
     },
-    "i-BypmqEqLW-": {
-      "rowId": "i-BypmqEqLW-",
-      "name": "List",
-      "required": true,
-      "type": "i-H7NYDvgoEy",
-      "description": "The divided list supporting up to 10 items",
-      "constraint": "Up to 10 items",
-      "options": "",
-      "defaultOption": "",
-      "component": [
-        "i-xUFwNsfx30"
-      ]
-    },
     "i-poW06RavZD": {
       "rowId": "i-poW06RavZD",
-      "name": "List bullet type",
+      "name": "Marker",
       "required": false,
       "type": "i-We9i4W9Klo",
-      "description": "Bullet type options",
-      "constraint": "",
-      "options": "none, bullet, status, number",
-      "defaultOption": "bullet",
+      "description": "Decorator for a single list item. ",
+      "constraint": "All items in the same level of nesting must have the same marker type. No marker allowed when using dots to separate horizontal lists. ",
+      "options": "None, bullet, roman number, arabic number, alphabet letter, icon",
+      "defaultOption": "Bullet",
       "component": [
         "i-xUFwNsfx30"
       ]
     },
     "i-bl_nFW987o": {
       "rowId": "i-bl_nFW987o",
-      "name": "List divided",
+      "name": "Divider (vertical list)",
       "required": false,
       "type": "i-YtFbduYGgp",
       "description": "Whether has muted rule between list items",
@@ -1217,13 +1540,13 @@
     },
     "i-SwrC-n8iOO": {
       "rowId": "i-SwrC-n8iOO",
-      "name": "List nested",
+      "name": "Nesting level",
       "required": false,
-      "type": "i-YtFbduYGgp",
+      "type": "i-IHXuMDaESR",
       "description": "Hierarchical list structures",
-      "constraint": "",
-      "options": "true, false",
-      "defaultOption": "false",
+      "constraint": "Only vertical lists. ",
+      "options": "1-3",
+      "defaultOption": "1",
       "component": [
         "i-xUFwNsfx30"
       ]
@@ -1291,6 +1614,37 @@
       "defaultOption": "",
       "component": [
         "i--w8-6ot1a8"
+      ]
+    },
+    "i-bMyzwL5XUw": {
+      "rowId": "i-bMyzwL5XUw",
+      "name": "Body",
+      "required": false,
+      "type": "i-E9ZaIqQXvg",
+      "description": "4-column width body text",
+      "constraint": "Up to 600 characters",
+      "options": "",
+      "defaultOption": "",
+      "component": [
+        "i-vpN6ETB7hS",
+        "i-6vkVdZz0ii",
+        "i-s27nSmifM3"
+      ]
+    },
+    "i-eWPQTvmrcD": {
+      "rowId": "i-eWPQTvmrcD",
+      "name": "Link CTA",
+      "required": false,
+      "type": "i-E9ZaIqQXvg",
+      "description": "The text link used for contextual actions or pathways to more information. It uses a chevron (›) to indicate navigation to additional content or pages.",
+      "constraint": "Up to 60 characters",
+      "options": "",
+      "defaultOption": "",
+      "component": [
+        "i-0Z_OLuJDCc",
+        "i-oWJdMiuIb4",
+        "i-O69ixYm_Ee",
+        "i-50G4VqVNjN"
       ]
     },
     "i-Vy3CICkpZu": {

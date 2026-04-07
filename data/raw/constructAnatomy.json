@@ -1,6 +1,314 @@
 {
-  "fetchedAt": "2026-03-06T09:25:31.499Z",
+  "fetchedAt": "2026-04-07T07:43:35.228Z",
   "rows": {
+    "i-N6dLreq1lv": {
+      "rowId": "i-N6dLreq1lv",
+      "number": 4,
+      "name": "Text",
+      "description": "The content of the list",
+      "component": "i-xUFwNsfx30"
+    },
+    "i-12_L99Z7Du": {
+      "rowId": "i-12_L99Z7Du",
+      "number": 3,
+      "name": "Marker",
+      "description": "Optional decoration or indicator for the list item. ",
+      "component": "i-xUFwNsfx30"
+    },
+    "i-tWJkm_ZO6f": {
+      "rowId": "i-tWJkm_ZO6f",
+      "number": 2,
+      "name": "Separator",
+      "description": "Optional line between two list items.",
+      "component": "i-xUFwNsfx30"
+    },
+    "i-pXsWs8an-j": {
+      "rowId": "i-pXsWs8an-j",
+      "number": 1,
+      "name": "List item",
+      "description": "Individual element of the list. ",
+      "component": "i-xUFwNsfx30"
+    },
+    "i-Qa9FDLlCY-": {
+      "rowId": "i-Qa9FDLlCY-",
+      "number": 6,
+      "name": "Signpost image",
+      "description": "The signpost image identifies the product, partner, or associated entity relevant to the page content. Displayed in a 25% column alongside the text content in the signpost layout variant.",
+      "component": "i-K1FTmoSxdo"
+    },
+    "i-8Lc8IumbjW": {
+      "rowId": "i-8Lc8IumbjW",
+      "number": 5,
+      "name": "Image",
+      "description": " The visual element that supports the hero's message. Can appear as a full-width element below the content area, or alongside the content area in split layout variants. Required when the layout includes a side-by-side image column.",
+      "component": "i-K1FTmoSxdo"
+    },
+    "i-Cy0GJBZYcq": {
+      "rowId": "i-Cy0GJBZYcq",
+      "number": 4,
+      "name": "CTA block",
+      "description": "The [CTA block](wiki-ref://grid-ymtdOF6n4R/i-0Z_OLuJDCc) presents one or more related actions that guide the user toward the next step. In the hero, a primary button can be used.",
+      "component": "i-K1FTmoSxdo"
+    },
+    "i-TweFnkh9MR": {
+      "rowId": "i-TweFnkh9MR",
+      "number": 3,
+      "name": "Body",
+      "description": "The description that provides supporting context for the hero's core message, helping users understand the value or purpose before engaging with the rest of the page.",
+      "component": "i-K1FTmoSxdo"
+    },
+    "i-OJVM0IjBeu": {
+      "rowId": "i-OJVM0IjBeu",
+      "number": 2,
+      "name": "Subheading",
+      "description": "The secondary title that supports the heading with additional context",
+      "component": "i-K1FTmoSxdo"
+    },
+    "i-NgyR36RO72": {
+      "rowId": "i-NgyR36RO72",
+      "number": 1,
+      "name": "Heading",
+      "description": "The primary title of the hero, present in all layout variants",
+      "component": "i-K1FTmoSxdo"
+    },
+    "i-cCT36CPkHS": {
+      "rowId": "i-cCT36CPkHS",
+      "number": 5,
+      "name": "Tiered blocks",
+      "description": "[Tiered block](wiki-ref://grid-ymtdOF6n4R/i-50G4VqVNjN) is a content unit that pairs a heading with a body to present a single item in a structured, scannable format.",
+      "component": "i-VDemBEWUNA"
+    },
+    "i-pQ9fI15GvM": {
+      "rowId": "i-pQ9fI15GvM",
+      "number": 4,
+      "name": "CTA block",
+      "description": "The [CTA block](wiki-ref://grid-ymtdOF6n4R/i-0Z_OLuJDCc) presents one or more related actions that guide the user toward the next step within a section",
+      "component": "i-VDemBEWUNA"
+    },
+    "i-C4EfMfHwyC": {
+      "rowId": "i-C4EfMfHwyC",
+      "number": 3,
+      "name": "Body",
+      "description": "A description that provides introductory context for the section. It appears at the top of the section and helps users understand the purpose or scope of the content before engaging with the content below.",
+      "component": "i-VDemBEWUNA"
+    },
+    "i-sdY9Ir3S-p": {
+      "rowId": "i-sdY9Ir3S-p",
+      "number": 2,
+      "name": "Heading",
+      "description": "The section heading communicates the primary subject or theme of the section.",
+      "component": "i-VDemBEWUNA"
+    },
+    "i-AX7x4wzpt1": {
+      "rowId": "i-AX7x4wzpt1",
+      "number": 1,
+      "name": "Rule",
+      "description": "The rule component indicates the beginning of a new section.",
+      "component": "i-VDemBEWUNA"
+    },
+    "i-pz-wuCZbTC": {
+      "rowId": "i-pz-wuCZbTC",
+      "number": 4,
+      "name": "Content area",
+      "description": "the main body of the block, supporting text, images, videos, lists, code blocks, logos, notifications, and CTA block.",
+      "component": "i-QYbX6KRhhF"
+    },
+    "i-Wztvs8Mh83": {
+      "rowId": "i-Wztvs8Mh83",
+      "number": 3,
+      "name": "Heading",
+      "description": "a short title that identifies the step, stage, or content item, rendered as H5",
+      "component": "i-QYbX6KRhhF"
+    },
+    "i-IgkJdqm1oa": {
+      "rowId": "i-IgkJdqm1oa",
+      "number": 2,
+      "name": "Heading bullet",
+      "description": " a visual marker that precedes the heading. Supports three options: bullet, icon, or number. When present, indentation is applied to the heading and content area below it.",
+      "component": "i-QYbX6KRhhF"
+    },
+    "i-9PbuM-pmJV": {
+      "rowId": "i-9PbuM-pmJV",
+      "number": 1,
+      "name": "Rule",
+      "description": "The muted rule component indicates the beginning of a new block. It is not used for the first block and appears from the second block onward.",
+      "component": "i-QYbX6KRhhF"
+    },
+    "i-cah6lSL5-Z": {
+      "rowId": "i-cah6lSL5-Z",
+      "number": 8,
+      "name": "",
+      "description": "",
+      "component": ""
+    },
+    "i-j8RkQD5WeF": {
+      "rowId": "i-j8RkQD5WeF",
+      "number": 7,
+      "name": "Expanded search bar",
+      "description": "",
+      "component": "i-eoOMJgGK_d"
+    },
+    "i-GtUqedToon": {
+      "rowId": "i-GtUqedToon",
+      "number": 6,
+      "name": " Navigation item drawer",
+      "description": "",
+      "component": "i-eoOMJgGK_d"
+    },
+    "i-7sYWzzy87V": {
+      "rowId": "i-7sYWzzy87V",
+      "number": 5,
+      "name": "Expandable navigation item",
+      "description": "",
+      "component": "i-eoOMJgGK_d"
+    },
+    "i-hYSgVXIY2_": {
+      "rowId": "i-hYSgVXIY2_",
+      "number": 4,
+      "name": "Navigation item text",
+      "description": "",
+      "component": "i-eoOMJgGK_d"
+    },
+    "i-Jra2DQapNP": {
+      "rowId": "i-Jra2DQapNP",
+      "number": 3,
+      "name": "Search trigger",
+      "description": "",
+      "component": "i-eoOMJgGK_d"
+    },
+    "i-gymvjhGttc": {
+      "rowId": "i-gymvjhGttc",
+      "number": 2,
+      "name": "Navigation items",
+      "description": "",
+      "component": "i-eoOMJgGK_d"
+    },
+    "i-eYl4z-P92b": {
+      "rowId": "i-eYl4z-P92b",
+      "number": 1,
+      "name": "Logo",
+      "description": "",
+      "component": "i-eoOMJgGK_d"
+    },
+    "i-zJglxRhfQv": {
+      "rowId": "i-zJglxRhfQv",
+      "number": 7,
+      "name": "Cell icon",
+      "description": "An icon that represents the value displayed in the cell.",
+      "component": "i-aUPUyjNgjD"
+    },
+    "i-WbXDzFuMUG": {
+      "rowId": "i-WbXDzFuMUG",
+      "number": 6,
+      "name": "Cell status indicator",
+      "description": "A semantically colored circle that conveys status severity.",
+      "component": "i-aUPUyjNgjD"
+    },
+    "i-8h57x34tBE": {
+      "rowId": "i-8h57x34tBE",
+      "number": 5,
+      "name": "Cell text",
+      "description": "The text value displayed in a cell for a given column.",
+      "component": "i-aUPUyjNgjD"
+    },
+    "i-4hKSB7Ya20": {
+      "rowId": "i-4hKSB7Ya20",
+      "number": 4,
+      "name": "Body row",
+      "description": "A horizontal group of cells representing a single entity's data.",
+      "component": "i-aUPUyjNgjD"
+    },
+    "i-vB7Qb9JCfA": {
+      "rowId": "i-vB7Qb9JCfA",
+      "number": 3,
+      "name": "Header text",
+      "description": "The label that identifies the data property for its column.",
+      "component": "i-aUPUyjNgjD"
+    },
+    "i-QJ44i7PHsE": {
+      "rowId": "i-QJ44i7PHsE",
+      "number": 2,
+      "name": "Header row",
+      "description": "The top row containing all column headings.",
+      "component": "i-aUPUyjNgjD"
+    },
+    "i-79xdgCf3zB": {
+      "rowId": "i-79xdgCf3zB",
+      "number": 1,
+      "name": "Column",
+      "description": "A vertical group of cells that share the same data property.",
+      "component": "i-aUPUyjNgjD"
+    },
+    "i-QLcR7u_3_v": {
+      "rowId": "i-QLcR7u_3_v",
+      "number": 6,
+      "name": "CTA block",
+      "description": "[CTA block](wiki-ref://grid-ymtdOF6n4R/i-0Z_OLuJDCc) presents one or more related actions that guide the user toward the next step within a section",
+      "component": "i-PJTyZ77is5"
+    },
+    "i-mVuMc94vPf": {
+      "rowId": "i-mVuMc94vPf",
+      "number": 5,
+      "name": "Equal height blocks",
+      "description": "[Equal height block](wiki-ref://grid-ymtdOF6n4R/i-9OaD6bj5Qe) is a content unit that ensures consistent vertical alignment for multiple items arranged within a row.",
+      "component": "i-PJTyZ77is5"
+    },
+    "i-irkygZ-u3a": {
+      "rowId": "i-irkygZ-u3a",
+      "number": 4,
+      "name": "Body",
+      "description": "A description that provides introductory context for the section. It appears at the top of the section and helps users understand the purpose or scope of the content before engaging with the content below.",
+      "component": "i-PJTyZ77is5"
+    },
+    "i-Rsa3L-m67r": {
+      "rowId": "i-Rsa3L-m67r",
+      "number": 3,
+      "name": "Subheading",
+      "description": "The optional subheading placed above the body. IIt provides additional context or a short explanation that helps clarify the purpose of the section.",
+      "component": "i-PJTyZ77is5"
+    },
+    "i-eBP0gH-ztP": {
+      "rowId": "i-eBP0gH-ztP",
+      "number": 2,
+      "name": "Heading",
+      "description": "The section heading communicates the primary subject or theme of the section.",
+      "component": "i-PJTyZ77is5"
+    },
+    "i-pahWoXUHEW": {
+      "rowId": "i-pahWoXUHEW",
+      "number": 1,
+      "name": "Rule",
+      "description": "The rule component indicates the beginning of a new section.",
+      "component": "i-PJTyZ77is5"
+    },
+    "i-oscrGqix9j": {
+      "rowId": "i-oscrGqix9j",
+      "number": 4,
+      "name": "Link",
+      "description": "The optional CTA that directs users to related or more detailed content.",
+      "component": "i-50G4VqVNjN"
+    },
+    "i-llQDB8v1V0": {
+      "rowId": "i-llQDB8v1V0",
+      "number": 3,
+      "name": "Body",
+      "description": "Provides supporting information that elaborates on the heading.",
+      "component": "i-50G4VqVNjN"
+    },
+    "i-XOCfkG43O7": {
+      "rowId": "i-XOCfkG43O7",
+      "number": 2,
+      "name": "Heading",
+      "description": "The primary title of the block. It can function as a link and may also be represented as a image, such as a logo.",
+      "component": "i-50G4VqVNjN"
+    },
+    "i-NYAxUVwrk0": {
+      "rowId": "i-NYAxUVwrk0",
+      "number": 1,
+      "name": "Rule",
+      "description": "The muted rule component indicates the beginning of a new block. It is not used for the first block and appears from the second block onward.",
+      "component": "i-50G4VqVNjN"
+    },
     "i-1g9NXk8r7S": {
       "rowId": "i-1g9NXk8r7S",
       "number": 2,
@@ -53,8 +361,8 @@
     "i-pnMfapYK2e": {
       "rowId": "i-pnMfapYK2e",
       "number": 3,
-      "name": "[Resource block](wiki-ref://grid-ymtdOF6n4R/i-5BuOzbNcXV) ",
-      "description": "The resource block is a content unit that represents an individual resource item within a listing. It displays a title, a cover image, a description, and citation metadata. The block supports a range of resource types, including blog posts, videos, webinars, case studies, solution briefs, white papers, and reports.",
+      "name": "Resource blocks",
+      "description": "[Resource block](wiki-ref://grid-ymtdOF6n4R/i-5BuOzbNcXV) is a content unit that represents an individual resource item within a listing. It displays a title, a cover image, a description, and citation metadata. The block supports a range of resource types, including blog posts, videos, webinars, case studies, solution briefs, white papers, and reports.",
       "component": "i-YbRxZruWIu"
     },
     "i-0xnAqfMIFY": {
@@ -67,8 +375,8 @@
     "i-bY--biiCFF": {
       "rowId": "i-bY--biiCFF",
       "number": 3,
-      "name": "[Linked logo block](wiki-ref://grid-ymtdOF6n4R/i-fhZD60Hwqn) ",
-      "description": "The linked logo block is a content unit that displays a logo with a link to additional pages or resources.",
+      "name": "Linked logo blocks",
+      "description": "[Linked logo block](wiki-ref://grid-ymtdOF6n4R/i-fhZD60Hwqn) is a content unit that displays a logo with a link to additional pages or resources.",
       "component": "i-S0DpOp5ECr"
     },
     "i-qeggI3fKKD": {
@@ -214,8 +522,8 @@
     "i-ZF5piBtnyT": {
       "rowId": "i-ZF5piBtnyT",
       "number": 6,
-      "name": "[Resource block](wiki-ref://grid-ymtdOF6n4R/i-5BuOzbNcXV) ",
-      "description": "The resource block is a content unit that represents an individual resource item within a listing. It displays a title, a cover image, a description, and citation metadata. The block supports a range of resource types, including blog posts, videos, webinars, case studies, solution briefs, white papers, and reports.",
+      "name": "Resource blocks",
+      "description": "[Resource block](wiki-ref://grid-ymtdOF6n4R/i-5BuOzbNcXV) is a content unit that represents an individual resource item within a listing. It displays a title, a cover image, a description, and citation metadata. The block supports a range of resource types, including blog posts, videos, webinars, case studies, solution briefs, white papers, and reports.",
       "component": "i-s27nSmifM3"
     },
     "i-eqD1VTycu8": {
@@ -236,7 +544,7 @@
       "rowId": "i-y9mEudgtQx",
       "number": 3,
       "name": "Body",
-      "description": "The body provides introductory context for the section. It appears at the top of the section and helps users understand the purpose or scope of the content before engaging with the content below.",
+      "description": "A description that provides introductory context for the section. It appears at the top of the section and helps users understand the purpose or scope of the content before engaging with the content below.",
       "component": "i-s27nSmifM3"
     },
     "i-dwC_Mb8cK5": {
@@ -263,22 +571,22 @@
     "i-Pm87esvwBQ": {
       "rowId": "i-Pm87esvwBQ",
       "number": 5,
-      "name": "[Logo block](wiki-ref://grid-ymtdOF6n4R/i-If5dFjalAR) ",
-      "description": "The array of related images, such as customer or partner logos.",
+      "name": "Logo block",
+      "description": "[Logo block](wiki-ref://grid-ymtdOF6n4R/i-If5dFjalAR) is the array of related images, such as customer or partner logos.",
       "component": "i-tuS5YgvrGJ"
     },
     "i-CBlqkiUiR6": {
       "rowId": "i-CBlqkiUiR6",
       "number": 4,
-      "name": "[CTA block](wiki-ref://grid-ymtdOF6n4R/i-0Z_OLuJDCc) ",
-      "description": "The CTA (call to action) block presents one or more related actions that guide the user toward the next step within a section",
+      "name": "CTA block",
+      "description": "[CTA block](wiki-ref://grid-ymtdOF6n4R/i-0Z_OLuJDCc)  presents one or more related actions that guide the user toward the next step within a section",
       "component": "i-tuS5YgvrGJ"
     },
     "i-LNx7KZbwwW": {
       "rowId": "i-LNx7KZbwwW",
       "number": 3,
       "name": "Body",
-      "description": "The body provides introductory context for the section. It appears at the top of the section and helps users understand the purpose or scope of the content before engaging with the logo block.",
+      "description": "A description that provides introductory context for the section. It appears at the top of the section and helps users understand the purpose or scope of the content before engaging with the logo block.",
       "component": "i-tuS5YgvrGJ"
     },
     "i-7pB3sb4igv": {
@@ -404,7 +712,7 @@
       "rowId": "i-6iJgeovA0w",
       "number": 5,
       "name": "Body",
-      "description": "The body provides optional supporting context for the data point.",
+      "description": "Single body text that provides optional supporting context for the data point.",
       "component": "i-O69ixYm_Ee"
     },
     "i-XxkISpOyNq": {
@@ -551,7 +859,7 @@
       "rowId": "i-1PhP4CkR_R",
       "number": 3,
       "name": "CTA",
-      "description": "The interactive element(s) that trigger the intended action. Depending on the variant, this may appear as:\n\n- One or more inline text links (link-style CTA), or\n- A dedicated CTA block containing buttons or structured actions\n\nThis element is required and represents the functional core of the CTA section.",
+      "description": "The interactive element(s) that trigger the intended action. Depending on the variant, this may appear as:\n\n- One or more inline text links (link-style CTA), or\n- A dedicated [CTA block](wiki-ref://grid-ymtdOF6n4R/i-0Z_OLuJDCc) containing buttons or structured actions\n\nThis element is required and represents the functional core of the CTA section.",
       "component": "i-oWJdMiuIb4"
     },
     "i-onMtfDfjwX": {

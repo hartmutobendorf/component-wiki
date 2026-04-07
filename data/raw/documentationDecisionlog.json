@@ -1,6 +1,56 @@
 {
-  "fetchedAt": "2026-03-06T09:25:31.500Z",
+  "fetchedAt": "2026-04-07T07:43:35.229Z",
   "rows": {
+    "i-xsvxrtesTk": {
+      "rowId": "i-xsvxrtesTk",
+      "construct": "",
+      "where": "",
+      "what": "",
+      "link": "",
+      "concept": "",
+      "when": "",
+      "rules": ""
+    },
+    "i-3FBhDh0YBM": {
+      "rowId": "i-3FBhDh0YBM",
+      "construct": "i-xUFwNsfx30",
+      "where": "Documentation project",
+      "what": "The list only displays static text. Links are their own component, so in that case list would be used as a spacing component more than just a simple way to group items. This also opens the door to use the list for any other component, in which rules should probably be considered (groups of cards, buttons, etc). ",
+      "link": "",
+      "concept": "",
+      "when": "2026-04-06T13:00:00.000+01:00",
+      "rules": ""
+    },
+    "i-VwJVBzAVbk": {
+      "rowId": "i-VwJVBzAVbk",
+      "construct": "i-K1FTmoSxdo",
+      "where": "Design Systems Contributions",
+      "what": "**Decision:** Proceed with updating the 75/25 hero to align with the new 4/4/8 grid (75/25 split).\n\n**Rationale:** The updated grid changes the medium breakpoint layout from 66/33 to 75/25\n\n**Impact:** Potential visual changes in text wrapping and image proportion should be considered during design implementation.\n\n**Next step:** Update the pattern and add guidance to the documentation.",
+      "link": "https://github.com/canonical/vanilla-framework/issues/5586",
+      "concept": "",
+      "when": "2026-07-18T17:00:00.000+01:00",
+      "rules": ""
+    },
+    "i-hRdboKzujI": {
+      "rowId": "i-hRdboKzujI",
+      "construct": "i-K1FTmoSxdo",
+      "where": "Design Systems Contributions",
+      "what": "**Decision:** Add option to stack H1 and H2 in the full-width image variant.\n\n**Rationale:** Some layouts require more vertical space for headings, and stacking is already supported in the 50/50 hero pattern.\n\n**Condition:** This should only be used when the right-side content is taller than the left, and requires designer judgment.\n\n**Next step:** Update the pattern and add guidance to the documentation.",
+      "link": "https://github.com/canonical/vanilla-framework/issues/5579",
+      "concept": "",
+      "when": "2025-07-14T17:00:00.000+01:00",
+      "rules": ""
+    },
+    "i-3dBUDSDTU5": {
+      "rowId": "i-3dBUDSDTU5",
+      "construct": "",
+      "where": "Sites and Brand office hours, Design Systems Contributions",
+      "what": "**Decision:** Move the CTA block from the bottom to directly below the top description and remove the rule.  \n**Rationale:** Aligns with the guideline of avoiding rules above CTAs and clarifies hierarchy by separating the primary CTA from individual links.",
+      "link": "https://github.com/canonical/vanilla-framework/issues/5652",
+      "concept": "",
+      "when": "2025-09-22T19:00:00.000+01:00",
+      "rules": ""
+    },
     "i-ky4BNp2mu0": {
       "rowId": "i-ky4BNp2mu0",
       "construct": "i-plkjzhg8m1",
