@@ -10,13 +10,13 @@
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/main/templates/_macros/vf_logo-section.jinja",
   "description": "The logo section showcases a group of related images, such as a group of customer or partner logos. For best results, ensure that the images have identical dimensions.\n\n  \n",
   "usage": "The logo section highlights the array of logos as the primary content, building on on the [Logo block](/sites/construct/logo-block). It is typically paired with a muted heading, an optional description, and a [CTA block](/sites/construct/cta-block). This pattern is used to emphasize brand identity or partner associations within a page.\n\n### When to use\n\n*   In cases where the [Logo block](/sites/construct/logo-block) functions as the main content, with all other elements acting as supporting content\n\n### When not to use\n\n*   When images, lists, or other content need to be included, use the [Basic section](/sites/construct/basic-section) instead\n*   If logos need to be linked, use the [Linked logo section](/sites/construct/linked-logo-section) instead",
-  "examples": "Medium dimension\n\n![example-4.png](images/9cfb7825-91b4-41de-b8ed-d76534733502.png)\n\nSmall dimension\n\n![example-5.png](images/f7f9fe2b-ab45-4f17-a934-f20c709d8f8d.png)\n\nLinked heading\n\n![example-2.png](images/a672e487-5d28-419c-9b64-db1d99f3ff0c.png)",
+  "examples": "Medium dimension\n\n![example-4.png](images/3600988b-b7e3-477d-a074-e008f83180da.png)\n\nSmall dimension\n\n![example-5.png](images/adaf4821-2d5a-4cc5-9318-b6639e8e1cfd.png)\n\nLinked heading\n\n![example-2.png](images/85559842-fe48-4761-84d2-b99680feca71.png)",
   "interactions": "",
   "figmaComponentData": "",
-  "componentExampleImage": "images/226ac2ab-4db4-4ae3-856b-27305e0561a1.png",
+  "componentExampleImage": "images/1b0873d6-c372-4aa7-b9b7-2c88dbde394a.png",
   "sitesArchitectureLevels": "i-ues18YVwia",
   "anatomy": {
-    "image": "images/09162b8c-34b9-4394-9c8e-67e3510b85c6.png",
+    "image": "images/fab7de27-c4d2-4179-a38f-d578c9d7b0ba.png",
     "table": [
       {
         "number": 1,
