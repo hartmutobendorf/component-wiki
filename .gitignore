@@ -182,4 +182,6 @@ __pycache__/
 .venv/
 
 .claude
-.pi.pnpm-store
+.pi
+.pnpm-store
+
