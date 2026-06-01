@@ -9,14 +9,14 @@
   "figmaLink": "https://www.figma.com/design/1brHCsyeTE6FU7hfJd6ao2/%F0%9F%8C%90-Sites---Core-component-library?node-id=452-16684&p=f&t=Wm4Zk8A1vTAMrGBp-11",
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/main/templates/_macros/vf_logo-section.jinja",
   "description": "The logo block is a content unit that showcases a group of related images, such as a group of customer or partner logos. For best results, ensure that the images have identical dimensions. This block is used as the primary content unit in the [Logo section](/sites/construct/logo-section).\n\n",
-  "usage": "",
+  "usage": "The Logo block is the primary content element of the . It can also be used as a block item within the   , , and .\n\nThe block width follows the content container of its parent pattern, with options of 50, 75, and full-width.\n\n### Choose the appropriate logotype\n\nWhen both horizontal and vertical logo layouts are available, use the horizontal version by default. However, if the horizontal version appears significantly wider than other logos or is not available, the vertical version may be used. Logos are displayed as images only, so avoid using a standalone logomark.\n\nEach logo sits inside a fixed-height container that defines its visual bounds and ensures consistent alignment. The width adapts to the logo's proportions.\n\n**Logotype area:** When a logo consists of a logotype and an optional logomark, use the logotype area as the primary reference for placement. This area is defined based on a single line of the logotype.\n\nLogotypes should be scaled to a consistent reference height. Because logo proportions vary, the reference height should be adjusted iteratively until most logos fit comfortably within the bounding box. The longest logotype should not automatically define this height, as it may cause other logos to appear too small. Instead, select a reference height that works for the majority of logos.\n\n*   If the logotype spans two or more lines, it is centre-aligned within the logotype area.\n\n*   When a logo has relatively high or low visual density, optical size adjustments can be made to maintain balance when displayed with other logos.\n\n*   When a wordmark is particularly long or short, optical size adjustments can be made to maintain balance when displayed with other logos.\n\n**Logomark area:** When a logo symbol is used on its own, or when the logo is contained within a shape, use the logomark area as the reference for placement.\n\nMost logo shapes generally fall into three categories: elongated rectangles (such as the examples above), circles, and squares.\n\nAchieving precisely the same surface area is often not sufficient to create visual balance. Because logos vary in shape, color and visual density, optical adjustments may be required when displaying them together. Perceived visual weight is influenced by surface area, shape thickness, color value (darker logos often appear heavier), and internal negative space.\n\nBased on these factors, the approximate guidelines below can be used as a reference.\n\n*   When negative space differs significantly, logos with larger internal negative space may be scaled larger, while denser logos may be adjusted slightly smaller.\n\n*   When logos with similar shapes have different surface areas, the smaller one may be scaled up while the denser logo may be reduced.\n\n### Color\n\nUse the monochrome version in dark mode.\n\n### When to use\n\n*   To display a group of related logos without individual navigation, such as a row of partner or customer logos\n*   Logos are purely decorative or editorial, requiring no interaction\n\n### When not to use\n\n*   When each logo needs to link to an external page or partner profile, use the instead\n*   If you have significantly more than 10 logos, consider splitting them across multiple blocks or reassessing the design\n*   Logos vary significantly in visual weight and a uniform grid would misrepresent them\n\n### Further reading\n\n*   [Blog: Taming unruly logo sections](https://ubuntu.com/blog/taming-unruly-logo-sections)",
   "examples": "",
   "interactions": "",
   "figmaComponentData": "",
-  "componentExampleImage": "images/c8d97874-e1e8-4650-8a3d-59984d127f12.png",
+  "componentExampleImage": "images/a564fbe7-7c24-4f9a-82b0-f3e7a81f8f81.png",
   "sitesArchitectureLevels": "i-ytTJ4UrPBn",
   "anatomy": {
-    "image": "images/59138926-4e80-464c-8d03-1fe3783b82e4.png",
+    "image": "images/ea75b755-25dc-48d9-b076-f2e7aae86f47.png",
     "table": [
       {
         "number": 1,
@@ -57,11 +57,6 @@
       "path": "sites/construct/divided-block"
     },
     {
-      "name": "Divided block",
-      "slug": "divided-block",
-      "path": "sites/construct/divided-block"
-    },
-    {
       "name": "Divided section",
       "slug": "divided-section",
       "path": "sites/construct/divided-section"
@@ -88,11 +83,6 @@
     }
   ],
   "mentionsComponents": [
-    {
-      "name": "Logo section",
-      "slug": "logo-section",
-      "path": "sites/construct/logo-section"
-    },
     {
       "name": "Logo section",
       "slug": "logo-section",

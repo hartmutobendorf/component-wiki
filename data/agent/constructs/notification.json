@@ -173,11 +173,6 @@
       "path": "sites/construct/divided-block"
     },
     {
-      "name": "Divided block",
-      "slug": "divided-block",
-      "path": "sites/construct/divided-block"
-    },
-    {
       "name": "Divided section",
       "slug": "divided-section",
       "path": "sites/construct/divided-section"

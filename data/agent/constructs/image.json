@@ -132,11 +132,6 @@
     {
       "name": "Logo block",
       "slug": "logo-block",
-      "path": "construct/logo-block"
-    },
-    {
-      "name": "Logo block",
-      "slug": "logo-block",
       "path": "sites/construct/logo-block"
     }
   ],

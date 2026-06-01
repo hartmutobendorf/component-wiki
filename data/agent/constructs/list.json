@@ -9,7 +9,7 @@
   "figmaLink": "https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2360-1721",
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/d0197b27f5733789d6d23536eabe68356e045ae1/scss/_patterns_contextual-menu.scss",
   "description": "A list shows related pieces of information where each item represents a single attribute. Use a list to organize static content and create visual rhythm, making information easier to scan and understand. Lists are not interactive. Users can't modify, filter, or otherwise change their contents. List items can contain different types of data. If every item shares the same data type, or if any item needs to show more than one attribute, consider using a table instead.",
-  "usage": "",
+  "usage": "Use a list to present a set of related items as a structured, scannable sequence. Lists work best when each item represents a single piece of information and the content benefits from visual separation rather than flowing prose.\n\n### When to use\n\n*   When showing multiple related pieces of text in an organized way\n*   When a table would contain only one column\n*   When presenting static information\n*   When showing steps in a process\n*   When showing a hierarchy of content without links\n*   When visualizing items that would otherwise appear as comma-separated text\n\n### When not to use\n\n*   To group multiple components such as buttons, images, or other UI elements\n*   To structure content inside other components\n*   To create a table of contents with links. Use the table of contents component instead\n*   To show a tree structure. Use the tree view component instead\n*   To show dynamic information that users can act on or change\n*   To present content with multiple attributes. Use a table instead\n*   To create a table without a header row\n\n### Orientation and nesting\n\nLists can be oriented vertically or horizontally. Use a vertical list when the content needs to show hierarchy, because only vertical lists support nesting. Vertical lists can be nested up to three levels deep, and each level may use a different marker style. Use horizontal lists only for flat content.\n\n### Markers and separators\n\nBoth horizontal and vertical lists support bullets, icons, numbers, or letters as markers. Numbers may be Arabic or Roman. You can use different marker types at each level of a nested list.\n\nLists also support separators. Vertical lists can only be separated with horizontal lines. Horizontal lists can use lines or bullets as separators. When bullets are used as separators in a horizontal list, no other marker may be used.\n\n### Lists versus tables\n\nDo not use a list to recreate a table without headings. If the content includes multiple attributes or requires comparison across columns, use a table instead. When items belong to a single category, or to multiple categories that share no common attributes, a list is the appropriate choice.",
   "examples": "",
   "interactions": "",
   "sitesArchitectureLevels": "i-UvVNCYZ44t",
@@ -141,11 +141,6 @@
       "name": "Basic section",
       "slug": "basic-section",
       "path": "sites/construct/basic-section"
-    },
-    {
-      "name": "Divided block",
-      "slug": "divided-block",
-      "path": "sites/construct/divided-block"
     },
     {
       "name": "Divided block",

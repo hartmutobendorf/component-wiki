@@ -10,7 +10,7 @@
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/main/templates/_macros/vf_basic-section.jinja",
   "description": "The Basic section is a two-column (50/50) layout pattern for presenting a single topic with a mix of content blocks. It can include text, images, videos, lists, code snippets, logos, and call-to-action elements. \n\nChoose this pattern to communicate a single topic that can be clearly conveyed in a side-by-side, two-column structure.",
   "usage": "Use the Basic section to communicate one idea and support that idea in a variety of content blocks. To promote readability and cohesion, limit each section to seven or fewer content blocks. This section works best when the copy is concise and each block supports the main topic. Avoid mixing unrelated messages or different content types. The Basic section typically works best with a title on the left and supporting material on the right. For medium size, the macro has 50/50 and full-width variants to accommodate different content needs.\n\n### Layout\n\nBasic section adapts across screen sizes. On medium screens, the layout is configurable: content can split(50/50) or stack vertically(full-width). On small screens, content always stacks.\n\n### Supported UI blocks for the [Content area](/sites/construct/basic-section#anatomy)\n\n1.  **Subtitle / subheading** \\- Add more hierarchy beneath the title, using H4 or H5.\n2.  **Description / body text** \\- Use for long-form descriptions or explanations, when full sentences and paragraphs work best.\n3.  **Image** - Include a 3:2 or 16:9 ratio image to illustrate or enhance the content including: photography, isometric illustrations, diagrams, and similar visuals. The image can include an optional caption.\n4.  **Video** \\- Embed and link video content in 16:9 ratio.\n5.  **[List](/global/construct/list)** - List up to 10 items, with bullet type options including: none, bullet, status, or number.\n6.  **Code block** - Display pre-formatted code.\n7.  **[Logo block](/sites/construct/logo-block)** - Display related logos such as customers or partners.\n8.  **[Linked logo block](/sites/construct/linked-logo-block)** \\- Display logos that link to additional resources.\n9.  **[CTA block](/sites/construct/cta-block)** - Share one or more call-to-action elements, including a primary button, secondary button, and link.\n10.  **[Notification](/global/construct/notification)** - Highlight alerts, updates, or contextual messages within the section.\n\n### When to use\n\n*   You’re not sure what other section to use, this is the fallback\n*   To present one clear topic with supporting explanatory content\n*   For both marketing and informational content that requires a flexible pattern\n*   The 50/50 layout balances text and media for better readability.\n\n### When not to use\n\n*   When multiple topics or groups require clearer separation, or the content needs to be quickly scanned like a list. Consider the [Tiered list](/sites/construct/tiered-list), [Equal heights](/sites/construct/equal-heights), or [Divided section](/sites/construct/divided-section) instead.\n*   If one content block is sufficient, use the section for that particular purpose. For example, the [Logo section](/sites/construct/logo-section), [Linked logo section](/sites/construct/linked-logo-section), or [Resources](/sites/construct/resources).\n*   When an immersive or highlight-oriented layout is appropriate, use the [Rich vertical list](/sites/construct/rich-vertical-list), or [Text spotlight](/sites/construct/text-spotlight) or [Data spotlight](/sites/construct/data-spotlight) sections.",
-  "examples": "### Responsive\n\nMedium dimension (50/50 split)\n\n![Component example wrapper-1.png](images/0f153f70-d8c2-4ba8-b66b-d8585226f057.png)\n\nMedium dimension (full-width)\n\n![Component example wrapper-3.png](images/b7d8532c-21c7-433e-8bc4-e3caf1f9316e.png)\n\nSmall dimension\n\n![Component example wrapper-2.png](images/2e7c05b5-7efe-44bf-a2ae-e6850f3313bb.png)",
+  "examples": "### Responsive\n\nMedium dimension (50/50 split)\n\n![Component example wrapper-1.png](images/2b796349-5ed4-4a3e-8e03-95e983a6d851.png)\n\nMedium dimension (full-width)\n\n![Component example wrapper-3.png](images/c2c16a63-b459-44e9-bf50-5f8a5301ba5e.png)\n\nSmall dimension\n\n![Component example wrapper-2.png](images/99555200-0f5f-4f89-b64d-a4e15dbe7a8e.png)",
   "interactions": "",
   "sitesArchitectureLevels": "i-ues18YVwia",
   "anatomy": {
@@ -533,11 +533,6 @@
     {
       "name": "CTA block",
       "slug": "cta-block",
-      "path": "construct/cta-block"
-    },
-    {
-      "name": "CTA block",
-      "slug": "cta-block",
       "path": "sites/construct/cta-block"
     },
     {
@@ -558,11 +553,6 @@
     {
       "name": "Linked logo block",
       "slug": "linked-logo-block",
-      "path": "construct/linked-logo-block"
-    },
-    {
-      "name": "Linked logo block",
-      "slug": "linked-logo-block",
       "path": "sites/construct/linked-logo-block"
     },
     {
@@ -573,17 +563,7 @@
     {
       "name": "List",
       "slug": "list",
-      "path": "construct/list"
-    },
-    {
-      "name": "List",
-      "slug": "list",
       "path": "global/construct/list"
-    },
-    {
-      "name": "Logo block",
-      "slug": "logo-block",
-      "path": "construct/logo-block"
     },
     {
       "name": "Logo block",
@@ -594,11 +574,6 @@
       "name": "Logo section",
       "slug": "logo-section",
       "path": "sites/construct/logo-section"
-    },
-    {
-      "name": "Notification",
-      "slug": "notification",
-      "path": "construct/notification"
     },
     {
       "name": "Notification",

@@ -99,16 +99,6 @@
       "path": "sites/construct/linked-logo-section"
     },
     {
-      "name": "Linked logo section",
-      "slug": "linked-logo-section",
-      "path": "sites/construct/linked-logo-section"
-    },
-    {
-      "name": "Logo block",
-      "slug": "logo-block",
-      "path": "construct/logo-block"
-    },
-    {
       "name": "Logo block",
       "slug": "logo-block",
       "path": "sites/construct/logo-block"
