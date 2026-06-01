@@ -10,7 +10,7 @@
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/main/templates/_macros/vf_logo-section.jinja",
   "description": "The logo section showcases a group of related images, such as a group of customer or partner logos. For best results, ensure that the images have identical dimensions.\n\n  \n",
   "usage": "The logo section highlights the array of logos as the primary content, building on on the [Logo block](/sites/construct/logo-block). It is typically paired with a muted heading, an optional description, and a [CTA block](/sites/construct/cta-block). This pattern is used to emphasize brand identity or partner associations within a page.\n\n### When to use\n\n*   In cases where the [Logo block](/sites/construct/logo-block) functions as the main content, with all other elements acting as supporting content\n\n### When not to use\n\n*   When images, lists, or other content need to be included, use the [Basic section](/sites/construct/basic-section) instead\n*   If logos need to be linked, use the [Linked logo section](/sites/construct/linked-logo-section) instead",
-  "examples": "Medium dimension\n\n![example-4.png](images/b52e0061-b4b9-4a7d-90e3-f9b08cd9404f.png)\n\nSmall dimension\n\n![example-5.png](images/d5d35c23-ae6f-4413-afae-43603b128523.png)\n\nLinked heading\n\n![example-2.png](images/3db3ef54-005a-4726-9b2e-bb1e2d24d2a2.png)",
+  "examples": "Medium dimension\n\n![example-4.png](images/55afd842-7431-406d-b8fe-906278551531.png)\n\nSmall dimension\n\n![example-5.png](images/7aaf0623-994b-405f-b110-93adf371f6e8.png)\n\nLinked heading\n\n![example-2.png](images/ae39150d-febe-4854-91ea-deecaa361dda.png)",
   "interactions": "",
   "sitesArchitectureLevels": "i-ues18YVwia",
   "anatomy": {
