@@ -1,0 +1,64 @@
+name: Deploy
+
+on:
+    workflow_run:
+        workflows: ["Sync Coda Content"]
+        types:
+            - completed
+    workflow_dispatch:
+        inputs:
+            reason:
+                description: "Reason for syncing and deploying"
+                required: false
+                default: "Manual sync and deploy triggered"
+
+jobs:
+    deploy:
+        runs-on: ubuntu-latest
+        if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
+        permissions:
+            contents: write
+            packages: write
+
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v5
+              with:
+                  token: ${{ secrets.GITHUB_TOKEN }}
+
+            - name: Setup pnpm
+              uses: pnpm/action-setup@v4
+
+            - name: Setup Node.js
+              uses: actions/setup-node@v4
+              with:
+                  node-version: "20"
+                  cache: "pnpm"
+
+            - name: Install dependencies
+              run: pnpm install
+
+            - name: Build Astro app
+              run: pnpm build:app
+
+            - name: Log in to GHCR
+              uses: docker/login-action@v3
+              with:
+                  registry: ghcr.io
+                  username: ${{ github.actor }}
+                  password: ${{ secrets.GITHUB_TOKEN }}
+
+            - name: Build and push Docker image
+              uses: docker/build-push-action@v6
+              with:
+                  context: .
+                  push: true
+                  tags: ghcr.io/${{ github.repository }}:latest,ghcr.io/${{ github.repository }}:${{ github.sha }}
+
+            - name: Summary
+              run: |
+                  if [ "${{ steps.git-check.outputs.changes }}" == "true" ]; then
+                    echo "✅ Content synced, committed, built, and deployed to BunnyCDN"
+                  else
+                    echo "ℹ️ No content changes detected, but app built and deployed to BunnyCDN"
+                  fi
