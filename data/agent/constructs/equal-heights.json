@@ -10,7 +10,7 @@
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/main/templates/_macros/vf_equal-heights.jinja",
   "description": "The Equal heights pattern arranges content blocks in a horizontal row where each block maintains the same height regardless of the amount of content inside. This creates a visually balanced layout that allows items to be easily compared and scanned.  An optional [CTA block](/sites/construct/cta-block) can appear at the section level, beneath blocks list.\n\n  \n",
   "usage": "The Equal heights pattern presents related content in a horizontal layout using [Equal height block](/sites/construct/equal-height-block), ensuring that each item maintains the same height. This creates consistent alignment across the row and supports a balanced, easy-to-scan layout.\n\nUse this pattern to break down information into columns. It is commonly used to present comparable items such as features, benefits, product options, or key resources.\n\nA minimum of three columns is recommended. Equalising the height of each block prevents uneven layouts when content lengths vary while maintaining consistent spacing across the row.\n\n**Best practice:** Keep the content volume similar across columns to maintain visual balance.\n\n### When to use\n\n*   Content consists of comparable items that benefit from side-by-side presentation, such as features, benefits, product options, or key resources\n*   Items share a consistent structure and a similar volume of content\n*   Users need to scan and compare multiple items quickly\n\n### When not to use\n\n*   Each item requires rich or varied content such as images, videos, code blocks, or lists — use [Divided section](/sites/construct/divided-section)  instead\n*   The content covers a single topic with supporting material — use [Basic section](/sites/construct/basic-section)  instead\n*   The content consists of paired titles and descriptions in a text-heavy list format — use [Tiered list](/sites/construct/tiered-list)  instead",
-  "examples": "Large dimension (50/50)\n\n![example-1.png](images/1693acc6-554d-4698-b05c-f5ffed8de337.png)\n\nLarge dimension (25/75)\n\n![example-2.png](images/dd745c8b-3e6c-43ce-8c0a-36fe208e17dc.png)\n\nLarge dimension (full-width)\n\n![example-3.png](images/04089f0e-d0ef-486a-bdc3-c3af2e8c0d9a.png)\n\nLarge dimension (full-width, apply predefined image ratio)\n\n![example-6.png](images/46df3f52-3c17-4cca-84de-479aae309ab7.png)\n\nMedium dimension\n\n![example-5.png](images/54c58a7b-542c-4646-9ac4-ce1cdce2bcd4.png)\n\nSmall dimension\n\n![example-4.png](images/7e824877-bbae-42fe-96db-567da7b7e52d.png)",
+  "examples": "Large dimension (50/50)\n\n![example-1.png](images/72722664-e551-48de-b8d8-2e17dd21aa56.png)\n\nLarge dimension (25/75)\n\n![example-2.png](images/c88e8ef4-e407-4f89-8bc5-f8a8562fb155.png)\n\nLarge dimension (full-width)\n\n![example-3.png](images/5711d59b-369e-4f02-bc31-62d73a443b5e.png)\n\nLarge dimension (full-width, apply predefined image ratio)\n\n![example-6.png](images/c5731d12-2649-46cc-8ee8-5f99ac2d9771.png)\n\nMedium dimension\n\n![example-5.png](images/9764d199-4328-4dd7-8419-4e6ae85b4005.png)\n\nSmall dimension\n\n![example-4.png](images/9d5fadbf-8c7b-4233-bad5-5046289c5d5f.png)",
   "interactions": "",
   "sitesArchitectureLevels": "i-ues18YVwia",
   "anatomy": {
@@ -272,11 +272,6 @@
       "name": "Basic section",
       "slug": "basic-section",
       "path": "sites/construct/basic-section"
-    },
-    {
-      "name": "CTA block",
-      "slug": "cta-block",
-      "path": "construct/cta-block"
     },
     {
       "name": "CTA block",

@@ -10,13 +10,13 @@
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/main/templates/_macros/vf_divided-section.jinja",
   "description": "The divided block is a content unit that represents a single step, stage, or content item. It supports a wide range of content types, including text, [Image](/global/construct/image), videos, [List](/global/construct/list), [Code](/global/construct/code), [Logo block](/sites/construct/logo-block), [Notification](/global/construct/notification), and [CTA block](/sites/construct/cta-block). This block is used as the primary content unit in the [Divided section](/sites/construct/divided-section).\n\n",
   "usage": "Use Divided block to present multiple related items within a single section while keeping each item clearly separated. It works best when each item may require a different combination of content elements.  \nDivided block is well-suited for step-based content such as tutorials, setup guides, onboarding flows, or implementation processes. It also works for presenting multiple items within a single topic — such as stages in a workflow, feature explanations, or grouped content items — where internal separation is needed without introducing a full section break.\n\n### **Supported UI blocks for the** **[Content area](/sites/construct/divided-block#anatomy)**\n\n1.  **Description / body text** - Use for long-form descriptions or explanations, when full sentences and paragraphs work best.\n2.  **Image** - Include a 3:2 or 16:9 ratio image to illustrate or enhance the content including: photography, isometric illustrations, diagrams, and similar visuals. The image can include an optional caption.\n3.  **Video** - Embed and link video content in 16:9 ratio.\n4.  **[List](/global/construct/list)** - List up to 10 items, with bullet type options including: none, bullet, status, or number.\n5.  **Code block** - Display preformatted code.\n6.  **[Logo block](/sites/construct/logo-block)** - Display related logos such as customers or partners.\n7.  **[Linked logo block](/sites/construct/linked-logo-block)** - Display logos that link to additional resources.\n8.  **[CTA block](/sites/construct/cta-block)** - Share one or more call-to-action elements, including a primary button, secondary button, and link.\n9.  **[Notification](/global/construct/notification)** - Highlight alerts, updates, or contextual messages within the section.\n\n### When to use\n\n*   Each item represents a single step, stage, or content item within a broader topic\n*   Items need clear visual separation while remaining part of the same section\n*   Each item may contain a different combination of content types\n*   Content requires richer structure than a simple heading and body\n\n### When not to use\n\n*   All blocks share the same content structure — use [Basic section](/sites/construct/basic-section) without a dividing rule instead\n*   The image is the primary content with only brief supporting text — use an [Equal height block](/sites/construct/equal-height-block) instead\n*   Content is purely text-based — use [Tiered list](/sites/construct/tiered-list) instead",
-  "examples": "",
+  "examples": "### Heading type\n\nWith number\n\n![large.png](images/c44626cf-3d93-4c7f-86e3-3c9113c2d61a.png)\n\nWith icon\n\n![large-1.png](images/1b2b068f-ad8c-4456-85a4-61b526f434cc.png)\n\nWith bullet\n\n![large-2.png](images/38d2972f-2b59-4bd8-862f-64526452e1f7.png)\n\nWithout bullet\n\n![large4.png](images/64c9b728-3121-4c0b-b58c-c1e1677364da.png)\n\nWithout heading\n\n![large-4.png](images/0ecc1f56-0c75-4b4d-9105-79f99238d840.png)",
   "interactions": "",
   "figmaComponentData": "",
-  "componentExampleImage": "images/08c41cad-d378-4c45-b1ae-73a83a22bd23.png",
+  "componentExampleImage": "images/9f877d9f-a722-4c73-8c20-b4d401d0e740.png",
   "sitesArchitectureLevels": "i-ytTJ4UrPBn",
   "anatomy": {
-    "image": "images/a7c07393-51b8-4fda-9fe6-531edc0918d7.png",
+    "image": "images/5a6ce249-14c3-4d6e-b603-860ed045d3d8.png",
     "table": [
       {
         "number": 1,
@@ -417,47 +417,12 @@
     {
       "name": "Code",
       "slug": "code",
-      "path": "construct/code"
-    },
-    {
-      "name": "Code",
-      "slug": "code",
-      "path": "construct/code"
-    },
-    {
-      "name": "Code",
-      "slug": "code",
-      "path": "global/construct/code"
-    },
-    {
-      "name": "Code",
-      "slug": "code",
       "path": "global/construct/code"
     },
     {
       "name": "CTA block",
       "slug": "cta-block",
-      "path": "construct/cta-block"
-    },
-    {
-      "name": "CTA block",
-      "slug": "cta-block",
-      "path": "construct/cta-block"
-    },
-    {
-      "name": "CTA block",
-      "slug": "cta-block",
       "path": "sites/construct/cta-block"
-    },
-    {
-      "name": "CTA block",
-      "slug": "cta-block",
-      "path": "sites/construct/cta-block"
-    },
-    {
-      "name": "Divided section",
-      "slug": "divided-section",
-      "path": "sites/construct/divided-section"
     },
     {
       "name": "Divided section",
@@ -477,67 +442,17 @@
     {
       "name": "Linked logo block",
       "slug": "linked-logo-block",
-      "path": "construct/linked-logo-block"
-    },
-    {
-      "name": "Linked logo block",
-      "slug": "linked-logo-block",
       "path": "sites/construct/linked-logo-block"
     },
     {
       "name": "List",
       "slug": "list",
-      "path": "construct/list"
-    },
-    {
-      "name": "List",
-      "slug": "list",
-      "path": "construct/list"
-    },
-    {
-      "name": "List",
-      "slug": "list",
-      "path": "global/construct/list"
-    },
-    {
-      "name": "List",
-      "slug": "list",
       "path": "global/construct/list"
     },
     {
       "name": "Logo block",
       "slug": "logo-block",
-      "path": "construct/logo-block"
-    },
-    {
-      "name": "Logo block",
-      "slug": "logo-block",
-      "path": "construct/logo-block"
-    },
-    {
-      "name": "Logo block",
-      "slug": "logo-block",
       "path": "sites/construct/logo-block"
-    },
-    {
-      "name": "Logo block",
-      "slug": "logo-block",
-      "path": "sites/construct/logo-block"
-    },
-    {
-      "name": "Notification",
-      "slug": "notification",
-      "path": "construct/notification"
-    },
-    {
-      "name": "Notification",
-      "slug": "notification",
-      "path": "construct/notification"
-    },
-    {
-      "name": "Notification",
-      "slug": "notification",
-      "path": "global/construct/notification"
     },
     {
       "name": "Notification",

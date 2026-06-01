@@ -79,11 +79,6 @@
     {
       "name": "Notification",
       "slug": "notification",
-      "path": "construct/notification"
-    },
-    {
-      "name": "Notification",
-      "slug": "notification",
       "path": "global/construct/notification"
     },
     {

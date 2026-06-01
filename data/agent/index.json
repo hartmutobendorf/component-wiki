@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-06-01T15:51:39.275Z",
-  "constructCount": 62,
+  "generatedAt": "2026-06-01T15:58:41.739Z",
+  "constructCount": 54,
   "conceptCount": 26,
   "constructTypes": [
     "Block",
@@ -9,7 +9,6 @@
     "Pattern"
   ],
   "constructTiers": [
-    "",
     "Apps",
     "Global",
     "Sites"
@@ -26,62 +25,6 @@
       "type": "Block",
       "tier": "Sites",
       "description": "The newsletter signup block contains the same content as the [Newsletter signup](/sites/construct/newsletter-signup) pattern but without the top rule and bottom padding. It is intended to be placed within a section rather than used as a standalone full-width section. The Newsletter signup block serves as a strategic engagement touchpoint, most commonly placed alongside related content such as articles, where it acts as a lightweight conversion step to keep users connected beyond their current visit.\n\n"
-    },
-    {
-      "name": "Images",
-      "slug": "images",
-      "type": "Component",
-      "tier": "",
-      "description": ""
-    },
-    {
-      "name": "CTA block",
-      "slug": "cta-block",
-      "type": "Component",
-      "tier": "",
-      "description": "The CTA (call to action) block presents one or more related actions that guide the user toward the next step within a section, such as learning more, making contact, or downloading a resource. It supports primary, secondary, and link-level CTA, all of which are optional and can be combined depending on the context. It provides a visually prominent way to highlight key next steps and should be used when you want to encourage decisive user engagement within a page or section. "
-    },
-    {
-      "name": "Code",
-      "slug": "code",
-      "type": "Component",
-      "tier": "",
-      "description": "The code component displays code, commands, and technical language that requires distinct visual treatment. This includes programming languages, domain-specific languages such as search syntax, terminal commands, file paths, and configuration values. This component is designed for simple, single-line code. For multi-line or more complex use cases, use [Code snippet](/global/construct/code-snippet) instead."
-    },
-    {
-      "name": "Notification",
-      "slug": "notification",
-      "type": "Component",
-      "tier": "",
-      "description": "Notifications display brief, contextual messages to inform users about system status, user actions, or important updates. They typically appear temporarily and can convey success, error, warning, or informational states to provide immediate feedback without disrupting the user's workflow."
-    },
-    {
-      "name": "Logo block",
-      "slug": "logo-block",
-      "type": "Component",
-      "tier": "",
-      "description": "The logo block is a content unit that showcases a group of related images, such as a group of customer or partner logos. For best results, ensure that the images have identical dimensions. This block is used as the primary content unit in the [Logo section](/sites/construct/logo-section).\n\n"
-    },
-    {
-      "name": "Linked logo block",
-      "slug": "linked-logo-block",
-      "type": "Component",
-      "tier": "",
-      "description": "The linked logo block is a content unit that displays a logo with a link to additional pages or resources. This block is used as the primary content unit in the [Linked logo section](/sites/construct/linked-logo-section).\n\n"
-    },
-    {
-      "name": "List",
-      "slug": "list",
-      "type": "Component",
-      "tier": "",
-      "description": ""
-    },
-    {
-      "name": "Divided block",
-      "slug": "divided-block",
-      "type": "Component",
-      "tier": "",
-      "description": "The divided block is a content unit that represents a single step, stage, or content item. It supports a wide range of content types, including text, images, videos, [List](/global/construct/list), [Code](/global/construct/code), [Logo block](/sites/construct/logo-block), [Notification](/global/construct/notification), and [CTA block](/sites/construct/cta-block). This block is used as the primary content unit in the [Divided section](/sites/construct/divided-section).\n\n"
     },
     {
       "name": "Divided block",

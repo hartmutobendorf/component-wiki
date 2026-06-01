@@ -10,7 +10,7 @@
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/main/templates/_macros/vf_divided-section.jinja",
   "description": "The divided section pattern is used to separate related content into distinct steps or items within a single section. Each item is visually divided using a muted [Rule](/sites/construct/divided-section#anatomy) and shallow padding, helping users distinguish between content blocks while maintaining a cohesive layout.\n\n",
   "usage": "The divided section pattern provides a flexible layout for presenting grouped content that needs clear internal separation, such as steps, stages, or sequential elements. Each [Divided block](/sites/construct/divided-section#anatomy) is separated by a muted [Rule](/sites/construct/divided-section#anatomy) and shallow padding, creating visual structure without introducing strong section breaks.\n\nThe pattern can accommodate a wide range of content types, including text, images, videos, lists, code blocks, logos, and call-to-action elements. Both the section description area and the [Divided block](/sites/construct/divided-section#anatomy)s themselves support these content types.\n\nInternally, the divided section reuses content blocks from the [Basic section](/sites/construct/basic-section) pattern. As a result, most layout configurations and content options behave identically to those in [Basic section](/sites/construct/basic-section), ensuring consistency and reducing the need for additional configuration or learning.\n\n### Layout\n\nDivided section adapts across screen sizes. On medium screens, the layout is configurable: content can split(50/50) or stack vertically(full-width). On small screens, content always stacks.\n\n### **Supported UI blocks for the** **[Content area](/sites/construct/divided-section#anatomy)**\n\n1.  **Description / body text** - Use for long-form descriptions or explanations, when full sentences and paragraphs work best.\n2.  **Image** - Include a 3:2 or 16:9 ratio image to illustrate or enhance the content including: photography, isometric illustrations, diagrams, and similar visuals. The image can include an optional caption.\n3.  **Video** - Embed and link video content in 16:9 ratio.\n4.  **[List](/global/construct/list)** - List up to 10 items, with bullet type options including: none, bullet, status, or number.\n5.  **Code block** - Display preformatted code.\n6.  **[Logo block](/sites/construct/logo-block)** - Display related logos such as customers or partners.\n7.  **[Linked logo block](/sites/construct/linked-logo-block)** - Display logos that link to additional resources.\n8.  **[CTA block](/sites/construct/cta-block)** - Share one or more call-to-action elements, including a primary button, secondary button, and link.\n9.  **[Notification](/global/construct/notification)** - Highlight alerts, updates, or contextual messages within the section.\n\n### **When to use**\n\n*   When content needs to be broken into clear steps or distinct items within a single section\n*   When a subtle visual separation is needed without creating fully independent sections\n\n### **When not to use**\n\n*   When images, lists, or other content need to stand alone without internal dividers, use [Basic section](/sites/construct/basic-section) instead\n*   When the content consists of text only, use a [Tiered list](/sites/construct/tiered-list) instead\n*   When the content is made up of short text and a single representative image, consider using [Equal heights](/sites/construct/equal-heights) instead",
-  "examples": "### Responsive\n\nMedium dimension (full-width)\n\n![example-8.png](images/6c79c32f-466b-4b44-80a5-712ceef05322.png)\n\nMedium dimension (50/50)\n\n![example-7.png](images/31b7d0f3-659a-42e3-b48f-f576a00847d9.png)\n\nSmall dimension\n\n![example-9.png](images/71453b55-2715-4258-9134-b6cb0408be77.png)\n\n### Heading type\n\nWith icon\n\n![example-1.png](images/892affec-8679-4acb-b89e-21e60f78e3d2.png)\n\nWith bullet\n\n![example-2.png](images/e34dc255-2410-4a92-b6c9-82a3adf4773c.png)\n\nWith number\n\n![example-3.png](images/d2fef9f7-e1c8-451f-a75c-7595ee72d463.png)\n\nWithout bullet\n\n![example-4.png](images/ccf33e94-82db-489e-a0b2-af5f0e5a48ef.png)\n\nWithout heading\n\n![example-5.png](images/9ef6c81f-b559-4ad8-8d35-2beebfea0d9e.png)\n\n### Contents type\n\nMix of various content types\n\n![example-6.png](images/6b9661f0-c6e0-496e-809f-39dfa8762428.png)",
+  "examples": "### Responsive\n\nMedium dimension (full-width)\n\n![example-8.png](images/ea7ed621-57af-4216-9d79-d76ac694a5d6.png)\n\nMedium dimension (50/50)\n\n![example-7.png](images/f117f858-d0d6-43e0-b243-df62b04eb26c.png)\n\nSmall dimension\n\n![example-9.png](images/55af1f62-9cb0-43dc-849a-e6a244c4c26f.png)\n\n### Heading type\n\nWith icon\n\n![example-1.png](images/b76b5b10-8838-402c-aadf-e6bdc30e647a.png)\n\nWith bullet\n\n![example-2.png](images/ef5113ff-80e8-49fb-88f9-08ade7cf40ce.png)\n\nWith number\n\n![example-3.png](images/a15c57ee-b98b-493a-83bf-455d877cae4c.png)\n\nWithout bullet\n\n![example-4.png](images/d168a1c1-a096-4f98-97ee-31871f7caedc.png)\n\nWithout heading\n\n![example-5.png](images/0531119e-bbdb-4709-9a4f-a1b7d6738a54.png)\n\n### Contents type\n\nMix of various content types\n\n![example-6.png](images/424cd010-d4d6-43b7-a076-adab8b251a00.png)",
   "interactions": "",
   "sitesArchitectureLevels": "i-ues18YVwia",
   "anatomy": {
@@ -206,11 +206,6 @@
       "path": "sites/construct/divided-block"
     },
     {
-      "name": "Divided block",
-      "slug": "divided-block",
-      "path": "sites/construct/divided-block"
-    },
-    {
       "name": "Equal heights",
       "slug": "equal-heights",
       "path": "sites/construct/equal-heights"
@@ -250,11 +245,6 @@
     {
       "name": "CTA block",
       "slug": "cta-block",
-      "path": "construct/cta-block"
-    },
-    {
-      "name": "CTA block",
-      "slug": "cta-block",
       "path": "sites/construct/cta-block"
     },
     {
@@ -265,17 +255,7 @@
     {
       "name": "Linked logo block",
       "slug": "linked-logo-block",
-      "path": "construct/linked-logo-block"
-    },
-    {
-      "name": "Linked logo block",
-      "slug": "linked-logo-block",
       "path": "sites/construct/linked-logo-block"
-    },
-    {
-      "name": "List",
-      "slug": "list",
-      "path": "construct/list"
     },
     {
       "name": "List",
@@ -285,17 +265,7 @@
     {
       "name": "Logo block",
       "slug": "logo-block",
-      "path": "construct/logo-block"
-    },
-    {
-      "name": "Logo block",
-      "slug": "logo-block",
       "path": "sites/construct/logo-block"
-    },
-    {
-      "name": "Notification",
-      "slug": "notification",
-      "path": "construct/notification"
     },
     {
       "name": "Notification",

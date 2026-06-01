@@ -123,19 +123,9 @@
       "name": "Code",
       "slug": "code",
       "path": "global/construct/code"
-    },
-    {
-      "name": "Code",
-      "slug": "code",
-      "path": "global/construct/code"
     }
   ],
   "mentionsComponents": [
-    {
-      "name": "Code",
-      "slug": "code",
-      "path": "construct/code"
-    },
     {
       "name": "Code",
       "slug": "code",

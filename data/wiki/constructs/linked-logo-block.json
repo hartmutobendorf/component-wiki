@@ -13,10 +13,10 @@
   "examples": "",
   "interactions": "",
   "figmaComponentData": "",
-  "componentExampleImage": "images/bf8c3adf-a149-4584-b808-717a9a1ad7ca.png",
+  "componentExampleImage": "images/207264f1-9e9d-4368-be77-bed6944eff98.png",
   "sitesArchitectureLevels": "i-ytTJ4UrPBn",
   "anatomy": {
-    "image": "images/357d3d6f-bff6-4374-92f9-d66cbd55c46c.png",
+    "image": "images/c1b1f3b9-07d4-4076-bc7b-2d4b02fb1055.png",
     "table": [
       {
         "number": 1,
@@ -100,16 +100,6 @@
       "name": "Linked logo section",
       "slug": "linked-logo-section",
       "path": "sites/construct/linked-logo-section"
-    },
-    {
-      "name": "Linked logo section",
-      "slug": "linked-logo-section",
-      "path": "sites/construct/linked-logo-section"
-    },
-    {
-      "name": "Logo block",
-      "slug": "logo-block",
-      "path": "construct/logo-block"
     },
     {
       "name": "Logo block",

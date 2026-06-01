@@ -10,13 +10,13 @@
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/main/templates/_macros/vf_tiered-list.jinja",
   "description": "Tiered list is a pattern for presenting a list of paired titles and descriptions underneath a top-level title and description. It organises related items into a structured, scannable format using Tiered blocks as its primary content units. An optional [CTA block](/sites/construct/cta-block) can appear at the section level, below the top-level description.",
   "usage": "Use Tiered list to present multiple related items that share a consistent structure of paired titles and descriptions. It works best for text-heavy content where each item is concise and parallel in nature.\n\n### Layout\n\nTiered list adapts across screen sizes. On large screens, it uses a 6-column layout — 2 columns for the heading and 4 for the body, arranged in a single row. On medium screens, the layout is configurable: content can split(50/50) or stack vertically(full-width). On small screens, content always stacks.\n\n### When to use\n\n*   Content consists of paired titles and descriptions organised under a single top-level heading\n*   Items are primarily text-based with short, parallel headings\n*   Users need to scan a structured list quickly\n*   Content represents steps, stages, features, or grouped concepts\n\n### When not to use\n\n*   Each item requires rich content such as images, videos, or code blocks — use [Divided section](/sites/construct/divided-section) instead\n*   Content is brief with an image as the primary focus — use [Equal heights](/sites/construct/equal-heights) instead\n*   The list contains only one or two items within a single topic — use a [Basic section](/sites/construct/basic-section) instead",
-  "examples": "Large dimension with section level CTA and block level CTA\n\n![example-1.png](images/ae359233-0139-4c79-bc0b-90d08f603076.png)\n\nLarge dimension without description\n\n![example-2.png](images/364b3b07-72cd-40c8-8540-3968bde1f4cf.png)\n\nMedium dimension (50/50)\n\n![example-3.png](images/b9196d86-4b38-42fa-8c7c-b9a249200237.png)\n\nMedium dimension (full-width)\n\n![example-4.png](images/60d4cbec-9df5-4025-be87-7121346b898b.png)\n\nSmall dimension\n\n![example-5.png](images/05e61848-ee12-48c1-a175-35b430cdb262.png)",
+  "examples": "Large dimension with section level CTA and block level CTA\n\n![example-1.png](images/7761f2eb-fb9f-4b84-921b-3444332a49ec.png)\n\nLarge dimension without description\n\n![example-2.png](images/89deeae4-5f6f-47ff-bb3f-e53997950325.png)\n\nMedium dimension (50/50)\n\n![example-3.png](images/2d2ef67d-4857-48db-8c80-c1f0dd4aaccb.png)\n\nMedium dimension (full-width)\n\n![example-4.png](images/73bfd8b1-164c-4c44-b29f-42e5badaad90.png)\n\nSmall dimension\n\n![example-5.png](images/c63af3e2-21af-4d85-b712-aaa2146dd7f0.png)",
   "interactions": "",
   "figmaComponentData": "",
-  "componentExampleImage": "images/911b10b6-b186-4ef7-a494-fddf1d7065e1.png",
+  "componentExampleImage": "images/95ae16ed-f6e3-4363-88a9-67aea41cfc2b.png",
   "sitesArchitectureLevels": "i-ues18YVwia",
   "anatomy": {
-    "image": "images/bb4a9a3c-49d7-4dc7-8c29-f590ab82dd58.png",
+    "image": "images/60014e6f-9f35-4fdb-a5dd-286507b73d02.png",
     "table": [
       {
         "number": 1,
@@ -245,11 +245,6 @@
       "name": "Basic section",
       "slug": "basic-section",
       "path": "sites/construct/basic-section"
-    },
-    {
-      "name": "CTA block",
-      "slug": "cta-block",
-      "path": "construct/cta-block"
     },
     {
       "name": "CTA block",

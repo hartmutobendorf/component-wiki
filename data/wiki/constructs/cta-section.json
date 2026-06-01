@@ -10,13 +10,13 @@
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/main/templates/_macros/vf_cta-section.jinja",
   "description": "The CTA section is a prominent and visually engaging section designed to encourage users to take a clear next step. It combines a concise copy and one or more call-to-action elements into a focused layout that stands out from surrounding content. This pattern is typically used mid-page or near the end of a page to re-engage users and guide them toward a specific action such as downloading resources, contacting sales, or exploring key documentation. The CTA section helps reduce decision friction by clearly communicating what the action is and why it matters now.",
   "usage": "Use the CTA section to highlight a clear, intentional next step within the page flow. This pattern is designed to create a moment of focus, helping users transition from consuming information to taking action.  \nCTA sections are typically placed mid-page or near the end of a page, where users have enough context to understand the value of the action being proposed.\n\nThe CTA section should represent a single primary intent. Any supporting text or additional elements should reinforce this intent rather than introduce new topics.\n\n  \n\n### When to use\n\n*   A specific user action is the primary purpose of the section, not a secondary affordance.\n*   You need to visually separate a call to action from surrounding content to increase emphasis.\n\n### When not to use\n\n*   If long-form explanatory content is needed, use a [Basic section](/sites/construct/basic-section) with the [CTA block](/sites/construct/cta-block) instead.\n*   The CTA appears too early in the page flow, before users have sufficient context to understand its value.",
-  "examples": "### Layout\n\nFull-width(Default)\n\n![example-1.png](images/4469646f-1bfd-4f87-8c7c-8863053ea8c7.png)\n\nFull-width([CTA block](/sites/construct/cta-block))\n\n![example-4.png](images/d520b237-46a3-40fe-b6b1-40df69be8f17.png)\n\n25/75(Default)\n\n![example.png](images/f0885e65-0ab8-43bc-a83e-1bd803b29338.png)\n\n25/75([CTA block](/sites/construct/cta-block))\n\n![example-5.png](images/489a12e1-06e5-4667-90f2-c6ef7cc84f6f.png)\n\n### Responsive\n\nMedium dimension (Default)\n\n![example-2.png](images/faec4654-a4cd-4b06-a413-029898fc0723.png)\n\nMedium dimension ([CTA block](/sites/construct/cta-block))\n\n![example-6.png](images/1e35a9ca-60b3-4347-9f58-cd643151c964.png)\n\nSmall dimension (Default)\n\n![example-3.png](images/9102d83e-0c06-47c1-a7b0-599bc8304b2c.png)\n\nSmall dimension ([CTA block](/sites/construct/cta-block))\n\n![example-7.png](images/7d350c66-4035-42f1-a1f7-abed72d3532f.png)",
+  "examples": "### Layout\n\nFull-width(Default)\n\n![example-1.png](images/b2661a78-05aa-4cbe-8e95-cfdd08d80dee.png)\n\nFull-width([CTA block](/sites/construct/cta-block))\n\n![example-4.png](images/2e50d1ab-5b37-47d5-ae3a-d80832c7ccaa.png)\n\n25/75(Default)\n\n![example.png](images/525d1702-13c3-439a-8270-942c1949b0a1.png)\n\n25/75([CTA block](/sites/construct/cta-block))\n\n![example-5.png](images/578ac01f-c3e4-43e4-9c9b-a1ee4f3c31e5.png)\n\n### Responsive\n\nMedium dimension (Default)\n\n![example-2.png](images/6b480b03-e358-4d38-a493-8f43b1b93696.png)\n\nMedium dimension ([CTA block](/sites/construct/cta-block))\n\n![example-6.png](images/e4af5f46-5ae4-4dfa-be31-9a350358f228.png)\n\nSmall dimension (Default)\n\n![example-3.png](images/72e70c17-9ddc-47c1-9a49-f33e51d09529.png)\n\nSmall dimension ([CTA block](/sites/construct/cta-block))\n\n![example-7.png](images/4cf83d80-5c65-430f-867b-7850be2ee856.png)",
   "interactions": "",
   "figmaComponentData": "",
-  "componentExampleImage": "images/9ccbc641-6b5c-4d72-95c8-92e2c24d1b55.png",
+  "componentExampleImage": "images/b01cca82-8c0f-48d8-a24e-019300b830f2.png",
   "sitesArchitectureLevels": "i-ues18YVwia",
   "anatomy": {
-    "image": "images/39062612-c214-41cc-86d3-0896ec91a574.png",
+    "image": "images/69e38993-f727-4bb5-97c6-fa63f42ca8ad.png",
     "table": [
       {
         "number": 1,
@@ -220,11 +220,6 @@
       "name": "Basic section",
       "slug": "basic-section",
       "path": "sites/construct/basic-section"
-    },
-    {
-      "name": "CTA block",
-      "slug": "cta-block",
-      "path": "construct/cta-block"
     },
     {
       "name": "CTA block",

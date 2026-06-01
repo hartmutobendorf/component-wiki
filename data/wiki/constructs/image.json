@@ -13,10 +13,10 @@
   "examples": "",
   "interactions": "",
   "figmaComponentData": "",
-  "componentExampleImage": "images/63767d63-f2fb-41e3-a66e-6b2511f8bc53.png",
+  "componentExampleImage": "images/bee0e62f-ec70-41c8-832f-3e40feea318b.png",
   "sitesArchitectureLevels": "i-UvVNCYZ44t",
   "anatomy": {
-    "image": "images/ce31ba72-4100-425b-8211-c8d226ecd2dc.png",
+    "image": "images/2255abce-aa95-4287-af4d-9bdc86523009.png",
     "table": [
       {
         "number": 1,
@@ -131,11 +131,6 @@
       "name": "Button",
       "slug": "button",
       "path": "global/construct/button"
-    },
-    {
-      "name": "Logo block",
-      "slug": "logo-block",
-      "path": "construct/logo-block"
     },
     {
       "name": "Logo block",
