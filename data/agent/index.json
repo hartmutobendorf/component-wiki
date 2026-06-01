@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-01T13:58:25.482Z",
+  "generatedAt": "2026-06-01T15:51:39.275Z",
   "constructCount": 62,
   "conceptCount": 26,
   "constructTypes": [
@@ -165,7 +165,7 @@
       "slug": "text-spotlight",
       "type": "Pattern",
       "tier": "Sites",
-      "description": "A Text Spotlight is a prominent section typically used to quickly capture user's attention to specific action items / benefits or advantages of selecting a specific product."
+      "description": "A Text Spotlight is a prominent section typically used to quickly capture user's attention to specific action items / benefits or advantages of selecting a specific product.\n\n"
     },
     {
       "name": "Tab section",
