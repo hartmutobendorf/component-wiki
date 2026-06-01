@@ -64,6 +64,11 @@
       "path": "sites/construct/divided-section"
     },
     {
+      "name": "Image",
+      "slug": "image",
+      "path": "global/construct/image"
+    },
+    {
       "name": "Linked logo block",
       "slug": "linked-logo-block",
       "path": "sites/construct/linked-logo-block"
@@ -72,6 +77,11 @@
       "name": "Logo section",
       "slug": "logo-section",
       "path": "sites/construct/logo-section"
+    },
+    {
+      "name": "Rich vertical list",
+      "slug": "rich-vertical-list",
+      "path": "sites/construct/rich-vertical-list"
     }
   ],
   "mentionsComponents": [

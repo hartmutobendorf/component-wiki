@@ -1,6 +1,295 @@
 {
-  "fetchedAt": "2026-04-07T08:46:04.624Z",
+  "fetchedAt": "2026-06-01T13:58:24.220Z",
   "rows": {
+    "i-VBBkqNgmn8": {
+      "rowId": "i-VBBkqNgmn8",
+      "name": "Object fit",
+      "required": false,
+      "type": "i-We9i4W9Klo",
+      "description": "Defines how the image fill its container",
+      "constraint": "",
+      "options": "cover, contain",
+      "defaultOption": "contain",
+      "component": [
+        "i--w8-6ot1a8"
+      ]
+    },
+    "i-dP4thdKhlS": {
+      "rowId": "i-dP4thdKhlS",
+      "name": "Highlighted background",
+      "required": false,
+      "type": "i-YtFbduYGgp",
+      "description": "",
+      "constraint": "",
+      "options": "true, false",
+      "defaultOption": "false",
+      "component": [
+        "i--w8-6ot1a8"
+      ]
+    },
+    "i-q78tYrldi_": {
+      "rowId": "i-q78tYrldi_",
+      "name": "Addendum",
+      "required": false,
+      "type": "i-E9ZaIqQXvg",
+      "description": "Paragraph-style content to include in the form, such as a disclaimer or supplementary information.",
+      "constraint": "",
+      "options": "",
+      "defaultOption": "",
+      "component": [
+        "i-Pfy5tPv4Sk",
+        "i-yQrLWRZ945"
+      ]
+    },
+    "i-aGl6l7SQK4": {
+      "rowId": "i-aGl6l7SQK4",
+      "name": "Width",
+      "required": true,
+      "type": "i-We9i4W9Klo",
+      "description": "Width variant.",
+      "constraint": "",
+      "options": "2-col, 4-col",
+      "defaultOption": "",
+      "component": [
+        "i-Pfy5tPv4Sk"
+      ]
+    },
+    "i-3q0HWwbx9e": {
+      "rowId": "i-3q0HWwbx9e",
+      "name": "Heading",
+      "required": true,
+      "type": "i-E9ZaIqQXvg",
+      "description": "Title text. Rendered as h3",
+      "constraint": "",
+      "options": "",
+      "defaultOption": "",
+      "component": [
+        "i-Pfy5tPv4Sk"
+      ]
+    },
+    "i-q8By6k2FMF": {
+      "rowId": "i-q8By6k2FMF",
+      "name": "Button",
+      "required": true,
+      "type": "i-E9ZaIqQXvg",
+      "description": "The CTA using the default button style. It is used for most actions that are positive but not primary, and may serve as the main CTA in non-hero sections.",
+      "constraint": "Up to 20 characters",
+      "options": "primary, secondary",
+      "defaultOption": "secondary",
+      "component": [
+        "i-yQrLWRZ945",
+        "i-Pfy5tPv4Sk"
+      ]
+    },
+    "i-qppNbnCSAZ": {
+      "rowId": "i-qppNbnCSAZ",
+      "name": "layout",
+      "required": true,
+      "type": "i-We9i4W9Klo",
+      "description": "Layout variant.",
+      "constraint": "",
+      "options": "25/75, 50/50",
+      "defaultOption": "25/75",
+      "component": [
+        "i-yQrLWRZ945"
+      ]
+    },
+    "i-FJ7I7__YTW": {
+      "rowId": "i-FJ7I7__YTW",
+      "name": "Checkbox label",
+      "required": true,
+      "type": "i-E9ZaIqQXvg",
+      "description": "Label for the checkbox.",
+      "constraint": "",
+      "options": "",
+      "defaultOption": "",
+      "component": [
+        "i-yQrLWRZ945",
+        "i-Pfy5tPv4Sk"
+      ]
+    },
+    "i-Vxeqk1X2Ur": {
+      "rowId": "i-Vxeqk1X2Ur",
+      "name": "Body",
+      "required": false,
+      "type": "i-E9ZaIqQXvg",
+      "description": "Paragraph-style content. One or more paragraphs.",
+      "constraint": "Up to 600 characters",
+      "options": "",
+      "defaultOption": "",
+      "component": [
+        "i-yQrLWRZ945",
+        "i-Pfy5tPv4Sk"
+      ]
+    },
+    "i-I-4e2saE_6": {
+      "rowId": "i-I-4e2saE_6",
+      "name": "Input label",
+      "required": true,
+      "type": "i-E9ZaIqQXvg",
+      "description": "Label for the email input field.",
+      "constraint": "",
+      "options": "",
+      "defaultOption": "",
+      "component": [
+        "i-yQrLWRZ945",
+        "i-Pfy5tPv4Sk"
+      ]
+    },
+    "i-NSN9N_0vDs": {
+      "rowId": "i-NSN9N_0vDs",
+      "name": "Heading",
+      "required": true,
+      "type": "i-E9ZaIqQXvg",
+      "description": "Title text. Rendered as h2",
+      "constraint": "",
+      "options": "",
+      "defaultOption": "",
+      "component": [
+        "i-yQrLWRZ945"
+      ]
+    },
+    "i-S6FbpU-7Bo": {
+      "rowId": "i-S6FbpU-7Bo",
+      "name": "Layout",
+      "required": true,
+      "type": "i-We9i4W9Klo",
+      "description": "Controls which column the media appears in",
+      "constraint": "",
+      "options": "default (content left, media right), flipped (media left, content right)",
+      "defaultOption": "default",
+      "component": [
+        "i-cn19jqZNBr"
+      ]
+    },
+    "i-jsPsw2-qqT": {
+      "rowId": "i-jsPsw2-qqT",
+      "name": "Medium & small screen media ratio",
+      "required": true,
+      "type": "i-We9i4W9Klo",
+      "description": "The aspect ratio of the media on medium and small screens",
+      "constraint": "",
+      "options": "3:2, 16:9, 1:1",
+      "defaultOption": "3:2",
+      "component": [
+        "i-cn19jqZNBr"
+      ]
+    },
+    "i-M2nzyx5Thv": {
+      "rowId": "i-M2nzyx5Thv",
+      "name": "Large screen media ratio",
+      "required": true,
+      "type": "i-We9i4W9Klo",
+      "description": "The aspect ratio of the media on large screens",
+      "constraint": "Consecutive sections should use the same ratio",
+      "options": "16:9, 3:2, 1:1, 2:3, Auto height",
+      "defaultOption": "3:2",
+      "component": [
+        "i-cn19jqZNBr"
+      ]
+    },
+    "i-JzBXJ_uA4c": {
+      "rowId": "i-JzBXJ_uA4c",
+      "name": "Media",
+      "required": true,
+      "type": "i-H7NYDvgoEy",
+      "description": "The primary visual placed in the opposite column. Accepts image or video",
+      "constraint": "",
+      "options": "photography, diagram / illustration, video",
+      "defaultOption": "photography",
+      "component": [
+        "i-cn19jqZNBr"
+      ]
+    },
+    "i-pk_FxYDzSv": {
+      "rowId": "i-pk_FxYDzSv",
+      "name": "",
+      "required": false,
+      "type": "",
+      "description": "",
+      "constraint": "",
+      "options": "",
+      "defaultOption": "",
+      "component": []
+    },
+    "i-7--7TT7M9U": {
+      "rowId": "i-7--7TT7M9U",
+      "name": "Navigation group items",
+      "required": false,
+      "type": "i-H7NYDvgoEy",
+      "description": "The navigation items included in a group",
+      "constraint": "Minimum 2, maximum",
+      "options": "",
+      "defaultOption": "",
+      "component": [
+        "i-eoOMJgGK_d"
+      ]
+    },
+    "i-qJUp8_71u4": {
+      "rowId": "i-qJUp8_71u4",
+      "name": "Navigation item URL",
+      "required": true,
+      "type": "i-E9ZaIqQXvg",
+      "description": "The URL of the page",
+      "constraint": "It must be within the domain of the site. ",
+      "options": "",
+      "defaultOption": "",
+      "component": [
+        "i-eoOMJgGK_d"
+      ]
+    },
+    "i-7gaYyIJV63": {
+      "rowId": "i-7gaYyIJV63",
+      "name": "Navigation item text",
+      "required": true,
+      "type": "i-E9ZaIqQXvg",
+      "description": "The label indicating the contents of the page it navigates to. ",
+      "constraint": "",
+      "options": "",
+      "defaultOption": "",
+      "component": [
+        "i-eoOMJgGK_d"
+      ]
+    },
+    "i-2dAjKn7AQg": {
+      "rowId": "i-2dAjKn7AQg",
+      "name": "Navigation group header",
+      "required": false,
+      "type": "i-E9ZaIqQXvg",
+      "description": "The label for a group of navigation items",
+      "constraint": "",
+      "options": "",
+      "defaultOption": "",
+      "component": [
+        "i-eoOMJgGK_d"
+      ]
+    },
+    "i-wHLIBcwWqW": {
+      "rowId": "i-wHLIBcwWqW",
+      "name": "Navigation items",
+      "required": true,
+      "type": "i-H7NYDvgoEy",
+      "description": "The pages to include in the navigation",
+      "constraint": "At least one. Must be either a navigation item or a group.",
+      "options": "",
+      "defaultOption": "",
+      "component": [
+        "i-eoOMJgGK_d"
+      ]
+    },
+    "i-x4dfSt4iSG": {
+      "rowId": "i-x4dfSt4iSG",
+      "name": "Logo",
+      "required": true,
+      "type": "i-We9i4W9Klo",
+      "description": "The relevant logo for the site",
+      "constraint": "",
+      "options": "Canonical product logos",
+      "defaultOption": "",
+      "component": [
+        "i-eoOMJgGK_d"
+      ]
+    },
     "i-0aGTEkpPsP": {
       "rowId": "i-0aGTEkpPsP",
       "name": "",
@@ -307,7 +596,8 @@
       "options": "",
       "defaultOption": "",
       "component": [
-        "i-50G4VqVNjN"
+        "i-50G4VqVNjN",
+        "i-cn19jqZNBr"
       ]
     },
     "i-i5adOAZf_1": {
@@ -1370,8 +1660,8 @@
       "type": "i-We9i4W9Klo",
       "description": "The heading may function as a link when clearly indicated.",
       "constraint": "",
-      "options": "default, link",
-      "defaultOption": "default",
+      "options": "none, link",
+      "defaultOption": "none",
       "component": [
         "i-YbRxZruWIu",
         "i-O69ixYm_Ee",
@@ -1571,8 +1861,21 @@
       "type": "i-We9i4W9Klo",
       "description": "Indicate ratio of the image",
       "constraint": "",
-      "options": "default, 16:9, 3:2",
+      "options": "default, 16:9, 3:2, square, cinematic",
       "defaultOption": "default",
+      "component": [
+        "i--w8-6ot1a8"
+      ]
+    },
+    "i-FMidnWcEp2": {
+      "rowId": "i-FMidnWcEp2",
+      "name": "Image caption",
+      "required": false,
+      "type": "i-E9ZaIqQXvg",
+      "description": "Optional HTML caption below the image",
+      "constraint": "",
+      "options": "",
+      "defaultOption": "",
       "component": [
         "i--w8-6ot1a8"
       ]
@@ -1586,9 +1889,7 @@
       "constraint": "",
       "options": "default, 16:9, 3:2, 2:3, cinematic, square",
       "defaultOption": "default",
-      "component": [
-        "i--w8-6ot1a8"
-      ]
+      "component": []
     },
     "i-X3IrI_Gpbp": {
       "rowId": "i-X3IrI_Gpbp",
@@ -1598,19 +1899,6 @@
       "description": "Change the aspect ratio of an image container, depending on the screen size",
       "constraint": "",
       "options": "16:9, 3:2, 2:3, cinematic, square\non large, on medium, on small",
-      "defaultOption": "",
-      "component": [
-        "i--w8-6ot1a8"
-      ]
-    },
-    "i-FMidnWcEp2": {
-      "rowId": "i-FMidnWcEp2",
-      "name": "Image caption",
-      "required": false,
-      "type": "i-E9ZaIqQXvg",
-      "description": "Optional HTML caption below the image",
-      "constraint": "",
-      "options": "",
       "defaultOption": "",
       "component": [
         "i--w8-6ot1a8"
@@ -1654,7 +1942,7 @@
       "type": "i-We9i4W9Klo",
       "description": "The type of padding applied to the bottom of the pattern",
       "constraint": "",
-      "options": "default, deep, shallow, none",
+      "options": "default, deep, shallow",
       "defaultOption": "default",
       "component": [
         "i-YbRxZruWIu",

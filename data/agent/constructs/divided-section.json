@@ -10,7 +10,7 @@
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/main/templates/_macros/vf_divided-section.jinja",
   "description": "The divided section pattern is used to separate related content into distinct steps or items within a single section. Each item is visually divided using a muted [Rule](/sites/construct/divided-section#anatomy) and shallow padding, helping users distinguish between content blocks while maintaining a cohesive layout.\n\n",
   "usage": "The divided section pattern provides a flexible layout for presenting grouped content that needs clear internal separation, such as steps, stages, or sequential elements. Each [Divided block](/sites/construct/divided-section#anatomy) is separated by a muted [Rule](/sites/construct/divided-section#anatomy) and shallow padding, creating visual structure without introducing strong section breaks.\n\nThe pattern can accommodate a wide range of content types, including text, images, videos, lists, code blocks, logos, and call-to-action elements. Both the section description area and the [Divided block](/sites/construct/divided-section#anatomy)s themselves support these content types.\n\nInternally, the divided section reuses content blocks from the [Basic section](/sites/construct/basic-section) pattern. As a result, most layout configurations and content options behave identically to those in [Basic section](/sites/construct/basic-section), ensuring consistency and reducing the need for additional configuration or learning.\n\n### Layout\n\nDivided section adapts across screen sizes. On medium screens, the layout is configurable: content can split(50/50) or stack vertically(full-width). On small screens, content always stacks.\n\n### **Supported UI blocks for the** **[Content area](/sites/construct/divided-section#anatomy)**\n\n1.  **Description / body text** - Use for long-form descriptions or explanations, when full sentences and paragraphs work best.\n2.  **Image** - Include a 3:2 or 16:9 ratio image to illustrate or enhance the content including: photography, isometric illustrations, diagrams, and similar visuals. The image can include an optional caption.\n3.  **Video** - Embed and link video content in 16:9 ratio.\n4.  **[List](/global/construct/list)** - List up to 10 items, with bullet type options including: none, bullet, status, or number.\n5.  **Code block** - Display preformatted code.\n6.  **[Logo block](/sites/construct/logo-block)** - Display related logos such as customers or partners.\n7.  **[Linked logo block](/sites/construct/linked-logo-block)** - Display logos that link to additional resources.\n8.  **[CTA block](/sites/construct/cta-block)** - Share one or more call-to-action elements, including a primary button, secondary button, and link.\n9.  **[Notification](/global/construct/notification)** - Highlight alerts, updates, or contextual messages within the section.\n\n### **When to use**\n\n*   When content needs to be broken into clear steps or distinct items within a single section\n*   When a subtle visual separation is needed without creating fully independent sections\n\n### **When not to use**\n\n*   When images, lists, or other content need to stand alone without internal dividers, use [Basic section](/sites/construct/basic-section) instead\n*   When the content consists of text only, use a [Tiered list](/sites/construct/tiered-list) instead\n*   When the content is made up of short text and a single representative image, consider using [Equal heights](/sites/construct/equal-heights) instead",
-  "examples": "### Responsive\n\nMedium dimension (full-width)\n\n![example-8.png](images/0fe54ede-a014-454c-879b-9873ee3429fb.png)\n\nMedium dimension (50/50)\n\n![example-7.png](images/f1d991dd-78f5-4d06-8706-8a310e38b3a6.png)\n\nSmall dimension\n\n![example-9.png](images/8251e5e7-52a9-4e6e-abd2-fef94a62d5ca.png)\n\n### Heading type\n\nWith icon\n\n![example-1.png](images/6e994ddd-066b-4594-b050-6d525e6ac2c8.png)\n\nWith bullet\n\n![example-2.png](images/45da91e8-0234-496b-aae5-6d5cadcc2a08.png)\n\nWith number\n\n![example-3.png](images/ab57e38d-87b0-405a-b5ff-85eee5710f4d.png)\n\nWithout bullet\n\n![example-4.png](images/cb56379d-839e-4213-a5e1-277c40f7c7b8.png)\n\nWithout heading\n\n![example-5.png](images/f12eab2b-7e43-404b-b1b7-dd471128686e.png)\n\n### Contents type\n\nMix of various content types\n\n![example-6.png](images/f4556270-eb34-4be3-be26-e82a787617fd.png)",
+  "examples": "### Responsive\n\nMedium dimension (full-width)\n\n![example-8.png](images/3b5cee9c-7827-4990-adae-bb5639db5c76.png)\n\nMedium dimension (50/50)\n\n![example-7.png](images/aee54f71-87ca-478b-aef8-787e0a49831b.png)\n\nSmall dimension\n\n![example-9.png](images/ff347def-4bce-44cd-b54b-f14877b96bb6.png)\n\n### Heading type\n\nWith icon\n\n![example-1.png](images/784c55c9-5a66-4852-8628-7a71063254dd.png)\n\nWith bullet\n\n![example-2.png](images/4f3ab9e7-96a3-4d01-a5bf-148f98d7be07.png)\n\nWith number\n\n![example-3.png](images/25c9d1da-0d2e-41bb-ab91-7283bb96ad83.png)\n\nWithout bullet\n\n![example-4.png](images/c801f03f-01cb-4582-9bda-60de3c92f5a8.png)\n\nWithout heading\n\n![example-5.png](images/593ba5c0-bcb5-49b9-9049-a7e2cb7fd9e0.png)\n\n### Contents type\n\nMix of various content types\n\n![example-6.png](images/3c9076c1-7d9b-4671-9027-27d61e443fdb.png)",
   "interactions": "",
   "sitesArchitectureLevels": "i-ues18YVwia",
   "anatomy": {
@@ -78,9 +78,9 @@
       "type": "single select",
       "description": "The heading may function as a link when clearly indicated.",
       "constraint": "",
-      "defaultOption": "default",
+      "defaultOption": "none",
       "options": [
-        "default",
+        "none",
         "link"
       ]
     },
@@ -97,6 +97,14 @@
       ]
     },
     {
+      "name": "Body",
+      "required": false,
+      "type": "string",
+      "description": "4-column width body text",
+      "constraint": "Up to 600 characters",
+      "defaultOption": ""
+    },
+    {
       "name": "Bottom padding",
       "required": true,
       "type": "single select",
@@ -106,17 +114,8 @@
       "options": [
         "default",
         "deep",
-        "shallow",
-        "none"
+        "shallow"
       ]
-    },
-    {
-      "name": "Body",
-      "required": false,
-      "type": "string",
-      "description": "4-column width body text",
-      "constraint": "Up to 600 characters",
-      "defaultOption": ""
     }
   ],
   "childProperties": [
@@ -192,6 +191,11 @@
   "exceptionFromRules": [],
   "mentionedIn": [
     {
+      "name": "Article block",
+      "slug": "article-block",
+      "path": "sites/construct/article-block"
+    },
+    {
       "name": "Basic section",
       "slug": "basic-section",
       "path": "sites/construct/basic-section"
@@ -222,9 +226,9 @@
       "path": "sites/construct/linked-logo-section"
     },
     {
-      "name": "Resource block",
-      "slug": "resource-block",
-      "path": "sites/construct/resource-block"
+      "name": "Rich vertical list",
+      "slug": "rich-vertical-list",
+      "path": "sites/construct/rich-vertical-list"
     },
     {
       "name": "Tiered block",

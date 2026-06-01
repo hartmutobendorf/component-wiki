@@ -67,6 +67,11 @@
       "name": "Divided block",
       "slug": "divided-block",
       "path": "sites/construct/divided-block"
+    },
+    {
+      "name": "Rich vertical list",
+      "slug": "rich-vertical-list",
+      "path": "sites/construct/rich-vertical-list"
     }
   ],
   "mentionsComponents": [

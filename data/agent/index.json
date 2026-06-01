@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-04-07T08:46:05.885Z",
-  "constructCount": 61,
+  "generatedAt": "2026-06-01T13:58:25.482Z",
+  "constructCount": 62,
   "conceptCount": 26,
   "constructTypes": [
     "Block",
@@ -20,6 +20,13 @@
     "Principle"
   ],
   "constructs": [
+    {
+      "name": "Newsletter signup block",
+      "slug": "newsletter-signup-block",
+      "type": "Block",
+      "tier": "Sites",
+      "description": "The newsletter signup block contains the same content as the [Newsletter signup](/sites/construct/newsletter-signup) pattern but without the top rule and bottom padding. It is intended to be placed within a section rather than used as a standalone full-width section. The Newsletter signup block serves as a strategic engagement touchpoint, most commonly placed alongside related content such as articles, where it acts as a lightweight conversion step to keep users connected beyond their current visit.\n\n"
+    },
     {
       "name": "Images",
       "slug": "images",
@@ -81,7 +88,7 @@
       "slug": "divided-block",
       "type": "Block",
       "tier": "Sites",
-      "description": "The divided block is a content unit that represents a single step, stage, or content item. It supports a wide range of content types, including text, [Images](/global/construct/images), videos, [List](/global/construct/list), [Code](/global/construct/code), [Logo block](/sites/construct/logo-block), [Notification](/global/construct/notification), and [CTA block](/sites/construct/cta-block). This block is used as the primary content unit in the [Divided section](/sites/construct/divided-section).\n\n"
+      "description": "The divided block is a content unit that represents a single step, stage, or content item. It supports a wide range of content types, including text, [Image](/global/construct/image), videos, [List](/global/construct/list), [Code](/global/construct/code), [Logo block](/sites/construct/logo-block), [Notification](/global/construct/notification), and [CTA block](/sites/construct/cta-block). This block is used as the primary content unit in the [Divided section](/sites/construct/divided-section).\n\n"
     },
     {
       "name": "Tiered block",
@@ -105,8 +112,8 @@
       "description": "In-page navigation is a navigational component for exploring content within a single page. Users can scan the page structure, jump directly to sections, and understand their current position as they scroll."
     },
     {
-      "name": "Resource block",
-      "slug": "resource-block",
+      "name": "Article block",
+      "slug": "article-block",
       "type": "Block",
       "tier": "Sites",
       "description": "The resource block is a content unit that represents an individual resource item within a listing. It displays a title, a cover image, a description, and citation metadata. The block supports a range of resource types, including blog posts, videos, webinars, case studies, solution briefs, white papers, and reports. This block is used as the primary content unit in the [Blog](/sites/construct/blog) and [Resources](/sites/construct/resources)."
@@ -116,14 +123,14 @@
       "slug": "list",
       "type": "Component",
       "tier": "Global",
-      "description": "A list displays related pieces of information where each item represents only one attribute. It helps organize static content and create visual rhythm, making information easier to scan and understand. Lists are not interactive, so users cannot modify, filter, or otherwise change their contents. If an item needs to show more than one attribute, use a table instead."
+      "description": "A list shows related pieces of information where each item represents a single attribute. Use a list to organize static content and create visual rhythm, making information easier to scan and understand. Lists are not interactive. Users can't modify, filter, or otherwise change their contents. List items can contain different types of data. If every item shares the same data type, or if any item needs to show more than one attribute, consider using a table instead."
     },
     {
-      "name": "Images",
-      "slug": "images",
+      "name": "Image",
+      "slug": "image",
       "type": "Component",
       "tier": "Global",
-      "description": ""
+      "description": "The Image component provides a structured way to display images within content, maintaining consistent aspect ratios, cropping, and responsive behavior across breakpoints. It also includes a highlighted variation that insulates an image from its surroundings, helping emphasize it or preventing image container from blending into the background."
     },
     {
       "name": "Logo block",
@@ -172,7 +179,7 @@
       "slug": "rich-vertical-list",
       "type": "Pattern",
       "tier": "Sites",
-      "description": ""
+      "description": "The rich vertical list is a two-column pattern that pairs a primary media with a heading and supporting content in a 50/50 layout. It's effective for presenting a single topic with an emphasized media, as well as for call-out content and adding visual variation to a page."
     },
     {
       "name": "Resources",
@@ -200,7 +207,7 @@
       "slug": "newsletter-signup",
       "type": "Pattern",
       "tier": "Sites",
-      "description": ""
+      "description": "Newsletter signup is a section with a form which allows users to subscribe to a newsletter for updates. There is a separated [Newsletter signup block](/sites/construct/newsletter-signup-block), which is for putting all the same content to the block item and allow to place it within a different section. The Newsletter signup pattern is a strategic engagement touchpoint, most commonly placed after meaningful content, where it acts as a lightweight conversion step to keep users connected beyond their current visit."
     },
     {
       "name": "Logo section",
@@ -284,7 +291,7 @@
       "slug": "navigation",
       "type": "Complex component",
       "tier": "Global",
-      "description": ""
+      "description": "Navigation is a complex component that provides persistent, site-wide navigation for websites and documentation properties. It appears at the top of every page and gives users a consistent, predictable way to move between the main areas of a site.\n\n\n\nNavigation is not a general-purpose menu or link container. It is specifically for primary site navigation - the top-level wayfinding that remains the same on every page. It should not be confused with in-page navigation (such as anchor links or table of contents), sidebar navigation used in applications, or breadcrumbs that show location within a hierarchy. Those serve different purposes. Navigation answers the question \"where can I go on this site?\", not \"where am I within this page?\" or \"how did I get here?\"."
     },
     {
       "name": "Code snippet",
@@ -431,7 +438,7 @@
       "slug": "badge",
       "type": "Component",
       "tier": "Global",
-      "description": "A badge is a read-only visual indicator for numeric values. It is often used in other components to show for example a number of elements contained in that component."
+      "description": "A badge is a read-only visual indicator for numeric values. It is often used in other components to show a number of elements contained in that component."
     },
     {
       "name": "Accordion",

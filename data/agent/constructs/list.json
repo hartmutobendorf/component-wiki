@@ -4,11 +4,11 @@
   "slug": "list",
   "type": "Component",
   "tier": "Global",
-  "documentationStatus": "Needs work",
-  "lastEdited": "2026-04-07T09:42:57.475+01:00",
-  "figmaLink": "",
-  "codeLink": "",
-  "description": "A list displays related pieces of information where each item represents only one attribute. It helps organize static content and create visual rhythm, making information easier to scan and understand. Lists are not interactive, so users cannot modify, filter, or otherwise change their contents. If an item needs to show more than one attribute, use a table instead.",
+  "documentationStatus": "Minimal",
+  "lastEdited": "2026-04-14T09:24:08.682+01:00",
+  "figmaLink": "https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2360-1721",
+  "codeLink": "https://github.com/canonical/vanilla-framework/blob/d0197b27f5733789d6d23536eabe68356e045ae1/scss/_patterns_contextual-menu.scss",
+  "description": "A list shows related pieces of information where each item represents a single attribute. Use a list to organize static content and create visual rhythm, making information easier to scan and understand. Lists are not interactive. Users can't modify, filter, or otherwise change their contents. List items can contain different types of data. If every item shares the same data type, or if any item needs to show more than one attribute, consider using a table instead.",
   "usage": "",
   "examples": "",
   "interactions": "",
@@ -119,7 +119,13 @@
       ]
     }
   ],
-  "changeLog": [],
+  "changeLog": [
+    {
+      "who": "Daniel Mutis",
+      "when": "2026-04-13T15:00:00.000+01:00",
+      "what": "Initial commit"
+    }
+  ],
   "decisionLog": [
     {
       "where": "Documentation project",
@@ -150,6 +156,11 @@
       "name": "Divided section",
       "slug": "divided-section",
       "path": "sites/construct/divided-section"
+    },
+    {
+      "name": "Rich vertical list",
+      "slug": "rich-vertical-list",
+      "path": "sites/construct/rich-vertical-list"
     }
   ],
   "mentionsComponents": [],

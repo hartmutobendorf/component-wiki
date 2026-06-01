@@ -31,9 +31,9 @@
       "type": "single select",
       "description": "The heading may function as a link when clearly indicated.",
       "constraint": "",
-      "defaultOption": "default",
+      "defaultOption": "none",
       "options": [
-        "default",
+        "none",
         "link"
       ]
     },
@@ -47,8 +47,7 @@
       "options": [
         "default",
         "deep",
-        "shallow",
-        "none"
+        "shallow"
       ]
     }
   ],

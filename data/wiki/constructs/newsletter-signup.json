@@ -4,17 +4,57 @@
   "slug": "newsletter-signup",
   "type": "Pattern",
   "tier": "Sites",
-  "documentationStatus": "Needs work",
-  "lastEdited": "2026-02-10T08:16:34.704+00:00",
-  "figmaLink": "",
-  "codeLink": "",
-  "description": "",
-  "usage": "",
-  "examples": "",
+  "documentationStatus": "Minimal",
+  "lastEdited": "2026-04-26T18:50:42.979+01:00",
+  "figmaLink": "https://www.figma.com/design/1brHCsyeTE6FU7hfJd6ao2/%F0%9F%8C%90-Sites---Core-component-library?node-id=567-5903&p=f&t=VCiQfJeglTXRm3SG-11",
+  "codeLink": "https://github.com/canonical/vanilla-framework/blob/main/templates/_macros/vf_newsletter-signup.jinja",
+  "description": "Newsletter signup is a section with a form which allows users to subscribe to a newsletter for updates. There is a separated [Newsletter signup block](/sites/construct/newsletter-signup-block), which is for putting all the same content to the block item and allow to place it within a different section. The Newsletter signup pattern is a strategic engagement touchpoint, most commonly placed after meaningful content, where it acts as a lightweight conversion step to keep users connected beyond their current visit.",
+  "usage": "Use newsletter signup to capture ongoing interest from users who have engaged with content but are not ready to take a primary action. Common scenarios include users who have explored a product or feature without committing; or scrolled through a landing page without converting.\n\n### **Layout**\n\nThe pattern supports two column layout variants. Both contain the same content — only the column proportions change. Choose the variant that best aligns with the column layout of the sections adjacent to the newsletter signup on the page.\n\n**50/50 layout:** The title and form content share equal column widths. Use when balancing messaging and form content more evenly, or when aligning with surrounding sections that use a 50/50 split.\n\n![image.png](images/1c7f6a04-34d5-43ae-b0f7-670ddf909024.png)\n\n**25/75 layout:** The title occupies a narrow left column and the form content spans a wider right column. Use when the signup form is the primary focus of the section.\n\n![image.png](images/9a68d210-a421-4983-a099-5d850a1f8ce1.png)\n\n### Composition\n\nNewsletter signup pattern is not intended to be embedded within other patterns such as cards, lists, or multi-column layouts.\n\nWithin the section, use [Newsletter signup block](/sites/construct/newsletter-signup-block) instead. This block can also exist as a reusable unit used across different contexts. In article templates, for example, it is included by default and positioned at the top of the page as part of the template structure rather than a contextual placement decision.\n\nIn general usage, the pattern should appear as a distinct section in the page flow with clear separation from surrounding content.\n\n### When to use\n\n*   The user has consumed meaningful content and may want to stay connected\n*   There is no clear primary conversion action on the page\n*   The goal is to maintain a low-commitment relationship with an interested but undecided user\n\n### When not to use\n\n*   The placement is too early in the page. Placing newsletter signup before any value has been communicated gives users no reason to subscribe. Establish value first with a Hero section or introductory content, then introduce the signup as a follow-up action.\n*   When the newsletter signup needs to appear within another section or pattern, use the [Newsletter signup block](/sites/construct/newsletter-signup-block) instead of the full pattern",
+  "examples": "Medium dimension\n\n![image.png](images/b00b1e8d-cc93-4c96-a06c-b374055feeba.png)\n\nSmall dimension\n\n![image.png](images/12896648-a33d-4671-83ef-2c303e276987.png)",
   "interactions": "",
   "figmaComponentData": "",
-  "componentExampleImage": "",
+  "componentExampleImage": "images/399bb726-7382-45cb-b07c-d428cc45935a.png",
   "sitesArchitectureLevels": "i-ues18YVwia",
+  "anatomy": {
+    "image": "images/35508c7b-35b8-4a8a-8f78-d1ad11a7fb52.png",
+    "table": [
+      {
+        "number": 1,
+        "name": "Rule",
+        "description": "The rule component indicates the beginning of a new section."
+      },
+      {
+        "number": 2,
+        "name": "Heading",
+        "description": "The section heading communicates the primary subject or theme of the section."
+      },
+      {
+        "number": 3,
+        "name": "Body",
+        "description": "Body text providing context for the signup. One or more paragraphs."
+      },
+      {
+        "number": 4,
+        "name": "Label + input",
+        "description": "A single-line text [Input](wiki-ref://grid-ymtdOF6n4R/i-9t3OC1fOBH) for the user's email address, paired with a visible label"
+      },
+      {
+        "number": 5,
+        "name": "Checkbox + label",
+        "description": " A [Checkbox](wiki-ref://grid-ymtdOF6n4R/i-hES7I02ImG) paired with a label confirming the user's consent to receive communications."
+      },
+      {
+        "number": 6,
+        "name": "Addendum",
+        "description": "Additional content to include in the form, such as a disclaimer or supplementary information. Paragraph-style content."
+      },
+      {
+        "number": 7,
+        "name": "Button",
+        "description": " A single [Button](wiki-ref://grid-ymtdOF6n4R/i-nsWL1xi6H5) that submits the form."
+      }
+    ]
+  },
   "properties": [
     {
       "name": "Section rule",
@@ -28,6 +68,58 @@
       ]
     },
     {
+      "name": "Heading",
+      "required": true,
+      "type": "string",
+      "description": "Title text. Rendered as h2",
+      "constraint": "",
+      "defaultOption": ""
+    },
+    {
+      "name": "Body",
+      "required": false,
+      "type": "string",
+      "description": "Paragraph-style content. One or more paragraphs.",
+      "constraint": "Up to 600 characters",
+      "defaultOption": ""
+    },
+    {
+      "name": "Input label",
+      "required": true,
+      "type": "string",
+      "description": "Label for the email input field.",
+      "constraint": "",
+      "defaultOption": ""
+    },
+    {
+      "name": "Checkbox label",
+      "required": true,
+      "type": "string",
+      "description": "Label for the checkbox.",
+      "constraint": "",
+      "defaultOption": ""
+    },
+    {
+      "name": "Addendum",
+      "required": false,
+      "type": "string",
+      "description": "Paragraph-style content to include in the form, such as a disclaimer or supplementary information.",
+      "constraint": "",
+      "defaultOption": ""
+    },
+    {
+      "name": "Button",
+      "required": true,
+      "type": "string",
+      "description": "The CTA using the default button style. It is used for most actions that are positive but not primary, and may serve as the main CTA in non-hero sections.",
+      "constraint": "Up to 20 characters",
+      "defaultOption": "secondary",
+      "options": [
+        "primary",
+        "secondary"
+      ]
+    },
+    {
       "name": "Bottom padding",
       "required": true,
       "type": "single select",
@@ -37,12 +129,131 @@
       "options": [
         "default",
         "deep",
-        "shallow",
-        "none"
+        "shallow"
+      ]
+    },
+    {
+      "name": "layout",
+      "required": true,
+      "type": "single select",
+      "description": "Layout variant.",
+      "constraint": "",
+      "defaultOption": "25/75",
+      "options": [
+        "25/75",
+        "50/50"
       ]
     }
   ],
-  "changeLog": [],
+  "childProperties": [
+    {
+      "name": "Input",
+      "properties": [
+        {
+          "name": "State",
+          "required": false,
+          "type": "single select",
+          "description": "The state the input is currently in.",
+          "constraint": "",
+          "defaultOption": "default",
+          "options": [
+            "default",
+            "hover",
+            "active",
+            "disabled"
+          ]
+        },
+        {
+          "name": "Input validation type",
+          "required": false,
+          "type": "single select",
+          "description": "If the input is being validated what type of input validation it is.",
+          "constraint": "",
+          "defaultOption": "none",
+          "options": [
+            "none",
+            "error",
+            "warning",
+            "positive"
+          ]
+        },
+        {
+          "name": "Input validation text",
+          "required": false,
+          "type": "string",
+          "description": "If the input is being validated the outcome / reason of the input validation",
+          "constraint": "",
+          "defaultOption": ""
+        },
+        {
+          "name": "Size",
+          "required": false,
+          "type": "single select",
+          "description": "The vertical density of the input element",
+          "constraint": "",
+          "defaultOption": "default",
+          "options": [
+            "default",
+            "dense"
+          ]
+        },
+        {
+          "name": "Text",
+          "required": false,
+          "type": "string",
+          "description": "The text that is in the input field. ",
+          "constraint": "",
+          "defaultOption": ""
+        },
+        {
+          "name": "Placeholder",
+          "required": false,
+          "type": "string",
+          "description": "The placeholder text that is being shown if there has not been any text that has been entered yet.",
+          "constraint": "",
+          "defaultOption": ""
+        }
+      ]
+    },
+    {
+      "name": "Checkbox",
+      "properties": [
+        {
+          "name": "Checked",
+          "required": false,
+          "type": "single select",
+          "description": "In which checked state the checkbox currently is in.",
+          "constraint": "",
+          "defaultOption": "unchecked",
+          "options": [
+            "unchecked",
+            "checked",
+            "child checked"
+          ]
+        },
+        {
+          "name": "State",
+          "required": false,
+          "type": "single select",
+          "description": "The state the checkbox is currently in. Note that in the checked and child checked state there is no hover effect.",
+          "constraint": "",
+          "defaultOption": "default",
+          "options": [
+            "default",
+            "hover",
+            "disabled"
+          ]
+        }
+      ]
+    }
+  ],
+  "changeLog": [
+    {
+      "who": "Isaac Kim",
+      "when": "2026-04-20T10:00:00.000+01:00",
+      "what": "Initial commit"
+    }
+  ],
   "decisionLog": [],
   "appliedRules": [],
   "exceptionFromRules": [
@@ -63,6 +274,18 @@
       "decisionLog": []
     }
   ],
-  "mentionedIn": [],
-  "mentionsComponents": []
+  "mentionedIn": [
+    {
+      "name": "Newsletter signup block",
+      "slug": "newsletter-signup-block",
+      "path": "sites/construct/newsletter-signup-block"
+    }
+  ],
+  "mentionsComponents": [
+    {
+      "name": "Newsletter signup block",
+      "slug": "newsletter-signup-block",
+      "path": "sites/construct/newsletter-signup-block"
+    }
+  ]
 }
