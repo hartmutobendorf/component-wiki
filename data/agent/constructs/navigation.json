@@ -4,11 +4,11 @@
   "slug": "navigation",
   "type": "Complex component",
   "tier": "Global",
-  "documentationStatus": "Needs work",
-  "lastEdited": "2026-04-07T09:37:38.259+01:00",
+  "documentationStatus": "Minimal",
+  "lastEdited": "2026-04-14T09:23:59.901+01:00",
   "figmaLink": "https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-54",
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/b1d651365b0714586e6ea14349dea763819c256e/scss/_patterns_navigation.scss",
-  "description": "",
+  "description": "Navigation is a complex component that provides persistent, site-wide navigation for websites and documentation properties. It appears at the top of every page and gives users a consistent, predictable way to move between the main areas of a site.\n\n\n\nNavigation is not a general-purpose menu or link container. It is specifically for primary site navigation - the top-level wayfinding that remains the same on every page. It should not be confused with in-page navigation (such as anchor links or table of contents), sidebar navigation used in applications, or breadcrumbs that show location within a hierarchy. Those serve different purposes. Navigation answers the question \"where can I go on this site?\", not \"where am I within this page?\" or \"how did I get here?\".",
   "usage": "The Navigation component provides persistent, site-wide navigation for sites and documentation. It maintains consistent items, order, and placement across all pages. Navigation is a cornerstone of the user experience and should not change from page to page. The same items should appear in the same order and the same position on every page. Users rely on it being predictable.\n\n### When to use\n\n*   As the primary navigation for a site or documentation property\n\n### When not to use\n\n*   Do not use Navigation for actions. Navigation items should only navigate, not trigger actions like opening a modal or submitting a form. Buttons may appear in the navigation (for example, a contact us button), but these are exceptions and must be approved as snowflakes.\n*   Do not place external links in Navigation. Navigation should only link within its own domain. If an external link is necessary, mark it visually as external and use the link hover effect rather than the navigation hover effect.\n\n### Items and grouping\n\nAim for about 7 items. This is not a hard rule, but it is a good target. Navigation supports one level of items plus groups. No further nesting is available beyond that.\n\nIf you have more items than comfortably fit, group related items together rather than adding more top-level items.\n\n*   A group must have at least 2 items.\n*   A group should not have more than 7 items.\n*   Items in a group need a unifying theme. It must make sense that they are grouped together.\n*   The group label must be meaningful. A user should have a reasonable expectation of what items they will find inside the group based on the label alone.\n\n### Logo behavior\n\nSelecting the logo should take the user to the home page of the domain the navigation belongs to. If the navigation is on a sub-domain (for example, a documentation site within a larger brand), the logo should reflect that sub-domain, not the parent brand. Otherwise, users will expect the logo to take them to the parent site. Change the logo to indicate where the user actually is.\n\n### Optional features\n\nNavigation can optionally include search. The scope of the search is the entire site that the navigation serves, and search results appear on a separate page.\n\nNavigation can also include a sign-in button that forwards the user to a sign-in page. Once signed in, the navigation can show a group of account-related items, including log out.\n\n### Full-width and grid-aligned variants\n\nNavigation comes in two variants: full-width and grid-aligned.\n\n*   Do not mix full-width and grid-aligned navigation on the same domain.\n*   Grid-aligned is the default choice for most cases.",
   "examples": "",
   "interactions": "### Active state\n\nThe currently active page is indicated with an underline on its navigation item. When the active page is inside a group, both the group and the item within it show an active state. When a user opens or closes a group without navigating, the group shows an active background color. It does not show the underline that indicates the currently active page.",
@@ -18,41 +18,93 @@
       {
         "number": 1,
         "name": "Logo",
-        "description": ""
+        "description": "The logo that signals what product the website is about. "
       },
       {
         "number": 2,
         "name": "Navigation items",
-        "description": ""
+        "description": "The section where the first-level navigation items are placed."
       },
       {
         "number": 3,
         "name": "Search trigger",
-        "description": ""
+        "description": "A button that, when clicked, overlays a search bar for the user to search the whole site. "
       },
       {
         "number": 4,
         "name": "Navigation item text",
-        "description": ""
+        "description": "An individual item on the first level of hierarchy of the navigation. "
       },
       {
         "number": 5,
         "name": "Expandable navigation item",
-        "description": ""
+        "description": "A group of navigation items collapsed into one single first-level item. "
       },
       {
         "number": 6,
         "name": " Navigation item drawer",
-        "description": ""
+        "description": "All secondary navigation items  grouped under an expandable navigation item"
       },
       {
         "number": 7,
         "name": "Expanded search bar",
-        "description": ""
+        "description": "The overlayed search bar for the user to search the site contents. "
       }
     ]
   },
-  "properties": [],
+  "properties": [
+    {
+      "name": "Logo",
+      "required": true,
+      "type": "single select",
+      "description": "The relevant logo for the site",
+      "constraint": "",
+      "defaultOption": "",
+      "options": [
+        "Canonical product logos"
+      ]
+    },
+    {
+      "name": "Navigation items",
+      "required": true,
+      "type": "slot",
+      "description": "The pages to include in the navigation",
+      "constraint": "At least one. Must be either a navigation item or a group.",
+      "defaultOption": ""
+    },
+    {
+      "name": "Navigation item text",
+      "required": true,
+      "type": "string",
+      "description": "The label indicating the contents of the page it navigates to. ",
+      "constraint": "",
+      "defaultOption": ""
+    },
+    {
+      "name": "Navigation item URL",
+      "required": true,
+      "type": "string",
+      "description": "The URL of the page",
+      "constraint": "It must be within the domain of the site. ",
+      "defaultOption": ""
+    },
+    {
+      "name": "Navigation group header",
+      "required": false,
+      "type": "string",
+      "description": "The label for a group of navigation items",
+      "constraint": "",
+      "defaultOption": ""
+    },
+    {
+      "name": "Navigation group items",
+      "required": false,
+      "type": "slot",
+      "description": "The navigation items included in a group",
+      "constraint": "Minimum 2, maximum",
+      "defaultOption": ""
+    }
+  ],
   "changeLog": [
     {
       "who": "Maximilian Blazek",

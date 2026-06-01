@@ -1,0 +1,243 @@
+{
+  "kind": "construct",
+  "name": "Newsletter signup block",
+  "slug": "newsletter-signup-block",
+  "type": "Block",
+  "tier": "Sites",
+  "documentationStatus": "Minimal",
+  "lastEdited": "2026-04-26T19:18:36.782+01:00",
+  "figmaLink": "https://www.figma.com/design/1brHCsyeTE6FU7hfJd6ao2/%F0%9F%8C%90-Sites---Core-component-library?node-id=6245-1177&p=f&t=VCiQfJeglTXRm3SG-11",
+  "codeLink": "https://github.com/canonical/vanilla-framework/blob/main/templates/_macros/vf_newsletter-signup.jinja",
+  "description": "The newsletter signup block contains the same content as the [Newsletter signup](/sites/construct/newsletter-signup) pattern but without the top rule and bottom padding. It is intended to be placed within a section rather than used as a standalone full-width section. The Newsletter signup block serves as a strategic engagement touchpoint, most commonly placed alongside related content such as articles, where it acts as a lightweight conversion step to keep users connected beyond their current visit.\n\n",
+  "usage": "Use the newsletter signup block when the signup needs to be embedded within an existing section or template rather than presented as a standalone section. It provides a low-friction way for users to stay connected without interrupting their reading flow, integrating seamlessly into the content and allowing users to opt in at a moment of relevance.\n\nIn most cases, pages that include a newsletter signup should use the full pattern ([Newsletter signup](/sites/construct/newsletter-signup)). The block is appropriate when the signup sits within a manually built section alongside related content – such as blog or resource content – or when it is part of a templatized page (e.g. blog or knowledge hub articles) where it is already included by default.\n\n### Layout\n\nThe block supports two width variants. Both contain the same content – only the width changes. Use the appropriate variant based on the layout of the page or the section it is embedded in.\n\n**2-column width**\n\n![example-2.png](images/976bef3b-4c30-4b37-ad3f-0afaf05c1d4a.png)\n\n**4-column width**\n\n![example-1.png](images/83dde1b8-d9e6-4470-bfa9-3c163d60a337.png)\n\n### When to use\n\n*   Use the block when the signup is secondary to the content and should feel contextual rather than promotional.\n*   Use the block when it needs to sit within a manually built section alongside related content — such as blog or resources content.\n*   Use the block when it is placed as part of a templated page, such as a blog article or knowledge hub article, where it is already included in the template.\n\n### When not to use\n\n*   When no relevant content section exists, use the standalone newsletter signup pattern instead — don't group the block with unrelated content.\n*   When the layout doesn't support embedded blocks, use the full pattern instead.\n*   When the page is a regular marketing or long-form page with clearly separated sections and intentional conversion points, use the full pattern.",
+  "examples": "**2-column width**\n\nMedium dimension\n\n![2-m.png](images/2a149298-af2d-4aab-8e40-36e15c23542a.png)\n\nSmall dimension: a muted rule appears above the block to provide visual separation\n\n![2-s.png](images/7c468ab0-f347-42be-83b8-a82ba8a6a0f9.png)\n\n**4-column width**\n\nMedium dimension: a muted rule appears above the block to provide visual separation.\n\n![4-m.png](images/9e378bb0-f704-4865-b27b-c90497fba8dc.png)\n\nsmall dimension: a muted rule appears above the block to provide visual separation.\n\n![4-s.png](images/0e9b404d-1c88-4048-9fc7-ff94fa288955.png)",
+  "interactions": "",
+  "sitesArchitectureLevels": "i-ytTJ4UrPBn",
+  "anatomy": {
+    "table": [
+      {
+        "number": 1,
+        "name": "Heading",
+        "description": "The block heading communicates the primary subject or theme of the section."
+      },
+      {
+        "number": 2,
+        "name": "Body",
+        "description": "Body text providing context for the signup. One or more paragraphs."
+      },
+      {
+        "number": 3,
+        "name": "Label + input",
+        "description": "A single-line text [Input](wiki-ref://grid-ymtdOF6n4R/i-9t3OC1fOBH) for the user's email address, paired with a visible label"
+      },
+      {
+        "number": 4,
+        "name": "Checkbox + label",
+        "description": " A [Checkbox](wiki-ref://grid-ymtdOF6n4R/i-hES7I02ImG) paired with a label confirming the user's consent to receive communications."
+      },
+      {
+        "number": 5,
+        "name": "Addendum",
+        "description": "Additional content to include in the form, such as a disclaimer or supplementary information. Paragraph-style content."
+      },
+      {
+        "number": 6,
+        "name": "Button",
+        "description": " A single [Button](wiki-ref://grid-ymtdOF6n4R/i-nsWL1xi6H5) that submits the form."
+      }
+    ]
+  },
+  "properties": [
+    {
+      "name": "Heading",
+      "required": true,
+      "type": "string",
+      "description": "Title text. Rendered as h3",
+      "constraint": "",
+      "defaultOption": ""
+    },
+    {
+      "name": "Body",
+      "required": false,
+      "type": "string",
+      "description": "Paragraph-style content. One or more paragraphs.",
+      "constraint": "Up to 600 characters",
+      "defaultOption": ""
+    },
+    {
+      "name": "Input label",
+      "required": true,
+      "type": "string",
+      "description": "Label for the email input field.",
+      "constraint": "",
+      "defaultOption": ""
+    },
+    {
+      "name": "Checkbox label",
+      "required": true,
+      "type": "string",
+      "description": "Label for the checkbox.",
+      "constraint": "",
+      "defaultOption": ""
+    },
+    {
+      "name": "Addendum",
+      "required": false,
+      "type": "string",
+      "description": "Paragraph-style content to include in the form, such as a disclaimer or supplementary information.",
+      "constraint": "",
+      "defaultOption": ""
+    },
+    {
+      "name": "Button",
+      "required": true,
+      "type": "string",
+      "description": "The CTA using the default button style. It is used for most actions that are positive but not primary, and may serve as the main CTA in non-hero sections.",
+      "constraint": "Up to 20 characters",
+      "defaultOption": "secondary",
+      "options": [
+        "primary",
+        "secondary"
+      ]
+    },
+    {
+      "name": "Width",
+      "required": true,
+      "type": "single select",
+      "description": "Width variant.",
+      "constraint": "",
+      "defaultOption": "",
+      "options": [
+        "2-col",
+        "4-col"
+      ]
+    }
+  ],
+  "childProperties": [
+    {
+      "name": "Input",
+      "properties": [
+        {
+          "name": "State",
+          "required": false,
+          "type": "single select",
+          "description": "The state the input is currently in.",
+          "constraint": "",
+          "defaultOption": "default",
+          "options": [
+            "default",
+            "hover",
+            "active",
+            "disabled"
+          ]
+        },
+        {
+          "name": "Input validation type",
+          "required": false,
+          "type": "single select",
+          "description": "If the input is being validated what type of input validation it is.",
+          "constraint": "",
+          "defaultOption": "none",
+          "options": [
+            "none",
+            "error",
+            "warning",
+            "positive"
+          ]
+        },
+        {
+          "name": "Input validation text",
+          "required": false,
+          "type": "string",
+          "description": "If the input is being validated the outcome / reason of the input validation",
+          "constraint": "",
+          "defaultOption": ""
+        },
+        {
+          "name": "Size",
+          "required": false,
+          "type": "single select",
+          "description": "The vertical density of the input element",
+          "constraint": "",
+          "defaultOption": "default",
+          "options": [
+            "default",
+            "dense"
+          ]
+        },
+        {
+          "name": "Text",
+          "required": false,
+          "type": "string",
+          "description": "The text that is in the input field. ",
+          "constraint": "",
+          "defaultOption": ""
+        },
+        {
+          "name": "Placeholder",
+          "required": false,
+          "type": "string",
+          "description": "The placeholder text that is being shown if there has not been any text that has been entered yet.",
+          "constraint": "",
+          "defaultOption": ""
+        }
+      ]
+    },
+    {
+      "name": "Checkbox",
+      "properties": [
+        {
+          "name": "Checked",
+          "required": false,
+          "type": "single select",
+          "description": "In which checked state the checkbox currently is in.",
+          "constraint": "",
+          "defaultOption": "unchecked",
+          "options": [
+            "unchecked",
+            "checked",
+            "child checked"
+          ]
+        },
+        {
+          "name": "State",
+          "required": false,
+          "type": "single select",
+          "description": "The state the checkbox is currently in. Note that in the checked and child checked state there is no hover effect.",
+          "constraint": "",
+          "defaultOption": "default",
+          "options": [
+            "default",
+            "hover",
+            "disabled"
+          ]
+        }
+      ]
+    }
+  ],
+  "changeLog": [
+    {
+      "who": "Isaac Kim",
+      "when": "2026-04-26T19:00:00.000+01:00",
+      "what": "Initial commit"
+    }
+  ],
+  "decisionLog": [],
+  "appliedRules": [],
+  "exceptionFromRules": [],
+  "mentionedIn": [
+    {
+      "name": "Newsletter signup",
+      "slug": "newsletter-signup",
+      "path": "sites/construct/newsletter-signup"
+    }
+  ],
+  "mentionsComponents": [
+    {
+      "name": "Newsletter signup",
+      "slug": "newsletter-signup",
+      "path": "sites/construct/newsletter-signup"
+    }
+  ],
+  "url": "https://component.wiki/newsletter-signup-block"
+}

@@ -13,10 +13,10 @@
   "examples": "",
   "interactions": "",
   "figmaComponentData": "",
-  "componentExampleImage": "images/08c55648-98a8-4a3c-9020-46c63a87f1e6.png",
+  "componentExampleImage": "images/11d59bb1-9732-4bc4-9bf6-b9e0046db786.png",
   "sitesArchitectureLevels": "i-ytTJ4UrPBn",
   "anatomy": {
-    "image": "images/616b2091-d8df-4f6f-a8eb-5305affe5d7b.png",
+    "image": "images/0d2af856-2ce5-43a3-bede-78c38f674f6d.png",
     "table": [
       {
         "number": 1,
@@ -67,6 +67,11 @@
       "path": "sites/construct/divided-section"
     },
     {
+      "name": "Image",
+      "slug": "image",
+      "path": "global/construct/image"
+    },
+    {
       "name": "Linked logo block",
       "slug": "linked-logo-block",
       "path": "sites/construct/linked-logo-block"
@@ -75,6 +80,11 @@
       "name": "Logo section",
       "slug": "logo-section",
       "path": "sites/construct/logo-section"
+    },
+    {
+      "name": "Rich vertical list",
+      "slug": "rich-vertical-list",
+      "path": "sites/construct/rich-vertical-list"
     }
   ],
   "mentionsComponents": [

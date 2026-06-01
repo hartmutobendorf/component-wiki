@@ -10,13 +10,13 @@
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/main/templates/_macros/vf_tiered-list.jinja",
   "description": "Tiered list is a pattern for presenting a list of paired titles and descriptions underneath a top-level title and description. It organises related items into a structured, scannable format using Tiered blocks as its primary content units. An optional [CTA block](/sites/construct/cta-block) can appear at the section level, below the top-level description.",
   "usage": "Use Tiered list to present multiple related items that share a consistent structure of paired titles and descriptions. It works best for text-heavy content where each item is concise and parallel in nature.\n\n### Layout\n\nTiered list adapts across screen sizes. On large screens, it uses a 6-column layout — 2 columns for the heading and 4 for the body, arranged in a single row. On medium screens, the layout is configurable: content can split(50/50) or stack vertically(full-width). On small screens, content always stacks.\n\n### When to use\n\n*   Content consists of paired titles and descriptions organised under a single top-level heading\n*   Items are primarily text-based with short, parallel headings\n*   Users need to scan a structured list quickly\n*   Content represents steps, stages, features, or grouped concepts\n\n### When not to use\n\n*   Each item requires rich content such as images, videos, or code blocks — use [Divided section](/sites/construct/divided-section) instead\n*   Content is brief with an image as the primary focus — use [Equal heights](/sites/construct/equal-heights) instead\n*   The list contains only one or two items within a single topic — use a [Basic section](/sites/construct/basic-section) instead",
-  "examples": "Large dimension with section level CTA and block level CTA\n\n![example-1.png](images/8a4baed5-4971-41a2-99b6-59d1d2150892.png)\n\nLarge dimension without description\n\n![example-2.png](images/ff36462d-4303-4fb1-8800-5bcadef337b8.png)\n\nMedium dimension (50/50)\n\n![example-3.png](images/3654a868-e560-478f-a699-a7cc19c11893.png)\n\nMedium dimension (full-width)\n\n![example-4.png](images/fa3fc2cf-7d19-489c-b093-aed68b96d080.png)\n\nSmall dimension\n\n![example-5.png](images/a8949de4-6741-47f0-9838-0ca53475c3a5.png)",
+  "examples": "Large dimension with section level CTA and block level CTA\n\n![example-1.png](images/3ce6e59b-f76c-4e86-88f4-d4547c8cdee4.png)\n\nLarge dimension without description\n\n![example-2.png](images/ba4823f2-2b13-430c-8333-993ceaf21d48.png)\n\nMedium dimension (50/50)\n\n![example-3.png](images/51c4f9e3-93a9-49fc-85fd-a1a795463f6d.png)\n\nMedium dimension (full-width)\n\n![example-4.png](images/a37e3121-7680-45e3-8c6c-fb63f9a7d3d3.png)\n\nSmall dimension\n\n![example-5.png](images/6d1e9299-fea2-4886-bc94-0b30a23a08fb.png)",
   "interactions": "",
   "figmaComponentData": "",
-  "componentExampleImage": "images/dd7a5756-809e-4fc2-ad5c-f04e951c6acb.png",
+  "componentExampleImage": "images/5cef5fa3-95fd-4fb7-b4fc-bd4701e6cf56.png",
   "sitesArchitectureLevels": "i-ues18YVwia",
   "anatomy": {
-    "image": "images/da8f9cc3-f745-4609-a698-3d396035c1b5.png",
+    "image": "images/59856ca9-b4f3-4b1c-bc59-a46fc88fff14.png",
     "table": [
       {
         "number": 1,
@@ -71,9 +71,9 @@
       "type": "single select",
       "description": "The heading may function as a link when clearly indicated.",
       "constraint": "",
-      "defaultOption": "default",
+      "defaultOption": "none",
       "options": [
-        "default",
+        "none",
         "link"
       ]
     },
@@ -99,8 +99,7 @@
       "options": [
         "default",
         "deep",
-        "shallow",
-        "none"
+        "shallow"
       ]
     }
   ],
@@ -114,11 +113,19 @@
           "type": "single select",
           "description": "The heading may function as a link when clearly indicated.",
           "constraint": "",
-          "defaultOption": "default",
+          "defaultOption": "none",
           "options": [
-            "default",
+            "none",
             "link"
           ]
+        },
+        {
+          "name": "Body",
+          "required": true,
+          "type": "string",
+          "description": "4-column width body text",
+          "constraint": "Up to 600 characters",
+          "defaultOption": ""
         },
         {
           "name": "Block rule",
@@ -146,14 +153,6 @@
           "type": "object",
           "description": "Image used in place of heading",
           "constraint": "If an image is used as the heading, it cannot function as a link.",
-          "defaultOption": ""
-        },
-        {
-          "name": "Body",
-          "required": true,
-          "type": "string",
-          "description": "4-column width body text",
-          "constraint": "Up to 600 characters",
           "defaultOption": ""
         },
         {

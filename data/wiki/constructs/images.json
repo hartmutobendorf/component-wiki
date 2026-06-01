@@ -3,9 +3,9 @@
   "name": "Images",
   "slug": "images",
   "type": "Component",
-  "tier": "Global",
+  "tier": "",
   "documentationStatus": "Needs work",
-  "lastEdited": "2026-02-10T08:15:57.774+00:00",
+  "lastEdited": "2026-03-16T18:35:26.029+00:00",
   "figmaLink": "",
   "codeLink": "",
   "description": "",
@@ -14,85 +14,12 @@
   "interactions": "",
   "figmaComponentData": "",
   "componentExampleImage": "",
-  "sitesArchitectureLevels": "i-UvVNCYZ44t",
-  "anatomy": {
-    "image": "images/80c6f59e-ae47-4106-96b1-ced35f06b6a3.png",
-    "table": []
-  },
-  "properties": [
-    {
-      "name": "Image",
-      "required": false,
-      "type": "slot",
-      "description": "The container for placing visual content such as images, illustrations, or diagrams.",
-      "constraint": "",
-      "defaultOption": ""
-    },
-    {
-      "name": "Image aspect ratio ",
-      "required": false,
-      "type": "single select",
-      "description": "Indicate ratio of the image",
-      "constraint": "",
-      "defaultOption": "default",
-      "options": [
-        "default",
-        "16:9",
-        "3:2"
-      ]
-    },
-    {
-      "name": "Image aspect ratio ",
-      "required": false,
-      "type": "single select",
-      "description": "Indicate ratio of the image",
-      "constraint": "",
-      "defaultOption": "default",
-      "options": [
-        "default",
-        "16:9",
-        "3:2",
-        "2:3",
-        "cinematic",
-        "square"
-      ]
-    },
-    {
-      "name": "Image responsive aspect ratio",
-      "required": false,
-      "type": "multi select",
-      "description": "Change the aspect ratio of an image container, depending on the screen size",
-      "constraint": "",
-      "defaultOption": "",
-      "options": [
-        "16:9",
-        "3:2",
-        "2:3",
-        "cinematic",
-        "square\non large",
-        "on medium",
-        "on small"
-      ]
-    },
-    {
-      "name": "Image caption",
-      "required": false,
-      "type": "string",
-      "description": "Optional HTML caption below the image",
-      "constraint": "",
-      "defaultOption": ""
-    }
-  ],
+  "sitesArchitectureLevels": "",
+  "properties": [],
   "changeLog": [],
   "decisionLog": [],
   "appliedRules": [],
   "exceptionFromRules": [],
-  "mentionedIn": [
-    {
-      "name": "Divided block",
-      "slug": "divided-block",
-      "path": "sites/construct/divided-block"
-    }
-  ],
+  "mentionedIn": [],
   "mentionsComponents": []
 }

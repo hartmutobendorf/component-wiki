@@ -1,6 +1,146 @@
 {
-  "fetchedAt": "2026-04-07T08:46:04.625Z",
+  "fetchedAt": "2026-06-01T13:58:24.221Z",
   "rows": {
+    "i-3UqB_9W8RZ": {
+      "rowId": "i-3UqB_9W8RZ",
+      "number": 2,
+      "name": "Image",
+      "description": "The image placed within the image container",
+      "component": "i--w8-6ot1a8"
+    },
+    "i-XmdwMfCuiT": {
+      "rowId": "i-XmdwMfCuiT",
+      "number": 3,
+      "name": "Caption",
+      "description": "An optional short text description placed below the image ",
+      "component": "i--w8-6ot1a8"
+    },
+    "i-EEFWRT9gqG": {
+      "rowId": "i-EEFWRT9gqG",
+      "number": 1,
+      "name": "Image container",
+      "description": "The wrapper that controls the image's aspect ratio, cropping, and responsive behavior. The image is placed inside this container and scales to fill or fit it.",
+      "component": "i--w8-6ot1a8"
+    },
+    "i-vkbAJEHK3i": {
+      "rowId": "i-vkbAJEHK3i",
+      "number": 6,
+      "name": "Button",
+      "description": " A single [Button](wiki-ref://grid-ymtdOF6n4R/i-nsWL1xi6H5) that submits the form.",
+      "component": "i-Pfy5tPv4Sk"
+    },
+    "i-vAq_wY2TqU": {
+      "rowId": "i-vAq_wY2TqU",
+      "number": 5,
+      "name": "Addendum",
+      "description": "Additional content to include in the form, such as a disclaimer or supplementary information. Paragraph-style content.",
+      "component": "i-Pfy5tPv4Sk"
+    },
+    "i-FgVSCtlnAi": {
+      "rowId": "i-FgVSCtlnAi",
+      "number": 4,
+      "name": "Checkbox + label",
+      "description": " A [Checkbox](wiki-ref://grid-ymtdOF6n4R/i-hES7I02ImG) paired with a label confirming the user's consent to receive communications.",
+      "component": "i-Pfy5tPv4Sk"
+    },
+    "i-DFkFvml919": {
+      "rowId": "i-DFkFvml919",
+      "number": 3,
+      "name": "Label + input",
+      "description": "A single-line text [Input](wiki-ref://grid-ymtdOF6n4R/i-9t3OC1fOBH) for the user's email address, paired with a visible label",
+      "component": "i-Pfy5tPv4Sk"
+    },
+    "i-32V9Efs0ci": {
+      "rowId": "i-32V9Efs0ci",
+      "number": 2,
+      "name": "Body",
+      "description": "Body text providing context for the signup. One or more paragraphs.",
+      "component": "i-Pfy5tPv4Sk"
+    },
+    "i-KeWrnQ3HIY": {
+      "rowId": "i-KeWrnQ3HIY",
+      "number": 1,
+      "name": "Heading",
+      "description": "The block heading communicates the primary subject or theme of the section.",
+      "component": "i-Pfy5tPv4Sk"
+    },
+    "i-oSDue4OnD-": {
+      "rowId": "i-oSDue4OnD-",
+      "number": 7,
+      "name": "Button",
+      "description": " A single [Button](wiki-ref://grid-ymtdOF6n4R/i-nsWL1xi6H5) that submits the form.",
+      "component": "i-yQrLWRZ945"
+    },
+    "i-3S3gKc3FXY": {
+      "rowId": "i-3S3gKc3FXY",
+      "number": 6,
+      "name": "Addendum",
+      "description": "Additional content to include in the form, such as a disclaimer or supplementary information. Paragraph-style content.",
+      "component": "i-yQrLWRZ945"
+    },
+    "i-KUrRq6hguP": {
+      "rowId": "i-KUrRq6hguP",
+      "number": 5,
+      "name": "Checkbox + label",
+      "description": " A [Checkbox](wiki-ref://grid-ymtdOF6n4R/i-hES7I02ImG) paired with a label confirming the user's consent to receive communications.",
+      "component": "i-yQrLWRZ945"
+    },
+    "i-7oA8pwCngy": {
+      "rowId": "i-7oA8pwCngy",
+      "number": 4,
+      "name": "Label + input",
+      "description": "A single-line text [Input](wiki-ref://grid-ymtdOF6n4R/i-9t3OC1fOBH) for the user's email address, paired with a visible label",
+      "component": "i-yQrLWRZ945"
+    },
+    "i-cvegvk9iv2": {
+      "rowId": "i-cvegvk9iv2",
+      "number": 3,
+      "name": "Body",
+      "description": "Body text providing context for the signup. One or more paragraphs.",
+      "component": "i-yQrLWRZ945"
+    },
+    "i-KPB3vwvn1A": {
+      "rowId": "i-KPB3vwvn1A",
+      "number": 2,
+      "name": "Heading",
+      "description": "The section heading communicates the primary subject or theme of the section.",
+      "component": "i-yQrLWRZ945"
+    },
+    "i-BJIfv6jGyq": {
+      "rowId": "i-BJIfv6jGyq",
+      "number": 1,
+      "name": "Rule",
+      "description": "The rule component indicates the beginning of a new section.",
+      "component": "i-yQrLWRZ945"
+    },
+    "i-nyUMsEXjKR": {
+      "rowId": "i-nyUMsEXjKR",
+      "number": 4,
+      "name": "Media",
+      "description": "The main visual positioned in the opposite column to the heading and content area in a 50/50 layout. Accepts both image and video.",
+      "component": "i-cn19jqZNBr"
+    },
+    "i-thDsizNG3P": {
+      "rowId": "i-thDsizNG3P",
+      "number": 3,
+      "name": "Content area",
+      "description": "Placed in the same column as the heading. Accepts one or more block items. Supported blocks include text, lists, code, logos, and CTAs.",
+      "component": "i-cn19jqZNBr"
+    },
+    "i-jB5HgFOCoB": {
+      "rowId": "i-jB5HgFOCoB",
+      "number": 2,
+      "name": "Heading",
+      "description": "The section heading communicates the primary subject or theme of the section.",
+      "component": "i-cn19jqZNBr"
+    },
+    "i-9_RfNW0XVK": {
+      "rowId": "i-9_RfNW0XVK",
+      "number": 1,
+      "name": "Rule",
+      "description": "The rule component indicates the beginning of a new section.",
+      "component": "i-cn19jqZNBr"
+    },
     "i-N6dLreq1lv": {
       "rowId": "i-N6dLreq1lv",
       "number": 4,
@@ -145,49 +285,49 @@
       "rowId": "i-j8RkQD5WeF",
       "number": 7,
       "name": "Expanded search bar",
-      "description": "",
+      "description": "The overlayed search bar for the user to search the site contents. ",
       "component": "i-eoOMJgGK_d"
     },
     "i-GtUqedToon": {
       "rowId": "i-GtUqedToon",
       "number": 6,
       "name": " Navigation item drawer",
-      "description": "",
+      "description": "All secondary navigation items  grouped under an expandable navigation item",
       "component": "i-eoOMJgGK_d"
     },
     "i-7sYWzzy87V": {
       "rowId": "i-7sYWzzy87V",
       "number": 5,
       "name": "Expandable navigation item",
-      "description": "",
+      "description": "A group of navigation items collapsed into one single first-level item. ",
       "component": "i-eoOMJgGK_d"
     },
     "i-hYSgVXIY2_": {
       "rowId": "i-hYSgVXIY2_",
       "number": 4,
       "name": "Navigation item text",
-      "description": "",
+      "description": "An individual item on the first level of hierarchy of the navigation. ",
       "component": "i-eoOMJgGK_d"
     },
     "i-Jra2DQapNP": {
       "rowId": "i-Jra2DQapNP",
       "number": 3,
       "name": "Search trigger",
-      "description": "",
+      "description": "A button that, when clicked, overlays a search bar for the user to search the whole site. ",
       "component": "i-eoOMJgGK_d"
     },
     "i-gymvjhGttc": {
       "rowId": "i-gymvjhGttc",
       "number": 2,
       "name": "Navigation items",
-      "description": "",
+      "description": "The section where the first-level navigation items are placed.",
       "component": "i-eoOMJgGK_d"
     },
     "i-eYl4z-P92b": {
       "rowId": "i-eYl4z-P92b",
       "number": 1,
       "name": "Logo",
-      "description": "",
+      "description": "The logo that signals what product the website is about. ",
       "component": "i-eoOMJgGK_d"
     },
     "i-zJglxRhfQv": {
@@ -361,8 +501,8 @@
     "i-pnMfapYK2e": {
       "rowId": "i-pnMfapYK2e",
       "number": 3,
-      "name": "Resource blocks",
-      "description": "[Resource block](wiki-ref://grid-ymtdOF6n4R/i-5BuOzbNcXV) is a content unit that represents an individual resource item within a listing. It displays a title, a cover image, a description, and citation metadata. The block supports a range of resource types, including blog posts, videos, webinars, case studies, solution briefs, white papers, and reports.",
+      "name": "Article blocks",
+      "description": "[Article block](wiki-ref://grid-ymtdOF6n4R/i-5BuOzbNcXV) is a content unit that represents an individual resource item within a listing. It displays a title, a cover image, a description, and citation metadata. The block supports a range of resource types, including blog posts, videos, webinars, case studies, solution briefs, white papers, and reports.",
       "component": "i-YbRxZruWIu"
     },
     "i-0xnAqfMIFY": {
@@ -522,8 +662,8 @@
     "i-ZF5piBtnyT": {
       "rowId": "i-ZF5piBtnyT",
       "number": 6,
-      "name": "Resource blocks",
-      "description": "[Resource block](wiki-ref://grid-ymtdOF6n4R/i-5BuOzbNcXV) is a content unit that represents an individual resource item within a listing. It displays a title, a cover image, a description, and citation metadata. The block supports a range of resource types, including blog posts, videos, webinars, case studies, solution briefs, white papers, and reports.",
+      "name": "Article blocks",
+      "description": "[Article block](wiki-ref://grid-ymtdOF6n4R/i-5BuOzbNcXV) is a content unit that represents an individual resource item within a listing. It displays a title, a cover image, a description, and citation metadata. The block supports a range of resource types, including blog posts, videos, webinars, case studies, solution briefs, white papers, and reports.",
       "component": "i-s27nSmifM3"
     },
     "i-eqD1VTycu8": {
@@ -1083,7 +1223,7 @@
       "rowId": "i-tb3ZochVkd",
       "number": 4,
       "name": "Content area",
-      "description": "The content area on the right side of the 50/50 layout where various block types can be placed. Supported blocks include text, images, lists, videos, code snippets, logos, CTAs, and other compatible patterns. The Basic Section layout provides flexible composition while maintaining structural consistency.",
+      "description": "The content area on the right side of the 50/50 layout where various block types can be placed. Supported blocks include text, images, lists, videos, code snippets, logos, CTAs, and other compatible blocks.",
       "component": "i-vpN6ETB7hS"
     },
     "i-a92MyHD9UH": {

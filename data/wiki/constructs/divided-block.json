@@ -8,15 +8,15 @@
   "lastEdited": "2026-03-16T18:38:27.352+00:00",
   "figmaLink": "https://www.figma.com/design/1brHCsyeTE6FU7hfJd6ao2/%F0%9F%8C%90-Sites---Core-component-library?node-id=56-1535&p=f&t=faU3KuZjeS3ZsVZJ-11",
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/main/templates/_macros/vf_divided-section.jinja",
-  "description": "The divided block is a content unit that represents a single step, stage, or content item. It supports a wide range of content types, including text, [Images](/global/construct/images), videos, [List](/global/construct/list), [Code](/global/construct/code), [Logo block](/sites/construct/logo-block), [Notification](/global/construct/notification), and [CTA block](/sites/construct/cta-block). This block is used as the primary content unit in the [Divided section](/sites/construct/divided-section).\n\n",
+  "description": "The divided block is a content unit that represents a single step, stage, or content item. It supports a wide range of content types, including text, [Image](/global/construct/image), videos, [List](/global/construct/list), [Code](/global/construct/code), [Logo block](/sites/construct/logo-block), [Notification](/global/construct/notification), and [CTA block](/sites/construct/cta-block). This block is used as the primary content unit in the [Divided section](/sites/construct/divided-section).\n\n",
   "usage": "Use Divided block to present multiple related items within a single section while keeping each item clearly separated. It works best when each item may require a different combination of content elements.  \nDivided block is well-suited for step-based content such as tutorials, setup guides, onboarding flows, or implementation processes. It also works for presenting multiple items within a single topic — such as stages in a workflow, feature explanations, or grouped content items — where internal separation is needed without introducing a full section break.\n\n### **Supported UI blocks for the** **[Content area](/sites/construct/divided-block#anatomy)**\n\n1.  **Description / body text** - Use for long-form descriptions or explanations, when full sentences and paragraphs work best.\n2.  **Image** - Include a 3:2 or 16:9 ratio image to illustrate or enhance the content including: photography, isometric illustrations, diagrams, and similar visuals. The image can include an optional caption.\n3.  **Video** - Embed and link video content in 16:9 ratio.\n4.  **[List](/global/construct/list)** - List up to 10 items, with bullet type options including: none, bullet, status, or number.\n5.  **Code block** - Display preformatted code.\n6.  **[Logo block](/sites/construct/logo-block)** - Display related logos such as customers or partners.\n7.  **[Linked logo block](/sites/construct/linked-logo-block)** - Display logos that link to additional resources.\n8.  **[CTA block](/sites/construct/cta-block)** - Share one or more call-to-action elements, including a primary button, secondary button, and link.\n9.  **[Notification](/global/construct/notification)** - Highlight alerts, updates, or contextual messages within the section.\n\n### When to use\n\n*   Each item represents a single step, stage, or content item within a broader topic\n*   Items need clear visual separation while remaining part of the same section\n*   Each item may contain a different combination of content types\n*   Content requires richer structure than a simple heading and body\n\n### When not to use\n\n*   All blocks share the same content structure — use [Basic section](/sites/construct/basic-section) without a dividing rule instead\n*   The image is the primary content with only brief supporting text — use an [Equal height block](/sites/construct/equal-height-block) instead\n*   Content is purely text-based — use [Tiered list](/sites/construct/tiered-list) instead",
   "examples": "",
   "interactions": "",
   "figmaComponentData": "",
-  "componentExampleImage": "images/0a7f1df1-9ced-4157-81c3-7fb33b6672f0.png",
+  "componentExampleImage": "images/91766931-cdac-48b4-bd2d-5af2617a6749.png",
   "sitesArchitectureLevels": "i-ytTJ4UrPBn",
   "anatomy": {
-    "image": "images/2b0558e7-56dd-49bf-a180-7b429a87697b.png",
+    "image": "images/c38453ce-89a3-40b5-ad36-5c9e03d9a9bd.png",
     "table": [
       {
         "number": 1,
@@ -93,7 +93,7 @@
   ],
   "childProperties": [
     {
-      "name": "Images",
+      "name": "Image",
       "properties": [
         {
           "name": "Image",
@@ -113,24 +113,18 @@
           "options": [
             "default",
             "16:9",
-            "3:2"
+            "3:2",
+            "square",
+            "cinematic"
           ]
         },
         {
-          "name": "Image aspect ratio ",
+          "name": "Image caption",
           "required": false,
-          "type": "single select",
-          "description": "Indicate ratio of the image",
+          "type": "string",
+          "description": "Optional HTML caption below the image",
           "constraint": "",
-          "defaultOption": "default",
-          "options": [
-            "default",
-            "16:9",
-            "3:2",
-            "2:3",
-            "cinematic",
-            "square"
-          ]
+          "defaultOption": ""
         },
         {
           "name": "Image responsive aspect ratio",
@@ -150,12 +144,28 @@
           ]
         },
         {
-          "name": "Image caption",
+          "name": "Highlighted background",
           "required": false,
-          "type": "string",
-          "description": "Optional HTML caption below the image",
+          "type": "boolean",
+          "description": "",
           "constraint": "",
-          "defaultOption": ""
+          "defaultOption": "false",
+          "options": [
+            "true",
+            "false"
+          ]
+        },
+        {
+          "name": "Object fit",
+          "required": false,
+          "type": "single select",
+          "description": "Defines how the image fill its container",
+          "constraint": "",
+          "defaultOption": "contain",
+          "options": [
+            "cover",
+            "contain"
+          ]
         }
       ]
     },
@@ -460,14 +470,9 @@
       "path": "sites/construct/equal-height-block"
     },
     {
-      "name": "Images",
-      "slug": "images",
-      "path": "construct/images"
-    },
-    {
-      "name": "Images",
-      "slug": "images",
-      "path": "global/construct/images"
+      "name": "Image",
+      "slug": "image",
+      "path": "global/construct/image"
     },
     {
       "name": "Linked logo block",

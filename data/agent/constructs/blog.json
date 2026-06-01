@@ -9,8 +9,8 @@
   "figmaLink": "https://www.figma.com/design/1brHCsyeTE6FU7hfJd6ao2/%F0%9F%8C%90-Sites---Core-component-library?node-id=2940-19045",
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/main/templates/_macros/vf_blog.jinja",
   "description": "The blog pattern displays 3 to 4 blog articles in a grid layout. Each article shows a cover image, title, description, author information, and publication date. Articles can be loaded dynamically or provided statically. Designed to highlight recent contents in specific topic, the pattern offers users quick access to featured blog posts.",
-  "usage": "The Blog pattern displays 3–4 articles in a grid layout, each using the [Resource block](/sites/construct/resource-block). By presenting posts in a structured and scannable grid, the pattern enables quick comparison and encourages exploration of topics that support the narrative of the page.\n\nThe pattern supports both dynamic and static loading strategies. When connected to the latest news module, the blog pattern automatically pulls recent articles from a defined group, ensuring that the section remains fresh without requiring manual updates. This approach is ideal for pages that benefit from showcasing ongoing activity or frequently updated content. In contrast, static content allows to feature specific articles by providing custom descriptions, and imagery. This curated approach is useful when emphasizing certain messages or guiding users through a planned content journey.\n\nThe grid layout helps users scan titles, descriptions, authors, and publication dates with ease. Cover images provide quick visual context and improve engagement, while fallback imagery maintains uniformity across articles that do not include a native image. Limiting the pattern to three or four items reinforces clarity and prevents cognitive overload, ensuring that each featured article receives adequate attention.\n\n### When to use\n\n*   To feature the latest or most relevant blog posts.\n*   To highlight related articles that support the main content of a page.\n*   To provide users quick access to blog content without navigating to the blog index.\n\n### When not to use\n\n*   When the content includes mixed resource types such as webinars, case studies, or white papers, use [Resources](/sites/construct/resources) instead",
-  "examples": "### Layout\n\n4-block layout with linked heading\n\n![Component example wrapper-1.png](images/813c5c6f-14c1-46cc-82c2-9ce69b51d709.png)\n\n3-block layout\n\n![Component example wrapper-2.png](images/b03ca15d-71e8-4bbd-9f95-92b3f0e20799.png)\n\n### Responsive\n\nMedium dimension\n\n![Component example wrapper-3.png](images/baf88a48-4522-4caa-b6c7-7280132f46aa.png)\n\nSmall dimension\n\n![Component example wrapper-4.png](images/987bba87-e975-4a6f-a004-6b1c10936106.png)",
+  "usage": "The Blog pattern displays 3–4 articles in a grid layout, each using the [Article block](/sites/construct/article-block). By presenting posts in a structured and scannable grid, the pattern enables quick comparison and encourages exploration of topics that support the narrative of the page.\n\nThe pattern supports both dynamic and static loading strategies. When connected to the latest news module, the blog pattern automatically pulls recent articles from a defined group, ensuring that the section remains fresh without requiring manual updates. This approach is ideal for pages that benefit from showcasing ongoing activity or frequently updated content. In contrast, static content allows to feature specific articles by providing custom descriptions, and imagery. This curated approach is useful when emphasizing certain messages or guiding users through a planned content journey.\n\nThe grid layout helps users scan titles, descriptions, authors, and publication dates with ease. Cover images provide quick visual context and improve engagement, while fallback imagery maintains uniformity across articles that do not include a native image. Limiting the pattern to three or four items reinforces clarity and prevents cognitive overload, ensuring that each featured article receives adequate attention.\n\n### When to use\n\n*   To feature the latest or most relevant blog posts.\n*   To highlight related articles that support the main content of a page.\n*   To provide users quick access to blog content without navigating to the blog index.\n\n### When not to use\n\n*   When the content includes mixed resource types such as webinars, case studies, or white papers, use [Resources](/sites/construct/resources) instead",
+  "examples": "### Layout\n\n4-block layout with linked heading\n\n![Component example wrapper-1.png](images/fa59f464-22d5-4517-aa99-df60fe1f3ae9.png)\n\n3-block layout\n\n![Component example wrapper-2.png](images/86433532-515b-4728-a601-4fa52e987dd0.png)\n\n### Responsive\n\nMedium dimension\n\n![Component example wrapper-3.png](images/598f53bc-35ed-4fbd-bf69-739a33540c9e.png)\n\nSmall dimension\n\n![Component example wrapper-4.png](images/aeaf1ecc-7d5d-4b6d-bb95-2550de02ad6d.png)",
   "interactions": "",
   "sitesArchitectureLevels": "i-ues18YVwia",
   "anatomy": {
@@ -27,8 +27,8 @@
       },
       {
         "number": 3,
-        "name": "Resource blocks",
-        "description": "[Resource block](wiki-ref://grid-ymtdOF6n4R/i-5BuOzbNcXV) is a content unit that represents an individual resource item within a listing. It displays a title, a cover image, a description, and citation metadata. The block supports a range of resource types, including blog posts, videos, webinars, case studies, solution briefs, white papers, and reports."
+        "name": "Article blocks",
+        "description": "[Article block](wiki-ref://grid-ymtdOF6n4R/i-5BuOzbNcXV) is a content unit that represents an individual resource item within a listing. It displays a title, a cover image, a description, and citation metadata. The block supports a range of resource types, including blog posts, videos, webinars, case studies, solution briefs, white papers, and reports."
       }
     ]
   },
@@ -50,9 +50,9 @@
       "type": "single select",
       "description": "The heading may function as a link when clearly indicated.",
       "constraint": "",
-      "defaultOption": "default",
+      "defaultOption": "none",
       "options": [
-        "default",
+        "none",
         "link"
       ]
     },
@@ -63,20 +63,6 @@
       "description": "2-column width heading using muted heading",
       "constraint": "Up to 60 characters",
       "defaultOption": ""
-    },
-    {
-      "name": "Bottom padding",
-      "required": true,
-      "type": "single select",
-      "description": "The type of padding applied to the bottom of the pattern",
-      "constraint": "",
-      "defaultOption": "default",
-      "options": [
-        "default",
-        "deep",
-        "shallow",
-        "none"
-      ]
     },
     {
       "name": "Number of articles",
@@ -101,11 +87,24 @@
         "dinamic",
         "static"
       ]
+    },
+    {
+      "name": "Bottom padding",
+      "required": true,
+      "type": "single select",
+      "description": "The type of padding applied to the bottom of the pattern",
+      "constraint": "",
+      "defaultOption": "default",
+      "options": [
+        "default",
+        "deep",
+        "shallow"
+      ]
     }
   ],
   "childProperties": [
     {
-      "name": "Resource block",
+      "name": "Article block",
       "properties": [
         {
           "name": "Article title",
@@ -187,9 +186,9 @@
   ],
   "mentionedIn": [
     {
-      "name": "Resource block",
-      "slug": "resource-block",
-      "path": "sites/construct/resource-block"
+      "name": "Article block",
+      "slug": "article-block",
+      "path": "sites/construct/article-block"
     },
     {
       "name": "Resources",
@@ -199,9 +198,9 @@
   ],
   "mentionsComponents": [
     {
-      "name": "Resource block",
-      "slug": "resource-block",
-      "path": "sites/construct/resource-block"
+      "name": "Article block",
+      "slug": "article-block",
+      "path": "sites/construct/article-block"
     },
     {
       "name": "Resources",

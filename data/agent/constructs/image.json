@@ -1,0 +1,144 @@
+{
+  "kind": "construct",
+  "name": "Image",
+  "slug": "image",
+  "type": "Component",
+  "tier": "Global",
+  "documentationStatus": "Minimal",
+  "lastEdited": "2026-04-27T16:57:25.002+01:00",
+  "figmaLink": "https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-27&p=f&t=0yJ3i0Um6VUc7wwK-11",
+  "codeLink": "https://github.com/canonical/vanilla-framework/blob/main/scss/_patterns_image.scss",
+  "description": "The Image component provides a structured way to display images within content, maintaining consistent aspect ratios, cropping, and responsive behavior across breakpoints. It also includes a highlighted variation that insulates an image from its surroundings, helping emphasize it or preventing image container from blending into the background.",
+  "usage": "The Images component is most commonly used when placing content images within a page layout — for example, in articles, sections, or supporting media blocks. It ensures images maintain a defined aspect ratio, crop predictably, and respond correctly across breakpoints, preventing layout shifts, awkward scaling, or misaligned images within structured content.\n\n### When to use\n\n*   When placing content images within a page layout\n*   It needs to fit within a structured layout with consistent spacing and alignment\n*   It must adapt across breakpoints, including cropping or ratio changes\n\n### When not to use\n\n*   To display repeated logo assets in a grid — use [Logo block](/sites/construct/logo-block)\n*   To place icons for UI indicators, actions, or small symbolic visuals, use an icon component or a [Button](/global/construct/button) instead.\n*   To place an image that contains a link within it  — use the appropriate higher-level pattern, even if it uses this component internally\n*   To present any type of textual information. Text inside images is not accessible.\n\n### Aspect ratios\n\nUse consistent ratios within a section to maintain visual rhythm (e.g. 16:9, 3:2, 1:1). Avoid mixing ratios without a clear reason.\n\n### Highlighted background\n\nApply highlighted background when an image needs visual separation from its background — especially when white or low-contrast images risk blending into the page.",
+  "examples": "",
+  "interactions": "",
+  "sitesArchitectureLevels": "i-UvVNCYZ44t",
+  "anatomy": {
+    "table": [
+      {
+        "number": 1,
+        "name": "Image container",
+        "description": "The wrapper that controls the image's aspect ratio, cropping, and responsive behavior. The image is placed inside this container and scales to fill or fit it."
+      },
+      {
+        "number": 2,
+        "name": "Image",
+        "description": "The image placed within the image container"
+      },
+      {
+        "number": 3,
+        "name": "Caption",
+        "description": "An optional short text description placed below the image "
+      }
+    ]
+  },
+  "properties": [
+    {
+      "name": "Image",
+      "required": false,
+      "type": "slot",
+      "description": "The container for placing visual content such as images, illustrations, or diagrams.",
+      "constraint": "",
+      "defaultOption": ""
+    },
+    {
+      "name": "Image aspect ratio ",
+      "required": false,
+      "type": "single select",
+      "description": "Indicate ratio of the image",
+      "constraint": "",
+      "defaultOption": "default",
+      "options": [
+        "default",
+        "16:9",
+        "3:2",
+        "square",
+        "cinematic"
+      ]
+    },
+    {
+      "name": "Image caption",
+      "required": false,
+      "type": "string",
+      "description": "Optional HTML caption below the image",
+      "constraint": "",
+      "defaultOption": ""
+    },
+    {
+      "name": "Image responsive aspect ratio",
+      "required": false,
+      "type": "multi select",
+      "description": "Change the aspect ratio of an image container, depending on the screen size",
+      "constraint": "",
+      "defaultOption": "",
+      "options": [
+        "16:9",
+        "3:2",
+        "2:3",
+        "cinematic",
+        "square\non large",
+        "on medium",
+        "on small"
+      ]
+    },
+    {
+      "name": "Highlighted background",
+      "required": false,
+      "type": "boolean",
+      "description": "",
+      "constraint": "",
+      "defaultOption": "false",
+      "options": [
+        "true",
+        "false"
+      ]
+    },
+    {
+      "name": "Object fit",
+      "required": false,
+      "type": "single select",
+      "description": "Defines how the image fill its container",
+      "constraint": "",
+      "defaultOption": "contain",
+      "options": [
+        "cover",
+        "contain"
+      ]
+    }
+  ],
+  "changeLog": [
+    {
+      "who": "Isaac Kim",
+      "when": "2026-04-27T16:00:00.000+01:00",
+      "what": "Initial commit"
+    }
+  ],
+  "decisionLog": [],
+  "appliedRules": [],
+  "exceptionFromRules": [],
+  "mentionedIn": [
+    {
+      "name": "Divided block",
+      "slug": "divided-block",
+      "path": "sites/construct/divided-block"
+    }
+  ],
+  "mentionsComponents": [
+    {
+      "name": "Button",
+      "slug": "button",
+      "path": "global/construct/button"
+    },
+    {
+      "name": "Logo block",
+      "slug": "logo-block",
+      "path": "construct/logo-block"
+    },
+    {
+      "name": "Logo block",
+      "slug": "logo-block",
+      "path": "sites/construct/logo-block"
+    }
+  ],
+  "url": "https://component.wiki/image"
+}

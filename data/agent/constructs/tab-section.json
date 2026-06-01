@@ -39,9 +39,9 @@
       "type": "single select",
       "description": "The heading may function as a link when clearly indicated.",
       "constraint": "",
-      "defaultOption": "default",
+      "defaultOption": "none",
       "options": [
-        "default",
+        "none",
         "link"
       ]
     },
@@ -55,8 +55,7 @@
       "options": [
         "default",
         "deep",
-        "shallow",
-        "none"
+        "shallow"
       ]
     }
   ],
@@ -66,6 +65,11 @@
   "exceptionFromRules": [],
   "mentionedIn": [
     {
+      "name": "Article block",
+      "slug": "article-block",
+      "path": "sites/construct/article-block"
+    },
+    {
       "name": "Linked logo block",
       "slug": "linked-logo-block",
       "path": "sites/construct/linked-logo-block"
@@ -74,11 +78,6 @@
       "name": "Linked logo section",
       "slug": "linked-logo-section",
       "path": "sites/construct/linked-logo-section"
-    },
-    {
-      "name": "Resource block",
-      "slug": "resource-block",
-      "path": "sites/construct/resource-block"
     }
   ],
   "mentionsComponents": [],

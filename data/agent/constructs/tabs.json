@@ -5,7 +5,7 @@
   "type": "Component",
   "tier": "Global",
   "documentationStatus": "Minimal",
-  "lastEdited": "2026-04-07T09:42:16.213+01:00",
+  "lastEdited": "2026-05-06T15:27:37.358+01:00",
   "figmaLink": "https://www.figma.com/design/Y0cqKbTG4rejU9xm2oh5pR/%F0%9F%92%A0-Vanilla---Core-component-library?node-id=2066-50",
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/b1d651365b0714586e6ea14349dea763819c256e/scss/_patterns_tabs.scss",
   "description": "A tabs component organizes related content into separate sections, allowing users to switch between different content panels within the same context by clicking on labeled tab headers. It helps reduce visual clutter by displaying only one content panel at a time while keeping all options easily accessible.",

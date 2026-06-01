@@ -10,7 +10,7 @@
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/main/templates/_macros/vf_equal-heights.jinja",
   "description": "The Equal heights pattern arranges content blocks in a horizontal row where each block maintains the same height regardless of the amount of content inside. This creates a visually balanced layout that allows items to be easily compared and scanned.  An optional [CTA block](/sites/construct/cta-block) can appear at the section level, beneath blocks list.\n\n  \n",
   "usage": "The Equal heights pattern presents related content in a horizontal layout using [Equal height block](/sites/construct/equal-height-block), ensuring that each item maintains the same height. This creates consistent alignment across the row and supports a balanced, easy-to-scan layout.\n\nUse this pattern to break down information into columns. It is commonly used to present comparable items such as features, benefits, product options, or key resources.\n\nA minimum of three columns is recommended. Equalising the height of each block prevents uneven layouts when content lengths vary while maintaining consistent spacing across the row.\n\n**Best practice:** Keep the content volume similar across columns to maintain visual balance.\n\n### When to use\n\n*   Content consists of comparable items that benefit from side-by-side presentation, such as features, benefits, product options, or key resources\n*   Items share a consistent structure and a similar volume of content\n*   Users need to scan and compare multiple items quickly\n\n### When not to use\n\n*   Each item requires rich or varied content such as images, videos, code blocks, or lists — use [Divided section](/sites/construct/divided-section)  instead\n*   The content covers a single topic with supporting material — use [Basic section](/sites/construct/basic-section)  instead\n*   The content consists of paired titles and descriptions in a text-heavy list format — use [Tiered list](/sites/construct/tiered-list)  instead",
-  "examples": "Large dimension (50/50)\n\n![example-1.png](images/2426dc6d-af1d-41cb-951f-8f12f8899d27.png)\n\nLarge dimension (25/75)\n\n![example-2.png](images/c2078ac3-a598-4c9c-b406-808b771bea11.png)\n\nLarge dimension (full-width)\n\n![example-3.png](images/e747e1cb-4aa6-4a38-98b0-d4f4d9cdba6b.png)\n\nLarge dimension (full-width, apply predefined image ratio)\n\n![example-6.png](images/b271c5e6-e393-40ef-b6cc-7f2dcd54972b.png)\n\nMedium dimension\n\n![example-5.png](images/1c4f4b47-22b5-4d26-bf4f-2bf77acb3b9a.png)\n\nSmall dimension\n\n![example-4.png](images/6ff48a1b-9dc5-4986-bb72-fa1d5c7ea0e0.png)",
+  "examples": "Large dimension (50/50)\n\n![example-1.png](images/be4c53e0-9066-4216-b996-56653b44e570.png)\n\nLarge dimension (25/75)\n\n![example-2.png](images/6aa5b0da-de98-4362-9392-0ef5e35a56c1.png)\n\nLarge dimension (full-width)\n\n![example-3.png](images/a66a8412-1cd9-4aaa-9161-3487d3b612fa.png)\n\nLarge dimension (full-width, apply predefined image ratio)\n\n![example-6.png](images/93796458-6406-4ad1-bc84-f068ca776578.png)\n\nMedium dimension\n\n![example-5.png](images/25166943-112a-4935-acee-ea788fdfbb83.png)\n\nSmall dimension\n\n![example-4.png](images/d7f450d1-2f92-4b77-a115-c5219f8215c6.png)",
   "interactions": "",
   "sitesArchitectureLevels": "i-ues18YVwia",
   "anatomy": {
@@ -73,9 +73,9 @@
       "type": "single select",
       "description": "The heading may function as a link when clearly indicated.",
       "constraint": "",
-      "defaultOption": "default",
+      "defaultOption": "none",
       "options": [
-        "default",
+        "none",
         "link"
       ]
     },
@@ -92,20 +92,6 @@
       ]
     },
     {
-      "name": "Bottom padding",
-      "required": true,
-      "type": "single select",
-      "description": "The type of padding applied to the bottom of the pattern",
-      "constraint": "",
-      "defaultOption": "default",
-      "options": [
-        "default",
-        "deep",
-        "shallow",
-        "none"
-      ]
-    },
-    {
       "name": "Large layout",
       "required": true,
       "type": "single select",
@@ -116,6 +102,19 @@
         "full-width",
         "50/50",
         "25/75"
+      ]
+    },
+    {
+      "name": "Bottom padding",
+      "required": true,
+      "type": "single select",
+      "description": "The type of padding applied to the bottom of the pattern",
+      "constraint": "",
+      "defaultOption": "default",
+      "options": [
+        "default",
+        "deep",
+        "shallow"
       ]
     }
   ],
@@ -129,9 +128,9 @@
           "type": "single select",
           "description": "The heading may function as a link when clearly indicated.",
           "constraint": "",
-          "defaultOption": "default",
+          "defaultOption": "none",
           "options": [
-            "default",
+            "none",
             "link"
           ]
         },
