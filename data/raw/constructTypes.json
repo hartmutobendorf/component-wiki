@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-06-01T15:51:37.776Z",
+  "fetchedAt": "2026-06-01T15:57:36.192Z",
   "rows": {
     "i-qokjJxQw1_": {
       "rowId": "i-qokjJxQw1_",
@@ -60,15 +60,7 @@
         "i-uIQULVt2eZ",
         "i-FgQOUawQ2g",
         "i--w8-6ot1a8",
-        "i-xUFwNsfx30",
-        "i-5-vbA4eMMT",
-        "i-8-71pn5iWN",
-        "i-GUOe0b16E8",
-        "i-fXOvxaJT_B",
-        "i-0CEqM5qFB5",
-        "i-Xq6Nrcs9ir",
-        "i-bKmN112Lar",
-        "i-z5ZqRFKXMI"
+        "i-xUFwNsfx30"
       ],
       "description": "**Components** ​​are interactive building blocks for creating a user interface. They are our smallest functional unit, and are composed by using more than one foundation and usually interaction definitions. For example, button, dropdown, notification, basic table."
     },
