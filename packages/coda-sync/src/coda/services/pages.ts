@@ -41,7 +41,7 @@ export async function exportPageContent(
   const maxAttempts = 30;
 
   for (let attempt = 1; attempt <= maxAttempts; attempt++) {
-    await sleep(attempt === 1 ? 500 : 1000);
+    await sleep(attempt === 1 ? 1500 : 1000);
 
     const statusResponse = await client.GET(
       "/docs/{docId}/pages/{pageIdOrName}/export/{requestId}",
@@ -59,7 +59,7 @@ export async function exportPageContent(
         if (content) return content;
       }
 
-      if (attempt > 3) {
+      if (attempt > 10) {
         throw new Error(
           `Export failed — status check returned error: ${JSON.stringify(statusResponse.error)}`
         );
