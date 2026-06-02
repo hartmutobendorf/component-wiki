@@ -10,13 +10,13 @@
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/main/templates/_macros/vf_linked-logo-section.jinja",
   "description": "The linked logo section is used to display a list of logos which explicitly link to additional pages or resources.",
   "usage": "The Linked logo section highlights a collection of logos as interactive navigational elements, building on the [Linked logo section](/sites/construct/linked-logo-section) by pairing each logo with a link to additional pages or resources.\n\n### Placing additional contextual elements\n\nThis pattern does not include a description slot.\n\nFor the 25/75 and 100 layouts, when a description or CTA block is required, use the [Basic section](/sites/construct/basic-section) and place the Linked logo section (without the [Rule](/sites/construct/linked-logo-section#anatomy) and [Heading](/sites/construct/linked-logo-section#anatomy)) below it, rather than extending this pattern.\n\nFor the 50/50 layout, the [Linked logo block](/sites/construct/linked-logo-block) is supported within the Basic section. Therefore use the [Basic section](/sites/construct/basic-section) alone instead of introducing a separate Linked logo section.\n\n### When to use\n\n*   Each logo needs to link to an additional page or resource\n*   Logos act as primary navigational elements rather than decorative assets\n\n### When not to use\n\n*   If logos are purely decorative or editorial and do not require interaction, use the [Logo section](/sites/construct/logo-section) instead\n*   When items require rich structured content (e.g., detailed descriptions, lists, CTAs), use the [Basic section](/sites/construct/basic-section) or [Divided section](/sites/construct/divided-section) instead\n*   If multiple groups or categories need to be displayed, separate them into multiple sections or use the [Tab section](/sites/construct/tab-section)",
-  "examples": "Large dimension (50/50 layout)![example-1.png](images/ba7aec32-aa67-40fb-81da-8b0c1b1902f9.png)\n\nLarge dimension (25/75 layout)\n\n![example-4.png](images/d5e1f27f-11f7-42fd-98d9-17aa813664a9.png)\n\nMedium dimension\n\n![example-2.png](images/51ed362c-88fc-41b0-a6df-7b532847370f.png)\n\nSmall dimension\n\n![example-3.png](images/3bfd1983-e7bd-42ad-b4fc-972486f54845.png)",
+  "examples": "Large dimension (50/50 layout)![example-1.png](images/a1d7a23a-f4c8-4170-94f2-ab129109d7b1.png)\n\nLarge dimension (25/75 layout)\n\n![example-4.png](images/6a6d8d7f-9b85-44e6-9f70-0ad4b08cd4ad.png)\n\nMedium dimension\n\n![example-2.png](images/4c2ce295-b22c-4606-8b72-1958afe4b010.png)\n\nSmall dimension\n\n![example-3.png](images/6e2ce4a4-9198-4ab3-afd5-141ff40cb49f.png)",
   "interactions": "",
   "figmaComponentData": "",
-  "componentExampleImage": "images/2ec226e4-13f1-4e2f-bc63-9d076f444e6d.png",
+  "componentExampleImage": "images/538f9ca5-4969-4876-a14b-f915a1244e9d.png",
   "sitesArchitectureLevels": "i-ues18YVwia",
   "anatomy": {
-    "image": "images/84f39444-7d54-427e-be60-7b1c8cff199a.png",
+    "image": "images/b3192da6-36c9-4663-af7a-9c12e64f79da.png",
     "table": [
       {
         "number": 1,

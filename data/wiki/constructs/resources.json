@@ -10,13 +10,13 @@
   "codeLink": "https://github.com/canonical/vanilla-framework/blob/main/templates/_macros/vf_resources.jinja",
   "description": "The resources pattern is used to display a collection of resources. Each resource can include a title and optional image, description, author(s), and publication date.\n\n",
   "usage": "The resources presents a variety of resources at a glance on one level. It supports between 1 and 5 categories (video, webinar, case study, blog, solution brief, white paper, report, etc.), each containing 1–5 items using the [Article block](/sites/construct/article-block). This layout is intended for cases where showing multiple types of resources in a compact view.  \n  \nFor blog, it supports both static content and API-fetched blog posts by tag/category. Imported blog descriptions are truncated after 180 characters. If a specific blog article needs to be included, a static description must be provided.\n\n### When to use\n\n*   To present various curated resource types at a glance\n*   To supplement a page where resources are not the main content\n*   To provide quick access to mixed resource formats in a compact layout\n\n### When not to use\n\n*   When the content is limited to the recent blog posts only; use the [Blog](/sites/construct/blog) pattern instead",
-  "examples": "Medium dimension\n\n![example.png](images/607393dd-f78c-4290-b191-3f9a01f8b4cc.png)\n\nSmall dimension\n\n![example-4.png](images/545b42ac-2153-4b3a-b836-58d22b1724a1.png)\n\nWithout\n\n![example-1.png](images/9505cefb-2ddf-490b-9b6b-ba5b6868813a.png)\n\nWithout [Category](/sites/construct/resources#anatomy)\n\n![example-3.png](images/88932d06-5f7f-4cbc-a5cd-7ba683c1da38.png)\n\nMixed image types used\n\n![example-2.png](images/c5222c04-ac95-4640-980f-329db0f3d4d7.png)",
+  "examples": "Medium dimension\n\n![example.png](images/37be35d1-0571-4f8c-bcb6-ae176adb9438.png)\n\nSmall dimension\n\n![example-4.png](images/ff2934f1-ebaa-49b6-bd0a-b17664f30c07.png)\n\nWithout\n\n![example-1.png](images/7a0e4822-0a10-40d7-b694-165c66e882ab.png)\n\nWithout [Category](/sites/construct/resources#anatomy)\n\n![example-3.png](images/5aeea69b-ad44-4369-a5d3-95c71eaafbd1.png)\n\nMixed image types used\n\n![example-2.png](images/d456400d-0a5d-4083-8b73-ef3473b1ad73.png)",
   "interactions": "",
   "figmaComponentData": "",
-  "componentExampleImage": "images/2aedf2e9-a06d-4bbe-ad3b-b89890361276.png",
+  "componentExampleImage": "images/117b8c05-9d5b-4b26-82b2-1e7f3d1620f2.png",
   "sitesArchitectureLevels": "i-ues18YVwia",
   "anatomy": {
-    "image": "images/7f706fb0-1465-4f67-8668-fbccd5e120a5.png",
+    "image": "images/4469b29c-0e5a-4c7c-b918-77fd030df567.png",
     "table": [
       {
         "number": 1,
