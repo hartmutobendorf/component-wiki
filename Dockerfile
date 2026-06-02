@@ -18,15 +18,7 @@ COPY packages/wiki/ packages/wiki/
 
 RUN pnpm build:app
 
-FROM docker.io/nginx:alpine
-COPY --from=build /app/packages/wiki/dist /usr/share/nginx/html
-RUN printf 'server {\n\
-    listen 80;\n\
-    server_name localhost;\n\
-    root /usr/share/nginx/html;\n\
-    index index.html;\n\
-    location / {\n\
-        try_files $uri/index.html $uri $uri.html /404.html;\n\
-    }\n\
-}\n' > /etc/nginx/conf.d/default.conf
+FROM docker.io/sebp/lighttpd:latest
+COPY --from=build /app/packages/wiki/dist /var/www/html
+COPY lighttpd.conf /etc/lighttpd/lighttpd.conf
 EXPOSE 80
